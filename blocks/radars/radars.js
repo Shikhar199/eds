@@ -29,7 +29,7 @@ export default function decorate(block){
     mainElement.appendChild(sectionElement);
     divElement4.appendChild(headingElement);
 
-    const targetDiv = document.querySelector(".radars-container default-content-wrapper");
+    const targetDiv = document.querySelector(".radars-container .default-content-wrapper");
     targetDiv.appendChild(mainElement);
 
 }
