@@ -15,12 +15,12 @@ export default function decorate(block){
     divElement3.classList.add("col-lg-6");
 
     const divElement4 = document.createElement('div');
-    divElement4.classList.add("insights-wrapper home-overlay insights-hover");
+    divElement4.classList.add("insights-wrapper", "home-overlay", "insights-hover");
 
     const headingElement = document.createElement('h3');
     headingElement.classList.add("interest-heading");
     headingElement.setAttribute("title", "The promise of the metaverse")
-    headingElement.textContent("The promise of the metaverse")
+    headingElement.textContent = "The promise of the metaverse"
 
     divElement3.appendChild(divElement4);
     divElement2.appendChild(divElement3);
