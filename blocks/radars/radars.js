@@ -26,7 +26,7 @@ export default function decorate(block){
 
         })
         accordionList.appendChild(liElement);
-        Console.log("list element");
+        console.log("list element");
         console.log(liElement);
     })
     console.log(accordionList)
