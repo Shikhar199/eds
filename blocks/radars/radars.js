@@ -1,4 +1,5 @@
 export default function decorate(block){
+    block.innerHTML = '';
     const accordionList = document.createElement('ul');
     accordionList.setAttribute('accordion-list', '');
     
