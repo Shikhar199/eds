@@ -62,5 +62,6 @@ export default function decorate(block){
 
     const targetDiv = document.querySelector(".radars-container .default-content-wrapper");
     targetDiv.appendChild(mainElement);*/
+    block.appendChild(accordionList);
 
 }
