@@ -15,7 +15,9 @@ export default function decorate(block){
                 liElement.appendChild(imgElement);
             } else if (c === 1) { // Second column contains text
                 [...col.childNodes].forEach((node)=>{
-                    console.log(node.textContent.trim());
+                     if (node.nodeType === Node.TEXT_NODE) {
+                         console.log(node.textContent.trim());
+                     }
                 })
                 /*const divElement = document.createElement('div');
                 const h3Element = document.createElement('h3');
