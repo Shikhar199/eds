@@ -26,8 +26,10 @@ export default function decorate(block){
 
         })
         accordionList.appendChild(liElement);
+        Console.log("list element");
+        console.log(liElement);
     })
-    
+    console.log(accordionList)
     /*const mainElement = document.createElement('main');
     mainElement.classList.add("home-page-wrapper");
 
