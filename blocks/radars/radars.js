@@ -1,5 +1,34 @@
 export default function decorate(block){
-    const mainElement = document.createElement('main');
+    const accordionList = document.createElement('ul');
+    accordionList.setAttribute('accordion-list', '');
+    
+    [...block.children].forEach((row)=>{
+        const liElement = document.createElement('li');
+        li.classList.add("enterprises", "home-overlay");
+
+        [...row.children].forEach((col,c)=>{
+            if (c === 0) { // First column contains image
+                const imgElement = document.createElement('img');
+                imgElement.setAttribute('src', col.querySelector('img').getAttribute('src'));
+                imgElement.setAttribute('alt', 'Sustainability');
+                imgElement.classList.add('img-fluid', 'theme-image');
+                liElement.appendChild(imgElement);
+            } else if (c === 1) { // Second column contains text
+                const divElement = document.createElement('div');
+                const h3Element = document.createElement('h3');
+                const pElement = document.createElement('p');
+                h3Element.textContent = col.querySelector('strong').textContent;
+                pElement.textContent = col.querySelector('p').textContent;
+                divElement.appendChild(h3Element);
+                divElement.appendChild(pElement);
+                liElement.appendChild(divElement);
+            }
+
+        })
+        accordionList.appendChild(liElement);
+    })
+    
+    /*const mainElement = document.createElement('main');
     mainElement.classList.add("home-page-wrapper");
 
     const sectionElement = document.createElement('section');
@@ -30,6 +59,6 @@ export default function decorate(block){
     divElement4.appendChild(headingElement);
 
     const targetDiv = document.querySelector(".radars-container .default-content-wrapper");
-    targetDiv.appendChild(mainElement);
+    targetDiv.appendChild(mainElement);*/
 
 }
