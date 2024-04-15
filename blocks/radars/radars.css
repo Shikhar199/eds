@@ -19,6 +19,30 @@ body{
     list-style-type: none;
 }
 
+.accordian-wrapper .enterprise{
+    position: relative;
+    filter: grayscale(100%);
+}
+
+.accordian-wrapper .enterprise .theme-image{
+    position: absolute;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+}
+
+.accordian-wrapper li.active.agile,
+.accordian-wrapper li.active.ai,
+.accordian-wrapper li.active.cloud,
+.accordian-wrapper li.active.compass,
+.accordian-wrapper li.active.corporate,
+.accordian-wrapper li.active.enterprises {
+    filter: grayscale(0);
+}
+
+
 ul{
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -26,4 +50,17 @@ ul{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
     unicode-bidi: isolate;
+}
+
+@media (max-width: 767px){
+    .accordian-wrapper .accordian-list{
+        flex-direction: column;
+        max-height: unset;    
+    }
+}
+
+@media (max-width: 767px){
+    .accordian-wrapper .enterprises .theme-image{
+        width: 100%
+    }
 }
