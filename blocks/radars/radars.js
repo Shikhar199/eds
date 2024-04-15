@@ -1,6 +1,6 @@
 export default function decorate(block){
     const accordionList = document.createElement('ul');
-    accordionList.setAttribute('accordion-list', '');
+    accordionList.classList.add('accordion-list');
     
     [...block.children].forEach((row)=>{
         const liElement = document.createElement('li');
