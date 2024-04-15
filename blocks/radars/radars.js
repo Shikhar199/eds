@@ -18,7 +18,7 @@ export default function decorate(block){
                 const h3Element = document.createElement('h3');
                 const pElement = document.createElement('p');
                 console.log(col.querySelector('p').textContent);
-                console.log(col.querySelector('span').textContent;);
+                console.log(col.querySelector('span').textContent);
                 h3Element.textContent = col.querySelector('strong').textContent;
                 pElement.textContent = col.querySelector('p').textContent;
                 divElement.appendChild(h3Element);
