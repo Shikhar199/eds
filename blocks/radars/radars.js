@@ -4,7 +4,7 @@ export default function decorate(block){
     
     [...block.children].forEach((row)=>{
         const liElement = document.createElement('li');
-        li.classList.add("enterprises", "home-overlay");
+        liElement.classList.add("enterprises", "home-overlay");
 
         [...row.children].forEach((col,c)=>{
             if (c === 0) { // First column contains image
