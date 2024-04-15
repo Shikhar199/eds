@@ -1,5 +1,4 @@
 export default function decorate(block){
-    block.innerHTML = '';
     const accordionList = document.createElement('ul');
     accordionList.setAttribute('accordion-list', '');
     
@@ -31,6 +30,7 @@ export default function decorate(block){
         console.log(liElement);
     })
     console.log(accordionList)
+    block.innerHTML = '';
     /*const mainElement = document.createElement('main');
     mainElement.classList.add("home-page-wrapper");
 
