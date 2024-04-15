@@ -14,16 +14,18 @@ export default function decorate(block){
                 imgElement.classList.add('img-fluid', 'theme-image');
                 liElement.appendChild(imgElement);
             } else if (c === 1) { // Second column contains text
-                const divElement = document.createElement('div');
+                [...col.childNodes].forEach((node)=>{
+                    console.log(node.textContent);
+                })
+                /*const divElement = document.createElement('div');
                 const h3Element = document.createElement('h3');
                 const pElement = document.createElement('p');
                 console.log(col.querySelector('p').textContent);
-                console.log(col.querySelector('span').textContent);
                 h3Element.textContent = col.querySelector('strong').textContent;
                 pElement.textContent = col.querySelector('p').textContent;
                 divElement.appendChild(h3Element);
                 divElement.appendChild(pElement);
-                liElement.appendChild(divElement);
+                liElement.appendChild(divElement);*/
             }
 
         })
