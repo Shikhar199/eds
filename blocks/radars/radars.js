@@ -14,11 +14,21 @@ export default function decorate(block){
                 imgElement.classList.add('img-fluid', 'theme-image');
                 liElement.appendChild(imgElement);
             } else if (c === 1) { // Second column contains text
+                const divElement = document.createElement('div');
                 [...col.childNodes].forEach((node,i)=>{
                      if (node.nodeType !== Node.TEXT_NODE) {
                          console.log(node.textContent.trim());
-                         console.log(i);
+                         if(i==1){
+                             const h3Element = document.createElement('h3');
+                             h3Element.textContent = node.textContent.trim();
+                         } else if(i==3){
+                             const pElement = document.createElement('p');
+                             pElement.textContent = node.textContent.trim();
+                         }
                      }
+                     divElement.appendChild(h3Element);
+                     divElement.appendChild(pElement);
+                     liElement.appendChild(divElement);
                 })
                 /*const divElement = document.createElement('div');
                 const h3Element = document.createElement('h3');
