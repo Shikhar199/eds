@@ -1,0 +1,29 @@
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: myriad-pro, Arial;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.45;
+}
+
+.accordion-wrapper .accordion-list {
+    display: flex;
+    min-height: 600px;
+    max-height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+ul{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
