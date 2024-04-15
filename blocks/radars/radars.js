@@ -21,13 +21,13 @@ export default function decorate(block){
                          if(i==1){
                              const h3Element = document.createElement('h3');
                              h3Element.textContent = node.textContent.trim();
+                             divElement.appendChild(h3Element);
                          } else if(i==3){
                              const pElement = document.createElement('p');
                              pElement.textContent = node.textContent.trim();
+                             divElement.appendChild(pElement);
                          }
                      }
-                     divElement.appendChild(h3Element);
-                     divElement.appendChild(pElement);
                      liElement.appendChild(divElement);
                 })
                 /*const divElement = document.createElement('div');
