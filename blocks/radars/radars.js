@@ -75,14 +75,27 @@ export default function decorate(block){
         ourRadarsHeading.parentNode.insertBefore(radarsBlock, ourRadarsHeading.nextSibling);
     }
 
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select the first li element in the accordion
+        const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
+    
+        // Add the 'active' class to the first accordion item
+        firstAccordionItem.classList.add('active');
+    
+        // Start the initial interval after a delay
+        setTimeout(function() {
+            // Start the interval for automatic activation
+            activeInterval = setInterval(activeAccordion, 5000);
+        }, 3000); // Adjust the delay as needed
+}    );
+
+    
+
     let accordion = document.querySelectorAll('.accordion-list');
     let accordList = document.querySelectorAll('.accordion-list li');
     let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
-    const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
-    
-    // Add the 'active' class to the first accordion item
-    firstAccordionItem.classList.add('active');
-
+   
     console.log(accordion);
     console.log(accordList);
     console.log(accordionTitle);
