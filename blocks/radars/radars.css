@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.accordion-wrapper, .accordion-list {
+.accordion-wrapper .accordion-list {
     display: flex !important;
     min-height: 600px;
     max-height: 600px;
@@ -12,12 +12,12 @@
     list-style-type: none;
 }
 
-.accordion-wrapper, .enterprise{
+.accordion-wrapper .enterprise{
     position: relative;
     filter: grayscale(100%);
 }
 
-.accordion-wrapper, .enterprise,.theme-image{
+.accordion-wrapper .enterprise,.theme-image{
     position: absolute;
     height: 100%;
     -o-object-fit: cover;
@@ -26,12 +26,38 @@
     object-position: center center;
 }
 
-.accordion-wrapper, li.active.agile,
-.accordion-wrapper, li.active.ai,
-.accordion-wrapper, li.active.cloud,
-.accordion-wrapper, li.active.compass,
-.accordion-wrapper, li.active.corporate,
-.accordion-wrapper, li.active.enterprises {
+.accordion-wrapper li{
+    flex: 0;
+    display: flex;
+    align-items: stretch;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.accordion-wrapper li .section-content{
+    flex: 0;
+    display: none;
+    margin: 0;
+    opacity: 0;
+    transition: all 0.25s 0.1s ease-out;
+    padding: 3.9rem 4.4rem
+}
+
+.accordion-wrapper li .section-content h4{
+    margin-top: 1rem;
+}
+
+.accordion-wrapper li.active{
+    flex: 5;
+    cursor:default
+}
+
+.accordion-wrapper li.active.agile,
+.accordion-wrapper li.active.ai,
+.accordion-wrapper li.active.cloud,
+.accordion-wrapper li.active.compass,
+.accordion-wrapper li.active.corporate,
+.accordion-wrapper li.active.enterprises {
     filter: grayscale(0);
 }
 
@@ -42,7 +68,6 @@ ul{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
     unicode-bidi: isolate;
-    list-style-type: none;
 }  
 
 body{
@@ -64,3 +89,22 @@ body{
         width: 100%
     }
 }
+
+@media (max-width: 767px){
+    .accordion-wraper li{
+        overflow: hidden;
+        height: 0;
+    }
+}
+
+@media (max-width: 767px){
+    .accordion-wraper li.home-overlay::after{
+        width: 100%;
+        background: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 0),
+            rgba(0, 0, 0, 0.98)
+        );  
+    }
+}
+
