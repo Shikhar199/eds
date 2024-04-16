@@ -94,6 +94,9 @@ export default function decorate(block){
     }
 
     //accordList.on('click', toggleAccordion)
+    for(int i=0; i<accordList.length; i++){
+        accordList[i].addEventListener('click', toggleAccordion);
+    }
     accordList.addEventListener('click', toggleAccordion)
 
     setTimeout(()=>{
