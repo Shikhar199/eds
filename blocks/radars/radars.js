@@ -43,18 +43,13 @@ export default function decorate(block){
 
         })
         accordionList.appendChild(liElement);
-        console.log("list element");
-        console.log(liElement);
     })
     console.log(accordionList)
     block.innerHTML = '';
     
     block.appendChild(accordionList);
 
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     const radarsWrapperParent = document.querySelector('.section.radars-container');
 
     // Find the div.radars-wrapper element
@@ -76,3 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         ourRadarsHeading.parentNode.insertBefore(radarsBlock, ourRadarsHeading.nextSibling);
     }
 });
+
+}
+
