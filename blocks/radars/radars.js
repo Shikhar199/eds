@@ -97,7 +97,6 @@ export default function decorate(block){
     for(let i=0; i<accordList.length; i++){
         accordList[i].addEventListener('click', toggleAccordion);
     }
-    accordList.addEventListener('click', toggleAccordion)
 
     setTimeout(()=>{
         activeIntervel = setInterval(()=>{
