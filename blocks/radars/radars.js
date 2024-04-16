@@ -78,6 +78,10 @@ export default function decorate(block){
     let accordion = document.querySelectorAll('.accordion-list');
     let accordList = document.querySelectorAll('.accordion-list li');
     let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
+    const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
+    
+    // Add the 'active' class to the first accordion item
+    firstAccordionItem.classList.add('active');
 
     console.log(accordion);
     console.log(accordList);
@@ -101,11 +105,9 @@ export default function decorate(block){
     accordList.forEach(item => item.addEventListener('click', toggleAccordion));
 
     // Start the initial interval after 3000 milliseconds
-    /*setTimeout(() => {
+    setTimeout(() => {
         activeInterval = setInterval(activeAccordion, 5000);
-    }, 0);*/
-   
-   activeInterval = setInterval(activeAccordion, 5000); 
+    }, 3000);
 
     function activeAccordion(){
          // Remove 'active' class from all accordion items
