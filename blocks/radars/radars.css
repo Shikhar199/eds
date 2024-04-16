@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.accordion-wrapper,.accordion-list {
+.accordion-wrapper, .accordion-list {
     display: flex !important;
     min-height: 600px;
     max-height: 600px;
@@ -12,12 +12,12 @@
     list-style-type: none;
 }
 
-.accordion-wrapper,.enterprise{
+.accordion-wrapper, .enterprise{
     position: relative;
     filter: grayscale(100%);
 }
 
-.accordion-wrapper,.enterprise,.theme-image{
+.accordion-wrapper, .enterprise,.theme-image{
     position: absolute;
     height: 100%;
     -o-object-fit: cover;
@@ -26,12 +26,12 @@
     object-position: center center;
 }
 
-.accordion-wrapper li.active.agile,
-.accordion-wrapper li.active.ai,
-.accordion-wrapper li.active.cloud,
-.accordion-wrapper li.active.compass,
-.accordion-wrapper li.active.corporate,
-.accordion-wrapper li.active.enterprises {
+.accordion-wrapper, li.active.agile,
+.accordion-wrapper, li.active.ai,
+.accordion-wrapper, li.active.cloud,
+.accordion-wrapper, li.active.compass,
+.accordion-wrapper, li.active.corporate,
+.accordion-wrapper, li.active.enterprises {
     filter: grayscale(0);
 }
 
