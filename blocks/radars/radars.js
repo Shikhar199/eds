@@ -85,10 +85,12 @@ export default function decorate(block){
     
         // Start the initial interval after a delay
         setTimeout(function() {
-            // Start the interval for automatic activation
             activeInterval = setInterval(activeAccordion, 5000);
-        }, 3000); // Adjust the delay as needed
-}    );
+        }, 0); // Start immediately
+
+        // Attach click event listener to each accordion item
+        accordList.forEach(item => item.addEventListener('click', toggleAccordion));
+    });
 
     
 
