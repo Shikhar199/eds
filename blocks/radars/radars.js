@@ -88,7 +88,7 @@ export default function decorate(block){
     
     function toggleAccordion(){
         accordList.classList.remove('active');
-        $(this)..classList.add('active');
+        $(this).classList.add('active');
         clearInterval(activeIntervel);
         setTimeout(activeAccordion(), 3000);
     }
