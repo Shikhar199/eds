@@ -101,9 +101,9 @@ export default function decorate(block){
     accordList.forEach(item => item.addEventListener('click', toggleAccordion));
 
     // Start the initial interval after 3000 milliseconds
-    setTimeout(() => {
+    /*setTimeout(() => {
         activeInterval = setInterval(activeAccordion, 5000);
-    }, 3000);
+    }, 3000);*/
 
     function activeAccordion(){
          // Remove 'active' class from all accordion items
