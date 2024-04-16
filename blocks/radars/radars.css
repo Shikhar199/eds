@@ -54,14 +54,14 @@ body{
 }
 
 @media (max-width: 767px){
-    .accordian-wrapper .accordian-list{
+    .accordion-wrapper .accordion-list{
         flex-direction: column;
         max-height: unset;    
     }
 }
 
 @media (max-width: 767px){
-    .accordian-wrapper .enterprises .theme-image{
+    .accordion-wrapper .enterprises .theme-image{
         width: 100%
     }
 }
