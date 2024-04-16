@@ -107,8 +107,8 @@ export default function decorate(block){
 
     function activeAccordion(){
         activeIntervel = setInterval(()=>{
-            accordList.removeClass('active');
-            accordList.eq(counter).addClass('active');
+            accordList.classList.remove('active');
+            accordList.eq(counter).classList.add('active');
             counter++;
             if(counter == accordList.length) counter = 0;
             },5000);
