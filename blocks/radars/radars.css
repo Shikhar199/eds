@@ -49,7 +49,82 @@
 
 .accordion-wraper li.active{
     flex: 5;
-    cursor:default
+    cursor: default;
+}
+
+.accordion-wraper li.active .section-title{
+    display: none;
+}
+
+.accordion-wraper li.active .section-content{
+    flex: 4;
+    opacity: 1;
+    transform: scaleX(1);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.accordion-wraper li.active .section-content h3{
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.accordion-wraper li.active .section-content p{
+    color: #fff;
+    font-size: 2rem;
+    max-width: 33rem;
+}
+
+accordion-wraper li.active .section-content .details-link{
+    color: #fff;
+    max-width: 3rem;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.accordion-wraper
+ li.active
+.section-content
+.details-link
+.icon-long-right-arrow{
+    margin-top: 2.2rem;
+}
+
+.accordion-wraper
+ li.active
+.section-content
+.details-link
+.icon-long-right-arrow::before{
+    font-size: 2.2rem;
+}
+
+.accordion-wraper li.active.home-overlay::after{
+    height: 40rem;
+}
+
+.accordion-wraper li .section-title{
+    flex: 0;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    z-index: 1;
+}
+
+.accordion-wraper li .section-title h4{
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    pading: 6rem 0;
+    width: 80px;
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: 900;
 }
 
 .accordion-wraper li.active.agile,
