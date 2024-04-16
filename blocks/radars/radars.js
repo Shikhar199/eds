@@ -75,9 +75,9 @@ export default function decorate(block){
         ourRadarsHeading.parentNode.insertBefore(radarsBlock, ourRadarsHeading.nextSibling);
     }
 
-    let accordion = document.querySelector('.accordion-list');
-    let accordList = document.querySelector('.accordion-list li');
-    let accordionTitle = document.querySelector('.accordion-list li .section-title');
+    let accordion = document.querySelectorAll('.accordion-list');
+    let accordList = document.querySelectorAll('.accordion-list li');
+    let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
 
     console.log(accordion);
     console.log(accordList);
