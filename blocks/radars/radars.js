@@ -49,7 +49,6 @@ export default function decorate(block){
     
     block.appendChild(accordionList);
 
-    document.addEventListener('DOMContentLoaded', function() {
     const radarsWrapperParent = document.querySelector('.section.radars-container');
 
     // Find the div.radars-wrapper element
@@ -75,7 +74,7 @@ export default function decorate(block){
     if (radarsBlock && ourRadarsHeading) {
         ourRadarsHeading.parentNode.insertBefore(radarsBlock, ourRadarsHeading.nextSibling);
     }
-});
+
 
 }
 
