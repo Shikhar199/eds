@@ -86,7 +86,7 @@ export default function decorate(block){
     let accordList = document.querySelector('.accordion-list li');
     let accordionTitle = document.querySelector('.accordion-list li .section-title');
 
-    counter = 0;
+    let counter = 0;
     let activeIntervel;
     
     function toggleAccordion(){
