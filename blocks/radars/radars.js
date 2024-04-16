@@ -99,7 +99,7 @@ export default function decorate(block){
     setTimeout(()=>{
         activeIntervel = setInterval(()=>{
             accordList.classList.remove('active');
-            accordList.eq(counter).classList.add('active');
+            accordList[counter].classList.add('active');
             count++;
             if(counter == accordList.length) counter = 0;
         },5000);
@@ -108,7 +108,7 @@ export default function decorate(block){
     function activeAccordion(){
         activeIntervel = setInterval(()=>{
             accordList.classList.remove('active');
-            accordList.eq(counter).classList.add('active');
+            accordList[counter].classList.add('active');
             counter++;
             if(counter == accordList.length) counter = 0;
             },5000);
