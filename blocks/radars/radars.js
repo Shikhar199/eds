@@ -87,33 +87,36 @@ export default function decorate(block){
     let activeIntervel;
     
     function toggleAccordion(){
-        accordList.classList.remove('active');
-        $(this).classList.add('active');
-        clearInterval(activeIntervel);
-        setTimeout(activeAccordion(), 3000);
+        // Remove 'active' class from all accordion items
+        accordList.forEach(item => item.classList.remove('active'));
+        // Add 'active' class to the clicked accordion item
+        this.classList.add('active');
+        // Clear any existing interval
+        clearInterval(activeInterval);
+        // Start a new interval after 3000 milliseconds
+        activeInterval = setInterval(activeAccordion, 5000);
     }
 
-    //accordList.on('click', toggleAccordion)
-    for(let i=0; i<accordList.length; i++){
-        accordList[i].addEventListener('click', toggleAccordion);
-    }
+    // Attach click event listener to each accordion item
+    accordList.forEach(item => item.addEventListener('click', toggleAccordion));
 
-    setTimeout(()=>{
-        activeIntervel = setInterval(()=>{
-            accordList.classList.remove('active');
-            accordList[counter].classList.add('active');
-            count++;
-            if(counter == accordList.length) counter = 0;
-        },5000);
-    },3000);
+    // Start the initial interval after 3000 milliseconds
+    setTimeout(() => {
+        activeInterval = setInterval(activeAccordion, 5000);
+    }, 3000);
 
     function activeAccordion(){
-        activeIntervel = setInterval(()=>{
-            accordList.classList.remove('active');
-            accordList[counter].classList.add('active');
-            counter++;
-            if(counter == accordList.length) counter = 0;
-            },5000);
+         // Remove 'active' class from all accordion items
+        accordList.forEach(item => item.classList.remove('active'));
+    
+        // Add 'active' class to the current accordion item
+        accordList[counter].classList.add('active');
+    
+        // Increment counter and reset if it exceeds the length of accordList
+        counter++;
+        if (counter === accordList.length) {
+            counter = 0;
+        }
     }
 }
 
