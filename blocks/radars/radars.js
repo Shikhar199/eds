@@ -61,6 +61,11 @@ export default function decorate(block){
     // Find the div.radars.block element
     const radarsBlock = document.querySelector('.radars.block');
 
+    console.log(radarWrapperParent);
+    console.log(radarsWrapper);
+    console.log(ourRadarsHeading);
+    console.log(radarsBlock);
+        
     // Remove the radarsWrapper element if it exists
     if (radarsWrapper) {
         radarsWrapperParent.removeChild(radarsWrapper);
