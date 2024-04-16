@@ -79,12 +79,12 @@
     max-width: 33rem;
 }
 
-.accordion-wraper li.active .section-content .details-link{
+/*.accordion-wraper li.active .section-content .details-link{
     color: #fff;
     max-width: 3rem;
     display: inline-flex;
     flex-direction: column;
-}
+}*/
 
 .accordion-wraper
  li.active
