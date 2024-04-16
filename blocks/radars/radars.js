@@ -60,7 +60,7 @@ export default function decorate(block){
     // Find the div.radars.block element
     const radarsBlock = document.querySelector('.radars.block');
 
-    console.log(radarWrapperParent);
+    console.log(radarsWrapperParent);
     console.log(radarsWrapper);
     console.log(ourRadarsHeading);
     console.log(radarsBlock);
