@@ -20,7 +20,6 @@ export default function decorate(block){
                 firstDivElement.classList.add('section-title');
                 [...col.childNodes].forEach((node,i)=>{
                      if (node.nodeType !== Node.TEXT_NODE) {
-                         console.log(node.textContent.trim());
                          if(i==1){
                              const h3Element = document.createElement('h3');
                              const h4Element = document.createElement('h4');
@@ -51,7 +50,6 @@ export default function decorate(block){
         })
         accordionList.appendChild(liElement);
     })
-    console.log(accordionList)
     block.innerHTML = '';
     
     block.appendChild(accordionList);
@@ -67,11 +65,6 @@ export default function decorate(block){
     // Find the div.radars.block element
     const radarsBlock = document.querySelector('.radars.block');
 
-    console.log(radarsWrapperParent);
-    console.log(radarsWrapper);
-    console.log(ourRadarsHeading);
-    console.log(radarsBlock);
-        
     // Remove the radarsWrapper element if it exists
     if (radarsWrapper) {
         radarsWrapperParent.removeChild(radarsWrapper);
@@ -86,6 +79,10 @@ export default function decorate(block){
     let accordList = document.querySelector('.accordion-list li');
     let accordionTitle = document.querySelector('.accordion-list li .section-title');
 
+    console.log(accordion);
+    console.log(accordList);
+    console.log(accordionTitle);
+    
     let counter = 0;
     let activeIntervel;
     
@@ -96,7 +93,8 @@ export default function decorate(block){
         setTimeout(activeAccordion(), 3000);
     }
 
-    accordList.on('click', toggleAccordion)
+    //accordList.on('click', toggleAccordion)
+    accordList.addEventListener('click', toggleAccordion)
 
     setTimeout(()=>{
         activeIntervel = setInterval(()=>{
