@@ -35,7 +35,7 @@
     filter: grayscale(0);
 }
 
-
+/*
 ul{
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -44,7 +44,7 @@ ul{
     padding-inline-start: 40px;
     unicode-bidi: isolate;
     list-style-type: none;
-}
+}  */
 
 body{
     font-family: myriad-pro, Arial;
