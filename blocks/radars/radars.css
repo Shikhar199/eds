@@ -2,13 +2,6 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: myriad-pro, Arial;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1.45;
-}
-
 .accordion-wrapper .accordion-list {
     display: flex;
     min-height: 600px;
@@ -51,6 +44,13 @@ ul{
     padding-inline-start: 40px;
     unicode-bidi: isolate;
     list-style-type: none;
+}
+
+body{
+    font-family: myriad-pro, Arial;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.45;
 }
 
 @media (max-width: 767px){
