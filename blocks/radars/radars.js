@@ -84,7 +84,7 @@ export default function decorate(block){
     console.log(accordionTitle);
     
     let counter = 0;
-    let activeIntervel;
+    let activeInterval;
     
     function toggleAccordion(){
         // Remove 'active' class from all accordion items
