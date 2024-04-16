@@ -15,19 +15,26 @@ export default function decorate(block){
                 liElement.appendChild(imgElement);
             } else if (c === 1) { // Second column contains text
                 const divElement = document.createElement('div');
+                const firstDivElement = document.createElement('div');
+                divElement.classList.add('section-content');
+                firstDivElement.classList.add('section-title');
                 [...col.childNodes].forEach((node,i)=>{
                      if (node.nodeType !== Node.TEXT_NODE) {
                          console.log(node.textContent.trim());
                          if(i==1){
                              const h3Element = document.createElement('h3');
+                             const h4Element = document.createElement('h4');
                              h3Element.textContent = node.textContent.trim();
+                             h4Element.textContent = node.textContent.trim();
                              divElement.appendChild(h3Element);
+                             firstDivElement.appendChild(h4Element);
                          } else if(i==3){
                              const pElement = document.createElement('p');
                              pElement.textContent = node.textContent.trim();
                              divElement.appendChild(pElement);
                          }
                      }
+                     liElement.appendChild(firstDivElement);
                      liElement.appendChild(divElement);
                 })
                 /*const divElement = document.createElement('div');
