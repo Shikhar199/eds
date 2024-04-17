@@ -77,6 +77,7 @@ export default function decorate(block){
 
 
     document.addEventListener('DOMContentLoaded', function() {
+        console.log("Inside DOM Content Loaded");
         // Select the first li element in the accordion
         const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
     
