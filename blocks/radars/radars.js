@@ -75,7 +75,8 @@ export default function decorate(block){
         ourRadarsHeading.parentNode.insertBefore(radarsBlock, ourRadarsHeading.nextSibling);
     }
 
-
+    let counter = 0;
+    let activeInterval;
 
         console.log("Inside DOM Content Loaded");
         // Select the first li element in the accordion
@@ -99,10 +100,6 @@ export default function decorate(block){
     let accordion = document.querySelectorAll('.accordion-list');
     let accordList = document.querySelectorAll('.accordion-list li');
     let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
-
-    
-    let counter = 0;
-    let activeInterval;
     
     function toggleAccordion(){
         // Remove 'active' class from all accordion items
