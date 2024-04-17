@@ -78,6 +78,11 @@ export default function decorate(block){
     let counter = 0;
     let activeInterval;
 
+    
+    let accordion = document.querySelectorAll('.accordion-list');
+    let accordList = document.querySelectorAll('.accordion-list li');
+    let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
+
         console.log("Inside DOM Content Loaded");
         // Select the first li element in the accordion
         const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
@@ -94,12 +99,6 @@ export default function decorate(block){
 
         // Attach click event listener to each accordion item
         accordList.forEach(item => item.addEventListener('click', toggleAccordion));
-
-    
-
-    let accordion = document.querySelectorAll('.accordion-list');
-    let accordList = document.querySelectorAll('.accordion-list li');
-    let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
     
     function toggleAccordion(){
         // Remove 'active' class from all accordion items
