@@ -93,12 +93,12 @@ export default function decorate(block){
         console.log(firstAccordionItem);
     
         // Start the initial interval after a delay
-        setTimeout(function() {
-            activeInterval = setInterval(activeAccordion, 5000);
-        }, 3000); // Start immediately
+        // setTimeout(function() {
+        //     activeInterval = setInterval(activeAccordion, 5000);
+        // }, 3000); // Start immediately
 
         // Attach click event listener to each accordion item
-        accordList.forEach(item => item.addEventListener('click', toggleAccordion));
+        // accordList.forEach(item => item.addEventListener('click', toggleAccordion));
     
     function toggleAccordion(){
         // Remove 'active' class from all accordion items
