@@ -1,5 +1,17 @@
 export default function decorate(block){
 
+    // Create div element with class "interests-main"
+    const interestsMain = document.createElement('div');
+    interestsMain.classList.add('interests-main');
+
+    // Create div element with class "row" and "no-gutters"
+    const row1 = document.createElement('div');
+    row1.classList.add('row', 'no-gutters');
+
+    // Create div element with class "row" and "no-gutters"
+    const row1 = document.createElement('div');
+    row1.classList.add('row', 'no-gutters', 'mt-sm-3');
+    
     [...block.children].forEach((row)=>{
         console.log(block);
     }
