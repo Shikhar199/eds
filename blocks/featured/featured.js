@@ -1,5 +1,6 @@
 export default function decorate(block){
 
+    console.log("Hi");
     // Create div element with class "interests-main"
     const interestsMain = document.createElement('div');
     interestsMain.classList.add('interests-main');
