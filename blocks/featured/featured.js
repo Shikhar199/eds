@@ -107,8 +107,10 @@ export default function decorate(block){
                 console.log(col);
                 if(c==0){
                     [...col.childNodes].forEach((node,i)=>{
-                        console.log(i);
-                        console.log(node);
+                        if(i==1||1==3||i==5){
+                            console.log(i);
+                            console.log(node.querySelector('picture').querySelector('img').getAttribute('src'));
+                        }
                     })
                 }
             })
