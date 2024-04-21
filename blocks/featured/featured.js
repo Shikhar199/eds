@@ -34,33 +34,60 @@ export default function decorate(block){
                     insightsWrapper1.appendChild(imgElement);
                 } else if (c==1){
 
-                    [...col.childNodes].forEach((node,i)=>{
-                        console.log(i);
-                        console.log(node.textContent.trim());
-                    })
-
                     const insightsDiv = document.createElement('div');
                     insightsDiv.classList.add('insights');
 
-                    const insightsh3 = document.createElement('h3');
-                    insightsh3.classList.add('interest-heading');
+                    [...col.childNodes].forEach((node,i)=>{
+                        if(i==1){
+                            const insightsh3 = document.createElement('h3');
+                            insightsh3.classList.add('interest-heading');
 
-                    const insightsAnchor = document.createElement('a');
-                    insightsAnchor.href = '/iki/perspectives/generative-ai-responsibility.html';
-                    insightsAnchor.title = 'Use Generative AI with Responsibility';
-                    insightsAnchor.textContent = "Use Generative AI with Responsibility";
-                    
-                    const insightsAnchorSpan1 = document.createElement('span');
-                    insightsAnchorSpan1.classList.add('find-more-white');
+                            const insightsAnchor = document.createElement('a');
+                            insightsAnchor.href = '/iki/perspectives/generative-ai-responsibility.html';
+                            insightsAnchor.title = node.textContent.trim();
+                            insightsAnchor.textContent = node.textContent.trim();
 
-                    const insightsAnchorSpan2 = document.createElement('span');
-                    insightsAnchorSpan2.classList.add('icon-long-right-arrow');
+                            const insightsAnchorSpan1 = document.createElement('span');
+                            insightsAnchorSpan1.classList.add('icon-long-right-arrow');
 
-                    insightsDiv.appendChild(insightsh3);
-                    insightsh3.appendChild(insightsAnchor);
-                    insightsAnchor.appendChild(insightsAnchorSpan1);
-                    insightsAnchor.appendChild(insightsAnchorSpan2);
-                    insightsAnchorSpan1.appendChild();
+                            insightsAnchor.appendChild(insightsAnchorSpan1);
+                            insightsh3.appendChild(insightsAnchor);
+                            insightsDiv.appendChild(insightsh3);
+                        } else if(i==3){
+                            const insightsAnchor = document.createElement('a');
+                            insightsAnchor.href = '/iki/perspectives.html';
+                            insightsAnchor.title = node.textContent.trim();
+                            insightsAnchor.textContent = node.textContent.trim();
+                            insightsAnchor.classList.add('find-more-desktop');
+
+                            const insightsAnchorSpan1 = document.createElement('span');
+                            insightsAnchorSpan1.classList.add('find-more-white');
+                            insightsAnchorSpan1.textContent = node.textContent.trim();
+
+                            const insightsAnchorSpan2 = document.createElement('span');
+                            insightsAnchorSpan2.classList.add('icon-chevron-right-circle-white');
+
+                            const insightsAnchorSpan3 = document.createElement('span');
+                            insightsAnchorSpan3.classList.add('icon-long-right-arrow');
+
+                            insightsAnchorSpan1.appendChild(insightsAnchorSpan2);
+
+                            insightsAnchor.appendChild(insightsAnchorSpan1);
+                            insightsAnchor.appendChild(insightsAnchorSpan3);
+
+                            insightsDiv.appendChild(insightsAnchor);
+                        }
+                    })
+
+                    // const insightsAnchorSpan2 = document.createElement('span');
+                    // insightsAnchorSpan2.classList.add('icon-long-right-arrow');
+
+                    // insightsDiv.appendChild(insightsh3);
+                    // insightsh3.appendChild(insightsAnchor);
+                    // insightsAnchor.appendChild(insightsAnchorSpan1);
+                    // insightsAnchor.appendChild(insightsAnchorSpan2);
+                    // insightsAnchorSpan1.appendChild();
+                    insightsWrapper1.appendChild(insightsDiv);
                 }
             })
 
