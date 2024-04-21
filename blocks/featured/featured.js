@@ -36,52 +36,7 @@ export default function decorate(block){
                     imgElement.classList.add('img-fluid', 'insights-image');
                     insightsWrapper1.appendChild(imgElement);
                 } else if (c==1){
-
-                    const insightsDiv = document.createElement('div');
-                    insightsDiv.classList.add('insights');
-
-                    [...col.childNodes].forEach((node,i)=>{
-                        if(i==1){
-                            const insightsh3 = document.createElement('h3');
-                            insightsh3.classList.add('interest-heading');
-
-                            const insightsAnchor = document.createElement('a');
-                            insightsAnchor.href = '/iki/perspectives/generative-ai-responsibility.html';
-                            insightsAnchor.title = node.textContent.trim();
-                            insightsAnchor.textContent = node.textContent.trim();
-
-                            const insightsAnchorSpan1 = document.createElement('span');
-                            insightsAnchorSpan1.classList.add('icon-long-right-arrow');
-
-                            insightsAnchor.appendChild(insightsAnchorSpan1);
-                            insightsh3.appendChild(insightsAnchor);
-                            insightsDiv.appendChild(insightsh3);
-                        } else if(i==3){
-                            const insightsAnchor = document.createElement('a');
-                            insightsAnchor.href = '/iki/perspectives.html';
-                            insightsAnchor.title = node.textContent.trim();
-                            insightsAnchor.textContent = node.textContent.trim();
-                            insightsAnchor.classList.add('find-more-desktop');
-
-                            const insightsAnchorSpan1 = document.createElement('span');
-                            insightsAnchorSpan1.classList.add('find-more-white');
-                            insightsAnchorSpan1.textContent = node.textContent.trim();
-
-                            const insightsAnchorSpan2 = document.createElement('span');
-                            insightsAnchorSpan2.classList.add('icon-chevron-right-circle-white');
-
-                            const insightsAnchorSpan3 = document.createElement('span');
-                            insightsAnchorSpan3.classList.add('icon-long-right-arrow');
-
-                            insightsAnchorSpan1.appendChild(insightsAnchorSpan2);
-
-                            insightsAnchor.appendChild(insightsAnchorSpan1);
-                            insightsAnchor.appendChild(insightsAnchorSpan3);
-
-                            insightsDiv.appendChild(insightsAnchor);
-                        }
-                    })
-
+                    const insightsDiv = createInsightsDiv(col, "/iki/perspectives/generative-ai-responsibility.html", 'icon-long-right-arrow', '/iki/perspectives.html', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
                     insightsWrapper1.appendChild(insightsDiv);
                 }
             })
@@ -102,22 +57,112 @@ export default function decorate(block){
             [...row.children].forEach((col,c)=>{
                 const interestHiddenDiv = document.createElement('div');
                 interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
-                console.log("col");
-                console.log(c);
-                console.log(col);
                 if(c==0){
                     [...col.childNodes].forEach((node,i)=>{
-                        if(i==1||1==3||i==5){
-                            console.log(i);
-                            console.log(node.querySelector('picture').querySelector('img').getAttribute('src'));
+                        if(i==0){
+                            const firstImgDiv = document.createElement('div');
+                            firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
+                            firstImgDiv.style.height = '141.225px';
+
+                            const firstImg = document.createElement('img');
+                            firstImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
+                            firstImg.classList.add('img-fluid', 'interactive-image');
+                            firstImg.setAttribute('alt', 'Video');
+
+                            const insightsDiv = createInsightsDiv(col, "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+
+                            const mobileDiv = document.createElement("div");
+                            mobileDiv.classList.add("find-more-mobile");
+
+                            firstImgDiv.appendChild(firstImg);
+                            firstImgDiv.appendChild(insightsDiv);
+                            firstImgDiv.appendChild(mobileDiv);    
+
+                        } else if(i==1){
+                            const secondImgDiv = document.createElement('div');
+                            secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
+                            secondImgDiv.style.height = '141.225px';
+
+                            const secondImg = document.createElement('img');
+                            secondImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
+                            secondImg.classList.add('img-fluid', 'interactive-image');
+                            secondImg.setAttribute('alt', 'Video');
+
+                            const insightsDiv = createInsightsDiv(col, "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+
+                            const mobileDiv = document.createElement("div");
+                            mobileDiv.classList.add("find-more-mobile");
+
+                            secondImgDiv.appendChild(secondImg);
+                            secondImgDiv.appendChild(insightsDiv);
+                            secondImgDiv.appendChild(mobileDiv);
+
+                        } else{
+
                         }
+                        
                     })
                 }
+                interestHiddenDiv.appendChild(firstImgDiv);
+                interestHiddenDiv.appendChild(secondImgDiv);
             })
 
         }
     })
-    console.log(interestsMain);
+    console.log("interestHiddenDiv");
+    console.log(interestHiddenDiv);
 
     
+}
+
+
+function createInsightsDiv(col, insightsAnchorHref, firstSpanClass, insightsAnchorHref2, anchorSpan1Class, anchorSpan2Class, anchorSpan3Class){
+    
+    const insightsDiv = document.createElement('div');
+    insightsDiv.classList.add('insights');
+
+    [...col.childNodes].forEach((node,i)=>{
+        if(i==1){
+            const insightsh3 = document.createElement('h3');
+            insightsh3.classList.add('interest-heading');
+
+            const insightsAnchor = document.createElement('a');
+            insightsAnchor.href = insightsAnchorHref;
+            insightsAnchor.title = node.textContent.trim();
+            insightsAnchor.textContent = node.textContent.trim();
+            insightsAnchor.classList.add('find-more-desktop');
+
+            const insightsAnchorSpan1 = document.createElement('span');
+            insightsAnchorSpan1.classList.add(firstSpanClass);
+
+            insightsAnchor.appendChild(insightsAnchorSpan1);
+            insightsh3.appendChild(insightsAnchor);
+            insightsDiv.appendChild(insightsh3);
+        } else if(i==3){
+            const insightsAnchor = document.createElement('a');
+            insightsAnchor.href = insightsAnchorHref2;
+            insightsAnchor.title = node.textContent.trim();
+            insightsAnchor.textContent = node.textContent.trim();
+            insightsAnchor.classList.add('find-more-desktop');
+
+            const insightsAnchorSpan1 = document.createElement('span');
+            insightsAnchorSpan1.classList.add(anchorSpan1Class);
+            insightsAnchorSpan1.textContent = node.textContent.trim();
+
+            const insightsAnchorSpan2 = document.createElement('span');
+            insightsAnchorSpan2.classList.add(anchorSpan2Class);
+
+            const insightsAnchorSpan3 = document.createElement('span');
+            insightsAnchorSpan3.classList.add(anchorSpan3Class);
+
+            insightsAnchorSpan1.appendChild(insightsAnchorSpan2);
+
+            insightsAnchor.appendChild(insightsAnchorSpan1);
+            insightsAnchor.appendChild(insightsAnchorSpan3);
+
+            insightsDiv.appendChild(insightsAnchor);
+        }
+    })
+
+    return insightsDiv;
 }
