@@ -100,7 +100,7 @@ export default function decorate(block){
 
         } else if (index==1){
             const firstChildDiv = document.createElement('div');
-            firstChildDiv.classList.add('col-lg-6', 'pr-0 ')
+            firstChildDiv.classList.add('col-lg-6', 'pr-0')
 
             const newRow1 = document.createElement('div');
             newRow1.classList.add('row', 'no-gutters');
