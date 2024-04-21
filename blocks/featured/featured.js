@@ -107,13 +107,13 @@ export default function decorate(block){
                         
                     })
                 }
+                console.log("interestHiddenDiv");
+                console.log(interestHiddenDiv);
+
             })
 
         }
     })
-    console.log("interestHiddenDiv");
-    console.log(interestHiddenDiv);
-
     
 }
 
