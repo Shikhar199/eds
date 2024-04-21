@@ -20,6 +20,9 @@ export default function decorate(block){
             const firstImgDiv = document.createElement('div');
             firstImgDiv.classList.add('col-lg-6', 'mb-15', 'pr-0', 'pr-lg-3')
             
+            const mobileDiv = document.createElement('div');
+            mobileDiv.classList.add('find-more-mobile');
+
             // Create insights wrapper div with classes "insights-wraper", "home-overlay", and "insights-hover"
             const insightsWrapper1 = document.createElement('div');
             insightsWrapper1.classList.add('insights-wraper', 'home-overlay', 'insights-hover');
@@ -93,32 +96,32 @@ export default function decorate(block){
 
             row1.appendChild(firstImgDiv);
             firstImgDiv.appendChild(insightsWrapper1);
+            firstImgDiv.appendChild(mobileDiv);
 
         } else if (index==1){
+            const firstChildDiv = document.createElement('div');
+            firstChildDiv.classList.add('col-lg-6', 'pr-0 ')
+
+            const newRow1 = document.createElement('div');
+            newRow1.classList.add('row', 'no-gutters');
+
+            firstChildDiv.appendChild(newRow1);
+
+            [...row.children].forEach((col,c)=>{
+                const interestHiddenDiv = document.createElement('div');
+                interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
+                if(c==0){
+                    [...col.childNodes].forEach((node,i)=>{
+                        console.log("doosra bacha");
+                        console.log(i);
+                        console.log(node);
+                    })
+                }
+            })
 
         }
     })
     console.log(interestsMain);
-    // // Create section element with class "home-interests-wraper"
-    // const section = document.createElement('section');
-    // section.classList.add('home-interests-wraper');
-
-    // // Create div element with class "interests-main"
-    // const interestsMain = document.createElement('div');
-    // interestsMain.classList.add('interests-main');
-
-    // // Create div element with class "row" and "no-gutters"
-    // const row1 = document.createElement('div');
-    // row1.classList.add('row', 'no-gutters');
-
-    // // Create first column div with classes "col-lg-6", "mb-15", "pr-0", and "pr-lg-3"
-    // const col1 = document.createElement('div');
-    // col1.classList.add('col-lg-6', 'mb-15', 'pr-0', 'pr-lg-3');
-
-    // // Create insights wrapper div with classes "insights-wraper", "home-overlay", and "insights-hover"
-    // const insightsWrapper1 = document.createElement('div');
-    // insightsWrapper1.classList.add('insights-wraper', 'home-overlay', 'insights-hover');
-    // insightsWrapper1.style.height = '282.45px';
 
     
 }
