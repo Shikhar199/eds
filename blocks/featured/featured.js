@@ -76,7 +76,9 @@ export default function decorate(block){
 
                             firstImgDiv.appendChild(firstImg);
                             firstImgDiv.appendChild(insightsDiv);
-                            firstImgDiv.appendChild(mobileDiv);    
+                            firstImgDiv.appendChild(mobileDiv);  
+                            
+                            interestHiddenDiv.appendChild(firstImgDiv);
 
                         } else if(i==3){
                             const secondImgDiv = document.createElement('div');
@@ -97,14 +99,14 @@ export default function decorate(block){
                             secondImgDiv.appendChild(insightsDiv);
                             secondImgDiv.appendChild(mobileDiv);
 
+                            interestHiddenDiv.appendChild(secondImgDiv);
+
                         } else{
 
                         }
                         
                     })
                 }
-                interestHiddenDiv.appendChild(firstImgDiv);
-                interestHiddenDiv.appendChild(secondImgDiv);
             })
 
         }
