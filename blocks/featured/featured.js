@@ -84,7 +84,7 @@ export default function decorate(block){
 
                 } else if(index==2 && c==0){
                     const secondImg = document.createElement('img');
-                    secondImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
+                    secondImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     secondImg.classList.add('img-fluid', 'interactive-image');
                     secondImg.setAttribute('alt', 'Video');
                     secondImgDiv.appendChild(secondImg);
