@@ -82,14 +82,6 @@ export default function decorate(block){
                         }
                     })
 
-                    // const insightsAnchorSpan2 = document.createElement('span');
-                    // insightsAnchorSpan2.classList.add('icon-long-right-arrow');
-
-                    // insightsDiv.appendChild(insightsh3);
-                    // insightsh3.appendChild(insightsAnchor);
-                    // insightsAnchor.appendChild(insightsAnchorSpan1);
-                    // insightsAnchor.appendChild(insightsAnchorSpan2);
-                    // insightsAnchorSpan1.appendChild();
                     insightsWrapper1.appendChild(insightsDiv);
                 }
             })
@@ -116,7 +108,7 @@ export default function decorate(block){
                 if(c==0){
                     [...col.childNodes].forEach((node,i)=>{
                         console.log(i);
-                        console.log(node.textContent.trim());
+                        console.log(node);
                     })
                 }
             })
