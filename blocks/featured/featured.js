@@ -111,12 +111,12 @@ export default function decorate(block){
                 const interestHiddenDiv = document.createElement('div');
                 interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
                 console.log("col");
+                console.log(c);
                 console.log(col);
                 if(c==0){
                     [...col.childNodes].forEach((node,i)=>{
-                        console.log("doosra bacha");
                         console.log(i);
-                        console.log(node.querySelector('img').getAttribute('src'));
+                        console.log(node);
                     })
                 }
             })
