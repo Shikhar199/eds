@@ -116,7 +116,7 @@ export default function decorate(block){
                 if(c==0){
                     [...col.childNodes].forEach((node,i)=>{
                         console.log(i);
-                        console.log(node);
+                        console.log(node.textContent.trim());
                     })
                 }
             })
