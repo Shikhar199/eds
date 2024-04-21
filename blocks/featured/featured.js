@@ -45,77 +45,91 @@ export default function decorate(block){
             firstImgDiv.appendChild(insightsWrapper1);
             firstImgDiv.appendChild(mobileDiv);
 
-        } else if (index==1){
-            const firstChildDiv = document.createElement('div');
-            firstChildDiv.classList.add('col-lg-6', 'pr-0')
+        } else if (index==1 || index==2){
+            // const firstChildDiv = document.createElement('div');
+            // firstChildDiv.classList.add('col-lg-6', 'pr-0')
 
-            const newRow1 = document.createElement('div');
-            newRow1.classList.add('row', 'no-gutters');
+            // const newRow1 = document.createElement('div');
+            // newRow1.classList.add('row', 'no-gutters');
 
-            firstChildDiv.appendChild(newRow1);
+            // firstChildDiv.appendChild(newRow1);
+
+            const interestHiddenDiv = document.createElement('div');
+            interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
+
+            const firstImgDiv = document.createElement('div');
+            firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
+            firstImgDiv.style.height = '141.225px';
+
+            const secondImgDiv = document.createElement('div');
+            secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
+            secondImgDiv.style.height = '141.225px';
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
 
             [...row.children].forEach((col,c)=>{
-                const interestHiddenDiv = document.createElement('div');
-                interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
-                if(c==0){
-                    [...col.childNodes].forEach((node,i)=>{
-                        if(i==1){
-                            const firstImgDiv = document.createElement('div');
-                            firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
-                            firstImgDiv.style.height = '141.225px';
+                
+                if(index==1 && c==0){
+                    const firstImg = document.createElement('img');
+                    firstImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    firstImg.classList.add('img-fluid', 'interactive-image');
+                    firstImg.setAttribute('alt', 'Video');
+                    firstImgDiv.appendChild(firstImg);
 
-                            const firstImg = document.createElement('img');
-                            firstImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
-                            firstImg.classList.add('img-fluid', 'interactive-image');
-                            firstImg.setAttribute('alt', 'Video');
+                } else if(index==1 && c==1){
+                    const insightsDiv = createInsightsDiv(col, "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                    firstImgDiv.appendChild(insightsDiv);
+                    firstImgDiv.appendChild(mobileDiv); 
 
-                            const insightsDiv = createInsightsDiv(col, "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                } else if(index==2 && c==0){
+                    const secondImg = document.createElement('img');
+                    secondImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
+                    secondImg.classList.add('img-fluid', 'interactive-image');
+                    secondImg.setAttribute('alt', 'Video');
+                    secondImgDiv.appendChild(secondImg);
 
-                            const mobileDiv = document.createElement("div");
-                            mobileDiv.classList.add("find-more-mobile");
-
-                            firstImgDiv.appendChild(firstImg);
-                            firstImgDiv.appendChild(insightsDiv);
-                            firstImgDiv.appendChild(mobileDiv);  
-                            
-                            interestHiddenDiv.appendChild(firstImgDiv);
-
-                        } else if(i==3){
-                            const secondImgDiv = document.createElement('div');
-                            secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
-                            secondImgDiv.style.height = '141.225px';
-
-                            const secondImg = document.createElement('img');
-                            secondImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
-                            secondImg.classList.add('img-fluid', 'interactive-image');
-                            secondImg.setAttribute('alt', 'Video');
-
-                            const insightsDiv = createInsightsDiv(col, "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
-
-                            const mobileDiv = document.createElement("div");
-                            mobileDiv.classList.add("find-more-mobile");
-
-                            secondImgDiv.appendChild(secondImg);
-                            secondImgDiv.appendChild(insightsDiv);
-                            secondImgDiv.appendChild(mobileDiv);
-
-                            interestHiddenDiv.appendChild(secondImgDiv);
-
-                        } else{
-
-                        }
-                        
-                    })
+                } else if(index==2 && c==1){
+                    const insightsDiv = createInsightsDiv(col, "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                    secondImgDiv.appendChild(insightsDiv);
+                    secondImgDiv.appendChild(mobileDiv);
                 }
-                console.log("interestHiddenDiv");
-                console.log(interestHiddenDiv);
-
+                            
+                interestHiddenDiv.appendChild(firstImgDiv);
+                interestHiddenDiv.appendChild(secondImgDiv);            
             })
 
+        } else if (index==3){
+            const columnDiv = document.createElement('div');
+            columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-0');
+
+            const podcastWrapperDiv = document.createElement('div');
+            podcastWrapperDiv.classList.add('podcast-wraper', 'home-overlay', 'insights-hover');
+            podcastWrapperDiv.style.height = '282.45px';
+            
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            columnDiv.appendChild(podcastWrapperDiv);
+            columnDiv.appendChild(mobileDiv);
+
+            [...row.children].forEach((col,c)=>{
+                console.log(c);
+                console.log(col);
+            })
+            // const secondImg = document.createElement('img');
+            // secondImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
+            // secondImg.classList.add('img-fluid', 'interactive-image');
+            // secondImg.setAttribute('alt', 'Video');
+
+            // const insightsDiv = createInsightsDiv(col, "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+
         }
+
     })
     
 }
+    
 
 
 function createInsightsDiv(col, insightsAnchorHref, firstSpanClass, insightsAnchorHref2, anchorSpan1Class, anchorSpan2Class, anchorSpan3Class){
@@ -164,6 +178,7 @@ function createInsightsDiv(col, insightsAnchorHref, firstSpanClass, insightsAnch
 
             insightsDiv.appendChild(insightsAnchor);
         }
+        // console.log(node);
     })
 
     return insightsDiv;
