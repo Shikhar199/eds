@@ -59,7 +59,7 @@ export default function decorate(block){
                 interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
                 if(c==0){
                     [...col.childNodes].forEach((node,i)=>{
-                        if(i==0){
+                        if(i==1){
                             const firstImgDiv = document.createElement('div');
                             firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
                             firstImgDiv.style.height = '141.225px';
@@ -78,7 +78,7 @@ export default function decorate(block){
                             firstImgDiv.appendChild(insightsDiv);
                             firstImgDiv.appendChild(mobileDiv);    
 
-                        } else if(i==1){
+                        } else if(i==3){
                             const secondImgDiv = document.createElement('div');
                             secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
                             secondImgDiv.style.height = '141.225px';
