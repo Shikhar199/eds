@@ -185,7 +185,7 @@ export default function decorate(block){
                 if(c==0){
                     const imgElement = document.createElement('img');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
-                    imgElement.classList.add('img-fluid', 'podcast-image');
+                    imgElement.classList.add('img-fluid', 'quality-image');
                     imgElement.setAttribute('alt', 'The Live Enterprise: How Large Companies can Act more like Startups')
                     qualityEngDiv.appendChild(imgElement);
                 } else if(c==1){
