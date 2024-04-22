@@ -266,7 +266,7 @@ function createInsightsDiv(col, outerDivClass, insightsAnchorHref, firstSpanClas
 
             insightsAnchorSpan1.appendChild(insightsAnchorSpan2);
             insightsAnchorSpan1.appendChild(document.createTextNode(node.textContent.trim()));
-            insightsAnchorSpan1.textContent = '';
+            // insightsAnchorSpan1.textContent = '';
 
             insightsAnchor.appendChild(insightsAnchorSpan1);
             insightsAnchor.appendChild(insightsAnchorSpan3);
