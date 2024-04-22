@@ -139,6 +139,7 @@ export default function decorate(block){
                 }
             })
             columnDiv.appendChild(mobileDiv);
+            newRow1.appendChild(columnDiv);
 
         } else if (index==4){
             const columnDiv = document.createElement('div');
