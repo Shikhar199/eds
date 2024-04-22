@@ -140,7 +140,9 @@ export default function decorate(block){
             columnDiv.appendChild(mobileDiv);
 
             [...row.children].forEach((col,c)=>{
-                console.log(col);
+                if(c==0){
+                    console.log(col);
+                }
                 // const imgElement = document.createElement('img');
                 // imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                 // imgElement.classList.add('img-fluid', 'podcast-image');
