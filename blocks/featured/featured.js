@@ -158,7 +158,7 @@ export default function decorate(block){
                 if(c==0){
                     const imgElement = document.createElement('img');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
-                    imgElement.classList.add('img-fluid', 'podcast-image');
+                    imgElement.classList.add('img-fluid', 'case-study-image');
                     imgElement.setAttribute('alt', 'Tech Navigator: Building the Human-centric Future')
                     caseStudyWrapperDiv.appendChild(imgElement);
                 } else if(c==1){
@@ -240,6 +240,7 @@ function createInsightsDiv(col, outerDivClass, insightsAnchorHref, firstSpanClas
             insightsAnchor.href = insightsAnchorHref;
             insightsAnchor.title = node.textContent.trim();
             insightsAnchor.textContent = node.textContent.trim();
+            insightsAnchor.setAttribute("target", "_blank")
             // insightsAnchor.classList.add('find-more-desktop');
 
             const insightsAnchorSpan1 = document.createElement('span');
