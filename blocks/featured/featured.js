@@ -137,7 +137,7 @@ export default function decorate(block){
                 }
             })
             columnDiv.appendChild(mobileDiv);
-            row1.appendChild(columnDiv);
+            
         } else if (index==4){
             const columnDiv = document.createElement('div');
             columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
