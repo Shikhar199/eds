@@ -14,6 +14,17 @@ export default function decorate(block){
 
     interestsMain.appendChild(row1);
     interestsMain.appendChild(row2);
+
+    const firstChildDiv = document.createElement('div');
+    firstChildDiv.classList.add('col-lg-6', 'pr-0')
+
+    const newRow1 = document.createElement('div');
+    newRow1.classList.add('row', 'no-gutters');
+
+    firstChildDiv.appendChild(newRow1);
+
+    const interestHiddenDiv = document.createElement('div');
+    interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
     
     [...block.children].forEach((row,index)=>{
         if(index==0){
@@ -36,7 +47,7 @@ export default function decorate(block){
                     imgElement.classList.add('img-fluid', 'insights-image');
                     insightsWrapper1.appendChild(imgElement);
                 } else if (c==1){
-                    const insightsDiv = createInsightsDiv(col, "/iki/perspectives/generative-ai-responsibility.html", 'icon-long-right-arrow', '/iki/perspectives.html', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/perspectives/generative-ai-responsibility.html", 'icon-long-right-arrow', '/iki/perspectives.html', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
                     insightsWrapper1.appendChild(insightsDiv);
                 }
             })
@@ -53,17 +64,19 @@ export default function decorate(block){
             // newRow1.classList.add('row', 'no-gutters');
 
             // firstChildDiv.appendChild(newRow1);
+            const firstImgDiv = "";
+            const secondImgDiv = "";
+            if(index==1){
+                firstImgDiv = document.createElement('div');
+                firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
+                firstImgDiv.style.height = '141.225px';
+            }
 
-            const interestHiddenDiv = document.createElement('div');
-            interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
-
-            const firstImgDiv = document.createElement('div');
-            firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
-            firstImgDiv.style.height = '141.225px';
-
-            const secondImgDiv = document.createElement('div');
-            secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
-            secondImgDiv.style.height = '141.225px';
+            if(index==2){
+                secondImgDiv = document.createElement('div');
+                secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
+                secondImgDiv.style.height = '141.225px';
+            }
 
             const mobileDiv = document.createElement("div");
             mobileDiv.classList.add("find-more-mobile");
@@ -78,7 +91,7 @@ export default function decorate(block){
                     firstImgDiv.appendChild(firstImg);
 
                 } else if(index==1 && c==1){
-                    const insightsDiv = createInsightsDiv(col, "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
                     firstImgDiv.appendChild(insightsDiv);
                     firstImgDiv.appendChild(mobileDiv); 
 
@@ -90,13 +103,17 @@ export default function decorate(block){
                     secondImgDiv.appendChild(secondImg);
 
                 } else if(index==2 && c==1){
-                    const insightsDiv = createInsightsDiv(col, "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
                     secondImgDiv.appendChild(insightsDiv);
                     secondImgDiv.appendChild(mobileDiv);
                 }
                             
                 interestHiddenDiv.appendChild(firstImgDiv);
-                interestHiddenDiv.appendChild(secondImgDiv);            
+                interestHiddenDiv.appendChild(mobileDiv);
+                interestHiddenDiv.appendChild(secondImgDiv);
+                interestHiddenDiv.appendChild(mobileDiv);  
+                
+                row1.appendChild(interestHiddenDiv);
             })
 
         } else if (index==3){
@@ -120,12 +137,13 @@ export default function decorate(block){
                     imgElement.setAttribute('alt', 'Ahead in the Cloud: Delivering Scale and Service in the Credit Union Cloud with Anurag Sharma')
                     podcastWrapperDiv.appendChild(imgElement);
                 } else if(c==1){
-                    const insightsDiv = createInsightsDiv(col, "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'icon-long-right-arrow', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'icon-long-right-arrow', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
                     podcastWrapperDiv.appendChild(insightsDiv);
                 }
             })
             columnDiv.appendChild(mobileDiv);
-        } else if (index==4 || index==5){
+            row1.appendChild(columnDiv);
+        } else if (index==4){
             const columnDiv = document.createElement('div');
             columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
 
@@ -137,30 +155,62 @@ export default function decorate(block){
             mobileDiv.classList.add("find-more-mobile");
 
             columnDiv.appendChild(caseStudyWrapperDiv);
-            columnDiv.appendChild(mobileDiv);
 
             [...row.children].forEach((col,c)=>{
                 if(c==0){
-                    console.log(col);
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.classList.add('img-fluid', 'podcast-image');
+                    imgElement.setAttribute('alt', 'Tech Navigator: Building the Human-centric Future')
+                    caseStudyWrapperDiv.appendChild(imgElement);
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'case-study-content', "/iki/research/tech-navigator.html", 'icon-long-right-arrow', "/iki/research.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    caseStudyWrapperDiv.appendChild(insightsDiv);
                 }
-                // const imgElement = document.createElement('img');
-                // imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
-                // imgElement.classList.add('img-fluid', 'podcast-image');
-                // imgElement.setAttribute('alt', 'Ahead in the Cloud: Delivering Scale and Service in the Credit Union Cloud with Anurag Sharma')
-                // podcastWrapperDiv.appendChild(imgElement);
             })
+            columnDiv.appendChild(mobileDiv);
+            row2.appendChild(columnDiv);
+
+        } else if (index==5){
+            const columnDiv = document.createElement('div');
+            columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-0');
+
+            const qualityEngDiv = document.createElement('div');
+            qualityEngDiv.classList.add('quality-engg', 'insights-hover');
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            columnDiv.appendChild(qualityEngDiv);
+
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.classList.add('img-fluid', 'podcast-image');
+                    imgElement.setAttribute('alt', 'The Live Enterprise: How Large Companies can Act more like Startups')
+                    qualityEngDiv.appendChild(imgElement);
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'quality-content', "/content/dam/infosys-web/en/live-enterprise-book/index.html", 'icon-long-right-arrow', "/iki/books.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    qualityEngDiv.appendChild(insightsDiv);
+                }
+            })
+            columnDiv.appendChild(mobileDiv);
+            row2.appendChild(columnDiv);
         }
 
     })
+
+    console.log(interestsMain);
     
 }
     
 
 
-function createInsightsDiv(col, insightsAnchorHref, firstSpanClass, insightsAnchorHref2, anchorSpan1Class, anchorSpan2Class, anchorSpan3Class){
+function createInsightsDiv(col, outerDivClass, insightsAnchorHref, firstSpanClass, insightsAnchorHref2, anchorSpan1Class, anchorSpan2Class, anchorSpan3Class){
     
     const insightsDiv = document.createElement('div');
-    insightsDiv.classList.add('insights');
+    insightsDiv.classList.add(outerDivClass);
 
     [...col.childNodes].forEach((node,i)=>{
         if(i==1){
@@ -171,7 +221,7 @@ function createInsightsDiv(col, insightsAnchorHref, firstSpanClass, insightsAnch
             insightsAnchor.href = insightsAnchorHref;
             insightsAnchor.title = node.textContent.trim();
             insightsAnchor.textContent = node.textContent.trim();
-            insightsAnchor.classList.add('find-more-desktop');
+            // insightsAnchor.classList.add('find-more-desktop');
 
             const insightsAnchorSpan1 = document.createElement('span');
             insightsAnchorSpan1.classList.add(firstSpanClass);
