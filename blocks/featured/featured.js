@@ -205,9 +205,18 @@ export default function decorate(block){
     section.classList.add('home-interests-wraper');
     section.appendChild(interestsMain);
 
+    var outerDiv = document.createElement('div');
+    outerDiv.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
+
+    var mainElement = document.createElement('main');
+    mainElement.classList.add('home-page-wraper');
+
+    outerDiv.appendChild(mainElement);
+    mainElement.appendChild(interestsMain);
+
     var parent = document.querySelector('main');
     var oldDiv = document.querySelector('.featured-container');
-    parent.replaceChild(section, oldDiv);    
+    parent.replaceChild(outerDiv, oldDiv);    
     
 }
     
