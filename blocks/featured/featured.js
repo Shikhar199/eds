@@ -105,7 +105,7 @@ export default function decorate(block){
                     secondImgDiv.appendChild(secondImg);
 
                 } else if(c==1){
-                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
                     secondImgDiv.appendChild(insightsDiv);
                 } 
             })
@@ -134,7 +134,7 @@ export default function decorate(block){
                     imgElement.setAttribute('alt', 'Ahead in the Cloud: Delivering Scale and Service in the Credit Union Cloud with Anurag Sharma')
                     podcastWrapperDiv.appendChild(imgElement);
                 } else if(c==1){
-                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'icon-long-right-arrow', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'icon-long-right-arrow', "/iki/podcasts.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
                     podcastWrapperDiv.appendChild(insightsDiv);
                 }
             })
