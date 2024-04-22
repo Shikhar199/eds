@@ -201,9 +201,13 @@ export default function decorate(block){
 
     console.log(interestsMain);
 
+    var section = document.createElement('section');
+    section.classList.add('home-interests-wraper');
+    section.appendChild(interestsMain);
+
     var parent = document.querySelector('main');
     var oldDiv = document.querySelector('.featured-container');
-    parent.replaceChild(interestsMain, oldDiv);    
+    parent.replaceChild(section, oldDiv);    
     
 }
     
