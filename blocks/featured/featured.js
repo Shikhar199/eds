@@ -211,8 +211,12 @@ export default function decorate(block){
     var mainElement = document.createElement('main');
     mainElement.classList.add('home-page-wraper');
 
+    var sectionElement = document.createElement('section');
+    sectionElement.classList.add('home-interests-wraper');
+
     outerDiv.appendChild(mainElement);
-    mainElement.appendChild(interestsMain);
+    mainElement.appendChild(sectionElement);
+    sectionElement.appendChild(interestsMain);
 
     var parent = document.querySelector('main');
     var oldDiv = document.querySelector('.featured-container');
