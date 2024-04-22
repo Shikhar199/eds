@@ -26,7 +26,8 @@ export default function decorate(block){
     const interestHiddenDiv = document.createElement('div');
     interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
 
-    row1.appendChild(interestHiddenDiv);
+    firstChildDiv.appendChild(newRow1);
+    newRow1.appendChild(interestHiddenDiv);
     
     [...block.children].forEach((row,index)=>{
         if(index==0){
@@ -55,6 +56,7 @@ export default function decorate(block){
             })
 
             row1.appendChild(firstImgDiv);
+            row1.appendChild(firstChildDiv);
             firstImgDiv.appendChild(insightsWrapper1);
             firstImgDiv.appendChild(mobileDiv);
 
@@ -137,7 +139,7 @@ export default function decorate(block){
                 }
             })
             columnDiv.appendChild(mobileDiv);
-            
+
         } else if (index==4){
             const columnDiv = document.createElement('div');
             columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
