@@ -19023,3 +19023,7 @@ footer .footer-bottom p {
   font-weight: 400;
   color: #fff;
 }
+
+.insights-wraper, .article-wraper, .interactive-wraper, .podcast-wraper {
+    background-color: #0c1220 !important;
+}
