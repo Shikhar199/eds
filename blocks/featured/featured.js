@@ -64,8 +64,8 @@ export default function decorate(block){
             // newRow1.classList.add('row', 'no-gutters');
 
             // firstChildDiv.appendChild(newRow1);
-            const firstImgDiv = "";
-            const secondImgDiv = "";
+            var firstImgDiv = "";
+            var secondImgDiv = "";
             if(index==1){
                 firstImgDiv = document.createElement('div');
                 firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
