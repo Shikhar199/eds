@@ -200,6 +200,10 @@ export default function decorate(block){
     })
 
     console.log(interestsMain);
+
+    var parent = document.querySelector('main');
+    var oldDiv = document.querySelector('.featured-container');
+    parent.replaceChild(interestsMain, oldDiv);    
     
 }
     
