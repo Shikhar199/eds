@@ -111,19 +111,42 @@ export default function decorate(block){
             mobileDiv.classList.add("find-more-mobile");
 
             columnDiv.appendChild(podcastWrapperDiv);
+
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.classList.add('img-fluid', 'podcast-image');
+                    imgElement.setAttribute('alt', 'Ahead in the Cloud: Delivering Scale and Service in the Credit Union Cloud with Anurag Sharma')
+                    podcastWrapperDiv.appendChild(imgElement);
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'icon-long-right-arrow', "/iki/podcasts/ahead-cloud/credit-union-cloud.html", 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    podcastWrapperDiv.appendChild(insightsDiv);
+                }
+            })
+            columnDiv.appendChild(mobileDiv);
+        } else if (index==4 || index==5){
+            const columnDiv = document.createElement('div');
+            columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
+
+            const caseStudyWrapperDiv = document.createElement('div');
+            caseStudyWrapperDiv.classList.add('case-study-wraper', 'insights-hover');
+            caseStudyWrapperDiv.style.height = '100%';
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            columnDiv.appendChild(caseStudyWrapperDiv);
             columnDiv.appendChild(mobileDiv);
 
             [...row.children].forEach((col,c)=>{
-                console.log(c);
                 console.log(col);
+                // const imgElement = document.createElement('img');
+                // imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                // imgElement.classList.add('img-fluid', 'podcast-image');
+                // imgElement.setAttribute('alt', 'Ahead in the Cloud: Delivering Scale and Service in the Credit Union Cloud with Anurag Sharma')
+                // podcastWrapperDiv.appendChild(imgElement);
             })
-            // const secondImg = document.createElement('img');
-            // secondImg.setAttribute('src', node.querySelector('picture').querySelector('img').getAttribute('src'));
-            // secondImg.classList.add('img-fluid', 'interactive-image');
-            // secondImg.setAttribute('alt', 'Video');
-
-            // const insightsDiv = createInsightsDiv(col, "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
-
         }
 
     })
