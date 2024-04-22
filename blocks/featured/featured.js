@@ -107,14 +107,14 @@ export default function decorate(block){
                     secondImgDiv.appendChild(insightsDiv);
                     secondImgDiv.appendChild(mobileDiv);
                 }
-                            
-                interestHiddenDiv.appendChild(firstImgDiv);
-                interestHiddenDiv.appendChild(mobileDiv);
-                interestHiddenDiv.appendChild(secondImgDiv);
-                interestHiddenDiv.appendChild(mobileDiv);  
-                
-                row1.appendChild(interestHiddenDiv);
             })
+
+            interestHiddenDiv.appendChild(firstImgDiv);
+            interestHiddenDiv.appendChild(mobileDiv);
+            interestHiddenDiv.appendChild(secondImgDiv);
+            interestHiddenDiv.appendChild(mobileDiv);  
+            
+            row1.appendChild(interestHiddenDiv);
 
         } else if (index==3){
             const columnDiv = document.createElement('div');
