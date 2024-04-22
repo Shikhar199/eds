@@ -252,7 +252,7 @@ function createInsightsDiv(col, outerDivClass, insightsAnchorHref, firstSpanClas
             const insightsAnchor = document.createElement('a');
             insightsAnchor.href = insightsAnchorHref2;
             insightsAnchor.title = node.textContent.trim();
-            insightsAnchor.textContent = node.textContent.trim();
+            // insightsAnchor.textContent = node.textContent.trim();
             insightsAnchor.classList.add('find-more-desktop');
 
             const insightsAnchorSpan1 = document.createElement('span');
