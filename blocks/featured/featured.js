@@ -25,6 +25,8 @@ export default function decorate(block){
 
     const interestHiddenDiv = document.createElement('div');
     interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
+
+    row1.appendChild(interestHiddenDiv);
     
     [...block.children].forEach((row,index)=>{
         if(index==0){
@@ -56,65 +58,58 @@ export default function decorate(block){
             firstImgDiv.appendChild(insightsWrapper1);
             firstImgDiv.appendChild(mobileDiv);
 
-        } else if (index==1 || index==2){
-            // const firstChildDiv = document.createElement('div');
-            // firstChildDiv.classList.add('col-lg-6', 'pr-0')
-
-            // const newRow1 = document.createElement('div');
-            // newRow1.classList.add('row', 'no-gutters');
-
-            // firstChildDiv.appendChild(newRow1);
-            var firstImgDiv = "";
-            var secondImgDiv = "";
-            if(index==1){
-                firstImgDiv = document.createElement('div');
-                firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
-                firstImgDiv.style.height = '141.225px';
-            }
-
-            if(index==2){
-                secondImgDiv = document.createElement('div');
-                secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
-                secondImgDiv.style.height = '141.225px';
-            }
+        } else if (index==1){
+            const firstImgDiv = document.createElement('div');
+            firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
+            firstImgDiv.style.height = '141.225px';
 
             const mobileDiv = document.createElement("div");
             mobileDiv.classList.add("find-more-mobile");
 
             [...row.children].forEach((col,c)=>{
                 
-                if(index==1 && c==0){
+                if(c==0){
                     const firstImg = document.createElement('img');
                     firstImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     firstImg.classList.add('img-fluid', 'interactive-image');
                     firstImg.setAttribute('alt', 'Video');
                     firstImgDiv.appendChild(firstImg);
 
-                } else if(index==1 && c==1){
+                } else if(c==1){
                     const insightsDiv = createInsightsDiv(col, 'insights', "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
                     firstImgDiv.appendChild(insightsDiv);
-                    firstImgDiv.appendChild(mobileDiv); 
 
-                } else if(index==2 && c==0){
+                } 
+            })
+
+            interestHiddenDiv.appendChild(firstImgDiv);
+            interestHiddenDiv.appendChild(mobileDiv);  
+
+        } else if (index==2){
+            const secondImgDiv = document.createElement('div');
+            secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
+            secondImgDiv.style.height = '141.225px';
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            [...row.children].forEach((col,c)=>{
+                
+                if(c==0){
                     const secondImg = document.createElement('img');
                     secondImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     secondImg.classList.add('img-fluid', 'interactive-image');
                     secondImg.setAttribute('alt', 'Video');
                     secondImgDiv.appendChild(secondImg);
 
-                } else if(index==2 && c==1){
-                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/videos/insights-andrew-duncan.html", "icon-long-right-arrow", "/iki/videos/insights-andrew-duncan.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'insights', "/iki/perspectives/organizational-structures-drive-digital-success.html", "icon-long-right-arrow", "/iki/perspectives.html", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow")
                     secondImgDiv.appendChild(insightsDiv);
-                    secondImgDiv.appendChild(mobileDiv);
-                }
+                } 
             })
 
-            interestHiddenDiv.appendChild(firstImgDiv);
-            interestHiddenDiv.appendChild(mobileDiv);
             interestHiddenDiv.appendChild(secondImgDiv);
-            interestHiddenDiv.appendChild(mobileDiv);  
-            
-            row1.appendChild(interestHiddenDiv);
+            interestHiddenDiv.appendChild(mobileDiv); 
 
         } else if (index==3){
             const columnDiv = document.createElement('div');
