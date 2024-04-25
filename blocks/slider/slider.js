@@ -109,6 +109,7 @@ function createSlickItem(row,r){
                     cardBodyDiv.appendChild(ulElement);
                 } else if(i==9){
                     cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
+                    console.log(anchorElement);
                     anchorElement.setAttribute("href", node.textContent.trim())
                 }
             })
