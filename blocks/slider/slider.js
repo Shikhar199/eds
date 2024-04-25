@@ -32,12 +32,31 @@ export default function decorate(block){
     slickTrackDiv.style.transform = 'translate3d(-3936px, 0px, 0px)';
 
 
-    [...block.children].forEach((row)=>{
-        const slickItem = createSlickItem(row);
+    [...block.children].forEach((row,r)=>{
+        const slickItem = createSlickItem(row,r);
     })
 }
 
-function createSlickItem(row){
+function createSlickItem(row,r){
+    var slickId = 30*1+r;
+    const popularSlickItemDiv = document.createElement('div');
+    popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
+    popularSlickItemDiv.style.width = '467px';
+    popularSlickItemDiv.setAttribute("role","tabpanel");
+    popularSlickItemDiv.id="slick-slide"+slickId;
+    popularSlickItemDiv.setAttribute("aria-describedby","slick-slide-control"+slickId);
+    popularSlickItemDiv.setAttribute("data-slick-index=",r);
+
+    const popularCardDiv = document.createElement('div');
+    if(r==0){
+        popularCardDiv.classList.add('card', 'popular-card', 'popular-main-mobile');
+    } else{
+        popularCardDiv.classList.add('card', 'popular-card', 'popular-sub-mobile');
+    }
+    
+
+    popularSlickItemDiv.appendChild(popularCardDiv);
+
     [...row.children].forEach((col,c)=>{
         // const slickItemDiv = document.createElement('div');
         // slickItemDiv.classList.add('most-popular-slick-item', 'slick-slide', 'slick-current', 'slick-active');
@@ -49,8 +68,28 @@ function createSlickItem(row){
         // slickItemDiv.setAttribute('aria-hidden', 'false');
         // slickItemDiv.setAttribute('index', '0');
         // slickItemDiv.id="slick-slide30";
+        var cardImageDiv;
+        var anchorElement;
+        var imgElement;
         if(c==0){
-            console.log(col);
+            cardImageDiv = document.createElement('div');
+            cardImageDiv.classList.add('card-image');
+
+            anchorElement = document.createElement('a');
+
+            var imgElement = document.createElement('img');
+            imgElement.classList.add('card-img-top');
+            imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+
+            cardImageDiv.appendChild(anchorElement);
+            anchorElement.appendChild(imgElement);
+
+            popularCardDiv.appendChild(cardImageDiv);
+
+        } else if(c==1){
+            [...col.childNodes].forEach((node,i)=>{
+                console.log(node);
+            })
         }
     })
 }
