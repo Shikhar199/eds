@@ -30,9 +30,9 @@ export default function decorate(block){
 
     const slickTrackDiv = document.createElement('div');
     slickTrackDiv.classList.add('slick-track');
-    slickTrackDiv.style.opacity = '1';
-    slickTrackDiv.style.width = '8856px';
-    slickTrackDiv.style.transform = 'translate3d(-3936px, 0px, 0px)';
+    // slickTrackDiv.style.opacity = '1';
+    // slickTrackDiv.style.width = '8856px';
+    // slickTrackDiv.style.transform = 'translate3d(-3936px, 0px, 0px)';
 
 
     [...block.children].forEach((row,r)=>{
