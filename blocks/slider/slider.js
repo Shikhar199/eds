@@ -34,7 +34,9 @@ export default function decorate(block){
 
     [...block.children].forEach((row,r)=>{
         const slickItem = createSlickItem(row,r);
+        slickTrackDiv.appendChild(slickItem);
     })
+    console.log(slickTrackDiv);
 }
 
 function createSlickItem(row,r){
@@ -58,19 +60,9 @@ function createSlickItem(row,r){
     popularSlickItemDiv.appendChild(popularCardDiv);
 
     [...row.children].forEach((col,c)=>{
-        // const slickItemDiv = document.createElement('div');
-        // slickItemDiv.classList.add('most-popular-slick-item', 'slick-slide', 'slick-current', 'slick-active');
-        // slickItemDiv.style.width = '467px';
-        // slickItemDiv.setAttribute('tabindex','0');
-        // slickItemDiv.setAttribute('role','tabpanel');
-        // slickItemDiv.setAttribute('tabindex','0');
-        // slickItemDiv.setAttribute('aria-describedby','slick-slide-control30');
-        // slickItemDiv.setAttribute('aria-hidden', 'false');
-        // slickItemDiv.setAttribute('index', '0');
-        // slickItemDiv.id="slick-slide30";
-        var cardImageDiv;
-        var anchorElement;
-        var imgElement;
+        var cardImageDiv="";
+        var anchorElement="";
+        var imgElement="";
         if(c==0){
             cardImageDiv = document.createElement('div');
             cardImageDiv.classList.add('card-image');
@@ -87,9 +79,41 @@ function createSlickItem(row,r){
             popularCardDiv.appendChild(cardImageDiv);
 
         } else if(c==1){
+            const cardBodyDiv = document.createElement('div');
+            cardBodyDiv.classList.add('card-body');
+            var cardBodyAnchorElement;
             [...col.childNodes].forEach((node,i)=>{
-                console.log(node);
+                if(i==1){
+                    const h5Element = document.createElement('h5');
+                    h5Element.classList.add('card-title');
+                    h5Element.textContent = node.textContent.trim();
+                    popularCardDiv.appendChild(h5Element);
+                } else if(i==3){
+                    const h4Element = document.createElement('h4');
+                    cardBodyAnchorElement = document.createElement('a');
+                    cardBodyAnchorElement.setAttribute("title", node.textContent.trim());
+                    cardBodyAnchorElement.textContent = node.textContent.trim();
+
+                    h4Element.appendChild(cardBodyAnchorElement);
+                    cardBodyDiv.appendChild(h4Element);
+                } else if(i==5){
+                    const pElement = document.createElement('p');
+                    pElement.textContent = node.textContent.trim();
+                    pElement.classList.add('card-text');
+                    cardBodyDiv.appendChild(pElement);
+                } else if(i==7){
+                    const ulElement = document.createElement('ul');
+                    const liElement = document.createElement('li');
+                    ulElement.appendChild(liElement);
+                    liElement.textContent = node.textContent.trim();
+                    cardBodyDiv.appendChild(ulElement);
+                } else if(i==9){
+                    cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
+                    anchorElement.setAttribute("href", node.textContent.trim())
+                }
             })
+            popularCardDiv.appendChild(cardBodyDiv);
         }
     })
+    return popularSlickItemDiv;
 }
