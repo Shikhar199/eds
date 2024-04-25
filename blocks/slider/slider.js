@@ -1,4 +1,7 @@
 export default function decorate(block){
+
+    const mainElement = document.createElement('main');
+
     const sectionElement = document.createElement('section');
     sectionElement.classList.add('home-most-popular-wraper');
 
@@ -36,7 +39,7 @@ export default function decorate(block){
         const slickItem = createSlickItem(row,r);
         slickTrackDiv.appendChild(slickItem);
     })
-    
+
     slickListDiv.appendChild(slickTrackDiv);
     mostPopularSlickDiv.appendChild(btn);
     mostPopularSlickDiv.appendChild(slickListDiv);
@@ -45,6 +48,11 @@ export default function decorate(block){
     trackDiv.appendChild(mostPopularDiv);
     containerDivElement.appendChild(trackDiv);
     sectionElement.appendChild(containerDivElement);
+    mainElement.appendChild(sectionElement);
+
+    document.querySelector(".slider-container").innerHTML='';
+
+    document.querySelector(".slider-container").appendChild(mainElement);
 
     console.log(sectionElement);
 }
