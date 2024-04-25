@@ -75,7 +75,7 @@ function createSlickItem(row,r){
 
             cardImageDiv.appendChild(anchorElement);
             anchorElement.appendChild(imgElement);
-
+            console.log(anchorElement);
             popularCardDiv.appendChild(cardImageDiv);
 
         } else if(c==1){
@@ -109,7 +109,6 @@ function createSlickItem(row,r){
                     cardBodyDiv.appendChild(ulElement);
                 } else if(i==9){
                     cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
-                    console.log(anchorElement);
                     anchorElement.setAttribute("href", node.textContent.trim())
                 }
             })
