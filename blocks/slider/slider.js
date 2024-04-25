@@ -108,7 +108,8 @@ function createSlickItem(row,r){
                 } else if(i==9){
                     cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
                    // var selectorString = 'div[data-slick-index="' + r + '"]';
-                    console.log(popularCardDiv.querySelector(".card-image").querySelector('a'));
+                    const anchorEle = popularCardDiv.querySelector(".card-image").querySelector('a');
+                    anchorEle.setAttribute("href",node.textContent.trim());
                 }
             })
             popularCardDiv.appendChild(cardBodyDiv);
