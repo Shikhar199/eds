@@ -40,12 +40,59 @@ export default function decorate(block){
         slickTrackDiv.appendChild(slickItem);
     })
 
+    var scriptElement = document.createElement('script');
+    var scriptCode = `
+    $('.most-popular-slick-at').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        buttons: true,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: "unslick",
+            }
+        ]
+    });`;
+
+    scriptElement.innerHTML = scriptCode;
+
+
     slickListDiv.appendChild(slickTrackDiv);
     mostPopularSlickDiv.appendChild(btn);
     mostPopularSlickDiv.appendChild(slickListDiv);
     mostPopularDiv.appendChild(mostPopularSlickDiv);
     trackDiv.appendChild(headingElement);
     trackDiv.appendChild(mostPopularDiv);
+    trackDiv.appendChild(scriptElement);
     containerDivElement.appendChild(trackDiv);
     sectionElement.appendChild(containerDivElement);
     mainElement.appendChild(sectionElement);
