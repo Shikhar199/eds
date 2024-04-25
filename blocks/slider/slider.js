@@ -75,13 +75,13 @@ function createSlickItem(row,r){
 
             cardImageDiv.appendChild(anchorElement);
             anchorElement.appendChild(imgElement);
-            console.log(anchorElement);
             popularCardDiv.appendChild(cardImageDiv);
 
         } else if(c==1){
             const cardBodyDiv = document.createElement('div');
             cardBodyDiv.classList.add('card-body');
             var cardBodyAnchorElement;
+            console.log(anchorElement);
             [...col.childNodes].forEach((node,i)=>{
                 if(i==1){
                     const h5Element = document.createElement('h5');
