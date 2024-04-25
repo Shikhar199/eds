@@ -49,13 +49,8 @@ function createSlickItem(row){
         // slickItemDiv.setAttribute('aria-hidden', 'false');
         // slickItemDiv.setAttribute('index', '0');
         // slickItemDiv.id="slick-slide30";
-        console.log(c)
-        console.log(col);
-
-        [...col.childNodes].forEach((node,i)=>{
-            console.log("Inside 1st column");
-            console.log(i)
-            console.log(node);
-        })
+        if(c==0){
+            console.log(col);
+        }
     })
 }
