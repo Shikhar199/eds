@@ -107,7 +107,7 @@ function createSlickItem(row,r){
                     cardBodyDiv.appendChild(ulElement);
                 } else if(i==9){
                     cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
-                    console.log(document.querySelector(".data-slick-index"+r).querySelector(".card-image"));
+                    console.log(document.querySelector(".data-slick-index"+r));
                 }
             })
             popularCardDiv.appendChild(cardBodyDiv);
