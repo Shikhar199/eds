@@ -61,13 +61,12 @@ function createSlickItem(row,r){
 
     [...row.children].forEach((col,c)=>{
         var cardImageDiv="";
-        var anchorElement="";
         var imgElement="";
         if(c==0){
             cardImageDiv = document.createElement('div');
             cardImageDiv.classList.add('card-image');
 
-            anchorElement = document.createElement('a');
+            const anchorElement = document.createElement('a');
 
             var imgElement = document.createElement('img');
             imgElement.classList.add('card-img-top');
@@ -81,7 +80,6 @@ function createSlickItem(row,r){
             const cardBodyDiv = document.createElement('div');
             cardBodyDiv.classList.add('card-body');
             var cardBodyAnchorElement;
-            console.log(anchorElement);
             [...col.childNodes].forEach((node,i)=>{
                 if(i==1){
                     const h5Element = document.createElement('h5');
@@ -109,7 +107,7 @@ function createSlickItem(row,r){
                     cardBodyDiv.appendChild(ulElement);
                 } else if(i==9){
                     cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
-                    anchorElement.setAttribute("href", node.textContent.trim())
+                    console.log(document.querySelector(".data-slick-index"+r).querySelector(".card-image"));
                 }
             })
             popularCardDiv.appendChild(cardBodyDiv);
