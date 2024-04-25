@@ -45,7 +45,7 @@ function createSlickItem(row,r){
     popularSlickItemDiv.setAttribute("role","tabpanel");
     popularSlickItemDiv.id="slick-slide"+slickId;
     popularSlickItemDiv.setAttribute("aria-describedby","slick-slide-control"+slickId);
-    popularSlickItemDiv.setAttribute("data-slick-index=",r);
+    popularSlickItemDiv.setAttribute("data-slick-index",r);
 
     const popularCardDiv = document.createElement('div');
     if(r==0){
