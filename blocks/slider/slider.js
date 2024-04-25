@@ -36,7 +36,17 @@ export default function decorate(block){
         const slickItem = createSlickItem(row,r);
         slickTrackDiv.appendChild(slickItem);
     })
-    console.log(slickTrackDiv);
+    
+    slickListDiv.appendChild(slickTrackDiv);
+    mostPopularSlickDiv.appendChild(btn);
+    mostPopularSlickDiv.appendChild(slickListDiv);
+    mostPopularDiv.appendChild(mostPopularSlickDiv);
+    trackDiv.appendChild(headingElement);
+    trackDiv.appendChild(mostPopularDiv);
+    containerDivElement.appendChild(trackDiv);
+    sectionElement.appendChild(containerDivElement);
+
+    console.log(sectionElement);
 }
 
 function createSlickItem(row,r){
