@@ -54,6 +54,8 @@ export default function decorate(block){
 
     document.querySelector(".slider-container").appendChild(mainElement);
 
+    document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
+
     console.log(sectionElement);
 }
 
