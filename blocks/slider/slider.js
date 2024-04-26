@@ -28,6 +28,14 @@ export default function decorate(block){
     jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
     const mainEle = document.querySelector('main');
     mainEle.insertBefore(jqueryScript, mainEle.firstChild);
+
+    const slickjs = document.createElement('script');
+    slickjs.src = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js';
+    slickjs.setAttribute("integrity","sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==")
+    slickjs.setAttribute("crossorigin","anonymous");
+    slickjs.setAttribute("referrerpolicy","no-referrer")
+
+    mainEle.insertBefore(slickjs, mainEle.children[1]);
     // includejQuery()
     // .then(() => {
     //     // jQuery is now available
