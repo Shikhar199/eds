@@ -135,7 +135,6 @@ export default function decorate(block){
 
     includeScript('https://code.jquery.com/jquery-3.6.0.min.js').then(()=>{
         console.log('jQuery has been loaded');
-        return includeScript('slick.min.js');
     }).then(()=>{
         console.log('slick.min.js has been loaded');
     }).catch((error)=>{
@@ -229,6 +228,6 @@ function includeScript(src) {
         script.src = src;
         script.onload = resolve;
         script.onerror = reject;
-        document.head.appendChild(script);
+        document.body.appendChild(script);
     });
 }
