@@ -122,11 +122,11 @@ export default function decorate(block){
                 liEle.appendChild(liBtn);
                 ulEle.appendChild(liEle);
             })
-
+            // $('.most-popular-slick-at').slick({
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
-            $('.most-popular-slick-at').slick({
+            $('.slick-track').slick({
                 dots: true,
                 infinite: false,
                 speed: 300,
