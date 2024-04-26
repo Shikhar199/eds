@@ -1,3 +1,7 @@
+(function(){
+    console.log("Hi");
+})();
+
 export default function decorate(block){
 
     // includejQuery()
