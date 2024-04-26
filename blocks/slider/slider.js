@@ -20,6 +20,8 @@
 export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
+
+        import('/scripts/slick.js').then(() => {
     // includejQuery()
     // .then(() => {
     //     // jQuery is now available
@@ -30,138 +32,141 @@ export default function decorate(block){
     //     console.error('Error loading jQuery:', error);
     // });
 
-    const mainElement = document.createElement('main');
+            const mainElement = document.createElement('main');
 
-    const sectionElement = document.createElement('section');
-    sectionElement.classList.add('home-most-popular-wraper');
+            const sectionElement = document.createElement('section');
+            sectionElement.classList.add('home-most-popular-wraper');
 
-    const containerDivElement = document.createElement('div');
-    containerDivElement.classList.add('container', 'at-element-marker', 'at-element-click-tracking');
+            const containerDivElement = document.createElement('div');
+            containerDivElement.classList.add('container', 'at-element-marker', 'at-element-click-tracking');
 
-    const trackDiv = document.createElement('div');
-    trackDiv.classList.add('at-track-click-16533046466222491');
+            const trackDiv = document.createElement('div');
+            trackDiv.classList.add('at-track-click-16533046466222491');
 
-    const headingElement = document.createElement('h2');
-    headingElement.textContent = "Most Popular";
+            const headingElement = document.createElement('h2');
+            headingElement.textContent = "Most Popular";
 
-    const mostPopularDiv = document.createElement('div');
-    mostPopularDiv.classList.add('most-popular-carousel');
+            const mostPopularDiv = document.createElement('div');
+            mostPopularDiv.classList.add('most-popular-carousel');
 
-    const mostPopularSlickDiv = document.createElement('div');
-    mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at', 'slick-initialized', 'slick-slider', 'slick-dotted');
+            const mostPopularSlickDiv = document.createElement('div');
+            mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at', 'slick-initialized', 'slick-slider', 'slick-dotted');
 
-    const prevBtn = document.createElement('button');
-    prevBtn.classList.add('slick-prev', 'slick-arrow');
-    prevBtn.setAttribute('aria-label', 'Previous');
-    prevBtn.textContent = "Previous";
+            const prevBtn = document.createElement('button');
+            prevBtn.classList.add('slick-prev', 'slick-arrow');
+            prevBtn.setAttribute('aria-label', 'Previous');
+            prevBtn.textContent = "Previous";
 
-    const slickListDiv = document.createElement('div');
-    slickListDiv.classList.add('slick-list', 'draggable');
+            const slickListDiv = document.createElement('div');
+            slickListDiv.classList.add('slick-list', 'draggable');
 
-    const slickTrackDiv = document.createElement('div');
-    slickTrackDiv.classList.add('slick-track');
+            const slickTrackDiv = document.createElement('div');
+            slickTrackDiv.classList.add('slick-track');
     // slickTrackDiv.style.opacity = '1';
     // slickTrackDiv.style.width = '8856px';
     // slickTrackDiv.style.transform = 'translate3d(-3936px, 0px, 0px)';
 
     //create ul
-    const ulEle = document.createElement('ul');
-    ulEle.classList.add('slick-dots');
-    ulEle.setAttribute("role","tablist");
+            const ulEle = document.createElement('ul');
+            ulEle.classList.add('slick-dots');
+            ulEle.setAttribute("role","tablist");
 
-    [...block.children].forEach((row,r)=>{
-        const slickItem = createSlickItem(row,r);
-        slickTrackDiv.appendChild(slickItem);
+            [...block.children].forEach((row,r)=>{
+                const slickItem = createSlickItem(row,r);
+                slickTrackDiv.appendChild(slickItem);
 
-        //create li
-        const liEle = document.createElement('li');
-        liEle.setAttribute("role","presentation");
+                //create li
+                const liEle = document.createElement('li');
+                liEle.setAttribute("role","presentation");
 
-        var idno = 30*1+r;
-        var ariaLabel = r+1+" of 4"
-        const liBtn = document.createElement('button');
-        liBtn.setAttribute("role","tab");
-        liBtn.id = "slick-slide-control"+idno;
-        liBtn.setAttribute('aria-controls','slick-slide'+idno);
-        liBtn.setAttribute('aria-label',ariaLabel);
-        liBtn.textContent = r+1;
+                var idno = 30*1+r;
+                var ariaLabel = r+1+" of 4"
+                const liBtn = document.createElement('button');
+                liBtn.setAttribute("role","tab");
+                liBtn.id = "slick-slide-control"+idno;
+                liBtn.setAttribute('aria-controls','slick-slide'+idno);
+                liBtn.setAttribute('aria-label',ariaLabel);
+                liBtn.textContent = r+1;
 
-        liEle.appendChild(liBtn);
-        ulEle.appendChild(liEle);
-    })
-
-
-    var scriptElement = document.createElement('script');
-    var scriptCode = `
-    $('.most-popular-slick-at').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        buttons: true,
-        arrows: true,
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: "unslick",
-            }
-        ]
-    });`;
-
-    const nextBtn = document.createElement('button');
-    nextBtn.classList.add('slick-next', 'slick-arrow');
-    nextBtn.setAttribute('aria-label', 'Next');
-    nextBtn.textContent = "Next";
-
-    scriptElement.innerHTML = scriptCode;
+                liEle.appendChild(liBtn);
+                ulEle.appendChild(liEle);
+            })
 
 
-    slickListDiv.appendChild(slickTrackDiv);
-    mostPopularSlickDiv.appendChild(prevBtn);
-    mostPopularSlickDiv.appendChild(slickListDiv);
-    mostPopularSlickDiv.appendChild(nextBtn);
-    mostPopularSlickDiv.appendChild(ulEle);
-    mostPopularDiv.appendChild(mostPopularSlickDiv);
-    trackDiv.appendChild(headingElement);
-    trackDiv.appendChild(mostPopularDiv);
-    trackDiv.appendChild(scriptElement);
-    containerDivElement.appendChild(trackDiv);
-    sectionElement.appendChild(containerDivElement);
-    mainElement.appendChild(sectionElement);
+            var scriptElement = document.createElement('script');
+            var scriptCode = `
+            $('.most-popular-slick-at').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                buttons: true,
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                           },
+                    {
+                        breakpoint: 767,
+                        settings: "unslick",
+                    }
+                ]
+            });`;
 
-    document.querySelector(".slider-container").innerHTML='';
+            const nextBtn = document.createElement('button');
+            nextBtn.classList.add('slick-next', 'slick-arrow');
+            nextBtn.setAttribute('aria-label', 'Next');
+            nextBtn.textContent = "Next";
 
-    document.querySelector(".slider-container").appendChild(mainElement);
+            scriptElement.innerHTML = scriptCode;
 
-    document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
-    console.log(sectionElement);
+            slickListDiv.appendChild(slickTrackDiv);
+            mostPopularSlickDiv.appendChild(prevBtn);
+            mostPopularSlickDiv.appendChild(slickListDiv);
+            mostPopularSlickDiv.appendChild(nextBtn);
+            mostPopularSlickDiv.appendChild(ulEle);
+            mostPopularDiv.appendChild(mostPopularSlickDiv);
+            trackDiv.appendChild(headingElement);
+            trackDiv.appendChild(mostPopularDiv);
+            trackDiv.appendChild(scriptElement);
+            containerDivElement.appendChild(trackDiv);
+            sectionElement.appendChild(containerDivElement);
+            mainElement.appendChild(sectionElement);
+
+            document.querySelector(".slider-container").innerHTML='';
+
+            document.querySelector(".slider-container").appendChild(mainElement);
+
+            document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
+
+            console.log(sectionElement);
+        }).catch(error=>{
+            console.error('Error loading Slick.js:', error);
+        })
 
     }).catch(error => {
         console.error('Error loading jQuery:', error);
