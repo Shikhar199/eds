@@ -17,6 +17,10 @@ export default function decorate(block){
     // slickScript.src = 'slick.js';
 
     // document.body.appendChild(slickScript);
+    var jqueryScript = document.createElement("script");
+    jqueryScript.type = "text/javascript";
+    jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+    document.body.appendChild(jqueryScript);
 
     !function(i) {
         "use strict";
