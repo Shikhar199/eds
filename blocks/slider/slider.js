@@ -14,7 +14,7 @@
 export default function decorate(block){
 
     var slickScript = document.createElement('script');
-    slickScript.src = 'slick.min.js';
+    slickScript.src = 'slick.js';
 
     document.body.appendChild(slickScript);
 
