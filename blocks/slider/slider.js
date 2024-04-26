@@ -128,7 +128,7 @@ export default function decorate(block){
             var scriptCode = `
             $('.slick-track').slick({
                 dots: true,
-                infinite: false,
+                infinite: true,
                 speed: 300,
                 slidesToShow: 3,
                 slidesToScroll: 1,
