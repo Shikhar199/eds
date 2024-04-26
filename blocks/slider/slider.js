@@ -9,11 +9,12 @@
     slickScript.setAttribute("type","module");
     document.head.appendChild(slickScript);
 
-    jqueryScript.onload = slickScript.onload = function() {
-        console.log('jQuery has been loaded');
-        decorate(block);
-        // Call the decorate function after jQuery has loaded
-    };
+    // jqueryScript.onload = slickScript.onload = function() {
+    //     console.log('jQuery has been loaded');
+    //     decorate(block);
+    //     // Call the decorate function after jQuery has loaded
+    // };
+    console.log("Hi");
 })();
 
 export default function decorate(block){
