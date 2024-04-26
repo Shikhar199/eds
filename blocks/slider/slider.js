@@ -1,5 +1,18 @@
 (function(){
-    console.log("Hi");
+    const jqueryScript = document.createElement('script');
+    jqueryScript.src = '/scripts/jquery.js';
+    jqueryScript.setAttribute("type","module");
+    document.head.appendChild(jqueryScript);
+
+    const slickScript = document.createElement('script');
+    slickScript.src = '/scripts/slick.js';
+    slickScript.setAttribute("type","module");
+    document.head.appendChild(slickScript);
+
+    jqueryScript.onload = function() {
+        console.log('jQuery has been loaded');
+        // Call the decorate function after jQuery has loaded
+    };
 })();
 
 export default function decorate(block){
@@ -146,17 +159,6 @@ export default function decorate(block){
     document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
     console.log(sectionElement);
-
-    const jqueryScript = document.createElement('script');
-    console.log(window.location.hostname);
-    jqueryScript.src = '/scripts/jquery.js';
-    jqueryScript.setAttribute("type","module");
-    document.head.appendChild(jqueryScript);
-
-    const slickScript = document.createElement('script');
-    slickScript.src = '/scripts/slick.js';
-    slickScript.setAttribute("type","module");
-    document.head.appendChild(slickScript);
 
     
 }
