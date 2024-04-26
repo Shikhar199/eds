@@ -358,10 +358,10 @@ function social() {
     element.classList.toggle("sidebar-scroll");
   }
   
-  function social() {
-    let element = document.getElementById("social-id");
-    element.classList.toggle("social-display");
-  }
+//   function social() {
+//     let element = document.getElementById("social-id");
+//     element.classList.toggle("social-display");
+//   }
   
   let accordion = $('.accordion-list');
   let accordionList = $('.accordion-list li');
