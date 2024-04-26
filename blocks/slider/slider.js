@@ -26,7 +26,7 @@ export default function decorate(block){
 
     const jqueryScript = document.createElement('script');
     jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
-    document.body.appendChild(jqueryScript);
+    document.body.main.appendChild(jqueryScript);
     // includejQuery()
     // .then(() => {
     //     // jQuery is now available
