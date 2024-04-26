@@ -37,7 +37,7 @@ export default function decorate(block){
     //create ul
     const ulEle = document.createElement('ul');
     ulEle.classList.add('slick-dots');
-    ulEle.setAttribute("role",tablist);
+    ulEle.setAttribute("role","tablist");
 
     [...block.children].forEach((row,r)=>{
         const slickItem = createSlickItem(row,r);
