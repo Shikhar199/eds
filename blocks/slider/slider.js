@@ -9,8 +9,9 @@
     slickScript.setAttribute("type","module");
     document.head.appendChild(slickScript);
 
-    jqueryScript.onload = function() {
+    jqueryScript.onload = slickScript.onload = function() {
         console.log('jQuery has been loaded');
+        decorate(block);
         // Call the decorate function after jQuery has loaded
     };
 })();
