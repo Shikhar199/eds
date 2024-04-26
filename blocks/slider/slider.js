@@ -143,6 +143,10 @@ export default function decorate(block){
 
     console.log(sectionElement);
 
+    const jqueryScript = document.createElement('script');
+    script.src = '/blocks/jquery/jquery.js';
+    document.body.appendChild(script);
+
     
 }
 
