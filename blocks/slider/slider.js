@@ -85,8 +85,10 @@ export default function decorate(block){
         liBtn.setAttribute('aria-label',ariaLabel);
         liBtn.textContent = r+1;
 
-        ulEle.appendChild(liBtn);
+        liEle.appendChild(liBtn);
+        ulEle.appendChild(liEle);
     })
+
 
     var scriptElement = document.createElement('script');
     var scriptCode = `
