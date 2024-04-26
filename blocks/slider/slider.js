@@ -36,6 +36,23 @@ export default function decorate(block){
     slickjs.setAttribute("referrerpolicy","no-referrer")
 
     mainEle.insertBefore(slickjs, mainEle.children[1]);
+
+    const slickThemeCss = document.createElement('link');
+    slickThemeCss.setAttribute("rel","stylesheet");
+    slickThemeCss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css");
+    slickThemeCss.setAttribute("integrity","sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==");
+    slickThemeCss.setAttribute("crossorigin","anonymous");
+    slickThemeCss.setAttribute("referrerpolicy","no-referrer")
+
+    const slickcss = document.createElement('link');
+    slickcss.setAttribute("rel","stylesheet");
+    slickcss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css");
+    slickcss.setAttribute("integrity","sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==");
+    slickcss.setAttribute("crossorigin","anonymous");
+    slickcss.setAttribute("referrerpolicy","no-referrer")
+    
+    document.head.appendChild(slickThemeCss);
+    document.head.appendChild(slickcss)
     // includejQuery()
     // .then(() => {
     //     // jQuery is now available
