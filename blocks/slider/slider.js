@@ -19,10 +19,17 @@ export default function decorate(block){
 
     // document.body.appendChild(slickScript);
 
-    !function(i) {
-        "use strict";
-        "function" == typeof define && define.amd ? define(["jquery"], i) : "undefined" != typeof exports ? module.exports = i(require("jquery")) : i(jQuery)
-    }(function(i) {
+    var jqueryScript = document.createElement("script");
+    jqueryScript.type = "text/javascript";
+    jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+    document.body.appendChild(jqueryScript);
+
+    // !function(i) {
+    //     "use strict";
+    //     "function" == typeof define && define.amd ? define(["jquery"], i) : "undefined" != typeof exports ? module.exports = i(require("jquery")) : i(jQuery)
+    // }(function(i) {});
+
+    function providedFunction($) {
         "use strict";
         var e = window.Slick || {};
         (e = function() {
@@ -1368,8 +1375,18 @@ export default function decorate(block){
                     return t;
             return o
         }
-    });
+    }
 
+    if (typeof jQuery !== 'undefined') {
+        // If jQuery is already loaded, execute the provided function immediately
+        providedFunction(jQuery);
+    } else {
+        // If jQuery is not yet available, wait for the script to load
+        jqueryScript.addEventListener('load', function () {
+            // Execute the provided function when jQuery is loaded
+            providedFunction(jQuery);
+        });
+    }
 
     const mainElement = document.createElement('main');
 
