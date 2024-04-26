@@ -1,13 +1,14 @@
-// // Load jQuery dynamically 
-// function loadJQuery(callback) {
-//     var script = document.createElement("script");
-//     script.type = "text/javascript";
-//     script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-//     script.onload = callback;
-//     document.body.appendChild(script);
-// }
+function loadJQuery(callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+    script.onload = callback;
+    document.body.appendChild(script);
+}
 
-
+loadJQuery(function() {
+    decorate(block);
+});
 // Your existing decorate function and other code follows here...
 
 
@@ -17,10 +18,6 @@ export default function decorate(block){
     // slickScript.src = 'slick.js';
 
     // document.body.appendChild(slickScript);
-    var jqueryScript = document.createElement("script");
-    jqueryScript.type = "text/javascript";
-    jqueryScript.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-    document.body.appendChild(jqueryScript);
 
     !function(i) {
         "use strict";
