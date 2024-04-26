@@ -1,4 +1,4 @@
-// Load jQuery dynamically
+// Load jQuery dynamically 
 function loadJQuery(callback) {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -11,7 +11,7 @@ function loadJQuery(callback) {
 function loadSlick(callback) {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "path/to/slick.js"; // Replace with the actual path to slick.js
+    script.src = "../../scripts/slick"; // Replace with the actual path to slick.js
     script.onload = callback;
     document.body.appendChild(script);
 }
