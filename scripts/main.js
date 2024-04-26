@@ -113,56 +113,56 @@ function social() {
   }
   
   
-  let navToggler = document.querySelector(".toggle-btn .navbar-toggler");
-  let navbarCollapseToggler = document.querySelector(".navbar-collapse .mobile-nav .navbar-toggler");
-  navToggler.addEventListener('click', () => {
-    commonBody.classList.add("sidebar-scroll");
-  });
+//   let navToggler = document.querySelector(".toggle-btn .navbar-toggler");
+//   let navbarCollapseToggler = document.querySelector(".navbar-collapse .mobile-nav .navbar-toggler");
+//   navToggler.addEventListener('click', () => {
+//     commonBody.classList.add("sidebar-scroll");
+//   });
   
-  navbarCollapseToggler.addEventListener('click', () => {
-    commonBody.classList.remove("sidebar-scroll");
-  });
-  
-  
-  function twitterShare(url, title){
-  
-      var accessToken = "9527e28e6d356bde17df2745795e5ab7d24444a9";
-  
-      var params = {
-              "long_url": url,			
-              "group_guid": "Bd2jeFNJyhx", 
-              "custom_bitlinks": ["infy.com"]		
-      };
-  
-      $.ajax({
-          url: "https://api-ssl.bitly.com/v4/shorten",
-          cache: false,
-          dataType: "json",
-          method: "POST",
-          contentType: "application/json",
-          beforeSend: function (xhr) {
-              xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
-          },
-          data: JSON.stringify(params)
-                          }).done(function(data){
-                      //alert('url');
-                            url = String(data.link);
-  
-                      var width=500, height=500;
-  
-                       var left = (window.screen.width / 2) - ((width / 2) + 10);
-                      var top = (window.screen.height / 2) - ((height / 2) + 50);
-  
-                             var twitterUrl = 'https://twitter.com/intent/tweet?url='.concat(url)+'&text='+title;
-                            var popUp = window.open(twitterUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +'');
-                              //popUp.focus();
+//   navbarCollapseToggler.addEventListener('click', () => {
+//     commonBody.classList.remove("sidebar-scroll");
+//   });
   
   
-                   }).fail(function(data) {
-                              console.log(data);
-                          });
-      return false;
-  }
+//   function twitterShare(url, title){
+  
+//       var accessToken = "9527e28e6d356bde17df2745795e5ab7d24444a9";
+  
+//       var params = {
+//               "long_url": url,			
+//               "group_guid": "Bd2jeFNJyhx", 
+//               "custom_bitlinks": ["infy.com"]		
+//       };
+  
+//       $.ajax({
+//           url: "https://api-ssl.bitly.com/v4/shorten",
+//           cache: false,
+//           dataType: "json",
+//           method: "POST",
+//           contentType: "application/json",
+//           beforeSend: function (xhr) {
+//               xhr.setRequestHeader("Authorization", "Bearer " + accessToken);
+//           },
+//           data: JSON.stringify(params)
+//                           }).done(function(data){
+//                       //alert('url');
+//                             url = String(data.link);
+  
+//                       var width=500, height=500;
+  
+//                        var left = (window.screen.width / 2) - ((width / 2) + 10);
+//                       var top = (window.screen.height / 2) - ((height / 2) + 50);
+  
+//                              var twitterUrl = 'https://twitter.com/intent/tweet?url='.concat(url)+'&text='+title;
+//                             var popUp = window.open(twitterUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +'');
+//                               //popUp.focus();
+  
+  
+//                    }).fail(function(data) {
+//                               console.log(data);
+//                           });
+//       return false;
+//   }
   
   /* -- Home JS --- */
   
