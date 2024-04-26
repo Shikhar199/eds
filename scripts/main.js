@@ -537,59 +537,59 @@ function social() {
   
   //Bookmark-page
   
-  $(document).ready(function () {
-    var bookmarkbutton = $('.article-details-wraper a[title="Bookmark"]')[0];
-    //    var bookmarkbutton = document.querySelector(".bookmark_it");
-    // Hold bookmarks in local storage
-    if (typeof (localStorage.ikibookmark) == "undefined") {
-      localStorage.ikibookmark = "";
-    }
-    if (typeof bookmarkbutton !== "undefined") {
+//   $(document).ready(function () {
+//     var bookmarkbutton = $('.article-details-wraper a[title="Bookmark"]')[0];
+//     //    var bookmarkbutton = document.querySelector(".bookmark_it");
+//     // Hold bookmarks in local storage
+//     if (typeof (localStorage.ikibookmark) == "undefined") {
+//       localStorage.ikibookmark = "";
+//     }
+//     if (typeof bookmarkbutton !== "undefined") {
   
   
-      bookmarkbutton.addEventListener("click", function (e) {
-        // Select the input box
-        var siteName = document.querySelector("h1").innerText;
-        var url = window.location.href;
-        var imageBook = document.querySelector('meta[property="og:image"]').content;
+//       bookmarkbutton.addEventListener("click", function (e) {
+//         // Select the input box
+//         var siteName = document.querySelector("h1").innerText;
+//         var url = window.location.href;
+//         var imageBook = document.querySelector('meta[property="og:image"]').content;
   
   
-        // Prevent the page from reloading when submitting the form
-        e.preventDefault();
+//         // Prevent the page from reloading when submitting the form
+//         e.preventDefault();
   
-        let patterURL = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+//         let patterURL = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   
-        let arrayItems, check = false,
-          adr, itemAdr;
+//         let arrayItems, check = false,
+//           adr, itemAdr;
   
-        arrayItems = localStorage.ikibookmark.split(";");
-        adr = url;
-        adr = adr.replace(/http:\/\/|https:\/\//i, "");
-        arrayItems.length--;
+//         arrayItems = localStorage.ikibookmark.split(";");
+//         adr = url;
+//         adr = adr.replace(/http:\/\/|https:\/\//i, "");
+//         arrayItems.length--;
   
-        // Check if website is already bookmarked
-        for (item of arrayItems) {
-          itemAdr = item.split(',')[1].replace(/http:\/\/|https:\/\//i, "");
-          if (itemAdr == adr) {
-            check = true;
-          }
-        }
+//         // Check if website is already bookmarked
+//         for (item of arrayItems) {
+//           itemAdr = item.split(',')[1].replace(/http:\/\/|https:\/\//i, "");
+//           if (itemAdr == adr) {
+//             check = true;
+//           }
+//         }
   
-        if (check == true) {
-          let text = "This website is already bookmarked, Do you want to be redirected to Bookmark Page?";
-          if (confirm(text) == true) {
-            window.location.href = "/iki/bookmark.html";
-          }
-        } else {
+//         if (check == true) {
+//           let text = "This website is already bookmarked, Do you want to be redirected to Bookmark Page?";
+//           if (confirm(text) == true) {
+//             window.location.href = "/iki/bookmark.html";
+//           }
+//         } else {
   
-          // If all checks are correct,add bookmark to local storage
-          localStorage.ikibookmark += `${siteName},${url},${imageBook};`;
-          window.location.href = "/iki/bookmark.html";
+//           // If all checks are correct,add bookmark to local storage
+//           localStorage.ikibookmark += `${siteName},${url},${imageBook};`;
+//           window.location.href = "/iki/bookmark.html";
   
-        }
-      });
-    }
-  });
+//         }
+//       });
+//     }
+//   });
   
   //End ofbookmark code
   
@@ -604,204 +604,204 @@ function social() {
   
   //Video Slider Start
   
-  $(document).ready(function () {
-  var hero_slider_length = $(".series-carousel").find('.item').length;
-  //alert(hero_slider_length);		
-  $(".series-carousel").owlCarousel({
-    dots: hero_slider_length > 2 ? true : false,
-    nav: hero_slider_length > 2 ? true : false,
-    touchDrag: hero_slider_length > 2 ? true : false,
-    mouseDrag: hero_slider_length > 2 ? true : false,
-    loop: hero_slider_length > 2 ? true : false,
-    autoplay: hero_slider_length > 2 ? false : false,
-    autoplayTimeout: hero_slider_length > 2 ? 3000 : false,
-    autoplayHoverPause: hero_slider_length > 2 ? true : false,
-    margin: 30,
+//   $(document).ready(function () {
+//   var hero_slider_length = $(".series-carousel").find('.item').length;
+//   //alert(hero_slider_length);		
+//   $(".series-carousel").owlCarousel({
+//     dots: hero_slider_length > 2 ? true : false,
+//     nav: hero_slider_length > 2 ? true : false,
+//     touchDrag: hero_slider_length > 2 ? true : false,
+//     mouseDrag: hero_slider_length > 2 ? true : false,
+//     loop: hero_slider_length > 2 ? true : false,
+//     autoplay: hero_slider_length > 2 ? false : false,
+//     autoplayTimeout: hero_slider_length > 2 ? 3000 : false,
+//     autoplayHoverPause: hero_slider_length > 2 ? true : false,
+//     margin: 30,
    
-    // dotsEach:true,
-    responsive: {
-      0: {
-        items: 1,
-          dots: hero_slider_length > 1 ? true : false,
-    nav: hero_slider_length > 1 ? true : false,
-    touchDrag: hero_slider_length > 1 ? true : false,
-    mouseDrag: hero_slider_length > 1 ? true : false,
-    loop: hero_slider_length > 1 ? true : false,
-    autoplay: hero_slider_length > 1 ? false : false,
-    autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
-      },
-      600: {
-        items: 1,
-          dots: hero_slider_length > 1 ? true : false,
-    nav: hero_slider_length > 1 ? true : false,
-    touchDrag: hero_slider_length > 1 ? true : false,
-    mouseDrag: hero_slider_length > 1 ? true : false,
-    loop: hero_slider_length > 1 ? true : false,
-    autoplay: hero_slider_length > 1 ? false : false,
-    autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
-      },
-      768: {
-        items: 2,
-           slideBy: 2
-      },
-      1000: {
-        items: 2,
-           slideBy: 2
-      }
-    }
-  });
+//     // dotsEach:true,
+//     responsive: {
+//       0: {
+//         items: 1,
+//           dots: hero_slider_length > 1 ? true : false,
+//     nav: hero_slider_length > 1 ? true : false,
+//     touchDrag: hero_slider_length > 1 ? true : false,
+//     mouseDrag: hero_slider_length > 1 ? true : false,
+//     loop: hero_slider_length > 1 ? true : false,
+//     autoplay: hero_slider_length > 1 ? false : false,
+//     autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
+//       },
+//       600: {
+//         items: 1,
+//           dots: hero_slider_length > 1 ? true : false,
+//     nav: hero_slider_length > 1 ? true : false,
+//     touchDrag: hero_slider_length > 1 ? true : false,
+//     mouseDrag: hero_slider_length > 1 ? true : false,
+//     loop: hero_slider_length > 1 ? true : false,
+//     autoplay: hero_slider_length > 1 ? false : false,
+//     autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
+//       },
+//       768: {
+//         items: 2,
+//            slideBy: 2
+//       },
+//       1000: {
+//         items: 2,
+//            slideBy: 2
+//       }
+//     }
+//   });
       
-      var first_carousel_length = $(".iki-videos-carousel").find(
-          ".item"
-        ).length;
-        $(".iki-videos-carousel").owlCarousel({
-          dots: first_carousel_length > 1 ? true : false,
-          nav: first_carousel_length > 1 ? false : false,
-          touchDrag: first_carousel_length > 1 ? true : false,
-          mouseDrag: first_carousel_length > 1 ? true : false,
-          loop: first_carousel_length > 1 ? true : false,
-          autoplay: first_carousel_length > 1 ? false : false,
-          autoplayTimeout: first_carousel_length > 1 ? 3000 : false,
-          autoplayHoverPause: first_carousel_length > 1 ? true : false,
-          responsive: {
-            0: {
-              items: 1,
-            },
-            600: {
-              items: 1,
-            },
-            768: {
-              items: 2,
-              dots: first_carousel_length > 1 ? false : true,
-              loop: first_carousel_length > 1 ? false : true,
-            },
-            1000: {
-              items: 2,
-              dots: first_carousel_length > 1 ? false : true,
-              loop: first_carousel_length > 1 ? false : true,
-            },
-          },
-        });
+//       var first_carousel_length = $(".iki-videos-carousel").find(
+//           ".item"
+//         ).length;
+//         $(".iki-videos-carousel").owlCarousel({
+//           dots: first_carousel_length > 1 ? true : false,
+//           nav: first_carousel_length > 1 ? false : false,
+//           touchDrag: first_carousel_length > 1 ? true : false,
+//           mouseDrag: first_carousel_length > 1 ? true : false,
+//           loop: first_carousel_length > 1 ? true : false,
+//           autoplay: first_carousel_length > 1 ? false : false,
+//           autoplayTimeout: first_carousel_length > 1 ? 3000 : false,
+//           autoplayHoverPause: first_carousel_length > 1 ? true : false,
+//           responsive: {
+//             0: {
+//               items: 1,
+//             },
+//             600: {
+//               items: 1,
+//             },
+//             768: {
+//               items: 2,
+//               dots: first_carousel_length > 1 ? false : true,
+//               loop: first_carousel_length > 1 ? false : true,
+//             },
+//             1000: {
+//               items: 2,
+//               dots: first_carousel_length > 1 ? false : true,
+//               loop: first_carousel_length > 1 ? false : true,
+//             },
+//           },
+//         });
   
-        // rightside videos carousel
-        var second_carousel_length = $(".iki-right-videos-carousel").find(
-          ".item"
-        ).length;
-        $(".iki-right-videos-carousel").owlCarousel({
-          dots: second_carousel_length > 1 ? true : false,
-          nav: second_carousel_length > 1 ? false : false,
-          touchDrag: second_carousel_length > 1 ? true : false,
-          mouseDrag: second_carousel_length > 1 ? true : false,
-          loop: second_carousel_length > 1 ? true : false,
-          autoplay: second_carousel_length > 1 ? false : false,
-          autoplayTimeout: second_carousel_length > 1 ? 3000 : false,
-          autoplayHoverPause: second_carousel_length > 1 ? true : false,
-          responsive: {
-            0: {
-              items: 2,
-            },
-            600: {
-              items: 2,
-            },
-            768: {
-              items: 4,
-              dots: second_carousel_length > 1 ? false : true,
-              loop: second_carousel_length > 1 ? false : true,
-            },
-            1000: {
-              items: 4,
-              dots: second_carousel_length > 1 ? false : true,
-              loop: second_carousel_length > 1 ? false : true,
-            },
-          },
-        });
+//         // rightside videos carousel
+//         var second_carousel_length = $(".iki-right-videos-carousel").find(
+//           ".item"
+//         ).length;
+//         $(".iki-right-videos-carousel").owlCarousel({
+//           dots: second_carousel_length > 1 ? true : false,
+//           nav: second_carousel_length > 1 ? false : false,
+//           touchDrag: second_carousel_length > 1 ? true : false,
+//           mouseDrag: second_carousel_length > 1 ? true : false,
+//           loop: second_carousel_length > 1 ? true : false,
+//           autoplay: second_carousel_length > 1 ? false : false,
+//           autoplayTimeout: second_carousel_length > 1 ? 3000 : false,
+//           autoplayHoverPause: second_carousel_length > 1 ? true : false,
+//           responsive: {
+//             0: {
+//               items: 2,
+//             },
+//             600: {
+//               items: 2,
+//             },
+//             768: {
+//               items: 4,
+//               dots: second_carousel_length > 1 ? false : true,
+//               loop: second_carousel_length > 1 ? false : true,
+//             },
+//             1000: {
+//               items: 4,
+//               dots: second_carousel_length > 1 ? false : true,
+//               loop: second_carousel_length > 1 ? false : true,
+//             },
+//           },
+//         });
       
       
-      });
+    //   });
   //Video Slider End
   
   //Video Series Start
-  window.onVidyardAPI = (vidyardEmbed) => {
-          vidyardEmbed.api.addReadyListener((_, player) => {
+//   window.onVidyardAPI = (vidyardEmbed) => {
+//           vidyardEmbed.api.addReadyListener((_, player) => {
   
-          })
-      };
+//           })
+//       };
   
-      function vidyardPause_all() {
-          var players = VidyardV4.players;
-          for (i = 0; i < players.length; i++) {
-              players[i].pause();
-          }
-      }
+//       function vidyardPause_all() {
+//           var players = VidyardV4.players;
+//           for (i = 0; i < players.length; i++) {
+//               players[i].pause();
+//           }
+//       }
   
   
    //console.log(window.location.href.split("#")[1])
-  $(document).ready(function () {
-    //console.log(window.location.href.includes("#"))
-    $(".tab-content").hide();
-    $(".tab-content:first").show();
+//   $(document).ready(function () {
+//     //console.log(window.location.href.includes("#"))
+//     $(".tab-content").hide();
+//     $(".tab-content:first").show();
   
-    var ulList = $(".tabs").find("li");
+//     var ulList = $(".tabs").find("li");
   
-    $(".total-number").text(ulList.length);
+//     $(".total-number").text(ulList.length);
   
     // $("html, body").animate({
     //   scrollTop: $("#first-section").offset().top - 20
     // }, 10), $(window).width() < 992 && $("html, body").animate({
     //   scrollTop: $("#first-section").offset().top - 80
     // }, 10);
-    if (window.location.href.includes("#")) {
-      $("#" + window.location.href.split("#")[1]).fadeIn();
-      const target = "#" + window.location.href.split("#")[1] // #tab3
-      //console.log(target);
-     // console.log($(target));
-      // var mainVideo = $("#main-video")
+//     if (window.location.href.includes("#")) {
+//       $("#" + window.location.href.split("#")[1]).fadeIn();
+//       const target = "#" + window.location.href.split("#")[1] // #tab3
+//       //console.log(target);
+//      // console.log($(target));
+//       // var mainVideo = $("#main-video")
   
-     // console.log(target.split("#tab")) // ['', '2']
-      const filterTarget = target.split("#episode")[1];
-      //console.log($('a').data('target'))
+//      // console.log(target.split("#tab")) // ['', '2']
+//       const filterTarget = target.split("#episode")[1];
+//       //console.log($('a').data('target'))
   
-     // console.log(filterTarget);
+//      // console.log(filterTarget);
   
-      var thumbnailItem = $(`ul.tabs li:nth-child(${parseInt(filterTarget)})`)
-     // console.log(thumbnailItem);
-      var item = $(thumbnailItem).find(".right-thumbnail-data");
-     // console.log(item);
-      var p = item.data("target");
-     // console.log(p)
-      var e = $(item).attr('data-video-url');
-     // console.log(e);
-      o = e + "?rel=0&amp;showinfo=0&amp;autoplay=1";
-   //   console.log(o);
-      //var video = $(target).find(".vidyard-player-embed");
-      var video = $(p).find(".vidyard-player-embed");
-    //  console.log(video);
-      $(video).attr("src", o);
-    //  console.log($(video).attr("src", o));
-  
-  
-      var videoNum = $(thumbnailItem).find(".cur-video-num").text();
-      $(".cur-number").text(videoNum);
-  
-      $(".tab-content").hide();
-      var activeTab = $(thumbnailItem).attr("rel");
-      console.log(activeTab); //tab3 
-      console.log($("#" + activeTab));
-      $("#" + activeTab).fadeIn();
+//       var thumbnailItem = $(`ul.tabs li:nth-child(${parseInt(filterTarget)})`)
+//      // console.log(thumbnailItem);
+//       var item = $(thumbnailItem).find(".right-thumbnail-data");
+//      // console.log(item);
+//       var p = item.data("target");
+//      // console.log(p)
+//       var e = $(item).attr('data-video-url');
+//      // console.log(e);
+//       o = e + "?rel=0&amp;showinfo=0&amp;autoplay=1";
+//    //   console.log(o);
+//       //var video = $(target).find(".vidyard-player-embed");
+//       var video = $(p).find(".vidyard-player-embed");
+//     //  console.log(video);
+//       $(video).attr("src", o);
+//     //  console.log($(video).attr("src", o));
   
   
-      $("ul.tabs li").removeClass("active");
-      $(`ul.tabs li:nth-child(${parseInt(filterTarget)})`).addClass("active")
-    }
+//       var videoNum = $(thumbnailItem).find(".cur-video-num").text();
+//       $(".cur-number").text(videoNum);
   
-    $(".read").click(function () {
-      $(this).prev().toggle();
-      if ($(this).text() === 'Read More +') {
-        $(this).text('Read Less -');
-      } else {
-        $(this).text('Read More +');
-      }
-    });
+//       $(".tab-content").hide();
+//       var activeTab = $(thumbnailItem).attr("rel");
+//       console.log(activeTab); //tab3 
+//       console.log($("#" + activeTab));
+//       $("#" + activeTab).fadeIn();
+  
+  
+//       $("ul.tabs li").removeClass("active");
+//       $(`ul.tabs li:nth-child(${parseInt(filterTarget)})`).addClass("active")
+//     }
+  
+    // $(".read").click(function () {
+    //   $(this).prev().toggle();
+    //   if ($(this).text() === 'Read More +') {
+    //     $(this).text('Read Less -');
+    //   } else {
+    //     $(this).text('Read More +');
+    //   }
+    // });
   
   
     // video listing code
@@ -860,17 +860,17 @@ function social() {
       vidyardPause_all();
     });
   
-  });
+//   });
   
   //Video Series End
   
   //Video Listing WHat New in IKI
-  $(document).ready(function(){
-    $(".vylaunchLightbox").click(function(){
-    //  alert($(this).attr( "data-uuid" ));
-      launchLightboxvidyard($(this).attr( "data-uuid" ));
-    });
-  });
+//   $(document).ready(function(){
+//     $(".vylaunchLightbox").click(function(){
+//     //  alert($(this).attr( "data-uuid" ));
+//       launchLightboxvidyard($(this).attr( "data-uuid" ));
+//     });
+//   });
   
-  function launchLightboxvidyard(d){let e=!0;document.getElementById("vyLightbox").innerHTML=`<img \n class="vidyard-player-embed"\n src="https://play.vidyard.com/${d}.jpg"\n data-uuid="${d}";\n data-v="4"\n data-type="lightbox"\n />`,vidyardEmbed.api.renderDOMPlayers(document.getElementById("vyLightbox")),new Promise(d=>window.vidyardEmbed?d(window.vidyardEmbed):window.onVidyardAPI=(e=>d(e))).then(a=>{VidyardV4.api.getPlayersByUUID(d)[0].showLightbox(),e=!1})}
+//   function launchLightboxvidyard(d){let e=!0;document.getElementById("vyLightbox").innerHTML=`<img \n class="vidyard-player-embed"\n src="https://play.vidyard.com/${d}.jpg"\n data-uuid="${d}";\n data-v="4"\n data-type="lightbox"\n />`,vidyardEmbed.api.renderDOMPlayers(document.getElementById("vyLightbox")),new Promise(d=>window.vidyardEmbed?d(window.vidyardEmbed):window.onVidyardAPI=(e=>d(e))).then(a=>{VidyardV4.api.getPlayersByUUID(d)[0].showLightbox(),e=!1})}
   //Video Listing WHat New in IKI END
