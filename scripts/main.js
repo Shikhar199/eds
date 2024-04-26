@@ -16,7 +16,7 @@ function social() {
   });
   
   
-  goUp = document.getElementById("go-up");
+//   goUp = document.getElementById("go-up");
   
   var myScrollFunc = function () {
     var y = window.scrollY;
