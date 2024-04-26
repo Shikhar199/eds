@@ -21,8 +21,8 @@ export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
         import('/scripts/slick.js').then(() => {
-
-
+            console.log('Slick min js has been loaded');
+            import('/scripts/main.js').then(() => {
 
     // const jqueryScript = document.createElement('script');
     // jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
@@ -195,6 +195,9 @@ export default function decorate(block){
             document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
             console.log(sectionElement);
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
         })
