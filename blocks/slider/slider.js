@@ -1,17 +1,14 @@
 export default function decorate(block){
 
-    var scriptElement;
-
-    includejQuery()
-    .then(() => {
-        // jQuery is now available
-        console.log('jQuery has been loaded');
-        // Call the decorate function after jQuery is loaded
-        scriptElement = runSlick();
-    })
-    .catch((error) => {
-        console.error('Error loading jQuery:', error);
-    });
+    // includejQuery()
+    // .then(() => {
+    //     // jQuery is now available
+    //     console.log('jQuery has been loaded');
+    //     // Call the decorate function after jQuery is loaded
+    // })
+    // .catch((error) => {
+    //     console.error('Error loading jQuery:', error);
+    // });
 
     const mainElement = document.createElement('main');
 
@@ -73,10 +70,57 @@ export default function decorate(block){
         ulEle.appendChild(liEle);
     })
 
+
+    var scriptElement = document.createElement('script');
+    var scriptCode = `
+    $('.most-popular-slick-at').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        buttons: true,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: "unslick",
+            }
+        ]
+    });`;
+
     const nextBtn = document.createElement('button');
     nextBtn.classList.add('slick-next', 'slick-arrow');
     nextBtn.setAttribute('aria-label', 'Next');
     nextBtn.textContent = "Next";
+
+    scriptElement.innerHTML = scriptCode;
+
 
     slickListDiv.appendChild(slickTrackDiv);
     mostPopularSlickDiv.appendChild(prevBtn);
@@ -99,33 +143,6 @@ export default function decorate(block){
 
     console.log(sectionElement);
 
-    // window.onresize = function () {
-    //     if (window.innerWidth > 767) {
-    //       $('.most-popular-slick')[0].slick.refresh();
-    //     }
-    //   }
-
-    // function startProgressbar() {
-    //     resetProgressbar();
-    //     percentTime = 0;
-    //     tick = setInterval(interval, 6);
-    // }
-      
-    // function resetProgressbar() {
-    //     $('.inProgress').css({
-    //       width: 0 + '%'
-    //     });
-    //     clearInterval(tick);
-    // }
-    // startProgressbar();
-
-    // includeScript('https://code.jquery.com/jquery-3.6.0.min.js').then(()=>{
-    //     console.log('jQuery has been loaded');
-    // }).then(()=>{
-    //     console.log('slick.min.js has been loaded');
-    // }).catch((error)=>{
-    //     console.error('Error loading script:', error);
-    // })
     
 }
 
@@ -238,62 +255,12 @@ function createSlickItem(row,r){
 //     }
 //   }
 
-function includejQuery() {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-    });
-}
-
-function runSlick(){
-    var scriptElement = document.createElement('script');
-    var scriptCode = `
-    $('.most-popular-slick-at').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        buttons: true,
-        arrows: true,
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: "unslick",
-            }
-        ]
-    });`;
-
-    scriptElement.innerHTML = scriptCode;
-
-    return scriptElement;
-
-}
+// function includejQuery() {
+//     return new Promise((resolve, reject) => {
+//         const script = document.createElement('script');
+//         script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+//         script.onload = resolve;
+//         script.onerror = reject;
+//         document.head.appendChild(script);
+//     });
+// }
