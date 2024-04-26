@@ -363,39 +363,39 @@ function social() {
 //     element.classList.toggle("social-display");
 //   }
   
-  let accordion = $('.accordion-list');
-  let accordionList = $('.accordion-list li');
-  let accordionTitle = $('.accordion-list li .section-title');
+//   let accordion = $('.accordion-list');
+//   let accordionList = $('.accordion-list li');
+//   let accordionTitle = $('.accordion-list li .section-title');
   
-  counter = 0;
-  let activeIntervel
+//   counter = 0;
+//   let activeIntervel
   
   
-  function toggleAccordion() {
-    accordionList.removeClass('active');
-    $(this).addClass('active');
-    clearInterval(activeIntervel);
-    setTimeout(activeAccordion(), 3000)
-  }
-  accordionList.on('click', toggleAccordion);
+//   function toggleAccordion() {
+//     accordionList.removeClass('active');
+//     $(this).addClass('active');
+//     clearInterval(activeIntervel);
+//     setTimeout(activeAccordion(), 3000)
+//   }
+//   accordionList.on('click', toggleAccordion);
   
-  setTimeout(() => {
-    activeIntervel = setInterval(() => {
-      accordionList.removeClass('active');
-      accordionList.eq(counter).addClass('active');
-      counter++;
-      if (counter == accordionList.length) counter = 0;
-    }, 5000);
-  }, 3000);
+//   setTimeout(() => {
+//     activeIntervel = setInterval(() => {
+//       accordionList.removeClass('active');
+//       accordionList.eq(counter).addClass('active');
+//       counter++;
+//       if (counter == accordionList.length) counter = 0;
+//     }, 5000);
+//   }, 3000);
   
-  function activeAccordion() {
-    activeIntervel = setInterval(() => {
-      accordionList.removeClass('active');
-      accordionList.eq(counter).addClass('active');
-      counter++;
-      if (counter == accordionList.length) counter = 0;
-    }, 5000);
-  }
+//   function activeAccordion() {
+//     activeIntervel = setInterval(() => {
+//       accordionList.removeClass('active');
+//       accordionList.eq(counter).addClass('active');
+//       counter++;
+//       if (counter == accordionList.length) counter = 0;
+//     }, 5000);
+//   }
   $('.most-popular-slick').slick({
     dots: true,
     infinite: false,
