@@ -18,7 +18,8 @@
 })();
 
 export default function decorate(block){
-
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
     // includejQuery()
     // .then(() => {
     //     // jQuery is now available
@@ -162,7 +163,9 @@ export default function decorate(block){
 
     console.log(sectionElement);
 
-    
+    }).catch(error => {
+        console.error('Error loading jQuery:', error);
+    });
 }
 
 function createSlickItem(row,r){
