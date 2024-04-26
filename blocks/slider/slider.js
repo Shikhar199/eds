@@ -150,7 +150,7 @@ export default function decorate(block){
     document.head.appendChild(jqueryScript);
 
     const slickScript = document.createElement('script');
-    slickScript.src = '/scripts/jquery.js';
+    slickScript.src = '/scripts/slick.js';
     slickScript.setAttribute("type","module");
     document.head.appendChild(slickScript);
 
