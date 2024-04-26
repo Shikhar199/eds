@@ -149,6 +149,11 @@ export default function decorate(block){
     jqueryScript.setAttribute("type","module");
     document.head.appendChild(jqueryScript);
 
+    const slickScript = document.createElement('script');
+    slickScript.src = '/scripts/jquery.js';
+    slickScript.setAttribute("type","module");
+    document.head.appendChild(slickScript);
+
     
 }
 
