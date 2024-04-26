@@ -51,8 +51,8 @@ export default function decorate(block){
     // slickcss.setAttribute("crossorigin","anonymous");
     // slickcss.setAttribute("referrerpolicy","no-referrer")
     
-    document.head.appendChild(slickThemeCss);
-    document.head.appendChild(slickcss)
+    // document.head.appendChild(slickThemeCss);
+    // document.head.appendChild(slickcss)
     // includejQuery()
     // .then(() => {
     //     // jQuery is now available
