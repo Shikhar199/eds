@@ -18,38 +18,38 @@
 // })();
 
 export default function decorate(block){
-    // import('/scripts/jquery.js').then(($) => {
-    //     console.log('jQuery has been loaded');
-    //     import('/scripts/slick.js').then(() => {
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
+        import('/scripts/slick.js').then(() => {
 
 
 
-    const jqueryScript = document.createElement('script');
-    jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
-    const mainEle = document.querySelector('main');
-    mainEle.insertBefore(jqueryScript, mainEle.firstChild);
+    // const jqueryScript = document.createElement('script');
+    // jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
+    // const mainEle = document.querySelector('main');
+    // mainEle.insertBefore(jqueryScript, mainEle.firstChild);
 
-    const slickjs = document.createElement('script');
-    slickjs.src = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js';
-    slickjs.setAttribute("integrity","sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==")
-    slickjs.setAttribute("crossorigin","anonymous");
-    slickjs.setAttribute("referrerpolicy","no-referrer")
+    // const slickjs = document.createElement('script');
+    // slickjs.src = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js';
+    // slickjs.setAttribute("integrity","sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==")
+    // slickjs.setAttribute("crossorigin","anonymous");
+    // slickjs.setAttribute("referrerpolicy","no-referrer")
 
-    mainEle.insertBefore(slickjs, mainEle.children[1]);
+    // mainEle.insertBefore(slickjs, mainEle.children[1]);
 
-    const slickThemeCss = document.createElement('link');
-    slickThemeCss.setAttribute("rel","stylesheet");
-    slickThemeCss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css");
-    slickThemeCss.setAttribute("integrity","sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==");
-    slickThemeCss.setAttribute("crossorigin","anonymous");
-    slickThemeCss.setAttribute("referrerpolicy","no-referrer")
+    // const slickThemeCss = document.createElement('link');
+    // slickThemeCss.setAttribute("rel","stylesheet");
+    // slickThemeCss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css");
+    // slickThemeCss.setAttribute("integrity","sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==");
+    // slickThemeCss.setAttribute("crossorigin","anonymous");
+    // slickThemeCss.setAttribute("referrerpolicy","no-referrer")
 
-    const slickcss = document.createElement('link');
-    slickcss.setAttribute("rel","stylesheet");
-    slickcss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css");
-    slickcss.setAttribute("integrity","sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==");
-    slickcss.setAttribute("crossorigin","anonymous");
-    slickcss.setAttribute("referrerpolicy","no-referrer")
+    // const slickcss = document.createElement('link');
+    // slickcss.setAttribute("rel","stylesheet");
+    // slickcss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css");
+    // slickcss.setAttribute("integrity","sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==");
+    // slickcss.setAttribute("crossorigin","anonymous");
+    // slickcss.setAttribute("referrerpolicy","no-referrer")
     
     document.head.appendChild(slickThemeCss);
     document.head.appendChild(slickcss)
@@ -195,13 +195,13 @@ export default function decorate(block){
             document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
             console.log(sectionElement);
-    //     }).catch(error=>{
-    //         console.error('Error loading Slick.js:', error);
-    //     })
+        }).catch(error=>{
+            console.error('Error loading Slick.js:', error);
+        })
 
-    // }).catch(error => {
-    //     console.error('Error loading jQuery:', error);
-    // });
+    }).catch(error => {
+        console.error('Error loading jQuery:', error);
+    });
 }
 
 function createSlickItem(row,r){
