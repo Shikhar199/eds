@@ -20,10 +20,10 @@ export default function decorate(block){
     const mostPopularSlickDiv = document.createElement('div');
     mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at', 'slick-initialized', 'slick-slider', 'slick-dotted');
 
-    const btn = document.createElement('button');
-    btn.classList.add('slick-prev', 'slick-arrow');
-    btn.setAttribute('aria-label', 'Previous');
-    btn.textContent = "Previous";
+    const prevBtn = document.createElement('button');
+    prevBtn.classList.add('slick-prev', 'slick-arrow');
+    prevBtn.setAttribute('aria-label', 'Previous');
+    prevBtn.textContent = "Previous";
 
     const slickListDiv = document.createElement('div');
     slickListDiv.classList.add('slick-list', 'draggable');
@@ -34,10 +34,29 @@ export default function decorate(block){
     // slickTrackDiv.style.width = '8856px';
     // slickTrackDiv.style.transform = 'translate3d(-3936px, 0px, 0px)';
 
+    //create ul
+    const ulEle = document.createElement('ul');
+    ulEle.classList.add('slick-dots');
+    ulEle.setAttribute("role",tablist);
 
     [...block.children].forEach((row,r)=>{
         const slickItem = createSlickItem(row,r);
         slickTrackDiv.appendChild(slickItem);
+
+        //create li
+        const liEle = document.createElement('li');
+        liEle.setAttribute("role","presentation");
+
+        var idno = 30*1+r;
+        var ariaLabel = r+1+" of 4"
+        const liBtn = document.createElement('button');
+        liBtn.setAttribute("role","tab");
+        liBtn.id = "slick-slide-control"+idno;
+        liBtn.setAttribute('aria-controls','slick-slide'+idno);
+        liBtn.setAttribute('aria-label',ariaLabel);
+        liBtn.textContent = r+1;
+
+        ulEle.appendChild(liBtn);
     })
 
     var scriptElement = document.createElement('script');
@@ -83,12 +102,19 @@ export default function decorate(block){
         ]
     });`;
 
+    const nextBtn = document.createElement('button');
+    nextBtn.classList.add('slick-next', 'slick-arrow');
+    nextBtn.setAttribute('aria-label', 'Next');
+    nextBtn.textContent = "Next";
+
     scriptElement.innerHTML = scriptCode;
 
 
     slickListDiv.appendChild(slickTrackDiv);
-    mostPopularSlickDiv.appendChild(btn);
+    mostPopularSlickDiv.appendChild(prevBtn);
     mostPopularSlickDiv.appendChild(slickListDiv);
+    mostPopularSlickDiv.appendChild(nextBtn);
+    mostPopularSlickDiv.appendChild(ulEle);
     mostPopularDiv.appendChild(mostPopularSlickDiv);
     trackDiv.appendChild(headingElement);
     trackDiv.appendChild(mostPopularDiv);
