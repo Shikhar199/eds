@@ -1451,7 +1451,7 @@ export default function decorate(block){
 
     var scriptElement = document.createElement('script');
     var scriptCode = `
-    $('.most-popular-slick-at').slick({
+    document.querySelectorAll('.most-popular-slick-at').slick({
         dots: true,
         infinite: false,
         speed: 300,
