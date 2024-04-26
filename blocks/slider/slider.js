@@ -144,6 +144,7 @@ export default function decorate(block){
     console.log(sectionElement);
 
     const jqueryScript = document.createElement('script');
+    console.log(window.location.hostname);
     jqueryScript.src = window.location.hostname+'/blocks/jquery/jquery.js';
     document.body.appendChild(jqueryScript);
 
