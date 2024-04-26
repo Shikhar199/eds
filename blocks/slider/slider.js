@@ -1,33 +1,22 @@
-// Load jQuery dynamically 
-function loadJQuery(callback) {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-    script.onload = callback;
-    document.body.appendChild(script);
-}
+// // Load jQuery dynamically 
+// function loadJQuery(callback) {
+//     var script = document.createElement("script");
+//     script.type = "text/javascript";
+//     script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+//     script.onload = callback;
+//     document.body.appendChild(script);
+// }
 
-// Load slick.js dynamically
-function loadSlick(callback) {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "../../scripts/slick"; // Replace with the actual path to slick.js
-    script.onload = callback;
-    document.body.appendChild(script);
-}
-
-// Call the decorate function after both jQuery and slick.js have loaded
-loadJQuery(function() {
-    loadSlick(function() {
-        // Both jQuery and slick.js are loaded, now call the decorate function
-        decorate(block);
-    });
-});
 
 // Your existing decorate function and other code follows here...
 
 
 export default function decorate(block){
+
+    var slickScript = document.createElement('script');
+    slickScript.src = 'slick.min.js';
+
+    document.body.appendChild(slickScript);
 
     const mainElement = document.createElement('main');
 
