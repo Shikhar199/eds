@@ -1,21 +1,21 @@
-(function(){
-    const jqueryScript = document.createElement('script');
-    jqueryScript.src = '/scripts/jquery.js';
-    jqueryScript.setAttribute("type","module");
-    document.head.appendChild(jqueryScript);
+// (function(){
+//     const jqueryScript = document.createElement('script');
+//     jqueryScript.src = '/scripts/jquery.js';
+//     jqueryScript.setAttribute("type","module");
+//     document.head.appendChild(jqueryScript);
 
-    const slickScript = document.createElement('script');
-    slickScript.src = '/scripts/slick.js';
-    slickScript.setAttribute("type","module");
-    document.head.appendChild(slickScript);
+//     const slickScript = document.createElement('script');
+//     slickScript.src = '/scripts/slick.js';
+//     slickScript.setAttribute("type","module");
+//     document.head.appendChild(slickScript);
 
-    // jqueryScript.onload = slickScript.onload = function() {
-    //     console.log('jQuery has been loaded');
-    //     decorate(block);
-    //     // Call the decorate function after jQuery has loaded
-    // };
-    console.log("Hi");
-})();
+//     // jqueryScript.onload = slickScript.onload = function() {
+//     //     console.log('jQuery has been loaded');
+//     //     decorate(block);
+//     //     // Call the decorate function after jQuery has loaded
+//     // };
+//     console.log("Hi");
+// })();
 
 export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
