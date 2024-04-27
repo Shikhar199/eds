@@ -187,7 +187,7 @@ function createSlickItem(row,r,blockLength){
 
             const cardBodyDiv = document.createElement('div');
             cardBodyDiv.classList.add('card-body');
-
+            var cardBodyAnchorElement;
             [...col.childNodes].forEach((node,i)=>{
                 if(i==1){
                     const h5Element = document.createElement('h5');
