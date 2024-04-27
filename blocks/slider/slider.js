@@ -106,7 +106,7 @@ export default function decorate(block){
                 const slickItem = createSlickItem(row,r);
                 slickTrackDiv.appendChild(slickItem);
 
-                //create li
+                // create li
                 // const liEle = document.createElement('li');
                 // liEle.setAttribute("role","presentation");
 
@@ -123,6 +123,8 @@ export default function decorate(block){
                 // ulEle.appendChild(liEle);
             })
             // $('.most-popular-slick-at').slick({
+
+            console.log(slickTrackDiv);
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
@@ -175,18 +177,18 @@ export default function decorate(block){
             scriptElement.innerHTML = scriptCode;
 
 
-            slickListDiv.appendChild(slickTrackDiv);
-            mostPopularSlickDiv.appendChild(prevBtn);
-            mostPopularSlickDiv.appendChild(slickListDiv);
-            mostPopularSlickDiv.appendChild(nextBtn);
-            mostPopularSlickDiv.appendChild(ulEle);
-            mostPopularDiv.appendChild(mostPopularSlickDiv);
-            trackDiv.appendChild(headingElement);
-            trackDiv.appendChild(mostPopularDiv);
-            trackDiv.appendChild(scriptElement);
-            containerDivElement.appendChild(trackDiv);
-            sectionElement.appendChild(containerDivElement);
-            mainElement.appendChild(sectionElement);
+            // slickListDiv.appendChild(slickTrackDiv);
+            // mostPopularSlickDiv.appendChild(prevBtn);
+            // mostPopularSlickDiv.appendChild(slickListDiv);
+            // mostPopularSlickDiv.appendChild(nextBtn);
+            // mostPopularSlickDiv.appendChild(ulEle);
+            // mostPopularDiv.appendChild(mostPopularSlickDiv);
+            // trackDiv.appendChild(headingElement);
+            // trackDiv.appendChild(mostPopularDiv);
+            // trackDiv.appendChild(scriptElement);
+            // containerDivElement.appendChild(trackDiv);
+            // sectionElement.appendChild(containerDivElement);
+            // mainElement.appendChild(sectionElement);
 
             document.querySelector(".slider-container").innerHTML='';
 
