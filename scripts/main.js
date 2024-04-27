@@ -525,11 +525,11 @@ function social() {
   */
   
   
-//   window.onresize = function () {
-//     if (window.innerWidth > 767) {
-//       $('.most-popular-slick')[0].slick.refresh();
-//     }
-//   }
+  window.onresize = function () {
+    if (window.innerWidth > 767) {
+      $('.most-popular-slick')[0].slick.refresh();
+    }
+  }
   
   
   /*-- Home JS END -- */
