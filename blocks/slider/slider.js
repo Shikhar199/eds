@@ -22,7 +22,9 @@ export default function decorate(block){
             mostPopularDiv.classList.add('most-popular-carousel');
 
             const mostPopularSlickDiv = document.createElement('div');
-            mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at', 'slick-initialized', 'slick-slider', 'slick-dotted');
+            // mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at', 'slick-initialized', 'slick-slider', 'slick-dotted');
+            
+            mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at');
 
             const prevBtn = document.createElement('button');
             prevBtn.classList.add('slick-prev', 'slick-arrow');
@@ -78,7 +80,7 @@ export default function decorate(block){
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
-            $('.slick-track').slick({
+            $('.most-popular-slick-at').slick({
                 dots: true,
                 infinite: true,
                 speed: 300,
