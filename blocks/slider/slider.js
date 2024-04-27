@@ -160,11 +160,6 @@ function createSlickItem(row,r){
 
     const popularCardDiv = document.createElement('div');
     popularCardDiv.classList.add('card', 'popular-card');
-    // if(r==0){
-    //     popularCardDiv.classList.add('card', 'popular-card', 'popular-main-mobile');
-    // } else{
-    //     popularCardDiv.classList.add('card', 'popular-card', 'popular-sub-mobile');
-    // }
     
 
     popularSlickItemDiv.appendChild(popularCardDiv);
