@@ -147,6 +147,17 @@ export default function decorate(block){
 
 
             // document.querySelector(".ikislider").appendChild(mainElement);
+
+            // mostPopularDiv.appendChild(mostPopularSlickDiv);
+
+            mostPopularSlickDiv.appendChild(prevBtn);  //check kr rha hu ki apne aap bnega ya nhi
+            mostPopularSlickDiv.appendChild(slickListDiv);
+            mostPopularSlickDiv.appendChild(nextBtn);
+            mostPopularSlickDiv.appendChild(ulEle);
+
+            console.log("mostPopularSlickDiv");
+            console.log(mostPopularSlickDiv);
+
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
@@ -154,18 +165,6 @@ export default function decorate(block){
             trackDiv.appendChild(mostPopularDiv);
             trackDiv.appendChild(scriptElement);
             mostPopularDiv.appendChild(mostPopularSlickDiv);
-
-            // mostPopularDiv.appendChild(mostPopularSlickDiv);
-
-            // mostPopularSlickDiv.appendChild(prevBtn);  check kr rha hu ki apne aap bnega ya nhi
-            // mostPopularSlickDiv.appendChild(slickListDiv);
-            // mostPopularSlickDiv.appendChild(nextBtn);
-            // mostPopularSlickDiv.appendChild(ulEle);
-
-            console.log("mostPopularSlickDiv");
-            console.log(mostPopularSlickDiv);
-
-
 
 
             // slickTrackDiv.appendChild(mostPopularSlickDiv);
