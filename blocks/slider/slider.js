@@ -121,12 +121,6 @@ export default function decorate(block){
 
             console.log(sectionElement);
 
-            import('/scripts/main.js').then(() => {
-                console.log("main.js loaded");
-            }).catch(error=>{
-                console.error('Error loading main.js:', error);
-            })
-
             const outerScriptElement = document.createElement('script');
 
             // Set the type attribute of the script element
@@ -160,6 +154,12 @@ export default function decorate(block){
             slickListDiv.appendChild(slickTrackDiv);
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
+
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
 
 
         }).catch(error=>{
