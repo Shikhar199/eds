@@ -125,16 +125,10 @@ export default function decorate(block){
 
             // $('.most-popular-slick-at').slick({
 
-            console.log(slickTrackDiv);
-            console.log(ulEle);
-            console.log(prevBtn);
-
             const nextBtn = document.createElement('button');
             nextBtn.classList.add('slick-next', 'slick-arrow');
             nextBtn.setAttribute('aria-label', 'Next');
             nextBtn.textContent = "Next";
-
-            console.log(nextBtn);
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
@@ -181,13 +175,15 @@ export default function decorate(block){
 
             scriptElement.innerHTML = scriptCode;
 
+            mostPopularDiv.appendChild(mostPopularSlickDiv);
+            mostPopularSlickDiv.appendChild(prevBtn);
+            mostPopularSlickDiv.appendChild(slickListDiv);
+            mostPopularSlickDiv.appendChild(nextBtn);
+            mostPopularSlickDiv.appendChild(ulEle);
+            slickListDiv.appendChild(slickTrackDiv);
 
-            // slickListDiv.appendChild(slickTrackDiv);
-            // mostPopularSlickDiv.appendChild(prevBtn);
-            // mostPopularSlickDiv.appendChild(slickListDiv);
-            // mostPopularSlickDiv.appendChild(nextBtn);
-            // mostPopularSlickDiv.appendChild(ulEle);
-            // mostPopularDiv.appendChild(mostPopularSlickDiv);
+            console.log(mostPopularDiv);
+            
             // trackDiv.appendChild(headingElement);
             // trackDiv.appendChild(mostPopularDiv);
             // trackDiv.appendChild(scriptElement);
