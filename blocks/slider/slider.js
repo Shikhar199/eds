@@ -63,6 +63,9 @@ export default function decorate(block){
 
             slickListDiv.appendChild(slickTrackDiv);
 
+            console.log("Slick List Div");
+            console.log(slickListDiv);
+
             // $('.most-popular-slick-at').slick({
 
             const nextBtn = document.createElement('button');
