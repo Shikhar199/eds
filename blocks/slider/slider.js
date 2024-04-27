@@ -146,10 +146,6 @@ export default function decorate(block){
             `;
 
 
-            trackDiv.appendChild(headingElement);
-            trackDiv.appendChild(mostPopularDiv);
-            trackDiv.appendChild(scriptElement);
-
             // document.querySelector(".ikislider").appendChild(mainElement);
             // mainElement.appendChild(sectionElement);
             // sectionElement.appendChild(containerDivElement);
@@ -159,10 +155,11 @@ export default function decorate(block){
             // trackDiv.appendChild(scriptElement);
 
             // mostPopularDiv.appendChild(mostPopularSlickDiv);
-            mostPopularSlickDiv.appendChild(prevBtn);
-            mostPopularSlickDiv.appendChild(slickListDiv);
-            mostPopularSlickDiv.appendChild(nextBtn);
-            mostPopularSlickDiv.appendChild(ulEle);
+
+            // mostPopularSlickDiv.appendChild(prevBtn);  check kr rha hu ki apne aap bnega ya nhi
+            // mostPopularSlickDiv.appendChild(slickListDiv);
+            // mostPopularSlickDiv.appendChild(nextBtn);
+            // mostPopularSlickDiv.appendChild(ulEle);
 
             console.log("mostPopularSlickDiv");
             console.log(mostPopularSlickDiv);
@@ -172,9 +169,9 @@ export default function decorate(block){
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
-            // trackDiv.appendChild(headingElement);
-            // trackDiv.appendChild(mostPopularDiv);
-            // trackDiv.appendChild(scriptElement);
+            trackDiv.appendChild(headingElement);
+            trackDiv.appendChild(mostPopularDiv);
+            trackDiv.appendChild(scriptElement);
 
             // slickTrackDiv.appendChild(mostPopularSlickDiv);
 
