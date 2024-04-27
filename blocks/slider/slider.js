@@ -203,6 +203,8 @@ export default function decorate(block){
             trackDiv.appendChild(headingElement);
             trackDiv.appendChild(mostPopularDiv);
             trackDiv.appendChild(scriptElement);
+
+            mostPopularDiv.appendChild(mostPopularSlickDiv);
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
 
