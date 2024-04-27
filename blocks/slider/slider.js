@@ -152,10 +152,10 @@ export default function decorate(block){
 
             // mostPopularDiv.appendChild(mostPopularSlickDiv);
 
-            mostPopularSlickDiv.appendChild(prevBtn);  //check kr rha hu ki apne aap bnega ya nhi
-            mostPopularSlickDiv.appendChild(slickListDiv);
-            mostPopularSlickDiv.appendChild(nextBtn);
-            mostPopularSlickDiv.appendChild(ulEle);
+            // mostPopularSlickDiv.appendChild(prevBtn);  //check kr rha hu ki apne aap bnega ya nhi
+            // mostPopularSlickDiv.appendChild(slickListDiv);
+            // mostPopularSlickDiv.appendChild(nextBtn);
+            // mostPopularSlickDiv.appendChild(ulEle);
 
             mostPopularDiv.appendChild(mostPopularSlickDiv);
 
