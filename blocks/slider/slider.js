@@ -155,6 +155,8 @@ export default function decorate(block){
 
             slickTrackDiv.appendChild(mostPopularSlickDiv);
 
+            console.log(slickTrackDiv);
+
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
             // import('/scripts/main.js').then(() => {
