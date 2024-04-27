@@ -24,33 +24,6 @@ export default function decorate(block){
             console.log('Slick min js has been loaded');
             // import('/scripts/main.js').then(() => {
 
-    // const jqueryScript = document.createElement('script');
-    // jqueryScript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
-    // const mainEle = document.querySelector('main');
-    // mainEle.insertBefore(jqueryScript, mainEle.firstChild);
-
-    // const slickjs = document.createElement('script');
-    // slickjs.src = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js';
-    // slickjs.setAttribute("integrity","sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==")
-    // slickjs.setAttribute("crossorigin","anonymous");
-    // slickjs.setAttribute("referrerpolicy","no-referrer")
-
-    // mainEle.insertBefore(slickjs, mainEle.children[1]);
-
-    // const slickThemeCss = document.createElement('link');
-    // slickThemeCss.setAttribute("rel","stylesheet");
-    // slickThemeCss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css");
-    // slickThemeCss.setAttribute("integrity","sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==");
-    // slickThemeCss.setAttribute("crossorigin","anonymous");
-    // slickThemeCss.setAttribute("referrerpolicy","no-referrer")
-
-    // const slickcss = document.createElement('link');
-    // slickcss.setAttribute("rel","stylesheet");
-    // slickcss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css");
-    // slickcss.setAttribute("integrity","sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==");
-    // slickcss.setAttribute("crossorigin","anonymous");
-    // slickcss.setAttribute("referrerpolicy","no-referrer")
-    
     // document.head.appendChild(slickThemeCss);
     // document.head.appendChild(slickcss)
     // includejQuery()
@@ -104,6 +77,8 @@ export default function decorate(block){
 
             [...block.children].forEach((row,r)=>{
                 const slickItem = createSlickItem(row,r);
+                console.log("Slick Item");
+                console.log(slickItem);
                 slickTrackDiv.appendChild(slickItem);
 
                 // create li
@@ -215,7 +190,6 @@ export default function decorate(block){
             // Set the content of the script element
             outerScriptElement.textContent = `
             $('.popular-card').each(function(index){
-                console.log("Popular card: " + index);
                 if (index > 0) {
                     $(this).removeClass("popular-main-mobile").addClass("popular-sub-mobile");
                     $(this).children(".temp-mobile").addClass("sub-mobile").removeClass("temp-mobile");
