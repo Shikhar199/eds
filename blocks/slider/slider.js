@@ -70,7 +70,7 @@ export default function decorate(block){
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
-            $('.slick-track').slick({
+            $('.most-popular-slick-at').slick({
                 dots: true,
                 infinite: true,
                 speed: 300,
