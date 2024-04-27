@@ -61,6 +61,9 @@ export default function decorate(block){
                 ulEle.appendChild(liEle);
             })
 
+            slickListDiv.appendChild(slickTrackDiv);
+
+
             // $('.most-popular-slick-at').slick({
 
             const nextBtn = document.createElement('button');
@@ -150,8 +153,6 @@ export default function decorate(block){
             mostPopularSlickDiv.appendChild(slickListDiv);
             mostPopularSlickDiv.appendChild(nextBtn);
             mostPopularSlickDiv.appendChild(ulEle);
-
-            slickListDiv.appendChild(slickTrackDiv);
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
