@@ -44,7 +44,8 @@ export default function decorate(block){
 
             [...block.children].forEach((row,r)=>{
                 const slickItem = createSlickItem(row,r);
-                slickTrackDiv.appendChild(slickItem);
+                // slickTrackDiv.appendChild(slickItem);
+                mostPopularSlickDiv.appendChild(slickItem);
 
                 // create li
                 const liEle = document.createElement('li');
@@ -153,7 +154,7 @@ export default function decorate(block){
             // mostPopularDiv.appendChild(mostPopularSlickDiv);
 
             // mostPopularSlickDiv.appendChild(prevBtn);  //check kr rha hu ki apne aap bnega ya nhi
-            mostPopularSlickDiv.appendChild(slickListDiv);
+            // mostPopularSlickDiv.appendChild(slickListDiv);
             // mostPopularSlickDiv.appendChild(nextBtn);
             // mostPopularSlickDiv.appendChild(ulEle);
 
