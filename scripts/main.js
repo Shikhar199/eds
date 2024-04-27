@@ -396,47 +396,47 @@ function social() {
 //       if (counter == accordionList.length) counter = 0;
 //     }, 5000);
 //   }
-//   $('.most-popular-slick').slick({
-//     dots: true,
-//     infinite: false,
-//     speed: 300,
-//     slidesToShow: 3,
-//     slidesToScroll: 1,
-//     buttons: true,
-//     arrows: true,
-//     responsive: [{
-//         breakpoint: 1400,
-//         settings: {
-//           slidesToShow: 3,
-//           slidesToScroll: 1,
-//           infinite: true,
-//           dots: true
-//         }
-//       },
-//       {
-//         breakpoint: 1200,
-//         settings: {
-//           slidesToShow: 2,
-//           slidesToScroll: 1,
-//           infinite: true,
-//           dots: true
-//         }
-//       },
-//       {
-//         breakpoint: 992,
-//         settings: {
-//           slidesToShow: 2,
-//           slidesToScroll: 1,
-//           refresh: true
+  $('.most-popular-slick').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    buttons: true,
+    arrows: true,
+    responsive: [{
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          refresh: true
   
-//         }
-//       },
-//       {
-//         breakpoint: 767,
-//         settings: "unslick",
-//       }
-//     ]
-//   });
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: "unslick",
+      }
+    ]
+  });
   
   
   let searchpopup = document.querySelector(".search-popup");

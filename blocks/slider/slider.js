@@ -205,6 +205,26 @@ export default function decorate(block){
                 console.error('Error loading main.js:', error);
             })
 
+            const outerScriptElement = document.createElement('script');
+
+            // Set the type attribute of the script element
+            outerScriptElement.type = 'text/javascript';
+
+            // Set the content of the script element
+            outerScriptElement.textContent = `
+            $('.popular-card').each(function(index){
+                console.log("Popular card: " + index);
+                if (index > 0) {
+                    $(this).removeClass("popular-main-mobile").addClass("popular-sub-mobile");
+                    $(this).children(".temp-mobile").addClass("sub-mobile").removeClass("temp-mobile");
+                    console.log("class updated for mobile");
+                }
+            });
+            `;
+
+            document.querySelector(".ikislider").appendChild(outerScriptElement);
+
+
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
         })
