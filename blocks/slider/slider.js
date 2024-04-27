@@ -1,40 +1,8 @@
-// (function(){
-//     const jqueryScript = document.createElement('script');
-//     jqueryScript.src = '/scripts/jquery.js';
-//     jqueryScript.setAttribute("type","module");
-//     document.head.appendChild(jqueryScript);
-
-//     const slickScript = document.createElement('script');
-//     slickScript.src = '/scripts/slick.js';
-//     slickScript.setAttribute("type","module");
-//     document.head.appendChild(slickScript);
-
-//     // jqueryScript.onload = slickScript.onload = function() {
-//     //     console.log('jQuery has been loaded');
-//     //     decorate(block);
-//     //     // Call the decorate function after jQuery has loaded
-//     // };
-//     console.log("Hi");
-// })();
-
 export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
-            // import('/scripts/main.js').then(() => {
-
-    // document.head.appendChild(slickThemeCss);
-    // document.head.appendChild(slickcss)
-    // includejQuery()
-    // .then(() => {
-    //     // jQuery is now available
-    //     console.log('jQuery has been loaded');
-    //     // Call the decorate function after jQuery is loaded
-    // })
-    // .catch((error) => {
-    //     console.error('Error loading jQuery:', error);
-    // });
 
             const mainElement = document.createElement('main');
 
@@ -145,21 +113,6 @@ export default function decorate(block){
 
             scriptElement.innerHTML = scriptCode;
 
-            // mostPopularDiv.appendChild(mostPopularSlickDiv);
-            // mostPopularSlickDiv.appendChild(prevBtn);
-            // mostPopularSlickDiv.appendChild(slickListDiv);
-            // mostPopularSlickDiv.appendChild(nextBtn);
-            // mostPopularSlickDiv.appendChild(ulEle);
-            // slickListDiv.appendChild(slickTrackDiv);
-            
-            // trackDiv.appendChild(headingElement);
-            // trackDiv.appendChild(mostPopularDiv);
-            // trackDiv.appendChild(scriptElement);
-
-            // containerDivElement.appendChild(trackDiv);
-            // sectionElement.appendChild(containerDivElement);
-            // mainElement.appendChild(sectionElement);
-
             document.querySelector(".slider-container").innerHTML='';
 
             // document.querySelector(".slider-container").appendChild(mainElement);
@@ -167,9 +120,6 @@ export default function decorate(block){
             document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
             console.log(sectionElement);
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
 
             import('/scripts/main.js').then(() => {
                 console.log("main.js loaded");
