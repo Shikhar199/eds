@@ -46,38 +46,9 @@ export default function decorate(block){
                 const slickItem = createSlickItem(row,r);
                 // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
-
-                // create li
-                const liEle = document.createElement('li');
-                liEle.setAttribute("role","presentation");
-
-                var idno = 30*1+r;
-                var ariaLabel = r+1+" of 4"
-                const liBtn = document.createElement('button');
-                liBtn.setAttribute("role","tab");
-                liBtn.id = "slick-slide-control"+idno;
-                liBtn.setAttribute('aria-controls','slick-slide'+idno);
-                liBtn.setAttribute('aria-label',ariaLabel);
-                liBtn.textContent = r+1;
-
-                liEle.appendChild(liBtn);
-                ulEle.appendChild(liEle);
             })
 
-            slickListDiv.appendChild(slickTrackDiv);
-
-            console.log("SlickTrack Div");
-            console.log(slickTrackDiv);
-
-            console.log("Slick List Div");
-            console.log(slickListDiv);
-
             // $('.most-popular-slick-at').slick({
-
-            const nextBtn = document.createElement('button');
-            nextBtn.classList.add('slick-next', 'slick-arrow');
-            nextBtn.setAttribute('aria-label', 'Next');
-            nextBtn.textContent = "Next";
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
@@ -148,16 +119,6 @@ export default function decorate(block){
             });
             `;
 
-
-            // document.querySelector(".ikislider").appendChild(mainElement);
-
-            // mostPopularDiv.appendChild(mostPopularSlickDiv);
-
-            // mostPopularSlickDiv.appendChild(prevBtn);  //check kr rha hu ki apne aap bnega ya nhi
-            // mostPopularSlickDiv.appendChild(slickListDiv);
-            // mostPopularSlickDiv.appendChild(nextBtn);
-            // mostPopularSlickDiv.appendChild(ulEle);
-
             mostPopularDiv.appendChild(mostPopularSlickDiv);
 
             trackDiv.appendChild(headingElement);
@@ -170,8 +131,6 @@ export default function decorate(block){
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
-
-            // slickTrackDiv.appendChild(mostPopularSlickDiv);
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
@@ -197,12 +156,8 @@ function createSlickItem(row,r){
     const popularSlickItemDiv = document.createElement('div');
     // popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
     
-    popularSlickItemDiv.classList.add('most-popular-slick-item');
-    // popularSlickItemDiv.style.width = '467px';
-    popularSlickItemDiv.setAttribute("role","tabpanel");
-    // popularSlickItemDiv.id="slick-slide"+slickId;
-    // popularSlickItemDiv.setAttribute("aria-describedby","slick-slide-control"+slickId);
-    // popularSlickItemDiv.setAttribute("data-slick-index",r);
+    // popularSlickItemDiv.classList.add('most-popular-slick-item');
+    // popularSlickItemDiv.setAttribute("role","tabpanel");
 
     const popularCardDiv = document.createElement('div');
     if(r==0){
@@ -272,43 +227,3 @@ function createSlickItem(row,r){
     })
     return popularSlickItemDiv;
 }
-
-// function includeScript(src) {
-//     return new Promise((resolve, reject) => {
-//         const script = document.createElement('script');
-//         script.src = src;
-//         script.onload = resolve;
-//         script.onerror = reject;
-//         document.body.appendChild(script);
-//     });
-// }
-
-// function interval() {
-//     if (($('.slider .slick-track div[data-slick-index="' + progressBarIndex + '"]').attr("aria-hidden")) === "true") {
-//       progressBarIndex = $('.slider .slick-track div[aria-hidden="false"]').data("slickIndex");
-//       startProgressbar();
-//     } else {
-//       percentTime += 1 / (time + 5);
-//       $('.inProgress' + progressBarIndex).css({
-//         width: percentTime + "%"
-//       });
-//       if (percentTime >= 100) {
-//         $('.single-item').slick('slickNext');
-//         progressBarIndex++;
-//         if (progressBarIndex > 3) {
-//           progressBarIndex = 0;
-//         }
-//         startProgressbar();
-//       }
-//     }
-//   }
-
-// function includejQuery() {
-//     return new Promise((resolve, reject) => {
-//         const script = document.createElement('script');
-//         script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-//         script.onload = resolve;
-//         script.onerror = reject;
-//         document.head.appendChild(script);
-//     });
-// }
