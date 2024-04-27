@@ -140,6 +140,21 @@ export default function decorate(block){
             `;
 
             // document.querySelector(".ikislider").appendChild(mainElement);
+            // mainElement.appendChild(sectionElement);
+            // sectionElement.appendChild(containerDivElement);
+            // containerDivElement.appendChild(trackDiv);
+            // trackDiv.appendChild(headingElement);
+            // trackDiv.appendChild(mostPopularDiv);
+            // trackDiv.appendChild(scriptElement);
+
+            // mostPopularDiv.appendChild(mostPopularSlickDiv);
+            mostPopularSlickDiv.appendChild(prevBtn);
+            mostPopularSlickDiv.appendChild(slickListDiv);
+            mostPopularSlickDiv.appendChild(nextBtn);
+            mostPopularSlickDiv.appendChild(ulEle);
+
+            mostPopularDiv.appendChild(mostPopularSlickDiv);
+
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
@@ -147,15 +162,7 @@ export default function decorate(block){
             trackDiv.appendChild(mostPopularDiv);
             trackDiv.appendChild(scriptElement);
 
-            mostPopularDiv.appendChild(mostPopularSlickDiv);
-            mostPopularSlickDiv.appendChild(prevBtn);
-            mostPopularSlickDiv.appendChild(slickListDiv);
-            mostPopularSlickDiv.appendChild(nextBtn);
-            mostPopularSlickDiv.appendChild(ulEle);
-
             // slickTrackDiv.appendChild(mostPopularSlickDiv);
-            console.log("Slick Track Div");
-            console.log(slickTrackDiv);
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
