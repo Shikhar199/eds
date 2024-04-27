@@ -396,7 +396,8 @@ function social() {
 //       if (counter == accordionList.length) counter = 0;
 //     }, 5000);
 //   }
-  $('.most-popular-slick').slick({
+// $('.most-popular-slick').slick({
+  $('.slick-track').slick({
     dots: true,
     infinite: false,
     speed: 300,
