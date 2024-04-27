@@ -200,6 +200,9 @@ export default function decorate(block){
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
+            trackDiv.appendChild(headingElement);
+            trackDiv.appendChild(mostPopularDiv);
+            trackDiv.appendChild(scriptElement);
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
 
