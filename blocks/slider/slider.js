@@ -198,6 +198,13 @@ export default function decorate(block){
             // }).catch(error=>{
             //     console.error('Error loading main.js:', error);
             // })
+
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
+
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
         })
@@ -206,9 +213,6 @@ export default function decorate(block){
         console.error('Error loading jQuery:', error);
     });
 
-    import('/scripts/main.js').then(() => {}).catch(error=>{
-            console.error('Error loading main.js:', error);
-    })
 }
 
 function createSlickItem(row,r){
