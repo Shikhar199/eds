@@ -77,8 +77,6 @@ export default function decorate(block){
 
             [...block.children].forEach((row,r)=>{
                 const slickItem = createSlickItem(row,r);
-                console.log("Slick Item");
-                console.log(slickItem);
                 slickTrackDiv.appendChild(slickItem);
 
                 // create li
@@ -150,24 +148,24 @@ export default function decorate(block){
 
             scriptElement.innerHTML = scriptCode;
 
-            mostPopularDiv.appendChild(mostPopularSlickDiv);
-            mostPopularSlickDiv.appendChild(prevBtn);
-            mostPopularSlickDiv.appendChild(slickListDiv);
-            mostPopularSlickDiv.appendChild(nextBtn);
-            mostPopularSlickDiv.appendChild(ulEle);
-            slickListDiv.appendChild(slickTrackDiv);
+            // mostPopularDiv.appendChild(mostPopularSlickDiv);
+            // mostPopularSlickDiv.appendChild(prevBtn);
+            // mostPopularSlickDiv.appendChild(slickListDiv);
+            // mostPopularSlickDiv.appendChild(nextBtn);
+            // mostPopularSlickDiv.appendChild(ulEle);
+            // slickListDiv.appendChild(slickTrackDiv);
             
-            trackDiv.appendChild(headingElement);
-            trackDiv.appendChild(mostPopularDiv);
-            trackDiv.appendChild(scriptElement);
+            // trackDiv.appendChild(headingElement);
+            // trackDiv.appendChild(mostPopularDiv);
+            // trackDiv.appendChild(scriptElement);
 
-            containerDivElement.appendChild(trackDiv);
-            sectionElement.appendChild(containerDivElement);
-            mainElement.appendChild(sectionElement);
+            // containerDivElement.appendChild(trackDiv);
+            // sectionElement.appendChild(containerDivElement);
+            // mainElement.appendChild(sectionElement);
 
             document.querySelector(".slider-container").innerHTML='';
 
-            document.querySelector(".slider-container").appendChild(mainElement);
+            // document.querySelector(".slider-container").appendChild(mainElement);
 
             document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
@@ -198,6 +196,10 @@ export default function decorate(block){
             });
             `;
 
+            document.querySelector(".ikislider").appendChild(mainElement);
+            mainElement.appendChild(sectionElement);
+            sectionElement.appendChild(containerDivElement);
+            containerDivElement.appendChild(trackDiv);
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
 
