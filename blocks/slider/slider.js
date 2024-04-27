@@ -155,17 +155,18 @@ export default function decorate(block){
             mostPopularSlickDiv.appendChild(nextBtn);
             mostPopularSlickDiv.appendChild(ulEle);
 
+            mostPopularDiv.appendChild(mostPopularSlickDiv);
+
+            trackDiv.appendChild(headingElement);
+            trackDiv.appendChild(mostPopularDiv);
+            trackDiv.appendChild(scriptElement);
+
             console.log("mostPopularSlickDiv");
             console.log(mostPopularSlickDiv);
 
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
-            trackDiv.appendChild(headingElement);
-            trackDiv.appendChild(mostPopularDiv);
-            trackDiv.appendChild(scriptElement);
-            mostPopularDiv.appendChild(mostPopularSlickDiv);
-
 
             // slickTrackDiv.appendChild(mostPopularSlickDiv);
 
