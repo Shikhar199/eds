@@ -153,7 +153,7 @@ export default function decorate(block){
             mostPopularSlickDiv.appendChild(nextBtn);
             mostPopularSlickDiv.appendChild(ulEle);
 
-            slickTrackDiv.appendChild(mostPopularSlickDiv);
+            // slickTrackDiv.appendChild(mostPopularSlickDiv);
             console.log("Slick Track Div");
             console.log(slickTrackDiv);
 
