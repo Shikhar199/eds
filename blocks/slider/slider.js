@@ -127,6 +127,14 @@ export default function decorate(block){
 
             console.log(slickTrackDiv);
             console.log(ulEle);
+            console.log(prevBtn);
+
+            const nextBtn = document.createElement('button');
+            nextBtn.classList.add('slick-next', 'slick-arrow');
+            nextBtn.setAttribute('aria-label', 'Next');
+            nextBtn.textContent = "Next";
+
+            console.log(nextBtn);
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
@@ -170,11 +178,6 @@ export default function decorate(block){
                     }
                 ]
             });`;
-
-            const nextBtn = document.createElement('button');
-            nextBtn.classList.add('slick-next', 'slick-arrow');
-            nextBtn.setAttribute('aria-label', 'Next');
-            nextBtn.textContent = "Next";
 
             scriptElement.innerHTML = scriptCode;
 
