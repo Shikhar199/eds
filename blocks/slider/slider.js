@@ -115,7 +115,7 @@ export default function decorate(block){
 
             document.querySelector(".slider-container").innerHTML='';
 
-            // document.querySelector(".slider-container").appendChild(mainElement);
+            document.querySelector(".slider-container").appendChild(mainElement);
 
             document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
@@ -137,7 +137,7 @@ export default function decorate(block){
             });
             `;
 
-            document.querySelector(".ikislider").appendChild(mainElement);
+            // document.querySelector(".ikislider").appendChild(mainElement);
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
