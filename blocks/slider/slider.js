@@ -156,8 +156,7 @@ function createSlickItem(row,r){
     const popularSlickItemDiv = document.createElement('div');
     // popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
     
-    // popularSlickItemDiv.classList.add('most-popular-slick-item');
-    // popularSlickItemDiv.setAttribute("role","tabpanel");
+    popularSlickItemDiv.classList.add('most-popular-slick-item');
 
     const popularCardDiv = document.createElement('div');
     if(r==0){
