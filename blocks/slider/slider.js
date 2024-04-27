@@ -35,7 +35,7 @@ export default function decorate(block){
             slickListDiv.classList.add('slick-list', 'draggable');
 
             const slickTrackDiv = document.createElement('div');
-            slickTrackDiv.classList.add('slick-track');
+            // slickTrackDiv.classList.add('slick-track');
 
             //create ul
             const ulEle = document.createElement('ul');
@@ -194,12 +194,14 @@ export default function decorate(block){
 function createSlickItem(row,r){
     var slickId = 30*1+r;
     const popularSlickItemDiv = document.createElement('div');
-    popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
-    popularSlickItemDiv.style.width = '467px';
+    // popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
+    
+    popularSlickItemDiv.classList.add('most-popular-slick-item');
+    // popularSlickItemDiv.style.width = '467px';
     popularSlickItemDiv.setAttribute("role","tabpanel");
-    popularSlickItemDiv.id="slick-slide"+slickId;
-    popularSlickItemDiv.setAttribute("aria-describedby","slick-slide-control"+slickId);
-    popularSlickItemDiv.setAttribute("data-slick-index",r);
+    // popularSlickItemDiv.id="slick-slide"+slickId;
+    // popularSlickItemDiv.setAttribute("aria-describedby","slick-slide-control"+slickId);
+    // popularSlickItemDiv.setAttribute("data-slick-index",r);
 
     const popularCardDiv = document.createElement('div');
     if(r==0){
