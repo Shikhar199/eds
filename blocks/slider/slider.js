@@ -6,7 +6,7 @@ export default function decorate(block){
 
             const mainElement = document.createElement('main');
 
-            console.log(block.length);
+            console.log(block.children.length);
 
             const sectionElement = document.createElement('section');
             sectionElement.classList.add('home-most-popular-wraper');
