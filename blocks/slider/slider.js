@@ -181,15 +181,14 @@ export default function decorate(block){
             mostPopularSlickDiv.appendChild(nextBtn);
             mostPopularSlickDiv.appendChild(ulEle);
             slickListDiv.appendChild(slickTrackDiv);
-
-            console.log(mostPopularDiv);
             
-            // trackDiv.appendChild(headingElement);
-            // trackDiv.appendChild(mostPopularDiv);
-            // trackDiv.appendChild(scriptElement);
-            // containerDivElement.appendChild(trackDiv);
-            // sectionElement.appendChild(containerDivElement);
-            // mainElement.appendChild(sectionElement);
+            trackDiv.appendChild(headingElement);
+            trackDiv.appendChild(mostPopularDiv);
+            trackDiv.appendChild(scriptElement);
+
+            containerDivElement.appendChild(trackDiv);
+            sectionElement.appendChild(containerDivElement);
+            mainElement.appendChild(sectionElement);
 
             document.querySelector(".slider-container").innerHTML='';
 
