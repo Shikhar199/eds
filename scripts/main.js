@@ -246,7 +246,7 @@ function social() {
   
   $('.item').click(function () {
     clearInterval(tick);
-    //   var goToThisIndex = $(this).find("span").data("slickIndex");
+      var goToThisIndex = $(this).find("span").data("slickIndex");
     var goToThisIndex = $(this).children("span.progressBar").data("slickIndex");
     $('.single-item').slick('slickGoTo', goToThisIndex, false);
     startProgressbar();
