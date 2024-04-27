@@ -145,6 +145,11 @@ export default function decorate(block){
             });
             `;
 
+
+            trackDiv.appendChild(headingElement);
+            trackDiv.appendChild(mostPopularDiv);
+            trackDiv.appendChild(scriptElement);
+
             // document.querySelector(".ikislider").appendChild(mainElement);
             // mainElement.appendChild(sectionElement);
             // sectionElement.appendChild(containerDivElement);
@@ -167,9 +172,9 @@ export default function decorate(block){
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
-            trackDiv.appendChild(headingElement);
-            trackDiv.appendChild(mostPopularDiv);
-            trackDiv.appendChild(scriptElement);
+            // trackDiv.appendChild(headingElement);
+            // trackDiv.appendChild(mostPopularDiv);
+            // trackDiv.appendChild(scriptElement);
 
             // slickTrackDiv.appendChild(mostPopularSlickDiv);
 
