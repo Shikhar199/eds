@@ -156,11 +156,11 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            import('/scripts/main.js').then(() => {
-                console.log("main.js loaded");
-            }).catch(error=>{
-                console.error('Error loading main.js:', error);
-            })
+            // import('/scripts/main.js').then(() => {
+            //     console.log("main.js loaded");
+            // }).catch(error=>{
+            //     console.error('Error loading main.js:', error);
+            // })
 
 
         }).catch(error=>{
