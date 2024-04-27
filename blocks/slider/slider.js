@@ -63,6 +63,9 @@ export default function decorate(block){
 
             slickListDiv.appendChild(slickTrackDiv);
 
+            console.log("SlickTrack Div");
+            console.log(slickTrackDiv);
+
             console.log("Slick List Div");
             console.log(slickListDiv);
 
