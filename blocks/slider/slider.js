@@ -201,8 +201,8 @@ function createSlickItem(row,r,blockLength){
                     cardBodyAnchorElement.textContent = node.textContent.trim();
                     console.log(cardImageDiv);
 
-                    cardImageDiv.querySelector("a").setAttribute("title",node.textContent.trim())
-                    cardImageDiv.querySelector("a").querySelector("img").setAttribute("title",node.textContent.trim())
+                    popularCardDiv.querySelector("a").setAttribute("title",node.textContent.trim())
+                    popularCardDiv.querySelector("a").querySelector("img").setAttribute("alt",node.textContent.trim())
         
                     h4Element.appendChild(cardBodyAnchorElement);
                     cardBodyDiv.appendChild(h4Element);
