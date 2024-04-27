@@ -107,24 +107,26 @@ export default function decorate(block){
                 slickTrackDiv.appendChild(slickItem);
 
                 // create li
-                // const liEle = document.createElement('li');
-                // liEle.setAttribute("role","presentation");
+                const liEle = document.createElement('li');
+                liEle.setAttribute("role","presentation");
 
-                // var idno = 30*1+r;
-                // var ariaLabel = r+1+" of 4"
-                // const liBtn = document.createElement('button');
-                // liBtn.setAttribute("role","tab");
-                // liBtn.id = "slick-slide-control"+idno;
-                // liBtn.setAttribute('aria-controls','slick-slide'+idno);
-                // liBtn.setAttribute('aria-label',ariaLabel);
-                // liBtn.textContent = r+1;
+                var idno = 30*1+r;
+                var ariaLabel = r+1+" of 4"
+                const liBtn = document.createElement('button');
+                liBtn.setAttribute("role","tab");
+                liBtn.id = "slick-slide-control"+idno;
+                liBtn.setAttribute('aria-controls','slick-slide'+idno);
+                liBtn.setAttribute('aria-label',ariaLabel);
+                liBtn.textContent = r+1;
 
-                // liEle.appendChild(liBtn);
-                // ulEle.appendChild(liEle);
+                liEle.appendChild(liBtn);
+                ulEle.appendChild(liEle);
             })
+
             // $('.most-popular-slick-at').slick({
 
             console.log(slickTrackDiv);
+            console.log(ulEle);
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
