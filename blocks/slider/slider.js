@@ -63,6 +63,7 @@ export default function decorate(block){
 
             slickListDiv.appendChild(slickTrackDiv);
 
+            slickTrackDiv.appendChild(mostPopularSlickDiv);
 
             // $('.most-popular-slick-at').slick({
 
