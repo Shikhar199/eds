@@ -275,7 +275,7 @@ function fixFirstDiv(blockLength){
     console.log("Hi");
     const slickTrackDiv = document.querySelector(".slick-track");
 
-    for(let i=0;i<slickTrackDiv.length;i++){
+    for(let i=0;i<slickTrackDiv.children;i++){
         console.log(slickTrackDiv[i].data-slick-index);
     }
 }
