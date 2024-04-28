@@ -279,8 +279,15 @@ function fixFirstDiv(blockLength){
         const slickIndex = child.getAttribute('data-slick-index');
 
         if(slickIndex==0 || slickIndex==blockLength){
-            console.log(child.querySelector(".card-title"));
-            console.log(child.querySelector(".card-body"));
+            const cardTitle = child.querySelector(".card-title");
+            const cardBody = child.querySelector(".card-body");
+
+            const subMobileDiv = child.querySelector('.sub-mobile');
+            if(subMobileDiv){
+                subMobileDiv.remove();
+            }
+            child.querySelector(".popular-card").appendChild(cardTitle);
+            child.querySelector(".popular-card").appendChild(cardBody);
         }
     }
 }
