@@ -43,7 +43,7 @@ export default function decorate(block){
             ulEle.setAttribute("role","tablist");
 
             [...block.children].forEach((row,r)=>{
-                const slickItem = createSlickItem(row,r,block.children.length);
+                const slickItem = createSlickItem(row,r);
                 // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
             })
@@ -140,6 +140,10 @@ export default function decorate(block){
             //     console.error('Error loading main.js:', error);
             // })
 
+            [...block.children].forEach((row,r)=>{
+                fixFirstDiv(row,r,block.children.length);
+            })
+
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
@@ -151,7 +155,7 @@ export default function decorate(block){
 
 }
 
-function createSlickItem(row,r,blockLength){
+function createSlickItem(row,r){
     var slickId = 30*1+r;
     const popularSlickItemDiv = document.createElement('div');
     // popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
@@ -267,4 +271,12 @@ function createSlickItem(row,r,blockLength){
         }
     })
     return popularSlickItemDiv;
+}
+
+function fixFirstDiv(row,r,blockLength){
+    const slickTrackDiv = document.querySelector(".slick-track");
+
+    for(let i=0;i<slickTrackDiv.length;i++){
+        console.log(slickTrackDiv[i].data-slick-index);
+    }
 }
