@@ -272,11 +272,17 @@ function createSlickItem(row,r){
 }
 
 function fixFirstDiv(blockLength){
-    console.log("Hi");
     const slickTrackDiv = document.querySelector(".slick-track");
     console.log(slickTrackDiv);
     console.log(slickTrackDiv.children);
-    for(let i=0;i<slickTrackDiv.children;i++){
-        console.log(slickTrackDiv[i].data-slick-index);
+    for(let i=0;i<slickTrackDiv.children.length;i++){
+        const child = slickTrackDiv.children[i];
+
+        const slickIndex = child.getAttribute('data-slick-index');
+
+        if(slickIndex==0 || slickIndex==blockLength){
+            console.log(child.querySelector(".card-title"));
+            console.log(child.querySelector(".card-body"));
+        }
     }
 }
