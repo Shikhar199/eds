@@ -140,9 +140,7 @@ export default function decorate(block){
             //     console.error('Error loading main.js:', error);
             // })
 
-            [...block.children].forEach((row,r)=>{
-                fixFirstDiv(row,r,block.children.length);
-            })
+            fixFirstDiv(row,r,block.children.length);    
 
 
         }).catch(error=>{
