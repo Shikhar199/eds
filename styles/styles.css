@@ -1,9 +1,9 @@
-.card-image img {
-  height: 200px; /* Adjust the height as needed */
-  width: auto; /* Maintain aspect ratio */
-}
+ /* .card-image img { */
+  /* height: 200px; Adjust the height as needed */
+  /* width: auto; Maintain aspect ratio */
+/* } */
 
-.sub-mobile {
-  height: 150px; /* Adjust the height as needed */
-  overflow: hidden; /* Hide any content that exceeds the specified height */
-}
+/* .sub-mobile { */
+  /* height: 150px; Adjust the height as needed */
+  /* overflow: hidden; Hide any content that exceeds the specified height */
+/* }  */
