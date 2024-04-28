@@ -277,8 +277,8 @@ function fixFirstDiv(blockLength){
         const child = slickTrackDiv.children[i];
 
         const slickIndex = child.getAttribute('data-slick-index');
-        console.log(slickIndex);
         if(slickIndex==0 || slickIndex==blockLength){
+            console.log("Condition satisfied");
             const cardTitle = child.querySelector(".card-title");
             const cardBody = child.querySelector(".card-body");
 
