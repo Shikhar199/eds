@@ -284,6 +284,7 @@ function fixFirstDiv(blockLength){
 
             const subMobileDiv = child.querySelector('.sub-mobile');
             if(subMobileDiv){
+                console.log("Removing subMobileDiv");
                 subMobileDiv.remove();
             }
             child.querySelector(".popular-card").appendChild(cardTitle);
