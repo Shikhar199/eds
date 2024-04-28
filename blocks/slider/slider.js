@@ -273,8 +273,6 @@ function createSlickItem(row,r){
 
 function fixFirstDiv(blockLength){
     const slickTrackDiv = document.querySelector(".slick-track");
-    console.log(slickTrackDiv);
-    console.log(slickTrackDiv.children);
     for(let i=0;i<slickTrackDiv.children.length;i++){
         const child = slickTrackDiv.children[i];
 
