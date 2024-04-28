@@ -140,7 +140,7 @@ export default function decorate(block){
             //     console.error('Error loading main.js:', error);
             // })
 
-            fixFirstDiv(row,r,block.children.length);    
+            fixFirstDiv(block.children.length);    
 
 
         }).catch(error=>{
@@ -271,7 +271,7 @@ function createSlickItem(row,r){
     return popularSlickItemDiv;
 }
 
-function fixFirstDiv(row,r,blockLength){
+function fixFirstDiv(blockLength){
     const slickTrackDiv = document.querySelector(".slick-track");
 
     for(let i=0;i<slickTrackDiv.length;i++){
