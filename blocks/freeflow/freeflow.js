@@ -48,6 +48,8 @@ export default function decorate(block){
                     // imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
+                    console.log("Image");
+                    console.log(col);
                     const containerDiv = document.createElement('div');
                     containerDiv.classList.add('container');
 
