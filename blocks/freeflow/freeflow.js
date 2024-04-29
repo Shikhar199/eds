@@ -84,10 +84,15 @@ export default function decorate(block){
             freeflowSlickSlider.appendChild(bannerWrapDiv);
         }
     })
-
-    import('/scripts/main.js').then(() => {
-        console.log("main.js loaded");
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
+        
+        import('/scripts/main.js').then(() => {
+            console.log("main.js loaded");
+        }).catch(error=>{
+            console.error('Error loading main.js:', error);
+        })
     }).catch(error=>{
-        console.error('Error loading main.js:', error);
+        console.error('Error loading jquery.js:', error);
     })
 }
