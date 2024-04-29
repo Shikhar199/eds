@@ -35,12 +35,32 @@ export default function decorate(block){
             freeflowbannerWrapDiv.appendChild(freeflowBannerImgDiv);
 
             [...row.children].forEach((col,c)=>{
-                // if(c==0){
-                //     const imgElement = document.createElement('img');
+                if(c==0){
+                    const imgElement = document.createElement('img');
+                    imgElement.classList.add('img-fluid', 'hero-banner');
+                } else if(c==1){
+                    const containerDiv = document.createElement('div');
+                    containerDiv.classList.add('container');
 
-                // }
-                console.log(c);
-                console.log(col.textContent.trim());
+                    const bannerMainDiv = document.createElement('div');
+                    bannerMainDiv.classList.add('banner-main');
+
+                    containerDiv.appendChild(bannerMainDiv);
+
+                    const anchorElement = document.createElement('a');
+                    anchorElement.classList.add('btn', 'btn-secondary');
+
+                    const pElement = document.createElement('p');
+                    anchorElement.classList.add('heading1');
+
+                    bannerMainDiv.appendChild(anchorElement);
+                    bannerMainDiv.appendChild(pElement);
+
+                    [...col.childNodes].forEach((node,i)=>{
+                        console.log(i);
+                        console.log(node.textContent.trim());
+                    })
+                }
             })
         }
     })
