@@ -23,13 +23,12 @@ export default function decorate(block){
     wraperDiv.appendChild(containerDiv);
 
     [...block.children].forEach((row,r)=>{
-        // if(r==0){
-        //     // const h1Element = document.createElement('h1');
-        //     // h1Element.textContent = node.textContent.trim();
-        //     // containerDiv.appendChild(h1Element);
-        // } else{
+        if(r==0){
+            const h1Element = document.createElement('h1');
+            h1Element.textContent = row.textContent.trim();
+            containerDiv.appendChild(h1Element);
+        } else{
 
-        // }
-        console.log(row.textContent.trim());
+        }
     })
 }
