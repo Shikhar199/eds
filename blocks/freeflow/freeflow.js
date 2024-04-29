@@ -56,7 +56,8 @@ export default function decorate(block){
                     bannerMainDiv.appendChild(anchorElement);
                     bannerMainDiv.appendChild(pElement);
 
-                    [...col.childNodes].forEach((node,i)=>{
+                    [...col.children].forEach((node,i)=>{
+                        console.log("Hi");
                         console.log(i);
                         console.log(node.textContent.trim());
                     })
