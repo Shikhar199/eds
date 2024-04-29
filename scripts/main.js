@@ -119,9 +119,9 @@ function social() {
 //     commonBody.classList.add("sidebar-scroll");
 //   });
   
-  navbarCollapseToggler.addEventListener('click', () => {
-    commonBody.classList.remove("sidebar-scroll");
-  });
+//   navbarCollapseToggler.addEventListener('click', () => {
+//     commonBody.classList.remove("sidebar-scroll");
+//   });
   
   
   function twitterShare(url, title){
