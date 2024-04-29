@@ -38,6 +38,7 @@ export default function decorate(block){
                 if(c==0){
                     const imgElement = document.createElement('img');
                     imgElement.classList.add('img-fluid', 'hero-banner');
+                    bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
                     containerDiv.classList.add('container');
@@ -60,16 +61,17 @@ export default function decorate(block){
                         if(i==0){
                             bannerImgDiv.querySelector('img').setAttribute("src",node.textContent.trim());
                         } else if(i==1){
-                            bannerImgDiv.querySelector('.banner-main').querySelector('a').setAttribute("href",node.textContent.trim());
+                            bannerMainDiv.querySelector('a').setAttribute("href",node.textContent.trim());
                         } else if(i==2){
                             bannerImgDiv.querySelector('img').setAttribute("alt",node.textContent.trim());
-                            bannerImgDiv.querySelector('.banner-main').querySelector('a').setAttribute("aria-label",node.textContent.trim());
+                            bannerMainDiv.querySelector('a').setAttribute("aria-label",node.textContent.trim());
                             pElement.textContent = node.textContent.trim();
                         } else if(i==3){
-                            bannerImgDiv.querySelector('.banner-main').querySelector('a').setAttribute("title",node.textContent.trim());
-                            bannerImgDiv.querySelector('.banner-main').querySelector('a').textContent = node.textContent.trim();
+                            bannerMainDiv.querySelector('a').setAttribute("title",node.textContent.trim());
+                            bannerMainDiv.querySelector('a').textContent = node.textContent.trim();
                         }
                     })
+                    bannerImgDiv.appendChild(containerDiv);
                 }
                 
             })
