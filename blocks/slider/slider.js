@@ -289,6 +289,9 @@ function fixFirstDiv(blockLength){
             }
             child.querySelector(".popular-card").appendChild(cardTitle);
             child.querySelector(".popular-card").appendChild(cardBody);
+
+            child.querySelector(".popular-card").classList.remove('popular-sub-mobile');
+            child.querySelector(".popular-card").classList.add('popular-main-mobile')
         }
     }
 }
