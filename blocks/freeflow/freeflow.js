@@ -32,7 +32,7 @@ export default function decorate(block){
             bannerWrapDiv.classList.add('banner-wraper');
             const bannerImgDiv = document.createElement('div');
             bannerImgDiv.classList.add('banner-image');
-            bannerWrapDiv.appendChild(bannerWrapDiv);
+            bannerWrapDiv.appendChild(bannerImgDiv);
 
             [...row.children].forEach((col,c)=>{
                 // if(c==0){
