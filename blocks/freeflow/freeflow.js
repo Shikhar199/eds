@@ -24,6 +24,9 @@ export default function decorate(block){
     freeflowSliderContainer.appendChild(freeflowSlickSlider);
     freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
+    const elementToRemove = document.querySelector('.hero-container');
+    elementToRemove.remove();
+
     [...block.children].forEach((row,r)=>{
         if(r==0){
             const h1Element = document.createElement('h1');
@@ -40,6 +43,7 @@ export default function decorate(block){
                 if(c==0){
                     const imgElement = document.createElement('img');
                     imgElement.classList.add('img-fluid', 'hero-banner');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
@@ -61,14 +65,12 @@ export default function decorate(block){
 
                     [...col.children].forEach((node,i)=>{
                         if(i==0){
-                            bannerImgDiv.querySelector('img').setAttribute("src",node.textContent.trim());
-                        } else if(i==1){
                             bannerMainDiv.querySelector('a').setAttribute("href",node.textContent.trim());
-                        } else if(i==2){
+                        } else if(i==1){
                             bannerImgDiv.querySelector('img').setAttribute("alt",node.textContent.trim());
                             bannerMainDiv.querySelector('a').setAttribute("aria-label",node.textContent.trim());
                             pElement.textContent = node.textContent.trim();
-                        } else if(i==3){
+                        } else if(i==2){
                             bannerMainDiv.querySelector('a').setAttribute("title",node.textContent.trim());
                             bannerMainDiv.querySelector('a').textContent = node.textContent.trim();
                         }
