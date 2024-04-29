@@ -24,8 +24,8 @@ export default function decorate(block){
     freeflowSliderContainer.appendChild(freeflowSlickSlider);
     freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
-    const elementToRemove = document.querySelector('.hero-container');
-    elementToRemove.remove();
+    // const elementToRemove = document.querySelector('.hero-container');
+    // elementToRemove.remove();
 
     [...block.children].forEach((row,r)=>{
         if(r==0){
