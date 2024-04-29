@@ -21,6 +21,7 @@ export default function decorate(block){
     freeflowContainer.appendChild(freeflowSectionElement);
     freeflowSectionElement.appendChild(freeflowWraperDiv);
     freeflowSectionElement.appendChild(freeflowSliderContainer);
+    freeflowSliderContainer.appendChild(freeflowSlickSlider);
     freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
     [...block.children].forEach((row,r)=>{
