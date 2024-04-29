@@ -84,4 +84,10 @@ export default function decorate(block){
             freeflowSlickSlider.appendChild(bannerWrapDiv);
         }
     })
+
+    import('/scripts/main.js').then(() => {
+        console.log("main.js loaded");
+    }).catch(error=>{
+        console.error('Error loading main.js:', error);
+    })
 }
