@@ -13,13 +13,14 @@ export default function decorate(block){
     freeflowContainerDiv.classList.add('container');
 
     const freeflowSliderContainer = document.createElement('div');
-    freeflowSliderContainer.classList.add('freeflowSliderContainer');
+    freeflowSliderContainer.classList.add('sliderContainer');
 
     const freeflowSlickSlider = document.createElement('div');
     freeflowSlickSlider.classList.add('slider', 'single-item', 'slick-initialized', 'slick-slider');
 
     freeflowContainer.appendChild(freeflowSectionElement);
     freeflowSectionElement.appendChild(freeflowWraperDiv);
+    freeflowSectionElement.appendChild(freeflowSliderContainer);
     freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
     [...block.children].forEach((row,r)=>{
