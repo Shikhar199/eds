@@ -39,6 +39,7 @@ export default function decorate(block){
                 //     const imgElement = document.createElement('img');
 
                 // }
+                console.log(c);
                 console.log(col.textContent.trim());
             })
         }
