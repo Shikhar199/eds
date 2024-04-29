@@ -28,7 +28,19 @@ export default function decorate(block){
             h1Element.textContent = row.textContent.trim();
             containerDiv.appendChild(h1Element);
         } else{
+            const bannerWrapDiv = document.createElement('div');
+            bannerWrapDiv.classList.add('banner-wraper');
+            const bannerImgDiv = document.createElement('div');
+            bannerImgDiv.classList.add('banner-image');
+            bannerWrapDiv.appendChild(bannerWrapDiv);
 
+            [...row.children].forEach((col,c)=>{
+                // if(c==0){
+                //     const imgElement = document.createElement('img');
+
+                // }
+                console.log(col.textContent.trim());
+            })
         }
     })
 }
