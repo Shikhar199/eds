@@ -41,11 +41,9 @@ export default function decorate(block){
 
             [...row.children].forEach((col,c)=>{
                 if(c==0){
-                    console.log("Image");
-                    console.log(col);
                     const imgElement = document.createElement('img');
                     imgElement.classList.add('img-fluid', 'hero-banner');
-                    // imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
                     console.log("Image");
