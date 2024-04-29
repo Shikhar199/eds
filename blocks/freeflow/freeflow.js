@@ -24,15 +24,15 @@ export default function decorate(block){
 
     [...block.children].forEach((row,r)=>{
         if(r==0){
-            const freeflowh1Element = document.createElement('h1');
-            freeflowh1Element.textContent = row.textContent.trim();
-            freeflowContainerDiv.appendChild(freeflowh1Element);
+            const h1Element = document.createElement('h1');
+            h1Element.textContent = row.textContent.trim();
+            freeflowContainerDiv.appendChild(h1Element);
         } else{
-            const freeflowbannerWrapDiv = document.createElement('div');
-            freeflowbannerWrapDiv.classList.add('banner-wraper');
-            const freeflowBannerImgDiv = document.createElement('div');
-            freeflowBannerImgDiv.classList.add('banner-image');
-            freeflowbannerWrapDiv.appendChild(freeflowBannerImgDiv);
+            const bannerWrapDiv = document.createElement('div');
+            bannerWrapDiv.classList.add('banner-wraper');
+            const bannerImgDiv = document.createElement('div');
+            bannerImgDiv.classList.add('banner-image');
+            bannerWrapDiv.appendChild(bannerImgDiv);
 
             [...row.children].forEach((col,c)=>{
                 if(c==0){
@@ -57,12 +57,23 @@ export default function decorate(block){
                     bannerMainDiv.appendChild(pElement);
 
                     [...col.children].forEach((node,i)=>{
-                        console.log("Hi");
-                        console.log(i);
-                        console.log(node.textContent.trim());
+                        if(i==0){
+                            bannerImgDiv.querySelector('img').setAttribute("src",node.textContent.trim());
+                        } else if(i==1){
+                            bannerImgDiv.querySelector('.banner-main').querySelector('a').setAttribute("href",node.textContent.trim());
+                        } else if(i==2){
+                            bannerImgDiv.querySelector('img').setAttribute("alt",node.textContent.trim());
+                            bannerImgDiv.querySelector('.banner-main').querySelector('a').setAttribute("aria-label",node.textContent.trim());
+                            pElement.textContent = node.textContent.trim();
+                        } else if(i==3){
+                            bannerImgDiv.querySelector('.banner-main').querySelector('a').setAttribute("title",node.textContent.trim());
+                            bannerImgDiv.querySelector('.banner-main').querySelector('a').textContent = node.textContent.trim();
+                        }
                     })
                 }
+                
             })
+            freeflowSlickSlider.appendChild(bannerWrapDiv);
         }
     })
 }
