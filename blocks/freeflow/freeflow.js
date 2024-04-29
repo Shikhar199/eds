@@ -4,35 +4,35 @@ export default function decorate(block){
 
     freeflowContainer.innerHTML = '';
 
-    const sectionElement = document.createElement('section');
+    const freeflowSectionElement = document.createElement('section');
 
-    const wraperDiv = document.createElement('div');
-    wraperDiv.classList.add('home-bussness-heading-wraper');
+    const freeflowWraperDiv = document.createElement('div');
+    freeflowWraperDiv.classList.add('home-bussness-heading-wraper');
 
-    const containerDiv = document.createElement('div');
-    containerDiv.classList.add('container');
+    const freeflowContainerDiv = document.createElement('div');
+    freeflowContainerDiv.classList.add('container');
 
-    const sliderContainer = document.createElement('div');
-    sliderContainer.classList.add('sliderContainer');
+    const freeflowSliderContainer = document.createElement('div');
+    freeflowSliderContainer.classList.add('freeflowSliderContainer');
 
-    const slickSlider = document.createElement('div');
-    slickSlider.classList.add('slider', 'single-item', 'slick-initialized', 'slick-slider');
+    const freeflowSlickSlider = document.createElement('div');
+    freeflowSlickSlider.classList.add('slider', 'single-item', 'slick-initialized', 'slick-slider');
 
-    freeflowContainer.appendChild(sectionElement);
-    sectionElement.appendChild(wraperDiv);
-    wraperDiv.appendChild(containerDiv);
+    freeflowContainer.appendChild(freeflowSectionElement);
+    freeflowSectionElement.appendChild(freeflowWraperDiv);
+    freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
     [...block.children].forEach((row,r)=>{
         if(r==0){
-            const h1Element = document.createElement('h1');
-            h1Element.textContent = row.textContent.trim();
-            containerDiv.appendChild(h1Element);
+            const freeflowh1Element = document.createElement('h1');
+            freeflowh1Element.textContent = row.textContent.trim();
+            freeflowContainerDiv.appendChild(freeflowh1Element);
         } else{
-            const bannerWrapDiv = document.createElement('div');
-            bannerWrapDiv.classList.add('banner-wraper');
-            const bannerImgDiv = document.createElement('div');
-            bannerImgDiv.classList.add('banner-image');
-            bannerWrapDiv.appendChild(bannerImgDiv);
+            const freeflowbannerWrapDiv = document.createElement('div');
+            freeflowbannerWrapDiv.classList.add('banner-wraper');
+            const freeflowBannerImgDiv = document.createElement('div');
+            freeflowBannerImgDiv.classList.add('banner-image');
+            freeflowbannerWrapDiv.appendChild(freeflowBannerImgDiv);
 
             [...row.children].forEach((col,c)=>{
                 // if(c==0){
