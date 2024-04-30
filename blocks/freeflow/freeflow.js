@@ -60,7 +60,7 @@ export default function decorate(block){
                     anchorElement.classList.add('btn', 'btn-secondary');
 
                     const pElement = document.createElement('p');
-                    anchorElement.classList.add('heading1');
+                    pElement.classList.add('heading1');
 
                     bannerMainDiv.appendChild(anchorElement);
                     bannerMainDiv.appendChild(pElement);
