@@ -84,8 +84,9 @@ export default function decorate(block){
             freeflowSlickSlider.appendChild(bannerWrapDiv);
         }
     })
-    import('/scripts/jquery.js').then(($) => {
+    import('/scripts/jquery.js').then((jqueryModule) => {
         console.log('jQuery has been loaded');
+        const $ = jqueryModule.default;
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
         
