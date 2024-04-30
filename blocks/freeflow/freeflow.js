@@ -145,7 +145,7 @@ export default function decorate(block){
 
 
 
-    $(document).ready(() => {
+    document.addEventListener('DOMContentLoaded',() => {
         console.log('jQuery has been loaded');
 
         import('/scripts/slick.js').then(() => {
