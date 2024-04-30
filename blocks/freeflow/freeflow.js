@@ -87,6 +87,8 @@ export default function decorate(block){
     import('/scripts/jquery.js').then((jqueryModule) => {
         console.log('jQuery has been loaded');
         const $ = jqueryModule.default;
+        console.log("$");
+        console.log($);
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
         
