@@ -187,8 +187,6 @@ export default function decorate(block){
             console.error('Error loading slick.js:', error);
         });
 
-    }).catch(error => {
-        console.error('Error loading jquery.js:', error);
-    });
+    })
 
 }
