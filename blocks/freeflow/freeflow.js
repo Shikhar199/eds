@@ -1,3 +1,5 @@
+import $ from '/scripts/jquery.js';
+
 export default function decorate(block){
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
@@ -84,20 +86,72 @@ export default function decorate(block){
             freeflowSlickSlider.appendChild(bannerWrapDiv);
         }
     })
-    import('/scripts/jquery.js').then((jqueryModule) => {
+    // import('/scripts/jquery.js').then((jqueryModule) => {
+    //     console.log('jQuery has been loaded');
+    //     const $ = jqueryModule.default;
+    //     console.log("$");
+    //     console.log($);
+    //     import('/scripts/slick.js').then(() => {
+    //         console.log('Slick min js has been loaded');
+        
+    //         // import('/scripts/main.js').then(() => {
+    //         //     console.log("main.js loaded");
+    //         // }).catch(error=>{
+    //         //     console.error('Error loading main.js:', error);
+    //         // })
+    //         // var scriptElement = document.createElement('script');
+    //         $(".slider").slick({
+    //             infinite: true,
+    //             arrows: false,
+    //             dots: false,
+    //             autoplay: false,
+    //             fade: true,
+    //             cssEase: 'linear',
+    //             speed: 800,
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1,
+    //             responsive: [{
+    //                 breakpoint: 991,
+    //                 settings: {
+    //                   asNavFor: '.banner-slick',
+    //                 }
+    //               },
+    //               {
+    //                 breakpoint: 767,
+    //                 settings: {
+    //                   asNavFor: '.banner-slick',
+    //                 }
+    //               },
+    //               {
+    //                 breakpoint: 375,
+    //                 settings: {
+    //                   asNavFor: '.banner-slick',
+    //                 }
+    //               }
+              
+    //             ]
+    //           });
+
+    //         //   scriptElement.innerHTML = scriptCode;
+    //         //   freeflowSectionElement.appendChild(scriptElement);
+
+
+    //     }).catch(error=>{
+    //         console.error('Error loading slick.js:', error);
+    //     })
+    // }).catch(error=>{
+    //     console.error('Error loading jquery.js:', error);
+    // })
+
+
+
+    $(() => {
         console.log('jQuery has been loaded');
-        const $ = jqueryModule.default;
-        console.log("$");
-        console.log($);
+    
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
-        
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
-            // var scriptElement = document.createElement('script');
+            
+            // Initialize slick slider with jQuery
             $(".slider").slick({
                 infinite: true,
                 arrows: false,
@@ -111,33 +165,30 @@ export default function decorate(block){
                 responsive: [{
                     breakpoint: 991,
                     settings: {
-                      asNavFor: '.banner-slick',
+                        asNavFor: '.banner-slick',
                     }
-                  },
-                  {
+                },
+                {
                     breakpoint: 767,
                     settings: {
-                      asNavFor: '.banner-slick',
+                        asNavFor: '.banner-slick',
                     }
-                  },
-                  {
+                },
+                {
                     breakpoint: 375,
                     settings: {
-                      asNavFor: '.banner-slick',
+                        asNavFor: '.banner-slick',
                     }
-                  }
-              
+                }
                 ]
-              });
-
-            //   scriptElement.innerHTML = scriptCode;
-            //   freeflowSectionElement.appendChild(scriptElement);
-
-
-        }).catch(error=>{
+            });
+        
+        }).catch(error => {
             console.error('Error loading slick.js:', error);
-        })
-    }).catch(error=>{
+        });
+    
+    }).catch(error => {
         console.error('Error loading jquery.js:', error);
-    })
+    });
+
 }
