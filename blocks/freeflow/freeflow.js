@@ -16,7 +16,7 @@ export default function decorate(block){
     freeflowSliderContainer.classList.add('sliderContainer');
 
     const freeflowSlickSlider = document.createElement('div');
-    freeflowSlickSlider.classList.add('slider', 'single-item', 'slick-initialized', 'slick-slider');
+    freeflowSlickSlider.classList.add('slider', 'single-item');
 
     freeflowContainer.appendChild(freeflowSectionElement);
     freeflowSectionElement.appendChild(freeflowWraperDiv);
