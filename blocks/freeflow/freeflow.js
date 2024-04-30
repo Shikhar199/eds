@@ -88,46 +88,46 @@ export default function decorate(block){
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
         
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
-            var freeflowScriptElement = document.createElement('script');
-            var freeflowScriptCode = `$(".slider").slick({
-                infinite: true,
-                arrows: false,
-                dots: false,
-                autoplay: false,
-                fade: true,
-                cssEase: 'linear',
-                speed: 800,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                      asNavFor: '.banner-slick',
-                    }
-                  },
-                  {
-                    breakpoint: 767,
-                    settings: {
-                      asNavFor: '.banner-slick',
-                    }
-                  },
-                  {
-                    breakpoint: 375,
-                    settings: {
-                      asNavFor: '.banner-slick',
-                    }
-                  }
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
+            // var freeflowScriptElement = document.createElement('script');
+            // var freeflowScriptCode = `$(".slider").slick({
+            //     infinite: true,
+            //     arrows: false,
+            //     dots: false,
+            //     autoplay: false,
+            //     fade: true,
+            //     cssEase: 'linear',
+            //     speed: 800,
+            //     slidesToShow: 1,
+            //     slidesToScroll: 1,
+            //     responsive: [{
+            //         breakpoint: 991,
+            //         settings: {
+            //           asNavFor: '.banner-slick',
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 767,
+            //         settings: {
+            //           asNavFor: '.banner-slick',
+            //         }
+            //       },
+            //       {
+            //         breakpoint: 375,
+            //         settings: {
+            //           asNavFor: '.banner-slick',
+            //         }
+            //       }
               
-                ]
-              })`;
+            //     ]
+            //   })`;
 
-              freeflowScriptElement.innerHTML = freeflowScriptCode;
-              freeflowSectionElement.appendChild(freeflowScriptElement);
+            //   freeflowScriptElement.innerHTML = freeflowScriptCode;
+            //   freeflowSectionElement.appendChild(freeflowScriptElement);
 
         }).catch(error=>{
             console.error('Error loading slick.js:', error);
