@@ -35,6 +35,7 @@ export default function decorate(block){
     freeflowSectionElement.appendChild(freeflowWraperDiv);
     freeflowSectionElement.appendChild(freeflowSliderContainer);
     freeflowSliderContainer.appendChild(freeflowSlickSlider);
+    freeflowSliderContainer.appendChild(progressBarContainer);
     freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
     // const elementToRemove = document.querySelector('.hero-container');
