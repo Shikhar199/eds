@@ -134,56 +134,56 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
-            var scriptElement1 = document.createElement('script');
-            var scriptCode1 = `$('.most-popular-slick').slick({
-                    dots: true,
-                    infinite: false,
-                    speed: 300,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    buttons: true,
-                    arrows: true,
-                    responsive: [{
-                        breakpoint: 1400,
-                        settings: {
-                          slidesToShow: 3,
-                          slidesToScroll: 1,
-                          infinite: true,
-                          dots: true
-                        }
-                      },
-                      {
-                        breakpoint: 1200,
-                        settings: {
-                          slidesToShow: 2,
-                          slidesToScroll: 1,
-                          infinite: true,
-                          dots: true
-                        }
-                      },
-                      {
-                        breakpoint: 992,
-                        settings: {
-                          slidesToShow: 2,
-                          slidesToScroll: 1,
-                          refresh: true
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
+            // var scriptElement1 = document.createElement('script');
+            // var scriptCode1 = `$('.most-popular-slick').slick({
+            //         dots: true,
+            //         infinite: false,
+            //         speed: 300,
+            //         slidesToShow: 3,
+            //         slidesToScroll: 1,
+            //         buttons: true,
+            //         arrows: true,
+            //         responsive: [{
+            //             breakpoint: 1400,
+            //             settings: {
+            //               slidesToShow: 3,
+            //               slidesToScroll: 1,
+            //               infinite: true,
+            //               dots: true
+            //             }
+            //           },
+            //           {
+            //             breakpoint: 1200,
+            //             settings: {
+            //               slidesToShow: 2,
+            //               slidesToScroll: 1,
+            //               infinite: true,
+            //               dots: true
+            //             }
+            //           },
+            //           {
+            //             breakpoint: 992,
+            //             settings: {
+            //               slidesToShow: 2,
+            //               slidesToScroll: 1,
+            //               refresh: true
                   
-                        }
-                      },
-                      {
-                        breakpoint: 767,
-                        settings: "unslick",
-                      }
-                    ]
-                  })`;
+            //             }
+            //           },
+            //           {
+            //             breakpoint: 767,
+            //             settings: "unslick",
+            //           }
+            //         ]
+            //       })`;
 
-                  scriptElement1.innerHTML = scriptCode1;
-                  trackDiv.appendChild(scriptElement1);
+            //       scriptElement1.innerHTML = scriptCode1;
+            //       trackDiv.appendChild(scriptElement1);
 
 
             fixFirstDiv(block.children.length);    
