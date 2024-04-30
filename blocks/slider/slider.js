@@ -139,8 +139,8 @@ export default function decorate(block){
             // }).catch(error=>{
             //     console.error('Error loading main.js:', error);
             // })
-
-            $('.most-popular-slick').slick({
+            var scriptElement1 = document.createElement('script');
+            var scriptCode1 = `$('.most-popular-slick').slick({
                     dots: true,
                     infinite: false,
                     speed: 300,
@@ -180,7 +180,10 @@ export default function decorate(block){
                         settings: "unslick",
                       }
                     ]
-                  });
+                  })`;
+
+                  scriptElement1.innerHTML = scriptCode1;
+                  trackDiv.appendChild(scriptElement1);
 
 
             fixFirstDiv(block.children.length);    
