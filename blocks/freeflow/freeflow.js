@@ -18,6 +18,19 @@ export default function decorate(block){
     const freeflowSlickSlider = document.createElement('div');
     freeflowSlickSlider.classList.add('slider', 'single-item');
 
+    const progressBarContainer = document.createElement('div');
+    progressBarContainer.classList.add('progressBarContainer');
+
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container');
+
+    const bannerSlickDiv = document.createElement('div');
+    bannerSlickDiv.classList.add('banner-slick', 'banner-item');
+
+    progressBarContainer.appendChild(containerDiv);
+    containerDiv.appendChild(bannerSlickDiv);
+
+
     freeflowContainer.appendChild(freeflowSectionElement);
     freeflowSectionElement.appendChild(freeflowWraperDiv);
     freeflowSectionElement.appendChild(freeflowSliderContainer);
@@ -38,6 +51,26 @@ export default function decorate(block){
             const bannerImgDiv = document.createElement('div');
             bannerImgDiv.classList.add('banner-image');
             bannerWrapDiv.appendChild(bannerImgDiv);
+
+            // code for prgressbar container div
+
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item');
+
+            const slickInnerDiv = document.createElement('div');
+            slickInnerDiv.classList.add('slick-inner');
+
+            const progressBarSpan = document.createElement('span');
+            progressBarSpan.classList.add('progressBar');
+
+            const inProgressDiv = document.createElement('div');
+            inProgressDiv.classList.add('inProgress', 'inProgress0');
+            inProgressDiv.style.width = '0%';
+
+            progressBarSpan.appendChild(inProgressDiv)
+
+            itemDiv.appendChild(slickInnerDiv);
+            itemDiv.appendChild(progressBarSpan);
 
             [...row.children].forEach((col,c)=>{
                 if(c==0){
@@ -63,19 +96,55 @@ export default function decorate(block){
                     bannerMainDiv.appendChild(anchorElement);
                     bannerMainDiv.appendChild(pElement);
 
+                    // progressbar container code
+                    const innerDetailsDiv = document.createElement('div');
+                    innerDetailsDiv.classList.add('inner-details');
+
+                    var anchorElem = document.createElement('a');
+
+
                     [...col.children].forEach((node,i)=>{
                         if(i==0){
                             bannerMainDiv.querySelector('a').setAttribute("href",node.textContent.trim());
+                            anchorElem.setAttribute("href",node.textContent.trim());
                         } else if(i==1){
                             bannerImgDiv.querySelector('img').setAttribute("alt",node.textContent.trim());
                             bannerMainDiv.querySelector('a').setAttribute("aria-label",node.textContent.trim());
                             pElement.textContent = node.textContent.trim();
+
+                            //progressbar container code
+                            const h4Element = document.createElement('h4');
+                            h4Element.textContent = node.textContent.trim();
+                            innerDetailsDiv.appendChild(h4Element);
+                            anchorElem.setAttribute("aria-label", node.textContent.trim());
+
                         } else if(i==2){
-                            bannerMainDiv.querySelector('a').setAttribute("title",node.textContent.trim());
-                            bannerMainDiv.querySelector('a').textContent = node.textContent.trim();
+                            bannerMainDiv.querySelector('a').setAttribute("title","Report");
+                            bannerMainDiv.querySelector('a').textContent = "Report";
+
+                            //progressbar container code
+                            const pElement = document.createElement('p');
+                            pElement.textContent = node.textContent.trim();
+                            innerDetailsDiv.appendChild(pElement);
+                        } else if(i==3){
+                            const outerDiv = document.createElement('div');
+                            anchorElem.classList.add('find-more');
+                            anchorElem.textContent = node.textContent.trim();
+                            outerDiv.appendChild(anchorElem);
+
+                            const span1 = document.createElement('span');
+                            const span2 = document.createElement('span');
+                            span1.classList.add('icon-chevron-right-circle-white');
+                            span2.classList.add('icon-long-right-arrow');
+
+                            anchorElem.appendChild(span1);
+                            anchorElem.appendChild(span2);
+
+                            innerDetailsDiv.appendChild(outerDiv);
                         }
                     })
                     bannerImgDiv.appendChild(containerDiv);
+                    slickInnerDiv.appendChild(innerDetailsDiv)
                 }
                 
             })
@@ -88,11 +157,11 @@ export default function decorate(block){
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
         
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
             // var freeflowScriptElement = document.createElement('script');
             // var freeflowScriptCode = `$(".slider").slick({
             //     infinite: true,
