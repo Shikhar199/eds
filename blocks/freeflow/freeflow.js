@@ -94,8 +94,8 @@ export default function decorate(block){
             // }).catch(error=>{
             //     console.error('Error loading main.js:', error);
             // })
-            var scriptElement = document.createElement('script');
-            var scriptCode = `$(".slider").slick({
+            // var scriptElement = document.createElement('script');
+            $(".slider").slick({
                 infinite: true,
                 arrows: false,
                 dots: false,
@@ -125,10 +125,10 @@ export default function decorate(block){
                   }
               
                 ]
-              });`
+              });
 
-              scriptElement.innerHTML = scriptCode;
-              freeflowSectionElement.appendChild(scriptElement);
+            //   scriptElement.innerHTML = scriptCode;
+            //   freeflowSectionElement.appendChild(scriptElement);
 
 
         }).catch(error=>{
