@@ -140,6 +140,49 @@ export default function decorate(block){
             //     console.error('Error loading main.js:', error);
             // })
 
+            $('.most-popular-slick').slick({
+                    dots: true,
+                    infinite: false,
+                    speed: 300,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    buttons: true,
+                    arrows: true,
+                    responsive: [{
+                        breakpoint: 1400,
+                        settings: {
+                          slidesToShow: 3,
+                          slidesToScroll: 1,
+                          infinite: true,
+                          dots: true
+                        }
+                      },
+                      {
+                        breakpoint: 1200,
+                        settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 1,
+                          infinite: true,
+                          dots: true
+                        }
+                      },
+                      {
+                        breakpoint: 992,
+                        settings: {
+                          slidesToShow: 2,
+                          slidesToScroll: 1,
+                          refresh: true
+                  
+                        }
+                      },
+                      {
+                        breakpoint: 767,
+                        settings: "unslick",
+                      }
+                    ]
+                  });
+
+
             fixFirstDiv(block.children.length);    
 
 
