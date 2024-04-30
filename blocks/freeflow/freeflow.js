@@ -46,8 +46,6 @@ export default function decorate(block){
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
-                    console.log("Image");
-                    console.log(col);
                     const containerDiv = document.createElement('div');
                     containerDiv.classList.add('container');
 
@@ -139,49 +137,49 @@ export default function decorate(block){
     })
 
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
+    // import('/scripts/jquery.js').then(($) => {
+    //     console.log('jQuery has been loaded');
 
-        import('/scripts/slick.js').then(() => {
-            console.log('Slick min js has been loaded');
+    //     import('/scripts/slick.js').then(() => {
+    //         console.log('Slick min js has been loaded');
 
-            // Initialize slick slider with jQuery
-            $(".slider").slick({
-                infinite: true,
-                arrows: false,
-                dots: false,
-                autoplay: false,
-                fade: true,
-                cssEase: 'linear',
-                speed: 800,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                        asNavFor: '.banner-slick',
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        asNavFor: '.banner-slick',
-                    }
-                },
-                {
-                    breakpoint: 375,
-                    settings: {
-                        asNavFor: '.banner-slick',
-                    }
-                }
-                ]
-            });
+    //         // Initialize slick slider with jQuery
+    //         $(".slider").slick({
+    //             infinite: true,
+    //             arrows: false,
+    //             dots: false,
+    //             autoplay: false,
+    //             fade: true,
+    //             cssEase: 'linear',
+    //             speed: 800,
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1,
+    //             responsive: [{
+    //                 breakpoint: 991,
+    //                 settings: {
+    //                     asNavFor: '.banner-slick',
+    //                 }
+    //             },
+    //             {
+    //                 breakpoint: 767,
+    //                 settings: {
+    //                     asNavFor: '.banner-slick',
+    //                 }
+    //             },
+    //             {
+    //                 breakpoint: 375,
+    //                 settings: {
+    //                     asNavFor: '.banner-slick',
+    //                 }
+    //             }
+    //             ]
+    //         });
 
-        }).catch(error => {
-            console.error('Error loading slick.js:', error);
-        });
-    }).catch(error => {
-        console.error('Error loading jquery.js:', error);
-    });
+    //     }).catch(error => {
+    //         console.error('Error loading slick.js:', error);
+    //     });
+    // }).catch(error => {
+    //     console.error('Error loading jquery.js:', error);
+    // });
 
 }
