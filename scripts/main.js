@@ -18,14 +18,14 @@ function social() {
   
   const goUp = document.getElementById("go-up");
   
-  var myScrollFunc = function () {
-    var y = window.scrollY;
-    if (y >= 800) {
-      goUp.className = "go-upNavigation show"
-    } else {
-      goUp.className = "go-upNavigation hide"
-    }
-  };
+//   var myScrollFunc = function () {
+//     var y = window.scrollY;
+//     if (y >= 800) {
+//       goUp.className = "go-upNavigation show"
+//     } else {
+//       goUp.className = "go-upNavigation hide"
+//     }
+//   };
   
   window.addEventListener("scroll", myScrollFunc);
   
