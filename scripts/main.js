@@ -27,7 +27,7 @@ function social() {
 //     }
 //   };
   
-  window.addEventListener("scroll", myScrollFunc);
+//   window.addEventListener("scroll", myScrollFunc);
   
   let exploreInterest = document.querySelector(".explore-interest.modal");
   let modalBackdrop = document.getElementsByClassName("modal-backdrop");

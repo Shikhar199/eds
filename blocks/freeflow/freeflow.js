@@ -172,6 +172,7 @@ export default function decorate(block){
                         goUp.className = "go-upNavigation hide"
                     }
                 };
+                window.addEventListener("scroll", myScrollFunc);
             }).catch(error=>{
                 console.error('Error loading main.js:', error);
             })
