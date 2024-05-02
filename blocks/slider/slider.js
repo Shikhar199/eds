@@ -45,6 +45,7 @@ export default function decorate(block){
             [...block.children].forEach((row,r)=>{
                 console.log("Hi")
                 const slickItem = createSlickItem(row,r);
+                console.log(slickItem);
                 // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
             })
@@ -250,7 +251,6 @@ function createSlickItem(row,r){
                     cardBodyAnchorElement = document.createElement('a');
                     cardBodyAnchorElement.setAttribute("title", node.textContent.trim());
                     cardBodyAnchorElement.textContent = node.textContent.trim();
-                    console.log(cardImageDiv);
 
                     popularCardDiv.querySelector("a").setAttribute("title",node.textContent.trim())
                     popularCardDiv.querySelector("a").querySelector("img").setAttribute("alt",node.textContent.trim())
