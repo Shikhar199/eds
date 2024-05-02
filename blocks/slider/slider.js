@@ -43,6 +43,7 @@ export default function decorate(block){
             ulEle.setAttribute("role","tablist");
 
             [...block.children].forEach((row,r)=>{
+                console.log("Hi");
                 const slickItem = createSlickItem(row,r);
                 // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
