@@ -189,7 +189,7 @@ export default function decorate(block){
             //       trackDiv.appendChild(scriptElement1);
 
 
-            // fixFirstDiv(block.children.length);   
+            fixFirstDiv(block.children.length);   
             // console.log("Slick Track Div length");
             // const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
             // console.log(slickTrack.children.length); 
