@@ -98,19 +98,19 @@ function social() {
     })
   });
   
-  window.onload = function () {
-    if (window.innerWidth < 991) {
-      document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
-    }
-  }
+//   window.onload = function () {
+//     if (window.innerWidth < 991) {
+//       document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
+//     }
+//   }
   
-  window.onresize = function () {
-    if (window.innerWidth < 991) {
-      document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
-    } else {
-      document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.remove("menu-mobile");
-    }
-  }
+//   window.onresize = function () {
+//     if (window.innerWidth < 991) {
+//       document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
+//     } else {
+//       document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.remove("menu-mobile");
+//     }
+//   }
   
   
   let navToggler = document.querySelector(".toggle-btn .navbar-toggler");
