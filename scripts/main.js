@@ -18,16 +18,16 @@ function social() {
   
   const goUp = document.getElementById("go-up");
   
-//   var myScrollFunc = function () {
-//     var y = window.scrollY;
-//     if (y >= 800) {
-//       goUp.className = "go-upNavigation show"
-//     } else {
-//       goUp.className = "go-upNavigation hide"
-//     }
-//   };
+  var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= 800) {
+      goUp.className = "go-upNavigation show"
+    } else {
+      goUp.className = "go-upNavigation hide"
+    }
+  };
   
-//   window.addEventListener("scroll", myScrollFunc);
+  window.addEventListener("scroll", myScrollFunc);
   
   let exploreInterest = document.querySelector(".explore-interest.modal");
   let modalBackdrop = document.getElementsByClassName("modal-backdrop");
@@ -98,19 +98,19 @@ function social() {
     })
   });
   
-//   window.onload = function () {
-//     if (window.innerWidth < 991) {
-//       document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
-//     }
-//   }
+  window.onload = function () {
+    if (window.innerWidth < 991) {
+      document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
+    }
+  }
   
-//   window.onresize = function () {
-//     if (window.innerWidth < 991) {
-//       document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
-//     } else {
-//       document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.remove("menu-mobile");
-//     }
-//   }
+  window.onresize = function () {
+    if (window.innerWidth < 991) {
+      document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.add("menu-mobile");
+    } else {
+      document.querySelector('.navbar-start .dropdown .dropdown-menu').classList.remove("menu-mobile");
+    }
+  }
   
   
   let navToggler = document.querySelector(".toggle-btn .navbar-toggler");
