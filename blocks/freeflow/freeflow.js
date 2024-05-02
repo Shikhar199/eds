@@ -150,8 +150,8 @@ export default function decorate(block){
                 
             })
             freeflowSlickSlider.appendChild(bannerWrapDiv);
+            bannerSlickDiv.appendChild(itemDiv);
         }
-        bannerSlickDiv.appendChild(itemDiv);
     })
 
     import('/scripts/jquery.js').then(($) => {
