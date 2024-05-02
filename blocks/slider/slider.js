@@ -45,9 +45,6 @@ export default function decorate(block){
             ulEle.classList.add('slick-dots');
             ulEle.setAttribute("role","tablist");
 
-            console.log("Block length");
-            console.log(block);
-
             [...block.children].forEach((row,r)=>{
                 const slickItem = createSlickItem(row,r);
                 // slickTrackDiv.appendChild(slickItem);
