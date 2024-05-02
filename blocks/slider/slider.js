@@ -186,7 +186,7 @@ export default function decorate(block){
             //       trackDiv.appendChild(scriptElement1);
 
 
-            fixFirstDiv(block.children.length);    
+            // fixFirstDiv(block.children.length);    
 
 
         }).catch(error=>{
