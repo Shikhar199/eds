@@ -188,7 +188,8 @@ export default function decorate(block){
 
             // fixFirstDiv(block.children.length);   
             console.log("Slick Track Div length");
-            console.log(mostPopularSlickDiv.children.length); 
+            const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
+            console.log(slickTrack.children.length); 
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
