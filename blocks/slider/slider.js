@@ -1,8 +1,8 @@
 export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
-        // import('/scripts/slick.js').then(() => {
-        //     console.log('Slick min js has been loaded');
+        import('/scripts/slick.js').then(() => {
+            console.log('Slick min js has been loaded');
 
             console.log("Block");
             console.log(block);
@@ -194,9 +194,9 @@ export default function decorate(block){
             // const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
             // console.log(slickTrack.children.length); 
 
-        // }).catch(error=>{
-        //     console.error('Error loading Slick.js:', error);
-        // })
+        }).catch(error=>{
+            console.error('Error loading Slick.js:', error);
+        })
 
     }).catch(error => {
         console.error('Error loading jQuery:', error);
