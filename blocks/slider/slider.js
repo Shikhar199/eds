@@ -144,6 +144,7 @@ export default function decorate(block){
             // })
 
             document.addEventListener('DOMContentLoaded', () => {
+                console.log("Hi");
                 import('/scripts/main.js').then(() => {
                     console.log("main.js loaded");
                 }).catch(error => {
