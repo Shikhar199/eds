@@ -43,6 +43,7 @@ export default function decorate(block){
             ulEle.setAttribute("role","tablist");
 
             [...block.children].forEach((row,r)=>{
+                console.log("Hi")
                 const slickItem = createSlickItem(row,r);
                 // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
@@ -187,9 +188,9 @@ export default function decorate(block){
 
 
             // fixFirstDiv(block.children.length);   
-            console.log("Slick Track Div length");
-            const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
-            console.log(slickTrack.children.length); 
+            // console.log("Slick Track Div length");
+            // const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
+            // console.log(slickTrack.children.length); 
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
