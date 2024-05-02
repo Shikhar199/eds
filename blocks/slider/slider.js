@@ -47,10 +47,8 @@ export default function decorate(block){
 
             console.log("Block length");
             console.log(block);
-            console.log(block.children.length);
 
             [...block.children].forEach((row,r)=>{
-                console.log("Hi");
                 const slickItem = createSlickItem(row,r);
                 // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
@@ -222,7 +220,6 @@ function createSlickItem(row,r){
     popularSlickItemDiv.appendChild(popularCardDiv);
 
     [...row.children].forEach((col,c)=>{
-        console.log("Hi from createSlickItem");
         var cardImageDiv="";
         var imgElement="";
         if(c==0){
