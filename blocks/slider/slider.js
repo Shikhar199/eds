@@ -4,6 +4,9 @@ export default function decorate(block){
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
 
+            console.log("Block");
+            console.log(block);
+
             const mainElement = document.createElement('main');
 
             const sectionElement = document.createElement('section');
