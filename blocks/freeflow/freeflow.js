@@ -1,4 +1,7 @@
 export default function decorate(block){
+
+    console.log("Block from freeflow");
+    console.log(block);
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
