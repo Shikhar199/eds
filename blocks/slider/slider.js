@@ -326,9 +326,6 @@ function fixFirstDiv(blockLength){
     for(let i=0;i<slickTrackDiv.children.length;i++){
         const child = slickTrackDiv.children[i];
 
-        console.log("Child");
-        console.log(child);
-
         const slickIndex = child.getAttribute('data-slick-index');
         if(slickIndex==0 || slickIndex==blockLength){
             console.log("Condition satisfied");
@@ -340,11 +337,11 @@ function fixFirstDiv(blockLength){
                 console.log("Removing subMobileDiv");
                 subMobileDiv.remove();
             }
-            // child.querySelector(".popular-card").appendChild(cardTitle);
-            // child.querySelector(".popular-card").appendChild(cardBody);
+            child.querySelector(".popular-card").appendChild(cardTitle);
+            child.querySelector(".popular-card").appendChild(cardBody);
 
-            // child.querySelector(".popular-card").classList.remove('popular-sub-mobile');
-            // child.querySelector(".popular-card").classList.add('popular-main-mobile')
+            child.querySelector(".popular-card").classList.remove('popular-sub-mobile');
+            child.querySelector(".popular-card").classList.add('popular-main-mobile')
         }
     }
 }
