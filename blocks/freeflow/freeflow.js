@@ -164,16 +164,16 @@ export default function decorate(block){
         
             import('/scripts/main.js').then(() => {
                 console.log("main.js loaded");
-                const goUp = document.getElementById("go-up");
-                var myScrollFunc = function () {  
-                    var y = window.scrollY;
-                    if (y >= 800) {
-                        goUp.className = "go-upNavigation show"
-                    } else {
-                        goUp.className = "go-upNavigation hide"
-                    }
-                };
-                window.addEventListener("scroll", myScrollFunc);
+                // const goUp = document.getElementById("go-up");
+                // var myScrollFunc = function () {  
+                //     var y = window.scrollY;
+                //     if (y >= 800) {
+                //         goUp.className = "go-upNavigation show"
+                //     } else {
+                //         goUp.className = "go-upNavigation hide"
+                //     }
+                // };
+                // window.addEventListener("scroll", myScrollFunc);
             }).catch(error=>{
                 console.error('Error loading main.js:', error);
             })
