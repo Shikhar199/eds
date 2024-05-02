@@ -42,7 +42,8 @@ export default function decorate(block){
             ulEle.classList.add('slick-dots');
             ulEle.setAttribute("role","tablist");
 
-            console.log("Block ke bacho ki length");
+            console.log("Block length");
+            console.log(block);
             console.log(block.children.length);
 
             [...block.children].forEach((row,r)=>{
