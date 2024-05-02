@@ -42,6 +42,9 @@ export default function decorate(block){
             ulEle.classList.add('slick-dots');
             ulEle.setAttribute("role","tablist");
 
+            console.log("Block ke bacho ki length");
+            console.log(block.children.length);
+
             [...block.children].forEach((row,r)=>{
                 console.log("Hi");
                 const slickItem = createSlickItem(row,r);
@@ -203,7 +206,6 @@ export default function decorate(block){
 }
 
 function createSlickItem(row,r){
-    var slickId = 30*1+r;
     const popularSlickItemDiv = document.createElement('div');
     // popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
     
@@ -216,6 +218,7 @@ function createSlickItem(row,r){
     popularSlickItemDiv.appendChild(popularCardDiv);
 
     [...row.children].forEach((col,c)=>{
+        console.log("Hi from createSlickItem");
         var cardImageDiv="";
         var imgElement="";
         if(c==0){
