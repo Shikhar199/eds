@@ -187,8 +187,6 @@ export default function decorate(block){
 
 
             // fixFirstDiv(block.children.length);    
-            console.log("Slick Track Div length");
-            console.log(slickTrackDiv.children.length);
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
@@ -197,6 +195,9 @@ export default function decorate(block){
     }).catch(error => {
         console.error('Error loading jQuery:', error);
     });
+
+    console.log("Slick Track Div length");
+    console.log(slickTrackDiv.children.length);
 
 }
 
