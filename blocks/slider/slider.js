@@ -137,6 +137,8 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
+            fixFirstDiv(block.children.length);
+
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
             mainjsScript.setAttribute('defer',true);
@@ -203,9 +205,7 @@ export default function decorate(block){
 
             //       scriptElement1.innerHTML = scriptCode1;
             //       trackDiv.appendChild(scriptElement1);
-
-
-            fixFirstDiv(block.children.length);   
+   
             // console.log("Slick Track Div length");
             // const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
             // console.log(slickTrack.children.length); 
