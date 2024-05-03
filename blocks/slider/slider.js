@@ -137,7 +137,7 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            mainjsScript = document.createElement('script')
+            var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
             trackDiv.appendChild(mainjsScript);
 
