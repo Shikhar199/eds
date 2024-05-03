@@ -140,6 +140,9 @@ export default function decorate(block){
             mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
             trackDiv.appendChild(mainjsScript);
+
+            console.log("Track div");
+            console.log(trackDiv);
             // import('/scripts/main.js').then(() => {
             //     console.log("main.js loaded");
             // }).catch(error=>{
