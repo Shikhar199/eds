@@ -137,20 +137,20 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
 
-            document.addEventListener('DOMContentLoaded', () => {
-                console.log("Hi");
-                import('/scripts/main.js').then(() => {
-                    console.log("main.js loaded");
-                }).catch(error => {
-                    console.error('Error loading main.js:', error);
-                });
-            });
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     console.log("Hi");
+            //     import('/scripts/main.js').then(() => {
+            //         console.log("main.js loaded");
+            //     }).catch(error => {
+            //         console.error('Error loading main.js:', error);
+            //     });
+            // });
             // var scriptElement1 = document.createElement('script');
             // var scriptCode1 = `$('.most-popular-slick').slick({
             //         dots: true,

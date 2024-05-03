@@ -745,11 +745,11 @@ function social() {
   
     $(".total-number").text(ulList.length);
   
-    $("html, body").animate({
-      scrollTop: $("#first-section").offset().top - 20
-    }, 10), $(window).width() < 992 && $("html, body").animate({
-      scrollTop: $("#first-section").offset().top - 80
-    }, 10);
+    // $("html, body").animate({
+    //   scrollTop: $("#first-section").offset().top - 20
+    // }, 10), $(window).width() < 992 && $("html, body").animate({
+    //   scrollTop: $("#first-section").offset().top - 80
+    // }, 10);
     if (window.location.href.includes("#")) {
       $("#" + window.location.href.split("#")[1]).fadeIn();
       const target = "#" + window.location.href.split("#")[1] // #tab3
