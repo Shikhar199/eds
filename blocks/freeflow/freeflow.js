@@ -164,6 +164,7 @@ export default function decorate(block){
         
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
+            mainjsScript.setAttribute('defer', true);
 
             freeflowSliderContainer.appendChild(mainjsScript);
 
