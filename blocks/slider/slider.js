@@ -137,11 +137,14 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            import('/scripts/main.js').then(() => {
-                console.log("main.js loaded");
-            }).catch(error=>{
-                console.error('Error loading main.js:', error);
-            })
+            mainjsScript = document.createElement('script')
+            mainjsScript.setAttribute("src","/scripts/main.js");
+            trackDiv.appendChild(mainjsScript);
+            // import('/scripts/main.js').then(() => {
+            //     console.log("main.js loaded");
+            // }).catch(error=>{
+            //     console.error('Error loading main.js:', error);
+            // })
 
             // document.addEventListener('DOMContentLoaded', () => {
             //     console.log("Hi");
@@ -198,7 +201,7 @@ export default function decorate(block){
             //       trackDiv.appendChild(scriptElement1);
 
 
-            // fixFirstDiv(block.children.length);   
+            fixFirstDiv(block.children.length);   
             // console.log("Slick Track Div length");
             // const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
             // console.log(slickTrack.children.length); 
