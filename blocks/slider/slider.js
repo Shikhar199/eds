@@ -137,7 +137,7 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            fixFirstDiv(block.children.length);
+            // fixFirstDiv(block.children.length);
 
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
