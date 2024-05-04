@@ -8,8 +8,8 @@ export default function decorate(block){
     sectionElement.classList.add('home-interests-wraper');
 
     const scriptElement = document.createElement('script');
-    scriptElement.addAttribute("type","text/javascript");
-    scriptElement.addAttribute("src","/content/dam/infosys-web/en/iki/js/ikifilter.js");
+    scriptElement.setAttribute("type","text/javascript");
+    scriptElement.setAttribute("src","/content/dam/infosys-web/en/iki/js/ikifilter.js");
 
     ikifilterContainer.appendChild(sectionElement);
     ikifilterContainer.appendChild(scriptElement);
