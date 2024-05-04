@@ -18,7 +18,7 @@ export default function decorate(block){
     containerDiv.classList.add('container');
 
     const interestHeadingDiv = document.createElement('div');
-    containerDiv.classList.add('interests-heading');
+    interestHeadingDiv.classList.add('interests-heading');
 
     sectionElement.appendChild(containerDiv);
     containerDiv.appendChild(interestHeadingDiv);
