@@ -33,22 +33,20 @@ export default function decorate(block){
     interestHeadingDiv.appendChild(btnWrapperDiv);
 
     [...block.children].forEach((row,r)=>{
-        console.log(r);
-        console.log(row.textContent.trim());
-        // if(r==0){
-        //     const exploreBtn = document.createElement('button');
-        //     exploreBtn.classList.add('btn', 'btn-outline-black', 'btn-exp');
-        //     exploreBtn.setAttribute('data-toggle','modal');
-        //     exploreBtn.setAttribute('data-target','#videoListing');
-        //     exploreBtn.setAttribute('aria-label','Go to Modify Filter');
+        if(r==0){
+            const exploreBtn = document.createElement('button');
+            exploreBtn.classList.add('btn', 'btn-outline-black', 'btn-exp');
+            exploreBtn.setAttribute('data-toggle','modal');
+            exploreBtn.setAttribute('data-target','#videoListing');
+            exploreBtn.setAttribute('aria-label','Go to Modify Filter');
 
-        //     const exploreSpan = document.createElement('span');
-        //     exploreSpan.classList.add('destop-only');
-        //     exploreSpan.textContent = row.textContent.trim();
+            const exploreSpan = document.createElement('span');
+            exploreSpan.classList.add('destop-only');
+            exploreSpan.textContent = row.textContent.trim();
 
-        //     exploreBtn.appendChild(exploreSpan);
-        //     btnWrapperDiv.appendChild(exploreBtn);
-        // }
+            exploreBtn.appendChild(exploreSpan);
+            btnWrapperDiv.appendChild(exploreBtn);
+        }
     })
 
     const exploreDiv = document.createElement('div');
