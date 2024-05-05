@@ -101,8 +101,8 @@ export default function decorate(block){
             btnElement.appendChild(spanElement);
             
         } else if(r==1){
-            console.log(r);
-            console.log(row.textContent.trim());
+            const arr = row.textContent.trim().split('/n');
+            console.log(arr);
         }
     })
 
