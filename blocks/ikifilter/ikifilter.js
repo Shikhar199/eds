@@ -100,8 +100,9 @@ export default function decorate(block){
             modelHeaderDiv.appendChild(btnElement);
             btnElement.appendChild(spanElement);
             
-        } else{
-            
+        } else if(r==1){
+            console.log(r);
+            console.log(row.textContent.trim());
         }
     })
 
