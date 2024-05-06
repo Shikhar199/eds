@@ -180,4 +180,6 @@ function createList(arr){
     ulElem.classList.add('interest-list');
     console.log("Array ki length");
     console.log(arr.length);
+    console.log(arr[0]);
+    console.log(arr[arr.length-1]);
 }
