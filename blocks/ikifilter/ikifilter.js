@@ -170,7 +170,7 @@ function createInterestSection(arr,r){
 
     headerListingDiv.appendChild(closePopUpDiv);
 
-    const ulElem = createList(arr);
+    const ulElem = createList(arr,r);
     console.log("ulElem", ulElem);
     // collapsediv.appendChild(ulElem);
 
@@ -211,14 +211,16 @@ function createInterestSection(arr,r){
 
 }
 
-function createList(arr){
+function createList(arr,r){
     const ulElem = document.createElement('ul');
     ulElem.classList.add('interest-list');
-    ulElem.classList.add(arr[0]);
-    console.log("Array ki length");
-    console.log(arr.length);
-    console.log(arr[0]);
-    console.log(arr[arr.length-1]);
+    if(r==0){
+        ulElem.classList.add('industry');
+    } else if(r==1){
+        ulElem.classList.add('technology');
+    } else if(r==2){
+        ulElem.classList.add('assettype');
+    }
 
     for(let i=1;i<arr.length-1;i++){
         const liElem = document.createElement('li');
