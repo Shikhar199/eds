@@ -118,17 +118,17 @@ export default function decorate(block){
         } 
     })
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
-            import('/blocks/iki.js').then(() => {
-                console.log('iki has been loaded');
-            }).catch(error=>{
-                console.error('Error loading iki.js:', error);
-            })
-    }).catch(error=>{
-        console.error('Error loading jquery.js:', error);
-    })
-
+    // import('/scripts/jquery.js').then(($) => {
+    //     console.log('jQuery has been loaded');
+    //         import('/blocks/iki.js').then(() => {
+    //             console.log('iki has been loaded');
+    //         }).catch(error=>{
+    //             console.error('Error loading iki.js:', error);
+    //         })
+    // }).catch(error=>{
+    //     console.error('Error loading jquery.js:', error);
+    // })
+    loadLibraries();
 }
 
 function createInterestSection(arr,r,data){
@@ -305,3 +305,19 @@ function createList(arr,r){
 function hideOptions(){
     console.log("hide");
 }
+
+async function loadLibraries() {
+    try {
+      await import('/scripts/jquery.js');
+      console.log('jQuery has been loaded');
+  
+      await $(document).ready(); // Wait for jQuery to be ready
+  
+      await import('/blocks/iki.js');
+      console.log('iki.js has been loaded');
+  
+      // Execute code from iki.js that relies on jQuery
+    } catch (error) {
+      console.error('Error loading libraries:', error);
+    }
+  }
