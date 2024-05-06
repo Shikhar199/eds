@@ -118,6 +118,12 @@ export default function decorate(block){
         } 
     })
 
+    import('/blocks/iki.js').then(($) => {
+        console.log('iki has been loaded');
+    }).catch(error=>{
+        console.error('Error loading iki.js:', error);
+    })
+
 }
 
 function createInterestSection(arr,r,data){
