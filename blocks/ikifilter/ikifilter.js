@@ -180,7 +180,6 @@ function createInterestSection(arr,r){
 
     liElement.appendChild(anchorElement);
     liElement.appendChild(collapsediv);
-    collapsediv.appendChild(ulElem);
     // const liEle = document.createElement('li');
     // console.log("ulElem", ulElem);
     // // collapsediv.appendChild(ulElem);
@@ -194,6 +193,7 @@ function createInterestSection(arr,r){
 
     btnWraperDiv.appendChild(btn);
 
+    collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
     // liElement.appendChild(collapsediv);
 
