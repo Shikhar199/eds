@@ -182,4 +182,30 @@ function createList(arr){
     console.log(arr.length);
     console.log(arr[0]);
     console.log(arr[arr.length-1]);
+
+    for(let i=1;i<arr.length-1;i++){
+        const liElem = document.createElement('li');
+        const label = socument.createElement('label');
+        label.classList.add('pill-container');
+
+        const inputElement = document.createElement('input');
+        inputElement.setAttribute("type",checkbox);
+        inputElement.setAttribute("value",arr[i].trim());
+
+        const span1 = document.createElement('span');
+        span1.classList.add('checkmark');
+
+        const span2 = document.createElement('span');
+        span2.classList.add('text');
+        span2.textContent = arr[i];
+
+        label.appendChild(inputElement);
+        label.appendChild(span1);
+        label.appendChild(span2);
+
+        liElem.appendChild(label);
+        ulElem.appendChild(liElem);
+
+    }
+    console.log(ulElem);
 }
