@@ -143,12 +143,16 @@ function createInterestSection(arr,r){
 
     liElement.appendChild(anchorElement);
 
+    // creating collapse div
+
     const collapsediv = document.createElement('div');
     collapsediv.classList.add('interest-data', 'collapse', 'hideoption');
     collapsediv.id = 'interest-data';
 
     const headerListingDiv = document.createElement('div');
     headerListingDiv.classList.add('header', 'header-listing');
+
+    collapsediv.appendChild(headerListingDiv);
 
     const goBackDiv = document.createElement('div');
     goBackDiv.classList.add('go-back');
@@ -158,7 +162,6 @@ function createInterestSection(arr,r){
     const closePopUpDiv = document.createElement('div');
     closePopUpDiv.classList.add('close-pop-up');
 
-    collapsediv.appendChild(headerListingDiv);
     headerListingDiv.appendChild(goBackDiv);
     headerListingDiv.appendChild(closePopUpDiv);
 
