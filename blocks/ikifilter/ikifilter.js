@@ -103,7 +103,7 @@ export default function decorate(block){
         } else if(r==1){
             const arr = row.textContent.trim().split('\n');
             console.log(arr);
-            const ulElem = createInterestSection(arr);
+            const ulElem = createInterestSection(arr,r);
             modelBodyDiv.appendChild(ulElem);
 
         }
@@ -111,7 +111,7 @@ export default function decorate(block){
 
 }
 
-function createInterestSection(arr){
+function createInterestSection(arr,r){
 
     //Head Section 
 
@@ -182,6 +182,7 @@ function createInterestSection(arr){
     btn.onclick = hideOptions();
 
     collapsediv.appendChild(btnWraperDiv);
+    liElement.appendChild(collapsediv);
 
     const interestListLi = document.createElement('li');
     interestListLi.classList.add('interest-list-wraper');
