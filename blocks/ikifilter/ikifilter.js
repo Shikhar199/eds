@@ -141,6 +141,8 @@ function createInterestSection(arr,r){
 
     anchorElement.appendChild(spanElement);
 
+    liElement.appendChild(anchorElement);
+
     const collapsediv = document.createElement('div');
     collapsediv.classList.add('interest-data', 'collapse', 'hideoption');
     collapsediv.id = 'interest-data';
@@ -152,11 +154,13 @@ function createInterestSection(arr,r){
     goBackDiv.classList.add('go-back');
     console.log("anchorElement", anchorElement);
 
-    collapsediv.appendChild(headerListingDiv);
-    headerListingDiv.appendChild(goBackDiv);
-
     const closePopUpDiv = document.createElement('div');
     closePopUpDiv.classList.add('close-pop-up');
+
+    collapsediv.appendChild(headerListingDiv);
+    headerListingDiv.appendChild(goBackDiv);
+    headerListingDiv.appendChild(closePopUpDiv);
+
     const btnElem = document.createElement('button');
     btnElem.classList.add('close');
     btnElem.setAttribute('data-dismiss', 'modal');
@@ -171,50 +175,49 @@ function createInterestSection(arr,r){
     headerListingDiv.appendChild(closePopUpDiv);
 
     const ulElem = createList(arr,r);
-    const liEle = document.createElement('li');
-    console.log("ulElem", ulElem);
+    // const liEle = document.createElement('li');
+    // console.log("ulElem", ulElem);
+    // // collapsediv.appendChild(ulElem);
+
+    // const btnWraperDiv = document.createElement('div');
+    // btnWraperDiv.classList.add('btn-wraper');
+    // const btn = document.createElement('button');
+    // btn.classList.add('btn', 'btn-primary');
+    // btn.textContent='continue';
+    // btn.onclick = hideOptions();
+
+    // btnWraperDiv.appendChild(btn);
+
+    // // collapsediv.appendChild(btnWraperDiv);
+    // liElement.appendChild(collapsediv);
+
+    // const interestListLi = document.createElement('li');
+    // interestListLi.classList.add('interest-list-wraper');
+    // ulElement.appendChild(interestListLi);
+
+    // const viewAllLi = document.createElement('li');
+    // viewAllLi.classList.add('view-all');
+
+    // ulElement.appendChild(viewAllLi);
+    // ulElement.appendChild(liEle);
+
+    // const anchor = document.createElement('a');
+    // anchor.classList.add('view-more');
+    // anchor.textContent = 'View All';
+    // anchor.setAttribute('href', '#');
+
+    // const h2Ele = document.createElement('h2');
+    // h2Ele.textContent = arr[0].trim(); 
+
+    // goBackDiv.appendChild(anchorElement);
+    // goBackDiv.appendChild(h2Ele);
+
+    // viewAllLi.appendChild(anchor);
+
+    // interestListLi.appendChild(ulElem);
+
     // collapsediv.appendChild(ulElem);
-
-    const btnWraperDiv = document.createElement('div');
-    btnWraperDiv.classList.add('btn-wraper');
-    const btn = document.createElement('button');
-    btn.classList.add('btn', 'btn-primary');
-    btn.textContent='continue';
-    btn.onclick = hideOptions();
-
-    btnWraperDiv.appendChild(btn);
-
     // collapsediv.appendChild(btnWraperDiv);
-    liElement.appendChild(anchorElement);
-    liElement.appendChild(collapsediv);
-
-    const interestListLi = document.createElement('li');
-    interestListLi.classList.add('interest-list-wraper');
-    ulElement.appendChild(interestListLi);
-
-    const viewAllLi = document.createElement('li');
-    viewAllLi.classList.add('view-all');
-
-    ulElement.appendChild(viewAllLi);
-    ulElement.appendChild(liEle);
-
-    const anchor = document.createElement('a');
-    anchor.classList.add('view-more');
-    anchor.textContent = 'View All';
-    anchor.setAttribute('href', '#');
-
-    const h2Ele = document.createElement('h2');
-    h2Ele.textContent = arr[0].trim(); 
-
-    goBackDiv.appendChild(anchorElement);
-    goBackDiv.appendChild(h2Ele);
-
-    viewAllLi.appendChild(anchor);
-
-    interestListLi.appendChild(ulElem);
-
-    collapsediv.appendChild(ulElem);
-    collapsediv.appendChild(btnWraperDiv);
 
     return ulElement;
 
