@@ -214,11 +214,11 @@ function createInterestSection(arr,r){
 function createList(arr,r){
     const ulElem = document.createElement('ul');
     ulElem.classList.add('interest-list');
-    if(r==0){
+    if(r==1){
         ulElem.classList.add('industry');
-    } else if(r==1){
-        ulElem.classList.add('technology');
     } else if(r==2){
+        ulElem.classList.add('technology');
+    } else if(r==3){
         ulElem.classList.add('assettype');
     }
 
