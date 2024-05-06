@@ -211,10 +211,10 @@ function createInterestSection(arr,r){
 
     viewAllLi.appendChild(anchor);
 
+    interestListLi.appendChild(ulElem);
+
     collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
-
-    interestListLi.appendChild(ulElem);
 
     return ulElement;
 
