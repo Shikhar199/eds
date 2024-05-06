@@ -195,6 +195,10 @@ function createInterestSection(arr,r){
     const viewAllLi = document.createElement('li');
     viewAllLi.classList.add('view-all');
 
+    ulElement.appendChild(interestListLi);
+    ulElement.appendChild(viewAllLi);
+    ulElement.appendChild(liEle);
+
     const anchor = document.createElement('a');
     anchor.classList.add('view-more');
     anchor.textContent = 'View All';
@@ -204,12 +208,9 @@ function createInterestSection(arr,r){
     h2Ele.textContent = arr[0].trim(); 
 
     goBackDiv.appendChild(anchorElement);
+    goBackDiv.appendChild(h2Ele);
 
     viewAllLi.appendChild(anchor);
-
-    ulElement.appendChild(interestListLi);
-    ulElement.appendChild(viewAllLi);
-    ulElement.appendChild(liEle);
 
     collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
