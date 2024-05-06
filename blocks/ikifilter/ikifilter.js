@@ -211,7 +211,7 @@ function createInterestSection(arr,r,data){
     btn.classList.add('btn', 'btn-primary');
     btn.setAttribute('type', 'button');
     btn.textContent='continue';
-    btn.onclick = hideOptions;
+    btn.addEventListener('click', hideOptions);
 
     btnWraperDiv.appendChild(btn);
 
