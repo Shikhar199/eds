@@ -189,7 +189,7 @@ function createList(arr){
         label.classList.add('pill-container');
 
         const inputElement = document.createElement('input');
-        inputElement.setAttribute("type",checkbox);
+        inputElement.type = 'checkbox';
         inputElement.setAttribute("value",arr[i].trim());
 
         const span1 = document.createElement('span');
