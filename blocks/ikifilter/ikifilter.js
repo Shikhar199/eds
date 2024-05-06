@@ -101,9 +101,83 @@ export default function decorate(block){
             btnElement.appendChild(spanElement);
             
         } else if(r==1){
-            const arr = row.textContent.trim().split('\n').trim();
+            const arr = row.textContent.trim().split('\n');
             console.log(arr);
+            createInterestSection(arr);
+
         }
     })
 
+}
+
+function createInterestSection(arr){
+
+    //Head Section 
+
+    const ulElement = document.createElement('ul');
+    ulElement.classList.add('interest-filter-wraper');
+
+    const liElement = document.createElement('li');
+    liElement.classList.add('interest-heading');
+
+    ulElement.appendChild(liElement);
+
+    const h5Element = document.createElement('h5');
+    h5Element.textContent = arr[0].trim();
+
+    liElement.appendChild(h5Element);
+
+    const anchorElement = document.createElement('a');
+    anchorElement.classList.add('navbar-toggler');
+    anchorElement.setAttribute('href','#');
+    anchorElement.setAttribute('data-toggle','collapse');
+    anchorElement.setAttribute('data-target','#interest-data');
+    anchorElement.setAttribute('aria-controls','interest-data');
+    anchorElement.setAttribute('aria-expanded','false');
+    anchorElement.setAttribute('aria-label','Toggle navigation');
+
+    const spanElement = document.createElement('span');
+    spanElement.classList.add('icon-long-right-arrow');
+
+    anchorElement.appendChild(spanElement);
+
+    liElement.appendChild(anchorElement);
+
+    const collapsediv = document.createElement('div');
+    collapsediv.classList.add('interest-data', 'collapsediv', 'hideoption');
+    collapsediv.id = 'interest-data';
+
+    const headerListingDiv = document.createElement('div');
+    headerListingDiv.classList.add('header', 'header-listing');
+
+    const goBackDiv = document.createElement('div');
+    headerListingDiv.classList.add('go-back');
+
+    collapsediv.appendChild(headerListingDiv);
+    headerListingDiv.appendChild(goBackDiv);
+    goBackDiv.appendChild(anchorElement);
+
+    const closePopUpDiv = document.createElement('div');
+    const btnElem = document.createElement('button');
+    btnElem.classList.add('close');
+    btnElem.setAttribute('data-dismiss', 'modal');
+    btnElem.setAttribute('aria-label', 'Close');
+
+    const popUpSpan = document.createElement('span');
+    popUpSpan.classList.add('icon-popup-cross');
+
+    closePopUpDiv.appendChild(btnElem);
+    btnElem.appendChild(popUpSpan);
+
+    headerListingDiv.appendChild(closePopUpDiv);
+
+    createList(arr);
+
+}
+
+function createList(arr){
+    const ulElem = document.createElement('ul');
+    ulElem.classList.add('interest-list');
+    console.log("Array ki length");
+    console.log(arr.length);
 }
