@@ -190,11 +190,11 @@ function createInterestSection(arr,r){
 
     const interestListLi = document.createElement('li');
     interestListLi.classList.add('interest-list-wraper');
+    ulElement.appendChild(interestListLi);
 
     const viewAllLi = document.createElement('li');
     viewAllLi.classList.add('view-all');
 
-    ulElement.appendChild(interestListLi);
     ulElement.appendChild(viewAllLi);
     ulElement.appendChild(liEle);
 
