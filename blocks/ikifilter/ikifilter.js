@@ -151,7 +151,6 @@ function createInterestSection(arr,r,data){
 
     anchorElement.appendChild(spanElement);
 
-    liElement.appendChild(anchorElement);
     // creating collapse div
 
     const collapsediv = document.createElement('div');
@@ -189,10 +188,22 @@ function createInterestSection(arr,r,data){
 
     const ulElem = createList(arr,r);
 
+    const anchorElement2 = document.createElement('a');
+    anchorElement2.classList.add('navbar-toggler');
+    anchorElement2.setAttribute('href','#');
+    anchorElement2.setAttribute('data-toggle','collapse');
+    anchorElement2.setAttribute('data-target', '#'+data);
+    anchorElement2.setAttribute('aria-controls', data);
+    anchorElement2.setAttribute('aria-expanded','false');
+    anchorElement2.setAttribute('aria-label','Toggle navigation');
+
+    const spanElement2 = document.createElement('span');
+    spanElement2.classList.add('icon-long-right-arrow');
+
+    anchorElement2.appendChild(spanElement2);
+
+    liElement.appendChild(anchorElement2);
     liElement.appendChild(collapsediv);
-    // const liEle = document.createElement('li');
-    // console.log("ulElem", ulElem);
-    // // collapsediv.appendChild(ulElem);
 
     const btnWraperDiv = document.createElement('div');
     btnWraperDiv.classList.add('btn-wraper');
