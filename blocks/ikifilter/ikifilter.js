@@ -172,7 +172,6 @@ function createInterestSection(arr,r){
 
     const ulElem = createList(arr,r);
     const liEle = document.createElement('li');
-    ulElement.appendChild(liEle);
     console.log("ulElem", ulElem);
     // collapsediv.appendChild(ulElem);
 
@@ -204,6 +203,7 @@ function createInterestSection(arr,r){
 
     ulElement.appendChild(interestListLi);
     ulElement.appendChild(viewAllLi);
+    ulElement.appendChild(liEle);
 
     collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
