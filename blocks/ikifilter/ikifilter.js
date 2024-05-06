@@ -151,12 +151,13 @@ function createInterestSection(arr,r){
 
     const goBackDiv = document.createElement('div');
     goBackDiv.classList.add('go-back');
+    goBackDiv.appendChild(anchorElement);
 
     collapsediv.appendChild(headerListingDiv);
     headerListingDiv.appendChild(goBackDiv);
-    goBackDiv.appendChild(anchorElement);
 
     const closePopUpDiv = document.createElement('div');
+    closePopUpDiv.classList.add('close-pop-up');
     const btnElem = document.createElement('button');
     btnElem.classList.add('close');
     btnElem.setAttribute('data-dismiss', 'modal');
