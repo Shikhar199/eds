@@ -102,15 +102,25 @@ export default function decorate(block){
             
         } else if(r==1){
             const arr = row.textContent.trim().split('\n');
-            const ulElem = createInterestSection(arr,r);
+            const ulElem = createInterestSection(arr,r,"interest-data");
             modelBodyDiv.appendChild(ulElem);
 
-        }
+        } else if(r==2){
+            const arr = row.textContent.trim().split('\n');
+            const ulElem = createInterestSection(arr,r,"technologies-data");
+            modelBodyDiv.appendChild(ulElem);
+
+        } else if(r==3){
+            const arr = row.textContent.trim().split('\n');
+            const ulElem = createInterestSection(arr,r,"content-data");
+            modelBodyDiv.appendChild(ulElem);
+
+        } 
     })
 
 }
 
-function createInterestSection(arr,r){
+function createInterestSection(arr,r,data){
 
     //Head Section 
 
@@ -131,8 +141,8 @@ function createInterestSection(arr,r){
     anchorElement.classList.add('navbar-toggler');
     anchorElement.setAttribute('href','#');
     anchorElement.setAttribute('data-toggle','collapse');
-    anchorElement.setAttribute('data-target','#interest-data');
-    anchorElement.setAttribute('aria-controls','interest-data');
+    anchorElement.setAttribute('data-target', '#'+data);
+    anchorElement.setAttribute('aria-controls', data);
     anchorElement.setAttribute('aria-expanded','false');
     anchorElement.setAttribute('aria-label','Toggle navigation');
 
