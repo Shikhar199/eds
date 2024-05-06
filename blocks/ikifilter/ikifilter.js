@@ -207,6 +207,9 @@ function createInterestSection(arr,r){
     collapsediv.appendChild(btnWraperDiv);
     interestListLi.appendChild(ulElem);
 
+    const liEle = document.createElement('li');
+    ulElement.appendChild(liEle);
+
     return ulElement;
 
 }
