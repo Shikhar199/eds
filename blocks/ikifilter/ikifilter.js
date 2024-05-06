@@ -200,6 +200,9 @@ function createInterestSection(arr,r){
     anchor.textContent = 'View All';
     anchor.setAttribute('href', '#');
 
+    const h2Ele = document.createElement('h2');
+    h2Ele.textContent = arr[0].trim(); 
+
     goBackDiv.appendChild(anchorElement);
 
     viewAllLi.appendChild(anchor);
