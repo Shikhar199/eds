@@ -128,7 +128,21 @@ export default function decorate(block){
     // }).catch(error=>{
     //     console.error('Error loading jquery.js:', error);
     // })
-    loadLibraries();
+    // loadLibraries();
+
+    import('/scripts/jquery.js')
+    .then(() => {
+        console.log('jQuery has been loaded');
+        // Execute code that relies on jQuery here
+        import('/blocks/iki.js').then(() => {
+            console.log('iki has been loaded');
+        }).catch(error=>{
+            console.error('Error loading iki.js:', error);
+        })
+    })
+    .catch(error => {
+        console.error('Error loading jquery.js:', error);
+    });
 }
 
 function createInterestSection(arr,r,data){
