@@ -109,6 +109,7 @@ export default function decorate(block){
                 const ulElements = modalBody.querySelectorAll('ul.interest-filter-wraper');
                 if(ulElements.length>0){
                     const liElement = ulElements[0].querySelector('li.interest-list-wraper');
+                    console.log("liElement",liElement);
                     liElement.appendChild(ulElem);
                 }
             }
