@@ -35,13 +35,13 @@ export default function decorate(block){
     // create Explore div
 
     const exploreDiv = document.createElement('div');
-    exploreDiv.classList.add('prespective-filter-modify', 'commonFilter', 'modal', 'fade', 'show');
+    exploreDiv.classList.add('prespective-filter-modify', 'commonFilter', 'modal', 'fade');
     exploreDiv.id = 'videoListing';
     exploreDiv.setAttribute('tabindex','-1');
     exploreDiv.setAttribute('role','dialog');
     exploreDiv.setAttribute('aria-labelledby','videoListingLabel');
     exploreDiv.setAttribute('aria-hidden','true');
-    exploreDiv.style.display = 'none';
+    // exploreDiv.style.display = 'none';
 
     btnWrapperDiv.appendChild(exploreDiv);
 
@@ -137,15 +137,13 @@ function createInterestSection(arr,r){
     anchorElement.setAttribute('aria-expanded','false');
     anchorElement.setAttribute('aria-label','Toggle navigation');
 
-    liElement.appendChild(anchorElement);
-    
     const spanElement = document.createElement('span');
     spanElement.classList.add('icon-long-right-arrow');
 
     anchorElement.appendChild(spanElement);
 
     const collapsediv = document.createElement('div');
-    collapsediv.classList.add('interest-data', 'collapsediv', 'hideoption');
+    collapsediv.classList.add('interest-data', 'collapse', 'hideoption');
     collapsediv.id = 'interest-data';
 
     const headerListingDiv = document.createElement('div');
@@ -182,6 +180,7 @@ function createInterestSection(arr,r){
     btn.onclick = hideOptions();
 
     collapsediv.appendChild(btnWraperDiv);
+    liElement.appendChild(anchorElement);
     liElement.appendChild(collapsediv);
 
     const interestListLi = document.createElement('li');
