@@ -183,16 +183,16 @@ function createInterestSection(arr,r){
     // console.log("ulElem", ulElem);
     // // collapsediv.appendChild(ulElem);
 
-    // const btnWraperDiv = document.createElement('div');
-    // btnWraperDiv.classList.add('btn-wraper');
-    // const btn = document.createElement('button');
-    // btn.classList.add('btn', 'btn-primary');
-    // btn.textContent='continue';
-    // btn.onclick = hideOptions();
+    const btnWraperDiv = document.createElement('div');
+    btnWraperDiv.classList.add('btn-wraper');
+    const btn = document.createElement('button');
+    btn.classList.add('btn', 'btn-primary');
+    btn.textContent='continue';
+    btn.onclick = hideOptions();
 
-    // btnWraperDiv.appendChild(btn);
+    btnWraperDiv.appendChild(btn);
 
-    // // collapsediv.appendChild(btnWraperDiv);
+    collapsediv.appendChild(btnWraperDiv);
     // liElement.appendChild(collapsediv);
 
     // const interestListLi = document.createElement('li');
