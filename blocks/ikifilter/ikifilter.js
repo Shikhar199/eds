@@ -118,10 +118,15 @@ export default function decorate(block){
         } 
     })
 
-    import('/blocks/iki.js').then(($) => {
-        console.log('iki has been loaded');
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
+        import('/blocks/iki.js').then(($) => {
+            console.log('iki has been loaded');
+        }).catch(error=>{
+            console.error('Error loading iki.js:', error);
+        })
     }).catch(error=>{
-        console.error('Error loading iki.js:', error);
+        console.error('Error loading jquery.js:', error);
     })
 
 }
