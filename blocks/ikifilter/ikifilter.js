@@ -175,7 +175,6 @@ function createInterestSection(arr,r,data){
 
     const goBackDiv = document.createElement('div');
     goBackDiv.classList.add('go-back');
-    console.log("anchorElement", anchorElement);
     goBackDiv.appendChild(anchorElement);
 
     const closePopUpDiv = document.createElement('div');
