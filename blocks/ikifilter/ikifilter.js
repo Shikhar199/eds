@@ -209,8 +209,9 @@ function createInterestSection(arr,r,data){
     btnWraperDiv.classList.add('btn-wraper');
     const btn = document.createElement('button');
     btn.classList.add('btn', 'btn-primary');
+    btn.setAttribute('type', 'button');
     btn.textContent='continue';
-    btn.onclick = "hideOptions()";
+    btn.onclick = hideOptions;
 
     btnWraperDiv.appendChild(btn);
 
