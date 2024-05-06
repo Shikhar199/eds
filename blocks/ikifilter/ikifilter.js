@@ -185,7 +185,7 @@ function createList(arr){
 
     for(let i=1;i<arr.length-1;i++){
         const liElem = document.createElement('li');
-        const label = socument.createElement('label');
+        const label = document.createElement('label');
         label.classList.add('pill-container');
 
         const inputElement = document.createElement('input');
