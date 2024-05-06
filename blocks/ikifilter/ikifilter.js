@@ -104,6 +104,14 @@ export default function decorate(block){
             const arr = row.textContent.trim().split('\n');
             console.log(arr);
             const ulElem = createInterestSection(arr,r);
+            const modalBody = document.querySelector('.modal-body');
+            if(modalBody){
+                const ulElements = modalBody.querySelectorAll('ul.interest-filter-wraper');
+                if(ulElements.length>0){
+                    const liElement = ulElements[0].querySelector('li.interest-list-wraper');
+                    liElement.appendChild(ulElem);
+                }
+            }
             modelBodyDiv.appendChild(ulElem);
 
         }
@@ -198,8 +206,6 @@ function createInterestSection(arr,r){
     ulElement.appendChild(interestListLi);
     ulElement.appendChild(viewAllLi);
     ulElement.appendChild(liEle);
-
-    interestListLi.appendChild(ulElem);
 
     const anchor = document.createElement('a');
     anchor.classList.add('view-more');
