@@ -198,20 +198,23 @@ function createInterestSection(arr,r){
     collapsediv.appendChild(btnWraperDiv);
     // liElement.appendChild(collapsediv);
 
-    // const interestListLi = document.createElement('li');
-    // interestListLi.classList.add('interest-list-wraper');
-    // ulElement.appendChild(interestListLi);
+    const interestListLi = document.createElement('li');
+    interestListLi.classList.add('interest-list-wraper');
+    ulElement.appendChild(interestListLi);
+    interestListLi.appendChild(ulElem);
 
-    // const viewAllLi = document.createElement('li');
-    // viewAllLi.classList.add('view-all');
+    const viewAllLi = document.createElement('li');
+    viewAllLi.classList.add('view-all');
 
-    // ulElement.appendChild(viewAllLi);
-    // ulElement.appendChild(liEle);
+    ulElement.appendChild(viewAllLi);
 
-    // const anchor = document.createElement('a');
-    // anchor.classList.add('view-more');
-    // anchor.textContent = 'View All';
-    // anchor.setAttribute('href', '#');
+    const liEle = document.createElement('li');
+    ulElement.appendChild(liEle);
+
+    const anchor = document.createElement('a');
+    anchor.classList.add('view-more');
+    anchor.textContent = 'View All';
+    anchor.setAttribute('href', '#');
 
     // const h2Ele = document.createElement('h2');
     // h2Ele.textContent = arr[0].trim(); 
@@ -219,7 +222,7 @@ function createInterestSection(arr,r){
     // goBackDiv.appendChild(anchorElement);
     // goBackDiv.appendChild(h2Ele);
 
-    // viewAllLi.appendChild(anchor);
+    viewAllLi.appendChild(anchor);
 
     // interestListLi.appendChild(ulElem);
 
