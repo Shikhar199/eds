@@ -171,7 +171,6 @@ function createInterestSection(arr,r){
     headerListingDiv.appendChild(closePopUpDiv);
 
     const ulElem = createList(arr);
-    collapsediv.appendChild(ulElem);
 
     const btnWraperDiv = document.createElement('div');
     const btn = document.createElement('button');
@@ -180,7 +179,8 @@ function createInterestSection(arr,r){
     btn.onclick = hideOptions();
 
     btnWraperDiv.appendChild(btn);
-    
+
+    collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
     liElement.appendChild(anchorElement);
     liElement.appendChild(collapsediv);
