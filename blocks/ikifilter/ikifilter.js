@@ -150,7 +150,7 @@ function createInterestSection(arr,r){
     headerListingDiv.classList.add('header', 'header-listing');
 
     const goBackDiv = document.createElement('div');
-    headerListingDiv.classList.add('go-back');
+    goBackDiv.classList.add('go-back');
 
     collapsediv.appendChild(headerListingDiv);
     headerListingDiv.appendChild(goBackDiv);
