@@ -102,7 +102,6 @@ export default function decorate(block){
             
         } else if(r==1){
             const arr = row.textContent.trim().split('\n');
-            console.log(arr);
             const ulElem = createInterestSection(arr,r);
             const modalBody = document.querySelector('.modal-body');
             if(modalBody){
