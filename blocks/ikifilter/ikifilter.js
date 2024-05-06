@@ -155,7 +155,7 @@ function createInterestSection(arr,r,data){
 
     const collapsediv = document.createElement('div');
     collapsediv.classList.add('interest-data', 'collapse', 'hideoption');
-    collapsediv.id = 'interest-data';
+    collapsediv.id = data;
 
     const headerListingDiv = document.createElement('div');
     headerListingDiv.classList.add('header', 'header-listing');
