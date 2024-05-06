@@ -106,10 +106,10 @@ export default function decorate(block){
             const modalBody = document.querySelector('.modal-body');
             console.log(modalBody);
             if(modalBody){
-                const ulElements = modalBody.querySelectorAll('ul.interest-filter-wraper');
-                console.log(ulElements);
-                if(ulElements.length>0){
-                    const liElement = ulElements[0].querySelector('li.interest-list-wraper');
+                const ulElement = modalBody.querySelector('ul.interest-filter-wraper');
+                console.log(ulElement);
+                if(ulElement.length>0){
+                    const liElement = ulElement[0].querySelector('li.interest-list-wraper');
                     console.log("liElement",liElement);
                     liElement.appendChild(ulElem);
                 }
