@@ -239,3 +239,7 @@ function createList(arr){
     }
     return ulElem;
 }
+
+function hideOptions(){
+    console.log("hide");
+}
