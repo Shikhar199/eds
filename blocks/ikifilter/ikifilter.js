@@ -106,6 +106,7 @@ export default function decorate(block){
             const modalBody = document.querySelector('.modal-body');
             console.log(modalBody);
             console.log(modalBody.querySelector('ul'));
+            console.log(modalBody.getElementsByTagName('ul'));
             if(modalBody){
                 const ulElement = modalBody.querySelector('.interest-filter-wraper');
                 console.log(ulElement);
