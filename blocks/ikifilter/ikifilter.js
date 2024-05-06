@@ -103,7 +103,8 @@ export default function decorate(block){
         } else if(r==1){
             const arr = row.textContent.trim().split('\n');
             console.log(arr);
-            createInterestSection(arr);
+            const ulElem = createInterestSection(arr);
+            modelBodyDiv.appendChild(ulElem);
 
         }
     })
@@ -198,6 +199,8 @@ function createInterestSection(arr){
 
     ulElement.appendChild(interestListLi);
     ulElement.appendChild(viewAllLi);
+
+    return ulElement;
 
 }
 
