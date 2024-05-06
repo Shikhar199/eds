@@ -105,7 +105,7 @@ export default function decorate(block){
             const ulElem = createInterestSection(arr,r);
             const modalBody = document.querySelector('.modal-body');
             console.log(modalBody);
-            console.log(modalBody.querySelector('ul'));
+            console.log(modalBody.querySelectorAll('ul'));
             console.log(modalBody.getElementsByTagName('ul'));
             console.log(modalBody.querySelector('ul'));
             if(modalBody){
