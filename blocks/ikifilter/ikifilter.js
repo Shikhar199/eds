@@ -171,13 +171,40 @@ function createInterestSection(arr){
 
     headerListingDiv.appendChild(closePopUpDiv);
 
-    createList(arr);
+    const ulElem = createList(arr);
+    collapsediv.appendChild(ulElem);
+
+    const btnWraperDiv = document.createElement('div');
+    const btn = document.createElement('button');
+    btn.classList.add('btn', 'btn-primary');
+    btn.textContent='continue';
+    btn.onclick = hideOptions();
+
+    collapsediv.appendChild(btnWraperDiv);
+
+    const interestListLi = document.createElement('li');
+    interestListLi.classList.add('interest-list-wraper');
+    interestListLi.appendChild(ulElem);
+
+    const viewAllLi = document.createElement('li');
+    viewAllLi.classList.add('view-all');
+
+    const anchor = document.createElement('a');
+    anchor.classList.add('view-more');
+    anchor.textContent = 'View All';
+    anchor.setAttribute('href', '#');
+
+    viewAllLi.appendChild(anchor);
+
+    ulElement.appendChild(interestListLi);
+    ulElement.appendChild(viewAllLi);
 
 }
 
 function createList(arr){
     const ulElem = document.createElement('ul');
     ulElem.classList.add('interest-list');
+    ulElem.classList.add(arr[0]);
     console.log("Array ki length");
     console.log(arr.length);
     console.log(arr[0]);
@@ -207,5 +234,5 @@ function createList(arr){
         ulElem.appendChild(liElem);
 
     }
-    console.log(ulElem);
+    return ulElem;
 }
