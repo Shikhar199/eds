@@ -137,12 +137,12 @@ function createInterestSection(arr,r){
     anchorElement.setAttribute('aria-expanded','false');
     anchorElement.setAttribute('aria-label','Toggle navigation');
 
+    liElement.appendChild(anchorElement);
+    
     const spanElement = document.createElement('span');
     spanElement.classList.add('icon-long-right-arrow');
 
     anchorElement.appendChild(spanElement);
-    console.log("liElement",liElement);
-    liElement.appendChild(anchorElement);
 
     const collapsediv = document.createElement('div');
     collapsediv.classList.add('interest-data', 'collapsediv', 'hideoption');
