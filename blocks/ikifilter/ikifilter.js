@@ -189,7 +189,6 @@ function createInterestSection(arr,r){
 
     const interestListLi = document.createElement('li');
     interestListLi.classList.add('interest-list-wraper');
-    interestListLi.appendChild(ulElem);
 
     const viewAllLi = document.createElement('li');
     viewAllLi.classList.add('view-all');
@@ -206,6 +205,7 @@ function createInterestSection(arr,r){
 
     collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
+    interestListLi.appendChild(ulElem);
 
     return ulElement;
 
