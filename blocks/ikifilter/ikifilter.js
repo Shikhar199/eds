@@ -103,6 +103,7 @@ export default function decorate(block){
         } else if(r==1){
             const arr = row.textContent.trim().split('\n');
             const ulElem = createInterestSection(arr,r);
+            modelBodyDiv.appendChild(ulElem);
             const modalBody = document.querySelector('.modal-body');
             console.log(modalBody);
             console.log(modalBody.querySelectorAll('ul'));
@@ -117,7 +118,6 @@ export default function decorate(block){
                     liElement.appendChild(ulElem);
                 }
             }
-            modelBodyDiv.appendChild(ulElem);
 
         }
     })
