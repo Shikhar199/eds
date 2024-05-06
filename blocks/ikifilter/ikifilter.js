@@ -141,7 +141,7 @@ function createInterestSection(arr,r){
     spanElement.classList.add('icon-long-right-arrow');
 
     anchorElement.appendChild(spanElement);
-
+    console.log("anchorElement"+anchorElement);
     liElement.appendChild(anchorElement);
 
     const collapsediv = document.createElement('div');
