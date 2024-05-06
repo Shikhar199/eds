@@ -179,6 +179,8 @@ function createInterestSection(arr,r){
     btn.textContent='continue';
     btn.onclick = hideOptions();
 
+    btnWraperDiv.appendChild(btn);
+    
     collapsediv.appendChild(btnWraperDiv);
     liElement.appendChild(anchorElement);
     liElement.appendChild(collapsediv);
