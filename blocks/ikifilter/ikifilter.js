@@ -152,7 +152,6 @@ function createInterestSection(arr,r){
     const goBackDiv = document.createElement('div');
     goBackDiv.classList.add('go-back');
     console.log("anchorElement", anchorElement);
-    goBackDiv.appendChild(anchorElement);
 
     collapsediv.appendChild(headerListingDiv);
     headerListingDiv.appendChild(goBackDiv);
@@ -200,6 +199,8 @@ function createInterestSection(arr,r){
     anchor.classList.add('view-more');
     anchor.textContent = 'View All';
     anchor.setAttribute('href', '#');
+
+    goBackDiv.appendChild(anchorElement);
 
     viewAllLi.appendChild(anchor);
 
