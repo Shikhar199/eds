@@ -175,7 +175,6 @@ function createInterestSection(arr,r){
     headerListingDiv.appendChild(closePopUpDiv);
 
     const ulElem = createList(arr,r);
-    interestHeadingDiv.appendChild(collapsediv);
     // const liEle = document.createElement('li');
     // console.log("ulElem", ulElem);
     // // collapsediv.appendChild(ulElem);
