@@ -171,8 +171,10 @@ function createInterestSection(arr,r){
     headerListingDiv.appendChild(closePopUpDiv);
 
     const ulElem = createList(arr);
+    console.log("ulElem", ulElem);
 
     const btnWraperDiv = document.createElement('div');
+    btnWraperDiv.classList.add('btn-wraper');
     const btn = document.createElement('button');
     btn.classList.add('btn', 'btn-primary');
     btn.textContent='continue';
