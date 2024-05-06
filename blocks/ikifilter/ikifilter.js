@@ -178,7 +178,7 @@ function createInterestSection(arr,r){
     const ulElem = createList(arr,r);
 
     liElement.appendChild(collapsediv);
-    liElement.appendChild(ulElem);
+    collapsediv.appendChild(ulElem);
     // const liEle = document.createElement('li');
     // console.log("ulElem", ulElem);
     // // collapsediv.appendChild(ulElem);
