@@ -125,9 +125,20 @@ export default function decorate(block){
         } 
     })
 
+            var ikijsScript = document.createElement('script')
+            ikijsScript.setAttribute("src","/blocks/iki.js");
+            ikijsScript.setAttribute('defer', true);
+
+            var ikiloginjsScript = document.createElement('script')
+            ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
+            ikiloginjsScript.setAttribute('defer', true);
+
             var mainjsScript = document.createElement('script')
-            mainjsScript.setAttribute("src","/blocks/iki.js");
+            mainjsScript.setAttribute("src","/scripts/main.js");
             mainjsScript.setAttribute('defer', true);
+
+            sectionElement.appendChild(ikijsScript);
+            sectionElement.appendChild(ikiloginjsScript);
             sectionElement.appendChild(mainjsScript);
     //         import('/blocks/iki.js').then(() => {
     //             console.log('iki has been loaded');
