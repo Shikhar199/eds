@@ -1,4 +1,8 @@
 export default function decorate(block){
+
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
+        
     const ikifilterContainer = document.querySelector(".ikifilter-container");
     ikifilterContainer.classList.add('ikihomepageexplore', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
@@ -118,8 +122,6 @@ export default function decorate(block){
         } 
     })
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/blocks/iki.js");
             mainjsScript.setAttribute('defer', true);
