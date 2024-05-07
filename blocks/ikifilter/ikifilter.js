@@ -118,31 +118,35 @@ export default function decorate(block){
         } 
     })
 
-    // import('/scripts/jquery.js').then(($) => {
-    //     console.log('jQuery has been loaded');
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
+            var mainjsScript = document.createElement('script')
+            mainjsScript.setAttribute("src","/scripts/main.js");
+            mainjsScript.setAttribute('defer', true);
+            sectionElement.appendChild(mainjsScript);
     //         import('/blocks/iki.js').then(() => {
     //             console.log('iki has been loaded');
     //         }).catch(error=>{
     //             console.error('Error loading iki.js:', error);
     //         })
-    // }).catch(error=>{
-    //     console.error('Error loading jquery.js:', error);
-    // })
+    }).catch(error=>{
+        console.error('Error loading jquery.js:', error);
+    })
     // loadLibraries();
 
-    import('/scripts/jquery.js')
-    .then(() => {
-        console.log('jQuery has been loaded');
-        // Execute code that relies on jQuery here
-        import('/blocks/iki.js').then(() => {
-            console.log('iki has been loaded');
-        }).catch(error=>{
-            console.error('Error loading iki.js:', error);
-        })
-    })
-    .catch(error => {
-        console.error('Error loading jquery.js:', error);
-    });
+    // import('/scripts/jquery.js')
+    // .then(() => {
+    //     console.log('jQuery has been loaded');
+    //     // Execute code that relies on jQuery here
+    //     import('/blocks/iki.js').then(() => {
+    //         console.log('iki has been loaded');
+    //     }).catch(error=>{
+    //         console.error('Error loading iki.js:', error);
+    //     })
+    // })
+    // .catch(error => {
+    //     console.error('Error loading jquery.js:', error);
+    // });
 }
 
 function createInterestSection(arr,r,data){
