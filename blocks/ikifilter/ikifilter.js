@@ -121,7 +121,7 @@ export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
             var mainjsScript = document.createElement('script')
-            mainjsScript.setAttribute("src","/scripts/main.js");
+            mainjsScript.setAttribute("src","/blocks/iki.js");
             mainjsScript.setAttribute('defer', true);
             sectionElement.appendChild(mainjsScript);
     //         import('/blocks/iki.js').then(() => {
