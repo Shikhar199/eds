@@ -1,11 +1,11 @@
 export default function decorate(block){
 
-    import('/scripts/slick.js').then(($) => {
-        console.log('jQuery has been loaded');
+    // import('/scripts/slick.js').then(($) => {
+    //     console.log('jQuery has been loaded');
         // import('/blocks/ikilogin.js').then(() => {
         //     console.log(' IKI login js has been loaded');
-            import('/scripts/main.js').then(() => {
-                console.log(' main js has been loaded');
+            // import('/scripts/main.js').then(() => {
+            //     console.log(' main js has been loaded');
     const ikifilterContainer = document.querySelector(".ikifilter-container");
     ikifilterContainer.classList.add('ikihomepageexplore', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
@@ -161,15 +161,15 @@ export default function decorate(block){
     //         }).catch(error=>{
     //             console.error('Error loading iki.js:', error);
     //         })
-            }).catch(error=>{
-                console.error('Error loading main.js:', error);
-            })
+            // }).catch(error=>{
+            //     console.error('Error loading main.js:', error);
+            // })
         // }).catch(error=>{
         //     console.error('Error loading ikilogin.js:', error);
         // })
-    }).catch(error=>{
-        console.error('Error loading jquery.js:', error);
-    })
+    // }).catch(error=>{
+    //     console.error('Error loading jquery.js:', error);
+    // })
     // loadLibraries();
 
     // import('/scripts/jquery.js')
