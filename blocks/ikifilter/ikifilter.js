@@ -416,7 +416,7 @@ function loadMainScript() {
     var script = document.createElement('script');
     script.src = "/scripts/main.js";
     script.defer = true;
-    document.body.appendChild(script);
+    // document.body.appendChild(script);
 }
 
 // function loadScript(src) {
