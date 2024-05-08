@@ -143,7 +143,7 @@ export default function decorate(block){
 
             sectionElement.appendChild(ikijsScript);
             sectionElement.appendChild(ikiloginjsScript);
-            sectionElement.appendChild(bundleScript);
+            // sectionElement.appendChild(bundleScript);
             sectionElement.appendChild(mainjsScript);
     //         import('/blocks/iki.js').then(() => {
     //             console.log('iki has been loaded');
