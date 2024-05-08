@@ -122,7 +122,7 @@ export default function decorate(block){
             const ulElem = createInterestSection(arr,r,"content-data");
             modelBodyDiv.appendChild(ulElem);
 
-        } else if (i==4){
+        } else if (r==4){
             const btnElementMobile = document.createElement('button');
             btnElementMobile.setAttribute("type","button");
             btnElementMobile.classList.add('btn', 'btn-apply', 'btn-dark', 'mobile-only');
