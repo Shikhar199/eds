@@ -390,7 +390,7 @@ function loadScripts() {
     var headElement =  document.querySelector('head');
     var bodyElement = document.querySelector('body');
 
-    mainElement.appendChild(bundleScript);
+    // mainElement.appendChild(bundleScript);
     headElement.appendChild(jqueryScript);
     headElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
