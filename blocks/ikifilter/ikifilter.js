@@ -133,12 +133,17 @@ export default function decorate(block){
             ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
             ikiloginjsScript.setAttribute('defer', true);
 
+            var bundleScript = document.createElement('script')
+            bundleScript.setAttribute("src","/blocks/bundle.js");
+            bundleScript.setAttribute('defer', true);
+
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
             mainjsScript.setAttribute('defer', true);
 
             sectionElement.appendChild(ikijsScript);
             sectionElement.appendChild(ikiloginjsScript);
+            sectionElement.appendChild(bundleScript);
             sectionElement.appendChild(mainjsScript);
     //         import('/blocks/iki.js').then(() => {
     //             console.log('iki has been loaded');
