@@ -162,38 +162,6 @@ export default function decorate(block){
         import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
 
-            $(".slider").slick({
-                infinite: true,
-                arrows: false,
-                dots: false,
-                autoplay: false,
-                fade: true,
-                cssEase: 'linear',
-                speed: 800,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                responsive: [{
-                    breakpoint: 991,
-                    settings: {
-                      asNavFor: '.banner-slick',
-                    }
-                  },
-                  {
-                    breakpoint: 767,
-                    settings: {
-                      asNavFor: '.banner-slick',
-                    }
-                  },
-                  {
-                    breakpoint: 375,
-                    settings: {
-                      asNavFor: '.banner-slick',
-                    }
-                  }
-              
-                ]
-              });
-        
     //         var mainjsScript = document.createElement('script')
     //         mainjsScript.setAttribute("src","/scripts/main.js");
     //         mainjsScript.setAttribute('defer', true);
