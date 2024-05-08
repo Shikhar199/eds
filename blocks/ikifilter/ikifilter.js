@@ -395,14 +395,28 @@ function loadScripts() {
     headElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(ikiloginjsScript);
-    window.onload = function() {
-        var mainjsScript = document.createElement('script');
-        mainjsScript.src = "/scripts/main.js";
-        mainjsScript.defer = true;
-        document.body.appendChild(mainjsScript);
+    // window.onload = function() {
+    //     var mainjsScript = document.createElement('script');
+    //     mainjsScript.src = "/scripts/main.js";
+    //     mainjsScript.defer = true;
+    //     document.body.appendChild(mainjsScript);
+    // }
+    if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+        // Document is already ready or has already loaded, call the function directly
+        loadMainScript();
+    } else {
+        // Document is still loading, add an event listener for DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", loadMainScript);
     }
     // mainElement.appendChild(mainjsScript);
 
+}
+
+function loadMainScript() {
+    var script = document.createElement('script');
+    script.src = "/scripts/main.js";
+    script.defer = true;
+    document.body.appendChild(script);
 }
 
 // function loadScript(src) {
