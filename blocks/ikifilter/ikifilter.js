@@ -349,26 +349,26 @@ function hideOptions(){
 function loadScripts() {
     var ikijsScript = document.createElement('script')
     ikijsScript.setAttribute("src","/blocks/iki.js");
-    ikijsScript.setAttribute('defer', true);
+    // ikijsScript.setAttribute('defer', true);
 
     var ikiloginjsScript = document.createElement('script')
     ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
-    ikiloginjsScript.setAttribute('defer', true);
+    // ikiloginjsScript.setAttribute('defer', true);
 
     var bundleScript = document.createElement('script')
     bundleScript.setAttribute("src","/blocks/bundle.js");
-    bundleScript.setAttribute('defer', true);
+    // bundleScript.setAttribute('defer', true);
 
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
-    mainjsScript.setAttribute('defer', true);
+    // mainjsScript.setAttribute('defer', true);
 
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/scripts/jquery.js");
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/scripts/slick.js");
-    slickScript.setAttribute('defer', true);
+    // slickScript.setAttribute('defer', true);
 
     var mainElement = document.querySelector('main');
     var headElement =  document.querySelector('head');
@@ -377,7 +377,7 @@ function loadScripts() {
     headElement.appendChild(jqueryScript);
     mainElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
-    // mainElement.appendChild(mainjsScript);
+    mainElement.appendChild(mainjsScript);
     mainElement.appendChild(ikiloginjsScript);
 
 }
