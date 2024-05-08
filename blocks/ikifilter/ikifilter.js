@@ -149,6 +149,7 @@ export default function decorate(block){
         loadScript('/blocks/ikilogin.js')
     ]).then(function() {
         // All other scripts have been loaded, now load main.js
+        console.log("Loading main.js");
         loadMainScript();
     }).catch(function(error) {
         console.error('Error loading scripts:', error);
