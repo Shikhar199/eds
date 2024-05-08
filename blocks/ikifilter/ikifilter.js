@@ -349,11 +349,21 @@ function loadScripts() {
     mainjsScript.setAttribute("src","/scripts/main.js");
     mainjsScript.setAttribute('defer', true);
 
+    var jqueryScript = document.createElement('script')
+    jqueryScript.setAttribute("src","/scripts/jquery.js");
+    jqueryScript.setAttribute('defer', true);
+
+    var slickScript = document.createElement('script')
+    slickScript.setAttribute("src","/scripts/slick.js");
+    slickScript.setAttribute('defer', true);
+
     var mainElement = document.querySelector('main');
 
-    mainElement.appendChild(ikijsScript);
-    mainElement.appendChild(ikiloginjsScript);
     mainElement.appendChild(bundleScript);
+    mainElement.appendChild(jqueryScript);
+    mainElement.appendChild(slickScript);
+    mainElement.appendChild(ikijsScript);
     mainElement.appendChild(mainjsScript);
+    mainElement.appendChild(ikiloginjsScript);
 
 }
