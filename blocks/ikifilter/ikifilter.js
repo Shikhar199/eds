@@ -377,7 +377,7 @@ function loadScripts() {
 
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
-    // mainjsScript.setAttribute('defer', true);
+    mainjsScript.setAttribute('defer', true);
 
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/scripts/jquery.js");
@@ -395,7 +395,7 @@ function loadScripts() {
     mainElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(ikiloginjsScript);
-    // bodyElement.appendChild(mainjsScript);
+    bodyElement.appendChild(mainjsScript);
 
 }
 
