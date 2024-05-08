@@ -392,7 +392,7 @@ function loadScripts() {
 
     mainElement.appendChild(bundleScript);
     headElement.appendChild(jqueryScript);
-    headElement.appendChild(slickScript);
+    // headElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(ikiloginjsScript);
     // window.onload = function() {
