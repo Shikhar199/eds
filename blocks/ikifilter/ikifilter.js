@@ -2,8 +2,8 @@ export default function decorate(block){
 
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
-        import('/blocks/ikilogin.js').then(() => {
-            console.log(' IKI login js has been loaded');
+        // import('/blocks/ikilogin.js').then(() => {
+        //     console.log(' IKI login js has been loaded');
             import('/scripts/main.js').then(() => {
                 console.log(' main js has been loaded');
     const ikifilterContainer = document.querySelector(".ikifilter-container");
@@ -164,9 +164,9 @@ export default function decorate(block){
             }).catch(error=>{
                 console.error('Error loading main.js:', error);
             })
-        }).catch(error=>{
-            console.error('Error loading ikilogin.js:', error);
-        })
+        // }).catch(error=>{
+        //     console.error('Error loading ikilogin.js:', error);
+        // })
     }).catch(error=>{
         console.error('Error loading jquery.js:', error);
     })
@@ -394,7 +394,7 @@ function loadScripts() {
     headElement.appendChild(jqueryScript);
     headElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
-    // mainElement.appendChild(ikiloginjsScript);
+    mainElement.appendChild(ikiloginjsScript);
     // mainElement.appendChild(mainjsScript);
 
 }
