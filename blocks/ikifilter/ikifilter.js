@@ -353,7 +353,7 @@ function loadScripts() {
 
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(ikiloginjsScript);
-    // sectionElement.appendChild(bundleScript);
+    mainElement.appendChild(bundleScript);
     mainElement.appendChild(mainjsScript);
 
 }
