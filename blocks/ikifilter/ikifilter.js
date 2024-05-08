@@ -391,8 +391,8 @@ function loadScripts() {
     var bodyElement = document.querySelector('body');
 
     mainElement.appendChild(bundleScript);
-    mainElement.appendChild(jqueryScript);
-    mainElement.appendChild(slickScript);
+    headElement.appendChild(jqueryScript);
+    headElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(ikiloginjsScript);
     mainElement.appendChild(mainjsScript);
