@@ -384,7 +384,7 @@ function loadScripts() {
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/scripts/slick.js");
-    slickScript.setAttribute('defer', true);
+    // slickScript.setAttribute('defer', true);
 
     var mainElement = document.querySelector('main');
     var headElement =  document.querySelector('head');
