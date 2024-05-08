@@ -377,7 +377,7 @@ function loadScripts() {
 
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
-    mainjsScript.setAttribute('defer', true);
+    // mainjsScript.setAttribute('defer', true);
 
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/scripts/jquery.js");
