@@ -1,3 +1,4 @@
+$(document).ready(function() {
 function social() {
     let element = document.getElementById("social-id");
     element.classList.toggle("social-display");
@@ -874,3 +875,4 @@ function social() {
   
   function launchLightboxvidyard(d){let e=!0;document.getElementById("vyLightbox").innerHTML=`<img \n class="vidyard-player-embed"\n src="https://play.vidyard.com/${d}.jpg"\n data-uuid="${d}";\n data-v="4"\n data-type="lightbox"\n />`,vidyardEmbed.api.renderDOMPlayers(document.getElementById("vyLightbox")),new Promise(d=>window.vidyardEmbed?d(window.vidyardEmbed):window.onVidyardAPI=(e=>d(e))).then(a=>{VidyardV4.api.getPlayersByUUID(d)[0].showLightbox(),e=!1})}
   //Video Listing WHat New in IKI END
+});
