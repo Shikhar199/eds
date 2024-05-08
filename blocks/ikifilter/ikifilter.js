@@ -122,7 +122,21 @@ export default function decorate(block){
             const ulElem = createInterestSection(arr,r,"content-data");
             modelBodyDiv.appendChild(ulElem);
 
-        } 
+        } else if (i==4){
+            const btnElementMobile = document.createElement('button');
+            btnElementMobile.setAttribute("type","button");
+            btnElementMobile.classList.add('btn', 'btn-apply', 'btn-dark', 'mobile-only');
+            btnElementMobile.textContent = "apply";
+
+            const btnElementDesktop = document.createElement('button');
+            btnElementDesktop.setAttribute("type","button");
+            btnElementDesktop.classList.add('btn', 'btn-apply', 'btn-dark', 'desktop-only');
+            btnElementDesktop.textContent = "apply";
+
+            listBtnDiv.appendChild(btnElementMobile);
+            listBtnDiv.appendChild(btnElementDesktop);
+
+        }
     })
 
     loadScripts();

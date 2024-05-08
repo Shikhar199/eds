@@ -72,8 +72,6 @@ window.location=currenturl+"?industry="+localstorageindustries+"&technology="+lo
 
 
 $('.btn-modify,.filter-subheading,.btn-exp').click(function(){
-	
-	console.log("Button clicked");
 
 	
 let industryContainer = document.querySelectorAll(".industry .pill-container input");
