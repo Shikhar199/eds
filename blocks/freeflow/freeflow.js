@@ -157,14 +157,14 @@ export default function decorate(block){
         }
     })
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
-        import('/scripts/slick.js').then(() => {
-            console.log('Slick min js has been loaded');
+    // import('/scripts/jquery.js').then(($) => {
+    //     console.log('jQuery has been loaded');
+    //     import('/scripts/slick.js').then(() => {
+    //         console.log('Slick min js has been loaded');
         
-            var mainjsScript = document.createElement('script')
-            mainjsScript.setAttribute("src","/scripts/main.js");
-            mainjsScript.setAttribute('defer', true);
+    //         var mainjsScript = document.createElement('script')
+    //         mainjsScript.setAttribute("src","/scripts/main.js");
+    //         mainjsScript.setAttribute('defer', true);
 
             // freeflowSliderContainer.appendChild(mainjsScript);
 
@@ -209,12 +209,12 @@ export default function decorate(block){
     //         //   freeflowScriptElement.innerHTML = freeflowScriptCode;
     //         //   freeflowSectionElement.appendChild(freeflowScriptElement);
 
-        }).catch(error=>{
-            console.error('Error loading slick.js:', error);
-        })
-    }).catch(error=>{
-        console.error('Error loading jquery.js:', error);
-    })
+    //     }).catch(error=>{
+    //         console.error('Error loading slick.js:', error);
+    //     })
+    // }).catch(error=>{
+    //     console.error('Error loading jquery.js:', error);
+    // })
 
 
     // import('/scripts/jquery.js').then(($) => {

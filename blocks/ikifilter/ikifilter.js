@@ -351,16 +351,16 @@ function loadScripts() {
 
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/scripts/jquery.js");
-    jqueryScript.setAttribute('defer', true);
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/scripts/slick.js");
     slickScript.setAttribute('defer', true);
 
     var mainElement = document.querySelector('main');
+    var headElement =  document.querySelector('head');
 
     mainElement.appendChild(bundleScript);
-    mainElement.appendChild(jqueryScript);
+    headElement.appendChild(jqueryScript);
     mainElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(mainjsScript);
