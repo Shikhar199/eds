@@ -166,7 +166,7 @@ export default function decorate(block){
             mainjsScript.setAttribute("src","/scripts/main.js");
             mainjsScript.setAttribute('defer', true);
 
-            freeflowSliderContainer.appendChild(mainjsScript);
+            // freeflowSliderContainer.appendChild(mainjsScript);
 
             // import('/scripts/main.js').then(() => {
             //     console.log("main.js loaded");
