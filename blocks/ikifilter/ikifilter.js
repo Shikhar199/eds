@@ -395,7 +395,7 @@ function loadScripts() {
     headElement.appendChild(slickScript);
     mainElement.appendChild(ikijsScript);
     mainElement.appendChild(ikiloginjsScript);
-    mainElement.appendChild(mainjsScript);
+    // mainElement.appendChild(mainjsScript);
 
 }
 
