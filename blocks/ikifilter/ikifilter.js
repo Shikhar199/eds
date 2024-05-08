@@ -125,26 +125,7 @@ export default function decorate(block){
         } 
     })
 
-            var ikijsScript = document.createElement('script')
-            ikijsScript.setAttribute("src","/blocks/iki.js");
-            ikijsScript.setAttribute('defer', true);
-
-            var ikiloginjsScript = document.createElement('script')
-            ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
-            ikiloginjsScript.setAttribute('defer', true);
-
-            var bundleScript = document.createElement('script')
-            bundleScript.setAttribute("src","/blocks/bundle.js");
-            bundleScript.setAttribute('defer', true);
-
-            var mainjsScript = document.createElement('script')
-            mainjsScript.setAttribute("src","/scripts/main.js");
-            mainjsScript.setAttribute('defer', true);
-
-            sectionElement.appendChild(ikijsScript);
-            sectionElement.appendChild(ikiloginjsScript);
-            // sectionElement.appendChild(bundleScript);
-            sectionElement.appendChild(mainjsScript);
+    loadScripts();
     //         import('/blocks/iki.js').then(() => {
     //             console.log('iki has been loaded');
     //         }).catch(error=>{
@@ -351,18 +332,28 @@ function hideOptions(){
     console.log("hide");
 }
 
-async function loadLibraries() {
-    try {
-      await import('/scripts/jquery.js');
-      console.log('jQuery has been loaded');
-  
-      await $(document).ready(); // Wait for jQuery to be ready
-  
-      await import('/blocks/iki.js');
-      console.log('iki.js has been loaded');
-  
-      // Execute code from iki.js that relies on jQuery
-    } catch (error) {
-      console.error('Error loading libraries:', error);
-    }
-  }
+function loadScripts() {
+    var ikijsScript = document.createElement('script')
+    ikijsScript.setAttribute("src","/blocks/iki.js");
+    ikijsScript.setAttribute('defer', true);
+
+    var ikiloginjsScript = document.createElement('script')
+    ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
+    ikiloginjsScript.setAttribute('defer', true);
+
+    var bundleScript = document.createElement('script')
+    bundleScript.setAttribute("src","/blocks/bundle.js");
+    bundleScript.setAttribute('defer', true);
+
+    var mainjsScript = document.createElement('script')
+    mainjsScript.setAttribute("src","/scripts/main.js");
+    mainjsScript.setAttribute('defer', true);
+
+    var mainElement = document.querySelector('main');
+
+    mainElement.appendChild(ikijsScript);
+    mainElement.appendChild(ikiloginjsScript);
+    // sectionElement.appendChild(bundleScript);
+    mainElement.appendChild(mainjsScript);
+
+}
