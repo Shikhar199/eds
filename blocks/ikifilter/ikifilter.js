@@ -139,7 +139,22 @@ export default function decorate(block){
         }
     })
 
-    loadScripts();
+    // Load other scripts first
+    Promise.all([
+        // Load other scripts here
+        // For example:
+        loadScript('/blocks/bundle.js'),
+        loadScript('/scripts/slick.js'),
+        loadScript('/blocks/iki.js'),
+        loadScript('/blocks/ikilogin.js')
+    ]).then(function() {
+        // All other scripts have been loaded, now load main.js
+        loadMainScript();
+    }).catch(function(error) {
+        console.error('Error loading scripts:', error);
+    });
+
+    // loadScripts();
     //         import('/blocks/iki.js').then(() => {
     //             console.log('iki has been loaded');
     //         }).catch(error=>{
@@ -346,38 +361,54 @@ function hideOptions(){
     console.log("hide");
 }
 
-function loadScripts() {
-    var ikijsScript = document.createElement('script')
-    ikijsScript.setAttribute("src","/blocks/iki.js");
-    // ikijsScript.setAttribute('defer', true);
+// function loadScripts() {
+//     var ikijsScript = document.createElement('script')
+//     ikijsScript.setAttribute("src","/blocks/iki.js");
+//     // ikijsScript.setAttribute('defer', true);
 
-    var ikiloginjsScript = document.createElement('script')
-    ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
-    // ikiloginjsScript.setAttribute('defer', true);
+//     var ikiloginjsScript = document.createElement('script')
+//     ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
+//     // ikiloginjsScript.setAttribute('defer', true);
 
-    var bundleScript = document.createElement('script')
-    bundleScript.setAttribute("src","/blocks/bundle.js");
-    // bundleScript.setAttribute('defer', true);
+//     var bundleScript = document.createElement('script')
+//     bundleScript.setAttribute("src","/blocks/bundle.js");
+//     // bundleScript.setAttribute('defer', true);
 
-    var mainjsScript = document.createElement('script')
-    mainjsScript.setAttribute("src","/scripts/main.js");
-    // mainjsScript.setAttribute('defer', true);
+//     var mainjsScript = document.createElement('script')
+//     mainjsScript.setAttribute("src","/scripts/main.js");
+//     // mainjsScript.setAttribute('defer', true);
 
-    var jqueryScript = document.createElement('script')
-    jqueryScript.setAttribute("src","/scripts/jquery.js");
+//     var jqueryScript = document.createElement('script')
+//     jqueryScript.setAttribute("src","/scripts/jquery.js");
 
-    var slickScript = document.createElement('script')
-    slickScript.setAttribute("src","/scripts/slick.js");
-    // slickScript.setAttribute('defer', true);
+//     var slickScript = document.createElement('script')
+//     slickScript.setAttribute("src","/scripts/slick.js");
+//     // slickScript.setAttribute('defer', true);
 
-    var mainElement = document.querySelector('main');
-    var headElement =  document.querySelector('head');
+//     var mainElement = document.querySelector('main');
+//     var headElement =  document.querySelector('head');
 
-    mainElement.appendChild(bundleScript);
-    headElement.appendChild(jqueryScript);
-    mainElement.appendChild(slickScript);
-    mainElement.appendChild(ikijsScript);
-    mainElement.appendChild(mainjsScript);
-    mainElement.appendChild(ikiloginjsScript);
+//     mainElement.appendChild(bundleScript);
+//     headElement.appendChild(jqueryScript);
+//     mainElement.appendChild(slickScript);
+//     mainElement.appendChild(ikijsScript);
+//     mainElement.appendChild(mainjsScript);
+//     mainElement.appendChild(ikiloginjsScript);
 
+// }
+
+function loadScript(src) {
+    return new Promise(function(resolve, reject) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+    });
+}
+
+function loadMainScript() {
+    var mainScript = document.createElement('script');
+    mainScript.src = '/scripts/main.js';
+    document.body.appendChild(mainScript);
 }
