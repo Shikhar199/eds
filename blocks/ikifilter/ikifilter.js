@@ -1,6 +1,6 @@
 export default function decorate(block){
 
-    import('/scripts/jquery.js').then(($) => {
+    import('/scripts/slick.js').then(($) => {
         console.log('jQuery has been loaded');
         // import('/blocks/ikilogin.js').then(() => {
         //     console.log(' IKI login js has been loaded');
