@@ -180,11 +180,11 @@ export default function decorate(block){
 
             // freeflowSliderContainer.appendChild(mainjsScript);
 
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
     //         // var freeflowScriptElement = document.createElement('script');
     //         // var freeflowScriptCode = `$(".slider").slick({
     //         //     infinite: true,
