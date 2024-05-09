@@ -275,7 +275,13 @@ export default function decorate(block){
     //     console.error('Error loading jquery.js:', error);
     // });
 
-    loadLibraries();
+    loadLibraries().then(() => {
+        import('/scripts/main.js').then(() => {
+            console.log("main.js loaded");
+        }).catch(error=>{
+            console.error('Error loading main.js:', error);
+        })    
+    });
 }
 
 async function loadLibraries() {
@@ -289,8 +295,6 @@ async function loadLibraries() {
       await new Promise(resolve => setTimeout(resolve, 5000));
   
       // Your code using jQuery and Slick here
-      await import('/scripts/main.js');
-      console.log('main js has been loaded');
     } catch (error) {
       console.error('Error loading libraries:', error);
     }
