@@ -275,16 +275,16 @@ export default function decorate(block){
     //     console.error('Error loading jquery.js:', error);
     // });
 
-    loadLibraries().then(() => {
-        import('/blocks/main/main.js').then(() => {
-            console.log("main.js loaded");
-        }).catch(error=>{
-            console.error('Error loading main.js:', error);
-        })    
-    });
+    // loadLibraries().then(() => {
+    //     import('/blocks/main/main.js').then(() => {
+    //         console.log("main.js loaded");
+    //     }).catch(error=>{
+    //         console.error('Error loading main.js:', error);
+    //     })    
+    // });
 }
 
-async function loadLibraries() {
+(async function loadLibraries() {
     try {
       await import('/blocks/jquery/jquery.js');
       console.log('jQuery has been loaded');
@@ -298,4 +298,4 @@ async function loadLibraries() {
     } catch (error) {
       console.error('Error loading libraries:', error);
     }
-  }
+  })();
