@@ -14,8 +14,6 @@ export default function decorate(block){
     // headElement.appendChild(jqueryScript);
     // headElement.appendChild(slickScript);
 
-    headElement.appendChild(jqueryScript);
-    headElement.appendChild(slickScript);
 
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
