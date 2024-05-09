@@ -10,9 +10,13 @@ export default function decorate(block){
     slickScript.setAttribute("src","/scripts/slick.js");
 
     var headElement =  document.querySelector('head');
+    var bodyElement =  document.querySelector('body');
 
-    headElement.appendChild(jqueryScript);
-    headElement.appendChild(slickScript);
+    // headElement.appendChild(jqueryScript);
+    // headElement.appendChild(slickScript);
+
+    bodyElement.appendChild(jqueryScript);
+    bodyElement.appendChild(slickScript);
 
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
