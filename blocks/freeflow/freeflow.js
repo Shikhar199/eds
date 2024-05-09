@@ -4,19 +4,18 @@ export default function decorate(block){
     console.log(block);
 
     var jqueryScript = document.createElement('script')
-    jqueryScript.setAttribute("src","/scripts/jquery.js");
+    jqueryScript.setAttribute("src","/blocks/jquery/jquery.js");
 
     var slickScript = document.createElement('script')
-    slickScript.setAttribute("src","/scripts/slick.js");
+    slickScript.setAttribute("src","/blocks/slick/slick.js");
 
     var headElement =  document.querySelector('head');
-    var bodyElement =  document.querySelector('body');
-
+    
     // headElement.appendChild(jqueryScript);
     // headElement.appendChild(slickScript);
 
-    bodyElement.appendChild(jqueryScript);
-    bodyElement.appendChild(slickScript);
+    headElement.appendChild(jqueryScript);
+    headElement.appendChild(slickScript);
 
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
