@@ -289,6 +289,8 @@ async function loadLibraries() {
       await new Promise(resolve => setTimeout(resolve, 5000));
   
       // Your code using jQuery and Slick here
+      await import('/scripts/main.js');
+      console.log('main js has been loaded');
     } catch (error) {
       console.error('Error loading libraries:', error);
     }
