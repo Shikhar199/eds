@@ -364,15 +364,15 @@ function hideOptions(){
 
 function loadScripts() {
     var ikijsScript = document.createElement('script')
-    ikijsScript.setAttribute("src","/blocks/iki.js");
+    ikijsScript.setAttribute("src","/blocks/iki/iki.js");
     // ikijsScript.setAttribute('defer', true);
 
     var ikiloginjsScript = document.createElement('script')
-    ikiloginjsScript.setAttribute("src","/blocks/ikilogin.js");
+    ikiloginjsScript.setAttribute("src","/blocks/ikilogin/ikilogin.js");
     // ikiloginjsScript.setAttribute('defer', true);
 
     var bundleScript = document.createElement('script')
-    bundleScript.setAttribute("src","/blocks/bundle.js");
+    bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
     // bundleScript.setAttribute('defer', true);
 
     var mainjsScript = document.createElement('script')

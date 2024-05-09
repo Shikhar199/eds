@@ -4,12 +4,12 @@ export default function decorate(block){
     console.log(block);
 
     var jqueryScript = document.createElement('script')
-    jqueryScript.setAttribute("src","/scripts/jquery.js");
+    jqueryScript.setAttribute("src","/blocks/jquery/jquery.js");
 
     var headElement =  document.querySelector('head');
 
     headElement.appendChild(jqueryScript);
-    
+
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
