@@ -276,7 +276,7 @@ export default function decorate(block){
     // });
 
     loadLibraries().then(() => {
-        import('/scripts/main.js').then(() => {
+        import('/blocks/main/main.js').then(() => {
             console.log("main.js loaded");
         }).catch(error=>{
             console.error('Error loading main.js:', error);
