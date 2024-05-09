@@ -230,11 +230,11 @@ export default function decorate(block){
     // })
 
 
-    import('/blocks/jquery/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
+    // import('/blocks/jquery/jquery.js').then(($) => {
+    //     console.log('jQuery has been loaded');
 
-        import('/blocks/slick/slick.js').then(() => {
-            console.log('Slick min js has been loaded');
+    //     import('/blocks/slick/slick.js').then(() => {
+    //         console.log('Slick min js has been loaded');
 
     //         // Initialize slick slider with jQuery
     //         $(".slider").slick({
@@ -268,11 +268,26 @@ export default function decorate(block){
     //             ]
     //         });
 
-        }).catch(error => {
-            console.error('Error loading slick.js:', error);
-        });
-    }).catch(error => {
-        console.error('Error loading jquery.js:', error);
-    });
+    //     }).catch(error => {
+    //         console.error('Error loading slick.js:', error);
+    //     });
+    // }).catch(error => {
+    //     console.error('Error loading jquery.js:', error);
+    // });
 
+    loadLibraries();
 }
+
+async function loadLibraries() {
+    try {
+      await import('/blocks/jquery/jquery.js');
+      console.log('jQuery has been loaded');
+  
+      await import('/blocks/slick/slick.js');
+      console.log('Slick min js has been loaded');
+  
+      // Your code using jQuery and Slick here
+    } catch (error) {
+      console.error('Error loading libraries:', error);
+    }
+  }
