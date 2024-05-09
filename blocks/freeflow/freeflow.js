@@ -11,8 +11,8 @@ export default function decorate(block){
 
     var headElement =  document.querySelector('head');
     
-    // headElement.appendChild(jqueryScript);
-    // headElement.appendChild(slickScript);
+    headElement.appendChild(jqueryScript);
+    headElement.appendChild(slickScript);
 
 
     const freeflowContainer = document.querySelector(".freeflow-container");
