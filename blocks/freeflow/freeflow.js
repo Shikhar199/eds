@@ -11,8 +11,8 @@ export default function decorate(block){
 
     var headElement =  document.querySelector('head');
     
-    headElement.appendChild(jqueryScript);
-    headElement.appendChild(slickScript);
+    // headElement.appendChild(jqueryScript);
+    // headElement.appendChild(slickScript);
 
 
     const freeflowContainer = document.querySelector(".freeflow-container");
@@ -230,11 +230,11 @@ export default function decorate(block){
     // })
 
 
-    // import('/scripts/jquery.js').then(($) => {
-    //     console.log('jQuery has been loaded');
+    import('/blocks/jquery/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
 
-    //     import('/scripts/slick.js').then(() => {
-    //         console.log('Slick min js has been loaded');
+        import('/blocks/slick/slick.js').then(() => {
+            console.log('Slick min js has been loaded');
 
     //         // Initialize slick slider with jQuery
     //         $(".slider").slick({
@@ -268,11 +268,11 @@ export default function decorate(block){
     //             ]
     //         });
 
-    //     }).catch(error => {
-    //         console.error('Error loading slick.js:', error);
-    //     });
-    // }).catch(error => {
-    //     console.error('Error loading jquery.js:', error);
-    // });
+        }).catch(error => {
+            console.error('Error loading slick.js:', error);
+        });
+    }).catch(error => {
+        console.error('Error loading jquery.js:', error);
+    });
 
 }
