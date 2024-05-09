@@ -6,9 +6,13 @@ export default function decorate(block){
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/blocks/jquery/jquery.js");
 
+    var slickScript = document.createElement('script')
+    slickScript.setAttribute("src","/blocks/slick/slick.js");
+
     var headElement =  document.querySelector('head');
 
     headElement.appendChild(jqueryScript);
+    headElement.appendChild(slickScript);
 
     const freeflowContainer = document.querySelector(".freeflow-container");
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
@@ -165,10 +169,10 @@ export default function decorate(block){
         }
     })
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
-        import('/scripts/slick.js').then(() => {
-            console.log('Slick min js has been loaded');
+    // import('/scripts/jquery.js').then(($) => {
+    //     console.log('jQuery has been loaded');
+    //     import('/scripts/slick.js').then(() => {
+    //         console.log('Slick min js has been loaded');
 
     //         var mainjsScript = document.createElement('script')
     //         mainjsScript.setAttribute("src","/scripts/main.js");
@@ -217,12 +221,12 @@ export default function decorate(block){
     //         //   freeflowScriptElement.innerHTML = freeflowScriptCode;
     //         //   freeflowSectionElement.appendChild(freeflowScriptElement);
 
-        }).catch(error=>{
-            console.error('Error loading slick.js:', error);
-        })
-    }).catch(error=>{
-        console.error('Error loading jquery.js:', error);
-    })
+    //     }).catch(error=>{
+    //         console.error('Error loading slick.js:', error);
+    //     })
+    // }).catch(error=>{
+    //     console.error('Error loading jquery.js:', error);
+    // })
 
 
     // import('/scripts/jquery.js').then(($) => {
