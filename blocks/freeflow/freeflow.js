@@ -292,7 +292,7 @@ async function loadLibraries() {
       await import('/blocks/slick/slick.js');
       console.log('Slick min js has been loaded');
 
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      await new Promise(resolve => setTimeout(resolve, 10000));
   
       // Your code using jQuery and Slick here
     } catch (error) {
