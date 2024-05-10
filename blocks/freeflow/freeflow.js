@@ -282,20 +282,48 @@ export default function decorate(block){
     //         console.error('Error loading main.js:', error);
     //     })    
     // });
+    loadLibraries();
 }
 
-(async function loadLibraries() {
+// (async function loadLibraries() {
+//     try {
+//       await import('/blocks/jquery/jquery.js');
+//       console.log('jQuery has been loaded');
+  
+//       await import('/blocks/slick/slick.js');
+//       console.log('Slick min js has been loaded');
+
+//     //   await new Promise(resolve => setTimeout(resolve, 10000));
+  
+//       // Your code using jQuery and Slick here
+//     } catch (error) {
+//       console.error('Error loading libraries:', error);
+//     }
+//   })();
+
+async function loadLibraries() {
+    const jqueryScript = document.createElement('script');
+    jqueryScript.src = '/blocks/jquery/jquery.js';
+    jqueryScript.defer = true; // Defer execution until after parsing
+    document.head.appendChild(jqueryScript);
+  
+    const slickScript = document.createElement('script');
+    slickScript.src = '/blocks/slick/slick.js';
+    slickScript.defer = true; // Defer execution until after parsing
+    document.head.appendChild(slickScript);
+  
     try {
-      await import('/blocks/jquery/jquery.js');
+      await import('/blocks/jquery/jquery.js'); // Wait for jQuery
       console.log('jQuery has been loaded');
   
-      await import('/blocks/slick/slick.js');
+      await import('/blocks/slick/slick.js'); // Wait for Slick.js
       console.log('Slick min js has been loaded');
-
-    //   await new Promise(resolve => setTimeout(resolve, 10000));
   
-      // Your code using jQuery and Slick here
+      // Create the script tag for main.js (after libraries are loaded)
+      const mainScript = document.createElement('script');
+      mainScript.src = '/script/main.js';
+      document.head.appendChild(mainScript);
     } catch (error) {
       console.error('Error loading libraries:', error);
     }
-  })();
+  }
