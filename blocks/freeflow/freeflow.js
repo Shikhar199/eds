@@ -301,7 +301,7 @@ export default function decorate(block){
         if (window.$ && window.$.fn.slick) {
             console.log('jQuery and Slick are both loaded');
             // // Load main.js after Slick.js is loaded
-            return import('/scripts/main.js');
+            // return import('/scripts/main.js');
         } else {
             console.log('jQuery or Slick not loaded yet');
         }
