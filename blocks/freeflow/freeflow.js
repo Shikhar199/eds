@@ -305,19 +305,19 @@ async function loadLibraries() {
     var jqueryScript = document.createElement('script');
     jqueryScript.src = '/blocks/jquery/jquery.js';
     jqueryScript.defer = true; // Defer execution until after parsing
-    // document.head.appendChild(jqueryScript);
+    document.head.appendChild(jqueryScript);
   
     var slickScript = document.createElement('script');
     slickScript.src = '/blocks/slick/slick.js';
     slickScript.defer = true; // Defer execution until after parsing
-    // document.head.appendChild(slickScript);
+    document.head.appendChild(slickScript);
   
     try {
-    //   await import('/blocks/jquery/jquery.js'); // Wait for jQuery
-    //   console.log('jQuery has been loaded');
+      await import('/blocks/jquery/jquery.js'); // Wait for jQuery
+      console.log('jQuery has been loaded');
   
-    //   await import('/blocks/slick/slick.js'); // Wait for Slick.js
-    //   console.log('Slick min js has been loaded');
+      await import('/blocks/slick/slick.js'); // Wait for Slick.js
+      console.log('Slick min js has been loaded');
 
     //   await new Promise(resolve => setTimeout(resolve, 20000));
   
