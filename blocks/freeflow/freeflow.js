@@ -284,7 +284,8 @@ export default function decorate(block){
     // });
     // loadLibraries();
 
-    import('/scripts/jquery.js').then(($) => {
+    import('/scripts/jquery.js')
+    .then(($) => {
         console.log('jQuery has been loaded');
 
         // Load Slick.js after jQuery is loaded
@@ -298,15 +299,22 @@ export default function decorate(block){
         console.log('Slick.js has been loaded');
 
         // Check if both jQuery and Slick.js are loaded
-        if (window.$ && window.$.fn.slick) {
-            console.log('jQuery and Slick are both loaded');
-            console.log('jQuery version:', $.fn.jquery);
-            // // Load main.js after Slick.js is loaded
+        // if (window.$ && window.$.fn.slick) {
+        //     console.log('jQuery and Slick are both loaded');
+        //     console.log('jQuery version:', $.fn.jquery);
+        //     // // Load main.js after Slick.js is loaded
+        //     $('.single-item').slick('slickNext');
+        //     return import('/scripts/main.js');
+        // } else {
+        //     console.log('jQuery or Slick not loaded yet');
+        // }
+
+        $('.single-item').slick({
+            // Slick options
+        }).then(() => {
+            // Slick is fully initialized, call slickNext
             $('.single-item').slick('slickNext');
-            return import('/scripts/main.js');
-        } else {
-            console.log('jQuery or Slick not loaded yet');
-        }
+        });
     })
     .then(() => {
         console.log('main.js has been loaded');
