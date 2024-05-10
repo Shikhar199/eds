@@ -322,7 +322,7 @@ async function loadLibraries() {
       // Create the script tag for main.js (after libraries are loaded)
       const mainScript = document.createElement('script');
       mainScript.src = '/scripts/main.js';
-      document.body.appendChild(mainScript);
+    //   document.body.appendChild(mainScript);
     } catch (error) {
       console.error('Error loading libraries:', error);
     }
