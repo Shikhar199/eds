@@ -282,7 +282,27 @@ export default function decorate(block){
     //         console.error('Error loading main.js:', error);
     //     })    
     // });
-    loadLibraries();
+    // loadLibraries();
+
+    import('/blocks/jquery/jquery.js')
+    .then(() => {
+        console.log('jQuery has been loaded');
+
+        // Load Slick.js after jQuery is loaded
+        return import('/blocks/slick/slick.js');
+    })
+    .then(() => {
+        console.log('Slick.js has been loaded');
+
+        // Load main.js after Slick.js is loaded
+        return import('/scripts/main.js');
+    })
+    .then(() => {
+        console.log('main.js has been loaded');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 // (async function loadLibraries() {
