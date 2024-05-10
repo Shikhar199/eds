@@ -330,7 +330,8 @@ async function loadLibraries() {
     component.innerHTML = `
       <script src="/scripts/main.js"></script>
     `;
-    document.body.appendChild(component);
+    console.log("component",component);
+    document.body.main.appendChild(component);
 
     } catch (error) {
       console.error('Error loading libraries:', error);
