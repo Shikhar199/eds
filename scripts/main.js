@@ -1,6 +1,3 @@
-var $ = uery.noConflict();
-console.log($);
-
 
 if (window.$ && window.Slick) {
 
