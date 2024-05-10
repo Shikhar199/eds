@@ -1,4 +1,4 @@
-// if (window.$ && window.slick) {
+if (window.$ && window.slick) {
     !function(i) {
         "use strict";
         "function" == typeof define && define.amd ? define(["jquery"], i) : "undefined" != typeof exports ? module.exports = i(require("jquery")) : i(jQuery)
@@ -2227,7 +2227,7 @@
       
       function launchLightboxvidyard(d){let e=!0;document.getElementById("vyLightbox").innerHTML=`<img \n class="vidyard-player-embed"\n src="https://play.vidyard.com/${d}.jpg"\n data-uuid="${d}";\n data-v="4"\n data-type="lightbox"\n />`,vidyardEmbed.api.renderDOMPlayers(document.getElementById("vyLightbox")),new Promise(d=>window.vidyardEmbed?d(window.vidyardEmbed):window.onVidyardAPI=(e=>d(e))).then(a=>{VidyardV4.api.getPlayersByUUID(d)[0].showLightbox(),e=!1})}
       //Video Listing WHat New in IKI END
-    // }else {
-    //     console.error('jQuery or Slick.js not loaded yet');
-    //     // Handle the error or wait for them to load (e.g., using event listeners)
-    // }
+    }else {
+        console.error('jQuery or Slick.js not loaded yet');
+        // Handle the error or wait for them to load (e.g., using event listeners)
+    }

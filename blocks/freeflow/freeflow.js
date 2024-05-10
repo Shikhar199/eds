@@ -318,11 +318,13 @@ async function loadLibraries() {
   
       await import('/blocks/slick/slick.js'); // Wait for Slick.js
       console.log('Slick min js has been loaded');
+
+      await new Promise(resolve => setTimeout(resolve, 20000));
   
       // Create the script tag for main.js (after libraries are loaded)
       const mainScript = document.createElement('script');
       mainScript.src = '/scripts/main.js';
-    //   document.body.appendChild(mainScript);
+      document.body.appendChild(mainScript);
     } catch (error) {
       console.error('Error loading libraries:', error);
     }
