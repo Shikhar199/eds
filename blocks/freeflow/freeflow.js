@@ -302,12 +302,12 @@ export default function decorate(block){
 //   })();
 
 async function loadLibraries() {
-    const jqueryScript = document.createElement('script');
+    var jqueryScript = document.createElement('script');
     jqueryScript.src = '/blocks/jquery/jquery.js';
     jqueryScript.defer = true; // Defer execution until after parsing
     document.head.appendChild(jqueryScript);
   
-    const slickScript = document.createElement('script');
+    var slickScript = document.createElement('script');
     slickScript.src = '/blocks/slick/slick.js';
     slickScript.defer = true; // Defer execution until after parsing
     document.head.appendChild(slickScript);
