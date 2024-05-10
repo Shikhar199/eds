@@ -13,6 +13,7 @@
     "function" == typeof define && define.amd ? define(["jquery"], i) : "undefined" != typeof exports ? module.exports = i(require("jquery")) : i(jQuery)
 }(function(i) {
     "use strict";
+    console.log("window slick",window.Slick);
     var e = window.Slick || {};
     (e = function() {
         var e = 0;
