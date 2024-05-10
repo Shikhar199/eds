@@ -284,12 +284,12 @@ export default function decorate(block){
     // });
     // loadLibraries();
 
-    import('/blocks/jquery/jquery.js')
+    import('/scripts/jquery.js')
     .then(() => {
         console.log('jQuery has been loaded');
 
         // Load Slick.js after jQuery is loaded
-        return import('/blocks/slick/slick.js');
+        return import('/scripts/slick.js');
     })
     .then(() => {
         console.log('Slick.js has been loaded');
