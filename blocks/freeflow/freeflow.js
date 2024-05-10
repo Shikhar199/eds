@@ -331,7 +331,7 @@ async function loadLibraries() {
       <script src="/scripts/main.js"></script>
     `;
     console.log("component",component);
-    document.body.main.appendChild(component);
+    document.body.appendChild(component);
 
     } catch (error) {
       console.error('Error loading libraries:', error);
