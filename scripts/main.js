@@ -1,5 +1,5 @@
 
-if (window.$ && window.Slick) {
+if (window.$ && window.$.fn.slick) {
 
 
     function social() {
