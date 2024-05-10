@@ -2,7 +2,7 @@ var $jq = jQuery.noConflict();
 console.log($jq);
 
 
-if (window.$jq || window.Slick) {
+if (window.$jq && window.Slick) {
 
 
     function social() {
