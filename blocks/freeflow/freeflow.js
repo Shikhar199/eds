@@ -311,6 +311,10 @@ export default function decorate(block){
 
         if ($.fn.slick) {
             console.log('Slick methods are available');
+            $('.single-item').on('init', function() {
+                console.log('Slick is fully initialized');
+                $('.single-item').slick('slickNext');
+            });
 
             // Call slickNext if Slick is available
             $('.single-item').slick('slickNext');
@@ -318,7 +322,7 @@ export default function decorate(block){
             console.log('Slick not loaded or initialized yet');
         }
 
-        
+
         // $('.single-item').slick({
         //     // Slick options
         // }).then(() => {
