@@ -655,70 +655,70 @@ if (window.$ && window.$.fn.slick) {
     //     }
     //   });
           
-          var first_carousel_length = $(".iki-videos-carousel").find(
-              ".item"
-            ).length;
-            $(".iki-videos-carousel").owlCarousel({
-              dots: first_carousel_length > 1 ? true : false,
-              nav: first_carousel_length > 1 ? false : false,
-              touchDrag: first_carousel_length > 1 ? true : false,
-              mouseDrag: first_carousel_length > 1 ? true : false,
-              loop: first_carousel_length > 1 ? true : false,
-              autoplay: first_carousel_length > 1 ? false : false,
-              autoplayTimeout: first_carousel_length > 1 ? 3000 : false,
-              autoplayHoverPause: first_carousel_length > 1 ? true : false,
-              responsive: {
-                0: {
-                  items: 1,
-                },
-                600: {
-                  items: 1,
-                },
-                768: {
-                  items: 2,
-                  dots: first_carousel_length > 1 ? false : true,
-                  loop: first_carousel_length > 1 ? false : true,
-                },
-                1000: {
-                  items: 2,
-                  dots: first_carousel_length > 1 ? false : true,
-                  loop: first_carousel_length > 1 ? false : true,
-                },
-              },
-            });
+        //   var first_carousel_length = $(".iki-videos-carousel").find(
+        //       ".item"
+        //     ).length;
+        //     $(".iki-videos-carousel").owlCarousel({
+        //       dots: first_carousel_length > 1 ? true : false,
+        //       nav: first_carousel_length > 1 ? false : false,
+        //       touchDrag: first_carousel_length > 1 ? true : false,
+        //       mouseDrag: first_carousel_length > 1 ? true : false,
+        //       loop: first_carousel_length > 1 ? true : false,
+        //       autoplay: first_carousel_length > 1 ? false : false,
+        //       autoplayTimeout: first_carousel_length > 1 ? 3000 : false,
+        //       autoplayHoverPause: first_carousel_length > 1 ? true : false,
+        //       responsive: {
+        //         0: {
+        //           items: 1,
+        //         },
+        //         600: {
+        //           items: 1,
+        //         },
+        //         768: {
+        //           items: 2,
+        //           dots: first_carousel_length > 1 ? false : true,
+        //           loop: first_carousel_length > 1 ? false : true,
+        //         },
+        //         1000: {
+        //           items: 2,
+        //           dots: first_carousel_length > 1 ? false : true,
+        //           loop: first_carousel_length > 1 ? false : true,
+        //         },
+        //       },
+        //     });
       
-            // rightside videos carousel
-            var second_carousel_length = $(".iki-right-videos-carousel").find(
-              ".item"
-            ).length;
-            $(".iki-right-videos-carousel").owlCarousel({
-              dots: second_carousel_length > 1 ? true : false,
-              nav: second_carousel_length > 1 ? false : false,
-              touchDrag: second_carousel_length > 1 ? true : false,
-              mouseDrag: second_carousel_length > 1 ? true : false,
-              loop: second_carousel_length > 1 ? true : false,
-              autoplay: second_carousel_length > 1 ? false : false,
-              autoplayTimeout: second_carousel_length > 1 ? 3000 : false,
-              autoplayHoverPause: second_carousel_length > 1 ? true : false,
-              responsive: {
-                0: {
-                  items: 2,
-                },
-                600: {
-                  items: 2,
-                },
-                768: {
-                  items: 4,
-                  dots: second_carousel_length > 1 ? false : true,
-                  loop: second_carousel_length > 1 ? false : true,
-                },
-                1000: {
-                  items: 4,
-                  dots: second_carousel_length > 1 ? false : true,
-                  loop: second_carousel_length > 1 ? false : true,
-                },
-              },
-            });
+        //     // rightside videos carousel
+        //     var second_carousel_length = $(".iki-right-videos-carousel").find(
+        //       ".item"
+        //     ).length;
+        //     $(".iki-right-videos-carousel").owlCarousel({
+        //       dots: second_carousel_length > 1 ? true : false,
+        //       nav: second_carousel_length > 1 ? false : false,
+        //       touchDrag: second_carousel_length > 1 ? true : false,
+        //       mouseDrag: second_carousel_length > 1 ? true : false,
+        //       loop: second_carousel_length > 1 ? true : false,
+        //       autoplay: second_carousel_length > 1 ? false : false,
+        //       autoplayTimeout: second_carousel_length > 1 ? 3000 : false,
+        //       autoplayHoverPause: second_carousel_length > 1 ? true : false,
+        //       responsive: {
+        //         0: {
+        //           items: 2,
+        //         },
+        //         600: {
+        //           items: 2,
+        //         },
+        //         768: {
+        //           items: 4,
+        //           dots: second_carousel_length > 1 ? false : true,
+        //           loop: second_carousel_length > 1 ? false : true,
+        //         },
+        //         1000: {
+        //           items: 4,
+        //           dots: second_carousel_length > 1 ? false : true,
+        //           loop: second_carousel_length > 1 ? false : true,
+        //         },
+        //       },
+        //     });
           
           
           });
