@@ -309,21 +309,21 @@ export default function decorate(block){
         //     console.log('jQuery or Slick not loaded yet');
         // }
 
-        if ($.fn.slick) {
-            console.log('Slick methods are available');
-            console.log(document.querySelector(".single-item"));
-            $('.single-item').on('init', function() {
-                console.log('Slick is fully initialized');
-                // $('.single-item').slick('slickNext');
-                // callSlickNext();
-            });
+        // if ($.fn.slick) {
+        //     console.log('Slick methods are available');
+        //     console.log(document.querySelector(".single-item"));
+        //     $('.single-item').on('init', function() {
+        //         console.log('Slick is fully initialized');
+        //         // $('.single-item').slick('slickNext');
+        //         // callSlickNext();
+        //     });
 
-            // Call slickNext if Slick is available
+        //     // Call slickNext if Slick is available
             
-            // $('.single-item').slick('slickNext');
-        } else {
-            console.log('Slick not loaded or initialized yet');
-        }
+        //     // $('.single-item').slick('slickNext');
+        // } else {
+        //     console.log('Slick not loaded or initialized yet');
+        // }
 
 
         // $('.single-item').slick({
