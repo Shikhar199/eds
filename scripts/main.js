@@ -367,7 +367,7 @@ let goUp = document.getElementById("go-up");
   let accordionList = $('.accordion-list li');
   let accordionTitle = $('.accordion-list li .section-title');
   
-  counter = 0;
+  let counter = 0;
   let activeIntervel
   
   
