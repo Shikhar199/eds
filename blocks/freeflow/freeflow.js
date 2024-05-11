@@ -8,7 +8,7 @@ export default function decorate(block){
     jqueryScript.async = false;
 
     var slickScript = document.createElement('script')
-    slickScript.setAttribute("src","/blocks/slick/slick.js");
+    slickScript.setAttribute("src","/scripts/slick.min.js");
 
     var headElement =  document.querySelector('head');
     
