@@ -316,6 +316,9 @@ export default function decorate(block){
                 // $('.single-item').slick('slickNext');
                 callSlickNext();
             });
+
+            console.log('main.js has been loaded');
+            return import('/scripts/main.js');
             // Call slickNext if Slick is available
             
             // $('.single-item').slick('slickNext');
@@ -333,7 +336,7 @@ export default function decorate(block){
     })
     .then(() => {
         console.log('main.js has been loaded');
-        return import('/scripts/main.js');
+        // return import('/scripts/main.js');
     })
     .catch(error => {
         console.error('Error:', error);
