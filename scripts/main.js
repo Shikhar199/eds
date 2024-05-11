@@ -458,11 +458,11 @@ let goUp = document.getElementById("go-up");
     searchInput.value = "";
     searchCross.style.display = "none";
   }
-  popupoverlay.addEventListener('click', function () {
-    searchpopup.classList.remove("showSearch");
-    recentSearches.classList.remove("searchBlur");
-    popupoverlay.classList.remove("overlay-index");
-  })
+//   popupoverlay.addEventListener('click', function () {
+//     searchpopup.classList.remove("showSearch");
+//     recentSearches.classList.remove("searchBlur");
+//     popupoverlay.classList.remove("overlay-index");
+//   })
   
   
   /*
