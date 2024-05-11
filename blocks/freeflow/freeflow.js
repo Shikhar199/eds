@@ -4,7 +4,7 @@ export default function decorate(block){
     console.log(block);
 
     var jqueryScript = document.createElement('script')
-    jqueryScript.setAttribute("src","/blocks/jquery/jquery.js");
+    jqueryScript.setAttribute("src","/scripts/jquery.js");
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/blocks/slick/slick.js");
