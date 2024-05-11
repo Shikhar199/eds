@@ -332,30 +332,30 @@ if (window.$ && window.$.fn.slick) {
         ]
       });
       
-      function InsightRatio() {
-        ('.insights-wraper').removeAttr('style');
-        var InsightW = $('.insights-wraper').width();
-        var InsightH = (InsightW / 480) * 269;
-        $('.insights-wraper').height(InsightH);
-        $('.article-wraper').height(InsightH * 0.5);
-        $('.interactive-wraper').height(InsightH * 0.5);
-        $('.podcast-wraper').height(InsightH);
-        $('.case-study-wraper').height("100%");
-        $('quality-engg').height("auto");
+    //   function InsightRatio() {
+    //     ('.insights-wraper').removeAttr('style');
+    //     var InsightW = $('.insights-wraper').width();
+    //     var InsightH = (InsightW / 480) * 269;
+    //     $('.insights-wraper').height(InsightH);
+    //     $('.article-wraper').height(InsightH * 0.5);
+    //     $('.interactive-wraper').height(InsightH * 0.5);
+    //     $('.podcast-wraper').height(InsightH);
+    //     $('.case-study-wraper').height("100%");
+    //     $('quality-engg').height("auto");
       
-        if (window.innerWidth < 767) {
-          $('.insights-wraper').height(InsightH);
-          $('.article-wraper').height(InsightH);
-          $('.interactive-wraper').height(InsightH);
-          $('.podcast-wraper').height(InsightH);
-          $('.case-study-wraper').height(InsightH);
-          $('quality-engg').height(InsightH);
-        }
-      }
-      InsightRatio();
-      $(window).resize(function () {
-        InsightRatio();
-      });
+    //     if (window.innerWidth < 767) {
+    //       $('.insights-wraper').height(InsightH);
+    //       $('.article-wraper').height(InsightH);
+    //       $('.interactive-wraper').height(InsightH);
+    //       $('.podcast-wraper').height(InsightH);
+    //       $('.case-study-wraper').height(InsightH);
+    //       $('quality-engg').height(InsightH);
+    //     }
+    //   }
+    //   InsightRatio();
+    //   $(window).resize(function () {
+    //     InsightRatio();
+    //   });
       
       function nonscroll() {
         let element = document.getElementById("scroll")
