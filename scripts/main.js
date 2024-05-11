@@ -225,7 +225,7 @@ let goUp = document.getElementById("go-up");
         width: percentTime + "%"
       });
       if (percentTime >= 100) {
-        $('.slider').slick('slickNext');
+        $('.single-item').slick('slickNext');
         progressBarIndex++;
         if (progressBarIndex > 3) {
           progressBarIndex = 0;
@@ -248,7 +248,7 @@ let goUp = document.getElementById("go-up");
     clearInterval(tick);
     //   var goToThisIndex = $(this).find("span").data("slickIndex");
     var goToThisIndex = $(this).children("span.progressBar").data("slickIndex");
-    $('.slider').slick('slickGoTo', goToThisIndex, false);
+    $('.single-item').slick('slickGoTo', goToThisIndex, false);
     startProgressbar();
   });
   
