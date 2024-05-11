@@ -370,13 +370,21 @@ export default function decorate(block){
     var bodyElement = document.querySelector('body');
 
     // bodyElement.appendChild(bundleScript);
-    headElement.appendChild(jqueryScript);
-    bodyElement.appendChild(slickScript);
-    // bodyElement.appendChild(ikijsScript);
-    bodyElement.appendChild(mainScript);
+    // headElement.appendChild(jqueryScript);
+    // bodyElement.appendChild(slickScript);
+    // // bodyElement.appendChild(ikijsScript);
+    // bodyElement.appendChild(mainScript);
+    loadScript("/scripts/jquery.js");
+    loadScript("/scripts/slick.js");
+    loadScript("/scripts/main.js");
 
 }
 
+function loadScript(src){
+    var script = document.createElement('script');
+    script.setAttribute('src',src);
+    document.body.appendChild(script);
+}
 // (async function loadLibraries() {
 //     try {
 //       await import('/blocks/jquery/jquery.js');
