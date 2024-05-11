@@ -311,15 +311,14 @@ export default function decorate(block){
 
         if ($.fn.slick) {
             console.log('Slick methods are available');
-            // $('.single-item').on('init', function() {
-            //     console.log('Slick is fully initialized');
-            //     $('.single-item').slick('slickNext');
-            // });
+            $('.single-item').on('init', function() {
+                console.log('Slick is fully initialized');
+                $('.single-item').slick('slickNext');
+            });
 
             // Call slickNext if Slick is available
-            setTimeout(() => {
-                $('.single-item').slick('slickNext');
-            },1000)
+            
+            $('.single-item').slick('slickNext');
         } else {
             console.log('Slick not loaded or initialized yet');
         }
