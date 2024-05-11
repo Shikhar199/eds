@@ -173,7 +173,7 @@ export default function decorate(block){
 
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
-        import('/blocks/slick/slick.js').then(() => {
+        import('/scripts/slick.js').then(() => {
             console.log('Slick min js has been loaded');
 
     //         var mainjsScript = document.createElement('script')
