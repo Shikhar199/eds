@@ -611,49 +611,49 @@ if (window.$ && window.$.fn.slick) {
       $(document).ready(function () {
       var hero_slider_length = $(".series-carousel").find('.item').length;
       //alert(hero_slider_length);		
-      $(".series-carousel").owlCarousel({
-        dots: hero_slider_length > 2 ? true : false,
-        nav: hero_slider_length > 2 ? true : false,
-        touchDrag: hero_slider_length > 2 ? true : false,
-        mouseDrag: hero_slider_length > 2 ? true : false,
-        loop: hero_slider_length > 2 ? true : false,
-        autoplay: hero_slider_length > 2 ? false : false,
-        autoplayTimeout: hero_slider_length > 2 ? 3000 : false,
-        autoplayHoverPause: hero_slider_length > 2 ? true : false,
-        margin: 30,
+    //   $(".series-carousel").owlCarousel({
+    //     dots: hero_slider_length > 2 ? true : false,
+    //     nav: hero_slider_length > 2 ? true : false,
+    //     touchDrag: hero_slider_length > 2 ? true : false,
+    //     mouseDrag: hero_slider_length > 2 ? true : false,
+    //     loop: hero_slider_length > 2 ? true : false,
+    //     autoplay: hero_slider_length > 2 ? false : false,
+    //     autoplayTimeout: hero_slider_length > 2 ? 3000 : false,
+    //     autoplayHoverPause: hero_slider_length > 2 ? true : false,
+    //     margin: 30,
        
-        // dotsEach:true,
-        responsive: {
-          0: {
-            items: 1,
-              dots: hero_slider_length > 1 ? true : false,
-        nav: hero_slider_length > 1 ? true : false,
-        touchDrag: hero_slider_length > 1 ? true : false,
-        mouseDrag: hero_slider_length > 1 ? true : false,
-        loop: hero_slider_length > 1 ? true : false,
-        autoplay: hero_slider_length > 1 ? false : false,
-        autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
-          },
-          600: {
-            items: 1,
-              dots: hero_slider_length > 1 ? true : false,
-        nav: hero_slider_length > 1 ? true : false,
-        touchDrag: hero_slider_length > 1 ? true : false,
-        mouseDrag: hero_slider_length > 1 ? true : false,
-        loop: hero_slider_length > 1 ? true : false,
-        autoplay: hero_slider_length > 1 ? false : false,
-        autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
-          },
-          768: {
-            items: 2,
-               slideBy: 2
-          },
-          1000: {
-            items: 2,
-               slideBy: 2
-          }
-        }
-      });
+    //     // dotsEach:true,
+    //     responsive: {
+    //       0: {
+    //         items: 1,
+    //           dots: hero_slider_length > 1 ? true : false,
+    //     nav: hero_slider_length > 1 ? true : false,
+    //     touchDrag: hero_slider_length > 1 ? true : false,
+    //     mouseDrag: hero_slider_length > 1 ? true : false,
+    //     loop: hero_slider_length > 1 ? true : false,
+    //     autoplay: hero_slider_length > 1 ? false : false,
+    //     autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
+    //       },
+    //       600: {
+    //         items: 1,
+    //           dots: hero_slider_length > 1 ? true : false,
+    //     nav: hero_slider_length > 1 ? true : false,
+    //     touchDrag: hero_slider_length > 1 ? true : false,
+    //     mouseDrag: hero_slider_length > 1 ? true : false,
+    //     loop: hero_slider_length > 1 ? true : false,
+    //     autoplay: hero_slider_length > 1 ? false : false,
+    //     autoplayTimeout: hero_slider_length > 1 ? 3000 : false,
+    //       },
+    //       768: {
+    //         items: 2,
+    //            slideBy: 2
+    //       },
+    //       1000: {
+    //         items: 2,
+    //            slideBy: 2
+    //       }
+    //     }
+    //   });
           
           var first_carousel_length = $(".iki-videos-carousel").find(
               ".item"
