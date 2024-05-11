@@ -329,9 +329,10 @@ export default function decorate(block){
         //     // Slick is fully initialized, call slickNext
         //     $('.single-item').slick('slickNext');
         // });
-        return import('/scripts/main.js');
+        // return import('/scripts/main.js');
        
     }).then(()=>{
+        return import('/scripts/main.js');
         console.log("main js has been loaded");
     })
     .catch(error => {
