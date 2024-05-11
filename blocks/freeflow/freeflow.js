@@ -329,8 +329,208 @@ export default function decorate(block){
         //     // Slick is fully initialized, call slickNext
         //     $('.single-item').slick('slickNext');
         // });
-        console.log('main.js has been loaded');
-        return import('/scripts/main.js');
+        $(".slider").slick({
+            infinite: true,
+            arrows: false,
+            dots: false,
+            autoplay: false,
+            fade: true,
+            cssEase: 'linear',
+            speed: 800,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [{
+                breakpoint: 991,
+                settings: {
+                  asNavFor: '.banner-slick',
+                }
+              },
+              {
+                breakpoint: 767,
+                settings: {
+                  asNavFor: '.banner-slick',
+                }
+              },
+              {
+                breakpoint: 375,
+                settings: {
+                  asNavFor: '.banner-slick',
+                }
+              }
+          
+            ]
+          });
+
+          $('.progressBarContainer .progressBar').each(function (index) {
+            var progress = "<div class='inProgress inProgress" + index + "'></div>";
+            $(this).html(progress);
+          });
+          
+          function startProgressbar() {
+            resetProgressbar();
+            percentTime = 0;
+            tick = setInterval(interval, 6);
+          }
+  
+          function interval() {
+            if (($('.slider .slick-track div[data-slick-index="' + progressBarIndex + '"]').attr("aria-hidden")) === "true") {
+              progressBarIndex = $('.slider .slick-track div[aria-hidden="false"]').data("slickIndex");
+              startProgressbar();
+            } else {
+              percentTime += 1 / (time + 5);
+              $('.inProgress' + progressBarIndex).css({
+                width: percentTime + "%"
+              });
+              if (percentTime >= 100) {
+                $('.single-item').slick('slickNext');
+                progressBarIndex++;
+                if (progressBarIndex > 3) {
+                  progressBarIndex = 0;
+                }
+                startProgressbar();
+              }
+            }
+          }
+
+          function resetProgressbar() {
+            $('.inProgress').css({
+              width: 0 + '%'
+            });
+            clearInterval(tick);
+          }
+          startProgressbar();
+
+          $('.item').click(function () {
+            clearInterval(tick);
+            //   var goToThisIndex = $(this).find("span").data("slickIndex");
+            var goToThisIndex = $(this).children("span.progressBar").data("slickIndex");
+            $('.single-item').slick('slickGoTo', goToThisIndex, false);
+            startProgressbar();
+          });
+          
+          
+          $('.banner-slick').slick({
+            dots: false,
+            speed: 800,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            buttons: false,
+            arrows: false,
+            autoplay: false,
+            focusOnSelect: true,
+            responsive: [{
+                breakpoint: 1199,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 4,
+                  infinite: true,
+                  dots: true,
+                  arrows: true,
+          
+                }
+              },
+              {
+                breakpoint: 991,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: true,
+                  arrows: true,
+                  infinite: true,
+                  asNavFor: '.slider',
+                  centerMode: true,
+                }
+              },
+              {
+                breakpoint: 767,
+                settings: {
+                  dots: true,
+                  arrows: true,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  asNavFor: '.slider',
+                  centerMode: true,
+                }
+              },
+              {
+                breakpoint: 575,
+                settings: {
+                  dots: true,
+                  arrows: true,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  asNavFor: '.slider',
+                  centerMode: true,
+                  centerPadding: '20px',
+                }
+              },
+              {
+                breakpoint: 375,
+                settings: {
+                  dots: true,
+                  arrows: true,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  asNavFor: '.slider',
+                  centerMode: true,
+                  centerPadding: '10px',
+                }
+              }
+          
+            ]
+          });
+
+          $('.most-popular-slick').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            buttons: true,
+            arrows: true,
+            responsive: [{
+                breakpoint: 1400,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 1200,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  refresh: true
+          
+                }
+              },
+              {
+                breakpoint: 767,
+                settings: "unslick",
+              }
+            ]
+          });
+          
+          window.onresize = function () {
+            if (window.innerWidth > 767) {
+              $('.most-popular-slick')[0].slick.refresh();
+            }
+          }        
     })
     .catch(error => {
         console.error('Error:', error);
