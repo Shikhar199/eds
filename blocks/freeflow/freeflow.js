@@ -370,7 +370,7 @@ export default function decorate(block){
     var bodyElement = document.querySelector('body');
 
     // bodyElement.appendChild(bundleScript);
-    bodyElement.appendChild(jqueryScript);
+    headElement.appendChild(jqueryScript);
     bodyElement.appendChild(slickScript);
     // bodyElement.appendChild(ikijsScript);
     bodyElement.appendChild(mainScript);
