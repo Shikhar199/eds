@@ -11,7 +11,7 @@ export default function decorate(block){
 
     var headElement =  document.querySelector('head');
     
-    // headElement.appendChild(jqueryScript);
+    headElement.appendChild(jqueryScript);
     // headElement.appendChild(slickScript);
 
 
@@ -284,14 +284,14 @@ export default function decorate(block){
     // });
     // loadLibraries();
 
-    import('/scripts/jquery.js')
-    .then(($) => {
-        console.log('jQuery has been loaded');
+    // import('/scripts/jquery.js')
+    // .then(($) => {
+    //     console.log('jQuery has been loaded');
 
-        // Load Slick.js after jQuery is loaded
-        return import('/scripts/slick.js');
-    })
-    .then(() => {
+    //     // Load Slick.js after jQuery is loaded
+    //     return import('/scripts/slick.js');
+    // })
+    import('/scripts/slick.js').then(() => {
         // console.log('Slick.js has been loaded');
 
         // // Load main.js after Slick.js is loaded
