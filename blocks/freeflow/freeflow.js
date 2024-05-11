@@ -288,7 +288,7 @@ export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
         // Load Slick.js after jQuery is loaded
-        return import('/scripts/slick.js');
+        return import('/scripts/slick.min.js');
     }).then(() => {
 
         // // Load main.js after Slick.js is loaded
