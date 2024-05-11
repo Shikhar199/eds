@@ -313,9 +313,9 @@ export default function decorate(block){
             console.log('Slick methods are available');
             $('.single-item').on('init', function() {
                 console.log('Slick is fully initialized');
-                $('.single-item').slick('slickNext');
+                // $('.single-item').slick('slickNext');
+                callSlickNext();
             });
-            callSlickNext();
             // Call slickNext if Slick is available
             
             // $('.single-item').slick('slickNext');
