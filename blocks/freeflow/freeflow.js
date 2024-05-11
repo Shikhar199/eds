@@ -171,10 +171,10 @@ export default function decorate(block){
         }
     })
 
-    // import('/scripts/jquery.js').then(($) => {
-    //     console.log('jQuery has been loaded');
-    //     import('/blocks/slick/slick.js').then(() => {
-    //         console.log('Slick min js has been loaded');
+    import('/scripts/jquery.js').then(($) => {
+        console.log('jQuery has been loaded');
+        import('/blocks/slick/slick.js').then(() => {
+            console.log('Slick min js has been loaded');
 
     //         var mainjsScript = document.createElement('script')
     //         mainjsScript.setAttribute("src","/scripts/main.js");
@@ -182,11 +182,11 @@ export default function decorate(block){
 
             // freeflowSliderContainer.appendChild(mainjsScript);
 
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
+            import('/scripts/main.js').then(() => {
+                console.log("main.js loaded");
+            }).catch(error=>{
+                console.error('Error loading main.js:', error);
+            })
     //         // var freeflowScriptElement = document.createElement('script');
     //         // var freeflowScriptCode = `$(".slider").slick({
     //         //     infinite: true,
@@ -223,12 +223,12 @@ export default function decorate(block){
     //         //   freeflowScriptElement.innerHTML = freeflowScriptCode;
     //         //   freeflowSectionElement.appendChild(freeflowScriptElement);
 
-        // }).catch(error=>{
-        //     console.error('Error loading slick.js:', error);
-        // })
-    // }).catch(error=>{
-    //     console.error('Error loading jquery.js:', error);
-    // })
+        }).catch(error=>{
+            console.error('Error loading slick.js:', error);
+        })
+    }).catch(error=>{
+        console.error('Error loading jquery.js:', error);
+    })
 
 
     // import('/blocks/jquery/jquery.js').then(($) => {
@@ -285,62 +285,62 @@ export default function decorate(block){
     // });
     // loadLibraries();
 
-    import('/scripts/jquery.js')
-    .then(($) => {
-        console.log('jQuery has been loaded');
+    // import('/scripts/jquery.js')
+    // .then(($) => {
+    //     console.log('jQuery has been loaded');
 
-        // Load Slick.js after jQuery is loaded
-        return import('/scripts/slick.js');
-    })
-    .then(() => {
-        // console.log('Slick.js has been loaded');
+    //     // Load Slick.js after jQuery is loaded
+    //     return import('/scripts/slick.js');
+    // })
+    // .then(() => {
+    //     // console.log('Slick.js has been loaded');
 
-        // // Load main.js after Slick.js is loaded
-        // return import('/scripts/main.js');
-        console.log('Slick.js has been loaded');
+    //     // // Load main.js after Slick.js is loaded
+    //     // return import('/scripts/main.js');
+    //     console.log('Slick.js has been loaded');
 
-        // Check if both jQuery and Slick.js are loaded
-        // if (window.$ && window.$.fn.slick) {
-        //     console.log('jQuery and Slick are both loaded');
-        //     console.log('jQuery version:', $.fn.jquery);
-        //     // // Load main.js after Slick.js is loaded
-        //     $('.single-item').slick('slickNext');
-        //     return import('/scripts/main.js');
-        // } else {
-        //     console.log('jQuery or Slick not loaded yet');
-        // }
+    //     // Check if both jQuery and Slick.js are loaded
+    //     // if (window.$ && window.$.fn.slick) {
+    //     //     console.log('jQuery and Slick are both loaded');
+    //     //     console.log('jQuery version:', $.fn.jquery);
+    //     //     // // Load main.js after Slick.js is loaded
+    //     //     $('.single-item').slick('slickNext');
+    //     //     return import('/scripts/main.js');
+    //     // } else {
+    //     //     console.log('jQuery or Slick not loaded yet');
+    //     // }
 
-        if ($.fn.slick) {
-            console.log('Slick methods are available');
-            console.log(document.querySelector(".single-item"));
-            $('.single-item').on('init', function() {
-                console.log('Slick is fully initialized');
-                // $('.single-item').slick('slickNext');
-                // callSlickNext();
-            });
+    //     if ($.fn.slick) {
+    //         console.log('Slick methods are available');
+    //         console.log(document.querySelector(".single-item"));
+    //         $('.single-item').on('init', function() {
+    //             console.log('Slick is fully initialized');
+    //             // $('.single-item').slick('slickNext');
+    //             // callSlickNext();
+    //         });
 
-            // Call slickNext if Slick is available
+    //         // Call slickNext if Slick is available
             
-            // $('.single-item').slick('slickNext');
-        } else {
-            console.log('Slick not loaded or initialized yet');
-        }
+    //         // $('.single-item').slick('slickNext');
+    //     } else {
+    //         console.log('Slick not loaded or initialized yet');
+    //     }
 
 
-        // $('.single-item').slick({
-        //     // Slick options
-        // }).then(() => {
-        //     // Slick is fully initialized, call slickNext
-        //     $('.single-item').slick('slickNext');
-        // });
-    })
-    .then(() => {
-        console.log('main.js has been loaded');
-        return import('/scripts/main.js');
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    //     // $('.single-item').slick({
+    //     //     // Slick options
+    //     // }).then(() => {
+    //     //     // Slick is fully initialized, call slickNext
+    //     //     $('.single-item').slick('slickNext');
+    //     // });
+    // })
+    // .then(() => {
+    //     console.log('main.js has been loaded');
+    //     return import('/scripts/main.js');
+    // })
+    // .catch(error => {
+    //     console.error('Error:', error);
+    // });
 
 }
 
