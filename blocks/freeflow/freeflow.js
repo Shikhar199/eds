@@ -318,6 +318,7 @@ export default function decorate(block){
             console.log('Slick not loaded or initialized yet');
         }
 
+        
         // $('.single-item').slick({
         //     // Slick options
         // }).then(() => {
