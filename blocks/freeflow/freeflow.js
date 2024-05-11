@@ -331,6 +331,8 @@ export default function decorate(block){
         // });
         return import('/scripts/main.js');
        
+    }).then(()=>{
+        console.log("main js has been loaded");
     })
     .catch(error => {
         console.error('Error:', error);
