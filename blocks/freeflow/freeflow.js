@@ -12,7 +12,7 @@ export default function decorate(block){
 
     var headElement =  document.querySelector('head');
     
-    headElement[0].appendChild(jqueryScript);
+    headElement.appendChild(jqueryScript);
     // headElement.appendChild(slickScript);
 
 
