@@ -248,7 +248,7 @@ let goUp = document.getElementById("go-up");
     clearInterval(tick);
     //   var goToThisIndex = $(this).find("span").data("slickIndex");
     var goToThisIndex = $(this).children("span.progressBar").data("slickIndex");
-    $('.single-item').slick('slickGoTo', goToThisIndex, false);
+    $('.slider').slick('slickGoTo', goToThisIndex, false);
     startProgressbar();
   });
   
