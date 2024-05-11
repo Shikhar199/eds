@@ -225,7 +225,7 @@ let goUp = document.getElementById("go-up");
         width: percentTime + "%"
       });
       if (percentTime >= 100) {
-        $('.single-item').slick('slickNext');
+        $('.slider').slick('slickNext');
         progressBarIndex++;
         if (progressBarIndex > 3) {
           progressBarIndex = 0;
