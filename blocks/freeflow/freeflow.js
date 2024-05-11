@@ -315,10 +315,10 @@ export default function decorate(block){
                 console.log('Slick is fully initialized');
                 $('.single-item').slick('slickNext');
             });
-
+            callSlickNext();
             // Call slickNext if Slick is available
             
-            $('.single-item').slick('slickNext');
+            // $('.single-item').slick('slickNext');
         } else {
             console.log('Slick not loaded or initialized yet');
         }
@@ -392,3 +392,8 @@ async function loadLibraries() {
       console.error('Error loading libraries:', error);
     }
   }
+
+  function callSlickNext() {
+    console.log('Inside call slick next');
+    $('.single-item').slick('slickNext');
+}
