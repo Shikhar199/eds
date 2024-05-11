@@ -5,7 +5,7 @@ export default function decorate(block){
 
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/scripts/jquery.js");
-    jqueryScript.async = false;
+    jqueryScript.async = true;
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/blocks/slick/slick.js");
