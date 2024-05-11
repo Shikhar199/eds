@@ -173,8 +173,8 @@ export default function decorate(block){
 
     // import('/scripts/jquery.js').then(($) => {
     //     console.log('jQuery has been loaded');
-        // import('/blocks/slick/slick.js').then(() => {
-        //     console.log('Slick min js has been loaded');
+    //     import('/blocks/slick/slick.js').then(() => {
+    //         console.log('Slick min js has been loaded');
 
     //         var mainjsScript = document.createElement('script')
     //         mainjsScript.setAttribute("src","/scripts/main.js");
@@ -285,95 +285,62 @@ export default function decorate(block){
     // });
     // loadLibraries();
 
-    // import('/scripts/jquery.js')
-    // .then(($) => {
-    //     console.log('jQuery has been loaded');
+    import('/scripts/jquery.js')
+    .then(($) => {
+        console.log('jQuery has been loaded');
 
-    //     // Load Slick.js after jQuery is loaded
-    //     return import('/scripts/slick.js');
-    // })
-    // import('/scripts/slick.js').then(() => {
-    //     // console.log('Slick.js has been loaded');
+        // Load Slick.js after jQuery is loaded
+        return import('/scripts/slick.js');
+    })
+    import('/scripts/slick.js').then(() => {
+        // console.log('Slick.js has been loaded');
 
-    //     // // Load main.js after Slick.js is loaded
-    //     // return import('/scripts/main.js');
-    //     console.log('Slick.js has been loaded');
+        // // Load main.js after Slick.js is loaded
+        // return import('/scripts/main.js');
+        console.log('Slick.js has been loaded');
 
-    //     // Check if both jQuery and Slick.js are loaded
-    //     // if (window.$ && window.$.fn.slick) {
-    //     //     console.log('jQuery and Slick are both loaded');
-    //     //     console.log('jQuery version:', $.fn.jquery);
-    //     //     // // Load main.js after Slick.js is loaded
-    //     //     $('.single-item').slick('slickNext');
-    //     //     return import('/scripts/main.js');
-    //     // } else {
-    //     //     console.log('jQuery or Slick not loaded yet');
-    //     // }
+        // Check if both jQuery and Slick.js are loaded
+        // if (window.$ && window.$.fn.slick) {
+        //     console.log('jQuery and Slick are both loaded');
+        //     console.log('jQuery version:', $.fn.jquery);
+        //     // // Load main.js after Slick.js is loaded
+        //     $('.single-item').slick('slickNext');
+        //     return import('/scripts/main.js');
+        // } else {
+        //     console.log('jQuery or Slick not loaded yet');
+        // }
 
-    //     if ($.fn.slick) {
-    //         console.log('Slick methods are available');
-    //         console.log(document.querySelector(".single-item"));
-    //         $('.single-item').on('init', function() {
-    //             console.log('Slick is fully initialized');
-    //             // $('.single-item').slick('slickNext');
-    //             // callSlickNext();
-    //         });
+        if ($.fn.slick) {
+            console.log('Slick methods are available');
+            console.log(document.querySelector(".single-item"));
+            $('.single-item').on('init', function() {
+                console.log('Slick is fully initialized');
+                // $('.single-item').slick('slickNext');
+                // callSlickNext();
+            });
 
-    //         // Call slickNext if Slick is available
+            // Call slickNext if Slick is available
             
-    //         // $('.single-item').slick('slickNext');
-    //     } else {
-    //         console.log('Slick not loaded or initialized yet');
-    //     }
+            // $('.single-item').slick('slickNext');
+        } else {
+            console.log('Slick not loaded or initialized yet');
+        }
 
 
-    //     // $('.single-item').slick({
-    //     //     // Slick options
-    //     // }).then(() => {
-    //     //     // Slick is fully initialized, call slickNext
-    //     //     $('.single-item').slick('slickNext');
-    //     // });
-    // })
-    // .then(() => {
-    //     console.log('main.js has been loaded');
-    //     // return import('/scripts/main.js');
-    // })
-    // .catch(error => {
-    //     console.error('Error:', error);
-    // });
-
-    var ikijsScript = document.createElement('script')
-    ikijsScript.setAttribute("src","/blocks/iki/iki.js");
-    // ikijsScript.setAttribute('defer', true);
-
-    var ikiloginjsScript = document.createElement('script')
-    ikiloginjsScript.setAttribute("src","/blocks/ikilogin/ikilogin.js");
-    // ikiloginjsScript.setAttribute('defer', true);
-
-    var bundleScript = document.createElement('script')
-    bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
-    // bundleScript.setAttribute('defer', true);
-
-    var mainjsScript = document.createElement('script')
-    mainjsScript.setAttribute("src","/scripts/main.js");
-    // mainjsScript.setAttribute('defer', true);
-
-    var jqueryScript = document.createElement('script')
-    jqueryScript.setAttribute("src","/scripts/jquery.js");
-
-    var slickScript = document.createElement('script')
-    slickScript.setAttribute("src","/scripts/slick.js");
-    // slickScript.setAttribute('defer', true);
-
-    var mainElement = document.querySelector('main');
-    var headElement =  document.querySelector('head');
-    var bodyElement = document.querySelector('body');
-
-    mainElement.appendChild(bundleScript);
-    headElement.appendChild(jqueryScript);
-    headElement.appendChild(slickScript);
-    mainElement.appendChild(ikijsScript);
-    mainElement.appendChild(ikiloginjsScript);
+        // $('.single-item').slick({
+        //     // Slick options
+        // }).then(() => {
+        //     // Slick is fully initialized, call slickNext
+        //     $('.single-item').slick('slickNext');
+        // });
+    })
+    .then(() => {
+        console.log('main.js has been loaded');
+        return import('/scripts/main.js');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
 }
 
