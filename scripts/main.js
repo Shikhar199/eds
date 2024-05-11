@@ -115,13 +115,13 @@ let goUp = document.getElementById("go-up");
   
   let navToggler = document.querySelector(".toggle-btn .navbar-toggler");
   let navbarCollapseToggler = document.querySelector(".navbar-collapse .mobile-nav .navbar-toggler");
-  navToggler.addEventListener('click', () => {
-    commonBody.classList.add("sidebar-scroll");
-  });
+//   navToggler.addEventListener('click', () => {
+//     commonBody.classList.add("sidebar-scroll");
+//   });
   
-  navbarCollapseToggler.addEventListener('click', () => {
-    commonBody.classList.remove("sidebar-scroll");
-  });
+//   navbarCollapseToggler.addEventListener('click', () => {
+//     commonBody.classList.remove("sidebar-scroll");
+//   });
   
   
   function twitterShare(url, title){
