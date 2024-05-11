@@ -360,7 +360,6 @@ export default function decorate(block){
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/scripts/slick.js");
-    slickScript.async = false;
     // slickScript.setAttribute('defer', true);
 
     var mainScript = document.createElement('script')
