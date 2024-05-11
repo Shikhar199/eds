@@ -8,7 +8,7 @@
   /* overflow: hidden; Hide any content that exceeds the specified height */
 /* }  */
 
-.card:hover .card-image img {
+/* .card:hover .card-image img {
   transform: scale(1.05);
   transition: all 0.5s ease;
-}
+} */
