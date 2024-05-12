@@ -390,11 +390,11 @@ function loadScripts() {
     var headElement =  document.querySelector('head');
     var bodyElement = document.querySelector('body');
 
-    mainElement.appendChild(bundleScript);
+    bodyElement.appendChild(bundleScript);
     // headElement.appendChild(jqueryScript);
     // headElement.appendChild(slickScript);
-    mainElement.appendChild(ikijsScript);
-    mainElement.appendChild(ikiloginjsScript);
+    bodyElement.appendChild(ikijsScript);
+    bodyElement.appendChild(ikiloginjsScript);
     // window.onload = function() {
     //     var mainjsScript = document.createElement('script');
     //     mainjsScript.src = "/scripts/main.js";
