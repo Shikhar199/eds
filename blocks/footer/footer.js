@@ -64,8 +64,8 @@ export default async function decorate(block) {
   rowDiv.classList.add('row');
 
   [...block.children].forEach((row,r)=>{
-      const child = createRowChild(row,r);
-      rowDiv.appendChild(child);
+      createRowChild(row,r);
+      // rowDiv.appendChild(child);
   })
 
   console.log("XFDIV", xfDiv);
