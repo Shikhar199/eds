@@ -50,6 +50,36 @@ export default async function decorate(block) {
   freeflowDiv.appendChild(footer);
   freeflowDiv.appendChild(goUpDiv);
 
+  // create footer element 
+
+  // create 1st article
+
+  const firstArticle = document.createElement('article');
+  firstArticle.classList.add('iki-subscribtion-footer');
+
+  const containerFluidDiv = document.createElement('div');
+  containerFluidDiv.classList.add('container-fluid');
+
+  const rowDiv = document.createElement('div');
+  rowDiv.classList.add('row');
+
+  [...block.children].forEach((row,r)=>{
+      const child = createRowChild(row,r);
+      rowDiv.appendChild(child);
+  })
+
   console.log("XFDIV", xfDiv);
 
+}
+
+function createRowChild(row,r){
+
+  if(r==0){
+      // const childDiv = document.createElement('div');
+      // childDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
+      [...row.children].forEach((col,c)=>{
+          console.log(col.textContent.trim());
+      })
+
+  }
 }
