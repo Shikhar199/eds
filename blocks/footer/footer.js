@@ -6,16 +6,16 @@ import { loadFragment } from '../fragment/fragment.js';
  * @param {Element} block The footer block element
  */
 export default async function decorate(block) {
-  const footerMeta = getMetadata('footer');
-  block.textContent = '';
+  // const footerMeta = getMetadata('footer');
+  // block.textContent = '';
 
-  // load footer fragment
-  const footerPath = footerMeta.footer || '/footer';
-  const fragment = await loadFragment(footerPath);
+  // // load footer fragment
+  // const footerPath = footerMeta.footer || '/footer';
+  // const fragment = await loadFragment(footerPath);
 
-  // decorate footer DOM
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+  // // decorate footer DOM
+  // const footer = document.createElement('div');
+  // while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
-  block.append(footer);
+  // block.append(footer);
 }
