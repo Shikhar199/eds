@@ -18,4 +18,38 @@ export default async function decorate(block) {
   // while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   // block.append(footer);
+
+  const xfDiv = document.createElement("div");
+  xfDiv.classList.add('experiencefragment', 'aem-GridColumn', 'aem-GridColumn--default--12');
+
+  const xfContentDiv = document.createElement("div");
+  xfContentDiv.classList.add('xf-content-height');
+
+  const aemGridDiv = document.createElement("div");
+  aemGridDiv.classList.add('aem-Grid', 'aem-Grid--12', 'aem-Grid--default--12');
+
+  const freeflowDiv = document.createElement("div");
+  freeflowDiv.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
+
+  var styleElement = document.createElement('style');
+  var cssRules = '.xf-content-height { min-height: 0px; margin: 0px; }';
+  styleElement.textContent = cssRules;
+
+  const footer = document.createElement('footer');
+  footer.id = 'footer';
+
+  const goUpDiv = document.createElement('div');
+  goUpDiv.id = 'go-up';
+  goUpDiv.classList.add('go-upNavigation', 'show');
+
+  xfDiv.appendChild(xfContentDiv);
+  xfContentDiv.appendChild(aemGridDiv);
+  aemGridDiv.appendChild(freeflowDiv);
+
+  freeflowDiv.appendChild(styleElement);
+  freeflowDiv.appendChild(footer);
+  freeflowDiv.appendChild(goUpDiv);
+
+  console.log("XFDIV", xfDiv);
+
 }
