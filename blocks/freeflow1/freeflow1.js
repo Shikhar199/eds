@@ -198,7 +198,7 @@ export default function decorate(block){
             columnDiv.appendChild(mobileDiv);
             row2.appendChild(columnDiv);
         } else if (index==6){
-            section2Heading.textContent = node.textContent.trim();
+            section2Heading.textContent = row.textContent.trim();
         }
         else {
             const liElement = document.createElement('li');
