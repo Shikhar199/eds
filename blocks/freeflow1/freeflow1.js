@@ -35,6 +35,8 @@ export default function decorate(block){
     const accordionList = document.createElement('ul');
     accordionList.classList.add('accordion-list');
 
+    const section2Heading = document.createElement('h2');
+
     [...block.children].forEach((row,index)=>{
         if(index==0){
             const firstImgDiv = document.createElement('div');
@@ -195,7 +197,10 @@ export default function decorate(block){
             })
             columnDiv.appendChild(mobileDiv);
             row2.appendChild(columnDiv);
-        } else {
+        } else if (index==6){
+            section2Heading.textContent = node.textContent.trim();
+        }
+        else {
             const liElement = document.createElement('li');
             liElement.classList.add("enterprises", "home-overlay");
 
@@ -208,12 +213,42 @@ export default function decorate(block){
                     liElement.appendChild(imgElement);
 
                 } else if (c === 1) {
+                    const divElement = document.createElement('div');
+                    const firstDivElement = document.createElement('div');
+                    divElement.classList.add('section-content');
+                    firstDivElement.classList.add('section-title');
+
+                    const anchorEle = document.createElement('a');
+                    anchorEle.classList.add('details-link');
+
+                    const spanEle = document.createElement('span');
+                    spanEle.classList.add('icon-long-right-arrow');
+
+                    anchorEle.appendChild(spanEle);
+
                     [...col.children].forEach((node,i)=>{
-                        console.log(i);
-                        console.log(node.textContent.trim());
+                        if(i==0){
+                            const h3Element = document.createElement('h3');
+                            const h4Element = document.createElement('h4');
+                            h3Element.textContent = node.textContent.trim();
+                            h4Element.textContent = node.textContent.trim();
+                            divElement.appendChild(h3Element);
+                            firstDivElement.appendChild(h4Element);
+                        } else if(i==1){
+                            const pElement = document.createElement('p');
+                            pElement.textContent = node.textContent.trim();
+                            anchorEle.setAttribute('title',node.textContent.trim());
+
+                            divElement.appendChild(pElement);
+                        } else if(i==2){
+                            anchorEle.setAttribute('href',node.textContent.trim());
+                        }
+                        liElement.appendChild(firstDivElement);
+                        liElement.appendChild(divElement);
                     })
                 }
             })
+            accordionList.appendChild(liElement);
         }
     })
 
@@ -237,6 +272,25 @@ export default function decorate(block){
     var parent = document.querySelector('main');
     var oldDiv = document.querySelector('.freeflow1-container');
     parent.replaceChild(outerDiv, oldDiv); 
+
+    // Section-2
+    const section2 = document.createElement('section');
+    section2.classList.add('home-reseacher-themes-wraper');
+
+    const section2Container = document.createElement('div');
+    section2Container.classList.add('container');
+    
+    section2.appendChild(section2Container);
+    section2Container.appendChild(section2Heading);
+
+    const section2Wrapper = document.createElement('div');
+    section2Wrapper.classList.add('accordion-wraper');
+
+    section2Container.appendChild(section2Wrapper);
+    section2Wrapper.appendChild(accordionList);
+
+    mainElement.appendChild(section2);
+
     
 }
 
