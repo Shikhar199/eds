@@ -78,8 +78,8 @@ function createRowChild(row,r){
       // const childDiv = document.createElement('div');
       // childDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
       console.log(row);
-      var arr = row.split("\n");
-      console.log(arr);
+      var data = row.querySelectorAll('p');
+      console.log(data);
 
   }
 }
