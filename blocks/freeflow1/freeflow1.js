@@ -25,6 +25,12 @@ export default function decorate(block){
 
     firstChildDiv.appendChild(newRow1);
 
+    const interestHiddenDiv = document.createElement('div');
+    interestHiddenDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
+
+    firstChildDiv.appendChild(newRow1);
+    newRow1.appendChild(interestHiddenDiv);
+
     [...block.children].forEach((row,index)=>{
         if(index==0){
             const firstImgDiv = document.createElement('div');
@@ -42,11 +48,10 @@ export default function decorate(block){
                 if(c==0){
                     const imgElement = document.createElement('img');
                     imgElement.setAttribute('src', col.querySelector('img').getAttribute('src'));
-                    imgElement.setAttribute('alt', 'Use Generative AI with Responsibility');
                     imgElement.classList.add('img-fluid', 'insights-image');
                     insightsWrapper1.appendChild(imgElement);
                 } else if (c==1){
-                    const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow')
+                    const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow',index,insightsWrapper1)
                     insightsWrapper1.appendChild(insightsDiv);
                 }
             })
@@ -55,12 +60,165 @@ export default function decorate(block){
             row1.appendChild(firstChildDiv);
             firstImgDiv.appendChild(insightsWrapper1);
             firstImgDiv.appendChild(mobileDiv);
-        }  
+
+        } else if (index==1){
+            const firstImgDiv = document.createElement('div');
+            firstImgDiv.classList.add('article-wraper', 'insights-hover', 'modernization', 'mb-sm-3');
+            firstImgDiv.style.height = '141.225px';
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            [...row.children].forEach((col,c)=>{
+                
+                if(c==0){
+                    const firstImg = document.createElement('img');
+                    firstImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    firstImg.classList.add('img-fluid', 'interactive-image');
+                    firstImg.setAttribute('alt', 'Video');
+                    firstImgDiv.appendChild(firstImg);
+
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'insights', "icon-long-right-arrow", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow",index,firstImgDiv)
+                    firstImgDiv.appendChild(insightsDiv);
+
+                } 
+            })
+
+            interestHiddenDiv.appendChild(firstImgDiv);
+            interestHiddenDiv.appendChild(mobileDiv);  
+
+        } else if (index==2){
+            const secondImgDiv = document.createElement('div');
+            secondImgDiv.classList.add('interactive-wraper', 'home-overlay', 'insights-hover');
+            secondImgDiv.style.height = '141.225px';
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            [...row.children].forEach((col,c)=>{
+                
+                if(c==0){
+                    const secondImg = document.createElement('img');
+                    secondImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    secondImg.classList.add('img-fluid', 'interactive-image');
+                    secondImg.setAttribute('alt', 'Video');
+                    secondImgDiv.appendChild(secondImg);
+
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'insights', "icon-long-right-arrow", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow",index,secondImgDiv)
+                    secondImgDiv.appendChild(insightsDiv);
+                } 
+            })
+
+            interestHiddenDiv.appendChild(secondImgDiv);
+            interestHiddenDiv.appendChild(mobileDiv); 
+
+        } else if (index==3){
+            const columnDiv = document.createElement('div');
+            columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-0');
+
+            const podcastWrapperDiv = document.createElement('div');
+            podcastWrapperDiv.classList.add('podcast-wraper', 'home-overlay', 'insights-hover');
+            podcastWrapperDiv.style.height = '282.45px';
+            
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            columnDiv.appendChild(podcastWrapperDiv);
+
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.classList.add('img-fluid', 'podcast-image');
+                    podcastWrapperDiv.appendChild(imgElement);
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow',index,podcastWrapperDiv)
+                    podcastWrapperDiv.appendChild(insightsDiv);
+                }
+            })
+            columnDiv.appendChild(mobileDiv);
+            newRow1.appendChild(columnDiv);
+        } else if (index==4){
+            const columnDiv = document.createElement('div');
+            columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-sm-3');
+
+            const caseStudyWrapperDiv = document.createElement('div');
+            caseStudyWrapperDiv.classList.add('case-study-wraper', 'insights-hover');
+            caseStudyWrapperDiv.style.height = '100%';
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            columnDiv.appendChild(caseStudyWrapperDiv);
+
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.classList.add('img-fluid', 'case-study-image');
+                    caseStudyWrapperDiv.appendChild(imgElement);
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'case-study-content', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow', index, caseStudyWrapperDiv);
+                    caseStudyWrapperDiv.appendChild(insightsDiv);
+                }
+            })
+            columnDiv.appendChild(mobileDiv);
+            row2.appendChild(columnDiv);
+        } else if (index==5){
+            const columnDiv = document.createElement('div');
+            columnDiv.classList.add('col-lg-6', 'col-md-6', 'interest-hidden', 'pr-0');
+
+            const qualityEngDiv = document.createElement('div');
+            qualityEngDiv.classList.add('quality-engg', 'insights-hover');
+
+            const mobileDiv = document.createElement("div");
+            mobileDiv.classList.add("find-more-mobile");
+
+            columnDiv.appendChild(qualityEngDiv);
+
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.classList.add('img-fluid', 'quality-image');
+                    qualityEngDiv.appendChild(imgElement);
+                } else if(c==1){
+                    const insightsDiv = createInsightsDiv(col, 'quality-content', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow', index, qualityEngDiv)
+                    qualityEngDiv.appendChild(insightsDiv);
+                }
+            })
+            columnDiv.appendChild(mobileDiv);
+            row2.appendChild(columnDiv);
+        }
     })
+
+    var section = document.createElement('section');
+    section.classList.add('home-interests-wraper');
+    section.appendChild(interestsMain);
+
+    var outerDiv = document.createElement('div');
+    outerDiv.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
+
+    var mainElement = document.createElement('main');
+    mainElement.classList.add('home-page-wraper');
+
+    var sectionElement = document.createElement('section');
+    sectionElement.classList.add('home-interests-wraper');
+
+    outerDiv.appendChild(mainElement);
+    mainElement.appendChild(sectionElement);
+    sectionElement.appendChild(interestsMain);
+
+    var parent = document.querySelector('main');
+    var oldDiv = document.querySelector('.freeflow1-container');
+    parent.replaceChild(outerDiv, oldDiv); 
+    
 }
 
 
-function createInsightsDiv(col, outerDivClass, firstSpanClass, anchorSpan1Class, anchorSpan2Class, anchorSpan3Class){
+function createInsightsDiv(col, outerDivClass, firstSpanClass, anchorSpan1Class, anchorSpan2Class, anchorSpan3Class, index, wraperDiv){
     
     const insightsDiv = document.createElement('div');
     insightsDiv.classList.add(outerDivClass);
@@ -104,6 +262,12 @@ function createInsightsDiv(col, outerDivClass, firstSpanClass, anchorSpan1Class,
 
             insightsAnchor.appendChild(insightsAnchorSpan1);
             insightsAnchor.appendChild(insightsAnchorSpan3);
+
+            if(index!==1 && index!==3){
+                const imgElement = wraperDiv.querySelector('img');
+                imgElement.setAttribute("alt",node.textContent.trim());
+            }
+
         } else if(i==5){
             insightsHeadingAnchor.setAttribute("href",node.textContent.trim());
         } else if(i==7){
