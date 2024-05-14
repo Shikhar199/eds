@@ -77,10 +77,8 @@ function createRowChild(row,r){
   if(r==1){
       // const childDiv = document.createElement('div');
       // childDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
-      [...row.children].forEach((node,i)=>{
-          console.log(i);
-          console.log(node.textContent.trim());
-      })
+      arr = row.split("\n");
+      console.log(arr);
 
   }
 }
