@@ -194,9 +194,9 @@ export default function decorate(block){
         }
     })
 
-    var section = document.createElement('section');
-    section.classList.add('home-interests-wraper');
-    section.appendChild(interestsMain);
+    var section1 = document.createElement('section');
+    section1.classList.add('home-interests-wraper');
+    section1.appendChild(interestsMain);
 
     var outerDiv = document.createElement('div');
     outerDiv.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
@@ -204,12 +204,12 @@ export default function decorate(block){
     var mainElement = document.createElement('main');
     mainElement.classList.add('home-page-wraper');
 
-    var sectionElement = document.createElement('section');
-    sectionElement.classList.add('home-interests-wraper');
+    // var sectionElement = document.createElement('section');
+    // sectionElement.classList.add('home-interests-wraper');
 
     outerDiv.appendChild(mainElement);
-    mainElement.appendChild(sectionElement);
-    sectionElement.appendChild(interestsMain);
+    mainElement.appendChild(section1);
+    // sectionElement.appendChild(interestsMain);
 
     var parent = document.querySelector('main');
     var oldDiv = document.querySelector('.freeflow1-container');
