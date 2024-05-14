@@ -208,8 +208,10 @@ export default function decorate(block){
                     liElement.appendChild(imgElement);
 
                 } else if (c === 1) {
-                    console.log(c);
-                    console.log(col.textContent.trim());
+                    [...col.children].forEach((node,i)=>{
+                        console.log(i);
+                        console.log(node.textContent.trim());
+                    })
                 }
             })
         }
