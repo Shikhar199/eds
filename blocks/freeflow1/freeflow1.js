@@ -238,8 +238,8 @@ export default function decorate(block){
                             const pElement = document.createElement('p');
                             pElement.textContent = node.textContent.trim();
                             anchorEle.setAttribute('title',node.textContent.trim());
-
                             divElement.appendChild(pElement);
+                            divElement.appendChild(anchorEle);
                         } else if(i==2){
                             anchorEle.setAttribute('href',node.textContent.trim());
                         }
