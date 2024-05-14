@@ -65,54 +65,51 @@ function createInsightsDiv(col, outerDivClass, firstSpanClass, anchorSpan1Class,
     const insightsDiv = document.createElement('div');
     insightsDiv.classList.add(outerDivClass);
 
+    const insightsh3 = document.createElement('h3');
+    insightsh3.classList.add('interest-heading');
+
+    const insightsHeadingAnchor = document.createElement('a');
+
+    const insightsAnchor = document.createElement('a');
+    insightsAnchor.classList.add('find-more-desktop');
+
+    insightsDiv.appendChild(insightsh3);
+    insightsDiv.appendChild(insightsAnchor);
+    insightsh3.appendChild(insightsHeadingAnchor);
+
     [...col.childNodes].forEach((node,i)=>{
-        // if(i==1){
-        
-        //     const insightsh3 = document.createElement('h3');
-        //     insightsh3.classList.add('interest-heading');
+        if(i==1){
+            insightsHeadingAnchor.title = node.textContent.trim();
+            insightsHeadingAnchor.textContent = node.textContent.trim();
+            // insightsAnchor.classList.add('find-more-desktop');
 
-        //     const insightsAnchor = document.createElement('a');
-        //     insightsAnchor.href = insightsAnchorHref;
-        //     insightsAnchor.title = node.textContent.trim();
-        //     insightsAnchor.textContent = node.textContent.trim();
-        //     insightsAnchor.setAttribute("target", "_blank")
-        //     // insightsAnchor.classList.add('find-more-desktop');
+            const insightsAnchorSpan1 = document.createElement('span');
+            insightsAnchorSpan1.classList.add(firstSpanClass);
 
-        //     const insightsAnchorSpan1 = document.createElement('span');
-        //     insightsAnchorSpan1.classList.add(firstSpanClass);
+            insightsHeadingAnchor.appendChild(insightsAnchorSpan1);
+        } else if(i==3){
+            insightsAnchor.title = node.textContent.trim();
 
-        //     insightsAnchor.appendChild(insightsAnchorSpan1);
-        //     insightsh3.appendChild(insightsAnchor);
-        //     insightsDiv.appendChild(insightsh3);
-        // } else if(i==3){
-        //     const insightsAnchor = document.createElement('a');
-        //     insightsAnchor.href = insightsAnchorHref2;
-        //     insightsAnchor.title = node.textContent.trim();
-        //     // insightsAnchor.textContent = node.textContent.trim();
-        //     insightsAnchor.classList.add('find-more-desktop');
+            const insightsAnchorSpan1 = document.createElement('span');
+            insightsAnchorSpan1.classList.add(anchorSpan1Class);
 
-        //     const insightsAnchorSpan1 = document.createElement('span');
-        //     insightsAnchorSpan1.classList.add(anchorSpan1Class);
+            const insightsAnchorSpan2 = document.createElement('span');
+            insightsAnchorSpan2.classList.add(anchorSpan2Class);
 
-        //     const insightsAnchorSpan2 = document.createElement('span');
-        //     insightsAnchorSpan2.classList.add(anchorSpan2Class);
+            const insightsAnchorSpan3 = document.createElement('span');
+            insightsAnchorSpan3.classList.add(anchorSpan3Class);
 
-        //     const insightsAnchorSpan3 = document.createElement('span');
-        //     insightsAnchorSpan3.classList.add(anchorSpan3Class);
+            insightsAnchorSpan1.appendChild(insightsAnchorSpan2);
+            insightsAnchorSpan1.appendChild(document.createTextNode(node.textContent.trim()));
 
-        //     insightsAnchorSpan1.appendChild(insightsAnchorSpan2);
-        //     insightsAnchorSpan1.appendChild(document.createTextNode(node.textContent.trim()));
-        //     // insightsAnchorSpan1.textContent = '';
+            insightsAnchor.appendChild(insightsAnchorSpan1);
+            insightsAnchor.appendChild(insightsAnchorSpan3);
+        } else if(i==5){
+            insightsHeadingAnchor.setAttribute("href",node.textContent.trim());
+        } else if(i==7){
+            insightsAnchor.setAttribute("href",node.textContent.trim());
+        }
 
-        //     insightsAnchor.appendChild(insightsAnchorSpan1);
-        //     insightsAnchor.appendChild(insightsAnchorSpan3);
-
-        //     insightsDiv.appendChild(insightsAnchor);
-        // }
-        // console.log(node);
-
-        console.log(node.textContent.trim());
-        console.log(i);
     })
 
     return insightsDiv;
