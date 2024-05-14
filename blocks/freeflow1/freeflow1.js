@@ -31,6 +31,10 @@ export default function decorate(block){
     firstChildDiv.appendChild(newRow1);
     newRow1.appendChild(interestHiddenDiv);
 
+    //section-2 ul
+    const accordionList = document.createElement('ul');
+    accordionList.classList.add('accordion-list');
+
     [...block.children].forEach((row,index)=>{
         if(index==0){
             const firstImgDiv = document.createElement('div');
@@ -191,6 +195,23 @@ export default function decorate(block){
             })
             columnDiv.appendChild(mobileDiv);
             row2.appendChild(columnDiv);
+        } else {
+            const liElement = document.createElement('li');
+            liElement.classList.add("enterprises", "home-overlay");
+
+            [...row.children].forEach((col,c)=>{
+                if (c === 0) { // First column contains image
+                    const imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', col.querySelector('img').getAttribute('src'));
+                    imgElement.setAttribute('alt', 'Sustainability');
+                    imgElement.classList.add('img-fluid', 'theme-image');
+                    liElement.appendChild(imgElement);
+
+                } else if (c === 1) {
+                    console.log(c);
+                    console.log(col.textContent.trim());
+                }
+            })
         }
     })
 
