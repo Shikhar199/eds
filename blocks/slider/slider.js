@@ -4,9 +4,6 @@ export default function decorate(block){
         import('/scripts/slick.min.js').then(() => {
             console.log('Slick min js has been loaded');
 
-            console.log("Block");
-            console.log(block);
-
             const mainElement = document.createElement('main');
 
             const sectionElement = document.createElement('section');
@@ -25,7 +22,6 @@ export default function decorate(block){
             mostPopularDiv.classList.add('most-popular-carousel');
 
             const mostPopularSlickDiv = document.createElement('div');
-            // mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at', 'slick-initialized', 'slick-slider', 'slick-dotted');
             
             mostPopularSlickDiv.classList.add('most-popular-slick', 'most-popular-slick-at');
 
@@ -38,7 +34,6 @@ export default function decorate(block){
             slickListDiv.classList.add('slick-list', 'draggable');
 
             const slickTrackDiv = document.createElement('div');
-            // slickTrackDiv.classList.add('slick-track');
 
             //create ul
             const ulEle = document.createElement('ul');
@@ -47,11 +42,8 @@ export default function decorate(block){
 
             [...block.children].forEach((row,r)=>{
                 const slickItem = createSlickItem(row,r);
-                // slickTrackDiv.appendChild(slickItem);
                 mostPopularSlickDiv.appendChild(slickItem);
             })
-
-            // $('.most-popular-slick-at').slick({
 
             var scriptElement = document.createElement('script');
             var scriptCode = `
@@ -104,8 +96,6 @@ export default function decorate(block){
 
             document.querySelector(".slider-container").classList.add('ikislider', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
-            console.log(sectionElement);
-
             const outerScriptElement = document.createElement('script');
 
             // Set the type attribute of the script element
@@ -128,9 +118,6 @@ export default function decorate(block){
             trackDiv.appendChild(mostPopularDiv);
             trackDiv.appendChild(scriptElement);
 
-            console.log("mostPopularSlickDiv");
-            console.log(mostPopularSlickDiv);
-
             mainElement.appendChild(sectionElement);
             sectionElement.appendChild(containerDivElement);
             containerDivElement.appendChild(trackDiv);
@@ -142,74 +129,7 @@ export default function decorate(block){
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
             mainjsScript.setAttribute('defer',true);
-            // trackDiv.appendChild(mainjsScript);
-            document.body.appendChild(mainjsScript);
-
-            console.log("Track div");
-            console.log(trackDiv);
-            // import('/scripts/main.js').then(() => {
-            //     console.log("main.js loaded");
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
-
-            // document.addEventListener('DOMContentLoaded', () => {
-            //     console.log("Hi");
-            //     import('/scripts/main.js').then(() => {
-            //         console.log("main.js loaded");
-            //     }).catch(error => {
-            //         console.error('Error loading main.js:', error);
-            //     });
-            // });
-            // var scriptElement1 = document.createElement('script');
-            // var scriptCode1 = `$('.most-popular-slick').slick({
-            //         dots: true,
-            //         infinite: false,
-            //         speed: 300,
-            //         slidesToShow: 3,
-            //         slidesToScroll: 1,
-            //         buttons: true,
-            //         arrows: true,
-            //         responsive: [{
-            //             breakpoint: 1400,
-            //             settings: {
-            //               slidesToShow: 3,
-            //               slidesToScroll: 1,
-            //               infinite: true,
-            //               dots: true
-            //             }
-            //           },
-            //           {
-            //             breakpoint: 1200,
-            //             settings: {
-            //               slidesToShow: 2,
-            //               slidesToScroll: 1,
-            //               infinite: true,
-            //               dots: true
-            //             }
-            //           },
-            //           {
-            //             breakpoint: 992,
-            //             settings: {
-            //               slidesToShow: 2,
-            //               slidesToScroll: 1,
-            //               refresh: true
-                  
-            //             }
-            //           },
-            //           {
-            //             breakpoint: 767,
-            //             settings: "unslick",
-            //           }
-            //         ]
-            //       })`;
-
-            //       scriptElement1.innerHTML = scriptCode1;
-            //       trackDiv.appendChild(scriptElement1);
-   
-            // console.log("Slick Track Div length");
-            // const slickTrack = mostPopularSlickDiv.querySelector('.slick-list').querySelector('.slick-track');
-            // console.log(slickTrack.children.length); 
+            document.body.appendChild(mainjsScript); 
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
@@ -223,7 +143,6 @@ export default function decorate(block){
 
 function createSlickItem(row,r){
     const popularSlickItemDiv = document.createElement('div');
-    // popularSlickItemDiv.classList.add('most-popular-slick-item', 'slick-slide');
     
     popularSlickItemDiv.classList.add('most-popular-slick-item');
 
@@ -339,19 +258,16 @@ function createSlickItem(row,r){
 
 function fixFirstDiv(blockLength){
     const slickTrackDiv = document.querySelector(".slick-track");
-    console.log(slickTrackDiv.children.length);
     for(let i=0;i<slickTrackDiv.children.length;i++){
         const child = slickTrackDiv.children[i];
 
         const slickIndex = child.getAttribute('data-slick-index');
         if(slickIndex==0 || slickIndex==blockLength){
-            console.log("Condition satisfied");
             const cardTitle = child.querySelector(".card-title");
             const cardBody = child.querySelector(".card-body");
 
             const subMobileDiv = child.querySelector('.sub-mobile');
             if(subMobileDiv){
-                console.log("Removing subMobileDiv");
                 subMobileDiv.remove();
             }
             child.querySelector(".popular-card").appendChild(cardTitle);
