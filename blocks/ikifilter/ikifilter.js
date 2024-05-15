@@ -358,9 +358,9 @@ function createList(arr,r){
     return ulElem;
 }
 
-// function hideOptions(){
-//     console.log("hide");
-// }
+function hideOptions(){
+    console.log("hide");
+}
 
 function loadScripts() {
     var ikijsScript = document.createElement('script')
