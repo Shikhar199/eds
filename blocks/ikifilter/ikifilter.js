@@ -358,9 +358,9 @@ function createList(arr,r){
     return ulElem;
 }
 
-function hideOptions(){
-    console.log("hide");
-}
+// function hideOptions(){
+//     console.log("hide");
+// }
 
 function loadScripts() {
     var ikijsScript = document.createElement('script')
@@ -401,23 +401,23 @@ function loadScripts() {
     //     mainjsScript.defer = true;
     //     document.body.appendChild(mainjsScript);
     // }
-    if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
-        // Document is already ready or has already loaded, call the function directly
-        loadMainScript();
-    } else {
-        // Document is still loading, add an event listener for DOMContentLoaded
-        document.addEventListener("DOMContentLoaded", loadMainScript);
-    }
+    // if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+    //     // Document is already ready or has already loaded, call the function directly
+    //     loadMainScript();
+    // } else {
+    //     // Document is still loading, add an event listener for DOMContentLoaded
+    //     document.addEventListener("DOMContentLoaded", loadMainScript);
+    // }
     // mainElement.appendChild(mainjsScript);
 
 }
 
-function loadMainScript() {
-    var script = document.createElement('script');
-    script.src = "/blocks/main/main.js";
-    script.defer = true;
-    // document.body.appendChild(script);
-}
+// function loadMainScript() {
+//     var script = document.createElement('script');
+//     script.src = "/blocks/main/main.js";
+//     script.defer = true;
+//     // document.body.appendChild(script);
+// }
 
 // function loadScript(src) {
 //     return new Promise(function(resolve, reject) {
