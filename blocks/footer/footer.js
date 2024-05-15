@@ -64,21 +64,20 @@ export default async function decorate(block) {
   rowDiv.classList.add('row');
 
   [...block.children].forEach((row,r)=>{
-      createRowChild(row,r);
-      // rowDiv.appendChild(child);
+      const child = createRowChild(row,r);
+      rowDiv.appendChild(child);
   })
 
-  console.log("XFDIV", xfDiv);
+
+  console.log("ROWDIV", rowDiv);
 
 }
 
 function createRowChild(row,r){
 
-  if(r==1){
-      // const childDiv = document.createElement('div');
-      // childDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
-      console.log(row);
-      var data = row.querySelectorAll('p');
+  var data = row.querySelectorAll('p');
+
+  if(r==0){
       const rowChildDiv = document.createElement('div');
       rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
 
@@ -103,17 +102,55 @@ function createRowChild(row,r){
       boxContentDiv.appendChild(iconSpan);
       boxContentDiv.appendChild(textSpan);
 
-      for(let i=0;i<data.length;i++){
-          if(i==0){
-              anchor.setAttribute('href',data[0].textContent.trim());
-          } else if(i==1){
-              anchor.setAttribute('aria-label',data[1].textContent.trim());
-          } else if(i==2){
-              anchor.setAttribute('title',data[2].textContent.trim());
-              textSpan.textContent = data[2].textContent.trim();
-          }
-      }
-      console.log(rowChildDiv);
+      updateAttributes(data, anchor, textSpan);
 
+      return rowChildDiv;
+
+  } else if(r==1){
+      const rowChildDiv = document.createElement('div');
+      rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
+
+      const anchor = document.createElement('a');
+
+      rowChildDiv.appendChild(anchor);
+
+      const fadeInDiv = document.createElement('div');
+      fadeInDiv.classList.add('box', 'wow', 'fadeInLeft');
+      fadeInDiv.setAttribute('data-wow-delay',"0.6s");
+
+      const boxContentDiv = document.createElement('div');
+      boxContentDiv.classList.add('box-content');
+      
+      const iconSpan = document.createElement('span');
+      iconSpan.classList.add('iki-icons', 'icon-request-expert');
+
+      const textSpan = document.createElement('span');
+
+      anchor.appendChild(fadeInDiv);
+      fadeInDiv.appendChild(boxContentDiv);
+      boxContentDiv.appendChild(iconSpan);
+      boxContentDiv.appendChild(textSpan);
+
+      updateAttributes(data, anchor, textSpan);
+
+      return rowChildDiv;
+
+  } else if(r==2){
+
+  } else if(r==3){
+
+  }
+}
+
+function updateAttributes(data, anchor, textSpan){
+  for(let i=0;i<data.length;i++){
+    if(i==0){
+        anchor.setAttribute('href',data[0].textContent.trim());
+    } else if(i==1){
+        anchor.setAttribute('aria-label',data[1].textContent.trim());
+    } else if(i==2){
+        anchor.setAttribute('title',data[2].textContent.trim());
+        textSpan.textContent = data[2].textContent.trim();
+    }
   }
 }
