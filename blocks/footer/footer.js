@@ -104,14 +104,20 @@ function createRowChild(row,r){
       boxContentDiv.appendChild(textSpan);
 
       for(let i=0;i<data.length;i++){
-          if(i==0){
-              anchor.setAttribute('href',data[0]);
-          } else if(i==1){
-              anchor.setAttribute('aria-label',data[1]);
-          } else if(i==2){
-              anchor.setAttribute('title',data[2]);
-              textSpan.textContent = data[2];
-          }
+          // if(i==0){
+          //     anchor.setAttribute('href',data[0]);
+          // } else if(i==1){
+          //     anchor.setAttribute('aria-label',data[1]);
+          // } else if(i==2){
+          //     anchor.setAttribute('title',data[2]);
+          //     textSpan.textContent = data[2];
+          // }
+          console.log(data[0]);
+          console.log(data[0].textContent.trim());
+          console.log(data[1]);
+          console.log(data[1].textContent.trim());
+          console.log(data[2]);
+          console.log(data[2].textContent.trim());
       }
       console.log(rowChildDiv);
 
