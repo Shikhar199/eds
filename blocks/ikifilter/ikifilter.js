@@ -315,7 +315,7 @@ function loadScripts() {
     ikiloginjsScript.setAttribute("src","/blocks/ikilogin/ikilogin.js");
 
     var bundleScript = document.createElement('script')
-    bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
+    bundleScript.setAttribute("src","/scripts/bundle.js");
 
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
