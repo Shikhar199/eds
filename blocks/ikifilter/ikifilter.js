@@ -324,7 +324,7 @@ function loadScripts() {
     jqueryScript.setAttribute("src","/scripts/jquery.js");
 
     var slickScript = document.createElement('script')
-    slickScript.setAttribute("src","/scripts/slick.js");
+    slickScript.setAttribute("src","/scripts/slick.min.js");
 
     var mainElement = document.querySelector('main');
     var headElement =  document.querySelector('head');
