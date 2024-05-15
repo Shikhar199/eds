@@ -206,49 +206,11 @@ function createSlickItem(row,r){
                     liElement.textContent = node.textContent.trim();
                     cardBodyDiv.appendChild(ulElement);
                 } else if(i==9){
-                    // cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
-                    // var selectorString = 'div[data-slick-index="' + r + '"]';
                     cardBodyDiv.querySelector("h4").querySelector("a").setAttribute("href",node.textContent.trim());
                     const anchorEle = popularCardDiv.querySelector(".card-image").querySelector('a');
                     anchorEle.setAttribute("href",node.textContent.trim());
                 }
             })
-            // const cardBodyDiv = document.createElement('div');
-            // cardBodyDiv.classList.add('card-body');
-            // var cardBodyAnchorElement;
-            // [...col.childNodes].forEach((node,i)=>{
-            //     if(i==1){
-            //         const h5Element = document.createElement('h5');
-            //         h5Element.classList.add('card-title');
-            //         h5Element.textContent = node.textContent.trim();
-            //         popularCardDiv.appendChild(h5Element);
-            //     } else if(i==3){
-            //         const h4Element = document.createElement('h4');
-            //         cardBodyAnchorElement = document.createElement('a');
-            //         cardBodyAnchorElement.setAttribute("title", node.textContent.trim());
-            //         cardBodyAnchorElement.textContent = node.textContent.trim();
-
-            //         h4Element.appendChild(cardBodyAnchorElement);
-            //         cardBodyDiv.appendChild(h4Element);
-            //     } else if(i==5){
-            //         const pElement = document.createElement('p');
-            //         pElement.textContent = node.textContent.trim();
-            //         pElement.classList.add('card-text');
-            //         cardBodyDiv.appendChild(pElement);
-            //     } else if(i==7){
-            //         const ulElement = document.createElement('ul');
-            //         const liElement = document.createElement('li');
-            //         ulElement.appendChild(liElement);
-            //         liElement.textContent = node.textContent.trim();
-            //         cardBodyDiv.appendChild(ulElement);
-            //     } else if(i==9){
-            //         cardBodyAnchorElement.setAttribute("href", node.textContent.trim())
-            //        // var selectorString = 'div[data-slick-index="' + r + '"]';
-            //         const anchorEle = popularCardDiv.querySelector(".card-image").querySelector('a');
-            //         anchorEle.setAttribute("href",node.textContent.trim());
-            //     }
-            // })
-            // popularCardDiv.appendChild(cardBodyDiv);
             subMobileDiv.appendChild(cardBodyDiv);
             popularCardDiv.appendChild(subMobileDiv);
         }
