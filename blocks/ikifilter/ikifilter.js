@@ -1,11 +1,5 @@
 export default function decorate(block){
 
-    // import('/scripts/slick.js').then(($) => {
-    //     console.log('jQuery has been loaded');
-        // import('/blocks/ikilogin.js').then(() => {
-        //     console.log(' IKI login js has been loaded');
-            // import('/scripts/main.js').then(() => {
-            //     console.log(' main js has been loaded');
     const ikifilterContainer = document.querySelector(".ikifilter-container");
     ikifilterContainer.classList.add('ikihomepageexplore', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
@@ -48,7 +42,6 @@ export default function decorate(block){
     exploreDiv.setAttribute('role','dialog');
     exploreDiv.setAttribute('aria-labelledby','videoListingLabel');
     exploreDiv.setAttribute('aria-hidden','true');
-    // exploreDiv.style.display = 'none';
 
     btnWrapperDiv.appendChild(exploreDiv);
 
@@ -139,52 +132,7 @@ export default function decorate(block){
         }
     })
 
-    // Load other scripts first
-    // Promise.all([
-    //     // Load other scripts here
-    //     // For example:
-    //     loadScript('/blocks/bundle.js'),
-    //     loadScript('/scripts/slick.js'),
-    //     loadScript('/blocks/iki.js'),
-    //     loadScript('/blocks/ikilogin.js')
-    // ]).then(function() {
-    //     // All other scripts have been loaded, now load main.js
-    //     console.log("Loading main.js");
-    //     loadMainScript();
-    // }).catch(function(error) {
-    //     console.error('Error loading scripts:', error);
-    // });
-
     loadScripts();
-    //         import('/blocks/iki.js').then(() => {
-    //             console.log('iki has been loaded');
-    //         }).catch(error=>{
-    //             console.error('Error loading iki.js:', error);
-    //         })
-            // }).catch(error=>{
-            //     console.error('Error loading main.js:', error);
-            // })
-        // }).catch(error=>{
-        //     console.error('Error loading ikilogin.js:', error);
-        // })
-    // }).catch(error=>{
-    //     console.error('Error loading jquery.js:', error);
-    // })
-    // loadLibraries();
-
-    // import('/scripts/jquery.js')
-    // .then(() => {
-    //     console.log('jQuery has been loaded');
-    //     // Execute code that relies on jQuery here
-    //     import('/blocks/iki.js').then(() => {
-    //         console.log('iki has been loaded');
-    //     }).catch(error=>{
-    //         console.error('Error loading iki.js:', error);
-    //     })
-    // })
-    // .catch(error => {
-    //     console.error('Error loading jquery.js:', error);
-    // });
 }
 
 function createInterestSection(arr,r,data){
@@ -283,7 +231,6 @@ function createInterestSection(arr,r,data){
 
     collapsediv.appendChild(ulElem);
     collapsediv.appendChild(btnWraperDiv);
-    // liElement.appendChild(collapsediv);
 
     const ulElem2 = createList(arr,r);
 
@@ -313,8 +260,6 @@ function createInterestSection(arr,r,data){
     goBackDiv.appendChild(h2Ele);
 
     viewAllLi.appendChild(anchor);
-
-    // interestListLi.appendChild(ulElem);
 
     return ulElement;
 
@@ -365,72 +310,28 @@ function hideOptions(){
 function loadScripts() {
     var ikijsScript = document.createElement('script')
     ikijsScript.setAttribute("src","/blocks/iki/iki.js");
-    // ikijsScript.setAttribute('defer', true);
 
     var ikiloginjsScript = document.createElement('script')
     ikiloginjsScript.setAttribute("src","/blocks/ikilogin/ikilogin.js");
-    // ikiloginjsScript.setAttribute('defer', true);
 
     var bundleScript = document.createElement('script')
     bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
-    // bundleScript.setAttribute('defer', true);
 
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
-    // mainjsScript.setAttribute('defer', true);
 
     var jqueryScript = document.createElement('script')
     jqueryScript.setAttribute("src","/scripts/jquery.js");
 
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/scripts/slick.js");
-    // slickScript.setAttribute('defer', true);
 
     var mainElement = document.querySelector('main');
     var headElement =  document.querySelector('head');
     var bodyElement = document.querySelector('body');
 
     bodyElement.appendChild(bundleScript);
-    // headElement.appendChild(jqueryScript);
-    // headElement.appendChild(slickScript);
     bodyElement.appendChild(ikijsScript);
     bodyElement.appendChild(ikiloginjsScript);
-    // window.onload = function() {
-    //     var mainjsScript = document.createElement('script');
-    //     mainjsScript.src = "/scripts/main.js";
-    //     mainjsScript.defer = true;
-    //     document.body.appendChild(mainjsScript);
-    // }
-    // if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
-    //     // Document is already ready or has already loaded, call the function directly
-    //     loadMainScript();
-    // } else {
-    //     // Document is still loading, add an event listener for DOMContentLoaded
-    //     document.addEventListener("DOMContentLoaded", loadMainScript);
-    // }
-    // mainElement.appendChild(mainjsScript);
 
 }
-
-// function loadMainScript() {
-//     var script = document.createElement('script');
-//     script.src = "/blocks/main/main.js";
-//     script.defer = true;
-//     // document.body.appendChild(script);
-// }
-
-// function loadScript(src) {
-//     return new Promise(function(resolve, reject) {
-//         var script = document.createElement('script');
-//         script.src = src;
-//         script.onload = resolve;
-//         script.onerror = reject;
-//         document.body.appendChild(script);
-//     });
-// }
-
-// function loadMainScript() {
-//     var mainScript = document.createElement('script');
-//     mainScript.src = '/scripts/main.js';
-//     document.body.appendChild(mainScript);
-// }
