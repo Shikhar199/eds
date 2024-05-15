@@ -79,8 +79,34 @@ function createRowChild(row,r){
       // childDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
       console.log(row);
       var data = row.querySelectorAll('p');
+      const rowChildDiv = document.createElement('div');
+      rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
+
+      const anchor = document.createElement('a');
+
+      rowChildDiv.appendChild(anchor);
+
+      const fadeInDiv = document.createElement('div');
+      fadeInDiv.classList.add('box', 'wow', 'fadeInLeft');
+      fadeInDiv.setAttribute('data-wow-delay',"0.3s");
+
+      const boxContentDiv = document.createElement('div');
+      boxContentDiv.classList.add('box-content');
+      
+      const iconSpan = document.createElement('span');
+      iconSpan.classList.add('iki-icons', 'icon-connect');
+
+      const textSpan = document.createElement('span');
+
+      anchor.appendChild(fadeInDiv);
+      fadeInDiv.appendChild(boxContentDiv);
+      boxContentDiv.appendChild(iconSpan);
+      boxContentDiv.appendChild(textSpan);
+
       for(let i=0;i<data.length;i++){
-        console.log(data[i]);
+          
+        
+
       }
 
   }
