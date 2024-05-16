@@ -326,9 +326,6 @@ function loadScripts() {
     var slickScript = document.createElement('script')
     slickScript.setAttribute("src","/scripts/slick.min.js");
 
-    var ikifooterScript = document.createElement('script')
-    ikifooterScript.setAttribute("src","/scripts/ikifooter.js");
-
     var mainElement = document.querySelector('main');
     var headElement =  document.querySelector('head');
     var bodyElement = document.querySelector('body');
@@ -336,6 +333,5 @@ function loadScripts() {
     bodyElement.appendChild(bundleScript);
     bodyElement.appendChild(ikijsScript);
     bodyElement.appendChild(ikiloginjsScript);
-    bodyElement.appendChild(ikifooterScript);
 
 }

@@ -126,9 +126,13 @@ export default function decorate(block){
 
             fixFirstDiv(block.children.length);
 
+            var ikifooterScript = document.createElement('script')
+            ikifooterScript.setAttribute("src","/scripts/ikifooter.js");
+
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
             mainjsScript.setAttribute('defer',true);
+            document.body.appendChild(ikifooterScript); 
             document.body.appendChild(mainjsScript); 
 
         }).catch(error=>{
