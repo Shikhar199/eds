@@ -440,7 +440,7 @@ function createLi(iconClass, data, link){
     productAnchor.setAttribute('href', link);
 
     const icon = document.createElement('i');
-    icon.classList(iconClass);
+    icon.classList.add(iconClass);
 
     const pTag = document.createElement('p');
     pTag.textContent = data;
