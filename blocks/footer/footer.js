@@ -169,7 +169,7 @@ function createRowChild(row,r){
 
     emailCheckerDiv.appendChild(emailCheckerLabel);
 
-    const input1 = document.createTextNode('input');
+    const input1 = document.createElement('input');
     input1.setAttribute('type','text');
     input1.id = 'email64zxca';
     input1.setAttribute('name','email64zxc');
@@ -185,26 +185,26 @@ function createRowChild(row,r){
     submitBtn.setAttribute('type', 'submit');
     submitBtn.classList.add('iki-sub-btn', 'bg-topaz-medium');
 
-    const input2 = document.createTextNode('input');
+    const input2 = document.createElement('input');
     input2.setAttribute('type', 'hidden');
     input2.setAttribute('value','infysp');
     input2.id='sptextiki';
     input2.setAttribute('name', 'sptext');
 
-    const input3 = document.createTextNode('input');
+    const input3 = document.createElement('input');
     input3.setAttribute('type', 'hidden');
     input3.setAttribute('name', 'camFormName');
     input3.setAttribute('value', 'connect-iki');
 
-    const input4 = document.createTextNode('input');
+    const input4 = document.createElement('input');
     input4.setAttribute('type', 'hidden');
     input4.setAttribute('name', 'camId');
 
-    const input5 = document.createTextNode('input');
+    const input5 = document.createElement('input');
     input5.setAttribute('type', 'hidden');
     input4.setAttribute('name', 'camCustId');
 
-    const input6 = document.createTextNode('input');
+    const input6 = document.createElement('input');
     input6.setAttribute('type', 'hidden');
     input6.setAttribute('name', 'Source');
     input6.setAttribute('value', 'IKI Footer Subscribe');
