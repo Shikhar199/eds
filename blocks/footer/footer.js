@@ -68,6 +68,9 @@ export default async function decorate(block) {
       rowDiv.appendChild(child);
   })
 
+  footer.appendChild(firstArticle);
+  firstArticle.appendChild(containerFluidDiv);
+  containerFluidDiv.appendChild(rowDiv);
 
   console.log("ROWDIV", rowDiv);
 
