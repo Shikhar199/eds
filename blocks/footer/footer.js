@@ -228,7 +228,7 @@ function createRowChild(row,r){
     contactForm.appendChild(input6);
     contactForm.appendChild(fieldset);
 
-    const thankYouDiv = document.createElementNS('div');
+    const thankYouDiv = document.createElement('div');
     thankYouDiv.id='thankyousub';
     thankYouDiv.style.display = 'none';
     thankYouDiv.style.padding = '25px';
