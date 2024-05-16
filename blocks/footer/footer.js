@@ -133,6 +133,9 @@ function createRowChild(row,r){
 
       updateAttributes(data, anchor, textSpan);
 
+      const fieldset = createFieldSet();
+      console.log("FieldSet", fieldset);
+
       return rowChildDiv;
 
   } else if(r==2){
