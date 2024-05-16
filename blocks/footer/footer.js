@@ -72,6 +72,10 @@ export default async function decorate(block) {
   firstArticle.appendChild(containerFluidDiv);
   containerFluidDiv.appendChild(rowDiv);
 
+  var parent = document.querySelector('main');
+  const footerContainer = document.querySelector('.footer-container');
+  parent.replaceChild(xfDiv, footerContainer); 
+
   console.log("ROWDIV", rowDiv);
 
 }
