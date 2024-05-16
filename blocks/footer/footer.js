@@ -301,7 +301,7 @@ function createRowChild(row,r){
     list.classList.add('bg-topaz-dark');
 
     for(let i=0;i<4;i++){
-      var liEle=document.createElement('li');
+      var liEle;
         if(i==0){
           liEle = createLi('icon-apple', data[0].textContent.trim(), data[1].textContent.trim());
         } else if(i==1){
@@ -448,5 +448,7 @@ function createLi(iconClass, data, link){
     li.appendChild(productAnchor);
     productAnchor.appendChild(icon);
     productAnchor.appendChild(pTag);
+
+    return li;
 
 }
