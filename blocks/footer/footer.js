@@ -306,58 +306,58 @@ function createRowChild(row,r){
 
     return rowChildDiv;
 
-  } else if(r==3){
-    const rowChildDiv = document.createElement('div');
-    rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box', 'podcast-box-link');
-    rowChildDiv.id = 'sub-podcasts';
+  // } else if(r==3){
+  //   const rowChildDiv = document.createElement('div');
+  //   rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box', 'podcast-box-link');
+  //   rowChildDiv.id = 'sub-podcasts';
 
-    const tootltipSpan = document.createElement('span');
-    tootltipSpan.classList.add('tooltip-content', 'clearfix');
+  //   const tootltipSpan = document.createElement('span');
+  //   tootltipSpan.classList.add('tooltip-content', 'clearfix');
 
-    const list = document.createElement('ul');
-    list.classList.add('bg-topaz-dark');
+  //   const list = document.createElement('ul');
+  //   list.classList.add('bg-topaz-dark');
 
-    for(let i=0;i<4;i++){
-      var liEle;
-        if(i==0){
-          liEle = createLi('icon-apple', data[0].textContent.trim(), data[1].textContent.trim());
-        } else if(i==1){
-          liEle = createLi('icon-google', data[2].textContent.trim(), data[3].textContent.trim());
-        } else if(i==2){
-          liEle = createLi('icon-spotify', data[4].textContent.trim(), data[5].textContent.trim());
-        } else if(i==3){
-          liEle = createLi('icon-sound-cloud', data[6].textContent.trim(), data[7].textContent.trim());
-        }
-        list.appendChild(liEle);  
-    }
-    rowChildDiv.appendChild(tootltipSpan);
-    tootltipSpan.appendChild(list);
+  //   for(let i=0;i<4;i++){
+  //     var liEle;
+  //       if(i==0){
+  //         liEle = createLi('icon-apple', data[0].textContent.trim(), data[1].textContent.trim());
+  //       } else if(i==1){
+  //         liEle = createLi('icon-google', data[2].textContent.trim(), data[3].textContent.trim());
+  //       } else if(i==2){
+  //         liEle = createLi('icon-spotify', data[4].textContent.trim(), data[5].textContent.trim());
+  //       } else if(i==3){
+  //         liEle = createLi('icon-sound-cloud', data[6].textContent.trim(), data[7].textContent.trim());
+  //       }
+  //       list.appendChild(liEle);  
+  //   }
+  //   rowChildDiv.appendChild(tootltipSpan);
+  //   tootltipSpan.appendChild(list);
 
-    // create anchor
+  //   // create anchor
 
-    const anchor = document.createElement('a');
-    anchor.classList.add('box', 'wow', 'fadeInLeft');
-    anchor.setAttribute('data-wow-delay', '1.2s');
-    anchor.href = 'javascript:void(0);'
-    anchor.setAttribute('title', data[8].textContent.trim());
-    anchor.setAttribute('aria-label', data[8].textContent.trim());
+  //   const anchor = document.createElement('a');
+  //   anchor.classList.add('box', 'wow', 'fadeInLeft');
+  //   anchor.setAttribute('data-wow-delay', '1.2s');
+  //   anchor.href = 'javascript:void(0);'
+  //   anchor.setAttribute('title', data[8].textContent.trim());
+  //   anchor.setAttribute('aria-label', data[8].textContent.trim());
 
-    const boxContentDiv = document.createElement('div');
-    boxContentDiv.classList.add('box-content');
+  //   const boxContentDiv = document.createElement('div');
+  //   boxContentDiv.classList.add('box-content');
     
-    const iconSpan = document.createElement('span');
-    iconSpan.classList.add('iki-icons', 'icon-podcasts');
+  //   const iconSpan = document.createElement('span');
+  //   iconSpan.classList.add('iki-icons', 'icon-podcasts');
 
-    const textSpan = document.createElement('span');
-    textSpan.textContent = data[8].textContent.trim();
+  //   const textSpan = document.createElement('span');
+  //   textSpan.textContent = data[8].textContent.trim();
 
-    anchor.appendChild(boxContentDiv);
-    boxContentDiv.appendChild(iconSpan);
-    boxContentDiv.appendChild(textSpan);
+  //   anchor.appendChild(boxContentDiv);
+  //   boxContentDiv.appendChild(iconSpan);
+  //   boxContentDiv.appendChild(textSpan);
 
-    rowChildDiv.appendChild(anchor);
+  //   rowChildDiv.appendChild(anchor);
 
-    return rowChildDiv;
+  //   return rowChildDiv;
   // } else if(r==4){
   //   const rowChildDiv = document.createElement('div');
   //   rowChildDiv.classList.add('col-lg-2', 'col-md-3', 'col-sm-4', 'col-12', 'col-xs-12');
