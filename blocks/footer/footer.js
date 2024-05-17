@@ -152,159 +152,159 @@ function createRowChild(row,r){
 
       return rowChildDiv;
 
-  } else if(r==2){
-    const rowChildDiv = document.createElement('div');
-    rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box', 'podcast-box-link');
-    rowChildDiv.id = 'subscribeinsights';
+  // } else if(r==2){
+  //   const rowChildDiv = document.createElement('div');
+  //   rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box', 'podcast-box-link');
+  //   rowChildDiv.id = 'subscribeinsights';
 
-    // create span first child of rowchoilddiv
-    const span = document.createElement('span');
-    span.classList.add('tooltip-content', 'clearfix');
+  //   // create span first child of rowchoilddiv
+  //   const span = document.createElement('span');
+  //   span.classList.add('tooltip-content', 'clearfix');
 
-    const subDiv = document.createElement('div');
-    subDiv.classList.add('sub-ins', 'bg-topaz-dark');
+  //   const subDiv = document.createElement('div');
+  //   subDiv.classList.add('sub-ins', 'bg-topaz-dark');
 
-    const formHeading = document.createElement('h4');
-    formHeading.classList.add('h4-head', 'fontweight400');
+  //   const formHeading = document.createElement('h4');
+  //   formHeading.classList.add('h4-head', 'fontweight400');
 
-    const contactForm = document.createElement('form');
-    contactForm.id = "subscribeEmail";
-    contactForm.setAttribute('name', 'subscribeEmail');
-    contactForm.setAttribute('onsubmit', 'return validateikisub(this);');
-    contactForm.setAttribute('method','post');
+  //   const contactForm = document.createElement('form');
+  //   contactForm.id = "subscribeEmail";
+  //   contactForm.setAttribute('name', 'subscribeEmail');
+  //   contactForm.setAttribute('onsubmit', 'return validateikisub(this);');
+  //   contactForm.setAttribute('method','post');
 
-    //Email checker div
+  //   //Email checker div
 
-    const emailCheckerDiv = document.createElement('div');
-    emailCheckerDiv.classList.add('email-checker');
-    emailCheckerDiv.id = 'email64zxca-container';
-    emailCheckerDiv.setAttribute('aria-hidden', 'true');
+  //   const emailCheckerDiv = document.createElement('div');
+  //   emailCheckerDiv.classList.add('email-checker');
+  //   emailCheckerDiv.id = 'email64zxca-container';
+  //   emailCheckerDiv.setAttribute('aria-hidden', 'true');
 
-    const emailCheckerLabel = document.createElement('label');
-    emailCheckerLabel.setAttribute('label','email64zxca');
-    emailCheckerLabel.style.boxSizing = 'border-box';
+  //   const emailCheckerLabel = document.createElement('label');
+  //   emailCheckerLabel.setAttribute('label','email64zxca');
+  //   emailCheckerLabel.style.boxSizing = 'border-box';
 
-    emailCheckerDiv.appendChild(emailCheckerLabel);
+  //   emailCheckerDiv.appendChild(emailCheckerLabel);
 
-    const input1 = document.createElement('input');
-    input1.setAttribute('type','text');
-    input1.id = 'email64zxca';
-    input1.setAttribute('name','email64zxc');
-    input1.setAttribute('tabindex', '-1');
-    input1.setAttribute('autocomplete', 'backup-email');
-    input1.setAttribute('placeholder','Your company email');
+  //   const input1 = document.createElement('input');
+  //   input1.setAttribute('type','text');
+  //   input1.id = 'email64zxca';
+  //   input1.setAttribute('name','email64zxc');
+  //   input1.setAttribute('tabindex', '-1');
+  //   input1.setAttribute('autocomplete', 'backup-email');
+  //   input1.setAttribute('placeholder','Your company email');
 
-    const errorMsg = document.createElement('p');
-    errorMsg.id = 'errormsgiki';
-    errorMsg.style.fontSize = '14px';
+  //   const errorMsg = document.createElement('p');
+  //   errorMsg.id = 'errormsgiki';
+  //   errorMsg.style.fontSize = '14px';
 
-    const submitBtn = document.createElement('button');
-    submitBtn.setAttribute('type', 'submit');
-    submitBtn.classList.add('iki-sub-btn', 'bg-topaz-medium');
+  //   const submitBtn = document.createElement('button');
+  //   submitBtn.setAttribute('type', 'submit');
+  //   submitBtn.classList.add('iki-sub-btn', 'bg-topaz-medium');
 
-    const input2 = document.createElement('input');
-    input2.setAttribute('type', 'hidden');
-    input2.setAttribute('value','infysp');
-    input2.id='sptextiki';
-    input2.setAttribute('name', 'sptext');
+  //   const input2 = document.createElement('input');
+  //   input2.setAttribute('type', 'hidden');
+  //   input2.setAttribute('value','infysp');
+  //   input2.id='sptextiki';
+  //   input2.setAttribute('name', 'sptext');
 
-    const input3 = document.createElement('input');
-    input3.setAttribute('type', 'hidden');
-    input3.setAttribute('name', 'camFormName');
-    input3.setAttribute('value', 'connect-iki');
+  //   const input3 = document.createElement('input');
+  //   input3.setAttribute('type', 'hidden');
+  //   input3.setAttribute('name', 'camFormName');
+  //   input3.setAttribute('value', 'connect-iki');
 
-    const input4 = document.createElement('input');
-    input4.setAttribute('type', 'hidden');
-    input4.setAttribute('name', 'camId');
+  //   const input4 = document.createElement('input');
+  //   input4.setAttribute('type', 'hidden');
+  //   input4.setAttribute('name', 'camId');
 
-    const input5 = document.createElement('input');
-    input5.setAttribute('type', 'hidden');
-    input4.setAttribute('name', 'camCustId');
+  //   const input5 = document.createElement('input');
+  //   input5.setAttribute('type', 'hidden');
+  //   input4.setAttribute('name', 'camCustId');
 
-    const input6 = document.createElement('input');
-    input6.setAttribute('type', 'hidden');
-    input6.setAttribute('name', 'Source');
-    input6.setAttribute('value', 'IKI Footer Subscribe');
+  //   const input6 = document.createElement('input');
+  //   input6.setAttribute('type', 'hidden');
+  //   input6.setAttribute('name', 'Source');
+  //   input6.setAttribute('value', 'IKI Footer Subscribe');
 
-    const fieldset = createFieldSet();
-    console.log("FieldSet", fieldset);
+  //   const fieldset = createFieldSet();
+  //   console.log("FieldSet", fieldset);
 
-    rowChildDiv.appendChild(span);
-    span.appendChild(subDiv);
-    subDiv.appendChild(formHeading);
-    subDiv.appendChild(contactForm);
+  //   rowChildDiv.appendChild(span);
+  //   span.appendChild(subDiv);
+  //   subDiv.appendChild(formHeading);
+  //   subDiv.appendChild(contactForm);
 
-    contactForm.appendChild(emailCheckerDiv);
-    contactForm.appendChild(input1);
-    contactForm.appendChild(errorMsg);
-    contactForm.appendChild(submitBtn);
-    contactForm.appendChild(input2);
-    contactForm.appendChild(input3);
-    contactForm.appendChild(input4);
-    contactForm.appendChild(input5);
-    contactForm.appendChild(input6);
-    contactForm.appendChild(fieldset);
+  //   contactForm.appendChild(emailCheckerDiv);
+  //   contactForm.appendChild(input1);
+  //   contactForm.appendChild(errorMsg);
+  //   contactForm.appendChild(submitBtn);
+  //   contactForm.appendChild(input2);
+  //   contactForm.appendChild(input3);
+  //   contactForm.appendChild(input4);
+  //   contactForm.appendChild(input5);
+  //   contactForm.appendChild(input6);
+  //   contactForm.appendChild(fieldset);
 
-    const thankYouDiv = document.createElement('div');
-    thankYouDiv.id='thankyousub';
-    thankYouDiv.style.display = 'none';
-    thankYouDiv.style.padding = '25px';
+  //   const thankYouDiv = document.createElement('div');
+  //   thankYouDiv.id='thankyousub';
+  //   thankYouDiv.style.display = 'none';
+  //   thankYouDiv.style.padding = '25px';
 
-    const ptag = document.createElement('p');
-    ptag.className = ''; 
-    var strong = document.createElement('strong');
+  //   const ptag = document.createElement('p');
+  //   ptag.className = ''; 
+  //   var strong = document.createElement('strong');
 
-    ptag.appendChild(strong);
+  //   ptag.appendChild(strong);
 
-    thankYouDiv.appendChild(ptag);
+  //   thankYouDiv.appendChild(ptag);
 
-    const blindIkiDiv = document.createElement('div');
-    blindIkiDiv.id = 'blindiki';
+  //   const blindIkiDiv = document.createElement('div');
+  //   blindIkiDiv.id = 'blindiki';
 
-    subDiv.appendChild(thankYouDiv);
-    subDiv.appendChild(blindIkiDiv);
+  //   subDiv.appendChild(thankYouDiv);
+  //   subDiv.appendChild(blindIkiDiv);
 
-    // create anchor
+  //   // create anchor
 
-    const anchor = document.createElement('a');
-    anchor.classList.add('box', 'wow', 'fadeInLeft');
-    anchor.setAttribute('data-wow-delay', '0.9s');
-    anchor.style.opacity = '1';
-    anchor.style.transform = 'scale3d(1,1,1)';
+  //   const anchor = document.createElement('a');
+  //   anchor.classList.add('box', 'wow', 'fadeInLeft');
+  //   anchor.setAttribute('data-wow-delay', '0.9s');
+  //   anchor.style.opacity = '1';
+  //   anchor.style.transform = 'scale3d(1,1,1)';
 
-    const boxContentDiv = document.createElement('div');
-    boxContentDiv.classList.add('box-content');
+  //   const boxContentDiv = document.createElement('div');
+  //   boxContentDiv.classList.add('box-content');
     
-    const iconSpan = document.createElement('span');
-    iconSpan.classList.add('iki-icons', 'icon-insight');
+  //   const iconSpan = document.createElement('span');
+  //   iconSpan.classList.add('iki-icons', 'icon-insight');
 
-    const textSpan = document.createElement('span');
+  //   const textSpan = document.createElement('span');
 
-    anchor.appendChild(boxContentDiv);
-    boxContentDiv.appendChild(iconSpan);
-    boxContentDiv.appendChild(textSpan);
+  //   anchor.appendChild(boxContentDiv);
+  //   boxContentDiv.appendChild(iconSpan);
+  //   boxContentDiv.appendChild(textSpan);
 
-    rowChildDiv.appendChild(anchor);
+  //   rowChildDiv.appendChild(anchor);
 
-    for(let i=0;i<data.length;i++){
-      if(i==0){
-          formHeading.textContent = data[0].textContent.trim();
-      } else if(i==1){
-          contactForm.setAttribute('action',data[1].textContent.trim());
-      } else if(i==2){
-          emailCheckerLabel.textContent = data[2].textContent.trim();
-      } else if(i==3){
-          submitBtn.textContent = data[3].textContent.trim();
-      } else if(i==4){
-          strong.textContent = data[4].textContent.trim();
-      } else if(i==5){
-          anchor.setAttribute('title', data[5].textContent.trim());
-          anchor.setAttribute('aria-label', data[5].textContent.trim());
-          textSpan.textContent = data[5].textContent.trim()
-      }
-    }
+  //   for(let i=0;i<data.length;i++){
+  //     if(i==0){
+  //         formHeading.textContent = data[0].textContent.trim();
+  //     } else if(i==1){
+  //         contactForm.setAttribute('action',data[1].textContent.trim());
+  //     } else if(i==2){
+  //         emailCheckerLabel.textContent = data[2].textContent.trim();
+  //     } else if(i==3){
+  //         submitBtn.textContent = data[3].textContent.trim();
+  //     } else if(i==4){
+  //         strong.textContent = data[4].textContent.trim();
+  //     } else if(i==5){
+  //         anchor.setAttribute('title', data[5].textContent.trim());
+  //         anchor.setAttribute('aria-label', data[5].textContent.trim());
+  //         textSpan.textContent = data[5].textContent.trim()
+  //     }
+  //   }
 
-    return rowChildDiv;
+  //   return rowChildDiv;
 
   // } else if(r==3){
   //   const rowChildDiv = document.createElement('div');
