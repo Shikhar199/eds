@@ -80,10 +80,6 @@ export default async function decorate(block) {
     secondArticle.appendChild(firstArticleChild);
     firstArticleChild.appendChild(rowDiv2);
 
-    const copyRightFooter = createCopyRightFooter();
-
-    secondArticle.appendChild(copyRightFooter);
-
   [...block.children].forEach((row,r)=>{
       const child = createRowChild(row,r);
       if(r<4){
