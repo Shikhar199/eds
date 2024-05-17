@@ -413,7 +413,7 @@ function createLinksList(ulclass1, ulclass2, data, heading, r){
             anchor.setAttribute('title',data[i+1].textContent.trim());
             anchor.setAttribute('target', '_blank');
             anchor.setAttribute('href', data[i+2].textContent.trim());
-            anchor.relList.add('rel', 'noopener noreferrer');
+            anchor.relList.add('rel', 'noopener', 'noreferrer');
 
             const img = document.createElement('img');
             img.setAttribute('src', data[i].querySelector('picture').querySelector('img').getAttribute('src'));
