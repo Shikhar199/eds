@@ -367,6 +367,7 @@ function createRowChild(row,r){
 
     const list = createLinksList('list-unstyled', 'footer-txt', data, heading)
     console.log(list);
+    return rowChildDiv; 
   }
 }
 
