@@ -74,6 +74,9 @@ export default async function decorate(block) {
     const rowDiv2 = document.createElement('div');
     rowDiv2.classList.add('row');
 
+    const clearfixDiv = document.createElement('div');
+    clearfixDiv.classList.add('clearfix', 'visible-sm');
+
     secondArticle.appendChild(firstArticleChild);
     firstArticleChild.appendChild(rowDiv2);
 
@@ -90,6 +93,14 @@ export default async function decorate(block) {
       }
       
   })
+
+  const divToRemove = document.querySelector('div[data-block-name="footer"]');
+  if (divToRemove) {
+    // Remove the div from the DOM
+      divToRemove.remove();
+  }
+
+  rowDiv2.insertBefore(clearfixDiv, rowDiv2.children[3]);
 
   footer.appendChild(firstArticle);
   footer.appendChild(secondArticle);
