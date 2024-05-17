@@ -369,6 +369,7 @@ function createRowChild(row,r){
     console.log(list);
 
     rowChildDiv.appendChild(heading);
+    rowChildDiv.appendChild(list);
 
     return rowChildDiv; 
   }
