@@ -365,17 +365,31 @@ function createRowChild(row,r){
     const heading = document.createElement('h3');
     heading.classList.add('ftr-head', 'mt-xs-20');
 
-    for(let i=0;i<data.length;i++){
-      console.log(data[i].textContent.trim());
-    }
-
-    createLinksList('list-unstyled footer-txt')
+    const list = createLinksList('list-unstyled', 'footer-txt', data, heading)
+    console.log(list);
   }
 }
 
-function createLinksList(ulclass){
+function createLinksList(ulclass1, ulclass2, data, heading){
     const unorderedList = document.createElement('ul');
-    unorderedList.classList.add(ulclass); 
+    unorderedList.classList.add(ulclass1, ulclass2);
+    var li="";
+    for(let i=0;i<data.length;i++){
+        if(i==0){
+            heading.textContent = data[i].textContent.trim();
+        } else if(i%2==1){
+            li = document.createElement('li');
+            const anchor = document.createElement('a');
+            anchor.textContent = data[i].textContent.trim();
+            anchor.setAttribute('title',data[i].textContent.trim());
+            anchor.setAttribute('href', data[i+1].textContent.trim());
+            li.appendChild(anchor);
+        }
+    }
+    if(li!==""){
+        unorderedList.appendChild(li);
+    }
+    return unorderedList;
 }
 
 function updateAttributes(data, anchor, textSpan){
