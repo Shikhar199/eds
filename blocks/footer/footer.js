@@ -376,18 +376,20 @@ function createRowChild(row,r){
 
     return rowChildDiv; 
   } else if(r==8){
-      // const rowChildDiv = document.createElement('div');
-      // rowChildDiv.classList.add('col-lg-2', 'col-md-6', 'col-sm-6', 'col-12', 'col-xs-12');
+      const rowChildDiv = document.createElement('div');
+      rowChildDiv.classList.add('col-lg-2', 'col-md-6', 'col-sm-6', 'col-12', 'col-xs-12');
 
-      // const heading = document.createElement('h3');
-      // heading.classList.add('ftr-head', 'mt-sm-20');
+      const heading = document.createElement('h3');
+      heading.classList.add('ftr-head', 'mt-sm-20');
 
-      // const list = createLinksList('list-inline', 'footer-txt', data, heading)
+      const list = createLinksList('list-inline', 'footer-txt', data, heading, r)
 
       // rowChildDiv.appendChild(heading);
       // rowChildDiv.appendChild(list);
 
       // return rowChildDiv; 
+      const firstImg = document.createElement('img');
+                    firstImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
       console.log(data);
       for(let i=0;i<data.length;i++){
           console.log(data[i].textContent.trim());
@@ -395,14 +397,42 @@ function createRowChild(row,r){
   }
 }
 
-function createLinksList(ulclass1, ulclass2, data, heading){
+function createLinksList(ulclass1, ulclass2, data, heading, r){
     const unorderedList = document.createElement('ul');
     unorderedList.classList.add(ulclass1, ulclass2);
-    var li="";
-    for(let i=0;i<data.length;i++){
+    if(r==8){
+      var li="";
+      for(let i=0;i<data.length;){
         if(i==0){
             heading.textContent = data[i].textContent.trim();
-        } else if(i%2==1){
+            i++;
+        } else {
+            li = document.createElement('li');
+
+            const anchor = document.createElement('a');
+            anchor.setAttribute('title',data[i+1].textContent.trim());
+            anchor.setAttribute('target', '_blank');
+            anchor.setAttribute('href', data[i+2].textContent.trim());
+            anchor.relList.add('rel', 'noopener noreferrer');
+
+            const img = document.createElement('img');
+            img.setAttribute('src', data[i].querySelector('picture').querySelector('img').getAttribute('src'));
+            img.width = '16';
+            img.height = '16';
+            img.setAttribute('alt', data[i+3]);
+
+            anchor.appendChild(img);
+            li.appendChild(anchor);
+            unorderedList.appendChild(li);
+            i = i+4;
+        }
+      }
+    } else {
+        var li="";
+        for(let i=0;i<data.length;i++){
+            if(i==0){
+                heading.textContent = data[i].textContent.trim();
+            } else if(i%2==1){
             li = document.createElement('li');
             const anchor = document.createElement('a');
             anchor.textContent = data[i].textContent.trim();
@@ -410,8 +440,11 @@ function createLinksList(ulclass1, ulclass2, data, heading){
             anchor.setAttribute('href', data[i+1].textContent.trim());
             li.appendChild(anchor);
             unorderedList.appendChild(li);
+          }
         }
     }
+
+
     return unorderedList;
 }
 
