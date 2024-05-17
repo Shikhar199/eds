@@ -63,6 +63,8 @@ export default async function decorate(block) {
   const rowDiv = document.createElement('div');
   rowDiv.classList.add('row');
 
+  containerFluidDiv.appendChild(rowDiv);
+
   [...block.children].forEach((row,r)=>{
       const child = createRowChild(row,r);
       rowDiv.appendChild(child);
@@ -70,7 +72,6 @@ export default async function decorate(block) {
 
   footer.appendChild(firstArticle);
   firstArticle.appendChild(containerFluidDiv);
-  containerFluidDiv.appendChild(rowDiv);
 
   var parent = document.querySelector('main');
   const footerContainer = document.querySelector('.footer-container');
