@@ -358,20 +358,20 @@ function createRowChild(row,r){
     rowChildDiv.appendChild(anchor);
 
     return rowChildDiv;
-  } else if(r==4){
-    const rowChildDiv = document.createElement('div');
-    rowChildDiv.classList.add('col-lg-2', 'col-md-3', 'col-sm-4', 'col-12', 'col-xs-12');
+  // } else if(r==4){
+  //   const rowChildDiv = document.createElement('div');
+  //   rowChildDiv.classList.add('col-lg-2', 'col-md-3', 'col-sm-4', 'col-12', 'col-xs-12');
 
-    const heading = document.createElement('h3');
-    heading.classList.add('ftr-head', 'mt-xs-20');
+  //   const heading = document.createElement('h3');
+  //   heading.classList.add('ftr-head', 'mt-xs-20');
 
-    const list = createLinksList('list-unstyled', 'footer-txt', data, heading)
-    console.log(list);
+  //   const list = createLinksList('list-unstyled', 'footer-txt', data, heading)
+  //   console.log(list);
 
-    rowChildDiv.appendChild(heading);
-    rowChildDiv.appendChild(list);
+  //   rowChildDiv.appendChild(heading);
+  //   rowChildDiv.appendChild(list);
 
-    return rowChildDiv; 
+  //   return rowChildDiv; 
   }
 }
 
