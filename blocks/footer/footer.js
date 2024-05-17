@@ -361,7 +361,7 @@ function createRowChild(row,r){
     rowChildDiv.appendChild(anchor);
 
     return rowChildDiv;
-  } else if(r==4||r==5||r==6){
+  } else if(r==4||r==5||r==6||r==7){
     const rowChildDiv = document.createElement('div');
     rowChildDiv.classList.add('col-lg-2', 'col-md-3', 'col-sm-4', 'col-12', 'col-xs-12');
 
