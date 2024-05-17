@@ -392,6 +392,7 @@ function createLinksList(ulclass1, ulclass2, data, heading){
             anchor.setAttribute('title',data[i].textContent.trim());
             anchor.setAttribute('href', data[i+1].textContent.trim());
             li.appendChild(anchor);
+            console.log(li);
         }
     }
     if(li!==""){
