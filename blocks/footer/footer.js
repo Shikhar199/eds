@@ -123,34 +123,34 @@ function createRowChild(row,r){
 
       return rowChildDiv;
 
-  } else if(r==1){
-      const rowChildDiv = document.createElement('div');
-      rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
+  // } else if(r==1){
+  //     const rowChildDiv = document.createElement('div');
+  //     rowChildDiv.classList.add('col-lg-3', 'col-md-3', 'col-sm-3', 'col-xs-12', 'text-center', 'p0', 'podcast-box');
 
-      const anchor = document.createElement('a');
+  //     const anchor = document.createElement('a');
 
-      rowChildDiv.appendChild(anchor);
+  //     rowChildDiv.appendChild(anchor);
 
-      const fadeInDiv = document.createElement('div');
-      fadeInDiv.classList.add('box', 'wow', 'fadeInLeft');
-      fadeInDiv.setAttribute('data-wow-delay',"0.6s");
+  //     const fadeInDiv = document.createElement('div');
+  //     fadeInDiv.classList.add('box', 'wow', 'fadeInLeft');
+  //     fadeInDiv.setAttribute('data-wow-delay',"0.6s");
 
-      const boxContentDiv = document.createElement('div');
-      boxContentDiv.classList.add('box-content');
+  //     const boxContentDiv = document.createElement('div');
+  //     boxContentDiv.classList.add('box-content');
       
-      const iconSpan = document.createElement('span');
-      iconSpan.classList.add('iki-icons', 'icon-request-expert');
+  //     const iconSpan = document.createElement('span');
+  //     iconSpan.classList.add('iki-icons', 'icon-request-expert');
 
-      const textSpan = document.createElement('span');
+  //     const textSpan = document.createElement('span');
 
-      anchor.appendChild(fadeInDiv);
-      fadeInDiv.appendChild(boxContentDiv);
-      boxContentDiv.appendChild(iconSpan);
-      boxContentDiv.appendChild(textSpan);
+  //     anchor.appendChild(fadeInDiv);
+  //     fadeInDiv.appendChild(boxContentDiv);
+  //     boxContentDiv.appendChild(iconSpan);
+  //     boxContentDiv.appendChild(textSpan);
 
-      updateAttributes(data, anchor, textSpan);
+  //     updateAttributes(data, anchor, textSpan);
 
-      return rowChildDiv;
+  //     return rowChildDiv;
 
   // } else if(r==2){
   //   const rowChildDiv = document.createElement('div');
