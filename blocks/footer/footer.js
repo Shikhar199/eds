@@ -92,9 +92,8 @@ export default async function decorate(block) {
         }
       } else if(r==9){
         const copyRightFooter = createCopyRightFooter(row);
-
         secondArticle.appendChild(copyRightFooter);
-      }else{
+      } else{
         if(typeof child !== 'undefined' && child!==null){
           rowDiv2.appendChild(child);
         }
@@ -623,7 +622,7 @@ function createCountryList(){
 }
 
 function createCopyRightFooter(row){
-
+    console.log(row);
     const data = row.querySelectorAll('p');
 
     const containerFluidDiv = document.createElement('div');
