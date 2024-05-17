@@ -375,7 +375,18 @@ function createRowChild(row,r){
     rowChildDiv.appendChild(list);
 
     return rowChildDiv; 
-  } 
+  } else if(r==8){
+      const rowChildDiv = document.createElement('div');
+      rowChildDiv.classList.add('col-lg-2', 'col-md-6', 'col-sm-6', 'col-12', 'col-xs-12');
+
+      const heading = document.createElement('h3');
+      heading.classList.add('ftr-head', 'mt-sm-20');
+
+      const list = createLinksList('list-inline', 'footer-txt', data, heading)
+
+      rowChildDiv.appendChild(heading);
+      rowChildDiv.appendChild(list);
+  }
 }
 
 function createLinksList(ulclass1, ulclass2, data, heading){
