@@ -65,11 +65,27 @@ export default async function decorate(block) {
 
   containerFluidDiv.appendChild(rowDiv);
 
+    // Create second article
+
+    const secondArticle = document.createElement('article');
+    const firstArticleChild = document.createElement('div');
+    firstArticleChild.classList.add('container', 'pt50', 'pb50');
+  
+    const rowDiv2 = document.createElement('div');
+    rowDiv2.classList.add('row');
+
   [...block.children].forEach((row,r)=>{
       const child = createRowChild(row,r);
-      if(typeof child !== 'undefined' && child!==null){
-        rowDiv.appendChild(child);
+      if(r<4){
+        if(typeof child !== 'undefined' && child!==null){
+          rowDiv.appendChild(child);
+        }
+      } else{
+        if(typeof child !== 'undefined' && child!==null){
+          rowDiv2.appendChild(child);
+        }
       }
+      
   })
 
   footer.appendChild(firstArticle);
@@ -80,16 +96,6 @@ export default async function decorate(block) {
   parent.replaceChild(xfDiv, footerContainer); 
 
   console.log("ROWDIV", rowDiv);
-
-
-  // Create second article
-
-  const secondArticle = document.createElement('article');
-  const firstArticleChild = document.createElement('div');
-  firstArticleChild.classList.add('container', 'pt50', 'pb50');
-
-  const rowDiv2 = document.createElement('div');
-  rowDiv2.classList.add('row');
 
 }
 
