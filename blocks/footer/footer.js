@@ -90,7 +90,11 @@ export default async function decorate(block) {
         if(typeof child !== 'undefined' && child!==null){
           rowDiv.appendChild(child);
         }
-      } else{
+      } else if(r==9){
+        const copyRightFooter = createCopyRightFooter(row);
+
+        secondArticle.appendChild(copyRightFooter);
+      }else{
         if(typeof child !== 'undefined' && child!==null){
           rowDiv2.appendChild(child);
         }
@@ -618,7 +622,10 @@ function createCountryList(){
 
 }
 
-function createCopyRightFooter(){
+function createCopyRightFooter(row){
+
+    const data = row.querySelectorAll('p');
+
     const containerFluidDiv = document.createElement('div');
     containerFluidDiv.classList.add('container-fluid', 'ptb15', 'bg-white');
 
@@ -633,6 +640,7 @@ function createCopyRightFooter(){
 
     const pTag = document.createElement('p');
     pTag.classList.add('mb0');
+    pTag.textContent = data[0].textContent.trim();
 
     firstRowChild.appendChild(pTag);
 
@@ -648,6 +656,9 @@ function createCopyRightFooter(){
     const anchor = document.createElement('a');
     anchor.setAttribute('aria-haspopup','true'); 
     anchor.setAttribute('aria-expanded','false'); 
+    anchor.setAttribute('title', data[1].textContent.trim());
+    anchor.setAttribute('aria-label', data[2].textContent.trim());
+    anchor.textContent = data[1].textContent.trim();
     anchor.href = 'javascript:void(0);';
 
     const iconSpan = document.createElement('span');
