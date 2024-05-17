@@ -384,16 +384,11 @@ function createRowChild(row,r){
 
       const list = createLinksList('list-inline', 'footer-txt', data, heading, r)
 
-      // rowChildDiv.appendChild(heading);
-      // rowChildDiv.appendChild(list);
+      rowChildDiv.appendChild(heading);
+      rowChildDiv.appendChild(list);
 
-      // return rowChildDiv; 
-      const firstImg = document.createElement('img');
-                    firstImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
-      console.log(data);
-      for(let i=0;i<data.length;i++){
-          console.log(data[i].textContent.trim());
-      }
+      return rowChildDiv;
+    
   }
 }
 
