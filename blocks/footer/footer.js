@@ -123,7 +123,7 @@ function createRowChild(row,r){
       boxContentDiv.appendChild(textSpan);
 
       updateAttributes(data, anchor, textSpan);
-
+      console.log("RowchildDiv",rowChildDiv);
       return rowChildDiv;
   }
 
