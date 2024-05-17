@@ -80,6 +80,10 @@ export default async function decorate(block) {
     secondArticle.appendChild(firstArticleChild);
     firstArticleChild.appendChild(rowDiv2);
 
+    const copyRightFooter = createCopyRightFooter();
+
+    secondArticle.appendChild(copyRightFooter);
+
   [...block.children].forEach((row,r)=>{
       const child = createRowChild(row,r);
       if(r<4){
@@ -570,5 +574,103 @@ function createLi(iconClass, data, link){
     productAnchor.appendChild(pTag);
 
     return li;
+
+}
+
+function createCountryList(){
+    // Create the ul element
+    const ul = document.createElement('ul');
+    ul.classList.add('list-unstyled', 'country-align');
+
+    // Array of country data
+    const countries = [
+      { name: 'Australia', url: '/australia.html' },
+      { name: 'Austria', url: '/at-en/' },
+      { name: 'Belgium', url: '/be-en/' },
+      { name: 'Brazil', url: '/br/' },
+      { name: 'Bulgaria', url: '/bg-en/' },
+      { name: 'Canada', url: '/contact/country.html?region=Americas&subsidiary=Infosys#Canada' },
+      { name: 'Chile', url: '/contact/country.html?region=Americas&subsidiary=Infosys#Chile' },
+      { name: 'Costa Rica', url: '/contact/country.html?region=Americas&subsidiary=Infosys#Costa%2520rica' },
+      { name: 'Croatia', url: '/hr-en/' },
+      { name: 'Czech', url: '/cz-en/' },
+    ];
+
+    // Iterate over the countries array and create li elements
+    countries.forEach(country => {
+        // Create li element
+        const li = document.createElement('li');
+
+        // Create a element
+        const a = document.createElement('a');
+        a.href = country.url;
+        a.title = country.name;
+        a.textContent = country.name;
+
+        // Append a to li
+        li.appendChild(a);
+
+        // Append li to ul
+        ul.appendChild(li);
+    });
+
+  return ul;
+
+}
+
+function createCopyRightFooter(){
+    const containerFluidDiv = document.createElement('div');
+    containerFluidDiv.classList.add('container-fluid', 'ptb15', 'bg-white');
+
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container');
+
+    const rowDiv = document.createElement('div');
+    rowDiv.classList.add('row');
+
+    const firstRowChild = document.createElement('div');
+    firstRowChild.classList.add('col-lg-7', 'col-md-6', 'col-12', 'col-xs-12');
+
+    const pTag = document.createElement('p');
+    pTag.classList.add('mb0');
+
+    firstRowChild.appendChild(pTag);
+
+    const ParentCountryDiv = document.createElement('div');
+    ParentCountryDiv.classList.add('col-lg-5', 'col-md-6', 'col-12', 'col-xs-12');
+
+    const pullRightDiv = document.createElement('div');
+    pullRightDiv.classList.add('pull-right' ,'pull-left-xs', 'mt-xs-20');
+
+    const selectCountryDiv = document.createElement('div');
+    selectCountryDiv.classList.add('select-country');
+
+    const anchor = document.createElement('a');
+    anchor.setAttribute('aria-haspopup','true'); 
+    anchor.setAttribute('aria-expanded','false'); 
+    anchor.href = 'javascript:void(0);';
+
+    const iconSpan = document.createElement('span');
+    iconSpan.classList.add('icon-down-arrow');
+
+    selectCountryDiv.appendChild(anchor);
+    anchor.appendChild(iconSpan);
+
+    const optionCountryDiv = document.createElement('div');
+    optionCountryDiv.classList.add('option-country');
+
+    const countryList = createCountryList();
+
+    optionCountryDiv.appendChild(countryList);
+
+    ParentCountryDiv.appendChild(selectCountryDiv);
+    ParentCountryDiv.appendChild(optionCountryDiv);
+
+    rowDiv.appendChild(firstRowChild);
+    rowDiv.appendChild(ParentCountryDiv);
+    containerDiv.appendChild(rowDiv);
+    containerFluidDiv.appendChild(containerDiv);
+
+    return containerFluidDiv;
 
 }
