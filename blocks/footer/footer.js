@@ -74,6 +74,9 @@ export default async function decorate(block) {
     const rowDiv2 = document.createElement('div');
     rowDiv2.classList.add('row');
 
+    secondArticle.appendChild(firstArticleChild);
+    firstArticleChild.appendChild(rowDiv2);
+
   [...block.children].forEach((row,r)=>{
       const child = createRowChild(row,r);
       if(r<4){
@@ -89,6 +92,7 @@ export default async function decorate(block) {
   })
 
   footer.appendChild(firstArticle);
+  footer.appendChild(secondArticle);
   firstArticle.appendChild(containerFluidDiv);
 
   var parent = document.querySelector('main');
