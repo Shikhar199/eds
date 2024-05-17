@@ -78,6 +78,16 @@ export default async function decorate(block) {
 
   console.log("ROWDIV", rowDiv);
 
+
+  // Create second article
+
+  const secondArticle = document.createElement('article');
+  const firstArticleChild = document.createElement('div');
+  firstArticleChild.classList.add('container', 'pt50', 'pb50');
+
+  const rowDiv2 = document.createElement('div');
+  rowDiv2.classList.add('row');
+
 }
 
 function createRowChild(row,r){
@@ -348,7 +358,24 @@ function createRowChild(row,r){
     rowChildDiv.appendChild(anchor);
 
     return rowChildDiv;
+  } else if(r==4){
+    const rowChildDiv = document.createElement('div');
+    rowChildDiv.classList.add('col-lg-2', 'col-md-3', 'col-sm-4', 'col-12', 'col-xs-12');
+
+    const heading = document.createElement('h3');
+    heading.classList.add('ftr-head', 'mt-xs-20');
+
+    for(let i=0;i<data.length;i++){
+      console.log(data[i].textContent.trim());
+    }
+
+    createLinksList('list-unstyled footer-txt')
   }
+}
+
+function createLinksList(ulclass){
+    const unorderedList = document.createElement('ul');
+    unorderedList.classList.add(ulclass); 
 }
 
 function updateAttributes(data, anchor, textSpan){
