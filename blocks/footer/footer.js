@@ -67,6 +67,8 @@ export default async function decorate(block) {
 
   [...block.children].forEach((row,r)=>{
       const child = createRowChild(row,r);
+      console.log(child);
+      console.log(typeof child);
       rowDiv.appendChild(child);
   })
 
