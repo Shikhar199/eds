@@ -386,6 +386,8 @@ function createRowChild(row,r){
 
       rowChildDiv.appendChild(heading);
       rowChildDiv.appendChild(list);
+
+      return rowChildDiv; 
   }
 }
 
