@@ -339,7 +339,7 @@ export default function decorate(block){
         }
     }
 
-    
+    trackDivPosition();
 }
 
 
@@ -403,3 +403,21 @@ function createInsightsDiv(col, outerDivClass, firstSpanClass, anchorSpan1Class,
 
     return insightsDiv;
 }
+
+function trackDivPosition() {
+    var div = document.querySelector('.freeflowhtml');
+    var rect = div.getBoundingClientRect(); // Get the position of the div
+
+    // Log the initial position (before delay)
+    console.log(' Freeflow Initial position (x, y):', rect.left, ',', rect.top);
+
+    // Move the div after 5 seconds
+    setTimeout(function() {
+      div.style.top = '150px'; // Move the div 100px down
+      div.style.left = '150px'; // Move the div 100px right
+
+      // Log the position after the delay
+      var rectAfter = div.getBoundingClientRect();
+      console.log(' Freeflow Position after 5 seconds (x, y):', rectAfter.left, ',', rectAfter.top);
+    }, 10000); // 5 seconds delay
+  }
