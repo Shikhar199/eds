@@ -1,13 +1,5 @@
 export default function decorate(block){
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
-        import('/scripts/slick.min.js').then(() => {
-            console.log('Slick min js has been loaded');
-                import('/scripts/main.js').then(() =>{
-                    console.log('main js has been loaded');
-                
-
     console.log("Block from freeflow");
     console.log(block);
 
@@ -172,19 +164,6 @@ export default function decorate(block){
             bannerSlickDiv.appendChild(itemDiv);
         }
     })
-
-    }).catch(error=>{
-        console.error('Error loading Slick.js:', error);
-    })
-
-    
-    }).catch(error=>{
-        console.error('Error loading Slick.js:', error);
-    })
-
-    }).catch(error => {
-    console.error('Error loading jQuery:', error);
-    });
 
 }
 
