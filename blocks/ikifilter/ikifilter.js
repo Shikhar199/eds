@@ -132,8 +132,30 @@ export default function decorate(block){
         }
     })
 
+    
+      // Call the function to start tracking
+      trackDivPosition();
+
     loadScripts();
 }
+
+function trackDivPosition() {
+    var div = document.querySelector('.ikifilter-container');
+    var rect = div.getBoundingClientRect(); // Get the position of the div
+
+    // Log the initial position (before delay)
+    console.log('Initial position (x, y):', rect.left, ',', rect.top);
+
+    // Move the div after 5 seconds
+    setTimeout(function() {
+      div.style.top = '150px'; // Move the div 100px down
+      div.style.left = '150px'; // Move the div 100px right
+
+      // Log the position after the delay
+      var rectAfter = div.getBoundingClientRect();
+      console.log('Position after 5 seconds (x, y):', rectAfter.left, ',', rectAfter.top);
+    }, 5000); // 5 seconds delay
+  }
 
 function createInterestSection(arr,r,data){
 
