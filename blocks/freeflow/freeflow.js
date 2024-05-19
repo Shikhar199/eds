@@ -169,7 +169,7 @@ export default function decorate(block){
 }
 
 function trackDivPosition() {
-    var div = document.querySelector('.ikifilter-container');
+    var div = document.querySelector('.freeflow-container');
     var rect = div.getBoundingClientRect(); // Get the position of the div
 
     // Log the initial position (before delay)
