@@ -154,7 +154,7 @@ function trackDivPosition() {
       // Log the position after the delay
       var rectAfter = div.getBoundingClientRect();
       console.log('Position after 5 seconds (x, y):', rectAfter.left, ',', rectAfter.top);
-    }, 5000); // 5 seconds delay
+    }, 10000); // 5 seconds delay
   }
 
 function createInterestSection(arr,r,data){
