@@ -165,6 +165,32 @@ export default function decorate(block){
         }
     })
 
+    var ikijsScript = document.createElement('script')
+    ikijsScript.setAttribute("src","/blocks/iki/iki.js");
+
+    var ikiloginjsScript = document.createElement('script')
+    ikiloginjsScript.setAttribute("src","/blocks/ikilogin/ikilogin.js");
+
+    var bundleScript = document.createElement('script')
+    bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
+
+    var mainjsScript = document.createElement('script')
+    mainjsScript.setAttribute("src","/scripts/main.js");
+
+    var jqueryScript = document.createElement('script')
+    jqueryScript.setAttribute("src","/scripts/jquery.js");
+
+    var slickScript = document.createElement('script')
+    slickScript.setAttribute("src","/scripts/slick.min.js");
+
+    var mainElement = document.querySelector('main');
+    var headElement =  document.querySelector('head');
+    var bodyElement = document.querySelector('body');
+
+    bodyElement.appendChild(bundleScript);
+    bodyElement.appendChild(ikijsScript);
+    bodyElement.appendChild(ikiloginjsScript);
+
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
     mainjsScript.setAttribute('defer',true);
