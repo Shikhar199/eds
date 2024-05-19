@@ -132,7 +132,7 @@ export default function decorate(block){
         }
     })
 
-    // loadScripts();
+    loadScripts();
 }
 
 function createInterestSection(arr,r,data){
