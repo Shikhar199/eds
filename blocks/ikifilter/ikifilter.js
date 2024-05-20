@@ -135,8 +135,6 @@ export default function decorate(block){
     
       // Call the function to start tracking
       trackDivPosition();
-      document.querySelector('.ikifilter-container').style.top = '0';
-      document.querySelector('.ikifilter-container').style.left = '0';
 
     loadScripts();
 }
