@@ -339,7 +339,6 @@ export default function decorate(block){
         }
     }
 
-    trackDivPosition();
 }
 
 
