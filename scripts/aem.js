@@ -578,70 +578,33 @@ function buildBlock(blockName, content) {
  * Loads JS and CSS for a block.
  * @param {Element} block The block element
  */
-// async function loadBlock(block) {
-//   const status = block.dataset.blockStatus;
-//   if (status !== 'loading' && status !== 'loaded') {
-//     block.dataset.blockStatus = 'loading';
-//     const { blockName } = block.dataset;
-//     try {
-//       const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
-//       const decorationComplete = new Promise((resolve) => {
-//         (async () => {
-//           try {
-//             const mod = await import(
-//               `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
-//             );
-//             if (mod.default) {
-//               await mod.default(block);
-//             }
-//           } catch (error) {
-//             // eslint-disable-next-line no-console
-//             console.log(`failed to load module for ${blockName}`, error);
-//           }
-//           resolve();
-//         })();
-//       });
-//       await Promise.all([cssLoaded, decorationComplete]);
-//     } catch (error) {
-//       // eslint-disable-next-line no-console
-//       console.log(`failed to load block ${blockName}`, error);
-//     }
-//     block.dataset.blockStatus = 'loaded';
-//   }
-//   return block;
-// }
 async function loadBlock(block) {
   const status = block.dataset.blockStatus;
   if (status !== 'loading' && status !== 'loaded') {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
     try {
-      // Load CSS asynchronously
-      const cssLoaded = new Promise((resolve, reject) => {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`;
-        link.onload = () => resolve();
-        link.onerror = () => reject(new Error(`Failed to load CSS for ${blockName}`));
-        document.head.appendChild(link);
-      });
-
-      // Load JS asynchronously
-      const decorationComplete = (async () => {
-        try {
-          const mod = await import(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
-          if (mod.default) {
-            await mod.default(block);
+      const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
+      const decorationComplete = new Promise((resolve) => {
+        (async () => {
+          try {
+            const mod = await import(
+              `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
+            );
+            if (mod.default) {
+              await mod.default(block);
+            }
+          } catch (error) {
+            // eslint-disable-next-line no-console
+            console.log(`failed to load module for ${blockName}`, error);
           }
-        } catch (error) {
-          console.log(`Failed to load module for ${blockName}`, error);
-        }
-      })();
-
-      // Ensure CSS is applied before JS execution completes
+          resolve();
+        })();
+      });
       await Promise.all([cssLoaded, decorationComplete]);
     } catch (error) {
-      console.log(`Failed to load block ${blockName}`, error);
+      // eslint-disable-next-line no-console
+      console.log(`failed to load block ${blockName}`, error);
     }
     block.dataset.blockStatus = 'loaded';
   }

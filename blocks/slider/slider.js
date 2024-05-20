@@ -129,14 +129,9 @@ export default function decorate(block){
             var ikifooterScript = document.createElement('script')
             ikifooterScript.setAttribute("src","/scripts/ikifooter.js");
 
-            var slickScript = document.createElement('script')
-            slickScript.setAttribute("src","/scripts/slick.min.js");
-            slickScript.setAttribute('defer',true);
-
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
-            mainjsScript.setAttribute('defer',true);
-            document.body.appendChild(slickScript); 
+            mainjsScript.setAttribute('defer',true); 
             document.body.appendChild(ikifooterScript); 
             document.body.appendChild(mainjsScript); 
 
