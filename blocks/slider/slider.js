@@ -1,8 +1,8 @@
 export default function decorate(block){
     import('/scripts/jquery.js').then(($) => {
         console.log('jQuery has been loaded');
-        // import('/scripts/slick.min.js').then(() => {
-        //     console.log('Slick min js has been loaded');
+        import('/scripts/slick.min.js').then(() => {
+            console.log('Slick min js has been loaded');
 
             const mainElement = document.createElement('main');
 
@@ -140,9 +140,9 @@ export default function decorate(block){
             document.body.appendChild(ikifooterScript); 
             document.body.appendChild(mainjsScript); 
 
-        // }).catch(error=>{
-        //     console.error('Error loading Slick.js:', error);
-        // })
+        }).catch(error=>{
+            console.error('Error loading Slick.js:', error);
+        })
 
     }).catch(error => {
         console.error('Error loading jQuery:', error);
