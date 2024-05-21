@@ -168,6 +168,11 @@ export default function decorate(block){
     // document.querySelector('.freeflow-container').style.width = '100vw';
     // document.querySelector('.freeflow-container').style.height = '600px';
 
+    var mainjsScript = document.createElement('script')
+    mainjsScript.setAttribute("src","/scripts/main.js");
+    mainjsScript.setAttribute('defer',true);  
+    document.head.appendChild(mainjsScript);
+
     trackDivPosition();
 }
 
