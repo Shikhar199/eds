@@ -402,7 +402,7 @@ function createMobileNav(navbar, row){
   socialLinks.forEach(link => {
     const a = document.createElement('a');
     a.href = link.href;
-    a.onclick = new Function(link.onclick);
+    a.onclick = link.onclick;
     a.className = link.className;
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
