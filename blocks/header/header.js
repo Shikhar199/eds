@@ -355,7 +355,7 @@ function createNavMenuEnd(navbar){
 }
 
 function createMobileNav(navbar, row){
-
+  console.log(row);
   [...row.children].forEach((data,r)=>{
       console.log(data);
   })
