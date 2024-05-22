@@ -471,7 +471,7 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
     a.setAttribute('aria-label', 'Go to Infosys Home');
 
     // Create the img element
-    const img = document.createElement('img');
+    var img = document.createElement('img');
     img.alt = 'logo';
     img.className = 'img-fluid';
 
