@@ -375,7 +375,7 @@ function createMobileNav(navbar, row){
     {
         href: 'javascript:void(0)',
         className: 'social',
-        title: 'Go to Facebook',
+        title: pTags[1].textContent.trim(),
         iconClass: 'icon-facebook'
     },
     {
