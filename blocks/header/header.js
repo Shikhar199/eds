@@ -405,7 +405,7 @@ function createMobileNav(navbar, row){
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
     if(i==0){
         a.setAttribute('onclick',"var host = window.location.href;" + 
-          `var fbUrl = ${anchors[0].getAttribute('href')}.concat(encodeURIComponent(host)); ` + 
+          `var fbUrl = \'${anchors[0].getAttribute('href')}\'.concat(encodeURIComponent(host)); ` + 
           "var width = 500, height = 500; " +
           "var left = (window.screen.width / 2) - ((width / 2) + 10);" +
           "var top = (window.screen.height / 2) - ((height / 2) + 50);" +
