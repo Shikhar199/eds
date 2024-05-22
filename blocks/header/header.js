@@ -156,7 +156,7 @@ export default function decorate(block){
   containerDiv.classList.add('container');
 
   const collapseDiv = document.createElement('div');
-  collapseDiv.classList.add('collapse navbar-collapse');
+  collapseDiv.classList.add('collapse', 'navbar-collapse');
   collapseDiv.id = 'navbarSupportedContent';
 
 
