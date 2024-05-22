@@ -171,7 +171,7 @@ export default function decorate(block){
 
   const ul = createNavMenu(navbar);
 
-  const ul2 = createNavMenuEnd();
+  const ul2 = createNavMenuEnd(navbar);
 
   const mobileNavDiv = createMobileNav();
 
@@ -262,7 +262,7 @@ function createNavMenu(navbar){
   return ul;
 }
 
-function createNavMenuEnd(){
+function createNavMenuEnd(navbar){
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-end';
 
@@ -351,7 +351,7 @@ function createNavMenuEnd(){
   searchLi.appendChild(searchLink);
   ul.appendChild(searchLi);
 
-  document.querySelector('.navbar').appendChild(ul);
+  navbar.appendChild(ul);
 
   return ul;
 }
