@@ -159,12 +159,13 @@ export default function decorate(block){
   collapseDiv.classList.add('collapse', 'navbar-collapse');
   collapseDiv.id = 'navbarSupportedContent';
 
+  var mobileNavDiv;
 
   [...block.children].forEach((row,r)=>{
     if(r==0){
       createNavbarBrandAndToggleButton(containerDiv, row);
     } else if(r==1){
-      const mobileNavDiv = createMobileNav(navbar, row);
+      mobileNavDiv = createMobileNav(navbar, row);
     }
   })
 
