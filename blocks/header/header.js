@@ -365,8 +365,8 @@ function createMobileNav(navbar, row){
   socialWrapper.className = 'social-wraper';
 
   const anchors = row.querySelectorAll('a');
-  console.log("anchor1", anchors[0]);
-  console.log("anchor1", anchors[1]);
+  console.log("anchor1", anchors[0].getAttribute('href'));
+  console.log("anchor1", anchors[1].getAttribute('href'));
 
   const socialLinks = [
     {
