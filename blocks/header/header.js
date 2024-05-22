@@ -173,7 +173,7 @@ export default function decorate(block){
 
   const ul2 = createNavMenuEnd(navbar);
 
-  const mobileNavDiv = createMobileNav();
+  const mobileNavDiv = createMobileNav(navbar);
 
   const pTag = document.createElement('p');
   pTag.textContent = 'Copyright © 2023 Infosys Limited';
@@ -356,7 +356,7 @@ function createNavMenuEnd(navbar){
   return ul;
 }
 
-function createMobileNav(){
+function createMobileNav(navbar){
   const div = document.createElement('div');
   div.className = 'mobile-nav';
 
@@ -435,7 +435,7 @@ function createMobileNav(){
   button.appendChild(xCircle);
   div.appendChild(button);
 
-  document.querySelector('.navbar').appendChild(div);
+  navbar.appendChild(div);
 }
 
 function createNavbarBrandAndToggleButton(containerDiv, row){
