@@ -436,12 +436,17 @@ function createMobileNav(navbar){
   div.appendChild(button);
 
   navbar.appendChild(div);
+  return div;
 }
 
 function createNavbarBrandAndToggleButton(containerDiv, row){
 
   [...row.children].forEach((col,c)=>{
-    console.log(col.textContent.trim());
+    if(c==0){
+      console.log(col);
+    } else{
+      console.log(col.textContent.trim());
+    }
   })
     const a = document.createElement('a');
     a.className = 'navbar-brand';
