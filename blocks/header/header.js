@@ -404,7 +404,7 @@ function createMobileNav(navbar, row){
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
     if(i==0){
-        a.onclick = function() {
+        a.setAttribute('onclick',function() {
           var host = window.location.href; 
           var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&u='.concat(encodeURIComponent(host)); 
           var width = 500, height = 500; 
@@ -413,13 +413,13 @@ function createMobileNav(navbar, row){
           var popUp = window.open(fbUrl, 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
           popUp.focus(); 
           return false;
-        }
+        })
     } else if(i==1){
-        a.onclick = function() {
+        a.setAttribute('onclick',function() {
           twitterShare(window.location.href, encodeURIComponent(document.title));
-        }
+        })
     } else{
-        a.onclick = function() {
+        a.setAttribute('onclick',function() {
           var host = window.location.href; 
           var title = document.title; 
           var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host)); 
@@ -429,7 +429,7 @@ function createMobileNav(navbar, row){
           var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
           popUp.focus(); 
           return false;
-        }
+        })
     }
     socialWrapper.appendChild(a);
   });
