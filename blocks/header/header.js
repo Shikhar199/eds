@@ -357,6 +357,7 @@ function createNavMenuEnd(navbar){
 
 function createMobileNav(navbar, row){
   
+  console.log(row);
   const div = document.createElement('div');
   div.className = 'mobile-nav';
 
@@ -366,8 +367,6 @@ function createMobileNav(navbar, row){
   socialWrapper.className = 'social-wraper';
 
   const anchors = row.querySelectorAll('a');
-  console.log("anchor1", anchors[0].getAttribute('href'));
-  console.log("anchor1", anchors[1].getAttribute('href'));
 
   const socialLinks = [
     {
@@ -399,7 +398,6 @@ function createMobileNav(navbar, row){
   socialLinks.forEach((link,i) => {
     const a = document.createElement('a');
     a.href = link.href;
-    a.onclick = link.onclickfunc;
     a.className = link.className;
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
@@ -414,13 +412,11 @@ function createMobileNav(navbar, row){
           "return false;"
         )
     } else if(i==1){
-        a.setAttribute('onclick',function() {
-          twitterShare(window.location.href, encodeURIComponent(document.title));
-        })
+        a.setAttribute('onclick',"twitterShare(window.location.href, encodeURIComponent(document.title));")
     } else{
         a.setAttribute('onclick'," var host = window.location.href;" + 
           "var title = document.title;" +
-          "var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host));" +
+          `var liUrl = \'${anchors[1].getAttribute('href')}\'.concat(encodeURIComponent(host));` +
           "var width = 500, height = 500; var left = (window.screen.width / 2) - ((width / 2) + 10);" +
           "var top = (window.screen.height / 2) - ((height / 2) + 50);" + 
           "var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);" + 
