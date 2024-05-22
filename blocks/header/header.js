@@ -372,42 +372,18 @@ function createMobileNav(navbar, row){
   const socialLinks = [
     {
         href: 'javascript:void(0)',
-        onclickfunc : function() {
-          var host = window.location.href; 
-          var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&u='.concat(encodeURIComponent(host)); 
-          var width = 500, height = 500; 
-          var left = (window.screen.width / 2) - ((width / 2) + 10); 
-          var top = (window.screen.height / 2) - ((height / 2) + 50); 
-          var popUp = window.open(fbUrl, 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
-          popUp.focus(); 
-          return false;
-        },
         className: 'social',
         title: 'Go to Facebook',
         iconClass: 'icon-facebook'
     },
     {
         href: 'javascript:void(0)',
-        onclickfunc : function() {
-          twitterShare(window.location.href, encodeURIComponent(document.title));
-        },
         className: 'social',
         title: 'Go to Twitter',
         iconClass: 'icon-twitter'
     },
     {
         href: 'javascript:void(0)',
-        onclickfunc : function() {
-          var host = window.location.href; 
-          var title = document.title; 
-          var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host)); 
-          var width = 500, height = 500; 
-          var left = (window.screen.width / 2) - ((width / 2) + 10); 
-          var top = (window.screen.height / 2) - ((height / 2) + 50); 
-          var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
-          popUp.focus(); 
-          return false;
-        },
         className: 'social',
         title: 'Go to LinkedIn',
         iconClass: 'icon-linked-in'
@@ -420,13 +396,41 @@ function createMobileNav(navbar, row){
     }
   ];
 
-  socialLinks.forEach(link => {
+  socialLinks.forEach((link,i) => {
     const a = document.createElement('a');
     a.href = link.href;
     a.onclick = link.onclickfunc;
     a.className = link.className;
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
+    if(i==0){
+        a.onclick = function() {
+          var host = window.location.href; 
+          var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&u='.concat(encodeURIComponent(host)); 
+          var width = 500, height = 500; 
+          var left = (window.screen.width / 2) - ((width / 2) + 10); 
+          var top = (window.screen.height / 2) - ((height / 2) + 50); 
+          var popUp = window.open(fbUrl, 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
+          popUp.focus(); 
+          return false;
+        }
+    } else if(i==1){
+        a.onclick = function() {
+          twitterShare(window.location.href, encodeURIComponent(document.title));
+        }
+    } else{
+        a.onclick = function() {
+          var host = window.location.href; 
+          var title = document.title; 
+          var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host)); 
+          var width = 500, height = 500; 
+          var left = (window.screen.width / 2) - ((width / 2) + 10); 
+          var top = (window.screen.height / 2) - ((height / 2) + 50); 
+          var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
+          popUp.focus(); 
+          return false;
+        }
+    }
     socialWrapper.appendChild(a);
   });
 
