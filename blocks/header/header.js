@@ -484,7 +484,7 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
 
     [...row.children].forEach((col,c)=>{
       if(c==0){
-          console.log(col);
+          console.log(col.querySelector('img'));
           img.setAttribute('src', col.querySelector('img').getAttribute('src'));
           
       } else{
