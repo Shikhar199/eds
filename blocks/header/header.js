@@ -494,6 +494,8 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
       }
     })
 
+    console.log(a);
+
     containerDiv.appendChild(a);
     containerDiv.appendChild(div);
 }
