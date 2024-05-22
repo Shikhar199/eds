@@ -372,21 +372,42 @@ function createMobileNav(navbar, row){
   const socialLinks = [
     {
         href: 'javascript:void(0)',
-        onclick: "var host=window.location.href; var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&amp;u='.concat(host); var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50); popUp = window.open(fbUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +''); popUp.focus(); return false;",
+        onclick: function() {
+          var host = window.location.href; 
+          var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&u='.concat(encodeURIComponent(host)); 
+          var width = 500, height = 500; 
+          var left = (window.screen.width / 2) - ((width / 2) + 10); 
+          var top = (window.screen.height / 2) - ((height / 2) + 50); 
+          var popUp = window.open(fbUrl, 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
+          popUp.focus(); 
+          return false;
+        },
         className: 'social',
         title: 'Go to Facebook',
         iconClass: 'icon-facebook'
     },
     {
         href: 'javascript:void(0)',
-        onclick: "twitterShare(window.location.href, encodeURIComponent(document.title));",
+        onclick: function() {
+          twitterShare(window.location.href, encodeURIComponent(document.title));
+        },
         className: 'social',
         title: 'Go to Twitter',
         iconClass: 'icon-twitter'
     },
     {
         href: 'javascript:void(0)',
-        onclick: "var host=window.location.href; var title = document.title; var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&amp;url='.concat(host); var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50); popUp = window.open(encodeURI(liUrl),'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +''); popUp.focus(); return false;",
+        onclick: function() {
+          var host = window.location.href; 
+          var title = document.title; 
+          var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host)); 
+          var width = 500, height = 500; 
+          var left = (window.screen.width / 2) - ((width / 2) + 10); 
+          var top = (window.screen.height / 2) - ((height / 2) + 50); 
+          var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
+          popUp.focus(); 
+          return false;
+        },
         className: 'social',
         title: 'Go to LinkedIn',
         iconClass: 'icon-linked-in'
