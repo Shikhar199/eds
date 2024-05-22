@@ -357,7 +357,7 @@ function createNavMenuEnd(navbar){
 
 function createMobileNav(navbar, row){
   
-  console.log(row);
+  console.log("row",row);
   const div = document.createElement('div');
   div.className = 'mobile-nav';
 
@@ -413,7 +413,7 @@ function createMobileNav(navbar, row){
         )
     } else if(i==1){
         a.setAttribute('onclick',"twitterShare(window.location.href, encodeURIComponent(document.title));")
-    } else{
+    } else if(i==2){
         a.setAttribute('onclick'," var host = window.location.href;" + 
           "var title = document.title;" +
           `var liUrl = \'${anchors[1].getAttribute('href')}\'.concat(encodeURIComponent(host));` +
@@ -423,6 +423,8 @@ function createMobileNav(navbar, row){
           "popUp.focus();" +
           "return false;"
         )
+    } else if(i==3){
+
     }
     socialWrapper.appendChild(a);
   });
