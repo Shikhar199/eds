@@ -441,14 +441,6 @@ function createMobileNav(navbar){
 
 function createNavbarBrandAndToggleButton(containerDiv, row){
 
-  [...row.children].forEach((col,c)=>{
-    if(c==0){
-      console.log(col);
-      img.setAttribute('src', data[i].querySelector('picture').querySelector('img').getAttribute('src'));
-    } else{
-      console.log(col.textContent.trim());
-    }
-  })
     const a = document.createElement('a');
     a.className = 'navbar-brand';
     a.setAttribute('aria-label', 'Go to Infosys Home');
