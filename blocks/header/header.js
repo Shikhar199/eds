@@ -441,7 +441,7 @@ function createMobileNav(navbar, row){
       social();
       return false;
   };
-  searchLink.title = 'Find Social Media Links';
+  searchLink.title = pTags[6].textContent.trim();
   searchLink.innerHTML = '<span class="icon-share"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>';
 
   div.appendChild(searchLink);
