@@ -168,8 +168,6 @@ function createSlickItem(row,r){
             var imgElement = document.createElement('img');
             imgElement.classList.add('card-img-top');
             imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
-            imgElement.style.width = '503px';
-            imgElement.style.height = '315px';
 
             cardImageDiv.appendChild(anchorElement);
             anchorElement.appendChild(imgElement);
