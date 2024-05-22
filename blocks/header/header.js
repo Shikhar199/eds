@@ -159,7 +159,15 @@ export default function decorate(block){
   collapseDiv.classList.add('collapse navbar-collapse');
   collapseDiv.id = 'navbarSupportedContent';
 
-  createNavbarBrandAndToggleButton(containerDiv);
+
+  [...block.children].forEach((row,r)=>{
+    if(r==0){
+      createNavbarBrandAndToggleButton(containerDiv, row);
+    } else if(r==1){
+
+    }
+  })
+
 
   const ul = createNavMenu();
 
@@ -430,7 +438,11 @@ function createMobileNav(){
   document.querySelector('.navbar').appendChild(div);
 }
 
-function createNavbarBrandAndToggleButton(containerDiv){
+function createNavbarBrandAndToggleButton(containerDiv, row){
+
+  [...row.children].forEach((col,c)=>{
+    console.log(col.textContent.trim());
+  })
     const a = document.createElement('a');
     a.className = 'navbar-brand';
     a.href = '/iki.html';
