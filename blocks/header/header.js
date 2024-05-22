@@ -444,19 +444,17 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
   [...row.children].forEach((col,c)=>{
     if(c==0){
       console.log(col);
+      img.setAttribute('src', data[i].querySelector('picture').querySelector('img').getAttribute('src'));
     } else{
       console.log(col.textContent.trim());
     }
   })
     const a = document.createElement('a');
     a.className = 'navbar-brand';
-    a.href = '/iki.html';
-    a.title = 'Go to Infosys Home';
     a.setAttribute('aria-label', 'Go to Infosys Home');
 
     // Create the img element
     const img = document.createElement('img');
-    img.src = '/content/dam/infosys-web/en/iki/images/logo.svg';
     img.alt = 'logo';
     img.className = 'img-fluid';
 
@@ -488,4 +486,20 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
 
     containerDiv.appendChild(a);
     containerDiv.appendChild(div);
+
+
+    [...row.children].forEach((col,c)=>{
+      if(c==0){
+          img.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+          
+      } else{
+        [...col.children].forEach((node,i)=>{
+          if(i==0){
+            a.href = col.textContent.trim();
+          } else{
+            a.title = col.textContent.trim();
+          }
+        })
+      }
+    })
 }
