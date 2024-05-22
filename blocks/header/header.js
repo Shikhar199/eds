@@ -381,19 +381,19 @@ function createMobileNav(navbar, row){
     {
         href: 'javascript:void(0)',
         className: 'social',
-        title: 'Go to Twitter',
+        title: pTags[2].textContent.trim(),
         iconClass: 'icon-twitter'
     },
     {
         href: 'javascript:void(0)',
         className: 'social',
-        title: 'Go to LinkedIn',
+        title: pTags[4].textContent.trim(),
         iconClass: 'icon-linked-in'
     },
     {
         href: '',
         className: 'social',
-        title: 'Go to ',
+        title: pTags[5].textContent.trim(),
         iconClass: 'icon-chain'
     }
   ];
