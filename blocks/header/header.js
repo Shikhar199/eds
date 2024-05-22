@@ -355,10 +355,7 @@ function createNavMenuEnd(navbar){
 }
 
 function createMobileNav(navbar, row){
-  console.log(row);
-  [...row.children].forEach((data,r)=>{
-      console.log(data);
-  })
+  
   const div = document.createElement('div');
   div.className = 'mobile-nav';
 
@@ -366,6 +363,10 @@ function createMobileNav(navbar, row){
   const socialWrapper = document.createElement('span');
   socialWrapper.id = 'social-id';
   socialWrapper.className = 'social-wraper';
+
+  const anchors = row.querySelectorAll('a');
+  console.log("anchor1", anchors[0]);
+  console.log("anchor1", anchors[1]);
 
   const socialLinks = [
     {
