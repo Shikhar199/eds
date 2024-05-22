@@ -169,7 +169,7 @@ export default function decorate(block){
   })
 
 
-  const ul = createNavMenu();
+  const ul = createNavMenu(navbar);
 
   const ul2 = createNavMenuEnd();
 
@@ -188,7 +188,7 @@ export default function decorate(block){
   navbar.appendChild(ul2);
 }
 
-function createNavMenu(){
+function createNavMenu(navbar){
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-start';
 
@@ -257,7 +257,7 @@ function createNavMenu(){
     li.appendChild(a);
     ul.appendChild(li);
 
-    document.querySelector('.navbar').appendChild(ul);
+    navbar.appendChild(ul);
   });
   return ul;
 }
