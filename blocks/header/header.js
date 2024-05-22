@@ -404,32 +404,29 @@ function createMobileNav(navbar, row){
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
     if(i==0){
-        a.setAttribute('onclick',function() {
-          var host = window.location.href; 
-          var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&u='.concat(encodeURIComponent(host)); 
-          var width = 500, height = 500; 
-          var left = (window.screen.width / 2) - ((width / 2) + 10); 
-          var top = (window.screen.height / 2) - ((height / 2) + 50); 
-          var popUp = window.open(fbUrl, 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
-          popUp.focus(); 
-          return false;
-        })
+        a.setAttribute('onclick',"var host = window.location.href;" + 
+          `var fbUrl = ${anchors[0].getAttribute('href')}.concat(encodeURIComponent(host)); ` + 
+          "var width = 500, height = 500; " +
+          "var left = (window.screen.width / 2) - ((width / 2) + 10);" +
+          "var top = (window.screen.height / 2) - ((height / 2) + 50);" +
+          "var popUp = window.open(fbUrl, 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);" + 
+          "popUp.focus();" +
+          "return false;"
+        )
     } else if(i==1){
         a.setAttribute('onclick',function() {
           twitterShare(window.location.href, encodeURIComponent(document.title));
         })
     } else{
-        a.setAttribute('onclick',function() {
-          var host = window.location.href; 
-          var title = document.title; 
-          var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host)); 
-          var width = 500, height = 500; 
-          var left = (window.screen.width / 2) - ((width / 2) + 10); 
-          var top = (window.screen.height / 2) - ((height / 2) + 50); 
-          var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left); 
-          popUp.focus(); 
-          return false;
-        })
+        a.setAttribute('onclick'," var host = window.location.href;" + 
+          "var title = document.title;" +
+          "var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host));" +
+          "var width = 500, height = 500; var left = (window.screen.width / 2) - ((width / 2) + 10);" +
+          "var top = (window.screen.height / 2) - ((height / 2) + 50);" + 
+          "var popUp = window.open(encodeURI(liUrl), 'popupwindow', 'scrollbars=no,width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);" + 
+          "popUp.focus();" +
+          "return false;"
+        )
     }
     socialWrapper.appendChild(a);
   });
