@@ -372,7 +372,7 @@ function createMobileNav(navbar, row){
   const socialLinks = [
     {
         href: 'javascript:void(0)',
-        onclick: function() {
+        onclickfunc : function() {
           var host = window.location.href; 
           var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&u='.concat(encodeURIComponent(host)); 
           var width = 500, height = 500; 
@@ -388,7 +388,7 @@ function createMobileNav(navbar, row){
     },
     {
         href: 'javascript:void(0)',
-        onclick: function() {
+        onclickfunc : function() {
           twitterShare(window.location.href, encodeURIComponent(document.title));
         },
         className: 'social',
@@ -397,7 +397,7 @@ function createMobileNav(navbar, row){
     },
     {
         href: 'javascript:void(0)',
-        onclick: function() {
+        onclickfunc : function() {
           var host = window.location.href; 
           var title = document.title; 
           var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&url='.concat(encodeURIComponent(host)); 
@@ -423,7 +423,7 @@ function createMobileNav(navbar, row){
   socialLinks.forEach(link => {
     const a = document.createElement('a');
     a.href = link.href;
-    a.onclick = link.onclick;
+    a.onclick = link.onclickfunc;
     a.className = link.className;
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
