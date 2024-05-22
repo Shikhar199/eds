@@ -441,8 +441,6 @@ function createMobileNav(navbar){
 
 function createNavbarBrandAndToggleButton(containerDiv, row){
 
-  console.log(row);
-
     const a = document.createElement('a');
     a.className = 'navbar-brand';
     a.setAttribute('aria-label', 'Go to Infosys Home');
@@ -478,9 +476,6 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
     // Append the button to the div
     div.appendChild(button);
 
-    containerDiv.appendChild(a);
-    containerDiv.appendChild(div);
-
 
     [...row.children].forEach((col,c)=>{
       if(c==0){
@@ -498,4 +493,7 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
         })
       }
     })
+
+    containerDiv.appendChild(a);
+    containerDiv.appendChild(div);
 }
