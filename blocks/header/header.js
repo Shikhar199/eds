@@ -489,11 +489,11 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
       } else{
         [...col.children].forEach((node,i)=>{
           if(i==0){
-            console.log(col.textContent.trim());
-            a.href = col.textContent.trim();
+            console.log(node.textContent.trim());
+            a.href = node.textContent.trim();
           } else{
-            console.log(col.textContent.trim());
-            a.title = col.textContent.trim();
+            console.log(node.textContent.trim());
+            a.title = node.textContent.trim();
           }
         })
       }
