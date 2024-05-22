@@ -371,7 +371,7 @@ function createMobileNav(navbar, row){
   const socialLinks = [
     {
         href: 'javascript:void(0)',
-        onclick: "var host=window.location.href; var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&amp;u='.concat(host); var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50); popUp = window.open(fbUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +''); popUp.focus(); return false;",
+        onclick: `var host=window.location.href; var fbUrl = '${anchors[0].getAttribute('href')}.concat(host); var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50); popUp = window.open(fbUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +''); popUp.focus(); return false;`,
         className: 'social',
         title: 'Go to Facebook',
         iconClass: 'icon-facebook'
