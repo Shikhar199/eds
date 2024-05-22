@@ -408,6 +408,8 @@ function createMobileNav(navbar, row){
     socialWrapper.appendChild(a);
   });
 
+  console.log("Social wraper", socialWrapper);
+
   div.appendChild(socialWrapper);
 
   const searchLink = document.createElement('a');
