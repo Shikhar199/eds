@@ -161,6 +161,8 @@ export default function decorate(block){
 
   var mobileNavDiv;
   var ul;
+  var pTag
+  var ul2;
 
   [...block.children].forEach((row,r)=>{
     if(r==0){
@@ -169,14 +171,13 @@ export default function decorate(block){
       mobileNavDiv = createMobileNav(navbar, row);
     } else if(r==2){
       ul = createNavMenu(navbar,row);
+    } else if(r==3){
+      pTag = document.createElement('p');
+      pTag.textContent = row.textContent.trim();
+    } else if(r==4){
+      ul2 = createNavMenuEnd(navbar, row);
     }
   })
-
-
-  const ul2 = createNavMenuEnd(navbar);
-
-  const pTag = document.createElement('p');
-  pTag.textContent = 'Copyright © 2023 Infosys Limited';
 
   collapseDiv.appendChild(mobileNavDiv);
   collapseDiv.appendChild(ul);
@@ -189,7 +190,6 @@ export default function decorate(block){
 }
 
 function createNavMenu(navbar,row){
-  console.log(row);
   const pTags = row.querySelectorAll('p');
 
   console.log(pTags);
@@ -208,7 +208,7 @@ function createNavMenu(navbar,row){
   dropdownToggle.setAttribute('aria-haspopup', 'true');
   dropdownToggle.setAttribute('aria-expanded', 'false');
   dropdownToggle.title = 'Learn More';
-  dropdownToggle.innerHTML = 'Learn <span class="icon-down-arrow"></span>';
+  dropdownToggle.innerHTML = pTags[0].textContent.trim() + '<span class="icon-down-arrow"></span>';
 
   const dropdownMenu = document.createElement('div');
   dropdownMenu.id = 'menu';
@@ -216,13 +216,13 @@ function createNavMenu(navbar,row){
   dropdownMenu.setAttribute('aria-labelledby', 'navbarDropdown');
 
   const dropdownItems = [
-    { href: '/iki/explore.html', title: 'Go to Explore', text: 'Explore' },
-    { href: '/iki/research.html', title: 'Go to Research', text: 'Research' },
-    { href: '/iki/perspectives.html', title: 'Go to Perspectives', text: 'Perspectives' },
-    { href: '/iki/podcasts.html', title: 'Go to Podcasts', text: 'Podcasts' },
-    { href: '/iki/videos.html', title: 'Go to Videos', text: 'Videos' },
-    { href: '/iki/events.html', title: 'Go to Events', text: 'Events' },
-    { href: '/iki/books.html', title: 'Go to Books', text: 'Books' }
+    { href: pTags[3].textContent.trim(), title: pTags[2].textContent.trim(), text: pTags[1].textContent.trim() },
+    { href: pTags[6].textContent.trim(), title: pTags[5].textContent.trim(), text: pTags[4].textContent.trim() },
+    { href: pTags[9].textContent.trim(), title: pTags[8].textContent.trim(), text: pTags[7].textContent.trim() },
+    { href: pTags[12].textContent.trim(), title: pTags[11].textContent.trim(), text: pTags[10].textContent.trim() },
+    { href: pTags[15].textContent.trim(), title: pTags[14].textContent.trim(), text: pTags[13].textContent.trim() },
+    { href: pTags[18].textContent.trim(), title: pTags[17].textContent.trim(), text: pTags[16].textContent.trim() },
+    { href: pTags[21].textContent.trim(), title: pTags[20].textContent.trim(), text: pTags[19].textContent.trim() }
   ];
 
   dropdownItems.forEach(item => {
@@ -242,9 +242,9 @@ function createNavMenu(navbar,row){
 
 
   const navItems = [
-    { href: '/iki/iki-connect-with-us.html', title: 'Go to Connect', text: 'Connect' },
-    { href: '/iki/about.html', title: 'Read About Us', text: 'About Us' },
-    { href: '#', title: 'Sign In', text: 'Sign in', className: 'sign-in' }
+    { href: pTags[24].textContent.trim(), title: pTags[23].textContent.trim(), text: pTags[22].textContent.trim() },
+    { href: pTags[27].textContent.trim(), title: pTags[26].textContent.trim(), text: pTags[25].textContent.trim() },
+    { href: pTags[29].textContent.trim(), title: pTags[28].textContent.trim(), text: pTags[28].textContent.trim(), className: 'sign-in' }
   ];
 
   navItems.forEach(item => {
@@ -266,7 +266,8 @@ function createNavMenu(navbar,row){
   return ul;
 }
 
-function createNavMenuEnd(navbar){
+function createNavMenuEnd(navbar, row){
+  console.log(row);
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-end';
 
