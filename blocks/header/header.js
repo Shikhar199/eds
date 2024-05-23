@@ -303,6 +303,7 @@ function createNavMenuEnd(navbar, row){
   shareLi.appendChild(shareLink);
 
   const socialWrapper = document.createElement('div');
+  socialWrapper.classList.add('social-wraper');
 
   const socialLinks = [
     {
