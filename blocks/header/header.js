@@ -192,6 +192,10 @@ export default function decorate(block){
   document.querySelector('header').innerHTML = '';
   document.querySelector('header').appendChild(navbar);
 
+  const defaultHeader = document.querySelector('.header-container');
+  console.log(defaultHeader);
+  document.querySelector('main').removeChild(defaultHeader);
+
   console.log("navbar",navbar);
 }
 
