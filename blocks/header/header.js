@@ -160,17 +160,18 @@ export default function decorate(block){
   collapseDiv.id = 'navbarSupportedContent';
 
   var mobileNavDiv;
+  var ul;
 
   [...block.children].forEach((row,r)=>{
     if(r==0){
       createNavbarBrandAndToggleButton(containerDiv, row);
     } else if(r==1){
       mobileNavDiv = createMobileNav(navbar, row);
+    } else if(r==2){
+      ul = createNavMenu(navbar,row);
     }
   })
 
-
-  const ul = createNavMenu(navbar);
 
   const ul2 = createNavMenuEnd(navbar);
 
@@ -187,7 +188,11 @@ export default function decorate(block){
   navbar.appendChild(ul2);
 }
 
-function createNavMenu(navbar){
+function createNavMenu(navbar,row){
+  console.log(row);
+  [...row.children].forEach((col,c)=>{
+      console.log(row.textContent.trim());
+  })
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-start';
 
@@ -256,7 +261,7 @@ function createNavMenu(navbar){
     li.appendChild(a);
     ul.appendChild(li);
 
-    navbar.appendChild(ul);
+    // navbar.appendChild(ul);
   });
   return ul;
 }
@@ -350,7 +355,7 @@ function createNavMenuEnd(navbar){
   searchLi.appendChild(searchLink);
   ul.appendChild(searchLi);
 
-  navbar.appendChild(ul);
+  // navbar.appendChild(ul);
 
   return ul;
 }
@@ -462,7 +467,7 @@ function createMobileNav(navbar, row){
   button.appendChild(xCircle);
   div.appendChild(button);
 
-  navbar.appendChild(div);
+  // navbar.appendChild(div);
   return div;
 }
 
