@@ -187,6 +187,9 @@ export default function decorate(block){
 
   navbar.appendChild(containerDiv);
   navbar.appendChild(ul2);
+
+
+  console.log("navbar",navbar);
 }
 
 function createNavMenu(navbar,row){
@@ -267,7 +270,9 @@ function createNavMenu(navbar,row){
 }
 
 function createNavMenuEnd(navbar, row){
-  console.log(row);
+  const pTags = row.querySelectorAll('p');
+  const anchors = row.querySelectorAll('a');
+
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-end';
 
@@ -279,9 +284,9 @@ function createNavMenuEnd(navbar, row){
   const signInLink = document.createElement('a');
   signInLink.className = 'nav-link sign-in';
   signInLink.id = 'sign-in-button';
-  signInLink.href = '/loginiki.html';
-  signInLink.title = 'Sign In to Continue';
-  signInLink.textContent = 'Sign in';
+  signInLink.href = pTags[0].textContent.trim();
+  signInLink.title = pTags[1].textContent.trim();
+  signInLink.textContent = pTags[2].textContent.trim();
 
   signInLi.appendChild(signInLink);
   ul.appendChild(signInLi);
@@ -292,51 +297,66 @@ function createNavMenuEnd(navbar, row){
   const shareLink = document.createElement('a');
   shareLink.className = 'nav-link';
   shareLink.href = '#';
-  shareLink.title = 'Navigate to Social Media';
+  shareLink.title = pTags[3].textContent.trim();
   shareLink.innerHTML = '<span class="icon-share"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>';
 
   shareLi.appendChild(shareLink);
 
-  const socialWrapper = document.createElement('div');
-  socialWrapper.className = 'social-wraper';
-
   const socialLinks = [
     {
         href: 'javascript:void(0)',
-        onclick: "var host=window.location.href; var fbUrl = 'http://www.facebook.com/sharer/sharer.php?s=100&amp;u='.concat(host); var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50); popUp = window.open(fbUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +''); popUp.focus(); return false;",
         className: 'social',
-        title: 'Go to Facebook',
+        title: pTags[5].textContent.trim(),
         iconClass: 'icon-facebook'
     },
     {
         href: 'javascript:void(0)',
         onclick: "twitterShare(window.location.href, encodeURIComponent(document.title));",
         className: 'social',
-        title: 'Go to Twitter',
+        title: pTags[6].textContent.trim(),
         iconClass: 'icon-twitter'
     },
     {
         href: 'javascript:void(0)',
         onclick: "var host=window.location.href; var title = document.title; var liUrl = 'http://www.linkedin.com/shareArticle?mini=true&amp;url='.concat(host); var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50); popUp = window.open(encodeURI(liUrl),'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +''); popUp.focus(); return false;",
         className: 'social',
-        title: 'Go to LinkedIn',
+        title: pTags[8].textContent.trim(),
         iconClass: 'icon-linked-in'
     },
     {
         href: '',
         className: 'social',
-        title: 'Go to ',
+        title: pTags[9].textContent.trim(),
         iconClass: 'icon-chain'
     }
   ];
 
-  socialLinks.forEach(link => {
+  socialLinks.forEach((link,i) => {
     const a = document.createElement('a');
     a.href = link.href;
-    a.onclick = new Function(link.onclick);
     a.className = link.className;
     a.title = link.title;
     a.innerHTML = `<span class="${link.iconClass}"></span>`;
+
+    if(i==0){
+      a.setAttribute('onclick', "var host=window.location.href;" + 
+                                `var fbUrl = \'${anchors[0].getAttribute('href')}\'.concat(host);`+
+                                "var width=500, height=500;" +
+                                "var left = (window.screen.width / 2) - ((width / 2) + 10); var top = (window.screen.height / 2) - ((height / 2) + 50);"+
+                                "popUp = window.open(fbUrl,'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +'');"+
+                                "popUp.focus(); return false;")
+    } else if(i==1){
+      a.setAttribute('onclick', "twitterShare(window.location.href, encodeURIComponent(document.title));");
+    } else if(i==2){
+      a.setAttribute('onclick', "var host=window.location.href;"+
+                                "var title = document.title;"+
+                                `var liUrl = \'${anchors[1].getAttribute('href')}\'.concat(host);`+
+                                "var width=500, height=500; var left = (window.screen.width / 2) - ((width / 2) + 10);"+
+                                "var top = (window.screen.height / 2) - ((height / 2) + 50);"+
+                                "popUp = window.open(encodeURI(liUrl),'popupwindow','scrollbars=no,width='+ width +',height='+ height +',top='+ top +', left='+ left +'');"+
+                                "popUp.focus(); return false;")
+    }
+
     socialWrapper.appendChild(a);
   });
 
@@ -530,6 +550,4 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
 
     containerDiv.appendChild(a);
     containerDiv.appendChild(div);
-
-    console.log(containerDiv);
 }
