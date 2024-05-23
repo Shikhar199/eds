@@ -191,10 +191,10 @@ export default function decorate(block){
   const header = document.querySelector('.header-wrapper');
   const headerDiv = document.querySelector('div[data-block-name="header"]');
 
-  // console.log(header);
-  // console.log(headerDiv);
+  console.log(header);
+  console.log(headerDiv);
 
-  // header.removeChild(headerDiv);
+  header.removeChild(headerDiv);
 
   document.querySelector('header').appendChild(navbar);
 
