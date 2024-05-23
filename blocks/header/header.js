@@ -188,10 +188,10 @@ export default function decorate(block){
   navbar.appendChild(containerDiv);
   navbar.appendChild(ul2);
 
-  const header = document.querySelector('.header-wrapper');
-  const headerDiv = document.querySelector('div[data-block-name="header"]');
+  // const header = document.querySelector('.header-wrapper');
+  // const headerDiv = document.querySelector('div[data-block-name="header"]');
 
-  document.querySelector('body').removeChild(headerDiv);
+  // document.querySelector('body').removeChild(headerDiv);
 
   // header.removeChild(headerDiv);
 
