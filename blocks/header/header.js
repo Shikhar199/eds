@@ -189,6 +189,8 @@ export default function decorate(block){
   navbar.appendChild(ul2);
 
 
+  document.querySelector('header').innerHTML = '';
+  document.querySelector('header').appendChild(navbar);
   console.log("navbar",navbar);
 }
 
