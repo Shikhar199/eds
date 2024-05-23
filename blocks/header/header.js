@@ -190,9 +190,9 @@ export default function decorate(block){
 
 function createNavMenu(navbar,row){
   console.log(row);
-  [...row.children].forEach((col,c)=>{
-      console.log(row.textContent.trim());
-  })
+  const pTags = row.querySelectorAll('p');
+
+  console.log(pTags);
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-start';
 
