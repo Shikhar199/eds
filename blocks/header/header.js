@@ -549,7 +549,13 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
       console.log(img);
       if(c==0){
           img.setAttribute('src', col.querySelector('img').getAttribute('src'));
-          
+          if (window.innerWidth < 991) {
+            img.width = 288;
+            img.height = 33.156;
+          } else {
+            img.width = 256;
+            img.height = 29.5;
+          }
       } else{
         [...col.children].forEach((node,i)=>{
           if(i==0){
