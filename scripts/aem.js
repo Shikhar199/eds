@@ -622,25 +622,25 @@ async function loadBlocks(main) {
   const blocks = [...main.querySelectorAll('div.block')];
   console.log("Blocks",blocks);
 
-  const freeflowBlock = blocks.find(block => block.dataset.blockName === 'freeflow');
-  const otherBlocks = blocks.filter(block => block.dataset.blockName !== 'freeflow');
+  // const freeflowBlock = blocks.find(block => block.dataset.blockName === 'freeflow');
+  // const otherBlocks = blocks.filter(block => block.dataset.blockName !== 'freeflow');
 
-  for (let i = 0; i < otherBlocks.length; i += 1) {
-    await loadBlock(otherBlocks[i]);
-    updateSectionsStatus(main);
-  }
-
-  if (freeflowBlock) {
-    setTimeout(async () => {
-      await loadBlock(freeflowBlock);
-      updateSectionsStatus(main);
-    }, 10000); // 10000 milliseconds = 10 seconds
-  }
-  // for (let i = 0; i < blocks.length; i += 1) {
-  //   // eslint-disable-next-line no-await-in-loop
-  //   await loadBlock(blocks[i]);
+  // for (let i = 0; i < otherBlocks.length; i += 1) {
+  //   await loadBlock(otherBlocks[i]);
   //   updateSectionsStatus(main);
   // }
+
+  // if (freeflowBlock) {
+  //   setTimeout(async () => {
+  //     await loadBlock(freeflowBlock);
+  //     updateSectionsStatus(main);
+  //   }, 10000); // 10000 milliseconds = 10 seconds
+  // }
+  for (let i = 0; i < blocks.length; i += 1) {
+    // eslint-disable-next-line no-await-in-loop
+    await loadBlock(blocks[i]);
+    updateSectionsStatus(main);
+  }
 }
 
 /**
