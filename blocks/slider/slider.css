@@ -334,4 +334,4 @@
   .slick-slide img.slick-loading { display: none; }
 
   .slick-initialized,
-.slick-slide:first-child { display: block; }
+.slick-slide:first-child { display: none; }
