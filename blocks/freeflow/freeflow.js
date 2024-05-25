@@ -51,6 +51,10 @@ export default function decorate(block){
     freeflowSliderContainer.appendChild(progressBarContainer);
     freeflowWraperDiv.appendChild(freeflowContainerDiv);
 
+    setTimeout(function() {
+        freeflowContainer.style.display = "none";
+    }, 7000); // 5000 milliseconds = 5 seconds
+
 
     [...block.children].forEach((row,r)=>{
         if(r==0){
@@ -164,6 +168,8 @@ export default function decorate(block){
             bannerSlickDiv.appendChild(itemDiv);
         }
     })
+
+    freeflowContainer.style.display = "block";
 
     // document.querySelector('.freeflow-container').style.width = '100vw';
     // document.querySelector('.freeflow-container').style.height = '600px';
