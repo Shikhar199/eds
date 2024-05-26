@@ -19050,9 +19050,9 @@ footer .footer-bottom p {
 .banner-slick.slick-initialized {display: block;} */
 
 .slider { display: none; }
-.slider .slick-list .slick-track:first-child { display: block; }
+.slider > div:first-child { display: block; }
 .slider.slick-initialized { display: block; }
 
 .banner-slick {display: none;}
-.banner-slick .slick-list .slick-track:first-child {display: block;}
+.banner-slick > div:first-child {display: block;}
 .banner-slick.slick-initialized {display: block;} 
