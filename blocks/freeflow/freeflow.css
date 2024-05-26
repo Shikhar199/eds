@@ -19049,10 +19049,10 @@ footer .footer-bottom p {
 .banner-slick {display: none;}
 .banner-slick.slick-initialized {display: block;} */
 
-.slider { visibility: hidden; }
-.slider .slick-list .slick-track:first-child { visibility: visible; }
-.slider.slick-initialized { visibility: visible;}
+.slider { display: none; }
+.slider .slick-list .slick-track:first-child { display: block; }
+.slider.slick-initialized { display: block; }
 
-.banner-slick {visibility: hidden;}
-.banner-slick .slick-list .slick-track:first-child {visibility: visible;}
-.banner-slick.slick-initialized {visibility: visible;} 
+.banner-slick {display: none;}
+.banner-slick .slick-list .slick-track:first-child {display: block;}
+.banner-slick.slick-initialized {display: block;} 
