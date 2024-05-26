@@ -19050,9 +19050,9 @@ footer .footer-bottom p {
 .banner-slick.slick-initialized {display: block;} */
 
 .slider { visibility: hidden; }
-.slider:first-child { visibility: visible; }
+.slider .slick-list .slick-track:first-child { visibility: visible; }
 .slider.slick-initialized { visibility: visible;}
 
 .banner-slick {visibility: hidden;}
-.banner-slick:first-child {visibility: visible;}
+.banner-slick .slick-list .slick-track:first-child {visibility: visible;}
 .banner-slick.slick-initialized {visibility: visible;} 
