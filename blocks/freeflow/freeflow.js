@@ -1,10 +1,5 @@
 export default function decorate(block){
 
-    import('/scripts/jquery.js').then(($) => {
-        console.log('jQuery has been loaded');
-        import('/scripts/slick.min.js').then(() => {
-            console.log('Slick min js has been loaded');
-
     console.log("Block from freeflow");
     console.log(block);
 
@@ -171,23 +166,6 @@ export default function decorate(block){
 
     // document.querySelector('.freeflow-container').style.width = '100vw';
     // document.querySelector('.freeflow-container').style.height = '600px';
-
-    var ikifooterScript = document.createElement('script')
-    ikifooterScript.setAttribute("src","/scripts/ikifooter.js");
-
-    var mainjsScript = document.createElement('script')
-    mainjsScript.setAttribute("src","/scripts/main.js");
-    mainjsScript.setAttribute('defer',true); 
-    document.body.appendChild(ikifooterScript); 
-    document.head.appendChild(mainjsScript); 
-
-}).catch(error=>{
-    console.error('Error loading Slick.js:', error);
-})
-
-}).catch(error => {
-console.error('Error loading jQuery:', error);
-});
 
     trackDivPosition();
 }

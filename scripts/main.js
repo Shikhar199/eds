@@ -438,57 +438,6 @@ $('.most-popular-slick').slick({
   ]
 });
 
-$('.most-popular-slick-at').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  buttons: true,
-  arrows: true,
-  responsive: [
-      {
-          breakpoint: 1400,
-          settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-          }
-      },
-      {
-          breakpoint: 1200,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true
-          }
-      },
-      {
-          breakpoint: 992,
-          settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-          }
-             },
-      {
-          breakpoint: 767,
-          settings: "unslick",
-      }
-  ]
-});
-
-
-$('.popular-card').each(function(index){
-  if (index > 0) {
-      $(this).removeClass("popular-main-mobile").addClass("popular-sub-mobile");
-      $(this).children(".temp-mobile").addClass("sub-mobile").removeClass("temp-mobile");
-      console.log("class updated for mobile");
-  }
-});
-
-
 let searchpopup = document.querySelector(".search-popup");
 let recentSearches = document.querySelector(".resent-searches")
 let popupoverlay = document.querySelector(".popup-overlay");
