@@ -39,7 +39,6 @@ export default function decorate(block){
 
     const bannerSlickDiv = document.createElement('div');
     bannerSlickDiv.classList.add('banner-slick', 'banner-item');
-    bannerSlickDiv.style.maxHeight = '1000px';
 
     progressBarContainer.appendChild(containerDiv);
     containerDiv.appendChild(bannerSlickDiv);
