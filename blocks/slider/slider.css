@@ -330,8 +330,3 @@
     transform: scale(1.05);
     transition: all 0.5s ease;
   } */
-
-  .slick-slide img.slick-loading { display: none; }
-
-  .slick-initialized,
-.slick-slide:first-child { display: block; }
