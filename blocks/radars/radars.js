@@ -299,11 +299,11 @@ export default function decorate(block){
     // let accordionTitle = document.querySelectorAll('.accordion-list li .section-title');
 
     //     console.log("Inside DOM Content Loaded");
-    //     // Select the first li element in the accordion
-    //     const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
+        // Select the first li element in the accordion
+        const firstAccordionItem = document.querySelector('.accordion-list li:first-child');
     
-    //     // Add the 'active' class to the first accordion item
-    //     firstAccordionItem.classList.add('active');
+        // Add the 'active' class to the first accordion item
+        firstAccordionItem.classList.add('active');
     
     // function toggleAccordion(){
     //     // Remove 'active' class from all accordion items
@@ -319,7 +319,7 @@ export default function decorate(block){
     // // Attach click event listener to each accordion item
     // accordList.forEach(item => item.addEventListener('click', toggleAccordion));
 
-    // // Start the initial interval after 3000 milliseconds
+    // Start the initial interval after 3000 milliseconds
     // setTimeout(() => {
     //     activeInterval = setInterval(activeAccordion, 5000);
     // }, 3000);
