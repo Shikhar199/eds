@@ -89,6 +89,7 @@ export default function decorate(block){
                     const imgElement = document.createElement('img');
                     imgElement.classList.add('img-fluid', 'hero-banner');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
+                    imgElement.style.width = '100vw';
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
