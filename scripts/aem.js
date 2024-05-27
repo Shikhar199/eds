@@ -264,7 +264,7 @@ async function loadCSS(href) {
       link.href = href;
       if(href==='/blocks/freeflow/freeflow.css'){
         link.media='print';
-        link.onload="this.media='all'";
+        link.onload = resolve;
         link.onerror = reject;
         document.head.append(link);
       } else{
