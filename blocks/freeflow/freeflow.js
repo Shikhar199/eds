@@ -166,11 +166,11 @@ export default function decorate(block){
         }
     })
 
-    var styleLink = document.createElement('link')
-    styleLink.setAttribute("rel","stylesheet");
-    styleLink.setAttribute("href","../../styles/styles.css");
+    // var styleLink = document.createElement('link')
+    // styleLink.setAttribute("rel","stylesheet");
+    // styleLink.setAttribute("href","../../styles/styles.css");
 
-    document.head.appendChild(styleLink);
+    // document.head.appendChild(styleLink);
 
     // document.querySelector('.freeflow-container').style.width = '100vw';
     // document.querySelector('.freeflow-container').style.height = '600px';
