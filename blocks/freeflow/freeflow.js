@@ -90,6 +90,7 @@ export default function decorate(block){
                     imgElement.classList.add('img-fluid', 'hero-banner');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     imgElement.style.width = '100vw';
+                    imgElement.style.aspectRatio = '19.17/9';
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
