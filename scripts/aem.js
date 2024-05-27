@@ -261,11 +261,29 @@ async function loadCSS(href) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = href;
-      link.onload = resolve;
-      link.onerror = reject;
-      document.head.append(link);
+      if(href==='/blocks/freeflow/freeflow.css'){
+        link.rel = 'preload';
+        link.as = 'style';
+        link.onload = "this.onload=null;this.rel='stylesheet'";
+        link.onerror = reject;
+        
+        const noscriptTag = document.createElement('noscript');
+        const fallbackLink = document.createElement('link');
+        fallbackLink.rel = 'stylesheet';
+        fallbackLink.href = href;
+
+        // Append the fallback link to the noscript tag
+        noscriptTag.appendChild(fallbackLink);
+        document.head.append(link);
+        document.head.append(noscriptTag);
+      }
+      else{
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.onload = resolve;
+        link.onerror = reject;
+        document.head.append(link);
+      }
     } else {
       resolve();
     }
