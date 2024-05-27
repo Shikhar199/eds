@@ -3,13 +3,6 @@ export default function decorate(block){
     console.log("Block from freeflow");
     console.log(block);
 
-    var jqueryScript = document.createElement('script')
-    jqueryScript.setAttribute("src","/scripts/jquery.js");
-    jqueryScript.async = false;
-
-    var slickScript = document.createElement('script')
-    slickScript.setAttribute("src","/scripts/slick.min.js");
-
     var headElement =  document.querySelector('head');
 
     const freeflowContainer = document.querySelector(".freeflow-container");
@@ -168,19 +161,7 @@ export default function decorate(block){
         }
     })
 
-    // var styleLink = document.createElement('link')
-    // styleLink.setAttribute("rel","stylesheet");
-    // styleLink.setAttribute("href","../../styles/styles.css");
-
-    // document.head.appendChild(styleLink);
-
-    // document.querySelector('.freeflow-container').style.width = '100vw';
-    // document.querySelector('.freeflow-container').style.height = '600px';
-
-    // Create a <style> element
-
-    // <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    // <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    console.log(freeflowContainer);
 
     // const link1 = document.createElement('link');
     // const link2 = document.createElement('link');
