@@ -161,15 +161,6 @@ export default function decorate(block){
         }
     })
 
-    const fontLink = document.createElement('link');
-    fontLink.rel = "preload";
-    fontLink.href = "https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap";
-    fontLink.as = "style";
-    fontLink.type = "font/woff2";
-    fontLink.crossorigin = "anonymous";
-
-    document.head.appendChild(fontLink);
-
     // const link1 = document.createElement('link');
     // const link2 = document.createElement('link');
     // const link3 = document.createElement('link');
