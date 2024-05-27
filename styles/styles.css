@@ -14347,6 +14347,19 @@ header .navbar .navbar-collapse p {
         aspect-ratio: 19.17 / 9; /* Maintain a 19.17:9 aspect ratio */
     }
 }
+
+@media (min-width: 991px) {
+    .freeflow-container.freeflowhtml {
+        max-height: 482px;
+    }
+}
+
+@media (max-width: 991px) {
+    .freeflow-container.freeflowhtml {
+        max-height: 540px;
+    }
+}
+
 header .navbar .toggle-btn {
   display: flex;
   align-items: center;
