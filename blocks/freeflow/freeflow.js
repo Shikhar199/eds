@@ -168,7 +168,7 @@ export default function decorate(block){
 
     var styleLink = document.createElement('link')
     styleLink.setAttribute("rel","stylesheet");
-    styleLink.setAttribute("href","../../styles/styles.js");
+    styleLink.setAttribute("href","../../styles/styles.css");
 
     document.head.appendChild(styleLink);
 
