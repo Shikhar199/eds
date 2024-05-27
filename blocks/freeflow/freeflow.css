@@ -19056,3 +19056,7 @@ footer .footer-bottom p {
 .banner-slick {visibility: hidden;}
 .banner-slick > div:first-child { visibility: visible; }
 .banner-slick.slick-initialized { visibility: visible; } 
+
+.slick-dots { visibility: hidden; }
+.slick-dots > div:first-child { visibility: visible; }
+.slick-dots.slick-active {visibility: visible;}
