@@ -177,6 +177,51 @@ export default function decorate(block){
     // document.querySelector('.freeflow-container').style.width = '100vw';
     // document.querySelector('.freeflow-container').style.height = '600px';
 
+    // Create a <style> element
+    const styleElement = document.createElement('style');
+
+    styleElement.textContent = `
+.home-interests-wraper .interests-main .quality-engg .quality-content {
+	width: 57rem;
+}
+.accordion-wraper {
+    background-color: #000;
+}
+.bg-topaz-dark-sidebar {
+	background-color: #09321D !important;
+}
+.banner-main .btn.btn-secondary {
+	background: #0271b1;
+}
+.banner-main .btn.btn-secondary:hover {
+	background: #0271b1 !important;
+}
+.find-more .icon-chevron-right-circle-white::before {
+    color: #0271b1 !important;
+}
+.inner-details .find-more {
+	color: #00578A !important;
+}
+.insights-wraper, .article-wraper, .interactive-wraper, .podcast-wraper {
+	background-color: #0c1220 !important;
+}
+.iki-subscribtion-footer .box {
+    background-color: #ab6604 !important;
+}
+.banner-wraper {
+    background-color: #000;
+}
+
+@media screen and (max-width: 767px) { 
+.home-interests-wraper .interests-main .quality-engg .quality-content {
+	width: auto;
+}
+}
+    `;
+
+    document.head.appendChild(styleElement);
+
+
     trackDivPosition();
 }
 
