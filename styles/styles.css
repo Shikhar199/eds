@@ -14341,7 +14341,7 @@ header .navbar .navbar-collapse p {
     display: inline-block;
   }
 }
-@media (max-width: 991px) {
+@media (min-width: 991px) {
     .img-fluid.hero-banner {
         width: 100vw; /* Set the width to 100% of the viewport width */
         aspect-ratio: 19.17 / 9; /* Maintain a 19.17:9 aspect ratio */
