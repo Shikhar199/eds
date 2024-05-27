@@ -16,7 +16,7 @@ export default function decorate(block){
     freeflowContainer.classList.add('freeflowhtml', 'aem-GridColumn', 'aem-GridColumn--default--12');
 
     freeflowContainer.innerHTML = '';
-    freeflowContainer.style.maxHeight = '542px';
+    freeflowContainer.style.maxHeight = '600px';
 
     const freeflowSectionElement = document.createElement('section');
 
