@@ -260,20 +260,11 @@ async function loadCSS(href) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
+      link.rel = 'stylesheet';
       link.href = href;
-      if(href==='/blocks/freeflow/freeflow.css'){
-        link.rel = "preload";
-        link.onload="this.onload=null;this.rel='stylesheet'";
-        link.as = "style";
-        link.onload = resolve;
-        link.onerror = reject;
-        document.head.append(link);
-      } else{
-        link.rel = 'stylesheet';
-        link.onload = resolve;
-        link.onerror = reject;
-        document.head.append(link);
-      }
+      link.onload = resolve;
+      link.onerror = reject;
+      document.head.append(link);
     } else {
       resolve();
     }
@@ -630,6 +621,7 @@ async function loadBlocks(main) {
   updateSectionsStatus(main);
   const blocks = [...main.querySelectorAll('div.block')];
   console.log("Blocks",blocks);
+
 
   for (let i = 0; i < blocks.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
