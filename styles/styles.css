@@ -8167,7 +8167,7 @@ a.text-dark:hover {
     border: 1px solid #ddd !important;
   }
 }
-@font-face {
+/* @font-face {
   font-family: icomoon;
   src: url(../icons/icomoon.eot?uc1nim);
   src: url(../icons/icomoon.eot?uc1nim#iefix) format("embedded-opentype"),
@@ -8177,7 +8177,7 @@ a.text-dark:hover {
   font-weight: 400;
   font-style: normal;
   font-display: block;
-}
+} */
 [class*=" icon-"],
 [class^="icon-"] {
   font-family: icomoon !important;
