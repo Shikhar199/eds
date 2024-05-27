@@ -257,33 +257,17 @@ function readBlockConfig(block) {
  * @param {string} href URL to the CSS file
  */
 async function loadCSS(href) {
-  console.log(href);
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
       if(href==='/blocks/freeflow/freeflow.css'){
-        link.href = href;
-        link.rel = 'preload';
-        link.as = 'style';
-        link.onload = function() {
-          this.onload = null;
-          this.rel = 'stylesheet';
-        };
+        link.media='print';
+        link.onload="this.media='all'";
         link.onerror = reject;
-
-        const noscriptTag = document.createElement('noscript');
-        const fallbackLink = document.createElement('link');
-        fallbackLink.rel = 'stylesheet';
-        fallbackLink.href = href;
-
-        // Append the fallback link to the noscript tag
-        noscriptTag.appendChild(fallbackLink);
         document.head.append(link);
-        document.head.append(noscriptTag);
-      }
-      else{
-        link.rel = 'stylesheet';
-        link.href = href;
+      } else{
         link.onload = resolve;
         link.onerror = reject;
         document.head.append(link);
