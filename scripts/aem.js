@@ -260,15 +260,16 @@ async function loadCSS(href) {
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
-      link.rel = 'stylesheet';
       link.href = href;
       if(href==='/blocks/freeflow/freeflow.css'){
-        link.media='print';
-        link.onload="this.media='all'";
+        link.rel = "preload";
+        link.onload="this.onload=null;this.rel='stylesheet'";
+        link.as = "style";
         link.onload = resolve;
         link.onerror = reject;
         document.head.append(link);
       } else{
+        link.rel = 'stylesheet';
         link.onload = resolve;
         link.onerror = reject;
         document.head.append(link);
