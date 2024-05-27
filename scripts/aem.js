@@ -265,7 +265,10 @@ async function loadCSS(href) {
         link.href = href;
         link.rel = 'preload';
         link.as = 'style';
-        link.onload = "this.onload=null;this.rel='stylesheet'";
+        link.onload = function() {
+          this.onload = null;
+          this.rel = 'stylesheet';
+        };
         link.onerror = reject;
 
         const noscriptTag = document.createElement('noscript');
