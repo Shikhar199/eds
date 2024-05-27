@@ -182,28 +182,28 @@ export default function decorate(block){
     // <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     // <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
-    const link1 = document.createElement('link');
-    const link2 = document.createElement('link');
-    const link3 = document.createElement('link');
+    // const link1 = document.createElement('link');
+    // const link2 = document.createElement('link');
+    // const link3 = document.createElement('link');
 
-    link1.setAttribute('href','/styles/styles1.css');
-    link1.setAttribute('rel','preload');
-    link1.setAttribute('as','style');
-    link1.setAttribute('onload',"this.onload=null;this.rel='stylesheet'");
+    // link1.setAttribute('href','/styles/styles1.css');
+    // link1.setAttribute('rel','preload');
+    // link1.setAttribute('as','style');
+    // link1.setAttribute('onload',"this.onload=null;this.rel='stylesheet'");
 
-    link2.setAttribute('href','/styles/styles2.css');
-    link2.setAttribute('rel','preload');
-    link2.setAttribute('as','style');
-    link2.setAttribute('onload',"this.onload=null;this.rel='stylesheet'");
+    // link2.setAttribute('href','/styles/styles2.css');
+    // link2.setAttribute('rel','preload');
+    // link2.setAttribute('as','style');
+    // link2.setAttribute('onload',"this.onload=null;this.rel='stylesheet'");
 
-    link3.setAttribute('href','/styles/styles3.css');
-    link3.setAttribute('rel','stylesheet');
-    link3.setAttribute('as','style');
-    link3.setAttribute('onload',"this.onload=null;this.rel='stylesheet'");
+    // link3.setAttribute('href','/styles/styles3.css');
+    // link3.setAttribute('rel','stylesheet');
+    // link3.setAttribute('as','style');
+    // link3.setAttribute('onload',"this.onload=null;this.rel='stylesheet'");
 
-    document.head.appendChild(link1);
-    document.head.appendChild(link2);
-    document.head.appendChild(link3);
+    // document.head.appendChild(link1);
+    // document.head.appendChild(link2);
+    // document.head.appendChild(link3);
 
     trackDivPosition();
 }

@@ -257,12 +257,7 @@ function readBlockConfig(block) {
  * @param {string} href URL to the CSS file
  */
 async function loadCSS(href) {
-  if(href==='/styles/styles.css'){
-    console.log("This is style.css");
-  }
-  else{
-    console.log("Style.css not loaded");
-  }
+  console.log(href);
   return new Promise((resolve, reject) => {
     if (!document.querySelector(`head > link[href="${href}"]`)) {
       const link = document.createElement('link');
@@ -628,27 +623,6 @@ async function loadBlocks(main) {
   const blocks = [...main.querySelectorAll('div.block')];
   console.log("Blocks",blocks);
 
-  // const freeflowBlock = blocks.find(block => block.dataset.blockName === 'freeflow');
-  // const sliderBlock = blocks.find(block => block.dataset.blockName === 'slider');
-  // const otherBlocks = blocks.filter(block => block.dataset.blockName !== 'freeflow');
-
-  // for (let i = 0; i < otherBlocks.length; i += 1) {
-  //   await loadBlock(otherBlocks[i]);
-  //   updateSectionsStatus(main);
-  // }
-
-  // if (freeflowBlock) {
-  //   // setTimeout(async () => {
-  //     await loadBlock(freeflowBlock);
-  //     updateSectionsStatus(main);
-  //   // }, 10000); // 10000 milliseconds = 10 seconds
-  // }
-  // if (freeflowBlock) {
-  //   // setTimeout(async () => {
-  //     await loadBlock(sliderBlock);
-  //     updateSectionsStatus(main);
-  //   // }, 10000); // 10000 milliseconds = 10 seconds
-  // }
   for (let i = 0; i < blocks.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     await loadBlock(blocks[i]);
