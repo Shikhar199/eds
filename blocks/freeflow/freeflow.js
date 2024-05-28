@@ -90,6 +90,8 @@ export default function decorate(block){
                     const link = document.createElement('link');
                     link.rel = 'preload';
                     link.as = 'image';
+                    link.fetchpriority="high";
+                    link.type="image/webp";
                     link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
                     document.head.appendChild(link);
                 } else if(c==1){
