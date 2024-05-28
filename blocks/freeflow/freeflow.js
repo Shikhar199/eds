@@ -222,5 +222,5 @@ export default function decorate(block){
     // Append the noscript element to the head
     document.head.appendChild(noscriptTypekitElement);
 
-    console.log(freeflowContainer);
+    console.log("freeflowContainer",freeflowContainer);
 }
