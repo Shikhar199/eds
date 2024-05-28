@@ -198,16 +198,12 @@ export default function decorate(block){
   document.querySelector('header').appendChild(navbar);
 
   const defaultHeader = document.querySelector('.header-container');
-  console.log(defaultHeader);
   document.querySelector('main').removeChild(defaultHeader);
-
-  console.log("navbar",navbar);
 }
 
 function createNavMenu(navbar,row){
   const pTags = row.querySelectorAll('p');
 
-  console.log(pTags);
   const ul = document.createElement('ul');
   ul.className = 'navbar-nav navbar-start';
 
@@ -398,7 +394,6 @@ function createNavMenuEnd(navbar, row){
 
 function createMobileNav(navbar, row){
   
-  console.log("row",row);
   const div = document.createElement('div');
   div.className = 'mobile-nav';
 
@@ -409,8 +404,6 @@ function createMobileNav(navbar, row){
 
   const anchors = row.querySelectorAll('a');
   const pTags = row.querySelectorAll('p');
-
-  console.log(pTags);
 
   const socialLinks = [
     {
@@ -546,7 +539,6 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
 
 
     [...row.children].forEach((col,c)=>{
-      console.log(img);
       if(c==0){
           img.setAttribute('src', col.querySelector('img').getAttribute('src'));
           if (window.innerWidth < 991) {
@@ -559,10 +551,8 @@ function createNavbarBrandAndToggleButton(containerDiv, row){
       } else{
         [...col.children].forEach((node,i)=>{
           if(i==0){
-            console.log(node.textContent.trim());
             a.href = node.textContent.trim();
           } else{
-            console.log(node.textContent.trim());
             a.title = node.textContent.trim();
           }
         })

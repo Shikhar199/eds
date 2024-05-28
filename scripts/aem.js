@@ -579,7 +579,6 @@ function buildBlock(blockName, content) {
  * @param {Element} block The block element
  */
 async function loadBlock(block) {
-  console.log("Block Name", block);
   const status = block.dataset.blockStatus;
   if (status !== 'loading' && status !== 'loaded') {
     block.dataset.blockStatus = 'loading';
@@ -620,7 +619,6 @@ async function loadBlock(block) {
 async function loadBlocks(main) {
   updateSectionsStatus(main);
   const blocks = [...main.querySelectorAll('div.block')];
-  console.log("Blocks",blocks);
 
 
   for (let i = 0; i < blocks.length; i += 1) {
