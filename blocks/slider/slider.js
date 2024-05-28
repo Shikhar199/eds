@@ -124,8 +124,6 @@ export default function decorate(block){
 
             document.querySelector(".ikislider").appendChild(outerScriptElement);
 
-            fixFirstDiv(block.children.length);
-
             var ikifooterScript = document.createElement('script')
             ikifooterScript.setAttribute("src","/scripts/ikifooter.js");
 
@@ -134,6 +132,8 @@ export default function decorate(block){
             mainjsScript.setAttribute('defer',true); 
             document.body.appendChild(ikifooterScript); 
             document.head.appendChild(mainjsScript); 
+
+            fixFirstDiv(block.children.length);
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
