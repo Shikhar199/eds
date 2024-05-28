@@ -184,8 +184,46 @@ export default function decorate(block){
     // document.head.appendChild(link2);
     // document.head.appendChild(link3);
 
-    trackDivPosition();
-}
+    const googleFontLink = document.createElement('link');
+    googleFontLink.rel = 'preload';
+    googleFontLink.href = 'https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap'; // Update this to your actual CSS file path
+    googleFontLink.as = 'style';
+    googleFontLink.onload = function() {
+        this.onload = null;
+        this.rel = 'stylesheet';
+    };
+
+    // Append the preload link to the head
+    document.head.appendChild(googleFontLink);
+    
+    // Create the noscript element with a fallback link
+    const noscriptElement = document.createElement('noscript');
+    noscriptElement.innerHTML = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap">'; // Update this to your actual CSS file path
+    
+    // Append the noscript element to the head
+    document.head.appendChild(noscriptElement);
+
+    const typekitLink = document.createElement('link');
+    typekitLink.rel = 'preload';
+    typekitLink.href = 'https://use.typekit.net/nkq8fly.css'; // Update this to your actual CSS file path
+    typekitLink.as = 'style';
+    typekitLink.onload = function() {
+        this.onload = null;
+        this.rel = 'stylesheet';
+    };
+
+    // Append the preload link to the head
+    document.head.appendChild(typekitLink);
+    
+    // Create the noscript element with a fallback link
+    const noscriptTypekitElement = document.createElement('noscript');
+    noscriptTypekitElement.innerHTML = '<link rel="stylesheet" href="https://use.typekit.net/nkq8fly.css">'; // Update this to your actual CSS file path
+    
+    // Append the noscript element to the head
+    document.head.appendChild(noscriptTypekitElement);
+
+        trackDivPosition();
+    }
 
 function trackDivPosition() {
     var div = document.querySelector('.freeflow-container');
