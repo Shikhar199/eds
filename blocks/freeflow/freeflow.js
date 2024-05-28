@@ -85,6 +85,13 @@ export default function decorate(block){
                     // imgElement.style.width = '100vw';
                     // imgElement.style.aspectRatio = '19.17/9';
                     bannerImgDiv.appendChild(imgElement);
+
+                    // Preload images
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    document.head.appendChild(link);
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
                     containerDiv.classList.add('container');
