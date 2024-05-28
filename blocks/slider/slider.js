@@ -133,7 +133,7 @@ export default function decorate(block){
             document.body.appendChild(ikifooterScript); 
             document.head.appendChild(mainjsScript); 
 
-            fixFirstDiv(block.children.length);
+            // fixFirstDiv(block.children.length);
 
         }).catch(error=>{
             console.error('Error loading Slick.js:', error);
