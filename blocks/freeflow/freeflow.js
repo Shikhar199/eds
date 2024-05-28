@@ -86,14 +86,16 @@ export default function decorate(block){
                     // imgElement.style.aspectRatio = '19.17/9';
                     bannerImgDiv.appendChild(imgElement);
 
-                    // Preload images
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high";
-                    link.type="image/webp";
-                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // Preload LCP images
+                    if(r==0 && c==0){
+                        const link = document.createElement('link');
+                        link.rel = 'preload';
+                        link.as = 'image';
+                        link.fetchpriority="high";
+                        link.type="image/webp";
+                        link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                        document.head.appendChild(link);
+                    }
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
                     containerDiv.classList.add('container');
