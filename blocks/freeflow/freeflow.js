@@ -85,10 +85,9 @@ export default function decorate(block){
                     // imgElement.style.width = '100vw';
                     // imgElement.style.aspectRatio = '19.17/9';
                     bannerImgDiv.appendChild(imgElement);
-
-                    console.log("Outside Preload LCP");
+                    
                     // Preload LCP images
-                    if(r==0 && c==0){
+                    if(r==1 && c==0){
                         console.log("Inside Preload LCP");
                         const link = document.createElement('link');
                         link.rel = 'preload';
