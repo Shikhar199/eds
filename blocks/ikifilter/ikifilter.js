@@ -10,7 +10,7 @@ export default function decorate(block){
 
     const scriptElement = document.createElement('script');
     scriptElement.setAttribute("type","text/javascript");
-    scriptElement.setAttribute("src","/content/dam/infosys-web/en/iki/js/ikifilter.js");
+    scriptElement.setAttribute("src","/blocks/iki/iki.js");
 
     ikifilterContainer.appendChild(sectionElement);
     ikifilterContainer.appendChild(scriptElement);
