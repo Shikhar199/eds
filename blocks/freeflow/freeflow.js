@@ -85,7 +85,7 @@ export default function decorate(block){
                     // imgElement.style.width = '100vw';
                     // imgElement.style.aspectRatio = '19.17/9';
                     bannerImgDiv.appendChild(imgElement);
-                    
+
                     // Preload LCP images
                     if(r==1 && c==0){
                         console.log("Inside Preload LCP");
@@ -95,7 +95,9 @@ export default function decorate(block){
                         link.fetchpriority="high";
                         link.type="image/webp";
                         link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                        document.head.appendChild(link);
+                        const head = document.head;
+                        head.insertBefore(link, head.children[2]);
+                        // document.head.appendChild(link);
                     }
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
