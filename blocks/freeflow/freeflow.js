@@ -222,6 +222,26 @@ export default function decorate(block){
     // Append the noscript element to the head
     document.head.appendChild(noscriptTypekitElement);
 
+
+    const freeflowLink = document.createElement('link');
+    freeflowLink.rel = 'preload';
+    freeflowLink.href = '/blocks/freeflow/freeflow.css'; // Update this to your actual CSS file path
+    freeflowLink.as = 'style';
+    freeflowLink.onload = function() {
+        this.onload = null;
+        this.rel = 'stylesheet';
+    };
+
+    // Append the preload link to the head
+    document.head.appendChild(freeflowLink);
+    
+    // Create the noscript element with a fallback link
+    const noscriptfreeflowElement = document.createElement('noscript');
+    noscriptfreeflowElement.innerHTML = '<link rel="stylesheet" href="/blocks/freeflow/freeflow.css">'; // Update this to your actual CSS file path
+    
+    // Append the noscript element to the head
+    document.head.appendChild(noscriptfreeflowElement);
+
         trackDivPosition();
     }
 
