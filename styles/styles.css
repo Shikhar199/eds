@@ -13973,6 +13973,27 @@ header .navbar {
     padding: 2rem;
   }
 }
+
+@media (min-width: 991px) {
+    .img-fluid.hero-banner {
+        width: 100vw; /* Set the width to 100% of the viewport width */
+        aspect-ratio: 19.17 / 9; /* Maintain a 19.17:9 aspect ratio */
+    }
+}
+
+@media (min-width: 991px) {
+    .freeflow-container.freeflowhtml {
+        max-height: 482px;
+    }
+}
+
+@media (max-width: 991px) {
+    .freeflow-container.freeflowhtml {
+        max-height: 540px;
+    }
+}
+
+
 @media (max-width: 1400px) {
   header .navbar .container {
     padding: 0;
@@ -19042,3 +19063,11 @@ footer .footer-bottom p {
 .insights-wraper, .article-wraper, .interactive-wraper, .podcast-wraper {
     background-color: #0c1220 !important;
 }
+
+.slider { visibility: hidden; }
+.slider > div:first-child { visibility: visible; }
+.slider.slick-initialized { visibility: visible; }
+
+.banner-slick {display: none;}
+.banner-slick > div:first-child { display: block; }
+.banner-slick.slick-initialized { display: block; } 
