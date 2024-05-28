@@ -238,7 +238,7 @@ export default function decorate(block){
 
     const nonCriticalCssLink = document.createElement('link');
     nonCriticalCssLink.rel = 'stylesheet';
-    nonCriticalCssLink.href = '/styles/non-critical.ss';
+    nonCriticalCssLink.href = '/styles/non-critical.css';
     nonCriticalCssLink.media = 'print';
     nonCriticalCssLink.onload="this.media='all'";
 
