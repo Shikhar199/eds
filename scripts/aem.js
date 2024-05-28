@@ -584,9 +584,7 @@ async function loadBlock(block) {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
     try {
-      // const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
-      const cssLoaded = blockName === 'freeflow' ? Promise.resolve() : loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
-
+      const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
