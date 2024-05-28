@@ -42,6 +42,17 @@ export default async function decorate(block) {
   goUpDiv.id = 'go-up';
   goUpDiv.classList.add('go-upNavigation', 'show');
 
+  const goUpanchor = document.createElement('a');
+  goUpanchor.setAttribute('href',"#");
+  goUpanchor.classList.add('up-navigation');
+  goUpanchor.setAttribute('title','Go To Top Of This Page');
+
+  const spangoUp = document.createElement('span');
+  spangoUp.classList.add('icon-right-angle');
+
+  goUpanchor.appendChild(spangoUp);
+  goUpDiv.appendChild(goUpanchor);
+
   xfDiv.appendChild(xfContentDiv);
   xfContentDiv.appendChild(aemGridDiv);
   aemGridDiv.appendChild(freeflowDiv);
