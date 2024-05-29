@@ -236,4 +236,15 @@ export default function decorate(block){
     // Append the noscript element to the head
     document.head.appendChild(noscriptTypekitElement);
 
+    const nonCriticalCssLink = document.createElement('link');
+    nonCriticalCssLink.rel = 'stylesheet';
+    nonCriticalCssLink.href = '/styles/non-critical.css';
+    nonCriticalCssLink.media = 'print';
+    nonCriticalCssLink.onload="this.media='all'";
+
+    document.head.appendChild(nonCriticalCssLink);
+
+    const noscriptCss =  document.createElement('noscript');
+    noscriptCss.innerHTML = '<link rel="stylesheet" href="/styles/non-critical.css">'
+    document.head.appendChild(noscriptCss);
 }
