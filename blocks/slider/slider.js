@@ -126,7 +126,6 @@ export default function decorate(block){
 
             var ikifooterScript = document.createElement('script')
             ikifooterScript.setAttribute("src","/scripts/ikifooter.js");
-            ikifooterScript.setAttribute('defer',true);
 
             var mainjsScript = document.createElement('script')
             mainjsScript.setAttribute("src","/scripts/main.js");
