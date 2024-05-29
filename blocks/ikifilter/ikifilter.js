@@ -340,7 +340,6 @@ function loadScripts() {
 
     var bundleScript = document.createElement('script')
     bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
-    bundleScript.setAttribute("defer",true);
 
     var mainjsScript = document.createElement('script')
     mainjsScript.setAttribute("src","/scripts/main.js");
