@@ -98,7 +98,7 @@ export default function decorate(block){
                     //     // head.insertBefore(link, head.children[2]);
                     //     document.head.appendChild(link);
                     // }
-                    if(r==1 && c==0){
+                    // if(r==1 && c==0){
                         imgElement.srcset= col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=480&format=jpeg 480w,"+
                         col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=750&format=jpeg 750w,"+
                         col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=1080&format=jpeg 1080w,"+
@@ -107,7 +107,7 @@ export default function decorate(block){
 
                         imgElement.sizes = '(max-width: 767px) 100vw, 100vw';
                         imgElement.loading = 'lazy';
-                    }
+                    // }
                     
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
