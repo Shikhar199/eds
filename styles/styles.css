@@ -18568,3 +18568,29 @@ footer .footer-bottom p {
 .banner-slick.slick-initialized {
     display: block
 }
+
+@media(max-width: 767px){
+    .slider {
+        visibility: hidden
+    }
+    
+    .slider>div:first-child {
+        visibility: visible
+    }
+    
+    .slider.slick-initialized {
+        visibility: visible
+    }
+    
+    .banner-slick {
+        display: none
+    }
+    
+    .banner-slick>div:first-child {
+        display: block
+    }
+    
+    .banner-slick.slick-initialized {
+        display: block
+    }
+}
