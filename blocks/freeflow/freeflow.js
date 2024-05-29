@@ -87,18 +87,18 @@ export default function decorate(block){
 
                     // Preload LCP images
                     // if(r==1 && c==0){
-                        console.log("Inside Preload LCP");
-                        const link = document.createElement('link');
-                        link.rel = 'preload';
-                        link.as = 'image';
-                        link.fetchpriority="high";
-                        // link.type="image/webp";
-                        link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                        // const head = document.head;
-                        // head.insertBefore(link, head.children[2]);
-                        document.head.appendChild(link);
+                        // console.log("Inside Preload LCP");
+                        // const link = document.createElement('link');
+                        // link.rel = 'preload';
+                        // link.as = 'image';
+                        // link.fetchpriority="high";
+                        // // link.type="image/webp";
+                        // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                        // // const head = document.head;
+                        // // head.insertBefore(link, head.children[2]);
+                        // document.head.appendChild(link);
                     // }
-                    // if(r==1 && c==0){
+                    if(r==1 && c==0){
                         imgElement.srcset= col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=480&format=jpeg 480w,"+
                         col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=750&format=jpeg 750w,"+
                         col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=1080&format=jpeg 1080w,"+
@@ -107,7 +107,7 @@ export default function decorate(block){
 
                         imgElement.sizes = '(max-width: 767px) 100vw, 100vw';
                         imgElement.loading = 'lazy';
-                    // }
+                    }
                     
                     bannerImgDiv.appendChild(imgElement);
                 } else if(c==1){
