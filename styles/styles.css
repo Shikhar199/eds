@@ -14210,12 +14210,12 @@ header .navbar .navbar-collapse p {
     }
 }
 
-/* @media (min-width: 991px) {
+@media (min-width: 991px) {
     .img-fluid.hero-banner {
         width:100vw;
-        aspect-ratio: 19.17/9
+        /* aspect-ratio: 19.17/9 */
     }
-} */
+}
 
 @media (min-width: 991px) {
     .freeflow-container.freeflowhtml {
