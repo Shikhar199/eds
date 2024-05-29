@@ -87,18 +87,18 @@ export default function decorate(block){
                     bannerImgDiv.appendChild(imgElement);
 
                     // Preload LCP images
-                    if(r==1 && c==0){
-                        console.log("Inside Preload LCP");
-                        const link = document.createElement('link');
-                        link.rel = 'preload';
-                        link.as = 'image';
-                        link.fetchpriority="high";
-                        link.type="image/webp";
-                        link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                        // const head = document.head;
-                        // head.insertBefore(link, head.children[2]);
-                        document.head.appendChild(link);
-                    }
+                    // if(r==1 && c==0){
+                    //     console.log("Inside Preload LCP");
+                    //     const link = document.createElement('link');
+                    //     link.rel = 'preload';
+                    //     link.as = 'image';
+                    //     link.fetchpriority="high";
+                    //     link.type="image/webp";
+                    //     link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    //     // const head = document.head;
+                    //     // head.insertBefore(link, head.children[2]);
+                    //     document.head.appendChild(link);
+                    // }
                 } else if(c==1){
                     const containerDiv = document.createElement('div');
                     containerDiv.classList.add('container');
