@@ -332,11 +332,9 @@ function hideOptions(){
 function loadScripts() {
     var ikijsScript = document.createElement('script')
     ikijsScript.setAttribute("src","/blocks/iki/iki.js");
-    ikijsScript.setAttribute("defer",true);
 
     var ikiloginjsScript = document.createElement('script')
     ikiloginjsScript.setAttribute("src","/blocks/ikilogin/ikilogin.js");
-    ikiloginjsScript.setAttribute("defer",true);
 
     var bundleScript = document.createElement('script')
     bundleScript.setAttribute("src","/blocks/bundle/bundle.js");
