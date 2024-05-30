@@ -264,6 +264,7 @@ async function loadCSS(href) {
       link.href = href;
       link.onload = resolve;
       link.onerror = reject;
+      link.setAttribute('defer',true);
       document.head.append(link);
     } else {
       resolve();
