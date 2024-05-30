@@ -109,7 +109,7 @@ export default function decorate(block){
                         col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=1920&format=jpeg 1920w,";
 
                         imgElement.sizes = '(max-width: 767px) 100vw, 100vw';
-                        imgElement.loading = 'lazy';
+                        // imgElement.loading = 'lazy';
                     }
                     
                     bannerImgDiv.appendChild(imgElement);
