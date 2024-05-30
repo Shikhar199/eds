@@ -126,7 +126,7 @@ export default function decorate(block){
                     // link.as = 'image';
                     // link.fetchpriority="high"; 
                     // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // document.head.appendChild(link);
 
                 } else if(c==1){
                     const insightsDiv = createInsightsDiv(col, 'insights', "icon-long-right-arrow", "find-more-white", "icon-chevron-right-circle-white", "icon-long-right-arrow",index,secondImgDiv)
