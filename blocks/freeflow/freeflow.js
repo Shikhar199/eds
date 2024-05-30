@@ -97,6 +97,8 @@ export default function decorate(block){
                         // const head = document.head;
                         // head.insertBefore(link, head.children[2]);
                         document.head.appendChild(link);
+                    } else{
+                        imgElement.setAttribute('loading','lazy');
                     }
                     // if(r==1 && c==0){
                     //     imgElement.srcset= col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=480&format=jpeg 480w,"+
