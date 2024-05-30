@@ -225,8 +225,11 @@ export default function decorate(block){
     
     // Create the noscript element with a fallback link
     const noscriptElement = document.createElement('noscript');
-    noscriptElement.innerHTML = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap">'; // Update this to your actual CSS file path
+    const googleSecondFontLink = document.createElement('link');
+    googleSecondFontLink.setAttribute('rel','stylesheet');
+    googleSecondFontLink.setAttribute('href','https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
     
+    noscriptElement.appendChild(googleSecondFontLink);
     // Append the noscript element to the head
     document.head.appendChild(noscriptElement);
 
