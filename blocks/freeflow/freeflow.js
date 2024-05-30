@@ -82,7 +82,7 @@ export default function decorate(block){
                     const imgElement = document.createElement('img');
                     imgElement.classList.add('img-fluid', 'hero-banner');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
-                    imgElement.setAttribute('loading','lazy');
+                    // imgElement.setAttribute('loading','lazy');
                     // imgElement.style.width = '100vw';
                     // imgElement.style.aspectRatio = '19.17/9';
 
