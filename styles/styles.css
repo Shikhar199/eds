@@ -14223,11 +14223,11 @@ header .navbar .navbar-collapse p {
     }
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
     .freeflow-container.freeflowhtml {
         max-height:540px
     }
-}
+} */
 
 header .navbar .toggle-btn {
     display: flex;
