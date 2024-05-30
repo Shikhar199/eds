@@ -264,7 +264,6 @@ async function loadCSS(href) {
       link.href = href;
       link.onload = resolve;
       link.onerror = reject;
-      link.setAttribute('media','all');
       document.head.append(link);
     } else {
       resolve();
