@@ -61,15 +61,6 @@ export default function decorate(block){
                     link.fetchpriority="high"; 
                     link.href = col.querySelector('img').getAttribute('src');
                     document.head.appendChild(link);
-
-                    imgElement.srcset= col.querySelector('img').getAttribute('src')+"?width=480&format=jpeg 480w,"+
-                    col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=750&format=jpeg 750w,"+
-                    col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=1080&format=jpeg 1080w,"+
-                    col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=1500&format=jpeg 1500w,"+
-                    col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=1920&format=jpeg 1920w,";
-
-                    imgElement.sizes = '(max-width: 767px) 100vw, 100vw';
-                    // imgElement.loading = 'lazy';
                 } else if (c==1){
                     const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow',index,insightsWrapper1)
                     insightsWrapper1.appendChild(insightsDiv);
