@@ -55,12 +55,12 @@ export default function decorate(block){
                     imgElement.setAttribute('src', col.querySelector('img').getAttribute('src'));
                     imgElement.classList.add('img-fluid', 'insights-image');
                     insightsWrapper1.appendChild(imgElement);
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('img').getAttribute('src');
+                    // document.head.appendChild(link);
                 } else if (c==1){
                     const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow',index,insightsWrapper1)
                     insightsWrapper1.appendChild(insightsDiv);
@@ -87,12 +87,12 @@ export default function decorate(block){
                     firstImg.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     firstImg.classList.add('img-fluid', 'interactive-image');
                     firstImg.setAttribute('alt', 'Video');
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    // document.head.appendChild(link);
                     firstImgDiv.appendChild(firstImg);
 
                 } else if(c==1){
@@ -121,11 +121,11 @@ export default function decorate(block){
                     secondImg.classList.add('img-fluid', 'interactive-image');
                     secondImg.setAttribute('alt', 'Video');
                     secondImgDiv.appendChild(secondImg);
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
                     document.head.appendChild(link);
 
                 } else if(c==1){
@@ -155,12 +155,12 @@ export default function decorate(block){
                     const imgElement = document.createElement('img');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     imgElement.classList.add('img-fluid', 'podcast-image');
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    // document.head.appendChild(link);
                     podcastWrapperDiv.appendChild(imgElement);
                 } else if(c==1){
                     const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow',index,podcastWrapperDiv)
@@ -187,12 +187,12 @@ export default function decorate(block){
                     const imgElement = document.createElement('img');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     imgElement.classList.add('img-fluid', 'case-study-image');
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    // document.head.appendChild(link);
                     caseStudyWrapperDiv.appendChild(imgElement);
                 } else if(c==1){
                     const insightsDiv = createInsightsDiv(col, 'case-study-content', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow', index, caseStudyWrapperDiv);
@@ -218,12 +218,12 @@ export default function decorate(block){
                     const imgElement = document.createElement('img');
                     imgElement.setAttribute('src', col.querySelector('picture').querySelector('img').getAttribute('src'));
                     imgElement.classList.add('img-fluid', 'quality-image');
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                    // document.head.appendChild(link);
                     qualityEngDiv.appendChild(imgElement);
                 } else if(c==1){
                     const insightsDiv = createInsightsDiv(col, 'quality-content', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow', index, qualityEngDiv)
@@ -245,12 +245,12 @@ export default function decorate(block){
                     imgElement.setAttribute('src', col.querySelector('img').getAttribute('src'));
                     imgElement.setAttribute('alt', 'Sustainability');
                     imgElement.classList.add('img-fluid', 'theme-image');
-                    const link = document.createElement('link');
-                    link.rel = 'preload';
-                    link.as = 'image';
-                    link.fetchpriority="high"; 
-                    link.href = col.querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    // const link = document.createElement('link');
+                    // link.rel = 'preload';
+                    // link.as = 'image';
+                    // link.fetchpriority="high"; 
+                    // link.href = col.querySelector('img').getAttribute('src');
+                    // document.head.appendChild(link);
                     liElement.appendChild(imgElement);
 
                 } else if (c === 1) {
