@@ -244,7 +244,10 @@ export default function decorate(block){
     
     // Create the noscript element with a fallback link
     const noscriptTypekitElement = document.createElement('noscript');
-    noscriptTypekitElement.innerHTML = '<link rel="stylesheet" href="https://use.typekit.net/nkq8fly.css">'; // Update this to your actual CSS file path
+    const secondTypeKitLink = document.createElement('link');
+    secondTypeKitLink.setAttribute('rel','stylesheet');
+    secondTypeKitLink.setAttribute('href','https://use.typekit.net/nkq8fly.css');
+    noscriptTypekitElement.appendChild(secondTypeKitLink);
     
     // Append the noscript element to the head
     document.head.appendChild(noscriptTypekitElement);
