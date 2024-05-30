@@ -18568,3 +18568,11 @@ footer .footer-bottom p {
 .banner-slick.slick-initialized {
     display: block
 }
+
+.img-fluid.hero-banner{
+    visibility: hidden;
+}
+
+.slick-initialized .img-fluid.hero-banner{
+    visibility: visible;
+}
