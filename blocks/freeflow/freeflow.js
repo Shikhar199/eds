@@ -87,18 +87,19 @@ export default function decorate(block){
                     // imgElement.style.aspectRatio = '19.17/9';
 
                     // Preload LCP images
-                    // if(r==1 && c==0){
+                    if(r==1 && c==0){
                         // console.log("Inside Preload LCP");
-                        // const link = document.createElement('link');
-                        // link.rel = 'preload';
-                        // link.as = 'image';
-                        // link.fetchpriority="high";
+                        const link = document.createElement('link');
+                        link.rel = 'preload';
+                        link.as = 'image';
+                        link.fetchpriority="high";
                         // link.type="image/webp";
-                        // link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
+                        link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
                         // const head = document.head;
                         // head.insertBefore(link, head.children[2]);
-                        // document.head.appendChild(link);
-                    // } else{
+                        document.head.appendChild(link);
+                    } 
+                    // else{
                     // }
                     // if(r==1 && c==0){
                     //     imgElement.srcset= col.querySelector('picture').querySelector('img').getAttribute('src')+"?width=480&format=jpeg 480w,"+
