@@ -212,48 +212,48 @@ export default function decorate(block){
     // document.head.appendChild(link2);
     // document.head.appendChild(link3);
 
-    const googleFontLink = document.createElement('link');
-    googleFontLink.rel = 'preload';
-    googleFontLink.href = 'https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap'; // Update this to your actual CSS file path
-    googleFontLink.as = 'style';
-    googleFontLink.onload = function() {
-        this.onload = null;
-        this.rel = 'stylesheet';
-    };
+    // const googleFontLink = document.createElement('link');
+    // googleFontLink.rel = 'preload';
+    // googleFontLink.href = 'https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap'; // Update this to your actual CSS file path
+    // googleFontLink.as = 'style';
+    // googleFontLink.onload = function() {
+    //     this.onload = null;
+    //     this.rel = 'stylesheet';
+    // };
 
-    // Append the preload link to the head
-    document.head.appendChild(googleFontLink);
+    // // Append the preload link to the head
+    // document.head.appendChild(googleFontLink);
     
-    // Create the noscript element with a fallback link
-    const noscriptElement = document.createElement('noscript');
-    const googleSecondFontLink = document.createElement('link');
-    googleSecondFontLink.setAttribute('rel','stylesheet');
-    googleSecondFontLink.setAttribute('href','https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+    // // Create the noscript element with a fallback link
+    // const noscriptElement = document.createElement('noscript');
+    // const googleSecondFontLink = document.createElement('link');
+    // googleSecondFontLink.setAttribute('rel','stylesheet');
+    // googleSecondFontLink.setAttribute('href','https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
     
-    noscriptElement.appendChild(googleSecondFontLink);
-    // Append the noscript element to the head
-    document.head.appendChild(noscriptElement);
+    // noscriptElement.appendChild(googleSecondFontLink);
+    // // Append the noscript element to the head
+    // document.head.appendChild(noscriptElement);
 
-    const typekitLink = document.createElement('link');
-    typekitLink.rel = 'preload';
-    typekitLink.href = 'https://use.typekit.net/nkq8fly.css'; // Update this to your actual CSS file path
-    typekitLink.as = 'style';
-    typekitLink.onload = function() {
-        this.onload = null;
-        this.rel = 'stylesheet';
-    };
+    // const typekitLink = document.createElement('link');
+    // typekitLink.rel = 'preload';
+    // typekitLink.href = 'https://use.typekit.net/nkq8fly.css'; // Update this to your actual CSS file path
+    // typekitLink.as = 'style';
+    // typekitLink.onload = function() {
+    //     this.onload = null;
+    //     this.rel = 'stylesheet';
+    // };
 
-    // Append the preload link to the head
-    document.head.appendChild(typekitLink);
+    // // Append the preload link to the head
+    // document.head.appendChild(typekitLink);
     
-    // Create the noscript element with a fallback link
-    const noscriptTypekitElement = document.createElement('noscript');
-    const secondTypeKitLink = document.createElement('link');
-    secondTypeKitLink.setAttribute('rel','stylesheet');
-    secondTypeKitLink.setAttribute('href','https://use.typekit.net/nkq8fly.css');
-    noscriptTypekitElement.appendChild(secondTypeKitLink);
+    // // Create the noscript element with a fallback link
+    // const noscriptTypekitElement = document.createElement('noscript');
+    // const secondTypeKitLink = document.createElement('link');
+    // secondTypeKitLink.setAttribute('rel','stylesheet');
+    // secondTypeKitLink.setAttribute('href','https://use.typekit.net/nkq8fly.css');
+    // noscriptTypekitElement.appendChild(secondTypeKitLink);
     
-    // Append the noscript element to the head
-    document.head.appendChild(noscriptTypekitElement);
+    // // Append the noscript element to the head
+    // document.head.appendChild(noscriptTypekitElement);
 
 }
