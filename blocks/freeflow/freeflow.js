@@ -96,9 +96,9 @@ export default function decorate(block){
                         link.fetchpriority="high";
                         // link.type="image/webp";
                         link.href = col.querySelector('picture').querySelector('img').getAttribute('src');
-                        // const head = document.head;
-                        // head.insertBefore(link, head.children[2]);
-                        document.head.appendChild(link);
+                        const head = document.head;
+                        head.insertBefore(link, head.children[2]);
+                        // document.head.appendChild(link);
                     } 
                     // else{
                     // }
