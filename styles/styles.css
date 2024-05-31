@@ -14210,25 +14210,6 @@ header .navbar .navbar-collapse p {
     }
 }
 
-@media (min-width: 991px) {
-    .img-fluid.hero-banner {
-        width:100vw;
-        aspect-ratio: 19.17/9;
-    }
-}
-
-@media (min-width: 991px) {
-    .freeflow-container.freeflowhtml {
-        max-height:482px
-    }
-}
-
-/* @media (max-width: 991px) {
-    .freeflow-container.freeflowhtml {
-        max-height:540px
-    }
-} */
-
 header .navbar .toggle-btn {
     display: flex;
     align-items: center
@@ -18545,29 +18526,6 @@ footer .footer-bottom p {
     background-color: #0c1220!important
 }
 
-.slider {
-    visibility: hidden
-}
-
-.slider>div:first-child {
-    visibility: visible
-}
-
-.slider.slick-initialized {
-    visibility: visible
-}
-
-.banner-slick {
-    display: none
-}
-
-.banner-slick>div:first-child {
-    display: block
-}
-
-.banner-slick.slick-initialized {
-    display: block
-}
 
 /* .img-fluid.hero-banner{
     visibility: hidden;
