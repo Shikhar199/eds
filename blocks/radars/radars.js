@@ -60,7 +60,9 @@ export default function decorate(block){
                     link.as = 'image';
                     link.fetchpriority="high"; 
                     link.href = col.querySelector('img').getAttribute('src');
-                    document.head.appendChild(link);
+                    const head = document.head;
+                    head.insertBefore(link, head.children[3]);
+                    // document.head.appendChild(link);
                 } else if (c==1){
                     const insightsDiv = createInsightsDiv(col, 'insights', 'icon-long-right-arrow', 'find-more-white', 'icon-chevron-right-circle-white', 'icon-long-right-arrow',index,insightsWrapper1)
                     insightsWrapper1.appendChild(insightsDiv);
