@@ -257,4 +257,9 @@ export default function decorate(block){
     // // Append the noscript element to the head
     // document.head.appendChild(noscriptTypekitElement);
 
+    var mainjsScript = document.createElement('script')
+    mainjsScript.setAttribute("src","/scripts/main.js");
+    mainjsScript.setAttribute('defer',true); 
+    document.head.appendChild(mainjsScript);
+
 }
