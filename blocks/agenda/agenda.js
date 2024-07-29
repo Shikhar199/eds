@@ -43,9 +43,9 @@ export default function decorate(block){
         // Create the ul element for day-selection
         var daySelectionUl = document.createElement('ul');
 
+        var days = [];
         // Create li elements for day-selection
         if(index==1){
-            var days = [];
             var panelArr = row.textContent.trim().split("\n");
             console.log(panelArr);
             for(let i=0;i<panelArr.length;i++){
