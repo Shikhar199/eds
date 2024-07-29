@@ -8,7 +8,7 @@ export default function decorate(block){
             console.log("Panel 1");
             var panelArr = row.textContent.trim().split("/n")
             for(let ele=0;ele<panelArr.length;ele++){
-                console.log("Panle 1 -",panelArr[ele]);
+                console.log("Panle 1 -",panelArr[ele].textContent.trim());
             }
         }
         if(index==2){
