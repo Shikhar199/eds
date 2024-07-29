@@ -66,4 +66,171 @@
     color: #ffffff;
     background: #df9926;
   }
+  .item-bio {
+    padding: 40px;
+  }
+  .item-bio p {
+    margin-bottom: 15px;
+    font-weight: 400;
+  }
+  .item-bio p:last-child {
+    margin-bottom: 0;
+  }
+  .profile-name {
+    margin: 0;
+    font-size: 40px;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
+  }
+  .profile-designation {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .cta-speaker + .cta-speaker {
+    left: 70px;
+  }
+  .cta-speaker + .cta-speaker:before {
+    content: "|";
+    padding-right: 0.5rem;
+  }
+  .d-flex-speaker .item-slider-href {
+    cursor: pointer;
+  }
+  .d-flex-speaker .item-slider-head {
+    font-size: 30px;
+    line-height: 1;
+  }
+  .speakes-sec .item-slider-href a:after {
+    bottom: 130px;
+  }
+  /* .d-flex-speaker .item-cnt-wrapper {
+    position: relative;
+  }
+  .d-flex-speaker .item-cnt-wrapper:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 20px;
+    top: 20px;
+    border: 3px solid #df9926;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(-45deg);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  } */
+  .speaker-close {
+    color: #df9926;
+    right: 25px;
+    position: absolute;
+    top: 5px;
+    padding: 10px;
+    line-height: 0.7;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .year {
+    font-size: 30px;
+    color: #df9926;
+    font-weight: 400;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
+  }
+  .year + .year {
+    margin-left: 25px;
+  }
+  .active-year, .active-year:hover, .active-year:focus {
+    color: #2f1113 !important;
+  }
+  /* Panel selection End */
+  .panel-selection ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 70px 0;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+  }
+  .panel-selection ul li {
+    color: #df9926;
+    padding: 6px;
+    border: 2px solid #df9926;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 400;
+  }
+  .panel-selection ul li:nth-child(2), .panel-selection ul li:nth-child(4), .panel-selection ul li:nth-child(6) {
+    margin-right: 0px;
+  }
+  .panel-selection ul li:hover, .panel-selection ul li.active {
+    color: #ffffff;
+    background: #df9926;
+    transition: all 0.3s ease;
+  }
+  .panel-selection ul li[data-panel="sectionBreakout"] {
+    border-color: #027dc4;
+    color: #027dc4;
+  }
+  .panel-selection ul li[data-panel="sectionBreakout"]:hover, .panel-selection ul li.active[data-panel="sectionBreakout"] {
+    border-color: #027dc4;
+    color: #ffffff;
+    background: #027dc4;
+  }
+  .panel-selection ul li[data-panel="sectionSpotlight"] {
+    border-color: #f26c51;
+    color: #f26c51;
+  }
+  .panel-selection ul li[data-panel="sectionSpotlight"]:hover, .panel-selection ul li.active[data-panel="sectionSpotlight"] {
+    border-color: #f26c51;
+    color: #ffffff;
+    background: #f26c51;
+  }
+  .panel-selection ul li[data-panel="sectionKeynote"] {
+    border-color: #000000;
+    color: #000000;
+  }
+  .panel-selection ul li[data-panel="sectionKeynote"]:hover, .panel-selection ul li.active[data-panel="sectionKeynote"] {
+    border-color: #000000;
+    color: #ffffff;
+    background: #000000;
+  }
+  .panel-selection ul li[data-panel="sectionDiscussion"] {
+    border-color: #a13193;
+    color: #a13193;
+  }
+  .panel-selection ul li[data-panel="sectionDiscussion"]:hover, .panel-selection ul li.active[data-panel="sectionDiscussion"] {
+    border-color: #a13193;
+    color: #ffffff;
+    background: #a13193;
+  }
+  .panel-selection ul li[data-panel="sectionShowcase"] {
+    border-color: #47b38e;
+    color: #47b38e;
+  }
+  .panel-selection ul li[data-panel="sectionShowcase"]:hover, .panel-selection ul li.active[data-panel="sectionShowcase"] {
+    border-color: #47b38e;
+    color: #ffffff;
+    background: #47b38e;
+  }
+  .panel-selection ul li[data-panel="sectionSpecial"] {
+    border-color: #47b38e;
+    color: #47b38e;
+  }
+  .panel-selection ul li[data-panel="sectionSpecial"]:hover, .panel-selection ul li.active[data-panel="sectionSpecial"] {
+    border-color: #47b38e;
+    color: #ffffff;
+    background: #47b38e;
+  }
+  .days {
+    display: none;
+  }
+  .days.active {
+    display: block;
+  }
+  .agenda p.no-blocks-available {
+    font-size: 21px;
+    font-weight: bold;
+  }
   

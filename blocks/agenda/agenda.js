@@ -2,21 +2,6 @@ export default function decorate(block){
     console.log(block);
     [...block.children].forEach((row,index)=>{
         
-        // if(index==0){
-        //     console.log("Panel 1");
-        //     var panelArr = row.textContent.trim().split("/n")
-        //     for(let ele=0;ele<panelArr.length;ele++){
-        //         console.log("Panle 1 -",panelArr[ele]);
-        //     }
-        // }
-        // if(index==1){
-        //     console.log("Panel 2");
-        //     var panelArr2 = row.textContent.trim().split("/n")
-        //     for(let ele=0;ele<panelArr2.length;ele++){
-        //         console.log("Panle 2 -",panelArr2[ele]);
-        //     }
-        // }
-        // Create the main container div
         var containerDiv = document.createElement('div');
         containerDiv.classList.add('col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5');
 
@@ -57,7 +42,7 @@ export default function decorate(block){
                 day.text = panelArr[i].trim();
                 days[i] = day;
             }
-            console.log(days);
+            // console.log(days);
 
             days.forEach(function(day) {
                 var li = document.createElement('li');
@@ -71,7 +56,7 @@ export default function decorate(block){
             containerDiv.appendChild(daySelectionDiv);
         }
       
-        console.log(daySelectionDiv);
+        // console.log(daySelectionDiv);
 
         // Create the panel-selection div
         var panelSelectionDiv = document.createElement('div');
@@ -85,7 +70,7 @@ export default function decorate(block){
         // Create the ul element for panel-selection
         var panelSelectionUl = document.createElement('ul');
 
-        console.log(panelSelectionUl);
+        // console.log(panelSelectionUl);
 
         var panels = [];
 
