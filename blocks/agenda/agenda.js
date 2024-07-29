@@ -62,28 +62,30 @@ export default function decorate(block){
             // ];
         }
 
-//         days.forEach(function(day) {
-//           var li = document.createElement('li');
-//           li.setAttribute('data-day', day.dataDay);
-//           li.classList.add('text-uppercase');
-//           if (day.active) li.classList.add('active');
-//           li.innerText = day.text;
-//           daySelectionUl.appendChild(li);
-//         });
+        days.forEach(function(day) {
+          var li = document.createElement('li');
+          li.setAttribute('data-day', day.dataDay);
+          li.classList.add('text-uppercase');
+          if (day.active) li.classList.add('active');
+          li.innerText = day.text;
+          daySelectionUl.appendChild(li);
+        });
 
-// daySelectionDiv.appendChild(daySelectionUl);
+        daySelectionDiv.appendChild(daySelectionUl);
 
-// // Create the panel-selection div
-// var panelSelectionDiv = document.createElement('div');
-// panelSelectionDiv.classList.add('panel-selection', 'wow', 'fadeInUp', 'animated');
-// panelSelectionDiv.setAttribute('data-wow-delay', '0.2s');
-// panelSelectionDiv.style.visibility = 'visible';
-// panelSelectionDiv.style.webkitAnimationDelay = '0.2s';
-// panelSelectionDiv.style.mozAnimationDelay = '0.2s';
-// panelSelectionDiv.style.animationDelay = '0.2s';
+        console.log(daySelectionDiv);
 
-// // Create the ul element for panel-selection
-// var panelSelectionUl = document.createElement('ul');
+        // Create the panel-selection div
+        var panelSelectionDiv = document.createElement('div');
+        panelSelectionDiv.classList.add('panel-selection', 'wow', 'fadeInUp', 'animated');
+        panelSelectionDiv.setAttribute('data-wow-delay', '0.2s');
+        panelSelectionDiv.style.visibility = 'visible';
+        panelSelectionDiv.style.webkitAnimationDelay = '0.2s';
+        panelSelectionDiv.style.mozAnimationDelay = '0.2s';
+        panelSelectionDiv.style.animationDelay = '0.2s';
+
+        // Create the ul element for panel-selection
+        var panelSelectionUl = document.createElement('ul');
 
 // // Create li elements for panel-selection
 // var panels = [
