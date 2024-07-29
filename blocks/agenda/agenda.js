@@ -30,6 +30,7 @@ export default function decorate(block){
             h2Element.style.mozAnimationDelay = '0.2s';
             h2Element.style.animationDelay = '0.2s';
             h2Element.innerText = row.textContent.trim();
+            containerDiv.appendChild(h2Element);
         }
         // Create the day-selection div
         var daySelectionDiv = document.createElement('div');
@@ -66,9 +67,9 @@ export default function decorate(block){
                 li.innerText = day.text;
                 daySelectionUl.appendChild(li);
             });
+            daySelectionDiv.appendChild(daySelectionUl);
+            containerDiv.appendChild(daySelectionDiv);
         }
-
-        daySelectionDiv.appendChild(daySelectionUl);
       
         console.log(daySelectionDiv);
 
@@ -118,15 +119,13 @@ export default function decorate(block){
                 li.innerText = panel.text;
                 panelSelectionUl.appendChild(li);
             });
+            console.log(panelSelectionDiv);
+
+            panelSelectionDiv.appendChild(panelSelectionUl);
+    
+            // Append all elements to the main container
+            containerDiv.appendChild(panelSelectionDiv);
         }
-        console.log(panelSelectionDiv);
-
-        panelSelectionDiv.appendChild(panelSelectionUl);
-
-        // Append all elements to the main container
-        containerDiv.appendChild(h2Element);
-        containerDiv.appendChild(daySelectionDiv);
-        containerDiv.appendChild(panelSelectionDiv);
 
         // Append the container to the body or any other desired parent element
         document.body.appendChild(containerDiv);
