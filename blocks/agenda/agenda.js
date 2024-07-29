@@ -57,25 +57,19 @@ export default function decorate(block){
                 days[i] = day;
             }
             console.log(days);
-            // var days = [
-            //     { dataDay: 'agendaaccord1', text:  },
-            //     { dataDay: 'agendaaccord2', text: 'Analyst & Advisor Day' },
-            //     { dataDay: 'agendaaccord3', text: 'DAY 1 - EMEA Confluence', active: true },
-            //     { dataDay: 'agendaaccord4', text: 'DAY 2 - EMEA Confluence' }
-            // ];
+
+            days.forEach(function(day) {
+                var li = document.createElement('li');
+                li.setAttribute('data-day', day.dataDay);
+                li.classList.add('text-uppercase');
+                if (day.active) li.classList.add('active');
+                li.innerText = day.text;
+                daySelectionUl.appendChild(li);
+            });
         }
 
-        days.forEach(function(day) {
-          var li = document.createElement('li');
-          li.setAttribute('data-day', day.dataDay);
-          li.classList.add('text-uppercase');
-          if (day.active) li.classList.add('active');
-          li.innerText = day.text;
-          daySelectionUl.appendChild(li);
-        });
-
         daySelectionDiv.appendChild(daySelectionUl);
-
+      
         console.log(daySelectionDiv);
 
         // Create the panel-selection div
@@ -89,6 +83,27 @@ export default function decorate(block){
 
         // Create the ul element for panel-selection
         var panelSelectionUl = document.createElement('ul');
+
+        var panels = [];
+
+        if(index==2){
+            var panelArr = row.textContent.trim().split("\n");
+            console.log(panelArr);
+            console.log(panelArr.length);
+            for(let i=0;i<panelArr.length;i++){
+                var panel = {};
+                console.log("Panle 1 -",panelArr[i].trim());
+                panel.dataDay = 'section'+panelArr[i].trim();
+                panel.text = panelArr[i].trim();
+                panels[i] = panel;
+                if(i==3){
+                    panel.classList = "['d-none']";
+                } else if(i==4){
+                    panel.classList = "['d-none', 'active']"
+                }
+            }
+            console.log(panels);
+        }
 
 // // Create li elements for panel-selection
 // var panels = [
