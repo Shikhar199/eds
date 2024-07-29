@@ -5,17 +5,19 @@ export default function decorate(block){
             console.log(row.textContent.trim());
         }
         if(index==1){
+            console.log("Panel 1");
             var panelArr = [];
             panelArr = row.textContent.trim().split("/n")
             for(let ele in panelArr){
-                console.log("Panle 1 -",ele.textContent.trim());
+                console.log("Panle 1 -",ele);
             }
         }
         if(index==2){
+            console.log("Panel 1");
             var panelArr2 = [];
             panelArr2 = row.textContent.trim().split("/n")
             for(let ele in panelArr2){
-                console.log("Panle 1 -",ele.textContent.trim());
+                console.log("Panle 1 -",ele);
             }
         }
         // Create the main container div
