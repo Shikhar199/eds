@@ -1,0 +1,69 @@
+/* day-selection */
+.day-selection ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0 0;
+  }
+  .day-selection ul li {
+    color: #df9926;
+    padding: 10px;
+    border: 2px solid #df9926;
+    margin: 0 0 20px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
+  }
+  .day-selection ul li:hover, .day-selection ul li.active {
+    color: #ffffff;
+    background: #df9926;
+    transition: all 0.3s ease;
+  }
+
+  /* panel-selection-speaker Filter */
+  .panel-selection-speaker ul {
+    padding: 0;
+    margin: 50px 0;
+  }
+  .panel-selection-speaker ul li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px;
+    margin: 0 15px 15px 0;
+    border-radius: 4px;
+    font-weight: 400;
+    color: #df9926;
+    border: 2px solid #df9926;
+    transition: all 0.2s ease-in-out;
+  }
+  .panel-selection-speaker ul li:nth-child(1) {
+    border: 2px solid #000000;
+    color: #000000;
+  }
+  .panel-selection-speaker ul li:nth-child(1):hover, .panel-selection-speaker ul li.active:nth-child(1) {
+    color: #ffffff;
+    background-color: #000;
+  }
+  .panel-selection-speaker ul li:nth-child(2) {
+    border: 2px solid #027dc4;
+    color: #027dc4;
+  }
+  .panel-selection-speaker ul li:nth-child(2):hover, .panel-selection-speaker ul li.active:nth-child(2) {
+    color: #ffffff;
+    background-color: #027dc4;
+  }
+  .panel-selection-speaker ul li:nth-child(3) {
+    border: 2px solid #47b38e;
+    color: #47b38e;
+  }
+  .panel-selection-speaker ul li:nth-child(3):hover, .panel-selection-speaker ul li.active:nth-child(3) {
+    color: #ffffff;
+    background-color: #47b38e;
+  }
+  .panel-selection-speaker ul li:last-child:hover, .panel-selection-speaker ul li:last-child.active {
+    color: #ffffff;
+    background: #df9926;
+  }
+  
