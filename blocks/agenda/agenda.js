@@ -2,6 +2,12 @@ export default function decorate(block){
     console.log(block);
     [...block.children].forEach((row,index)=>{
         console.log(row.textContent.trim());
+        if(index==1){
+            console.log("Panle 1 -",row.textContent.trim());
+        }
+        if(index==2){
+            console.log("Panle 2 -",row.textContent.trim());
+        }
         // Create the main container div
         // var containerDiv = document.createElement('div');
         // containerDiv.classList.add('col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5');
