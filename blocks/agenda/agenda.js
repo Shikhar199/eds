@@ -1,17 +1,15 @@
 export default function decorate(block){
     console.log(block);
     [...block.children].forEach((row,index)=>{
+        
         if(index==0){
-            console.log(row.textContent.trim());
-        }
-        if(index==1){
             console.log("Panel 1");
             var panelArr = row.textContent.trim().split("/n")
             for(let ele=0;ele<panelArr.length;ele++){
                 console.log("Panle 1 -",panelArr[ele]);
             }
         }
-        if(index==2){
+        if(index==1){
             console.log("Panel 2");
             var panelArr2 = row.textContent.trim().split("/n")
             for(let ele=0;ele<panelArr2.length;ele++){
