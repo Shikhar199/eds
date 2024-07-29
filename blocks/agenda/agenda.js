@@ -105,18 +105,17 @@ export default function decorate(block){
                 panels[i] = panel;
             }
             console.log(panels);
+
+            panels.forEach(function(panel) {
+                var li = document.createElement('li');
+                li.setAttribute('data-panel', panel.dataPanel);
+                panel.classList.forEach(function(cls) {
+                  li.classList.add(cls);
+                });
+                li.innerText = panel.text;
+                panelSelectionUl.appendChild(li);
+            });
         }
-
-
-        panels.forEach(function(panel) {
-          var li = document.createElement('li');
-          li.setAttribute('data-panel', panel.dataPanel);
-          panel.classList.forEach(function(cls) {
-            li.classList.add(cls);
-          });
-          li.innerText = panel.text;
-          panelSelectionUl.appendChild(li);
-        });
 
         panelSelectionDiv.appendChild(panelSelectionUl);
 
