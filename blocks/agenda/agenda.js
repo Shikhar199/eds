@@ -50,9 +50,11 @@ export default function decorate(block){
             console.log(panelArr);
             console.log(panelArr.length);
             for(let i=0;i<panelArr.length;i++){
+                var day = {};
                 console.log("Panle 1 -",panelArr[i].trim());
-                days.dataDay = 'agendaaccord'+i;
-                days.text = panelArr[i].trim();
+                day.dataDay = 'agendaaccord'+i;
+                day.text = panelArr[i].trim();
+                days[i] = day;
             }
             console.log(days);
             // var days = [
