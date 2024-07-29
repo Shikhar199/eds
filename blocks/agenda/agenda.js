@@ -17,41 +17,49 @@ export default function decorate(block){
             }
         }
         // Create the main container div
-        // var containerDiv = document.createElement('div');
-        // containerDiv.classList.add('col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5');
+        var containerDiv = document.createElement('div');
+        containerDiv.classList.add('col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5');
 
         // Create the h2 element
-//         if(index==0){
-//             var h2Element = document.createElement('h2');
-//             h2Element.classList.add('h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated');
-//             h2Element.setAttribute('data-wow-delay', '0.2s');
-//             h2Element.style.visibility = 'visible';
-//             h2Element.style.webkitAnimationDelay = '0.2s';
-//             h2Element.style.mozAnimationDelay = '0.2s';
-//             h2Element.style.animationDelay = '0.2s';
-//             h2Element.innerText = row.textContent.trim();
-//         }
-//         // Create the day-selection div
-//         var daySelectionDiv = document.createElement('div');
-//         daySelectionDiv.classList.add('day-selection', 'wow', 'fadeInUp', 'animated');
-//         daySelectionDiv.setAttribute('data-wow-delay', '0.2s');
-//         daySelectionDiv.style.visibility = 'visible';
-//         daySelectionDiv.style.webkitAnimationDelay = '0.2s';
-//         daySelectionDiv.style.mozAnimationDelay = '0.2s';
-//         daySelectionDiv.style.animationDelay = '0.2s';
+        if(index==0){
+            var h2Element = document.createElement('h2');
+            h2Element.classList.add('h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated');
+            h2Element.setAttribute('data-wow-delay', '0.2s');
+            h2Element.style.visibility = 'visible';
+            h2Element.style.webkitAnimationDelay = '0.2s';
+            h2Element.style.mozAnimationDelay = '0.2s';
+            h2Element.style.animationDelay = '0.2s';
+            h2Element.innerText = row.textContent.trim();
+        }
+        // Create the day-selection div
+        var daySelectionDiv = document.createElement('div');
+        daySelectionDiv.classList.add('day-selection', 'wow', 'fadeInUp', 'animated');
+        daySelectionDiv.setAttribute('data-wow-delay', '0.2s');
+        daySelectionDiv.style.visibility = 'visible';
+        daySelectionDiv.style.webkitAnimationDelay = '0.2s';
+        daySelectionDiv.style.mozAnimationDelay = '0.2s';
+        daySelectionDiv.style.animationDelay = '0.2s';
 
-//         // Create the ul element for day-selection
-//         var daySelectionUl = document.createElement('ul');
+        // Create the ul element for day-selection
+        var daySelectionUl = document.createElement('ul');
 
-//         // Create li elements for day-selection
-//         if(index==1 || index==2 || index==3 || index==4){
-//             var days = [
-//                 { dataDay: 'agendaaccord1', text:  },
-//                 { dataDay: 'agendaaccord2', text: 'Analyst & Advisor Day' },
-//                 { dataDay: 'agendaaccord3', text: 'DAY 1 - EMEA Confluence', active: true },
-//                 { dataDay: 'agendaaccord4', text: 'DAY 2 - EMEA Confluence' }
-//             ];
-//         }
+        // Create li elements for day-selection
+        if(index==1){
+            var days = [];
+            var panelArr = row.textContent.trim().split("/n")
+            for(let i=0;i<panelArr.length;i++){
+                console.log("Panle 1 -",panelArr[i]);
+                days.dataDay = 'agendaaccord'+i;
+                days.text = panelArr[i];
+            }
+            console.log(days);
+            // var days = [
+            //     { dataDay: 'agendaaccord1', text:  },
+            //     { dataDay: 'agendaaccord2', text: 'Analyst & Advisor Day' },
+            //     { dataDay: 'agendaaccord3', text: 'DAY 1 - EMEA Confluence', active: true },
+            //     { dataDay: 'agendaaccord4', text: 'DAY 2 - EMEA Confluence' }
+            // ];
+        }
 
 //         days.forEach(function(day) {
 //           var li = document.createElement('li');
