@@ -8,14 +8,14 @@ export default function decorate(block){
             console.log("Panel 1");
             var panelArr = row.textContent.trim().split("/n")
             for(let ele=0;ele<panelArr.length;ele++){
-                console.log("Panle 1 -",panelArr[ele].textContent.trim());
+                console.log("Panle 1 -",panelArr[ele].trim());
             }
         }
         if(index==2){
             console.log("Panel 2");
             var panelArr2 = row.textContent.trim().split("/n")
             for(let ele=0;ele<panelArr2.length;ele++){
-                console.log("Panle 2 -",panelArr2[ele]);
+                console.log("Panle 2 -",panelArr2[ele].trim());
             }
         }
         // Create the main container div
