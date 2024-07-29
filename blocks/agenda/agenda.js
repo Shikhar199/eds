@@ -48,6 +48,7 @@ export default function decorate(block){
         if(index==1){
             var panelArr = row.textContent.trim().split("\n");
             console.log(panelArr);
+            console.log(panelArr.length);
             for(let i=0;i<panelArr.length;i++){
                 console.log("Panle 1 -",panelArr[i].trim());
                 days.dataDay = 'agendaaccord'+i;
