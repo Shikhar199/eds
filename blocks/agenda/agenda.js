@@ -89,6 +89,7 @@ export default function decorate(block){
         var panels = [];
 
         if(index==2){
+            console.log("Index is 2");
             var panelArr = row.textContent.trim().split("\n");
             console.log(panelArr);
             console.log(panelArr.length);
