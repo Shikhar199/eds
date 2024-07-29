@@ -1,12 +1,22 @@
 export default function decorate(block){
     console.log(block);
     [...block.children].forEach((row,index)=>{
-        console.log(row.textContent.trim());
+        if(index==0){
+            console.log(row.textContent.trim());
+        }
         if(index==1){
-            console.log("Panle 1 -",row.textContent.trim());
+            var panelArr = [];
+            panelArr = row.textContent.trim().split("/n")
+            for(let ele in panelArr){
+                console.log("Panle 1 -",ele.textContent.trim());
+            }
         }
         if(index==2){
-            console.log("Panle 2 -",row.textContent.trim());
+            var panelArr2 = [];
+            panelArr2 = row.textContent.trim().split("/n")
+            for(let ele in panelArr2){
+                console.log("Panle 1 -",ele.textContent.trim());
+            }
         }
         // Create the main container div
         // var containerDiv = document.createElement('div');
