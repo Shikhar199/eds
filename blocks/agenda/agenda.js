@@ -7,15 +7,15 @@ export default function decorate(block){
         if(index==1){
             console.log("Panel 1");
             var panelArr = row.textContent.trim().split("/n")
-            for(let ele in panelArr){
-                console.log("Panle 1 -",ele);
+            for(let ele=0;ele<panelArr.length;ele++){
+                console.log("Panle 1 -",panelArr[ele]);
             }
         }
         if(index==2){
             console.log("Panel 2");
             var panelArr2 = row.textContent.trim().split("/n")
-            for(let ele in panelArr2){
-                console.log("Panle 2 -",ele);
+            for(let ele=0;ele<panelArr2.length;ele++){
+                console.log("Panle 2 -",panelArr2[ele]);
             }
         }
         // Create the main container div
