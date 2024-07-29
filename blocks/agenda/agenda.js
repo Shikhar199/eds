@@ -113,10 +113,10 @@ export default function decorate(block){
             panels.forEach(function(panel) {
                 var li = document.createElement('li');
                 li.setAttribute('data-panel', panel.dataPanel);
-                for(let cls = 0; cls<panel.classList.length; cls++){
-                  li.classList.add(panel.classList[cls]);
-                };
-                li.innerText = panel.text;   
+                panel.classList.forEach(function(cls) {
+                  li.classList.add(cls);
+                });
+                li.innerText = panel.text;
                 panelSelectionUl.appendChild(li);
             });
             console.log(panelSelectionDiv);
