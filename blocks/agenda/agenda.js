@@ -6,18 +6,16 @@ export default function decorate(block){
         }
         if(index==1){
             console.log("Panel 1");
-            var panelArr = [];
-            panelArr = row.textContent.trim().split("/n")
+            var panelArr = row.textContent.trim().split("/n")
             for(let ele in panelArr){
                 console.log("Panle 1 -",ele);
             }
         }
         if(index==2){
-            console.log("Panel 1");
-            var panelArr2 = [];
-            panelArr2 = row.textContent.trim().split("/n")
+            console.log("Panel 2");
+            var panelArr2 = row.textContent.trim().split("/n")
             for(let ele in panelArr2){
-                console.log("Panle 1 -",ele);
+                console.log("Panle 2 -",ele);
             }
         }
         // Create the main container div
