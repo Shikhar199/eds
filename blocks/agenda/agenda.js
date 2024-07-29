@@ -107,34 +107,26 @@ export default function decorate(block){
             console.log(panels);
         }
 
-// // Create li elements for panel-selection
-// var panels = [
-//   { dataPanel: 'sectionKeynote', text: 'Keynote', classList: ['d-block'] },
-//   { dataPanel: 'sectionSpotlight', text: 'Spotlight', classList: ['d-block'] },
-//   { dataPanel: 'sectionDiscussion', text: 'Panel Discussion', classList: ['d-block'] },
-//   { dataPanel: 'sectionBreakout', text: 'Breakout', classList: ['d-none'] },
-//   { dataPanel: 'sectionAll', text: 'View all', classList: ['d-block', 'active'] }
-// ];
 
-// panels.forEach(function(panel) {
-//   var li = document.createElement('li');
-//   li.setAttribute('data-panel', panel.dataPanel);
-//   panel.classList.forEach(function(cls) {
-//     li.classList.add(cls);
-//   });
-//   li.innerText = panel.text;
-//   panelSelectionUl.appendChild(li);
-// });
+        panels.forEach(function(panel) {
+          var li = document.createElement('li');
+          li.setAttribute('data-panel', panel.dataPanel);
+          panel.classList.forEach(function(cls) {
+            li.classList.add(cls);
+          });
+          li.innerText = panel.text;
+          panelSelectionUl.appendChild(li);
+        });
 
-// panelSelectionDiv.appendChild(panelSelectionUl);
+        panelSelectionDiv.appendChild(panelSelectionUl);
 
-// // Append all elements to the main container
-// containerDiv.appendChild(h2Element);
-// containerDiv.appendChild(daySelectionDiv);
-// containerDiv.appendChild(panelSelectionDiv);
+        // Append all elements to the main container
+        containerDiv.appendChild(h2Element);
+        containerDiv.appendChild(daySelectionDiv);
+        containerDiv.appendChild(panelSelectionDiv);
 
-// // Append the container to the body or any other desired parent element
-// document.body.appendChild(containerDiv);
+        // Append the container to the body or any other desired parent element
+        document.body.appendChild(containerDiv);
 
     })
 }
