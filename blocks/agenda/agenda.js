@@ -116,6 +116,8 @@ export default function decorate(block){
                 panelSelectionUl.appendChild(li);
             });
         }
+        console.log(daySelectionDiv);
+        console.log(panelSelectionDiv);
 
         panelSelectionDiv.appendChild(panelSelectionUl);
 
