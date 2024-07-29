@@ -95,12 +95,14 @@ export default function decorate(block){
                 console.log("Panle 1 -",panelArr[i].trim());
                 panel.dataDay = 'section'+panelArr[i].trim();
                 panel.text = panelArr[i].trim();
-                panels[i] = panel;
                 if(i==3){
                     panel.classList = "['d-none']";
                 } else if(i==4){
-                    panel.classList = "['d-none', 'active']"
+                    panel.classList = "['d-block', 'active']"
+                } else{
+                    panel.classList = "['d-block']"
                 }
+                panels[i] = panel;
             }
             console.log(panels);
         }
