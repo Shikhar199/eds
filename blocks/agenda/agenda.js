@@ -84,6 +84,8 @@ export default function decorate(block){
         // Create the ul element for panel-selection
         var panelSelectionUl = document.createElement('ul');
 
+        console.log(panelSelectionUl);
+
         var panels = [];
 
         if(index==2){
@@ -116,7 +118,6 @@ export default function decorate(block){
                 panelSelectionUl.appendChild(li);
             });
         }
-        console.log(daySelectionDiv);
         console.log(panelSelectionDiv);
 
         panelSelectionDiv.appendChild(panelSelectionUl);
