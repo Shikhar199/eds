@@ -183,8 +183,12 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     const secondListChildren = Array.from(secondList.children);
     for(let i=0;i<secondListChildren.length;i++){
         console.log(i);
-        secondListChildren[i].setAttribute("data-day","agendaaccord"+i);
-        secondListChildren[i].classList.add('text-uppercase');
+        secondListChildren[i].setAttribute("data-day",panelDivAttr[i]);
+        if(i==3){
+            secondListChildren[i].classList.add('d-none');
+        } else{
+            secondListChildren[i].classList.add('d-block');
+        }
         panelUl.append(secondListChildren[i]);
     }
 
