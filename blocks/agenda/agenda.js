@@ -3,6 +3,7 @@ export default function decorate(block){
     const container = block.innerHTML;
     block.innerHTML = '';
     var lists = container.querySelectorAll('ul');
+    block.append(lists);
     console.log(lists);
 
     // var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
