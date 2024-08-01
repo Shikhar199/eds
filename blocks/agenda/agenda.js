@@ -171,7 +171,7 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     console.log(agendaDiv);
 
     const agendaUl = document.createElement('ul');
-    for(let i=0;i<firstList.children;i++){
+    for(let i=0;i<firstList.children.length;i++){
         li.setAttribute("data-day","agendaaccord"+i);
         li.classList.add('text-uppercase');
         agendaUl.append(li);
