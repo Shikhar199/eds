@@ -170,8 +170,13 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     console.log(agendaDiv);
 
-    for(let li of firstList.children){
-        console.log(li);
+    const agendaUl = document.createElement('ul');
+    for(let i=0;i<firstList.children;i++){
+        li.setAttribute("data-day","agendaaccord"+i);
+        li.classList.add('text-uppercase');
+        agendaUl.append(li);
     }
+
+    console.log(agendaUl);
 
 }
