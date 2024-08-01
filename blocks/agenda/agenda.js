@@ -163,11 +163,15 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     const agendaDiv = document.createElement('div');
     for(let cls in agendaDivClass){
-        agendaDiv.classList.add(cls);
+        agendaDiv.classList.add(agendaDivClass[cls]);
     }
     agendaDiv.setAttribute("data-wow-delay","0.2s");
     agendaDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
 
     console.log(agendaDiv);
 
+    for(let li of firstList){
+        console.log(li);
     }
+
+}
