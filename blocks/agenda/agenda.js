@@ -1,11 +1,11 @@
 export default function decorate(block){
     console.log(block);
     const container = block.innerHTML;
-    console.log(container);
     console.log(isDOMElement(container)); 
     console.log(isDOMElement(block));
+    console.log(container instanceof Node);
+    console.log(container instanceof Element);
     block.innerHTML = '';
-    console.log(container);
     var lists = container.querySelectorAll('ul');
     block.append(lists);
     console.log(lists);
