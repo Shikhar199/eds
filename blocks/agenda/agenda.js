@@ -1,7 +1,9 @@
 export default function decorate(block){
     console.log(block);
-    // const container = block.innerHTML;
-    // block.innerHTML = '';
+    const container = block.innerHTML;
+    block.innerHTML = '';
+    var lists = container.querySelectorAll('ul');
+    console.log(lists);
 
     // var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
     // createSelectionDiv();
