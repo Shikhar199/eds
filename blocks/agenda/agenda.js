@@ -5,6 +5,7 @@ export default function decorate(block){
     console.log(container instanceof Node);
     console.log(container instanceof Element);
     block.innerHTML = '';
+    console.log(container);
     var lists = container.querySelectorAll('ul');
     var blockHeading = container.querySelector('h2');
     block.append(lists);
@@ -145,14 +146,14 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     console.log(firstList.innerHTML);
     const parentDiv = document.createElement('div');
     for(let cls in parentDivClass){
-        parentDiv.classList.add(cls);
+        parentDiv.classList.add(parentDivClass[cls]);
     }
 
     console.log(parentDiv);
 
     const blockHead = document.createElement('h2');
     for(let cls in h2Class){
-        blockHead.classList.add(cls);
+        blockHead.classList.add(h2Class[cls]);
     }
     blockHead.setAttribute("data-wow-delay","0.2s");
     blockHead.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
