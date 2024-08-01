@@ -6,11 +6,16 @@ export default function decorate(block){
     console.log(container instanceof Element);
     block.innerHTML = '';
     var lists = container.querySelectorAll('ul');
+    var blockHeading = container.querySelector('h2');
     block.append(lists);
     console.log(lists);
 
-    // var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
-    // createSelectionDiv();
+    var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
+    var h2Class = ['h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated'];
+    var agendaDivClass = ['day-selection', 'wow', 'fadeInUp', 'animated'];
+    var panelDivAttr = ['sectionKeynote','sectionSpotlight','sectionDiscussion','sectionBreakout','sectionAll'];
+
+    createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, lists);
     
     // [...container.children].forEach((row,index)=>{
         
@@ -134,6 +139,34 @@ export default function decorate(block){
     // })
 }
 
-// function createSelectionDiv(){
+function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, lists){
+    const firstList = lists[0];
+    const secondList = lists[1];
+    console.log(firstList.innerHTML);
+    const parentDiv = document.createElement('div');
+    for(let cls in parentDivClass){
+        parentDiv.classList.add(cls);
+    }
 
-// }
+    console.log(parentDiv);
+
+    const blockHead = document.createElement('h2');
+    for(let cls in h2Class){
+        blockHead.classList.add(cls);
+    }
+    blockHead.setAttribute("data-wow-delay","0.2s");
+    blockHead.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
+    blockHead.textContent = blockHeading.textContent.trim();
+
+    console.log(blockHead);
+
+    const agendaDiv = document.createElement('div');
+    for(let cls in agendaDivClass){
+        agendaDiv.classList.add(cls);
+    }
+    agendaDiv.setAttribute("data-wow-delay","0.2s");
+    agendaDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
+
+    console.log(agendaDiv);
+
+    }
