@@ -15,8 +15,9 @@ export default function decorate(block){
     var h2Class = ['h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated'];
     var agendaDivClass = ['day-selection', 'wow', 'fadeInUp', 'animated'];
     var panelDivAttr = ['sectionKeynote','sectionSpotlight','sectionDiscussion','sectionBreakout','sectionAll'];
+    var selectionDivClass = {'class':['wow', 'fadeInUp', 'animated'], 'delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'} 
 
-    createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, lists);
+    createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, selectionDivClass,lists);
     
     // [...container.children].forEach((row,index)=>{
         
@@ -140,7 +141,7 @@ export default function decorate(block){
     // })
 }
 
-function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, lists){
+function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, selectionDivClass, lists){
     const firstList = lists[0];
     const secondList = lists[1];
     console.log(firstList.innerHTML);
@@ -170,6 +171,14 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     console.log(agendaDiv);
 
+    const daySelectionDiv = document.createElement('div');
+    for(let i=0;i<selectionDivClass.class.length;i++){
+        daySelectionDiv.classList.add(selectionDivClass.class[i]);
+    }
+    daySelectionDiv.classList.add('day-selection');
+    daySelectionDiv.setAttribute('data-wow-delay', selectionDivClass.delay);
+    daySelectionDiv.setAttribute('style', selectionDivClass.style);
+
     const agendaUl = document.createElement('ul');
     const firstListChildren = Array.from(firstList.children);
     for(let i=0;i<firstListChildren.length;i++){
@@ -178,6 +187,18 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
         firstListChildren[i].classList.add('text-uppercase');
         agendaUl.append(firstListChildren[i]);
     }
+
+    const panelSelectionDiv = document.createElement('div');
+    for(let i=0;i<selectionDivClass.class.length;i++){
+        panelSelectionDiv.classList.add(selectionDivClass.class[i]);
+    }
+    panelSelectionDiv.classList.add('panel-selection');
+    panelSelectionDiv.setAttribute('data-wow-delay', selectionDivClass.delay);
+    panelSelectionDiv.setAttribute('style', selectionDivClass.style);
+
+
+    console.log(daySelectionDiv);
+    console.log(panelSelectionDiv);
 
     const panelUl = document.createElement('ul');
     const secondListChildren = Array.from(secondList.children);
