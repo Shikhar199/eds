@@ -1,6 +1,12 @@
 export default function decorate(block){
     console.log(block);
-    [...block.children].forEach((row,index)=>{
+    const container = block.innerHTML;
+    block.innerHTML = '';
+
+    var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
+    createSelectionDiv();
+    
+    [...container.children].forEach((row,index)=>{
         
         var containerDiv = document.createElement('div');
         containerDiv.classList.add('col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5');
@@ -112,8 +118,16 @@ export default function decorate(block){
             containerDiv.appendChild(panelSelectionDiv);
         }
 
+        if(index==3){
+
+        }
+
         // Append the container to the body or any other desired parent element
         document.body.appendChild(containerDiv);
 
     })
+}
+
+function createSelectionDiv(){
+
 }
