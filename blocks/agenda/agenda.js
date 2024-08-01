@@ -2,6 +2,8 @@ export default function decorate(block){
     console.log(block);
     const container = block.innerHTML;
     console.log(container);
+    console.log(isDOMElement(container)); 
+    console.log(isDOMElement(block));
     block.innerHTML = '';
     console.log(container);
     var lists = container.querySelectorAll('ul');
