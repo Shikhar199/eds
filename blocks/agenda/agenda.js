@@ -170,7 +170,7 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     console.log(agendaDiv);
 
-    for(let li of firstList){
+    for(let li of firstList.children){
         console.log(li);
     }
 
