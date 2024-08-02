@@ -8,7 +8,6 @@ export default function decorate(block){
     console.log(container);
     var lists = container.querySelectorAll('ul');
     var blockHeading = container.querySelector('h2');
-    block.append(lists);
     console.log(lists);
 
     var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
