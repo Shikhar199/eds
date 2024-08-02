@@ -164,21 +164,17 @@ function createAemElement(tag, classes, attributes, elementId){
         for(let cls of classes){
             tagElement.classList.add(cls);
         }
-        console.log(tagElement);
     }
 
     if(attributes!==null){
         for(let attr in attributes){
             tagElement.setAttribute(attr,attributes[attr]);
         }
-        console.log(tagElement);
     }
 
     if(elementId!==null){
         tagElement.id = elementId;
-        console.log(tagElement);
     }
-    console.log(tagElement);
     return tagElement;
 
 }
