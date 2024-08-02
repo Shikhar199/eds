@@ -160,21 +160,21 @@ function createPanel(col){
 function createAemElement(tag, classes, attributes, elementId){
     const tagElement = document.createElement(tag);
 
-    if(!classes){
+    if(classes!==null){
         for(let cls of classes){
             tagElement.classList.add(cls);
         }
         console.log(tagElement);
     }
 
-    if(!attributes){
+    if(attributes!==null){
         for(let attr in attributes){
             tagElement.setAttribute(attr,attributes[attr]);
         }
         console.log(tagElement);
     }
 
-    if(!elementId){
+    if(elementId!==null){
         tagElement.id = elementId;
         console.log(tagElement);
     }
