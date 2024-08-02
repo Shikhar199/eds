@@ -131,6 +131,7 @@ function createPanel(panelHeading, col){
     var panelTimeDiv = document.createElement('div');
     panelTimeDiv.classList.add('panel-time');
 
-    console.log(col);
+    var ptags = col.querySelectorAll('p');
+    console.log(ptags[0]);
 
 }
