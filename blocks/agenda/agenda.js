@@ -28,9 +28,9 @@ export default function decorate(block){
     subHead.classList.add('agenda-subhead');
 
     var supTag = document.createElement('sup');
-    supTag.textContent = 'th'
+    supTag.textContent = 'th';
 
-    subHead.append(supTag);
+    subHead.appendChild(supTag);
 
     accord1Div.append(subHead);
 
