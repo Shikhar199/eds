@@ -16,21 +16,13 @@ export default function decorate(block){
     var panelDivClass = ['panel-selection', 'wow', 'fadeInUp', 'animated'];
     var panelDivAttr = ['sectionKeynote','sectionSpotlight','sectionDiscussion','sectionBreakout','sectionAll'];
 
-    var agendaaccordParentDiv = document.createElement('div');
-    agendaaccordParentDiv.classList.add("col-lg-8","col-md-8","col-sm-12","col-xs-12","accordian-main","wow","fadeInRight","animated");
-    agendaaccordParentDiv.setAttribute('data-wow-delay','0.2s');
-    agendaaccordParentDiv.setAttribute('style','visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;');
-
+    var agendaaccordParentDiv = createAemElement('div', ["col-lg-8","col-md-8","col-sm-12","col-xs-12","accordian-main","wow","fadeInRight","animated"], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'});
+    
     var parentDiv = createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
     block.append(parentDiv);
 
     var panelHeading = "";
-    var accord1Div = document.createElement('div');
-    accord1Div = document.createElement('div');
-    accord1Div.id = "agendaaccord1";
-    accord1Div.setAttribute('role','tablist');
-    accord1Div.setAttribute('aria-multiselectable','true');
-    accord1Div.classList.add('days');
+    var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, id);   
 
     var subHead = document.createElement('p');
     subHead.classList.add('agenda-subhead');
@@ -50,7 +42,7 @@ export default function decorate(block){
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
-                var panelDiv = createPanel( col);
+                var panelDiv = createPanel(col);
                 accord1Div.append(panelDiv);
             })
         }
@@ -163,4 +155,25 @@ function createPanel(col){
     panelDiv.append(panelHeadingDiv);
 
     return panelDiv;
+}
+
+function createAemElement(tag, classes, attributes, elementId){
+    const tagElement = document.createElement(tag);
+
+    if(!classes){
+        for(let cls of classes){
+            tagElement.classList.add(cls);
+        }
+    }
+
+    if(!attributes){
+        for(let attr in attributes){
+            tagElement.setAttribute(attr,attributes[attr]);
+        }
+    }
+
+    if(!elementId){
+        tagElement.id = id;
+    }
+
 }
