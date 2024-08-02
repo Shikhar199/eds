@@ -54,9 +54,9 @@ export default function decorate(block){
             })
         }
 
+        console.log(accord1Div);
     })
 
-    console.log(accord1Div);
 }
 
 function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
