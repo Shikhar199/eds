@@ -55,6 +55,7 @@ export default function decorate(block){
             })
         }
     })
+    console.log(accord1Div);
 
 }
 
