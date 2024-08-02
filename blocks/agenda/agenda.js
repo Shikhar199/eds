@@ -22,7 +22,7 @@ export default function decorate(block){
     block.append(parentDiv);
 
     var panelHeading = "";
-    var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, id);   
+    var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
 
     var subHead = document.createElement('p');
     subHead.classList.add('agenda-subhead');
