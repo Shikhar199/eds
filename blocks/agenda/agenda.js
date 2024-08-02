@@ -25,27 +25,28 @@ export default function decorate(block){
     block.append(parentDiv);
 
     var panelHeading = "";
+    var accord1Div = document.createElement('div');
+    accord1Div = document.createElement('div');
+    accord1Div.id = "agendaaccord1";
+    accord1Div.setAttribute('role','tablist');
+    accord1Div.setAttribute('aria-multiselectable','true');
+    accord1Div.classList.add('days');
+
+    var subHead = document.createElement('p');
+    subHead.classList.add('agenda-subhead');
+
+    var supTag = document.createElement('sup');
+    supTag.textContent = 'th'
+
+    subHead.append(supTag);
+
+    accord1Div.append(subHead);
 
     [...container.children].forEach((row,r)=>{
         if(r==3){
-            panelHeading = row.textContent.trim();    
+            panelHeading = row.textContent.trim();
+            subHead.textContent = panelHeading;    
         }
-        var accord1Div = document.createElement('div');
-        accord1Div.id = "agendaaccord1";
-        accord1Div.setAttribute('role','tablist');
-        accord1Div.setAttribute('aria-multiselectable','true');
-        accord1Div.classList.add('days');
-        
-        var subHead = document.createElement('p');
-        subHead.classList.add('agenda-subhead');
-        subHead.textContent = panelHeading;
-
-        var supTag = document.createElement('sup');
-        supTag.textContent = 'th'
-
-        subHead.append(supTag);
-
-        accord1Div.append(subHead);
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
@@ -53,8 +54,6 @@ export default function decorate(block){
                 accord1Div.append(panelDiv);
             })
         }
-
-        console.log(accord1Div);
     })
 
 }
