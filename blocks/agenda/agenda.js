@@ -17,7 +17,7 @@ export default function decorate(block){
     var panelDivAttr = ['sectionKeynote','sectionSpotlight','sectionDiscussion','sectionBreakout','sectionAll'];
 
     var agendaaccordParentDiv = document.createElement('div');
-    agendaaccordParentDiv.classList.add("col-lg-8","col-md-8","col-sm-12"," col-xs-12","accordian-main","wow","fadeInRight","animated");
+    agendaaccordParentDiv.classList.add("col-lg-8","col-md-8","col-sm-12","col-xs-12","accordian-main","wow","fadeInRight","animated");
     agendaaccordParentDiv.setAttribute('data-wow-delay','0.2s');
     agendaaccordParentDiv.setAttribute('style','visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;');
 
