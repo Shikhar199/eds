@@ -14,10 +14,10 @@ export default function decorate(block){
     var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
     var h2Class = ['h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated'];
     var agendaDivClass = ['day-selection', 'wow', 'fadeInUp', 'animated'];
+    var panelDivClass = ['panel-selection', 'wow', 'fadeInUp', 'animated'];
     var panelDivAttr = ['sectionKeynote','sectionSpotlight','sectionDiscussion','sectionBreakout','sectionAll'];
-    var selectionDivClass = {'class':['wow', 'fadeInUp', 'animated'], 'delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'} 
 
-    createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, selectionDivClass,lists);
+    createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
     
     // [...container.children].forEach((row,index)=>{
         
@@ -141,7 +141,7 @@ export default function decorate(block){
     // })
 }
 
-function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, selectionDivClass, lists){
+function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
     const firstList = lists[0];
     const secondList = lists[1];
     console.log(firstList.innerHTML);
@@ -171,13 +171,13 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     console.log(agendaDiv);
 
-    const daySelectionDiv = document.createElement('div');
-    for(let i=0;i<selectionDivClass.class.length;i++){
-        daySelectionDiv.classList.add(selectionDivClass.class[i]);
-    }
-    daySelectionDiv.classList.add('day-selection');
-    daySelectionDiv.setAttribute('data-wow-delay', selectionDivClass.delay);
-    daySelectionDiv.setAttribute('style', selectionDivClass.style);
+    // const daySelectionDiv = document.createElement('div');
+    // for(let i=0;i<selectionDivClass.class.length;i++){
+    //     daySelectionDiv.classList.add(selectionDivClass.class[i]);
+    // }
+    // daySelectionDiv.classList.add('day-selection');
+    // daySelectionDiv.setAttribute('data-wow-delay', selectionDivClass.delay);
+    // daySelectionDiv.setAttribute('style', selectionDivClass.style);
 
     const agendaUl = document.createElement('ul');
     const firstListChildren = Array.from(firstList.children);
@@ -188,16 +188,16 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
         agendaUl.append(firstListChildren[i]);
     }
 
+    agendaDiv.append(agendaUl);
+
     const panelSelectionDiv = document.createElement('div');
-    for(let i=0;i<selectionDivClass.class.length;i++){
-        panelSelectionDiv.classList.add(selectionDivClass.class[i]);
+    for(let cls in panelDivClass){
+        panelSelectionDiv.classList.add(panelDivClass[cls]);
     }
-    panelSelectionDiv.classList.add('panel-selection');
-    panelSelectionDiv.setAttribute('data-wow-delay', selectionDivClass.delay);
-    panelSelectionDiv.setAttribute('style', selectionDivClass.style);
+    panelSelectionDiv.setAttribute("data-wow-delay","0.2s");
+    panelSelectionDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
 
-
-    console.log(daySelectionDiv);
+    // console.log(daySelectionDiv);
     console.log(panelSelectionDiv);
 
     const panelUl = document.createElement('ul');
@@ -213,7 +213,15 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
         panelUl.append(secondListChildren[i]);
     }
 
+    panelSelectionDiv.append(panelUl);
+
     console.log(agendaUl);
     console.log(panelUl);
+
+    parentDiv.append(blockHead);
+    parentDiv.append(agendaDiv);
+    parentDiv.append(panelSelectionDiv);
+
+    console.log(parentDiv);
 
 }
