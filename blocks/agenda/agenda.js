@@ -17,8 +17,8 @@ export default function decorate(block){
     var panelDivClass = ['panel-selection', 'wow', 'fadeInUp', 'animated'];
     var panelDivAttr = ['sectionKeynote','sectionSpotlight','sectionDiscussion','sectionBreakout','sectionAll'];
 
-    createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
-    
+    var parentDiv = createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
+    block.append(parentDiv);
     // [...container.children].forEach((row,index)=>{
         
     //     var containerDiv = document.createElement('div');
@@ -171,14 +171,6 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     console.log(agendaDiv);
 
-    // const daySelectionDiv = document.createElement('div');
-    // for(let i=0;i<selectionDivClass.class.length;i++){
-    //     daySelectionDiv.classList.add(selectionDivClass.class[i]);
-    // }
-    // daySelectionDiv.classList.add('day-selection');
-    // daySelectionDiv.setAttribute('data-wow-delay', selectionDivClass.delay);
-    // daySelectionDiv.setAttribute('style', selectionDivClass.style);
-
     const agendaUl = document.createElement('ul');
     const firstListChildren = Array.from(firstList.children);
     for(let i=0;i<firstListChildren.length;i++){
@@ -215,13 +207,10 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
     panelSelectionDiv.append(panelUl);
 
-    console.log(agendaUl);
-    console.log(panelUl);
-
     parentDiv.append(blockHead);
     parentDiv.append(agendaDiv);
     parentDiv.append(panelSelectionDiv);
 
-    console.log(parentDiv);
+    return parentDiv;
 
 }
