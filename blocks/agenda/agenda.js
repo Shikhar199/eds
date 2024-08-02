@@ -173,7 +173,7 @@ function createAemElement(tag, classes, attributes, elementId){
     }
 
     if(!elementId){
-        tagElement.id = id;
+        tagElement.id = elementId;
     }
 
 }
