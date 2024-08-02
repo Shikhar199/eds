@@ -176,4 +176,6 @@ function createAemElement(tag, classes, attributes, elementId){
         tagElement.id = elementId;
     }
 
+    return tagElement;
+
 }
