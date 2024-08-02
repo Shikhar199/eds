@@ -30,14 +30,33 @@ export default function decorate(block){
         if(r==3){
             panelHeading = row.textContent.trim();    
         }
+        var accord1Div = document.createElement('div');
+        accord1Div.id = "agendaaccord1";
+        accord1Div.setAttribute('role','tablist');
+        accord1Div.setAttribute('aria-multiselectable','true');
+        accord1Div.classList.add('days');
+        
+        var subHead = document.createElement('p');
+        subHead.classList.add('agenda-subhead');
+        subHead.textContent = panelHeading;
+
+        var supTag = document.createElement('sup');
+        supTag.textContent = 'th'
+
+        subHead.append(supTag);
+
+        accord1Div.append(subHead);
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
-                createPanel(panelHeading, col);
+                var panelDiv = createPanel( col);
+                accord1Div.append(panelDiv);
             })
         }
+
     })
 
+    console.log(accord1Div);
 }
 
 function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
@@ -114,7 +133,7 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
 }
 
-function createPanel(panelHeading, col){
+function createPanel(col){
     var panelDiv = document.createElement('div');
     panelDiv.classList.add('panel', 'no-result');
 
@@ -132,6 +151,16 @@ function createPanel(panelHeading, col){
     panelTimeDiv.classList.add('panel-time');
 
     var ptags = col.querySelectorAll('p');
-    console.log(ptags[0]);
+    
+    var heading = document.createElement('h4');
+    heading.textContent = ptags[1].textContent.trim();
 
+    panelTimeDiv.append(ptags[0]);
+    panelBlockDiv.append(panelTimeDiv);
+    panelBlockDiv.append(heading);
+    panelInnerDiv.append(panelBlockDiv);
+    panelHeadingDiv.append(panelInnerDiv);
+    panelDiv.append(panelHeadingDiv);
+
+    return panelDiv;
 }
