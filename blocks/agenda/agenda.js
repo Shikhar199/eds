@@ -33,7 +33,7 @@ export default function decorate(block){
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
-                console.log(col.textContent.trim());
+                createPanel(panelHeading, col);
             })
         }
     })
@@ -114,6 +114,23 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
 }
 
-function createPanel(){
+function createPanel(panelHeading, col){
+    var panelDiv = document.createElement('div');
+    panelDiv.classList.add('panel', 'no-result');
+
+    var panelHeadingDiv = document.createElement('div');
+    panelHeadingDiv.classList.add('panel-heading');
+    panelHeading.setAttribute('role','tab');
+
+    var panelInnerDiv = document.createElement('div');
+    panelInnerDiv.classList.add('panel-inner');
+
+    var panelBlockDiv = document.createElement('div');
+    panelBlockDiv.classList.add('panel-block', 'pl-0');
+
+    var panelTimeDiv = document.createElement('div');
+    panelTimeDiv.classList.add('panel-time');
+
+    console.log(col);
 
 }
