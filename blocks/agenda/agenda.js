@@ -178,7 +178,7 @@ function createAemElement(tag, classes, attributes, elementId){
         tagElement.id = elementId;
         console.log(tagElement);
     }
-
+    console.log(tagElement);
     return tagElement;
 
 }
