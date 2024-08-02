@@ -120,7 +120,7 @@ function createPanel(panelHeading, col){
 
     var panelHeadingDiv = document.createElement('div');
     panelHeadingDiv.classList.add('panel-heading');
-    panelHeading.setAttribute('role','tab');
+    panelHeadingDiv.setAttribute('role','tab');
 
     var panelInnerDiv = document.createElement('div');
     panelInnerDiv.classList.add('panel-inner');
