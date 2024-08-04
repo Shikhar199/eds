@@ -21,23 +21,28 @@ export default function decorate(block){
     var parentDiv = createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
     block.append(parentDiv);
 
-    var panelHeading = "";
-    var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
+    var panel1Heading = "";
+    var panel2Heading = "";
 
-    var subHead = document.createElement('p');
-    subHead.classList.add('agenda-subhead');
+    var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
+    var accord2Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord2");
+
+    var sub1Head = createAemElement('p', ['agenda-subhead'], null, null);
+    var sub2Head = createAemElement('p', ['agenda-subhead'], null, null);
 
     var supTag = document.createElement('sup');
     supTag.textContent = 'th';
 
-    subHead.appendChild(supTag);
+    sub1Head.appendChild(supTag);
+    sub2Head.appendChild(supTag);
 
-    accord1Div.append(subHead);
+    accord1Div.append(sub1Head);
+    accord2Div.append(sub2Head);
 
     [...container.children].forEach((row,r)=>{
         if(r==3){
-            panelHeading = row.textContent.trim();
-            subHead.textContent = panelHeading;    
+            panel1Heading = row.textContent.trim();
+            sub1Head.textContent = panel1Heading;    
         }
 
         if(r==4){
@@ -46,9 +51,22 @@ export default function decorate(block){
                 accord1Div.append(panelDiv);
             })
         }
+
+        if(r==5){
+            pane2Heading = row.textContent.trim();
+            sub2Head.textContent = panel2Heading;    
+        }
+
+        if(r==4){
+            [...row.children].forEach((col,c)=>{
+                var panelDiv = createPanel(col);
+                accord2Div.append(panelDiv);
+            })
+        }
     })
     console.log(accord1Div);
 
+    console.log(accord2Div);
 }
 
 function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
