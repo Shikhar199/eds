@@ -57,7 +57,7 @@ export default function decorate(block){
             sub2Head.textContent = panel2Heading;    
         }
 
-        if(r==4){
+        if(r==6){
             [...row.children].forEach((col,c)=>{
                 var panelDiv = createPanel(col);
                 accord2Div.append(panelDiv);
