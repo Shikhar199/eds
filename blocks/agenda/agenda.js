@@ -26,18 +26,22 @@ export default function decorate(block){
 
     var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
     var accord2Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord2");
+    var accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
 
     var sub1Head = createAemElement('p', ['agenda-subhead'], null, null);
     var sub2Head = createAemElement('p', ['agenda-subhead'], null, null);
+    var sub3Head = createAemElement('p', ['agenda-subhead'], null, null);
 
     var supTag = document.createElement('sup');
     supTag.textContent = 'th';
 
     sub1Head.appendChild(supTag);
     sub2Head.appendChild(supTag);
+    sub3Head.appendChild(supTag);
 
     accord1Div.append(sub1Head);
     accord2Div.append(sub2Head);
+    accord3Div.append(sub3Head);
 
     [...container.children].forEach((row,r)=>{
         if(r==3){
@@ -59,9 +63,13 @@ export default function decorate(block){
 
         if(r==6){
             [...row.children].forEach((col,c)=>{
-                var panelDiv = createPanel(col);
+                var panelDiv = createPanel(col, null, true);
                 accord2Div.append(panelDiv);
             })
+        }
+
+        if(r==7||r==8||r==9||r==10){
+            createPanelWithImage(row);
         }
     })
     console.log(accord1Div);
@@ -143,13 +151,23 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
 }
 
-function createPanel(col){
+function createPanel(col, anchorAttributes, isRoleTab){
     var panelDiv = document.createElement('div');
     panelDiv.classList.add('panel', 'no-result');
 
     var panelHeadingDiv = document.createElement('div');
     panelHeadingDiv.classList.add('panel-heading');
-    panelHeadingDiv.setAttribute('role','tab');
+    
+    if(isRoleTab){
+        panelHeadingDiv.setAttribute('role','tab');
+    }
+
+    var anchorEle = document.createElement('a');
+    if(anchorAttributes !== null){
+        for(let attr in anchorAttributes){
+            anchorEle.setAttribute(attr, anchorAttributes[attr]);
+        }
+    }
 
     var panelInnerDiv = document.createElement('div');
     panelInnerDiv.classList.add('panel-inner');
@@ -169,7 +187,8 @@ function createPanel(col){
     panelBlockDiv.append(panelTimeDiv);
     panelBlockDiv.append(heading);
     panelInnerDiv.append(panelBlockDiv);
-    panelHeadingDiv.append(panelInnerDiv);
+    anchorEle.append(panelInnerDiv);
+    panelHeadingDiv.append(anchorEle);
     panelDiv.append(panelHeadingDiv);
 
     return panelDiv;
@@ -195,4 +214,10 @@ function createAemElement(tag, classes, attributes, elementId){
     }
     return tagElement;
 
+}
+
+function createPanelWithImage(row){
+    [...row.children].forEach((col,c)=>{
+        console.log(col.textContent.trim());
+    })
 }
