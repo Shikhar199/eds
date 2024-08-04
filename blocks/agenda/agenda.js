@@ -53,7 +53,7 @@ export default function decorate(block){
         }
 
         if(r==5){
-            pane2Heading = row.textContent.trim();
+            panel2Heading = row.textContent.trim();
             sub2Head.textContent = panel2Heading;    
         }
 
