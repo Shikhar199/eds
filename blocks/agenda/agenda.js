@@ -218,6 +218,8 @@ function createAemElement(tag, classes, attributes, elementId){
 
 function createPanelWithImage(row){
     [...row.children].forEach((col,c)=>{
-        console.log(col.textContent.trim());
+        if(c==1){
+            console.log(col.textContent.trim());
+        }
     })
 }
