@@ -236,6 +236,7 @@ function createPanelWithImage(row, r){
                 description.textContent = col.textContent.trim();
             } else if(c==2){
                 console.log(col);
+                const details = col.querySelectorAll('p');
                 // Create Moderators
                 var panelInnerDiv = document.createElement('div');
                 panelInnerDiv.classList.add('panel-inner', 'mt-20', 'mb-20');
