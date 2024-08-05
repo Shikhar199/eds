@@ -226,6 +226,7 @@ function createPanelWithImage(row, r){
     
     [...row.children].forEach((col,c)=>{
         if(r==7){
+            console.log(col);
             const panel = createPanel(col ,null, true);
             console.log(panel);
             console.log(col.textContent.trim());
