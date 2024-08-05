@@ -69,6 +69,7 @@ export default function decorate(block){
         }
 
         if(r==7||r==8||r==9||r==10){
+            console.log("Hi");
             createPanelWithImage(row, r);
         }
     })
