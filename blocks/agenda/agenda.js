@@ -218,14 +218,166 @@ function createAemElement(tag, classes, attributes, elementId){
 }
 
 function createPanelWithImage(row, r){
+
+    const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda3");
+    const panelBodyDiv = createAemElement('div', ["panel-body, agenda-border"], null, null);
+    
     [...row.children].forEach((col,c)=>{
         if(r==7){
-            var panel = createPanel(col ,null, true);
+            const panel = createPanel(col ,null, true);
             console.log(panel);
             console.log(col.textContent.trim());
+        } else if(r==10){
+            if(c==0){
+                const panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true);   
+            } else if(c==1){
+                var description = document.createElement('p');
+                description.classList.add('mt-10');
+                description.textContent = col.textContent.trim();
+            } else if(c==2){
+                console.log(col);
+                // Create Moderators
+                var panelInnerDiv = document.createElement('div');
+                panelInnerDiv.classList.add('panel-inner', 'mt-20', 'mb-20');
+
+                var pictureDiv = document.createElement('div');
+                pictureDiv.classList.add('agenda-tag');
+
+                const panelDetailsDiv = document.createElement('div');
+                panelDetailsDiv.classList.add('panel-details');
+
+                const moderatorP = document.createElement('p');
+                moderatorP.classList.add('text-uppercase');
+                moderatorP.textContent = 'Moderator';
+
+                const anchor = document.createElement('a');
+                anchor.href = '/confluence/2023/emea/speakers.html#allan';
+                anchor.title = 'Allan Wilkins';
+                anchor.classList.add('sp-href');
+            
+                const speakerDetailsDiv = document.createElement('div');
+                speakerDetailsDiv.classList.add('speaker-details');
+            
+                const speakerImgDiv = document.createElement('div');
+                speakerImgDiv.classList.add('speaker-img');
+
+                const speakerImg = document.createElement('img');
+                speakerImg.src = '/content/dam/infosys-web/en/confluence/images/2023/emea/allan-wilkins.jpg';
+                speakerImg.alt = 'Allan Wilkins';
+
+                speakerImgDiv.appendChild(speakerImg);
+
+                speakerDetailsDiv.appendChild(speakerImgDiv);
+
+                const speakerH5 = document.createElement('h5');
+
+                const speakerB = document.createElement('b');
+                speakerB.textContent = 'Allan Wilkins,';
+
+                const speakerSpan = document.createElement('span');
+                speakerSpan.classList.add('d-block');
+                speakerSpan.textContent = 'VP Advisory, Gartner';
+
+                speakerH5.appendChild(speakerB);
+                speakerH5.appendChild(speakerSpan);
+
+                speakerDetailsDiv.appendChild(speakerH5);
+
+                anchor.appendChild(speakerDetailsDiv);
+
+                panelDetailsDiv.appendChild(moderatorP);
+                panelDetailsDiv.appendChild(anchor);
+
+                panelInnerDiv.appendChild(agendaDiv);
+                panelInnerDiv.appendChild(panelDetailsDiv);
+
+            } else if(c==3){
+                // Create Speakers
+            }
         }
-        // if(c==1){
-        //     console.log(col.textContent.trim());
-        // }
+        
     })
+}
+
+function createAgendaDiv(col, agendaid, classes, attributes){
+    var agendaDiv = document.createElement('div');
+    agendaDiv.id = agendaid;
+
+    for(let cls of classes){
+        agendaDiv.classList.add(cls);
+    }
+
+    for(let key in attributes){
+        agendaDiv.key = attributes[key];
+    }
+
+    var outerPanelDiv = document.createElement('div');
+    outerPanelDiv.classList.add('panel-body', 'agenda-border');
+
+    var description = document.createElement('p');
+    description.classList.add('mt-10');
+    description.textContent = col.textContent.trim();
+
+    var panelInnerDiv = document.createElement('div');
+    panelInnerDiv.classList.add('panel-inner', 'mt-20', 'mb-20');
+
+    var pictureDiv = document.createElement('div');
+    pictureDiv.classList.add('agenda-tag');
+
+    const panelDetailsDiv = document.createElement('div');
+    panelDetailsDiv.classList.add('panel-details');
+
+    // Create the <p> element with class 'text-uppercase' and set its text content
+    const moderatorP = document.createElement('p');
+    moderatorP.classList.add('text-uppercase');
+    moderatorP.textContent = 'Moderator';
+
+    panelDetailsDiv.appendChild(moderatorP);
+
+    const anchor = document.createElement('a');
+    anchor.href = '/confluence/2023/emea/speakers.html#allan';
+    anchor.title = 'Allan Wilkins';
+    anchor.classList.add('sp-href');
+
+    // Create the speaker-details div
+    const speakerDetailsDiv = document.createElement('div');
+    speakerDetailsDiv.classList.add('speaker-details');
+
+    const speakerImgDiv = document.createElement('div');
+    speakerImgDiv.classList.add('speaker-img');
+
+    // Create the <img> element with the required attributes
+    const speakerImg = document.createElement('img');
+    speakerImg.src = '/content/dam/infosys-web/en/confluence/images/2023/emea/allan-wilkins.jpg';
+    speakerImg.alt = 'Allan Wilkins';
+
+    // Append the <img> element to the speaker-img div
+    speakerImgDiv.appendChild(speakerImg);
+
+    // Append the speaker-img div to the speaker-details div
+    speakerDetailsDiv.appendChild(speakerImgDiv);
+
+    const speakerH5 = document.createElement('h5');
+
+    // Create the <b> element and set its text content
+    const speakerB = document.createElement('b');
+    speakerB.textContent = 'Allan Wilkins,';
+
+    // Create the <span> element with class 'd-block' and set its text content
+    const speakerSpan = document.createElement('span');
+    speakerSpan.classList.add('d-block');
+    speakerSpan.textContent = 'VP Advisory, Gartner';
+
+    // Append the <b> element and the <span> element to the <h5> element
+    speakerH5.appendChild(speakerB);
+    speakerH5.appendChild(speakerSpan);
+
+    speakerDetailsDiv.appendChild(speakerH5);
+
+    // Append the speaker-details div to the anchor tag
+    anchor.appendChild(speakerDetailsDiv);
+
+    // Append the anchor tag to the main container div
+    panelDetailsDiv.appendChild(anchor);
+
 }
