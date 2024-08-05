@@ -69,7 +69,7 @@ export default function decorate(block){
         }
 
         if(r==7||r==8||r==9||r==10){
-            createPanelWithImage(row);
+            createPanelWithImage(row, r);
         }
     })
     console.log(accord1Div);
@@ -216,10 +216,15 @@ function createAemElement(tag, classes, attributes, elementId){
 
 }
 
-function createPanelWithImage(row){
+function createPanelWithImage(row, r){
     [...row.children].forEach((col,c)=>{
-        if(c==1){
+        if(r==7){
+            var panel = createPanel(col ,null, true);
+            console.log(panel);
             console.log(col.textContent.trim());
         }
+        // if(c==1){
+        //     console.log(col.textContent.trim());
+        // }
     })
 }
