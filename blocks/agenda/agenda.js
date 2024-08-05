@@ -180,6 +180,8 @@ function createPanel(col, anchorAttributes, isRoleTab){
     panelTimeDiv.classList.add('panel-time');
 
     var ptags = col.querySelectorAll('p');
+
+    console.log(col);
     
     var heading = document.createElement('h4');
     heading.textContent = ptags[1].textContent.trim();
