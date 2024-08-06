@@ -254,10 +254,12 @@ function createPanelWithImage(row, r){
                 const speakerLimit = Math.floor((speakersDetails.length)/4);
                 console.log(speakerLimit);
                 console.log(speakersDetails);
-                for(let i=0 ; i< speakerLimit; i++){
+                for(let i=0 ; i< speakerLimit;){
                     const card = createCards(speakersDetails, "speakers", i);
                     console.log(card);
                     panelBodyDiv.appendChild(card);
+                    i++;
+                    speakersDetails.slice(4*i+2, speakersDetails.length);
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
