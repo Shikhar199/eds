@@ -230,47 +230,55 @@ function createPanelWithImage(row, r){
     [...row.children].forEach((col,c)=>{
         if(r==10){
             if(c==0){
-                panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true);
-                console.log(panel);   
+                if(col.hasChildNodes()){
+                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true);
+                    console.log(panel); 
+                }  
             } else if(c==1){
-                var description = document.createElement('p');
-                description.classList.add('mt-10');
-                description.innerHTML = col.innerHTML.trim();
-                panelBodyDiv.appendChild(description);
+                if(col.hasChildNodes()){
+                    var description = document.createElement('p');
+                    description.classList.add('mt-10');
+                    description.innerHTML = col.innerHTML.trim();
+                    panelBodyDiv.appendChild(description);
+                }
             } else if(c==2){
-                console.log(col);
-                const moderatorsDetails = col.querySelectorAll('p');
-                var moderatorsDetailsArr = Array.from(moderatorsDetails);
-                const moderatorLimit = Math.floor((moderatorsDetailsArr.length)/4);
-                let len = moderatorsDetailsArr.length;
-                var card = "";
-                // Create Moderators
-                for(let i=0 ; i< moderatorLimit; i++){
-                    if(i==0){
-                        card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i);
-                    } else{
-                        card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i);
+                if(col.hasChildNodes()){
+                    console.log(col);
+                    const moderatorsDetails = col.querySelectorAll('p');
+                    var moderatorsDetailsArr = Array.from(moderatorsDetails);
+                    const moderatorLimit = Math.floor((moderatorsDetailsArr.length)/4);
+                    let len = moderatorsDetailsArr.length;
+                    var card = "";
+                    // Create Moderators
+                    for(let i=0 ; i< moderatorLimit; i++){
+                        if(i==0){
+                            card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i);
+                        } else{
+                            card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i);
+                        }
+                        console.log(card);
+                        panelBodyDiv.appendChild(card);
                     }
-                    console.log(card);
-                    panelBodyDiv.appendChild(card);
                 }
                 
             } else if(c==3){
                 // Create Speakers
-                console.log(col);
-                const speakersDetails = col.querySelectorAll('p');
-                var speakersDetailsArr = Array.from(speakersDetails);
-                const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
-                let len = speakersDetailsArr.length;
-                var card="";
-                for(let i=0 ; i< speakerLimit;i++){
-                    if(i==0){
-                        card = createCards(speakersDetailsArr.slice(0,6), "speakers", i);
-                    } else{
-                        card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i);
+                if(col.hasChildNodes()){
+                    console.log(col);
+                    const speakersDetails = col.querySelectorAll('p');
+                    var speakersDetailsArr = Array.from(speakersDetails);
+                    const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
+                    let len = speakersDetailsArr.length;
+                    var card="";
+                    for(let i=0 ; i< speakerLimit;i++){
+                        if(i==0){
+                            card = createCards(speakersDetailsArr.slice(0,6), "speakers", i);
+                        } else{
+                            card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i);
+                        }
+                        console.log(card);
+                        panelBodyDiv.appendChild(card);
                     }
-                    console.log(card);
-                    panelBodyDiv.appendChild(card);
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
