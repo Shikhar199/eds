@@ -243,7 +243,7 @@ function createPanelWithImage(row, r){
                 const moderatorLimit = Math.floor((moderatorsDetails.length)/4);
                 // Create Moderators
                 for(let i=0 ; i< moderatorLimit; i++){
-                    const card = createCards(moderatorsDetails, "moderators");
+                    const card = createCards(moderatorsDetails, "moderators", i);
                     panelBodyDiv.appendChild(card);
                 }
                 
@@ -253,6 +253,7 @@ function createPanelWithImage(row, r){
                 const speakersDetails = col.querySelectorAll('p');
                 const speakerLimit = Math.floor((speakersDetails.length)/4);
                 console.log(speakerLimit);
+                console.log(speakersDetails);
                 for(let i=0 ; i< speakerLimit; i++){
                     const card = createCards(speakersDetails, "speakers", i);
                     console.log(card);
