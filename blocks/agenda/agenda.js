@@ -240,8 +240,9 @@ function createPanelWithImage(row, r){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
                 console.log(moderatorsDetails.length);
+                const moderatorLimit = (moderatorsDetails.length)/4;
                 // Create Moderators
-                for(let i=0 ; i<(moderatorsDetails.length)/4 ; i++){
+                for(let i=0 ; i< moderatorLimit; i++){
                     const card = createCards(moderatorsDetails);
                     console.log(card);
                 }
