@@ -252,6 +252,7 @@ function createPanelWithImage(row, r){
                 console.log(col);
                 const speakersDetails = col.querySelectorAll('p');
                 const speakersDetailsArr = Array.from(speakersDetails);
+                console.log(speakersDetailsArr);
                 const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
                 console.log(speakerLimit);
                 console.log(speakersDetailsArr);
