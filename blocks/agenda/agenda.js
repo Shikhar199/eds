@@ -361,8 +361,8 @@ function createCards(details, type, i){
 
     const img = document.createElement('img');
     img.setAttribute('src', details[0].querySelector('picture').querySelector('img').getAttribute('src'));
-    img.width = '20px';
-    img.alt = "";
+    img.setAttribute("width","20px");
+    img.setAttribute("alt","");
 
     pictureDiv.append(img);
 
