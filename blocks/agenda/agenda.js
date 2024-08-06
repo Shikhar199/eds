@@ -260,7 +260,7 @@ function createPanelWithImage(row, r){
                     console.log(card);
                     panelBodyDiv.appendChild(card);
                     i++;
-                    speakersDetailsArr.slice(4*i+2, speakersDetailsArr.length);
+                    speakersDetailsArr = speakersDetailsArr.slice(4*i+2, speakersDetailsArr.length);
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
