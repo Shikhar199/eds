@@ -235,7 +235,7 @@ function createPanelWithImage(row, r){
             } else if(c==1){
                 var description = document.createElement('p');
                 description.classList.add('mt-10');
-                description.textContent = col.textContent.trim();
+                description.innerHTML = col.innerHTML.trim();
                 panelBodyDiv.appendChild(description);
             } else if(c==2){
                 console.log(col);
