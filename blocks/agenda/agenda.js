@@ -239,7 +239,6 @@ function createPanelWithImage(row, r){
             } else if(c==2){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
-                console.log(moderatorsDetails.length);
                 const moderatorLimit = Math.floor((moderatorsDetails.length)/4);
                 // Create Moderators
                 for(let i=0 ; i< moderatorLimit; i++){
@@ -251,8 +250,8 @@ function createPanelWithImage(row, r){
                 // Create Speakers
                 console.log(col);
                 const speakersDetails = col.querySelectorAll('p');
-                console.log(speakersDetails.length);
-                for(let i=0 ; i<(speakersDetails.length)/4 ; i++){
+                const speakerLimit = Math.floor(speakersDetails.length)/4;
+                for(let i=0 ; i< speakerLimit; i++){
                     const card = createCards(speakersDetails);
                     console.log(card);
                 }
