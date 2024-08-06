@@ -240,7 +240,7 @@ function createPanelWithImage(row, r){
             } else if(c==2){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
-                var moderatorsDetailsArr = Array.from(speakersDetails);
+                var moderatorsDetailsArr = Array.from(moderatorsDetails);
                 const moderatorLimit = Math.floor((moderatorsDetailsArr.length)/4);
                 let len = moderatorsDetailsArr.length;
                 var card = "";
