@@ -255,13 +255,16 @@ function createPanelWithImage(row, r){
                 const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
                 console.log(speakerLimit);
                 console.log(speakersDetailsArr);
-                for(let i=0 ; i< speakerLimit;){
-                    const card = createCards(speakersDetailsArr, "speakers", i);
+                let len = speakersDetailsArr.length;
+                const card="";
+                for(let i=0 ; i< speakerLimit;i++){
+                    if(i==0){
+                        card = createCards(speakersDetailsArr.slice(0,6), "speakers", i);
+                    } else{
+                        card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i);
+                    }
                     console.log(card);
                     panelBodyDiv.appendChild(card);
-                    i++;
-                    speakersDetailsArr = speakersDetailsArr.slice(4*i+2, speakersDetailsArr.length);
-                    console.log(speakersDetailsArr);
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
