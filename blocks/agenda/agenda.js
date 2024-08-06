@@ -239,6 +239,7 @@ function createPanelWithImage(row, r){
             } else if(c==2){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
+                console.log(moderatorsDetails.length);
                 // Create Moderators
                 for(let i=0 ; i<(moderatorsDetails.length)/4 ; i++){
                     const card = createCards(moderatorsDetails);
@@ -247,7 +248,9 @@ function createPanelWithImage(row, r){
                 
             } else if(c==3){
                 // Create Speakers
+                console.log(col);
                 const speakersDetails = col.querySelectorAll('p');
+                console.log(speakersDetails.length);
                 for(let i=0 ; i<(speakersDetails.length)/4 ; i++){
                     const card = createCards(speakersDetails);
                     console.log(card);
