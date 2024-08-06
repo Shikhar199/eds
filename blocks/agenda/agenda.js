@@ -236,6 +236,7 @@ function createPanelWithImage(row, r){
                 var description = document.createElement('p');
                 description.classList.add('mt-10');
                 description.textContent = col.textContent.trim();
+                panelBodyDiv.appendChild(description);
             } else if(c==2){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
@@ -243,7 +244,7 @@ function createPanelWithImage(row, r){
                 // Create Moderators
                 for(let i=0 ; i< moderatorLimit; i++){
                     const card = createCards(moderatorsDetails, "moderators");
-                    console.log(card);
+                    panelBodyDiv.appendChild(card);
                 }
                 
             } else if(c==3){
@@ -255,8 +256,10 @@ function createPanelWithImage(row, r){
                 for(let i=0 ; i< speakerLimit; i++){
                     const card = createCards(speakersDetails, "speakers", i);
                     console.log(card);
+                    panelBodyDiv.appendChild(card);
                 }
             }
+            agendaDiv.appendChild(panelBodyDiv);
         }
         
     })
