@@ -242,7 +242,7 @@ function createPanelWithImage(row, r){
                 const moderatorLimit = Math.floor((moderatorsDetails.length)/4);
                 // Create Moderators
                 for(let i=0 ; i< moderatorLimit; i++){
-                    const card = createCards(moderatorsDetails);
+                    const card = createCards(moderatorsDetails, "moderators");
                     console.log(card);
                 }
                 
@@ -253,7 +253,7 @@ function createPanelWithImage(row, r){
                 const speakerLimit = Math.floor((speakersDetails.length)/4);
                 console.log(speakerLimit);
                 for(let i=0 ; i< speakerLimit; i++){
-                    const card = createCards(speakersDetails);
+                    const card = createCards(speakersDetails, "speakers", i);
                     console.log(card);
                 }
             }
@@ -345,9 +345,12 @@ function createAgendaDiv(col, agendaid, classes, attributes){
 
 }
 
-function createCards(details){
+function createCards(details, type, i){
     var panelInnerDiv = document.createElement('div');
-    panelInnerDiv.classList.add('panel-inner', 'mt-20', 'mb-20');
+    panelInnerDiv.classList.add('panel-inner', 'mb-20');
+    if(type==='moderators'){
+        panelInnerDiv.classList.add('mt-20');
+    }
 
     var pictureDiv = document.createElement('div');
     pictureDiv.classList.add('agenda-tag');
@@ -362,9 +365,12 @@ function createCards(details){
     const panelDetailsDiv = document.createElement('div');
     panelDetailsDiv.classList.add('panel-details');
 
-    const moderatorP = document.createElement('p');
-    moderatorP.classList.add('text-uppercase');
-    moderatorP.textContent = details[1].textContent.trim();
+    if(i==0){
+        const moderatorP = document.createElement('p');
+        moderatorP.classList.add('text-uppercase');
+        moderatorP.textContent = details[1].textContent.trim();
+        panelDetailsDiv.appendChild(moderatorP);
+    }
 
     const anchor = document.createElement('a');
     anchor.href = details[5].textContent.trim();
@@ -401,7 +407,6 @@ function createCards(details){
 
     anchor.appendChild(speakerDetailsDiv);
 
-    panelDetailsDiv.appendChild(moderatorP);
     panelDetailsDiv.appendChild(anchor);
 
     panelInnerDiv.appendChild(pictureDiv);
