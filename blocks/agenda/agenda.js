@@ -240,8 +240,8 @@ function createPanelWithImage(row, r){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
                 // Create Moderators
-                for(let i=0 ; i<(moderatorDetails.length)/4 ; i++){
-                    const card = createCards(moderatorDetails);
+                for(let i=0 ; i<(moderatorsDetails.length)/4 ; i++){
+                    const card = createCards(moderatorsDetails);
                     console.log(card);
                 }
                 
