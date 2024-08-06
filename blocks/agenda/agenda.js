@@ -256,7 +256,7 @@ function createPanelWithImage(row, r){
                 console.log(speakerLimit);
                 console.log(speakersDetailsArr);
                 let len = speakersDetailsArr.length;
-                const card="";
+                var card="";
                 for(let i=0 ; i< speakerLimit;i++){
                     if(i==0){
                         card = createCards(speakersDetailsArr.slice(0,6), "speakers", i);
