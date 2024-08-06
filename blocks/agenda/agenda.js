@@ -260,6 +260,7 @@ function createPanelWithImage(row, r){
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
+            console.log(agendaDiv);
         }
         
     })
