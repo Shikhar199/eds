@@ -251,15 +251,16 @@ function createPanelWithImage(row, r){
                 // Create Speakers
                 console.log(col);
                 const speakersDetails = col.querySelectorAll('p');
-                const speakerLimit = Math.floor((speakersDetails.length)/4);
+                const speakersDetailsArr = Arrays.from(speakersDetails);
+                const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
                 console.log(speakerLimit);
-                console.log(speakersDetails);
+                console.log(speakersDetailsArr);
                 for(let i=0 ; i< speakerLimit;){
-                    const card = createCards(speakersDetails, "speakers", i);
+                    const card = createCards(speakersDetailsArr, "speakers", i);
                     console.log(card);
                     panelBodyDiv.appendChild(card);
                     i++;
-                    speakersDetails.slice(4*i+2, speakersDetails.length);
+                    speakersDetailsArr.slice(4*i+2, speakersDetailsArr.length);
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
