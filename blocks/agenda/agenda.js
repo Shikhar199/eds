@@ -400,7 +400,7 @@ function createCards(details){
     panelDetailsDiv.appendChild(moderatorP);
     panelDetailsDiv.appendChild(anchor);
 
-    panelInnerDiv.appendChild(agendaDiv);
+    panelInnerDiv.appendChild(pictureDiv);
     panelInnerDiv.appendChild(panelDetailsDiv);
 
     return panelInnerDiv;
