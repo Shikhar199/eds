@@ -70,7 +70,9 @@ export default function decorate(block){
 
         if(r==7){
             console.log("Hi");
-            console.log(row);
+            // createPanelWithImage(row, r);
+        }
+        if(r==10){
             createPanelWithImage(row, r);
         }
     })
@@ -224,80 +226,32 @@ function createPanelWithImage(row, r){
 
     const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda3");
     const panelBodyDiv = createAemElement('div', ["panel-body", "agenda-border"], null, null);
-    
+    var panel = "";
     [...row.children].forEach((col,c)=>{
-        if(r==7){
-            console.log(col);
-            const panel = createPanel(col ,null, true);
-            console.log(panel);
-            console.log(col.textContent.trim());
-        } else if(r==10){
+        if(r==10){
             if(c==0){
-                const panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true);   
+                panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true);
+                console.log(panel);   
             } else if(c==1){
                 var description = document.createElement('p');
                 description.classList.add('mt-10');
                 description.textContent = col.textContent.trim();
             } else if(c==2){
                 console.log(col);
-                const details = col.querySelectorAll('p');
+                const moderatorsDetails = col.querySelectorAll('p');
                 // Create Moderators
-                var panelInnerDiv = document.createElement('div');
-                panelInnerDiv.classList.add('panel-inner', 'mt-20', 'mb-20');
-
-                var pictureDiv = document.createElement('div');
-                pictureDiv.classList.add('agenda-tag');
-
-                const panelDetailsDiv = document.createElement('div');
-                panelDetailsDiv.classList.add('panel-details');
-
-                const moderatorP = document.createElement('p');
-                moderatorP.classList.add('text-uppercase');
-                moderatorP.textContent = 'Moderator';
-
-                const anchor = document.createElement('a');
-                anchor.href = '/confluence/2023/emea/speakers.html#allan';
-                anchor.title = 'Allan Wilkins';
-                anchor.classList.add('sp-href');
-            
-                const speakerDetailsDiv = document.createElement('div');
-                speakerDetailsDiv.classList.add('speaker-details');
-            
-                const speakerImgDiv = document.createElement('div');
-                speakerImgDiv.classList.add('speaker-img');
-
-                const speakerImg = document.createElement('img');
-                speakerImg.src = '/content/dam/infosys-web/en/confluence/images/2023/emea/allan-wilkins.jpg';
-                speakerImg.alt = 'Allan Wilkins';
-
-                speakerImgDiv.appendChild(speakerImg);
-
-                speakerDetailsDiv.appendChild(speakerImgDiv);
-
-                const speakerH5 = document.createElement('h5');
-
-                const speakerB = document.createElement('b');
-                speakerB.textContent = 'Allan Wilkins,';
-
-                const speakerSpan = document.createElement('span');
-                speakerSpan.classList.add('d-block');
-                speakerSpan.textContent = 'VP Advisory, Gartner';
-
-                speakerH5.appendChild(speakerB);
-                speakerH5.appendChild(speakerSpan);
-
-                speakerDetailsDiv.appendChild(speakerH5);
-
-                anchor.appendChild(speakerDetailsDiv);
-
-                panelDetailsDiv.appendChild(moderatorP);
-                panelDetailsDiv.appendChild(anchor);
-
-                panelInnerDiv.appendChild(agendaDiv);
-                panelInnerDiv.appendChild(panelDetailsDiv);
-
+                for(let i=0 ; i<(moderatorDetails.length)/4 ; i++){
+                    const card = createCards(moderatorDetails);
+                    console.log(card);
+                }
+                
             } else if(c==3){
                 // Create Speakers
+                const speakersDetails = col.querySelectorAll('p');
+                for(let i=0 ; i<(speakersDetails.length)/4 ; i++){
+                    const card = createCards(speakersDetails);
+                    console.log(card);
+                }
             }
         }
         
@@ -384,5 +338,71 @@ function createAgendaDiv(col, agendaid, classes, attributes){
 
     // Append the anchor tag to the main container div
     panelDetailsDiv.appendChild(anchor);
+
+}
+
+function createCards(details){
+    var panelInnerDiv = document.createElement('div');
+    panelInnerDiv.classList.add('panel-inner', 'mt-20', 'mb-20');
+
+    var pictureDiv = document.createElement('div');
+    pictureDiv.classList.add('agenda-tag');
+
+    const img = document.createElement('img');
+    img.setAttribute('src', details[0].querySelector('picture').querySelector('img').getAttribute('src'));
+    img.width = '20px';
+    img.alt = "";
+
+    pictureDiv.append(img);
+
+    const panelDetailsDiv = document.createElement('div');
+    panelDetailsDiv.classList.add('panel-details');
+
+    const moderatorP = document.createElement('p');
+    moderatorP.classList.add('text-uppercase');
+    moderatorP.textContent = details[1].textContent.trim();
+
+    const anchor = document.createElement('a');
+    anchor.href = details[5].textContent.trim();
+    anchor.title = details[3].textContent.trim();
+    anchor.classList.add('sp-href');
+            
+    const speakerDetailsDiv = document.createElement('div');
+    speakerDetailsDiv.classList.add('speaker-details');
+            
+    const speakerImgDiv = document.createElement('div');
+    speakerImgDiv.classList.add('speaker-img');
+
+    const speakerImg = document.createElement('img');
+    speakerImg.setAttribute('src', details[2].querySelector('picture').querySelector('img').getAttribute('src'));
+    speakerImg.alt = details[3].textContent.trim();
+
+    speakerImgDiv.appendChild(speakerImg);
+
+    speakerDetailsDiv.appendChild(speakerImgDiv);
+
+    const speakerH5 = document.createElement('h5');
+
+    const speakerB = document.createElement('b');
+    speakerB.textContent = details[3].textContent.trim();
+
+    const speakerSpan = document.createElement('span');
+    speakerSpan.classList.add('d-block');
+    speakerSpan.textContent = details[4].textContent.trim();
+
+    speakerH5.appendChild(speakerB);
+    speakerH5.appendChild(speakerSpan);
+
+    speakerDetailsDiv.appendChild(speakerH5);
+
+    anchor.appendChild(speakerDetailsDiv);
+
+    panelDetailsDiv.appendChild(moderatorP);
+    panelDetailsDiv.appendChild(anchor);
+
+    panelInnerDiv.appendChild(agendaDiv);
+    panelInnerDiv.appendChild(panelDetailsDiv);
+
+    return panelInnerDiv;
 
 }
