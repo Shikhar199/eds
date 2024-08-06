@@ -382,8 +382,8 @@ function createCards(details, type, i){
     }
 
     const anchor = document.createElement('a');
-    anchor.href = details[5].textContent.trim();
-    anchor.title = details[3].textContent.trim();
+    anchor.href = details[details.length-1].textContent.trim();
+    anchor.title = details[details.length-3].textContent.trim();
     anchor.classList.add('sp-href');
             
     const speakerDetailsDiv = document.createElement('div');
@@ -393,8 +393,8 @@ function createCards(details, type, i){
     speakerImgDiv.classList.add('speaker-img');
 
     const speakerImg = document.createElement('img');
-    speakerImg.setAttribute('src', details[2].querySelector('picture').querySelector('img').getAttribute('src'));
-    speakerImg.alt = details[3].textContent.trim();
+    speakerImg.setAttribute('src', details[details.length-4].querySelector('picture').querySelector('img').getAttribute('src'));
+    speakerImg.alt = details[details.length-3].textContent.trim();
 
     speakerImgDiv.appendChild(speakerImg);
 
