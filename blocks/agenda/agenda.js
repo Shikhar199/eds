@@ -240,10 +240,18 @@ function createPanelWithImage(row, r){
             } else if(c==2){
                 console.log(col);
                 const moderatorsDetails = col.querySelectorAll('p');
-                const moderatorLimit = Math.floor((moderatorsDetails.length)/4);
+                var moderatorsDetailsArr = Array.from(speakersDetails);
+                const moderatorLimit = Math.floor((moderatorsDetailsArr.length)/4);
+                let len = moderatorsDetailsArr.length;
+                var card = "";
                 // Create Moderators
                 for(let i=0 ; i< moderatorLimit; i++){
-                    const card = createCards(moderatorsDetails, "moderators", i);
+                    if(i==0){
+                        card = createCards(speakersDetailsArr.slice(0,6), "moderators", i);
+                    } else{
+                        card = createCards(speakersDetailsArr.slice(4*i+2,len), "moderators", i);
+                    }
+                    console.log(card);
                     panelBodyDiv.appendChild(card);
                 }
                 
@@ -253,8 +261,6 @@ function createPanelWithImage(row, r){
                 const speakersDetails = col.querySelectorAll('p');
                 var speakersDetailsArr = Array.from(speakersDetails);
                 const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
-                console.log(speakerLimit);
-                console.log(speakersDetailsArr);
                 let len = speakersDetailsArr.length;
                 var card="";
                 for(let i=0 ; i< speakerLimit;i++){
