@@ -67,6 +67,7 @@ export default function decorate(block){
                 var panelDiv = createPanel(col, null, true, null);
                 accord2Div.append(panelDiv);
             })
+            console.log(accord2Div);
         }
 
         if(r==7){
