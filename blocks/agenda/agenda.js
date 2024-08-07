@@ -193,18 +193,18 @@ function createPanel(col, anchorAttributes, isRoleTab){
         heading.textContent = ptags[2].textContent.trim();
 
         panelTimeDiv.append(ptags[1]);
-    }
-    
-    var heading = document.createElement('h4');
-    heading.textContent = ptags[1].textContent.trim();
+    } else{
+        var heading = document.createElement('h4');
+        heading.textContent = ptags[1].textContent.trim();
 
-    panelTimeDiv.append(ptags[0]);
-    panelBlockDiv.append(panelTimeDiv);
-    panelBlockDiv.append(heading);
-    panelInnerDiv.append(panelBlockDiv);
-    anchorEle.append(panelInnerDiv);
-    panelHeadingDiv.append(anchorEle);
-    panelDiv.append(panelHeadingDiv);
+        panelTimeDiv.append(ptags[0]);
+        panelBlockDiv.append(panelTimeDiv);
+        panelBlockDiv.append(heading);
+        panelInnerDiv.append(panelBlockDiv);
+        anchorEle.append(panelInnerDiv);
+        panelHeadingDiv.append(anchorEle);
+        panelDiv.append(panelHeadingDiv);
+    }
 
     return panelDiv;
 }
