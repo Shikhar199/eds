@@ -245,7 +245,7 @@ function createPanelWithImage(row, r){
         if(r==10){
             if(c==0){
                 if(col.hasChildNodes()){
-                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
+                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true, {outerPanelClass:['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
                     console.log(panel); 
                 }  
             } else if(c==1){
