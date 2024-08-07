@@ -156,8 +156,8 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 }
 
 function createPanel(col, anchorAttributes, isRoleTab, classes){
+    var panelDiv = document.createElement('div');
     if(classes!==null){
-        var panelDiv = document.createElement('div');
         for(let cls of classes.outerPanelClass){
             panelDiv.classList.add(cls);
         }
