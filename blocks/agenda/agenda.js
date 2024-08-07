@@ -181,9 +181,8 @@ function createPanel(col, anchorAttributes, isRoleTab, classes){
     var panelInnerDiv = document.createElement('div');
     panelInnerDiv.classList.add('panel-inner');
 
-    var panelBlockDiv = "";
+    var panelBlockDiv = document.createElement('div');
     if(classes!==null){
-        panelBlockDiv = document.createElement('div');
         for(let cls of classes.panelBlockClass){
             panelBlockDiv.classList.add(cls);
         }
