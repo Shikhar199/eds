@@ -155,9 +155,12 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
 }
 
-function createPanel(col, anchorAttributes, isRoleTab){
+function createPanel(col, anchorAttributes, isRoleTab, classes){
     var panelDiv = document.createElement('div');
-    panelDiv.classList.add('panel', 'no-result');
+    for(let cls of classes.outerPanelClass){
+        panelDiv.classList.add(cls);
+    }
+    
 
     var panelHeadingDiv = document.createElement('div');
     panelHeadingDiv.classList.add('panel-heading');
@@ -177,7 +180,9 @@ function createPanel(col, anchorAttributes, isRoleTab){
     panelInnerDiv.classList.add('panel-inner');
 
     var panelBlockDiv = document.createElement('div');
-    panelBlockDiv.classList.add('panel-block', 'pl-0');
+    for(let cls of classes.panelBlockClass){
+        panelBlockDiv.classList.add(cls);
+    }
 
     var panelTimeDiv = document.createElement('div');
     panelTimeDiv.classList.add('panel-time');
@@ -240,7 +245,7 @@ function createPanelWithImage(row, r){
         if(r==10){
             if(c==0){
                 if(col.hasChildNodes()){
-                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true);
+                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
                     console.log(panel); 
                 }  
             } else if(c==1){
