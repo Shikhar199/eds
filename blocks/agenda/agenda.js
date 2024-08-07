@@ -51,7 +51,7 @@ export default function decorate(block){
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
-                var panelDiv = createPanel(col, null, null, null);
+                var panelDiv = createPanel(col, null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                 console.log(panelDiv);
                 accord1Div.append(panelDiv);
             })
