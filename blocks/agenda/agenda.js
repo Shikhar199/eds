@@ -198,13 +198,13 @@ function createPanel(col, anchorAttributes, isRoleTab){
         heading.textContent = ptags[1].textContent.trim();
 
         panelTimeDiv.append(ptags[0]);
+    }
         panelBlockDiv.append(panelTimeDiv);
         panelBlockDiv.append(heading);
         panelInnerDiv.append(panelBlockDiv);
         anchorEle.append(panelInnerDiv);
         panelHeadingDiv.append(anchorEle);
         panelDiv.append(panelHeadingDiv);
-    }
 
     return panelDiv;
 }
