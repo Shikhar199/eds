@@ -182,9 +182,18 @@ function createPanel(col, anchorAttributes, isRoleTab){
     var panelTimeDiv = document.createElement('div');
     panelTimeDiv.classList.add('panel-time');
 
-    var ptags = col.querySelectorAll('p');
+    var ptags = col.querySelectorAll('p'); 
 
-    console.log(col);
+    if(ptags.length===3){
+        var tagDiv = document.createElement('div');
+        tagDiv.classList.add('pksns', 'bg-amethyst-medium');
+        tagDiv.textContent = ptags[0].textContent.trim();
+        panelInnerDiv.appendChild(tagDiv);
+        var heading = document.createElement('h4');
+        heading.textContent = ptags[2].textContent.trim();
+
+        panelTimeDiv.append(ptags[1]);
+    }
     
     var heading = document.createElement('h4');
     heading.textContent = ptags[1].textContent.trim();
