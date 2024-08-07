@@ -51,7 +51,7 @@ export default function decorate(block){
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
-                var panelDiv = createPanel(col);
+                var panelDiv = createPanel(col, null, null, null);
                 accord1Div.append(panelDiv);
             })
         }
@@ -63,7 +63,7 @@ export default function decorate(block){
 
         if(r==6){
             [...row.children].forEach((col,c)=>{
-                var panelDiv = createPanel(col, null, true);
+                var panelDiv = createPanel(col, null, true, null);
                 accord2Div.append(panelDiv);
             })
         }
@@ -156,9 +156,11 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 }
 
 function createPanel(col, anchorAttributes, isRoleTab, classes){
-    var panelDiv = document.createElement('div');
-    for(let cls of classes.outerPanelClass){
-        panelDiv.classList.add(cls);
+    if(classes!==null){
+        var panelDiv = document.createElement('div');
+        for(let cls of classes.outerPanelClass){
+            panelDiv.classList.add(cls);
+        }
     }
     
 
@@ -245,7 +247,7 @@ function createPanelWithImage(row, r){
         if(r==10){
             if(c==0){
                 if(col.hasChildNodes()){
-                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true, {outerPanelClass:['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
+                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
                     console.log(panel); 
                 }  
             } else if(c==1){
