@@ -72,17 +72,14 @@ export default function decorate(block){
             console.log(accord2Div);
         }
 
-        if(r==7){
-            console.log("Hi");
-            // createPanelWithImage(row, r);
-        }
-        if(r==10){
+        if(r==7||r==8||r==9||r==10){
+            // console.log("Hi");
             createPanelWithImage(row, r);
         }
+        // if(r==10){
+        //     createPanelWithImage(row, r);
+        // }
     })
-    console.log(accord1Div);
-
-    console.log(accord2Div);
 }
 
 function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
@@ -250,11 +247,19 @@ function createPanelWithImage(row, r){
     const panelBodyDiv = createAemElement('div', ["panel-body", "agenda-border"], null, null);
     var panel = "";
     [...row.children].forEach((col,c)=>{
-        if(r==10){
+        
             if(c==0){
                 if(col.hasChildNodes()){
-                    panel = createPanel(col ,{"data-toggle":"collapse", "data-parent":"#agendaaccord1", "href":"#agenda3", "aria-expanded":"false", "aria-controls":"agenda3", "class":"collapsed"}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
-                    console.log(panel); 
+                    if(r==7){
+                        panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        console.log(panel);
+                        accord3Div.append(panel);
+                    } else if(r==8 || r==9){
+                        panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        console.log(panel);
+                        accord3Div.append(panel);
+                    }
+                     
                 }  
             } else if(c==1){
                 if(col.hasChildNodes()){
@@ -305,7 +310,7 @@ function createPanelWithImage(row, r){
             }
             agendaDiv.appendChild(panelBodyDiv);
             console.log(agendaDiv);
-        }
+        
         
     })
 }
