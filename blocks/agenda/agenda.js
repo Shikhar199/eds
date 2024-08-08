@@ -277,7 +277,7 @@ function createPanelWithImage(row, r){
                         if(i==0){
                             card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                         } else{
-                            card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i);
+                            card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, []);
                         }
                         panelBodyDiv.appendChild(card);
                     }
