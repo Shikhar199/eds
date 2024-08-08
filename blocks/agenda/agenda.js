@@ -73,7 +73,7 @@ export default function decorate(block){
             console.log(accord2Div);
         }
 
-        if(r==7||r==8||r==9){
+        if(r==7||r==8||r==9||r==10||r==11||r==12||r==13){
             // console.log("Hi");
             createPanelWithImage(row, r);
         }
@@ -243,7 +243,7 @@ function createAemElement(tag, classes, attributes, elementId){
 }
 
 function createPanelWithImage(row, r){
-
+    const agendaAttr = 'agenda'+r-7;
     const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda"+(r-7));
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
     var panel = null;
@@ -256,7 +256,7 @@ function createPanelWithImage(row, r){
                         console.log(panel);
                         accord3Div.append(panel);
                     } else if(r==8 || r==9){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda1', 'aria-expanded':'false', 'aria-controls':'agenda1', 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         console.log(panel);
                         accord3Div.append(panel);
                     }
@@ -315,6 +315,7 @@ function createPanelWithImage(row, r){
             panel.appendChild(agendaDiv);        
             console.log(panel);
     })
+    console.log(accord3Div);
 }
 
 function createAgendaDiv(col, agendaid, classes, attributes){
