@@ -283,13 +283,13 @@ function createPanelWithImage(row, r){
                     }
                 }
             }
-            console.log(panelBodyDiv);
-            if(panelBodyDiv.hasChildNodes()){
-                agendaDiv.appendChild(panelBodyDiv);
-                panel.appendChild(agendaDiv);
-            }        
-            console.log(panel);
-    })
+        })
+        console.log(panelBodyDiv);
+        if(panelBodyDiv.hasChildNodes()){
+            agendaDiv.appendChild(panelBodyDiv);
+            panel.appendChild(agendaDiv);
+        }        
+        console.log(panel);
 }
 
 function createAgendaDiv(col, agendaid, classes, attributes){
