@@ -402,6 +402,7 @@ function createAgendaDiv(col, agendaid, classes, attributes){
 
 function createCards(details, type, i){
     console.log(details);
+    console.log(details[details.length-4]);
     var panelInnerDiv = document.createElement('div');
     panelInnerDiv.classList.add('panel-inner', 'mb-20');
     if(type==='moderators'){
