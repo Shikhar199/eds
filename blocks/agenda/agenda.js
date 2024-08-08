@@ -234,7 +234,7 @@ function createPanelWithImage(row, r){
                     if(r==7){
                         panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
-                    } else if(r==8 || r==9){
+                    } else if(r==8 || r==9 || r==10){
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
                     }
