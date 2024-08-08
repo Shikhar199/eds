@@ -1,3 +1,4 @@
+var accord3Div;
 export default function decorate(block){
     console.log(block);
     const container = document.createElement('div');
@@ -27,7 +28,7 @@ export default function decorate(block){
 
     var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
     var accord2Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord2");
-    var accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
+    accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
 
     var sub1Head = createAemElement('p', ['agenda-subhead'], null, null);
     var sub2Head = createAemElement('p', ['agenda-subhead'], null, null);
