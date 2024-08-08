@@ -56,6 +56,7 @@ export default function decorate(block){
                 console.log(panelDiv);
                 accord1Div.append(panelDiv);
             })
+            console.log(accord1Div);
         }
 
         if(r==5){
