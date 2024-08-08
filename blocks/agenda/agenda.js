@@ -20,6 +20,7 @@ export default function decorate(block){
     
     var parentDiv = createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
     block.append(parentDiv);
+    console.log(parentDiv);
 
     var panel1Heading = "";
     var panel2Heading = "";
