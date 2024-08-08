@@ -312,9 +312,9 @@ function createPanelWithImage(row, r){
             agendaDiv.appendChild(panelBodyDiv);
             console.log(agendaDiv);
             // panel.appendChild(agendaDiv);        
-            console.log(panel);
         
     })
+    console.log(panel);
 }
 
 function createAgendaDiv(col, agendaid, classes, attributes){
