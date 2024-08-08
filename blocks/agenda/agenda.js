@@ -246,7 +246,7 @@ function createPanelWithImage(row, r){
 
     const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda3");
     const panelBodyDiv = createAemElement('div', ["panel-body", "agenda-border"], null, null);
-    var panel = document.createElement('div');
+    var panel;
     [...row.children].forEach((col,c)=>{
         
             if(c==0){
