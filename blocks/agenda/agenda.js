@@ -257,9 +257,9 @@ function createPanelWithImage(row, r){
                     // Create Moderators
                     for(let i=0 ; i< moderatorLimit; i++){
                         if(i==0){
-                            card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i);
+                            card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, []);
                         } else{
-                            card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i);
+                            card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i, []);
                         }
                         panelBodyDiv.appendChild(card);
                     }
