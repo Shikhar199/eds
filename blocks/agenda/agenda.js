@@ -311,7 +311,7 @@ function createPanelWithImage(row, r){
             }
             agendaDiv.appendChild(panelBodyDiv);
             console.log(agendaDiv);
-            panel.append(agendaDiv);
+            panel.appendChild(agendaDiv);
             console.log(panel);
         
     })
