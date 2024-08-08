@@ -3,13 +3,9 @@ export default function decorate(block){
     console.log(block);
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
-    console.log(container instanceof Node);
-    console.log(container instanceof Element);
     block.innerHTML = '';
-    console.log(container);
     var lists = container.querySelectorAll('ul');
     var blockHeading = container.querySelector('h2');
-    console.log(lists);
 
     var parentDivClass = ['col-lg-4', 'col-md-4', 'col-sm-12', 'col-xs-12', 'pr-5'];
     var h2Class = ['h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated'];
@@ -21,7 +17,6 @@ export default function decorate(block){
     
     var parentDiv = createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
     block.append(parentDiv);
-    console.log(parentDiv);
 
     var panel1Heading = "";
     var panel2Heading = "";
@@ -54,10 +49,8 @@ export default function decorate(block){
         if(r==4){
             [...row.children].forEach((col,c)=>{
                 var panelDiv = createPanel(col, null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
-                console.log(panelDiv);
                 accord1Div.append(panelDiv);
             })
-            console.log(accord1Div);
         }
 
         if(r==5){
@@ -70,7 +63,6 @@ export default function decorate(block){
                 var panelDiv = createPanel(col, null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                 accord2Div.append(panelDiv);
             })
-            console.log(accord2Div);
         }
 
         if(r==7||r==8||r==9||r==10||r==11||r==12||r==13){
@@ -253,11 +245,9 @@ function createPanelWithImage(row, r){
                 if(col.hasChildNodes()){
                     if(r==7){
                         panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']});
-                        console.log(panel);
                         accord3Div.append(panel);
                     } else if(r==8 || r==9){
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
-                        console.log(panel);
                         accord3Div.append(panel);
                     }
                      
@@ -271,7 +261,6 @@ function createPanelWithImage(row, r){
                 }
             } else if(c==2){
                 if(col.hasChildNodes()){
-                    console.log(col);
                     const moderatorsDetails = col.querySelectorAll('p');
                     var moderatorsDetailsArr = Array.from(moderatorsDetails);
                     const moderatorLimit = Math.floor((moderatorsDetailsArr.length)/4);
@@ -284,7 +273,6 @@ function createPanelWithImage(row, r){
                         } else{
                             card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i);
                         }
-                        console.log(card);
                         panelBodyDiv.appendChild(card);
                     }
                 }
@@ -292,30 +280,25 @@ function createPanelWithImage(row, r){
             } else if(c==3){
                 // Create Speakers
                 if(col.hasChildNodes()){
-                    console.log(col);
                     const speakersDetails = col.querySelectorAll('p');
                     var speakersDetailsArr = Array.from(speakersDetails);
                     const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
                     let len = speakersDetailsArr.length;
                     var card="";
-                    console.log(speakerLimit);
                     for(let i=0 ; i< speakerLimit;i++){
                         if(i==0){
                             card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                         } else{
                             card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i);
                         }
-                        console.log(card);
                         panelBodyDiv.appendChild(card);
                     }
                 }
             }
             agendaDiv.appendChild(panelBodyDiv);
-            console.log(agendaDiv);
             panel.appendChild(agendaDiv);        
             console.log(panel);
     })
-    console.log(accord3Div);
 }
 
 function createAgendaDiv(col, agendaid, classes, attributes){
@@ -402,8 +385,6 @@ function createAgendaDiv(col, agendaid, classes, attributes){
 }
 
 function createCards(details, type, i, pannelInnerClass){
-    console.log(details);
-    console.log(details[details.length-4]);
     var panelInnerDiv = document.createElement('div');
     for(let cls of pannelInnerClass){
         panelInnerDiv.classList.add(cls);
