@@ -78,13 +78,10 @@ export default function decorate(block){
 function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
     const firstList = lists[0];
     const secondList = lists[1];
-    console.log(firstList.innerHTML);
     const parentDiv = document.createElement('div');
     for(let cls in parentDivClass){
         parentDiv.classList.add(parentDivClass[cls]);
     }
-
-    console.log(parentDiv);
 
     const blockHead = document.createElement('h2');
     for(let cls in h2Class){
@@ -94,8 +91,6 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     blockHead.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
     blockHead.textContent = blockHeading.textContent.trim();
 
-    console.log(blockHead);
-
     const agendaDiv = document.createElement('div');
     for(let cls in agendaDivClass){
         agendaDiv.classList.add(agendaDivClass[cls]);
@@ -103,12 +98,9 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     agendaDiv.setAttribute("data-wow-delay","0.2s");
     agendaDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
 
-    console.log(agendaDiv);
-
     const agendaUl = document.createElement('ul');
     const firstListChildren = Array.from(firstList.children);
     for(let i=0;i<firstListChildren.length;i++){
-        console.log(i);
         firstListChildren[i].setAttribute("data-day","agendaaccord"+i);
         firstListChildren[i].classList.add('text-uppercase');
         agendaUl.append(firstListChildren[i]);
@@ -123,13 +115,9 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     panelSelectionDiv.setAttribute("data-wow-delay","0.2s");
     panelSelectionDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
 
-    // console.log(daySelectionDiv);
-    console.log(panelSelectionDiv);
-
     const panelUl = document.createElement('ul');
     const secondListChildren = Array.from(secondList.children);
     for(let i=0;i<secondListChildren.length;i++){
-        console.log(i);
         secondListChildren[i].setAttribute("data-day",panelDivAttr[i]);
         if(i==3){
             secondListChildren[i].classList.add('d-none');
