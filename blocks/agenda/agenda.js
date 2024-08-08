@@ -256,7 +256,7 @@ function createPanelWithImage(row, r){
                         console.log(panel);
                         accord3Div.append(panel);
                     } else if(r==8 || r==9){
-                        panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda1', 'aria-expanded':'false', 'aria-controls':'agenda1', 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         console.log(panel);
                         accord3Div.append(panel);
                     }
@@ -311,7 +311,8 @@ function createPanelWithImage(row, r){
             }
             agendaDiv.appendChild(panelBodyDiv);
             console.log(agendaDiv);
-        
+            panel.append(agendaDiv);
+            console.log(panel);
         
     })
 }
