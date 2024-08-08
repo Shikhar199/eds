@@ -73,7 +73,7 @@ export default function decorate(block){
             console.log(accord2Div);
         }
 
-        if(r==7||r==8||r==9||r==10){
+        if(r==7||r==8||r==9){
             // console.log("Hi");
             createPanelWithImage(row, r);
         }
