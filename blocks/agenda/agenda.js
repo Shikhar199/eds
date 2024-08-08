@@ -244,7 +244,7 @@ function createAemElement(tag, classes, attributes, elementId){
 
 function createPanelWithImage(row, r){
 
-    const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda"+r);
+    const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda"+(r-7));
     const panelBodyDiv = createAemElement('div', ["panel-body", "agenda-border"], null, null);
     var panel = null;
     [...row.children].forEach((col,c)=>{
