@@ -244,7 +244,7 @@ function createAemElement(tag, classes, attributes, elementId){
 
 function createPanelWithImage(row, r){
 
-    const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda3");
+    const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda"+r);
     const panelBodyDiv = createAemElement('div', ["panel-body", "agenda-border"], null, null);
     var panel = null;
     [...row.children].forEach((col,c)=>{
@@ -301,7 +301,7 @@ function createPanelWithImage(row, r){
                     console.log(speakerLimit);
                     for(let i=0 ; i< speakerLimit;i++){
                         if(i==0){
-                            card = createCards(speakersDetailsArr.slice(0,6), "speakers", i);
+                            card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                         } else{
                             card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i);
                         }
@@ -400,11 +400,13 @@ function createAgendaDiv(col, agendaid, classes, attributes){
 
 }
 
-function createCards(details, type, i){
+function createCards(details, type, i, pannelInnerClass){
     console.log(details);
     console.log(details[details.length-4]);
     var panelInnerDiv = document.createElement('div');
-    panelInnerDiv.classList.add('panel-inner', 'mb-20');
+    for(let cls of pannelInnerClass){
+        panelInnerDiv.classList.add(cls);
+    }
     if(type==='moderators'){
         panelInnerDiv.classList.add('mt-20');
     }
