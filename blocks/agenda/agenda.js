@@ -283,6 +283,7 @@ function createPanelWithImage(row, r){
                     }
                 }
             }
+            console.log(panelBodyDiv);
             if(panelBodyDiv.hasChildNodes()){
                 agendaDiv.appendChild(panelBodyDiv);
                 panel.appendChild(agendaDiv);
