@@ -252,7 +252,7 @@ function createPanelWithImage(row, r){
             if(c==0){
                 if(col.hasChildNodes()){
                     if(r==7){
-                        panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']});
                         console.log(panel);
                         accord3Div.append(panel);
                     } else if(r==8 || r==9){
