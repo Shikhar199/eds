@@ -285,6 +285,9 @@ function createPanelWithImage(row, r){
                 
             } else if(c==3){
                 // Create Speakers
+                if(r==11){
+                    console.log("inside 11 row last column");
+                }
                 if(col.hasChildNodes()){
                     const speakersDetails = col.querySelectorAll('p');
                     var speakersDetailsArr = Array.from(speakersDetails);
