@@ -297,7 +297,7 @@ function createPanelWithImage(row, r){
                     // Create Moderators
                     for(let i=0 ; i< moderatorLimit; i++){
                         if(i==0){
-                            if(r==10){
+                            if(r==10 || r==14){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
                             }
                             else{
