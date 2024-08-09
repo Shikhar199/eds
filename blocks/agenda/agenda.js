@@ -285,7 +285,7 @@ function createPanelWithImage(row, r){
                         accord3Div.append(panel);
                     } else{
                         console.log("r > 15");
-                        panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block']}, ['pksns']);
+                        panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
                         accord3Div.append(panel);
                     }
                      
