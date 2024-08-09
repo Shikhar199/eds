@@ -262,6 +262,7 @@ function createPanelWithImage(row, r){
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
                     } else{
+                        console.log("r is 12");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
                     }
