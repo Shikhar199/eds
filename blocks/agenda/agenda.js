@@ -320,7 +320,7 @@ function createPanelWithImage(row, r){
                     var speakersDetailsArr = Array.from(speakersDetails);
                     const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
                     let len = speakersDetailsArr.length;
-                    if(r==11){
+                    if(r==14){
                         console.log(len);
                         console.log(speakersDetailsArr);
                     }
