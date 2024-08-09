@@ -227,6 +227,9 @@ function createPanelWithImage(row, r){
     console.log(agendaAttr);
     const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda"+(r-7));
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
+    if(r==9 || r==10){
+        panelBodyDiv.classList.add('agenda-border');
+    }
     var panel = null;
     [...row.children].forEach((col,c)=>{
         
@@ -235,8 +238,14 @@ function createPanelWithImage(row, r){
                     if(r==7){
                         panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
-                    } else if(r==8 || r==9 || r==10){
+                    } else if(r==8){
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        accord3Div.append(panel);
+                    } else if(r==9){
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        accord3Div.append(panel);
+                    } else if(r==10){
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']});
                         accord3Div.append(panel);
                     }
                      
@@ -258,7 +267,12 @@ function createPanelWithImage(row, r){
                     // Create Moderators
                     for(let i=0 ; i< moderatorLimit; i++){
                         if(i==0){
-                            card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, []);
+                            if(r==10){
+                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mt-20', 'mb-20']);
+                            }
+                            else{
+                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mb-20']);
+                            }
                         } else{
                             card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i, []);
                         }
@@ -276,9 +290,13 @@ function createPanelWithImage(row, r){
                     var card="";
                     for(let i=0 ; i< speakerLimit;i++){
                         if(i==0){
-                            card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
+                            if(r==10){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                            } else{
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
+                            }
                         } else{
-                            card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, []);
+                            card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, ['panel-inner','mb-20']);
                         }
                         panelBodyDiv.appendChild(card);
                     }
@@ -380,9 +398,6 @@ function createCards(details, type, i, pannelInnerClass){
     var panelInnerDiv = document.createElement('div');
     for(let cls of pannelInnerClass){
         panelInnerDiv.classList.add(cls);
-    }
-    if(type==='moderators'){
-        panelInnerDiv.classList.add('mt-20');
     }
 
     var pictureDiv = document.createElement('div');
