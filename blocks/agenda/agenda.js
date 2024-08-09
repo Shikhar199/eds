@@ -346,6 +346,7 @@ function createPanelWithImage(row, r){
                             } else{
                                 card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, ['panel-inner','mb-20']);
                                 if(r==14){
+                                    console.log(i);
                                     console.log(card);
                                 }
                             }
