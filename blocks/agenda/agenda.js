@@ -137,7 +137,7 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
 
 }
 
-function createPanel(col, anchorAttributes, isRoleTab, classes){
+function createPanel(col, anchorAttributes, isRoleTab, classes, tagClasses){
     var panelDiv = document.createElement('div');
     if(classes!==null){
         for(let cls of classes.outerPanelClass){
@@ -177,7 +177,9 @@ function createPanel(col, anchorAttributes, isRoleTab, classes){
 
     if(ptags.length===3){
         var tagDiv = document.createElement('div');
-        tagDiv.classList.add('pksns', 'bg-amethyst-medium');
+        for(let cls of tagClasses){
+            tagDiv.classList.add(cls);
+        }
         tagDiv.textContent = ptags[0].textContent.trim();
         panelInnerDiv.appendChild(tagDiv);
         var heading = document.createElement('h4');
@@ -223,9 +225,18 @@ function createAemElement(tag, classes, attributes, elementId){
 }
 
 function createPanelWithImage(row, r){
-    const agendaAttr = 'agenda'+(r-7);
+    var agendaAttr;
+    if(r==11){
+        agendaAttr = 'agenda'+12;
+    } else {
+        agendaAttr = 'agenda'+(r-7);
+    }
     console.log(agendaAttr);
-    const agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, "agenda"+(r-7));
+    if(r==11){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, agendaAttr);
+    } else {
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, agendaAttr);
+    }
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
     if(r==9 || r==10){
         panelBodyDiv.classList.add('agenda-border');
@@ -245,10 +256,10 @@ function createPanelWithImage(row, r){
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
                     } else if(r==10){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']});
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accord3Div.append(panel);
                     } else if(r==11){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']});
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
                     }
                      
@@ -304,6 +315,8 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
                             } else if(r==10){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                            } else if(r==11){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else{
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
