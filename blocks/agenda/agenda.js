@@ -242,7 +242,7 @@ function createPanelWithImage(row, r){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, agendaAttr);
     }
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
-    if(r==9 || r==10){
+    if(r==9 || r==10 || r==14){
         panelBodyDiv.classList.add('agenda-border');
     }
     var panel = null;
