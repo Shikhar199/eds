@@ -335,11 +335,17 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==13){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                            } else if(r==14){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
                             } else{
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
                         } else{
-                            card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, ['panel-inner','mb-20']);
+                            if(r==14 && i==2){
+                                card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, ['panel-inner']);
+                            } else{
+                                card = createCards(speakersDetailsArr.slice(4*i+2,len), "speakers", i, ['panel-inner','mb-20']);
+                            }
                         }
                         panelBodyDiv.appendChild(card);
                     }
