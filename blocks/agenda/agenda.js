@@ -65,7 +65,7 @@ export default function decorate(block){
             })
         }
 
-        if(r==7||r==8||r==9||r==10||r==11||r==12||r==13||r==14||r==15||r==16||r==17||r==18||r==19){
+        if(r>=7&&r<=25){
             // console.log("Hi");
             createPanelWithImage(row, r);
         }
