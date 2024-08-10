@@ -246,7 +246,7 @@ function createPanelWithImage(row, r){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, agendaAttr);
     }
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
-    if(r==9 || r==10 || r==14){
+    if(r==9 || r==10 || r==14 || r==22){
         panelBodyDiv.classList.add('agenda-border');
     }
     var panel = null;
@@ -293,6 +293,10 @@ function createPanelWithImage(row, r){
                         console.log("r is 22");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
+                    } else if(i==23){
+                        console.log("r is 23");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda13', 'aria-expanded':'false', 'aria-controls':'agenda13'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionDiscussion'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        accord3Div.append(panel);
                     } else {
                         console.log("r > 15");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
@@ -319,8 +323,9 @@ function createPanelWithImage(row, r){
                         if(i==0){
                             if(r==10 || r==14){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
-                            }
-                            else{
+                            } else if(r==23){
+                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                            } else{
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mb-20']);
                             }
                         } else{
@@ -361,6 +366,8 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==22){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
+                            } else if(r==23){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             } else {
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
