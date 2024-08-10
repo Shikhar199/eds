@@ -240,7 +240,9 @@ function createPanelWithImage(row, r){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda4');
     } else if(r==15) {
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda5');        
-    } else {
+    } else if(r==22){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda6');
+    } else{
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, agendaAttr);
     }
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
@@ -289,7 +291,7 @@ function createPanelWithImage(row, r){
                         accord3Div.append(panel);
                     } else if(r==22){
                         console.log("r is 22");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
                     } else {
                         console.log("r > 15");
@@ -357,6 +359,8 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==15){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                            } else if(r==22){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else {
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
