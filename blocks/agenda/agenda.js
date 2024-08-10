@@ -283,9 +283,13 @@ function createPanelWithImage(row, r){
                         console.log("r is 15");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord2', 'href':'#agenda5', 'aria-expanded':'false', 'aria-controls':'agenda5'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
-                    } else if(r==20){
+                    } else if(r==20 || r==21){
                         console.log("r is 20");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
+                        accord3Div.append(panel);
+                    } else if(r==22){
+                        console.log("r is 22");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
                         accord3Div.append(panel);
                     } else {
                         console.log("r > 15");
