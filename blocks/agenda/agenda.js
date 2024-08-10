@@ -305,6 +305,10 @@ function createPanelWithImage(row, r){
                         console.log("r is 24");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda11', 'aria-expanded':'false', 'aria-controls':'agenda11'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionSpotlight'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
                         accord3Div.append(panel);
+                    } else if(r==25){
+                        console.log("r is 25");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda7', 'aria-expanded':'false', 'aria-controls':'agenda7'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionDiscussion'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        accord3Div.append(panel);
                     } else {
                         console.log("r > 15");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
@@ -333,7 +337,9 @@ function createPanelWithImage(row, r){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==23){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else{
+                            } else if(r==25){
+                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
+                            }else{
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mb-20']);
                             }
                         } else{
@@ -378,7 +384,9 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             } else if(r==24){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else {
+                            } else if(r==25){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                            }else {
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
                         } else{
