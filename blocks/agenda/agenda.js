@@ -65,7 +65,7 @@ export default function decorate(block){
             })
         }
 
-        if(r>=7&&r<=28){
+        if(r>=7&&r<=30){
             // console.log("Hi");
             createPanelWithImage(row, r);
         }
@@ -248,11 +248,13 @@ function createPanelWithImage(row, r){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda11');       
     } else if(r==28){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda9');
+    } else if(r==29){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda10');
     } else{
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, agendaAttr);
     }
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
-    if(r==9 || r==10 || r==14 || r==22 || r==28){
+    if(r==9 || r==10 || r==14 || r==22 || r==28 || r==29){
         panelBodyDiv.classList.add('agenda-border');
     }
     var panel = null;
@@ -319,7 +321,11 @@ function createPanelWithImage(row, r){
                         console.log("r is 28");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda9', 'aria-expanded':'false', 'aria-controls':'agenda9'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accord3Div.append(panel);
-                    }else {
+                    } else if(r==29){
+                        console.log("r is 29");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord4', 'href':'#agenda10', 'aria-expanded':'false', 'aria-controls':'agenda10'}, true, {'outerPanelClass':['panel', 'sectionKeynote', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
+                        accord3Div.append(panel);
+                    } else {
                         console.log("r > 15");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
                         accord3Div.append(panel);
@@ -347,7 +353,7 @@ function createPanelWithImage(row, r){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==23){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else if(r==25||r==27||r==28){
+                            } else if(r==25||r==27||r==28||r==29){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
                             }else{
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mb-20']);
@@ -396,6 +402,8 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==25 || r==27 || r==28){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                            } else if(r==29){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
                             }else {
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
