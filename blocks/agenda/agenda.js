@@ -390,7 +390,7 @@ function createPanelWithImage(row, r){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
                         } else{
-                            if(r==14 && i==speakerLimit-1){
+                            if((r==25||r==14) && i==speakerLimit-1){
                                 card = createCards(speakersDetailsArr.slice(4*i+2, len), "speakers", i, ['panel-inner']);
                             } else{
                                 card = createCards(speakersDetailsArr.slice(4*i+2, 4*i+6), "speakers", i, ['panel-inner','mb-20']);
