@@ -20,14 +20,20 @@ export default function decorate(block){
 
     var panel1Heading = "";
     var panel2Heading = "";
+    var panel3Heading = "";
+    var panel4Heading = "";
 
     var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
     var accord2Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord2");
-    accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
+    var accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
+    var accord4Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord4");
 
     var sub1Head = createAemElement('p', ['agenda-subhead'], null, null);
     var sub2Head = createAemElement('p', ['agenda-subhead'], null, null);
     var sub3Head = createAemElement('p', ['agenda-subhead'], null, null);
+    var sub4Head = createAemElement('p', ['agenda-subhead'], null, null);
+    // <p class="agenda-subhead">Thursday, December 7<sup>th</sup></p>
+
 
     var supTag = document.createElement('sup');
     supTag.textContent = 'th';
@@ -35,10 +41,12 @@ export default function decorate(block){
     sub1Head.appendChild(supTag);
     sub2Head.appendChild(supTag);
     sub3Head.appendChild(supTag);
+    sub4Head.appendChild(supTag);
 
     accord1Div.append(sub1Head);
     accord2Div.append(sub2Head);
     accord3Div.append(sub3Head);
+    accord4Div.append(sub4Head);
 
     [...container.children].forEach((row,r)=>{
         if(r==3){
@@ -65,9 +73,20 @@ export default function decorate(block){
             })
         }
 
-        if(r>=7&&r<=30){
+        if(r==7){
+            panel3Heading = row.textContent.trim();
+            sub3Head.textContent = panel3Heading;
+        }
+        
+        if(r==22){
+            panel4Heading = row.textContent.trim();
+            sub4Head.textContent = panel4Heading;
+        }
+
+        if(r>=8&&r<=21){
             // console.log("Hi");
-            createPanelWithImage(row, r);
+            var accord3Panel = createPanelWithImage(row, r);
+            accord3Div.append(accord3Panel);
         }
         // if(r==10){
         //     createPanelWithImage(row, r);
@@ -262,35 +281,40 @@ function createPanelWithImage(row, r){
         
             if(c==0){
                 if(col.hasChildNodes()){
-                    if(r==7){
-                        panel = createPanel(col , null, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']});
-                        accord3Div.append(panel);
-                    } else if(r==8){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                    if(r==8){
+                        console.log("r is 8");
+                        panel = createPanel(col , {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
                     } else if(r==9){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
+                        console.log("r is 9");
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
                     } else if(r==10){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        console.log("r is 10");
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                         accord3Div.append(panel);
                     } else if(r==11){
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
+                        console.log("r is 11");
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accord3Div.append(panel);
                     } else if(r==12){
                         console.log("r is 12");
-                        panel = createPanel(col , {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
                     } else if(r==13){
                         console.log("r is 13");
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda14', 'aria-expanded':'false', 'aria-controls':'agenda4'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionSpotlight', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
+                        panel = createPanel(col , {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
                         accord3Div.append(panel);
                     } else if(r==14){
                         console.log("r is 14");
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda4', 'aria-expanded':'false', 'aria-controls':'agenda4'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda14', 'aria-expanded':'false', 'aria-controls':'agenda4'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionSpotlight', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
                         accord3Div.append(panel);
                     } else if(r==15){
                         console.log("r is 15");
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda4', 'aria-expanded':'false', 'aria-controls':'agenda4'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        accord3Div.append(panel);
+                    } else if(r==16){
+                        console.log("r is 16");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord2', 'href':'#agenda5', 'aria-expanded':'false', 'aria-controls':'agenda5'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accord3Div.append(panel);
                     } else if(r==20 || r==21){
@@ -382,25 +406,25 @@ function createPanelWithImage(row, r){
                     var card="";
                     for(let i=0 ; i< speakerLimit;i++){
                         if(i==0){
-                            if(r==9){
+                            if(r==10){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
-                            } else if(r==10){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==11){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else if(r==13){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                            } else if(r==12){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==14){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==15){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                            } else if(r==16){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else if(r==22){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==23){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==24){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
+                            } else if(r==25){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else if(r==25 || r==27 || r==28){
+                            } else if(r==26 || r==28 || r==29){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==29){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
