@@ -23,6 +23,8 @@ export default function decorate(block){
     var panel3Heading = "";
     var panel4Heading = "";
 
+    var accordParentDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-sm-12', 'col-xs-12', 'accordian-main', 'wow', 'fadeInRight', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
+
     var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
     var accord2Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord2");
     var accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
@@ -78,20 +80,31 @@ export default function decorate(block){
             sub3Head.textContent = panel3Heading;
         }
         
-        if(r==22){
+        if(r==21){
             panel4Heading = row.textContent.trim();
             sub4Head.textContent = panel4Heading;
         }
 
-        if(r>=8&&r<=21){
+        if(r>=8&&r<=20){
             // console.log("Hi");
             var accord3Panel = createPanelWithImage(row, r, accord3Div);
             accord3Div.append(accord3Panel);
+        }
+
+        if(r>=22&&r<=32){
+            var accord4Panel = createPanelWithImage(row, r, accord4Div);
+            accord4Div.append(accord4Panel);
         }
         // if(r==10){
         //     createPanelWithImage(row, r);
         // }
     })
+    accordParentDiv.append(accord1Div);
+    accordParentDiv.append(accord2Div);
+    accordParentDiv.append(accord3Div);
+    accordParentDiv.append(accord4Div);
+
+    block.append(accordParentDiv);
 }
 
 function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass, lists){
@@ -251,29 +264,43 @@ function createPanelWithImage(row, r, accordDiv){
         agendaAttr = 'agenda'+(r-7);
     }
     console.log(agendaAttr);
-    if(r==11){
-        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, agendaAttr);
-    } else if(r==13) {
-        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda14');
+    if(r==9){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", 'aria-expanded':'false', 'style':'height: 0px;'}, 'agenda1');
+    } else if(r==10){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, 'agenda2');
+    } else if(r==11){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, 'agenda3');
+    } else if(r==12){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda12');
     } else if(r==14) {
-        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda4');
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda14');
     } else if(r==15) {
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda4');
+    } else if(r==16) {
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda5');        
     } else if(r==22){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda6');
     } else if(r==23){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda13');
     } else if(r==24){
-        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda11');       
-    } else if(r==28){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda6');       
+    } else if(r==25){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda13');
+    } else if(r==26){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda11');
+    } else if(r==27){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda7');
+    } else if(r==28 || r==30){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda9');
     } else if(r==29){
+        var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda8');
+    } else if(r==31){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne"}, 'agenda10');
     } else{
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", "aria-expanded":"false", "style":"height: 0px;"}, agendaAttr);
     }
     const panelBodyDiv = createAemElement('div', ["panel-body"], null, null);
-    if(r==9 || r==10 || r==14 || r==22 || r==28 || r==29){
+    if(r==9 || r==10 || r==11 || r==14 || r==22 || r==27 || r==28 || r==29 || r==30 || r==31){
         panelBodyDiv.classList.add('agenda-border');
     }
     var panel = null;
@@ -287,19 +314,19 @@ function createPanelWithImage(row, r, accordDiv){
                         accordDiv.append(panel);
                     } else if(r==9){
                         console.log("r is 9");
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda1', 'aria-expanded':'false', 'aria-controls':'agenda1', 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
                         accordDiv.append(panel);
                     } else if(r==10){
                         console.log("r is 10");
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda2', 'aria-expanded':'false', 'aria-controls':'agenda2', 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
                         accordDiv.append(panel);
                     } else if(r==11){
                         console.log("r is 11");
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr, 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+'agenda3', 'aria-expanded':'false', 'aria-controls':'agenda3', 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==12){
                         console.log("r is 12");
-                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+agendaAttr, 'aria-expanded':'false', 'aria-controls':agendaAttr}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
+                        panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda12', 'aria-expanded':'false', 'aria-controls':'agenda12'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else if(r==13){
                         console.log("r is 13");
@@ -321,37 +348,41 @@ function createPanelWithImage(row, r, accordDiv){
                         console.log("r is 20");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
                         accordDiv.append(panel);
-                    } else if(r==22){
-                        console.log("r is 22");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block']}, ['pksns']);
-                        accordDiv.append(panel);
-                    } else if(r==23){
-                        console.log("r is 23");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda13', 'aria-expanded':'false', 'aria-controls':'agenda13'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionDiscussion'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                    } else if(r==22 || r==23){
+                        console.log("r is 22 or 23");
+                        panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
                         accordDiv.append(panel);
                     } else if(r==24){
                         console.log("r is 24");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda11', 'aria-expanded':'false', 'aria-controls':'agenda11'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionSpotlight'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else if(r==25){
                         console.log("r is 25");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda7', 'aria-expanded':'false', 'aria-controls':'agenda7'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionDiscussion'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda13', 'aria-expanded':'false', 'aria-controls':'agenda13'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionDiscussion'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        accordDiv.append(panel);
+                    } else if(r==26){
+                        console.log("r is 26");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda11', 'aria-expanded':'false', 'aria-controls':'agenda11'}, true, {'outerPanelClass':['panel', 'sectionSpotlight', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
                         accordDiv.append(panel);
                     } else if(r==27){
                         console.log("r is 27");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda8', 'aria-expanded':'false', 'aria-controls':'agenda8'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
-                        accordDiv.append(panel);
-                    } else if(r==28){
-                        console.log("r is 28");
-                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda9', 'aria-expanded':'false', 'aria-controls':'agenda9'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda7', 'aria-expanded':'false', 'aria-controls':'agenda7'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==29){
                         console.log("r is 29");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda8', 'aria-expanded':'false', 'aria-controls':'agenda8'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        accordDiv.append(panel);
+                    } else if(r==30){
+                        console.log("r is 30");
+                        panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda9', 'aria-expanded':'false', 'aria-controls':'agenda9'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
+                        accordDiv.append(panel);
+                    } else if(r==31){
+                        console.log("r is 31");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord4', 'href':'#agenda10', 'aria-expanded':'false', 'aria-controls':'agenda10'}, true, {'outerPanelClass':['panel', 'sectionKeynote', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else {
                         console.log("r > 15");
-                        panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
+                        panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
                         accordDiv.append(panel);
                     }
                      
@@ -373,12 +404,10 @@ function createPanelWithImage(row, r, accordDiv){
                     // Create Moderators
                     for(let i=0 ; i< moderatorLimit; i++){
                         if(i==0){
-                            if(r==10 || r==14){
+                            if(r==10 || r==11 || r==14 || r==15 || r==27 || r==28 || r==29 || r==30 || r==31){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
-                            } else if(r==23){
+                            } else if(r==23||r==25){
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else if(r==25||r==27||r==28||r==29){
-                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
                             }else{
                                 card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mb-20']);
                             }
@@ -416,29 +445,26 @@ function createPanelWithImage(row, r, accordDiv){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==15){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
-                            } else if(r==16){
+                            } else if(r==16||r==26){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==23){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==24){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==25){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
-                            } else if(r==26 || r==28 || r==29){
+                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
+                            } else if(r==27 || r==28 || r==29 || r==30){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
-                            } else if(r==29){
+                            } else if(r==31){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
                             }else {
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
                         } else{
-                            if((r==25||r==14||r==27||r==28) && i==speakerLimit-1){
+                            if((r==14||r==15||r==27||r==28||r==24||r==30) && i==speakerLimit-1){
                                 card = createCards(speakersDetailsArr.slice(4*i+2, len), "speakers", i, ['panel-inner']);
                             } else{
                                 card = createCards(speakersDetailsArr.slice(4*i+2, 4*i+6), "speakers", i, ['panel-inner','mb-20']);
-                                if(r==14){
-                                    console.log(card);
-                                }
                             }
                         }
                         panelBodyDiv.appendChild(card);
