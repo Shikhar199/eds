@@ -635,7 +635,7 @@ function createCards(details, type, i, pannelInnerClass){
 
 
 //$(document).ready(function () {
-    $(window).on("load", function () {
+    // $(window).on("load", function () {
         // Menu Script
         /* ------------- onclick Menu body scroll hidden  ---------------*/
         $(document).on("click", "body", function (e) {
@@ -1395,5 +1395,5 @@ function createCards(details, type, i, pannelInnerClass){
         });
       
         // End
-      });
+    //   });
       
