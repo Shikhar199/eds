@@ -786,6 +786,7 @@ function functionality(){
     });
 
     $(".panel-selection ul li").click(function () {
+        console.log("panel clicked");
         $(".panel-selection ul li").removeClass("active");
         $(this).addClass("active");
         var $panel = $(this).data("panel");
