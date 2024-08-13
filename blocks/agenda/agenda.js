@@ -109,8 +109,7 @@ export default function decorate(block){
 
     const script = document.createElement('script');
     script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-    // document.body.appendChild(script);
-    block.append(script);
+    document.body.appendChild(script);
 
     functionality();
 }
