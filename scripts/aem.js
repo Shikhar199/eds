@@ -667,6 +667,12 @@ async function loadHeader(header) {
   return loadBlock(headerBlock);
 }
 
+function loadJquery(){
+    const script = document.createElement('script');
+    script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
+    document.head.appendChild(script);
+}
+
 /**
  * Loads a block named 'footer' into footer
  * @param footer footer element
@@ -717,6 +723,7 @@ export {
   getMetadata,
   loadBlock,
   loadBlocks,
+  loadJquery,
   loadCSS,
   loadFooter,
   loadHeader,
