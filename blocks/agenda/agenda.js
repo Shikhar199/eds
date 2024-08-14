@@ -28,7 +28,7 @@ export default function decorate(block){
 
     var accord1Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord1");   
     var accord2Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord2");
-    var accord3Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
+    var accord3Div = createAemElement('div', ['days', 'active'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord3");
     var accord4Div = createAemElement('div', ['days'], {'role':'tablist', 'aria-multiselectable':'true'}, "agendaaccord4");
 
     var sub1Head = createAemElement('p', ['agenda-subhead'], null, null);
