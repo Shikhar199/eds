@@ -139,7 +139,7 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
         if(i==2){
             firstListChildren[i].classList.add('active');    
         }
-        firstListChildren[i].setAttribute("data-day","agendaaccord"+i);
+        firstListChildren[i].setAttribute("data-day","agendaaccord"+i+1);
         firstListChildren[i].classList.add('text-uppercase');
         agendaUl.append(firstListChildren[i]);
     }
