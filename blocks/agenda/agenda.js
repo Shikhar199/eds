@@ -657,6 +657,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[0] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[1]).hasClass("d-block"));
     // sectionKeynote
     if ($(".days.active ." + dataId[1]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[1] + ']').removeClass('d-none').addClass('d-block');
@@ -664,6 +665,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[1] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[2]).hasClass("d-block"));
     // sectionChat
     if ($(".days.active ." + dataId[2]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[2] + ']').removeClass('d-none').addClass('d-block');
@@ -671,6 +673,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[2] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[3]).hasClass("d-block"));
     // sectionSpotlight
     if ($(".days.active ." + dataId[3]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[3] + ']').removeClass('d-none').addClass('d-block');
@@ -678,6 +681,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[3] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[4]).hasClass("d-block"));
     // sectionDiscussion
     if ($(".days.active ." + dataId[4]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[4] + ']').removeClass('d-none').addClass('d-block');
@@ -685,6 +689,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[4] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[5]).hasClass("d-block"));
     // sectionBreakout
     if ($(".days.active ." + dataId[5]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[5] + ']').removeClass('d-none').addClass('d-block');
@@ -692,6 +697,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[5] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[6]).hasClass("d-block"));
     // sectionShowcase
     if ($(".days.active ." + dataId[6]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[6] + ']').removeClass('d-none').addClass('d-block');
@@ -699,6 +705,7 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[6] + ']').removeClass('d-block').addClass('d-none');
     }
 
+    console.log($(".days.active ." + dataId[7]).hasClass("d-block"));
     // sectionAll
     if ($(".days.active ." + dataId[7]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[7] + ']').removeClass('d-none').addClass('d-block');
