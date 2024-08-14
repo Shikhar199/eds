@@ -646,12 +646,15 @@ function functionality(){
     // Confluence Insights By Drop Dwn Script END
     var dataId = [];
     $('.panel-selection ul li').each(function () {
+        console.log("Hi");
         dataId.push($(this).data('panel'));
+        console.log(dataId);
     });
     console.log(dataId[0]);
     console.log(dataId[1]);
     console.log(dataId[2]);
     console.log(dataId[3]);
+    console.log(dataId[4]);
 
     // sectionSpecial
     if ($(".days.active ." + dataId[0]).hasClass("d-block")) {
