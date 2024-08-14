@@ -59,7 +59,7 @@ export default function decorate(block){
 
         if(r==4){
             [...row.children].forEach((col,c)=>{
-                var panelDiv = createPanel(col, null, true, {'outerPanelClass':['panel', 'no-result', 'd-block'],'panelBlockClass': ['panel-block', 'pl-0']});
+                var panelDiv = createPanel(col, null, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']});
                 accord1Div.append(panelDiv);
             })
         }
@@ -648,7 +648,10 @@ function functionality(){
     $('.panel-selection ul li').each(function () {
         dataId.push($(this).data('panel'));
     });
-    // console.log(dataId[0]);
+    console.log(dataId[0]);
+    console.log(dataId[1]);
+    console.log(dataId[2]);
+    console.log(dataId[3]);
 
     // sectionSpecial
     if ($(".days.active ." + dataId[0]).hasClass("d-block")) {
