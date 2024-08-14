@@ -156,7 +156,7 @@ function createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAtt
     const panelUl = document.createElement('ul');
     const secondListChildren = Array.from(secondList.children);
     for(let i=0;i<secondListChildren.length;i++){
-        secondListChildren[i].setAttribute("data-day",panelDivAttr[i]);
+        secondListChildren[i].setAttribute("data-panel",panelDivAttr[i]);
         if(i==4){
             secondListChildren[i].classList.add('active');
         }
