@@ -89,6 +89,7 @@ export default function decorate(block){
         if(r>=8&&r<=20){
             // console.log("Hi");
             var accord3Panel = createPanelWithImage(row, r, accord3Div);
+            console.log(accord3Panel);
             accord3Div.append(accord3Panel);
         }
 
@@ -300,7 +301,6 @@ function createPanelWithImage(row, r, accordDiv){
     } else {
         agendaAttr = 'agenda'+(r-7);
     }
-    console.log(agendaAttr);
     if(r==9){
         var agendaDiv = createAemElement('div', ['panel-collapse', 'collapse'], {"role":"tabpanel", "aria-labelledby":"questionOne", 'aria-expanded':'false', 'style':'height: 0px;'}, 'agenda1');
     } else if(r==10){
@@ -346,79 +346,60 @@ function createPanelWithImage(row, r, accordDiv){
             if(c==0){
                 if(col.hasChildNodes()){
                     if(r==8){
-                        console.log("r is 8");
                         panel = createPanel(col , {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
                         accordDiv.append(panel);
                     } else if(r==9){
-                        console.log("r is 9");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda1', 'aria-expanded':'false', 'aria-controls':'agenda1', 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
                         accordDiv.append(panel);
                     } else if(r==10){
-                        console.log("r is 10");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda2', 'aria-expanded':'false', 'aria-controls':'agenda2', 'class':'collapsed'}, false, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
                         accordDiv.append(panel);
                     } else if(r==11){
-                        console.log("r is 11");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#'+'agenda3', 'aria-expanded':'false', 'aria-controls':'agenda3', 'class':'collapsed'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==12){
-                        console.log("r is 12");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda12', 'aria-expanded':'false', 'aria-controls':'agenda12'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else if(r==13){
-                        console.log("r is 13");
                         panel = createPanel(col , {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']},[]);
                         accordDiv.append(panel);
                     } else if(r==14){
-                        console.log("r is 14");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda14', 'aria-expanded':'false', 'aria-controls':'agenda4'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionSpotlight', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
                         accordDiv.append(panel);
                     } else if(r==15){
-                        console.log("r is 15");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda4', 'aria-expanded':'false', 'aria-controls':'agenda4'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionDiscussion', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==16){
-                        console.log("r is 16");
                         panel = createPanel(col , {'data-toggle':'collapse', 'data-parent':'#agendaaccord2', 'href':'#agenda5', 'aria-expanded':'false', 'aria-controls':'agenda5'}, true, {'outerPanelClass':['panel', 'no-result', 'sectionKeynote', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else if(r==20 || r==21){
-                        console.log("r is 20");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']}, ['pksns']);
                         accordDiv.append(panel);
                     } else if(r==22 || r==23){
-                        console.log("r is 22 or 23");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionAll'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
                         accordDiv.append(panel);
                     } else if(r==24){
-                        console.log("r is 24");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord5', 'href':'#agenda6', 'aria-expanded':'false', 'aria-controls':'agenda6'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionKeynote'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else if(r==25){
-                        console.log("r is 25");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda13', 'aria-expanded':'false', 'aria-controls':'agenda13'}, true, {'outerPanelClass':['panel', 'no-result', 'd-block', 'sectionDiscussion'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==26){
-                        console.log("r is 26");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda11', 'aria-expanded':'false', 'aria-controls':'agenda11'}, true, {'outerPanelClass':['panel', 'sectionSpotlight', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-coral-medium']);
                         accordDiv.append(panel);
                     } else if(r==27){
-                        console.log("r is 27");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda7', 'aria-expanded':'false', 'aria-controls':'agenda7'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==29){
-                        console.log("r is 29");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda8', 'aria-expanded':'false', 'aria-controls':'agenda8'}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==30){
-                        console.log("r is 30");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord1', 'href':'#agenda9', 'aria-expanded':'false', 'aria-controls':'agenda9'}, true, {'outerPanelClass':['panel', 'sectionDiscussion', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns', 'bg-amethyst-medium']);
                         accordDiv.append(panel);
                     } else if(r==31){
-                        console.log("r is 31");
                         panel = createPanel(col, {'data-toggle':'collapse', 'data-parent':'#agendaaccord4', 'href':'#agenda10', 'aria-expanded':'false', 'aria-controls':'agenda10'}, true, {'outerPanelClass':['panel', 'sectionKeynote', 'no-result', 'd-block'],'panelBlockClass': ['panel-block']}, ['pksns']);
                         accordDiv.append(panel);
                     } else {
-                        console.log("r > 15");
                         panel = createPanel(col, {}, true, {'outerPanelClass':['panel', 'no-result'],'panelBlockClass': ['panel-block', 'pl-0']}, []);
                         accordDiv.append(panel);
                     }
@@ -457,9 +438,6 @@ function createPanelWithImage(row, r, accordDiv){
                 
             } else if(c==3){
                 // Create Speakers
-                if(r==11){
-                    console.log("inside 11 row last column");
-                }
                 if(col.hasChildNodes()){
                     const speakersDetails = col.querySelectorAll('p');
                     var speakersDetailsArr = Array.from(speakersDetails);
@@ -509,12 +487,10 @@ function createPanelWithImage(row, r, accordDiv){
                 }
             }
         })
-        console.log(panelBodyDiv);
         if(panelBodyDiv.hasChildNodes()){
             agendaDiv.appendChild(panelBodyDiv);
             panel.appendChild(agendaDiv);
         }        
-        console.log(panel);
 }
 
 function createAgendaDiv(col, agendaid, classes, attributes){
@@ -677,7 +653,6 @@ function functionality(){
         dataId.push($(this).data('panel'));
     });
 
-    console.log($(".days.active ." + dataId[0]).hasClass("d-block"));
     // sectionSpecial
     if ($(".days.active ." + dataId[0]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[0] + ']').removeClass('d-none').addClass('d-block');
@@ -685,7 +660,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[0] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[1]).hasClass("d-block"));
     // sectionKeynote
     if ($(".days.active ." + dataId[1]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[1] + ']').removeClass('d-none').addClass('d-block');
@@ -693,7 +667,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[1] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[2]).hasClass("d-block"));
     // sectionChat
     if ($(".days.active ." + dataId[2]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[2] + ']').removeClass('d-none').addClass('d-block');
@@ -701,7 +674,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[2] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[3]).hasClass("d-block"));
     // sectionSpotlight
     if ($(".days.active ." + dataId[3]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[3] + ']').removeClass('d-none').addClass('d-block');
@@ -709,7 +681,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[3] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[4]).hasClass("d-block"));
     // sectionDiscussion
     if ($(".days.active ." + dataId[4]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[4] + ']').removeClass('d-none').addClass('d-block');
@@ -717,7 +688,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[4] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[5]).hasClass("d-block"));
     // sectionBreakout
     if ($(".days.active ." + dataId[5]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[5] + ']').removeClass('d-none').addClass('d-block');
@@ -725,7 +695,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[5] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[6]).hasClass("d-block"));
     // sectionShowcase
     if ($(".days.active ." + dataId[6]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[6] + ']').removeClass('d-none').addClass('d-block');
@@ -733,7 +702,6 @@ function functionality(){
         $('.panel-selection ul li[data-panel=' + dataId[6] + ']').removeClass('d-block').addClass('d-none');
     }
 
-    console.log($(".days.active ." + dataId[7]).hasClass("d-block"));
     // sectionAll
     if ($(".days.active ." + dataId[7]).hasClass("d-block")) {
         $('.panel-selection ul li[data-panel=' + dataId[7] + ']').removeClass('d-none').addClass('d-block');
@@ -751,14 +719,12 @@ function functionality(){
         $(".panel").addClass("d-block");
         $(".accordian-main").find("p.no-blocks-available").remove();
         var $day = $(this).data("day");
-        console.log($day);
         if ($day == "bothdays") {
             $(".days").addClass("active");
         } else {
             $(".days").removeClass("active");
             $("#" + $day).addClass("active");
         }
-        console.log($(".days.active ." + dataId[0]).hasClass("d-block"));
         // sectionSpecial
         if ($(".days.active ." + dataId[0]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[0] + ']').removeClass('d-none').addClass('d-block');
@@ -766,7 +732,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[0] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[1]).hasClass("d-block"));
         // sectionKeynote
         if ($(".days.active ." + dataId[1]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[1] + ']').removeClass('d-none').addClass('d-block');
@@ -774,7 +739,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[1] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[2]).hasClass("d-block"));
         // sectionChat
         if ($(".days.active ." + dataId[2]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[2] + ']').removeClass('d-none').addClass('d-block');
@@ -782,7 +746,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[2] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[3]).hasClass("d-block"));
         // sectionSpotlight
         if ($(".days.active ." + dataId[3]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[3] + ']').removeClass('d-none').addClass('d-block');
@@ -790,7 +753,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[3] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[4]).hasClass("d-block"));
         // sectionDiscussion
         if ($(".days.active ." + dataId[4]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[4] + ']').removeClass('d-none').addClass('d-block');
@@ -798,7 +760,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[4] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[5]).hasClass("d-block"));
         // sectionBreakout
         if ($(".days.active ." + dataId[5]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[5] + ']').removeClass('d-none').addClass('d-block');
@@ -806,7 +767,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[5] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[6]).hasClass("d-block"));
         // sectionShowcase
         if ($(".days.active ." + dataId[6]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[6] + ']').removeClass('d-none').addClass('d-block');
@@ -814,7 +774,6 @@ function functionality(){
             $('.panel-selection ul li[data-panel=' + dataId[6] + ']').removeClass('d-block').addClass('d-none');
         }
 
-        console.log($(".days.active ." + dataId[7]).hasClass("d-block"));
         // sectionAll
         if ($(".days.active ." + dataId[7]).hasClass("d-block")) {
             $('.panel-selection ul li[data-panel=' + dataId[7] + ']').removeClass('d-none').addClass('d-block');
