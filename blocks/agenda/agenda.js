@@ -88,9 +88,10 @@ export default function decorate(block){
 
         if(r>=8&&r<=20){
             // console.log("Hi");
-            var accord3Panel = createPanelWithImage(row, r, accord3Div);
-            console.log(accord3Panel);
-            accord3Div.append(accord3Panel);
+            // var accord3Panel = createPanelWithImage(row, r, accord3Div);
+            // console.log(accord3Panel);
+            // accord3Div.append(accord3Panel);
+            createPanelWithImage(row, r, accord3Div);
         }
 
         if(r>=22&&r<=32){
@@ -490,7 +491,8 @@ function createPanelWithImage(row, r, accordDiv){
         if(panelBodyDiv.hasChildNodes()){
             agendaDiv.appendChild(panelBodyDiv);
             panel.appendChild(agendaDiv);
-        }        
+        }  
+        return panel;      
 }
 
 function createAgendaDiv(col, agendaid, classes, attributes){
