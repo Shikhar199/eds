@@ -1291,13 +1291,13 @@ padding-right: 45px;
   top: 0;
   bottom: 0;
   right: 30px;
-  background-image: url("/content/dam/infosys-web/en/confluence/images/2022/emea/plus.svg");
+  background-image: url("../../icons/plus.svg");
   background-repeat: no-repeat;
   background-size: contain;
   margin: auto;
 }
 .agenda .panel a[aria-expanded="true"]:after {
-  background-image: url("/content/dam/infosys-web/en/confluence/images/2022/emea/minus.svg");
+  background-image: url("../../icons/minus.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
