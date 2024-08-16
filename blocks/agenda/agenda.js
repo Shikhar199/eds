@@ -829,7 +829,7 @@ function functionality(){
         );
     });
 
-    document.querySelector('.panel.sectionKeynote.no-result.d-block').addEventListener('click', function() {
+    /*document.querySelector('.panel.sectionKeynote.no-result.d-block').addEventListener('click', function() {
         console.log("panel clicked");
         const anchorTag = this.querySelector('a[data-toggle="collapse"]');
         const collapsibleDiv = document.getElementById('agenda12');
@@ -857,5 +857,5 @@ function functionality(){
             afterElement.textContent = '::after';
             panelBodyDiv.appendChild(afterElement);
         }
-    })
+    })*/
 }

@@ -3513,3 +3513,11 @@ ul.menu-link li {
 .h5, h5 {
     font-size: 14px;
 }
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0 0 10px;
+}
