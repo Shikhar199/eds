@@ -95,8 +95,9 @@ export default function decorate(block){
         }
 
         if(r>=22&&r<=32){
-            var accord4Panel = createPanelWithImage(row, r, accord4Div);
-            accord4Div.append(accord4Panel);
+            // var accord4Panel = createPanelWithImage(row, r, accord4Div);
+            // accord4Div.append(accord4Panel);
+            createPanelWithImage(row, r, accord4Div);
         }
         // if(r==10){
         //     createPanelWithImage(row, r);
