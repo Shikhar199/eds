@@ -105,7 +105,18 @@ export default function decorate(block){
     accordParentDiv.append(accord3Div);
     accordParentDiv.append(accord4Div);
 
+    const section = document.createElement('section');
+    section.id = 'agenda';
+    section.className = 'agenda bg-light-white py-75';
+
+    const article = document.createElement('article');
+    article.className = 'container';
+
     block.append(accordParentDiv);
+
+    const colLeft = block.querySelector('.col-lg-4');
+    const colRight = block.querySelector('.col-lg-8');
+    
     block.classList.add('row');
 
     functionality();
