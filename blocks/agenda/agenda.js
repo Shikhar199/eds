@@ -106,6 +106,7 @@ export default function decorate(block){
     accordParentDiv.append(accord4Div);
 
     block.append(accordParentDiv);
+    block.classList.add('row');
 
     functionality();
 }
