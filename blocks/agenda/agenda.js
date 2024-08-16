@@ -828,4 +828,22 @@ function functionality(){
             700
         );
     });
+
+    document.querySelector('.panel.sectionKeynote.no-result.d-block').addEventListener('click', function() {
+        const anchorTag = this.querySelector('a[data-toggle="collapse"]');
+        const collapsibleDiv = document.getElementById('agenda12');
+
+        const isExpanded = anchorTag.getAttribute('aria-expanded') === 'true';
+        anchorTag.setAttribute('aria-expanded', !isExpanded);
+        collapsibleDiv.setAttribute('aria-expanded', !isExpanded);
+
+        if (!isExpanded) {
+            anchorTag.classList.add('collapsed');
+            collapsibleDiv.style.height = '0px';
+        } else {
+            anchorTag.classList.remove('collapsed');
+            collapsibleDiv.classList.add('in');
+            collapsibleDiv.style.height = '';
+        }
+    })
 }
