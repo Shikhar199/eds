@@ -133,7 +133,7 @@ export default function decorate(block){
     console.log(colRight);
     console.log(section);
     
-    block.classList.add('row');
+    block.parentNode.replaceChild(section, block);
 
     functionality();
 }
