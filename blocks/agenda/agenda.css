@@ -3509,3 +3509,7 @@ ul.menu-link li {
 .margin7 {
   margin: 7px 0 !important;
 }
+
+.h5, h5 {
+    font-size: 14px;
+}
