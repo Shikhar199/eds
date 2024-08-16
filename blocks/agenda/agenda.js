@@ -138,6 +138,7 @@ export default function decorate(block){
     
     block.parentNode.replaceChild(section, block);
 
+    console.log(block);
     functionality();
 }
 
