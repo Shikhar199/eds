@@ -12,7 +12,8 @@ import {
   loadBlocks,
   loadCSS,
   loadJquery,
-  loadClientlibHeader
+  loadClientlibHeaderJS,
+  loadClientlibHeaderCSS
 } from './aem.js';
 
 const LCP_BLOCKS = ["freeflow-container"]; // add your LCP blocks to the list
@@ -77,7 +78,8 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   loadJquery();
-  loadClientlibHeader();
+  loadClientlibHeaderJS();
+  loadClientlibHeaderCSS();
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');

@@ -673,10 +673,19 @@ function loadJquery(){
     document.head.appendChild(script);
 }
 
-function loadClientlibHeader(){
+function loadClientlibHeaderJS(){
   const script = document.createElement('script');
   script.src = "./clientlib-header.js";
   document.head.appendChild(script);
+}
+
+function loadClientlibHeaderCSS(){
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = '/etc.clientlibs/infosys-web/clientlibs/clientlib-header.css';
+  link.type = 'text/css';
+
+  document.head.appendChild(link);
 }
 
 /**
@@ -730,7 +739,8 @@ export {
   loadBlock,
   loadBlocks,
   loadJquery,
-  loadClientlibHeader,
+  loadClientlibHeaderJS,
+  loadClientlibHeaderCSS,
   loadCSS,
   loadFooter,
   loadHeader,
