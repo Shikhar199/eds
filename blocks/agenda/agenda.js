@@ -859,3 +859,388 @@ function functionality(){
         }
     })*/
 }
+
+(function (a) {
+    "use strict";
+    var r = function (t, e) {
+        (this.$element = a(t)),
+            (this.options = a.extend({}, r.DEFAULTS, e)),
+            (this.$trigger = a('[data-toggle="collapse"][href="#' + t.id + '"],[data-toggle="collapse"][data-target="#' + t.id + '"]')),
+            (this.transitioning = null),
+            this.options.parent ? (this.$parent = this.getParent()) : this.addAriaAndCollapsedClass(this.$element, this.$trigger),
+            this.options.toggle && this.toggle();
+    };
+    function n(t) {
+        var e,
+            i = t.attr("data-target") || ((e = t.attr("href")) && e.replace(/.*(?=#[^\s]+$)/, ""));
+        return a(document).find(i);
+    }
+    function l(o) {
+        return this.each(function () {
+            var t = a(this),
+                e = t.data("bs.collapse"),
+                i = a.extend({}, r.DEFAULTS, t.data(), "object" == typeof o && o);
+            !e && i.toggle && /show|hide/.test(o) && (i.toggle = !1), e || t.data("bs.collapse", (e = new r(this, i))), "string" == typeof o && e[o]();
+        });
+    }
+    (r.VERSION = "3.4.1"),
+        (r.TRANSITION_DURATION = 350),
+        (r.DEFAULTS = { toggle: !0 }),
+        (r.prototype.dimension = function () {
+            return this.$element.hasClass("width") ? "width" : "height";
+        }),
+        (r.prototype.show = function () {
+            if (!this.transitioning && !this.$element.hasClass("in")) {
+                var t,
+                    e = this.$parent && this.$parent.children(".panel").children(".in, .collapsing");
+                if (!(e && e.length && (t = e.data("bs.collapse")) && t.transitioning)) {
+                    var i = a.Event("show.bs.collapse");
+                    if ((this.$element.trigger(i), !i.isDefaultPrevented())) {
+                        e && e.length && (l.call(e, "hide"), t || e.data("bs.collapse", null));
+                        var o = this.dimension();
+                        this.$element.removeClass("collapse").addClass("collapsing")[o](0).attr("aria-expanded", !0), this.$trigger.removeClass("collapsed").attr("aria-expanded", !0), (this.transitioning = 1);
+                        var n = function () {
+                            this.$element.removeClass("collapsing").addClass("collapse in")[o](""), (this.transitioning = 0), this.$element.trigger("shown.bs.collapse");
+                        };
+                        if (!a.support.transition) return n.call(this);
+                        var s = a.camelCase(["scroll", o].join("-"));
+                        this.$element.one("bsTransitionEnd", a.proxy(n, this)).emulateTransitionEnd(r.TRANSITION_DURATION)[o](this.$element[0][s]);
+                    }
+                }
+            }
+        }),
+        (r.prototype.hide = function () {
+            if (!this.transitioning && this.$element.hasClass("in")) {
+                var t = a.Event("hide.bs.collapse");
+                if ((this.$element.trigger(t), !t.isDefaultPrevented())) {
+                    var e = this.dimension();
+                    this.$element[e](this.$element[e]())[0].offsetHeight,
+                        this.$element.addClass("collapsing").removeClass("collapse in").attr("aria-expanded", !1),
+                        this.$trigger.addClass("collapsed").attr("aria-expanded", !1),
+                        (this.transitioning = 1);
+                    var i = function () {
+                        (this.transitioning = 0), this.$element.removeClass("collapsing").addClass("collapse").trigger("hidden.bs.collapse");
+                    };
+                    if (!a.support.transition) return i.call(this);
+                    this.$element[e](0).one("bsTransitionEnd", a.proxy(i, this)).emulateTransitionEnd(r.TRANSITION_DURATION);
+                }
+            }
+        }),
+        (r.prototype.toggle = function () {
+            this[this.$element.hasClass("in") ? "hide" : "show"]();
+        }),
+        (r.prototype.getParent = function () {
+            return a(document)
+                .find(this.options.parent)
+                .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+                .each(
+                    a.proxy(function (t, e) {
+                        var i = a(e);
+                        this.addAriaAndCollapsedClass(n(i), i);
+                    }, this)
+                )
+                .end();
+        }),
+        (r.prototype.addAriaAndCollapsedClass = function (t, e) {
+            var i = t.hasClass("in");
+            t.attr("aria-expanded", i), e.toggleClass("collapsed", !i).attr("aria-expanded", i);
+        });
+    var t = a.fn.collapse;
+    (a.fn.collapse = l),
+        (a.fn.collapse.Constructor = r),
+        (a.fn.collapse.noConflict = function () {
+            return (a.fn.collapse = t), this;
+        }),
+        a(document).on("click.bs.collapse.data-api", '[data-toggle="collapse"]', function (t) {
+            var e = a(this);
+            e.attr("data-target") || t.preventDefault();
+            var i = n(e),
+                o = i.data("bs.collapse") ? "toggle" : e.data();
+            l.call(i, o);
+        });
+})(jQuery),
+(function (a) {
+    "use strict";
+    var r = '[data-toggle="dropdown"]',
+        o = function (t) {
+            a(t).on("click.bs.dropdown", this.toggle);
+        };
+    function l(t) {
+        var e = t.attr("data-target");
+        e || (e = (e = t.attr("href")) && /#[A-Za-z]/.test(e) && e.replace(/.*(?=#[^\s]*$)/, ""));
+        var i = "#" !== e ? a(document).find(e) : null;
+        return i && i.length ? i : t.parent();
+    }
+    function s(o) {
+        (o && 3 === o.which) ||
+            (a(".dropdown-backdrop").remove(),
+            a(r).each(function () {
+                var t = a(this),
+                    e = l(t),
+                    i = { relatedTarget: this };
+                e.hasClass("open") &&
+                    ((o && "click" == o.type && /input|textarea/i.test(o.target.tagName) && a.contains(e[0], o.target)) ||
+                        (e.trigger((o = a.Event("hide.bs.dropdown", i))), o.isDefaultPrevented() || (t.attr("aria-expanded", "false"), e.removeClass("open").trigger(a.Event("hidden.bs.dropdown", i)))));
+            }));
+    }
+    (o.VERSION = "3.4.1"),
+        (o.prototype.toggle = function (t) {
+            var e = a(this);
+            if (!e.is(".disabled, :disabled")) {
+                var i = l(e),
+                    o = i.hasClass("open");
+                if ((s(), !o)) {
+                    "ontouchstart" in document.documentElement && !i.closest(".navbar-nav").length && a(document.createElement("div")).addClass("dropdown-backdrop").insertAfter(a(this)).on("click", s);
+                    var n = { relatedTarget: this };
+                    if ((i.trigger((t = a.Event("show.bs.dropdown", n))), t.isDefaultPrevented())) return;
+                    e.trigger("focus").attr("aria-expanded", "true"), i.toggleClass("open").trigger(a.Event("shown.bs.dropdown", n));
+                }
+                return !1;
+            }
+        }),
+        (o.prototype.keydown = function (t) {
+            if (/(38|40|27|32)/.test(t.which) && !/input|textarea/i.test(t.target.tagName)) {
+                var e = a(this);
+                if ((t.preventDefault(), t.stopPropagation(), !e.is(".disabled, :disabled"))) {
+                    var i = l(e),
+                        o = i.hasClass("open");
+                    if ((!o && 27 != t.which) || (o && 27 == t.which)) return 27 == t.which && i.find(r).trigger("focus"), e.trigger("click");
+                    var n = i.find(".dropdown-menu li:not(.disabled):visible a");
+                    if (n.length) {
+                        var s = n.index(t.target);
+                        38 == t.which && 0 < s && s--, 40 == t.which && s < n.length - 1 && s++, ~s || (s = 0), n.eq(s).trigger("focus");
+                    }
+                }
+            }
+        });
+    var t = a.fn.dropdown;
+    (a.fn.dropdown = function e(i) {
+        return this.each(function () {
+            var t = a(this),
+                e = t.data("bs.dropdown");
+            e || t.data("bs.dropdown", (e = new o(this))), "string" == typeof i && e[i].call(t);
+        });
+    }),
+        (a.fn.dropdown.Constructor = o),
+        (a.fn.dropdown.noConflict = function () {
+            return (a.fn.dropdown = t), this;
+        }),
+        a(document)
+            .on("click.bs.dropdown.data-api", s)
+            .on("click.bs.dropdown.data-api", ".dropdown form", function (t) {
+                t.stopPropagation();
+            })
+            .on("click.bs.dropdown.data-api", r, o.prototype.toggle)
+            .on("keydown.bs.dropdown.data-api", r, o.prototype.keydown)
+            .on("keydown.bs.dropdown.data-api", ".dropdown-menu", o.prototype.keydown);
+})(jQuery),
+(function (a) {
+    "use strict";
+    var s = function (t, e) {
+        (this.options = e),
+            (this.$body = a(document.body)),
+            (this.$element = a(t)),
+            (this.$dialog = this.$element.find(".modal-dialog")),
+            (this.$backdrop = null),
+            (this.isShown = null),
+            (this.originalBodyPad = null),
+            (this.scrollbarWidth = 0),
+            (this.ignoreBackdropClick = !1),
+            (this.fixedContent = ".navbar-fixed-top, .navbar-fixed-bottom"),
+            this.options.remote &&
+                this.$element.find(".modal-content").load(
+                    this.options.remote,
+                    a.proxy(function () {
+                        this.$element.trigger("loaded.bs.modal");
+                    }, this)
+                );
+    };
+    function r(o, n) {
+        return this.each(function () {
+            var t = a(this),
+                e = t.data("bs.modal"),
+                i = a.extend({}, s.DEFAULTS, t.data(), "object" == typeof o && o);
+            e || t.data("bs.modal", (e = new s(this, i))), "string" == typeof o ? e[o](n) : i.show && e.show(n);
+        });
+    }
+    (s.VERSION = "3.4.1"),
+        (s.TRANSITION_DURATION = 300),
+        (s.BACKDROP_TRANSITION_DURATION = 150),
+        (s.DEFAULTS = { backdrop: !0, keyboard: !0, show: !0 }),
+        (s.prototype.toggle = function (t) {
+            return this.isShown ? this.hide() : this.show(t);
+        }),
+        (s.prototype.show = function (i) {
+            var o = this,
+                t = a.Event("show.bs.modal", { relatedTarget: i });
+            this.$element.trigger(t),
+                this.isShown ||
+                    t.isDefaultPrevented() ||
+                    ((this.isShown = !0),
+                    this.checkScrollbar(),
+                    this.setScrollbar(),
+                    this.$body.addClass("modal-open"),
+                    this.escape(),
+                    this.resize(),
+                    this.$element.on("click.dismiss.bs.modal", '[data-dismiss="modal"]', a.proxy(this.hide, this)),
+                    this.$dialog.on("mousedown.dismiss.bs.modal", function () {
+                        o.$element.one("mouseup.dismiss.bs.modal", function (t) {
+                            a(t.target).is(o.$element) && (o.ignoreBackdropClick = !0);
+                        });
+                    }),
+                    this.backdrop(function () {
+                        var t = a.support.transition && o.$element.hasClass("fade");
+                        o.$element.parent().length || o.$element.appendTo(o.$body), o.$element.show().scrollTop(0), o.adjustDialog(), t && o.$element[0].offsetWidth, o.$element.addClass("in"), o.enforceFocus();
+                        var e = a.Event("shown.bs.modal", { relatedTarget: i });
+                        t
+                            ? o.$dialog
+                                  .one("bsTransitionEnd", function () {
+                                      o.$element.trigger("focus").trigger(e);
+                                  })
+                                  .emulateTransitionEnd(s.TRANSITION_DURATION)
+                            : o.$element.trigger("focus").trigger(e);
+                    }));
+        }),
+        (s.prototype.hide = function (t) {
+            t && t.preventDefault(),
+                (t = a.Event("hide.bs.modal")),
+                this.$element.trigger(t),
+                this.isShown &&
+                    !t.isDefaultPrevented() &&
+                    ((this.isShown = !1),
+                    this.escape(),
+                    this.resize(),
+                    a(document).off("focusin.bs.modal"),
+                    this.$element.removeClass("in").off("click.dismiss.bs.modal").off("mouseup.dismiss.bs.modal"),
+                    this.$dialog.off("mousedown.dismiss.bs.modal"),
+                    a.support.transition && this.$element.hasClass("fade") ? this.$element.one("bsTransitionEnd", a.proxy(this.hideModal, this)).emulateTransitionEnd(s.TRANSITION_DURATION) : this.hideModal());
+        }),
+        (s.prototype.enforceFocus = function () {
+            a(document)
+                .off("focusin.bs.modal")
+                .on(
+                    "focusin.bs.modal",
+                    a.proxy(function (t) {
+                        document === t.target || this.$element[0] === t.target || this.$element.has(t.target).length || this.$element.trigger("focus");
+                    }, this)
+                );
+        }),
+        (s.prototype.escape = function () {
+            this.isShown && this.options.keyboard
+                ? this.$element.on(
+                      "keydown.dismiss.bs.modal",
+                      a.proxy(function (t) {
+                          27 == t.which && this.hide();
+                      }, this)
+                  )
+                : this.isShown || this.$element.off("keydown.dismiss.bs.modal");
+        }),
+        (s.prototype.resize = function () {
+            this.isShown ? a(window).on("resize.bs.modal", a.proxy(this.handleUpdate, this)) : a(window).off("resize.bs.modal");
+        }),
+        (s.prototype.hideModal = function () {
+            var t = this;
+            this.$element.hide(),
+                this.backdrop(function () {
+                    t.$body.removeClass("modal-open"), t.resetAdjustments(), t.resetScrollbar(), t.$element.trigger("hidden.bs.modal");
+                });
+        }),
+        (s.prototype.removeBackdrop = function () {
+            this.$backdrop && this.$backdrop.remove(), (this.$backdrop = null);
+        }),
+        (s.prototype.backdrop = function (t) {
+            var e = this,
+                i = this.$element.hasClass("fade") ? "fade" : "";
+            if (this.isShown && this.options.backdrop) {
+                var o = a.support.transition && i;
+                if (
+                    ((this.$backdrop = a(document.createElement("div"))
+                        .addClass("modal-backdrop " + i)
+                        .appendTo(this.$body)),
+                    this.$element.on(
+                        "click.dismiss.bs.modal",
+                        a.proxy(function (t) {
+                            this.ignoreBackdropClick ? (this.ignoreBackdropClick = !1) : t.target === t.currentTarget && ("static" == this.options.backdrop ? this.$element[0].focus() : this.hide());
+                        }, this)
+                    ),
+                    o && this.$backdrop[0].offsetWidth,
+                    this.$backdrop.addClass("in"),
+                    !t)
+                )
+                    return;
+                o ? this.$backdrop.one("bsTransitionEnd", t).emulateTransitionEnd(s.BACKDROP_TRANSITION_DURATION) : t();
+            } else if (!this.isShown && this.$backdrop) {
+                this.$backdrop.removeClass("in");
+                var n = function () {
+                    e.removeBackdrop(), t && t();
+                };
+                a.support.transition && this.$element.hasClass("fade") ? this.$backdrop.one("bsTransitionEnd", n).emulateTransitionEnd(s.BACKDROP_TRANSITION_DURATION) : n();
+            } else t && t();
+        }),
+        (s.prototype.handleUpdate = function () {
+            this.adjustDialog();
+        }),
+        (s.prototype.adjustDialog = function () {
+            var t = this.$element[0].scrollHeight > document.documentElement.clientHeight;
+            this.$element.css({ paddingLeft: !this.bodyIsOverflowing && t ? this.scrollbarWidth : "", paddingRight: this.bodyIsOverflowing && !t ? this.scrollbarWidth : "" });
+        }),
+        (s.prototype.resetAdjustments = function () {
+            this.$element.css({ paddingLeft: "", paddingRight: "" });
+        }),
+        (s.prototype.checkScrollbar = function () {
+            var t = window.innerWidth;
+            if (!t) {
+                var e = document.documentElement.getBoundingClientRect();
+                t = e.right - Math.abs(e.left);
+            }
+            (this.bodyIsOverflowing = document.body.clientWidth < t), (this.scrollbarWidth = this.measureScrollbar());
+        }),
+        (s.prototype.setScrollbar = function () {
+            var t = parseInt(this.$body.css("padding-right") || 0, 10);
+            this.originalBodyPad = document.body.style.paddingRight || "";
+            var n = this.scrollbarWidth;
+            this.bodyIsOverflowing &&
+                (this.$body.css("padding-right", t + n),
+                a(this.fixedContent).each(function (t, e) {
+                    var i = e.style.paddingRight,
+                        o = a(e).css("padding-right");
+                    a(e)
+                        .data("padding-right", i)
+                        .css("padding-right", parseFloat(o) + n + "px");
+                }));
+        }),
+        (s.prototype.resetScrollbar = function () {
+            this.$body.css("padding-right", this.originalBodyPad),
+                a(this.fixedContent).each(function (t, e) {
+                    var i = a(e).data("padding-right");
+                    a(e).removeData("padding-right"), (e.style.paddingRight = i || "");
+                });
+        }),
+        (s.prototype.measureScrollbar = function () {
+            var t = document.createElement("div");
+            (t.className = "modal-scrollbar-measure"), this.$body.append(t);
+            var e = t.offsetWidth - t.clientWidth;
+            return this.$body[0].removeChild(t), e;
+        });
+    var t = a.fn.modal;
+    (a.fn.modal = r),
+        (a.fn.modal.Constructor = s),
+        (a.fn.modal.noConflict = function () {
+            return (a.fn.modal = t), this;
+        }),
+        a(document).on("click.bs.modal.data-api", '[data-toggle="modal"]', function (t) {
+            var e = a(this),
+                i = e.attr("href"),
+                o = e.attr("data-target") || (i && i.replace(/.*(?=#[^\s]+$)/, "")),
+                n = a(document).find(o),
+                s = n.data("bs.modal") ? "toggle" : a.extend({ remote: !/#/.test(i) && i }, n.data(), e.data());
+            e.is("a") && t.preventDefault(),
+                n.one("show.bs.modal", function (t) {
+                    t.isDefaultPrevented() ||
+                        n.one("hidden.bs.modal", function () {
+                            e.is(":visible") && e.trigger("focus");
+                        });
+                }),
+                r.call(n, s, this);
+        });
+})(jQuery)
