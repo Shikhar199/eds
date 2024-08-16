@@ -117,6 +117,9 @@ export default function decorate(block){
     const colLeft = block.querySelector('.col-lg-4');
     const colRight = block.querySelector('.col-lg-8');
 
+    const row = document.createElement('div');
+    row.className = 'row';
+
     row.appendChild(colLeft);
     row.appendChild(colRight);
 
