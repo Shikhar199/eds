@@ -13491,3 +13491,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	right: 85px;
 }
 }
+
+.panel-heading{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
