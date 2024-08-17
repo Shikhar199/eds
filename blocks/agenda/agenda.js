@@ -650,6 +650,7 @@ function createCards(details, type, i, pannelInnerClass){
     panelInnerDiv.appendChild(pictureDiv);
     panelInnerDiv.appendChild(panelDetailsDiv);
 
+    console.log(panelInnerDiv);
     return panelInnerDiv;
 
 }
