@@ -457,6 +457,7 @@ function createPanelWithImage(row, r, accordDiv){
                             if(r==10){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
                             } else if(r==11){
+                                console.log(speakersDetailsArr);
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==12){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
