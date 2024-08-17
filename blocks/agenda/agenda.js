@@ -427,14 +427,18 @@ function createPanelWithImage(row, r, accordDiv){
                     for(let i=0 ; i< moderatorLimit; i++){
                         if(i==0){
                             if(r==10 || r==11 || r==14 || r==15 || r==27 || r==28 || r==29 || r==30 || r==31){
-                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
+                                card = createCards(moderatorsDetailsArr.slice(0,5), "moderators", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==23||r==25){
-                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                                card = createCards(moderatorsDetailsArr.slice(0,5), "moderators", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             }else{
-                                card = createCards(moderatorsDetailsArr.slice(0,6), "moderators", i, ['mb-20']);
+                                card = createCards(moderatorsDetailsArr.slice(0,5), "moderators", i, ['mb-20']);
                             }
                         } else{
-                            card = createCards(moderatorsDetailsArr.slice(4*i+2,len), "moderators", i, []);
+                            if(i==moderatorLimit-1){
+                                card = createCards(moderatorsDetailsArr.slice(4*i+1,len), "moderators", i, []);
+                            } else{
+                                card = createCards(moderatorsDetailsArr.slice(4*i+1,4*i+5), "moderators", i, []);
+                            }
                         }
                         panelBodyDiv.appendChild(card);
                     }
@@ -460,23 +464,23 @@ function createPanelWithImage(row, r, accordDiv){
                                 console.log(speakersDetailsArr);
                                 card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==12){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==14){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==15){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==16||r==26){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==23){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==24){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mt-20', 'mb-20']);
                             } else if(r==25){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner']);
                             } else if(r==27 || r==28 || r==29 || r==30){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==31){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner']);
                             }else {
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border']);
                             }
