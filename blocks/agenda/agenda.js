@@ -622,8 +622,8 @@ function createCards(details, type, i, pannelInnerClass){
     speakerImgDiv.classList.add('speaker-img');
 
     const speakerImg = document.createElement('img');
-    speakerImg.setAttribute('src', details[details.length-3].querySelector('picture').querySelector('img').getAttribute('src'));
-    speakerImg.alt = details[details.length-2].textContent.trim();
+    speakerImg.setAttribute('src', details[details.length-4].querySelector('picture').querySelector('img').getAttribute('src'));
+    speakerImg.alt = details[details.length-3].textContent.trim();
 
     speakerImgDiv.appendChild(speakerImg);
 
@@ -632,11 +632,11 @@ function createCards(details, type, i, pannelInnerClass){
     const speakerH5 = document.createElement('h5');
 
     const speakerB = document.createElement('b');
-    speakerB.textContent = details[details.length-2].textContent.trim();
+    speakerB.textContent = details[details.length-3].textContent.trim();
 
     const speakerSpan = document.createElement('span');
     speakerSpan.classList.add('d-block');
-    speakerSpan.textContent = details[details.length-1].textContent.trim();
+    speakerSpan.textContent = details[details.length-2].textContent.trim();
 
     speakerH5.appendChild(speakerB);
     speakerH5.appendChild(speakerSpan);
