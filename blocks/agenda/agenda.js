@@ -587,7 +587,9 @@ function createCards(details, type, i, pannelInnerClass){
         panelInnerDiv.classList.add(cls);
     }
 
-    console.log(details);
+    for(let tag of details){
+        console.log(tag.innerHTML);
+    }
     var pictureDiv = document.createElement('div');
     pictureDiv.classList.add('agenda-tag');
 
