@@ -1,7 +1,6 @@
 var accord3Div;
 export default function decorate(block){
 
-    console.log(block);
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
@@ -16,8 +15,6 @@ export default function decorate(block){
 
     var parentDiv = createSelectionDiv(parentDivClass, h2Class, agendaDivClass, panelDivAttr, blockHeading, panelDivClass,lists);
     block.append(parentDiv);
-
-    console.log(block);
 
     var panel1Heading = "";
     var panel2Heading = "";
@@ -131,15 +128,9 @@ export default function decorate(block){
 
     // Append the article to the section
     section.appendChild(article);
-
-    console.log(colLeft);
-    console.log(colRight);
-    console.log(section);
     
     block.parentNode.replaceChild(section, block);
 
-    console.log(block);
-    console.log(section);
     functionality();
 }
 
@@ -451,17 +442,12 @@ function createPanelWithImage(row, r, accordDiv){
                     var speakersDetailsArr = Array.from(speakersDetails);
                     const speakerLimit = Math.floor((speakersDetailsArr.length)/4);
                     let len = speakersDetailsArr.length;
-                    if(r==14){
-                        console.log(len);
-                        console.log(speakersDetailsArr);
-                    }
                     var card="";
                     for(let i=0 ; i< speakerLimit;i++){
                         if(i==0){
                             if(r==10){
                                 card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner']);
                             } else if(r==11){
-                                console.log(speakersDetailsArr);
                                 card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==12){
                                 card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
@@ -592,9 +578,6 @@ function createCards(details, type, i, pannelInnerClass){
         panelInnerDiv.classList.add(cls);
     }
 
-    for(let tag of details){
-        console.log(tag.innerHTML);
-    }
     var pictureDiv = document.createElement('div');
     pictureDiv.classList.add('agenda-tag');
 
@@ -655,7 +638,6 @@ function createCards(details, type, i, pannelInnerClass){
     panelInnerDiv.appendChild(pictureDiv);
     panelInnerDiv.appendChild(panelDetailsDiv);
 
-    console.log(panelInnerDiv);
     return panelInnerDiv;
 
 }
