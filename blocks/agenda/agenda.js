@@ -591,7 +591,7 @@ function createCards(details, type, i, pannelInnerClass){
     pictureDiv.classList.add('agenda-tag');
 
     const img = document.createElement('img');
-    img.setAttribute('src', details[0].querySelector('picture').querySelector('img').getAttribute('src'));
+    img.setAttribute('src', '../../../icons/tag.svg');
     img.setAttribute("width","20px");
     img.setAttribute("alt","");
 
@@ -603,7 +603,7 @@ function createCards(details, type, i, pannelInnerClass){
     if(i==0){
         const moderatorP = document.createElement('p');
         moderatorP.classList.add('text-uppercase');
-        moderatorP.textContent = details[1].textContent.trim();
+        moderatorP.textContent = details[0].textContent.trim();
         panelDetailsDiv.appendChild(moderatorP);
     }
 
