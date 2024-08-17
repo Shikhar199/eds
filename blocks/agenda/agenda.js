@@ -455,10 +455,10 @@ function createPanelWithImage(row, r, accordDiv){
                     for(let i=0 ; i< speakerLimit;i++){
                         if(i==0){
                             if(r==10){
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner']);
                             } else if(r==11){
                                 console.log(speakersDetailsArr);
-                                card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'mb-20']);
+                                card = createCards(speakersDetailsArr.slice(0,5), "speakers", i, ['panel-inner', 'mb-20']);
                             } else if(r==12){
                                 card = createCards(speakersDetailsArr.slice(0,6), "speakers", i, ['panel-inner', 'agenda-border', 'mb-20']);
                             } else if(r==14){
@@ -482,9 +482,9 @@ function createPanelWithImage(row, r, accordDiv){
                             }
                         } else{
                             if((r==14||r==15||r==27||r==28||r==24||r==30) && i==speakerLimit-1){
-                                card = createCards(speakersDetailsArr.slice(4*i+2, len), "speakers", i, ['panel-inner']);
+                                card = createCards(speakersDetailsArr.slice(4*i+1, len), "speakers", i, ['panel-inner']);
                             } else{
-                                card = createCards(speakersDetailsArr.slice(4*i+2, 4*i+6), "speakers", i, ['panel-inner','mb-20']);
+                                card = createCards(speakersDetailsArr.slice(4*i+1, 4*i+5), "speakers", i, ['panel-inner','mb-20']);
                             }
                         }
                         panelBodyDiv.appendChild(card);
