@@ -84,21 +84,12 @@ export default function decorate(block){
         }
 
         if(r>=8&&r<=20){
-            // console.log("Hi");
-            // var accord3Panel = createPanelWithImage(row, r, accord3Div);
-            // console.log(accord3Panel);
-            // accord3Div.append(accord3Panel);
             createPanelWithImage(row, r, accord3Div);
         }
 
         if(r>=22&&r<=32){
-            // var accord4Panel = createPanelWithImage(row, r, accord4Div);
-            // accord4Div.append(accord4Panel);
             createPanelWithImage(row, r, accord4Div);
         }
-        // if(r==10){
-        //     createPanelWithImage(row, r);
-        // }
     })
     accordParentDiv.append(accord1Div);
     accordParentDiv.append(accord2Div);
