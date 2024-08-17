@@ -820,35 +820,6 @@ function functionality(){
         );
     });
 
-    /*document.querySelector('.panel.sectionKeynote.no-result.d-block').addEventListener('click', function() {
-        console.log("panel clicked");
-        const anchorTag = this.querySelector('a[data-toggle="collapse"]');
-        const collapsibleDiv = document.getElementById('agenda12');
-        const panelBodyDiv = collapsibleDiv.querySelector('#agenda12 .panel-body');
-
-        const isExpanded = anchorTag.getAttribute('aria-expanded') === 'true';
-        anchorTag.setAttribute('aria-expanded', !isExpanded);
-        collapsibleDiv.setAttribute('aria-expanded', !isExpanded);
-
-        if (!isExpanded) {
-            anchorTag.classList.add('collapsed');
-            collapsibleDiv.style.height = '0px';
-        } else {
-            anchorTag.classList.remove('collapsed');
-            collapsibleDiv.classList.add('in');
-            collapsibleDiv.style.height = '';
-
-            const beforeElement = document.createElement('div');
-            beforeElement.classList.add('panel-body-before');
-            beforeElement.textContent = '::before';
-            panelBodyDiv.insertBefore(beforeElement, panelBodyDiv.firstChild);
-
-            const afterElement = document.createElement('div');
-            afterElement.classList.add('panel-body-after');
-            afterElement.textContent = '::after';
-            panelBodyDiv.appendChild(afterElement);
-        }
-    })*/
 }
 
 (function (a) {
