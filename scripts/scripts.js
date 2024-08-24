@@ -128,6 +128,25 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+export function bindSwipeToElement(el) {
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  el.addEventListener('touchstart', (e) => {
+    touchstartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  el.addEventListener('touchend', (e) => {
+    touchendX = e.changedTouches[0].screenX;
+    if (touchendX < touchstartX) {
+      el.dispatchEvent(new CustomEvent('swipe-RTL'));
+    }
+    if (touchendX > touchstartX) {
+      el.dispatchEvent(new CustomEvent('swipe-LTR'));
+    }
+  }, { passive: true });
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
