@@ -154,6 +154,7 @@ export default function decorate(block) {
     const bannerPic = slide.querySelector('picture');
     const bannerImg = bannerPic.querySelector('img');
     const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
+    console.log(optimizedPic);
     slide.prepend(optimizedPic);
     bannerPic.remove();
     slide.classList.add('carousel-slide');
