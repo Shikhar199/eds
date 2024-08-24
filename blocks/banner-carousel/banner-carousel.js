@@ -150,6 +150,7 @@ export default function decorate(block) {
   // create carousel section
   const carousel = document.createElement('div');
   cols.forEach((slide, index) => {
+    console.log(slide);
     const bannerPic = slide.querySelector('picture');
     const bannerImg = bannerPic.querySelector('img');
     const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
