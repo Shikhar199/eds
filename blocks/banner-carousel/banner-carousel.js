@@ -150,7 +150,7 @@ export default function decorate(block) {
     console.log(cols);
     let entries = '';
     // create carousel section
-    const carousel = document.createElement('div');
+    const carousel = document.createAemElement('div', ['home-banner-slider', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag']);
     cols.forEach((slide, index) => {
         console.log(slide);
         var imgDiv = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
