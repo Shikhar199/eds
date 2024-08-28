@@ -146,10 +146,10 @@ function initializeScroll(block, slidesNo) {
 
 export default function decorate(block) {
     console.log(block);
-  const cols = [...block.children];
-  console.log(cols);
-  let entries = '';
-  // create carousel section
+    const cols = [...block.children];
+    console.log(cols);
+    let entries = '';
+    // create carousel section
     const carousel = document.createElement('div');
     cols.forEach((slide, index) => {
         console.log(slide);
@@ -205,7 +205,11 @@ export default function decorate(block) {
         heroBannerCaption.appendChild(container);
 
 // Append the main div to the body or any other desired parent element
-        document.body.appendChild(heroBannerCaption);
+
+        console.log(heroBannerCaption);
+
+        carousel.append(imgDiv);
+        carousel.append(heroBannerCaption);
 // console.log(heroBannerCaption);
     // console.log(imgDiv);
     // const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
@@ -218,6 +222,8 @@ export default function decorate(block) {
     // console.log(carousel);
     //entries += `<div data-slide="${index + 1}" class="indicator ${index === 0 ? 'active' : ''}"></div>`;
   });
+
+  block.append(carousel);
   // create indicators section
 //   const indicatorsHTML = `
 // <div class="control-container">
