@@ -222,7 +222,7 @@ export default function decorate(block) {
     // console.log(carousel);
     //entries += `<div data-slide="${index + 1}" class="indicator ${index === 0 ? 'active' : ''}"></div>`;
   });
-
+  console.log(carousel);
   block.append(carousel);
   // create indicators section
 //   const indicatorsHTML = `
