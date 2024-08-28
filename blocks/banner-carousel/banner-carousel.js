@@ -162,13 +162,13 @@ export default function decorate(block) {
         console.log(imgDiv);
 
         // Create the main div with class 'hero-banner-caption'
-        const heroBannerCaption = createAemElement('div', 'hero-banner-caption', null, null);
+        const heroBannerCaption = createAemElement('div', ['hero-banner-caption'], null, null);
 
         // Create the container div
-        const container = createAemElement('div', 'container', null, null);
+        const container = createAemElement('div', ['container'], null, null);
 
         // Create the row div
-        const row = createAemElement('div', 'row', null, null);
+        const row = createAemElement('div', ['row'], null, null);
 
         // Create the column div
         const col = createAemElement('div', ['col-lg-7', 'col-md-6', 'col-sm-12', 'col-xs-12'], null, null);
