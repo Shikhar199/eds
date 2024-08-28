@@ -154,6 +154,7 @@ export default function decorate(block) {
     console.log(slide);
     const bannerPic = slide.querySelector('picture');
     const bannerImg = bannerPic.querySelector('img');
+    console.log(bannerImg);
     const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
     console.log(optimizedPic);
     slide.prepend(optimizedPic);
