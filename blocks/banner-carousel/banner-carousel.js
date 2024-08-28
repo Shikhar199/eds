@@ -152,8 +152,12 @@ export default function decorate(block) {
   const carousel = document.createElement('div');
   cols.forEach((slide, index) => {
     console.log(slide);
+    var imgDiv = document.createElement('div');
+    imgDiv.classList.add('repeated-css', 'bg-amethyst-medium');
     const bannerPic = slide.querySelector('picture');
     const bannerImg = bannerPic.querySelector('img');
+    bannerImg.setAttribute('alt','slide-image hidden-xs');
+    imgDiv.append(bannerImg);
     console.log(bannerImg);
     const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
     console.log(optimizedPic);
@@ -163,7 +167,7 @@ export default function decorate(block) {
     slide.lastElementChild.classList.add('text-container');
     carousel.append(slide);
     console.log(carousel);
-    entries += `<div data-slide="${index + 1}" class="indicator ${index === 0 ? 'active' : ''}"></div>`;
+    //entries += `<div data-slide="${index + 1}" class="indicator ${index === 0 ? 'active' : ''}"></div>`;
   });
   // create indicators section
   const indicatorsHTML = `
