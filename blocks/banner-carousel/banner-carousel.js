@@ -1,5 +1,6 @@
 import { bindSwipeToElement } from '../../scripts/scripts.js';
 import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
+import { createAemElement } from '../../scripts/aem.js';
 
 function nextElement(el, selector) {
   if (selector) {
@@ -152,12 +153,15 @@ export default function decorate(block) {
   const carousel = document.createElement('div');
   cols.forEach((slide, index) => {
     console.log(slide);
+    var imgDiv1 = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
     var imgDiv = document.createElement('div');
     imgDiv.classList.add('repeated-css', 'bg-amethyst-medium');
     const bannerPic = slide.querySelector('picture');
     const bannerImg = bannerPic.querySelector('img');
     bannerImg.setAttribute('alt','slide-image hidden-xs');
     imgDiv.append(bannerImg);
+    console.log(imgDiv);
+    console.log(imgDiv1);
 
     // Create the main div with class 'hero-banner-caption'
 const heroBannerCaption = document.createElement('div');
