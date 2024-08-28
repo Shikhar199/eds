@@ -158,7 +158,7 @@ export default function decorate(block) {
     const bannerImg = bannerPic.querySelector('img');
     bannerImg.setAttribute('alt','slide-image hidden-xs');
     imgDiv.append(bannerImg);
-    console.log(bannerImg);
+    console.log(imgDiv);
     const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
     console.log(optimizedPic);
     slide.prepend(optimizedPic);
