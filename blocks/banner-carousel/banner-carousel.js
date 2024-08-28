@@ -146,7 +146,9 @@ function initializeScroll(block, slidesNo) {
 
 export default function decorate(block) {
     console.log(block);
-    const cols = [...block.children];
+    container.innerHTML = block.innerHTML;
+    block.innerHTML = '';
+    const cols = [...container.children];
     console.log(cols);
     let entries = '';
     // create carousel section
