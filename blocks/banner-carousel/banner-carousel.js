@@ -174,7 +174,9 @@ export default function decorate(block) {
         const col = createAemElement('div', ['col-lg-7', 'col-md-6', 'col-sm-12', 'col-xs-12'], null, null);
 
         const heading = createAemElement('h2', ['hero-banner-head'], null, null);
-        const headingHTML = heading.innerHTML;
+
+        const h2 = slide.querySelector('h2');
+        const headingHTML = h2.innerHTML;
 
         // Split the content by the <br> tag to separate the two parts
         const [firstPart, secondPart] = headingHTML.split('<br>');
