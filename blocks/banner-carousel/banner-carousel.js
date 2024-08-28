@@ -187,7 +187,7 @@ export default function decorate(block) {
 
         heading.innerHTML = firstText + '<span class="block">'+ secondText + '</span>';
 
-        const paragraphs = slide.querySelector('p');
+        const paragraphs = slide.querySelectorAll('p');
         console.log(paragraphs);
         const lastParagraph = paragraphs[paragraphs.length - 1];
 
