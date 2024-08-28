@@ -180,8 +180,8 @@ const col = document.createElement('div');
 col.className = 'col-lg-7 col-md-6 col-sm-12 col-xs-12';
 
 // Create the heading element
-var heading = slide.querySelector('h2').textContent.trim();
-const headingHTML = heading.innerHTML;
+// var heading = slide.querySelector('h2').textContent.trim();
+// const headingHTML = heading.innerHTML;
 
 // Split the content by the <br> tag to separate the two parts
 const [firstPart, secondPart] = headingHTML.split('<br>');
