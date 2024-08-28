@@ -150,98 +150,83 @@ export default function decorate(block) {
   console.log(cols);
   let entries = '';
   // create carousel section
-  const carousel = document.createElement('div');
-  cols.forEach((slide, index) => {
-    console.log(slide);
-    var imgDiv1 = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
-    var imgDiv = document.createElement('div');
-    imgDiv.classList.add('repeated-css', 'bg-amethyst-medium');
-    const bannerPic = slide.querySelector('picture');
-    const bannerImg = bannerPic.querySelector('img');
-    bannerImg.setAttribute('alt','slide-image hidden-xs');
-    imgDiv.append(bannerImg);
-    console.log(imgDiv);
-    console.log(imgDiv1);
+    const carousel = document.createElement('div');
+    cols.forEach((slide, index) => {
+        console.log(slide);
+        var imgDiv = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
+        const bannerPic = slide.querySelector('picture');
+        const bannerImg = bannerPic.querySelector('img');
+        bannerImg.setAttribute('alt','');
+        bannerImg.classList.add('slide-image', 'hidden-xs');
+        imgDiv.append(bannerImg);
+        console.log(imgDiv);
 
-    // Create the main div with class 'hero-banner-caption'
-const heroBannerCaption = document.createElement('div');
-heroBannerCaption.className = 'hero-banner-caption';
+        // Create the main div with class 'hero-banner-caption'
+        const heroBannerCaption = createAemElement('div', 'hero-banner-caption', null, null);
 
-// Create the container div
-const container = document.createElement('div');
-container.className = 'container';
+        // Create the container div
+        const container = createAemElement('div', 'container', null, null);
 
-// Create the row div
-const row = document.createElement('div');
-row.className = 'row';
+        // Create the row div
+        const row = createAemElement('div', 'container', null, null);
 
-// Create the column div
-const col = document.createElement('div');
-col.className = 'col-lg-7 col-md-6 col-sm-12 col-xs-12';
+        // Create the column div
+        const col = createAemElement('div', ['col-lg-7', 'col-md-6', 'col-sm-12', 'col-xs-12'], null, null);
 
-// Create the heading element
-// var heading = slide.querySelector('h2').textContent.trim();
-// const headingHTML = heading.innerHTML;
+        const heading = createAemElement('h2', ['hero-banner-head'], null, null);
+        const headingHTML = heading.innerHTML;
 
-// Split the content by the <br> tag to separate the two parts
-const [firstPart, secondPart] = headingHTML.split('<br>');
+        // Split the content by the <br> tag to separate the two parts
+        const [firstPart, secondPart] = headingHTML.split('<br>');
 
-// Trim any extra whitespace
-const firstText = firstPart.trim();  // "EMEA Confluence"
-const secondText = secondPart.trim();
+        // Trim any extra whitespace
+        const firstText = firstPart.trim();  // "EMEA Confluence"
+        const secondText = secondPart.trim();
 
-const heading = document.createElement('h2');
-heading.className = 'hero-banner-head';
-heading.innerHTML = firstText + '<span class="block">'+ secondText + '</span>';
+        heading.innerHTML = firstText + '<span class="block">'+ secondText + '</span>';
 
-const paragraphs = document.querySelector('.text-container');
+        const paragraphs = document.querySelector('.text-container');
+        const lastParagraph = paragraphs[paragraphs.length - 1];
 
-// Select the last <p> element
-const lastParagraph = paragraphs[paragraphs.length - 1];
-// Create the anchor link
-const link = document.createElement('a');
-link.href = '/confluence/insights.html';
-link.className = 'cta-link hero-banner-cta';
-link.title = lastParagraph.textContent;
-link.setAttribute('aria-label', 'Go to View Session Archives Page');
-link.textContent = 'View Session Archives';
+        const link = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'aria-label': 'Go to View Session Archives Page', 'href': '/confluence/insights.html', 'title': lastParagraph.textContent});
+        link.textContent = 'View Session Archives';
 
-// Append the heading and link to the column div
-col.appendChild(heading);
-col.appendChild(link);
+        // Append the heading and link to the column div
+        col.appendChild(heading);
+        col.appendChild(link);
 
-// Append the column div to the row
-row.appendChild(col);
+        // Append the column div to the row
+        row.appendChild(col);
 
-// Append the row to the container
-container.appendChild(row);
+        // Append the row to the container
+        container.appendChild(row);
 
-// Append the container to the main div
-heroBannerCaption.appendChild(container);
+        // Append the container to the main div
+        heroBannerCaption.appendChild(container);
 
 // Append the main div to the body or any other desired parent element
-document.body.appendChild(heroBannerCaption);
-console.log(heroBannerCaption);
-    console.log(imgDiv);
-    const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
-    console.log(optimizedPic);
-    slide.prepend(optimizedPic);
+        document.body.appendChild(heroBannerCaption);
+// console.log(heroBannerCaption);
+    // console.log(imgDiv);
+    // const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
+    // console.log(optimizedPic);
+    // slide.prepend(optimizedPic);
     // bannerPic.remove();
-    slide.classList.add('carousel-slide');
-    slide.lastElementChild.classList.add('text-container');
-    carousel.append(slide);
-    console.log(carousel);
+    // slide.classList.add('carousel-slide');
+    // slide.lastElementChild.classList.add('text-container');
+    // carousel.append(slide);
+    // console.log(carousel);
     //entries += `<div data-slide="${index + 1}" class="indicator ${index === 0 ? 'active' : ''}"></div>`;
   });
   // create indicators section
-  const indicatorsHTML = `
-<div class="control-container">
-    <div class="prev hide">&#10094</div>
-    <div class="image-pagination">
-      ${entries}
-    </div>
-    <div class="next hide">&#10095</div>
-  </div>`;
-  block.innerHTML = carousel.outerHTML + indicatorsHTML;
-  initializeScroll(block, cols.length);
+//   const indicatorsHTML = `
+// <div class="control-container">
+//     <div class="prev hide">&#10094</div>
+//     <div class="image-pagination">
+//       ${entries}
+//     </div>
+//     <div class="next hide">&#10095</div>
+//   </div>`;
+//   block.innerHTML = carousel.outerHTML + indicatorsHTML;
+//   initializeScroll(block, cols.length);
 }
