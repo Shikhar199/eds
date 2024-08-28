@@ -227,6 +227,17 @@ export default function decorate(block) {
   });
   console.log(carousel);
   block.append(carousel);
+
+  $(function() {
+    // Owl Carousel
+    var owl = $(".owl-carousel");
+        owl.owlCarousel({
+            items: 1,
+            // margin: 10,
+            loop: true,
+            nav: true
+        });
+    });
   // create indicators section
 //   const indicatorsHTML = `
 // <div class="control-container">
