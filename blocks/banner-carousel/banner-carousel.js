@@ -176,6 +176,7 @@ const col = document.createElement('div');
 col.className = 'col-lg-7 col-md-6 col-sm-12 col-xs-12';
 
 // Create the heading element
+console.log(slide.querySelector('h2').textContent.trim());
 const heading = document.createElement('h2');
 heading.className = 'hero-banner-head';
 heading.innerHTML = 'EMEA Confluence: <span class="block">Relive The Legacy</span>';
