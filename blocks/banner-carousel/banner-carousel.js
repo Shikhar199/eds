@@ -168,7 +168,7 @@ export default function decorate(block) {
         const container = createAemElement('div', 'container', null, null);
 
         // Create the row div
-        const row = createAemElement('div', 'container', null, null);
+        const row = createAemElement('div', 'row', null, null);
 
         // Create the column div
         const col = createAemElement('div', ['col-lg-7', 'col-md-6', 'col-sm-12', 'col-xs-12'], null, null);
