@@ -710,18 +710,12 @@ function loadOwlCDN(){
     document.head.appendChild(link1);
     document.head.appendChild(link2);
 
-    // Create the script element for jQuery
-    const script1 = document.createElement('script');
-    script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js';
-    script1.defer = true; // Optional: Load script without blocking HTML parsing
-
     // Create the script element for Owl Carousel JS
     const script2 = document.createElement('script');
     script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js';
     script2.defer = true; // Optional: Load script without blocking HTML parsing
 
     // Append the script elements to the <head> section
-    document.head.appendChild(script1);
     document.head.appendChild(script2);
 }
 
