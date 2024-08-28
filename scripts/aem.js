@@ -613,6 +613,29 @@ async function loadBlock(block) {
   return block;
 }
 
+function createAemElement(tag, classes, attributes, elementId){
+  const tagElement = document.createElement(tag);
+
+  if(classes!==null){
+      for(let cls of classes){
+          tagElement.classList.add(cls);
+      }
+  }
+
+  if(attributes!==null){
+      for(let attr in attributes){
+          tagElement.setAttribute(attr,attributes[attr]);
+      }
+  }
+
+  if(elementId!==null){
+      tagElement.id = elementId;
+  }
+  return tagElement;
+
+}
+
+
 
 /**
  * Loads JS and CSS for all blocks in a container element.
@@ -735,4 +758,5 @@ export {
   toClassName,
   updateSectionsStatus,
   waitForLCP,
+  createAemElement
 };

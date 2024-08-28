@@ -1,3 +1,5 @@
+import { createAemElement } from '../../scripts/aem.js';
+
 var accord3Div;
 export default function decorate(block){
 
@@ -258,27 +260,27 @@ function createPanel(col, anchorAttributes, isRoleTab, classes, tagClasses){
     return panelDiv;
 }
 
-function createAemElement(tag, classes, attributes, elementId){
-    const tagElement = document.createElement(tag);
+// function createAemElement(tag, classes, attributes, elementId){
+//     const tagElement = document.createElement(tag);
 
-    if(classes!==null){
-        for(let cls of classes){
-            tagElement.classList.add(cls);
-        }
-    }
+//     if(classes!==null){
+//         for(let cls of classes){
+//             tagElement.classList.add(cls);
+//         }
+//     }
 
-    if(attributes!==null){
-        for(let attr in attributes){
-            tagElement.setAttribute(attr,attributes[attr]);
-        }
-    }
+//     if(attributes!==null){
+//         for(let attr in attributes){
+//             tagElement.setAttribute(attr,attributes[attr]);
+//         }
+//     }
 
-    if(elementId!==null){
-        tagElement.id = elementId;
-    }
-    return tagElement;
+//     if(elementId!==null){
+//         tagElement.id = elementId;
+//     }
+//     return tagElement;
 
-}
+// }
 
 function createPanelWithImage(row, r, accordDiv){
     var agendaAttr;

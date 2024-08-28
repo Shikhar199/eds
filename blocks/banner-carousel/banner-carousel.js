@@ -176,16 +176,29 @@ const col = document.createElement('div');
 col.className = 'col-lg-7 col-md-6 col-sm-12 col-xs-12';
 
 // Create the heading element
-console.log(slide.querySelector('h2').textContent.trim());
+var heading = slide.querySelector('h2').textContent.trim();
+const headingHTML = heading.innerHTML;
+
+// Split the content by the <br> tag to separate the two parts
+const [firstPart, secondPart] = headingHTML.split('<br>');
+
+// Trim any extra whitespace
+const firstText = firstPart.trim();  // "EMEA Confluence"
+const secondText = secondPart.trim();
+
 const heading = document.createElement('h2');
 heading.className = 'hero-banner-head';
-heading.innerHTML = 'EMEA Confluence: <span class="block">Relive The Legacy</span>';
+heading.innerHTML = firstText + '<span class="block">'+ secondText + '</span>';
 
+const paragraphs = document.querySelector('.text-container');
+
+// Select the last <p> element
+const lastParagraph = paragraphs[paragraphs.length - 1];
 // Create the anchor link
 const link = document.createElement('a');
 link.href = '/confluence/insights.html';
 link.className = 'cta-link hero-banner-cta';
-link.title = 'View Session Archives';
+link.title = lastParagraph.textContent;
 link.setAttribute('aria-label', 'Go to View Session Archives Page');
 link.textContent = 'View Session Archives';
 
