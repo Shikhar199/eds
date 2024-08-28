@@ -188,6 +188,7 @@ export default function decorate(block) {
         heading.innerHTML = firstText + '<span class="block">'+ secondText + '</span>';
 
         const paragraphs = slide.querySelector('p');
+        console.log(paragraphs);
         const lastParagraph = paragraphs[paragraphs.length - 1];
 
         const link = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'aria-label': 'Go to View Session Archives Page', 'href': '/confluence/insights.html', 'title': lastParagraph.textContent});
