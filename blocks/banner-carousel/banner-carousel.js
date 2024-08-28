@@ -158,11 +158,57 @@ export default function decorate(block) {
     const bannerImg = bannerPic.querySelector('img');
     bannerImg.setAttribute('alt','slide-image hidden-xs');
     imgDiv.append(bannerImg);
+
+    // Create the main div with class 'hero-banner-caption'
+const heroBannerCaption = document.createElement('div');
+heroBannerCaption.className = 'hero-banner-caption';
+
+// Create the container div
+const container = document.createElement('div');
+container.className = 'container';
+
+// Create the row div
+const row = document.createElement('div');
+row.className = 'row';
+
+// Create the column div
+const col = document.createElement('div');
+col.className = 'col-lg-7 col-md-6 col-sm-12 col-xs-12';
+
+// Create the heading element
+const heading = document.createElement('h2');
+heading.className = 'hero-banner-head';
+heading.innerHTML = 'EMEA Confluence: <span class="block">Relive The Legacy</span>';
+
+// Create the anchor link
+const link = document.createElement('a');
+link.href = '/confluence/insights.html';
+link.className = 'cta-link hero-banner-cta';
+link.title = 'View Session Archives';
+link.setAttribute('aria-label', 'Go to View Session Archives Page');
+link.textContent = 'View Session Archives';
+
+// Append the heading and link to the column div
+col.appendChild(heading);
+col.appendChild(link);
+
+// Append the column div to the row
+row.appendChild(col);
+
+// Append the row to the container
+container.appendChild(row);
+
+// Append the container to the main div
+heroBannerCaption.appendChild(container);
+
+// Append the main div to the body or any other desired parent element
+document.body.appendChild(heroBannerCaption);
+console.log(heroBannerCaption);
     console.log(imgDiv);
     const optimizedPic = createOptimizedPicture(bannerImg.src, bannerImg.alt, false, [{ media: '(min-width: 600px)', width: '2000' }, { width: '1200' }]);
     console.log(optimizedPic);
     slide.prepend(optimizedPic);
-    bannerPic.remove();
+    // bannerPic.remove();
     slide.classList.add('carousel-slide');
     slide.lastElementChild.classList.add('text-container');
     carousel.append(slide);
