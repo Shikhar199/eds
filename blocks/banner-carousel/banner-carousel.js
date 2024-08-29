@@ -219,8 +219,8 @@ export default function decorate(block) {
         carousel.append(heroBannerCaption);
         parentCarousel.append(carousel);
   });
-  console.log(carousel);
-  block.append(carousel);
+  console.log(parentCarousel);
+  block.append(parentCarousel);
 
   $(function() {
     // Owl Carousel
