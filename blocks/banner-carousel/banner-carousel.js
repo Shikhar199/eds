@@ -191,14 +191,21 @@ export default function decorate(block) {
 
         heading.innerHTML = firstText + '<span class="block">'+ secondText + '</span>';
 
+        col.appendChild(heading);
         const paragraphs = slide.querySelectorAll('p');
         console.log(paragraphs);
-        var description;
+
         if(paragraphs.length===3){
             var paraHTML = paragraphs[1].innerHTML;
             var[firstpara, secondpara] = paraHTML.split('<br>');
             console.log(firstpara);
             console.log(secondpara);
+            var lineBreak = document.createElement('br');
+            var description = createAemElement('p', ['hero-banner-para', 'fontweight400'], null, null);
+            description.appendChild(firstpara);
+            description.appendChild(lineBreak);
+            description.appendChild(secondpara);
+            col.appendChild(description);
         }
         const lastParagraph = paragraphs[paragraphs.length - 1];
 
@@ -206,7 +213,6 @@ export default function decorate(block) {
         link.textContent = 'View Session Archives';
 
         // Append the heading and link to the column div
-        col.appendChild(heading);
         col.appendChild(link);
 
         // Append the column div to the row
