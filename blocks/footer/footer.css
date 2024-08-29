@@ -13,7 +13,7 @@ footer .footer p {
   margin: 0;
 } */
 
-
+/*
 .iki-subscribtion-footer .row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -74,7 +74,7 @@ footer .footer p {
   border-right: 1px solid #fff;
   height: 100%;
   /* background-color: #df9926; */
-  background-color: #ab6604;
+ /* background-color: #ab6604;
 }
 .bg-topaz-dark {
   background-color: #2f1113 !important;
@@ -481,7 +481,7 @@ ul.footer-txt > li > a {
 	.podcast-initial-content-sidebar ul li:hover p {
 	  transform: translateX(10px);
 	  transition: all 0.3s ease;
-	}
+	}*/
 
   .footerconfluence-container{
     background-color: black;
