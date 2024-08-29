@@ -153,6 +153,7 @@ export default function decorate(block) {
     console.log(cols);
     let entries = '';
     // create carousel section
+    const parentCarousel = createAemElement('div', ['home-banner-slider', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag'], null, null);
     const carousel = createAemElement('div', null, null, null);
     cols.forEach((slide, index) => {
         console.log(slide);
@@ -216,6 +217,7 @@ export default function decorate(block) {
 
         carousel.append(imgDiv);
         carousel.append(heroBannerCaption);
+        parentCarousel.append(carousel);
   });
   console.log(carousel);
   block.append(carousel);
