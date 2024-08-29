@@ -193,6 +193,13 @@ export default function decorate(block) {
 
         const paragraphs = slide.querySelectorAll('p');
         console.log(paragraphs);
+        var description;
+        if(paragraphs.length===3){
+            var paraHTML = paragraphs[1].innerHTML;
+            var[firstpara, secondpara] = paraHTML.split('<br>');
+            console.log(firstpara);
+            console.log(secondpara);
+        }
         const lastParagraph = paragraphs[paragraphs.length - 1];
 
         const link = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'aria-label': 'Go to View Session Archives Page', 'href': '/confluence/insights.html', 'title': lastParagraph.textContent});
