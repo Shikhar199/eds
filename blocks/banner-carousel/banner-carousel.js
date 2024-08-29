@@ -202,10 +202,10 @@ export default function decorate(block) {
             console.log(secondpara);
             var lineBreak = document.createElement('br');
             var description = createAemElement('p', ['hero-banner-para', 'fontweight400'], null, null);
-            description.appendChild(firstpara);
-            description.appendChild(lineBreak);
-            description.appendChild(secondpara);
-            col.appendChild(description);
+            description.append(firstpara);
+            description.append(lineBreak);
+            description.append(secondpara);
+            col.append(description);
         }
         const lastParagraph = paragraphs[paragraphs.length - 1];
 
