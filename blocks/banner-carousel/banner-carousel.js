@@ -154,9 +154,9 @@ export default function decorate(block) {
     let entries = '';
     // create carousel section
     const parentCarousel = createAemElement('div', ['home-banner-slider', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag'], null, null);
-    const carousel = createAemElement('div', null, null, null);
     cols.forEach((slide, index) => {
         console.log(slide);
+        var carousel = createAemElement('div', null, null, null);
         var imgDiv = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
         const bannerPic = slide.querySelector('picture');
         const bannerImg = bannerPic.querySelector('img');
@@ -211,7 +211,7 @@ export default function decorate(block) {
         // Append the container to the main div
         heroBannerCaption.appendChild(container);
 
-// Append the main div to the body or any other desired parent element
+        // Append the main div to the body or any other desired parent element
 
         console.log(heroBannerCaption);
 
