@@ -6,7 +6,7 @@ export default function decorate(block){
     block.innerHTML = '';
     var blockHeading = container.querySelector('h2');
 
-    [...block.children].forEach((row,index)=>{
+    [...container.children].forEach((row,index)=>{
         var h2content = row[0];
         var pcontent = row[1];
         var h3content = row[2];
