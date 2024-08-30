@@ -243,7 +243,10 @@ export default function decorate(block) {
             items: 1,
             // margin: 10,
             loop: true,
-            nav: true
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 3000,     
+            autoplayHoverPause: true 
         });
     });
   // create indicators section
