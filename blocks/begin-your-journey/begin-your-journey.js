@@ -1,15 +1,19 @@
 export default function decorate(block){
     console.log(block);
-
+console.log(block.innerHTML);
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     var blockHeading = container.querySelector('h2');
 
+    var h2content;
+            var pcontent;
+            var h3content;
+
     [...container.children].forEach((row,index)=>{
-        var h2content = row[0];
-        var pcontent = row[1];
-        var h3content = row[2];
+         h2content = row[0];
+         pcontent = row[1];
+         h3content = row[2];
 
     });
 
