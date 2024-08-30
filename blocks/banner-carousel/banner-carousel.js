@@ -248,6 +248,12 @@ export default function decorate(block) {
             autoplayTimeout: 3000,     
             autoplayHoverPause: true 
         });
+
+        owl.on('mouseover', function() {
+            owl.trigger('stop.owl.autoplay');
+            // Optionally, you can also remove the autoplay settings to ensure it doesn't restart
+            owl.owlCarousel('options').autoplay = false;
+        });
     });
   // create indicators section
 //   const indicatorsHTML = `
