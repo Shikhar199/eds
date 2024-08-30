@@ -13,9 +13,9 @@ export default function decorate(block){
 
     });
 
-    var parentDivClass = ['col-lg-3' 'col-md-4' 'col-sm-12' 'col-xs-12' 'wow' 'fadeInLeft'];
-    var h2Class = ['h2-head' 'mb-20'];
-    var pClass = ['speakers-para' 'fontweight400'];
+    var parentDivClass = ['col-lg-3', 'col-md-4', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInLeft'];
+    var h2Class = ['h2-head', 'mb-20'];
+    var pClass = ['speakers-para', 'fontweight400'];
     var h3Class = ['faq-head'];
 
     var section = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content);
