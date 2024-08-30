@@ -151,6 +151,7 @@ export default function decorate(block) {
     block.innerHTML = '';
     const cols = [...container.children];
     console.log(cols);
+    console.log(cols.length);
     let entries = '';
     // create carousel section
     const parentCarousel = createAemElement('div', ['home-banner-slider', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag'], null, null);
