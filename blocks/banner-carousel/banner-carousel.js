@@ -266,7 +266,8 @@ export default function decorate(block) {
     // Append the article to the section
     section.appendChild(article);
     
-    block.parentNode.replaceChild(section, block);
+    // block.parentNode.replaceChild(section, block);
+    block.append(section);
 
   $(function() {
     // Owl Carousel
