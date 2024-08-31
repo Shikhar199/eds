@@ -161,7 +161,7 @@ export default function decorate(block) {
         var imgDiv = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
         const bannerPic = slide.querySelector('picture');
         const bannerImg = bannerPic.querySelector('img');
-        const bannerMobImg = createAemElement('img', ['slide-image visible-xs'], null, null);
+        const bannerMobImg = createAemElement('img', ['slide-image', 'visible-xs'], null, null);
         bannerImg.setAttribute('alt','');
         bannerMobImg.setAttribute('alt','');
         bannerMobImg.setAttribute('href', '../../icons/confluence-banner1-mob.jpg');
