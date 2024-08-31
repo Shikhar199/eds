@@ -696,28 +696,28 @@ function loadJquery(){
     document.head.appendChild(script);
 }
 
-function loadOwlCDN(){
-    const link1 = document.createElement('link');
-    link1.rel = 'stylesheet';
-    link1.href = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css';
+// function loadOwlCDN(){
+//     const link1 = document.createElement('link');
+//     link1.rel = 'stylesheet';
+//     link1.href = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css';
 
-    // Create the second link element for Owl Carousel theme CSS
-    const link2 = document.createElement('link');
-    link2.rel = 'stylesheet';
-    link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css';
+//     // Create the second link element for Owl Carousel theme CSS
+//     const link2 = document.createElement('link');
+//     link2.rel = 'stylesheet';
+//     link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css';
 
-    // Append the link elements to the <head> section
-    document.head.appendChild(link1);
-    document.head.appendChild(link2);
+//     // Append the link elements to the <head> section
+//     document.head.appendChild(link1);
+//     document.head.appendChild(link2);
 
-    // Create the script element for Owl Carousel JS
-    const script2 = document.createElement('script');
-    script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js';
-    script2.defer = true; // Optional: Load script without blocking HTML parsing
+//     // Create the script element for Owl Carousel JS
+//     const script2 = document.createElement('script');
+//     script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js';
+//     script2.defer = true; // Optional: Load script without blocking HTML parsing
 
-    // Append the script elements to the <head> section
-    document.head.appendChild(script2);
-}
+//     // Append the script elements to the <head> section
+//     document.head.appendChild(script2);
+// }
 
 /**
  * Loads a block named 'footer' into footer
