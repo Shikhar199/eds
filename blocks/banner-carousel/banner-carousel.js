@@ -249,7 +249,7 @@ export default function decorate(block) {
     const article = document.createElement('article');
     article.className = 'container-fluid slider';
 
-    block.append(parentCarousel);
+    //   block.append(parentCarousel);
 
     // const colLeft = block.querySelector('.col-lg-4');
     // const colRight = block.querySelector('.col-lg-8');
