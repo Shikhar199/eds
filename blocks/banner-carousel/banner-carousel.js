@@ -208,10 +208,11 @@ export default function decorate(block) {
             description.append(secondpara);
             col.append(description);
         }
-        const lastParagraph = paragraphs[paragraphs.length - 1];
+        const lastParagraph = paragraphs[paragraphs.length - 2];
+        const btnHref = paragraphs[paragraphs.length - 2];
 
         const link = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'aria-label': 'Go to View Session Archives Page', 'href': '/confluence/insights.html', 'title': lastParagraph.textContent});
-        link.textContent = 'View Session Archives';
+        link.textContent = lastParagraph.textContent;
 
         // Append the heading and link to the column div
         col.appendChild(link);
