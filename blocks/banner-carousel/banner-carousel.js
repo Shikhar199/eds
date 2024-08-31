@@ -240,8 +240,33 @@ export default function decorate(block) {
         carousel.append(heroBannerCaption);
         parentCarousel.append(carousel);
   });
-  console.log(parentCarousel);
-  block.append(parentCarousel);
+    console.log(parentCarousel);
+
+    const section = document.createElement('section');
+    section.id = 'hero_slider';
+    section.className = 'overview-banner color-white bg-amethyst-medium';
+
+    const article = document.createElement('article');
+    article.className = 'container-fluid slider';
+
+    block.append(parentCarousel);
+
+    // const colLeft = block.querySelector('.col-lg-4');
+    // const colRight = block.querySelector('.col-lg-8');
+
+    const row = document.createElement('div');
+    row.className = 'row';
+
+    row.appendChild(parentCarousel);
+    // row.appendChild(colRight);
+
+    // Append the row to the article
+    article.appendChild(row);
+
+    // Append the article to the section
+    section.appendChild(article);
+    
+    block.parentNode.replaceChild(section, block);
 
   $(function() {
     // Owl Carousel
