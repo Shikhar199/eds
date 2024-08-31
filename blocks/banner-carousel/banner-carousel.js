@@ -161,9 +161,12 @@ export default function decorate(block) {
         var imgDiv = createAemElement('div', ['repeated-css', 'bg-amethyst-medium'], null, null);
         const bannerPic = slide.querySelector('picture');
         const bannerImg = bannerPic.querySelector('img');
+        const bannerMobImg = createAemElement('img', ['slide-image visible-xs'], null, null);
         bannerImg.setAttribute('alt','');
         bannerImg.classList.add('slide-image', 'hidden-xs');
+
         imgDiv.append(bannerImg);
+        imgDiv.append(bannerMobImg);
         console.log(imgDiv);
 
         // Create the main div with class 'hero-banner-caption'
