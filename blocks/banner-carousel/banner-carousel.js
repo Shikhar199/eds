@@ -196,8 +196,9 @@ export default function decorate(block) {
         const paragraphs = slide.querySelectorAll('p');
         console.log(paragraphs);
 
-        if(paragraphs.length===3){
+        if(paragraphs.length===4){
             var paraHTML = paragraphs[1].innerHTML;
+            console.log(paraHTML);
             var[firstpara, secondpara] = paraHTML.split('<br>');
             console.log(firstpara);
             console.log(secondpara);
