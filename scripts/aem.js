@@ -770,7 +770,7 @@ export {
   loadBlock,
   loadBlocks,
   loadJquery,
-  loadOwlCDN,
+  // loadOwlCDN,
   loadCSS,
   loadFooter,
   loadHeader,
