@@ -207,7 +207,7 @@ export default function decorate(block) {
             description.append(firstpara);
             description.append(lineBreak);
             description.append(secondpara);
-            col.append(description);
+            col.append(paragraphs[1]);
         }
         const lastParagraph = paragraphs[paragraphs.length - 2];
         const btnHref = paragraphs[paragraphs.length - 1];
