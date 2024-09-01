@@ -1,60 +1,90 @@
-.footerconfluence-container{
-    background-color: black;
-  }
-  .footerconfluence-wrapper {
-    display: grid;
-    grid-template-columns: auto 1fr;
-  }
-  
-  .row-1 {
-    display: grid;
-    grid-template-columns: 400px 1fr 1fr 1fr 1fr;
-    gap: 10px; 
-    margin-top: 40px;
-  }
-  
-  .row-2 {
-    display: grid;
-    grid-template-columns: 700px auto;
-    gap: 10px;
-    margin-top: 60px;
-  }
-  
-  .row-1 .col-1 {
-    grid-column: 1;
-  }
-  
-  .row-1 .col-2,
-  .row-1 .col-3,
-  .row-1 .col-4,
-  .row-1 .col-5 {
-    grid-column: auto;
-    font-size: medium;
-  }
-  
-  .row-2 .col-1,
-  .row-2 .col-2 {
-    grid-column: auto;
-    font-size: small;
-  }
-  
-  .row-1 .col-1{
-    width: 50%;
-  }
-  
-  .row-1 .col-2 p,
-  .row-1 .col-3 p,
-  .row-1 .col-4 p,
-  .row-1 .col-5 p{
-    color: white;
-  }
-  
-  .row-2 .col-1 p,
-  .row-2 .col-2 p{
-    color: white;
-  }
-  
-  .row-2 .col-2 p{
-    margin-left: 200px;
-      margin-bottom: 50px;
-  }
+.footercarousel-container {
+  background-color: black;
+}
+
+.footercarousel-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.row-1 {
+  display: grid;
+  grid-template-columns: 400px 200px 150px 100px 1fr;
+  gap: 10px; 
+  margin-top: 40px;
+}
+
+.row-2 {
+  display: flex; /* Ensure horizontal layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space out columns evenly */
+  margin-top: 60px;
+}
+
+.row-2 .col-1 {
+  display: flex; /* Flexbox for horizontal layout */
+  align-items: center; /* Center items vertically */
+  gap: 0; /* Remove extra space between items */
+}
+
+.row-2 .col-1 a {
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.row-2 .col-1 span {
+  color: white; /* White color for separators */
+  margin: 0; /* Remove margin to eliminate extra space */
+  padding: 0 5px; /* Adjust padding if needed */
+}
+
+.row-2 .col-2 {
+  display: flex; /* Flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  margin-left: 350px; /* Align to the right */
+  flex-direction: column; /* Stack paragraphs vertically */
+  margin-bottom: 40px;
+}
+
+.row-2 .col-2 p {
+  color: white; /* White text color */
+  margin: 0; /* Remove default margin */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.row-1 .col-2 p + p, 
+.row-1 .col-3 p + p,
+.row-1 .col-5 p + p{
+  margin-top: 20px; /* Add space between paragraphs */
+}
+
+.row-1 .col-5 {
+  white-space: nowrap;
+  color: white;
+}
+
+.row-1 .col-1 {
+  margin-left: 120px;
+}
+
+.row-1 .col-2{
+  margin-left: 140px;
+}
+
+.row-1 .col-3{
+  margin-left: 50px;
+}
+
+.row-1 .col-2 p,
+.row-1 .col-3 p,
+.row-1 .col-4 p,
+.row-1 .col-5 p{
+  font-weight: 400;
+}
+
+.row-2 .col-1{
+  margin-left: 130px;
+  margin-bottom: 50px;
+  font-size: medium;
+}
