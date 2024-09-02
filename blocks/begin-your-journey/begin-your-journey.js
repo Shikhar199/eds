@@ -25,7 +25,7 @@ export default function decorate(block){
 
     var section = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content);
     block.append(section);
-    console.log("Block: ": block);
+    console.log("Block:"+ block);
 
 	}
 	$("#menu-border-line a").click(function () {
