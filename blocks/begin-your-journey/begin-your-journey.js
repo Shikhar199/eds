@@ -12,7 +12,7 @@ export default function decorate(block){
     console.log("h2content:"+ h2content.textContent.trim());
     console.log("pcontent:"+ pcontent.textContent.trim());
     console.log("h3content:"+ h3content.textContent.trim());
-    console.log("ul:"+ lists.textContent.trim());
+    console.log("ul:"+ lists);
 
     var parentDivClass = ['col-lg-3', 'col-md-4', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInLeft'];
     var h2Class = ['h2-head', 'mb-20'];
@@ -110,12 +110,13 @@ function createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content,
             Ullist.append(firstListChildren[i]);
         }
     console.log("ul tag:" + Ullist);
-    section.append(article);
-    section.append(row);
     parentDiv.append(blockHead);
     parentDiv.append(para);
     parentDiv.append(h3block);
-    section.append(parentDiv);
+    parentDiv.append(Ullist);
+    row.append(parentDiv);
+    article.append(row);
+    section.append(article);
     return section;
 
 }
