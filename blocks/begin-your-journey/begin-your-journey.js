@@ -3,18 +3,10 @@ export default function decorate(block){
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
-    var blockHeading = container.querySelector('h2');
+    var h2content = container.querySelector('h2');
+    var pcontent = container.querySelector('p');
+    var h3content = container.querySelector('h3');
 
-    var h2content;
-    var pcontent;
-    var h3content;
-
-    [...container.children].forEach((row,index)=>{
-         h2content = row[0];
-         pcontent = row[1];
-         h3content = row[2];
-
-    });
     console.log("h2content:"+ h2content);
     console.log("pcontent:"+ pcontent);
     console.log("h3content:"+ h3content);
