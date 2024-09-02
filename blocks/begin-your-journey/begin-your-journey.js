@@ -1,14 +1,13 @@
 export default function decorate(block){
     console.log(block);
-console.log(block.innerHTML);
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     var blockHeading = container.querySelector('h2');
 
     var h2content;
-            var pcontent;
-            var h3content;
+    var pcontent;
+    var h3content;
 
     [...container.children].forEach((row,index)=>{
          h2content = row[0];
@@ -16,7 +15,9 @@ console.log(block.innerHTML);
          h3content = row[2];
 
     });
-
+    console.log("h2content:"+ h2content);
+    console.log("pcontent:"+ pcontent);
+    console.log("h3content:"+ h3content);
     var parentDivClass = ['col-lg-3', 'col-md-4', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInLeft'];
     var h2Class = ['h2-head', 'mb-20'];
     var pClass = ['speakers-para', 'fontweight400'];
@@ -24,6 +25,7 @@ console.log(block.innerHTML);
 
     var section = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content);
     block.append(section);
+    console.log("Block: ": block);
 
 	}
 	$("#menu-border-line a").click(function () {
