@@ -34,6 +34,11 @@
   
   .row-2 .col-1,
   .row-2 .col-2 {
+    display: flex;
+    align-items: center;
+    margin-left: 300px;
+    flex-direction: column;
+    margin-bottom: 40px;
     grid-column: auto;
     font-size: small;
   }
