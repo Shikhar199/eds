@@ -1,21 +1,25 @@
 export default function decorate(block){
     console.log(block);
+    console.log("Block inner:"+ block.innerHTML);
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     var h2content = container.querySelector('h2');
     var pcontent = container.querySelector('p');
     var h3content = container.querySelector('h3');
+    var lists = container.querySelectorAll('ul');
 
-    console.log("h2content:"+ h2content);
-    console.log("pcontent:"+ pcontent);
-    console.log("h3content:"+ h3content);
+    console.log("h2content:"+ h2content.textContent.trim());
+    console.log("pcontent:"+ pcontent.textContent.trim());
+    console.log("h3content:"+ h3content.textContent.trim());
+    console.log("ul:"+ lists.textContent.trim());
+
     var parentDivClass = ['col-lg-3', 'col-md-4', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInLeft'];
     var h2Class = ['h2-head', 'mb-20'];
     var pClass = ['speakers-para', 'fontweight400'];
     var h3Class = ['faq-head'];
 
-    var section = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content);
+    var section = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists);
     block.append(section);
     console.log("Block:"+ block);
 
@@ -53,7 +57,7 @@ export default function decorate(block){
     }, 700);
   });
 
-function createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content){
+function createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists){
 
     const section = document.createElement('section');
     section.id = 'faqs';
@@ -91,6 +95,21 @@ function createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content,
     }
     h3block.textContent = h3content.textContent.trim();
 
+    const firstList = lists[0];
+    const Ullist = document.createElement('ul');
+    const firstListChildren = Array.from(firstList.children);
+        for(let i=0;i<firstListChildren.length;i++){
+            if(i==0){
+                firstListChildren[i].classList.add('active');
+            }
+            var atag= document.createElement('a');
+            atag.setAttribute("href", firstListChildren[i]);
+            atag.setAttribute("data-toggle", "tab");
+            atag.textContent = firstListChildren[i].textContent.trim();
+            firstListChildren[i].append(atag);
+            Ullist.append(firstListChildren[i]);
+        }
+    console.log("ul tag:" + Ullist);
     section.append(article);
     section.append(row);
     parentDiv.append(blockHead);
