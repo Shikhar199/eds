@@ -21,11 +21,10 @@ export default function decorate(block){
 
     var parentDiv = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists);
 
-
     var accordionParentDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-lg-offset-1', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.4s', 'style':'visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;'}, null);
     var tabAccordionDiv = createAemElement('div',['bs-example', 'bs-example-tabs', 'tab-accordion-bg'],{'data-example-id':'togglable-tabs'}, null);
     var tabContentDiv = createAemElement('div',['tab-content'],null,"myTabContent");
-    var firstdiv;
+    var firstdiv = "";
 
     [...container.children].forEach((row,r)=>{
 
