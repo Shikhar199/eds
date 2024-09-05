@@ -4,32 +4,82 @@ export default function decorate(block){
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
+
     var h2content = container.querySelector('h2');
     var pcontent = container.querySelector('p');
     var h3content = container.querySelector('h3');
     var lists = container.querySelectorAll('ul');
-
-    console.log("h2content:"+ h2content.textContent.trim());
-    console.log("pcontent:"+ pcontent.textContent.trim());
-    console.log("h3content:"+ h3content.textContent.trim());
-    console.log("ul:"+ lists);
 
     var parentDivClass = ['col-lg-3', 'col-md-4', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInLeft'];
     var h2Class = ['h2-head', 'mb-20'];
     var pClass = ['speakers-para', 'fontweight400'];
     var h3Class = ['faq-head'];
 
-    var section = createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists);
+    var parentDiv = createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists);
+
+    var accordionParentDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-lg-offset-1', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.4s', 'style':'visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;'}, null);
+    var tabAccordionDiv = createAemElement('div',['bs-example', 'bs-example-tabs', 'tab-accordion-bg'],{'data-example-id':'togglable-tabs'}, null);
+    var tabContentDiv = createAemElement('div',['tab-content'],null,"myTabContent");
+    var firstdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, null);
+    var secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
+    [...container.children].forEach((row,r)=>{
+
+        if(r>=4 && r<=7){
+            var id;
+            if(r=4){
+                id = row.textContent.trim();
+                console.log("row id:" + id);
+                firstdiv.id = id;
+            }else{
+                var panelDiv = document.createElement('div');
+                panelDiv.className = 'panel panel-default';
+                var panelHeading;
+                var panelCollapse;
+                [...row.children].forEach((col,c)=>{
+                    if(c==0){
+                        var panelHeading = createPanelHeading(col[c]);
+                        panelDiv.append(panelHeading);
+                    }
+                    if(c==1){
+                        var collapseId = 'collapse' + r + c;
+                        var panelCollapse = createPanelCollapse(col[c],collapseId);
+                        panelDiv.append(panelCollapse);
+                    }
+                });
+                secondDiv.append(panelDiv);
+            }
+        }
+    });
+    firstdiv.append(secondDiv);
+    tabContentDiv.append(firstdiv);
+    tabAccordionDiv.append(tabContentDiv);
+    accordionParentDiv.append(tabAccordionDiv);
+
+    const section = document.createElement('section');
+    section.id = 'faqs';
+    section.className = 'journey py-75';
+
+    const article = document.createElement('article');
+    article.className = 'container';
+
+    const row = document.createElement('div');
+    row.className = 'row';
+
+    row.append(parentDiv);
+    row.append(accordionParentDiv);
+
+    article.append(row);
+    section.append(article);
     block.append(section);
     console.log("Block:"+ block);
 
-	}
-	$("#menu-border-line a").click(function () {
+}
+$("#menu-border-line a").click(function () {
 		$("html,body").animate({
 			scrollTop: $(".tab-accordion-bg").offset().top - 100,
 		}, 700);
 	});
-	$(window).scroll(function () {
+$(window).scroll(function () {
     if ($(this).scrollTop() !== 0) {
       $(".scroll-up").fadeIn(700);
       //$("#logo").attr("fill", "#007cc3");
@@ -43,31 +93,21 @@ export default function decorate(block){
     }
   });
  
-  $(".scroll-up").click(function () {
+$(".scroll-up").click(function () {
     $("body,html").animate({
       scrollTop: 0
     }, 700);
     $(".navbar-brand").focus();
   });
  
-  $(".scrollto-target").click(function (e) {
+$(".scrollto-target").click(function (e) {
     e.preventDefault();
     $("html, body").animate({
       scrollTop: $($(this).attr("href")).offset().top - 75,
     }, 700);
   });
 
-function createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists){
-
-    const section = document.createElement('section');
-    section.id = 'faqs';
-    section.className = 'journey py-75';
-
-    const article = document.createElement('article');
-    article.className = 'container';
-
-    const row = document.createElement('div');
-    row.className = 'row';
+function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists){
 
     const parentDiv = document.createElement('div');
     for(let cls in parentDivClass){
@@ -106,18 +146,59 @@ function createSelectionDiv(parentDivClass, h2Class, pClass, h3Class, h2content,
             atag.setAttribute("href", firstListChildren[i]);
             atag.setAttribute("data-toggle", "tab");
             atag.textContent = firstListChildren[i].textContent.trim();
+            firstListChildren[i].innerHTML = "";
             firstListChildren[i].append(atag);
             Ullist.append(firstListChildren[i]);
         }
-    console.log("ul tag:" + Ullist);
     parentDiv.append(blockHead);
     parentDiv.append(para);
     parentDiv.append(h3block);
     parentDiv.append(Ullist);
-    row.append(parentDiv);
-    article.append(row);
-    section.append(article);
-    return section;
+    return parentDiv;
 
 }
+function createAemElement(tag, classes, attributes, elementId){
+    const tagElement = document.createElement(tag);
 
+    if(classes!==null){
+        for(let cls of classes){
+            tagElement.classList.add(cls);
+        }
+    }
+
+    if(attributes!==null){
+        for(let attr in attributes){
+            tagElement.setAttribute(attr,attributes[attr]);
+        }
+    }
+
+    if(elementId!==null){
+        tagElement.id = elementId;
+    }
+    return tagElement;
+
+}
+function createPanelHeading(col){
+
+    var childPanelDiv = document.createElement('div');
+    childPanelDiv.className = 'panel-heading';
+    childPanelDiv.setAttribute('role','tab');
+    var h4Tag = document.createElement('h4');
+    var aTag = createAemElement('a',null,{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'true', 'aria-controls':'collapse1'},null);
+    aTag.textContent = col.textContent.trim();
+    h4Tag.append(aTag);
+    childPanelDiv.append(h4Tag);
+    return childPanelDiv;
+}
+
+function createPanelCollapse(col, id){
+
+    var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
+    var panelBodyDiv = document.createElement('div');
+    panelBodyDiv.className = 'panel-body';
+    var pTag = document.createElement('p');
+    pTag.textContent = col.textContent.trim();
+    panelBodyDiv.append(pTag);
+    panelCollapseDiv.append(panelBodyDiv);
+    return panelCollapseDiv;
+}
