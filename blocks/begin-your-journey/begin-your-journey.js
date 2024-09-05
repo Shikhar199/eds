@@ -20,7 +20,7 @@ export default function decorate(block){
     var accordionParentDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-lg-offset-1', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.4s', 'style':'visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;'}, null);
     var tabAccordionDiv = createAemElement('div',['bs-example', 'bs-example-tabs', 'tab-accordion-bg'],{'data-example-id':'togglable-tabs'}, null);
     var tabContentDiv = createAemElement('div',['tab-content'],null,"myTabContent");
-    var firstdiv = "";
+    var firstdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, null);
 
     [...container.children].forEach((row,r)=>{
 
@@ -29,7 +29,8 @@ export default function decorate(block){
             var id;
             if(r=4){
                 id = row.textContent.trim();
-                firstdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, id);
+                console.log("row id:" + id);
+                firstdiv.id = id;
                 secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
             }else{
                 var panelDiv = document.createElement('div');
@@ -50,9 +51,8 @@ export default function decorate(block){
                 secondDiv.append(panelDiv);
             }
         }
-        firstdiv.append(secondDiv);
     });
-
+    firstdiv.append(secondDiv);
     tabContentDiv.append(firstdiv);
     tabAccordionDiv.append(tabContentDiv);
     accordionParentDiv.append(tabAccordionDiv);
