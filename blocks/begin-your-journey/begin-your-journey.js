@@ -21,10 +21,9 @@ export default function decorate(block){
     var tabAccordionDiv = createAemElement('div',['bs-example', 'bs-example-tabs', 'tab-accordion-bg'],{'data-example-id':'togglable-tabs'}, null);
     var tabContentDiv = createAemElement('div',['tab-content'],null,"myTabContent");
     var firstdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, null);
-    secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
+    var secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
     [...container.children].forEach((row,r)=>{
 
-        var secondDiv;
         if(r>=4 && r<=7){
             var id;
             if(r=4){
