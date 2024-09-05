@@ -27,7 +27,7 @@ export default function decorate(block){
         if(r>=4 && r<=7){
             var id;
             if(r=4){
-                id = row.textContent.trim();
+                id = row[r].textContent.trim();
                 console.log("row id:" + id);
                 firstdiv.id = id;
             }else{
@@ -137,6 +137,9 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
 
     const firstList = lists[0];
     const Ullist = document.createElement('ul');
+    Ullist.className = 'nav nav-tabs';
+    Ullist.id = 'menu-border-line';
+    Ullist.setAttribute('role','tablist');
     const firstListChildren = Array.from(firstList.children);
         for(let i=0;i<firstListChildren.length;i++){
             if(i==0){
