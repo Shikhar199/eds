@@ -21,7 +21,7 @@ export default function decorate(block){
     var tabAccordionDiv = createAemElement('div',['bs-example', 'bs-example-tabs', 'tab-accordion-bg'],{'data-example-id':'togglable-tabs'}, null);
     var tabContentDiv = createAemElement('div',['tab-content'],null,"myTabContent");
     var firstdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, null);
-
+    secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
     [...container.children].forEach((row,r)=>{
 
         var secondDiv;
@@ -31,7 +31,6 @@ export default function decorate(block){
                 id = row.textContent.trim();
                 console.log("row id:" + id);
                 firstdiv.id = id;
-                secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
             }else{
                 var panelDiv = document.createElement('div');
                 panelDiv.className = 'panel panel-default';
