@@ -172,7 +172,7 @@ function createPanelHeading(col){
 }
 
 function createPanelCollapse(col, id){
-    var testing = col.querySelector('div');
+    var testing = col.querySelectorAll('div');
         console.log("Para p content"+ testing.textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
