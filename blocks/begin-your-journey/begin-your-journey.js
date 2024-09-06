@@ -158,7 +158,7 @@ function createAemElement(tag, classes, attributes, elementId){
 function createPanelHeading(col){
 
     var testing = col.querySelector('h4');
-    console.log("Heading h4 content"+ testing[0].textContent.trim());
+    console.log("Heading h4 content"+ testing.textContent.trim());
     var childPanelDiv = document.createElement('div');
     childPanelDiv.className = 'panel-heading';
     childPanelDiv.setAttribute('role','tab');
@@ -172,7 +172,7 @@ function createPanelHeading(col){
 
 function createPanelCollapse(col, id){
     var testing = col.querySelector('p');
-        console.log("Para p content"+ testing[1].textContent.trim());
+        console.log("Para p content"+ testing.textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
     panelBodyDiv.className = 'panel-body';
