@@ -6,7 +6,7 @@ export default function decorate(block){
     block.innerHTML = '';
 
     var h2content = container.querySelector('h2');
-    var pcontent = container.querySelector('p');
+    var pcontent = container.querySelector('div');
     var h3content = container.querySelector('h3');
     var lists = container.querySelectorAll('ul');
 
@@ -27,7 +27,7 @@ export default function decorate(block){
         if(r>=4 && r<=7){
             var id;
             if(r=4){
-                id = row[r].textContent.trim();
+                id = row.querySelector('div').textContent.trim();
                 console.log("row id:" + id);
                 firstdiv.id = id;
             }else{
@@ -183,24 +183,27 @@ function createAemElement(tag, classes, attributes, elementId){
 }
 function createPanelHeading(col){
 
+    var testing = col.querySelectorAll('h4');
+    console.log("Heading h4 content"+ testing[0].textContent.trim());
     var childPanelDiv = document.createElement('div');
     childPanelDiv.className = 'panel-heading';
     childPanelDiv.setAttribute('role','tab');
     var h4Tag = document.createElement('h4');
     var aTag = createAemElement('a',null,{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'true', 'aria-controls':'collapse1'},null);
-    aTag.textContent = col.textContent.trim();
+    aTag.textContent = testing[0].textContent.trim();
     h4Tag.append(aTag);
     childPanelDiv.append(h4Tag);
     return childPanelDiv;
 }
 
 function createPanelCollapse(col, id){
-
+    var testing = col.querySelectorAll('p');
+        console.log("Para p content"+ testing[1].textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
     panelBodyDiv.className = 'panel-body';
     var pTag = document.createElement('p');
-    pTag.textContent = col.textContent.trim();
+    pTag.textContent = testing[1].textContent.trim();
     panelBodyDiv.append(pTag);
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
