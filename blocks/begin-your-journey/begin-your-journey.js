@@ -6,7 +6,7 @@ export default function decorate(block){
     block.innerHTML = '';
 
     var h2content = container.querySelector('h2');
-    var pcontent = container.querySelector('div');
+    var pcontent = container.querySelector('h6');
     var h3content = container.querySelector('h3');
     var lists = container.querySelectorAll('ul');
 
@@ -172,13 +172,13 @@ function createPanelHeading(col){
 }
 
 function createPanelCollapse(col, id){
-    var testing = col.querySelector('div');
-        console.log("Para p content"+ testing.textContent);
+    var testing = col.querySelector('h6');
+     console.log("Para p content"+ testing.textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
     panelBodyDiv.className = 'panel-body';
     var pTag = document.createElement('p');
-    pTag.textContent = testing.textContent;
+    pTag.textContent = testing.textContent.trim();
     panelBodyDiv.append(pTag);
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
