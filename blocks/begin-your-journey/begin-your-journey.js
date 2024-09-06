@@ -27,7 +27,7 @@ export default function decorate(block){
         if(r>=4 && r<=7){
             var id;
             if(r==4){
-                id = row.querySelector('div').textContent.trim();
+                id = row.querySelector('h3').textContent.trim();
                 console.log("row id:" + id);
                 firstdiv.id = id;
             }else{
@@ -88,7 +88,8 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
         parentDiv.classList.add(parentDivClass[cls]);
     }
     parentDiv.setAttribute("data-wow-delay","0.2s");
-
+    parentDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
+    
     const blockHead = document.createElement('h2');
     for(let cls in h2Class){
         blockHead.classList.add(h2Class[cls]);
@@ -100,8 +101,8 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
         para.classList.add(pClass[cls]);
     }
     para.textContent = pcontent.textContent.trim();
-    para.setAttribute("data-wow-delay","0.2s");
-    para.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
+//    para.setAttribute("data-wow-delay","0.2s");
+
 
     const h3block = document.createElement('h3');
     for(let cls in h3Class){
@@ -163,7 +164,7 @@ function createPanelHeading(col){
     childPanelDiv.className = 'panel-heading';
     childPanelDiv.setAttribute('role','tab');
     var h4Tag = document.createElement('h4');
-    var aTag = createAemElement('a',null,{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'true', 'aria-controls':'collapse1'},null);
+    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'true', 'aria-controls':'collapse1'},null);
     aTag.textContent = testing.textContent.trim();
     h4Tag.append(aTag);
     childPanelDiv.append(h4Tag);
@@ -171,7 +172,7 @@ function createPanelHeading(col){
 }
 
 function createPanelCollapse(col, id){
-    var testing = col.querySelector('p');
+    var testing = col.querySelector('div');
         console.log("Para p content"+ testing.textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
