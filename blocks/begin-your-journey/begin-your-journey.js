@@ -26,7 +26,7 @@ export default function decorate(block){
 
         if(r>=4 && r<=7){
             var id;
-            if(r=4){
+            if(r==4){
                 id = row.querySelector('div').textContent.trim();
                 console.log("row id:" + id);
                 firstdiv.id = id;
@@ -79,33 +79,7 @@ $("#menu-border-line a").click(function () {
 			scrollTop: $(".tab-accordion-bg").offset().top - 100,
 		}, 700);
 	});
-//$(window).scroll(function () {
-//    if ($(this).scrollTop() !== 0) {
-//      $(".scroll-up").fadeIn(700);
-//      //$("#logo").attr("fill", "#007cc3");
-//      $(".scrollbg-show").addClass("show-strip");
-//      //$(".hamburger").addClass("bg-sapphire-dark");
-//    } else {
-//      $(".scroll-up").fadeOut(700);
-//      //$("#logo").attr("fill", "#fff");
-//      $(".scrollbg-show").removeClass("show-strip");
-//      //$(".hamburger").removeClass("bg-sapphire-dark");
-//    }
-//  });
- 
-//$(".scroll-up").click(function () {
-//    $("body,html").animate({
-//      scrollTop: 0
-//    }, 700);
-//    $(".navbar-brand").focus();
-//  });
- 
-//$(".scrollto-target").click(function (e) {
-//    e.preventDefault();
-//    $("html, body").animate({
-//      scrollTop: $($(this).attr("href")).offset().top - 75,
-//    }, 700);
-//  });
+
 
 function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists){
 
