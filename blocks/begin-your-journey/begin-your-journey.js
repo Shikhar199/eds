@@ -37,12 +37,12 @@ export default function decorate(block){
                 var panelCollapse;
                 [...row.children].forEach((col,c)=>{
                     if(c==0){
-                        var panelHeading = createPanelHeading(col[c]);
+                        var panelHeading = createPanelHeading(col);
                         panelDiv.append(panelHeading);
                     }
                     if(c==1){
                         var collapseId = 'collapse' + r + c;
-                        var panelCollapse = createPanelCollapse(col[c],collapseId);
+                        var panelCollapse = createPanelCollapse(col,collapseId);
                         panelDiv.append(panelCollapse);
                     }
                 });
@@ -157,7 +157,7 @@ function createAemElement(tag, classes, attributes, elementId){
 }
 function createPanelHeading(col){
 
-    var testing = col.querySelectorAll('h4');
+    var testing = col.querySelector('h4');
     console.log("Heading h4 content"+ testing[0].textContent.trim());
     var childPanelDiv = document.createElement('div');
     childPanelDiv.className = 'panel-heading';
@@ -171,7 +171,7 @@ function createPanelHeading(col){
 }
 
 function createPanelCollapse(col, id){
-    var testing = col.querySelectorAll('p');
+    var testing = col.querySelector('p');
         console.log("Para p content"+ testing[1].textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
