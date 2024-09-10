@@ -18,6 +18,7 @@ export default function decorate(block) {
 //       else div.className = 'cards-card-body';
 //     });
 //     ul.append(li);
+      const itemDiv = createAemElement('div', ['item'], null, null);
       const h3 = row.querySelector('h3');
       const lowercaseh3 = h3.textContent.trim().toLowerCase();
       const enclosingTag = index==0 ? createAemElement('span', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null) : createAemElement('a', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null);
@@ -43,7 +44,9 @@ export default function decorate(block) {
       enclosingTag.append(imgWrapperDiv);
       enclosingTag.append(contentWrapperDiv);
 
-      owlCarouselDiv.append(enclosingTag);
+      itemDiv.append(enclosingTag)
+
+      owlCarouselDiv.append(itemDiv);
 
   });
 
