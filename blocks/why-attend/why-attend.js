@@ -19,7 +19,7 @@ export default function decorate(block) {
 //     });
 //     ul.append(li);
       const h3 = row.querySelector('h3');
-      const lowercaseh3 = h3.toLowerCase();
+      const lowercaseh3 = h3.textContent.trim().toLowerCase();
       const enclosingTag = index==0 ? createAemElement('span', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null) : createAemElement('a', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null);
 
       h3.classList.add('item-slider-head', 'text-center');
