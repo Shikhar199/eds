@@ -59,7 +59,6 @@ export default function decorate(block) {
         owl.owlCarousel({
             items: 4,
             // margin: 10,
-            marginRight: 20,
             loop: true,
             nav: true,
 
