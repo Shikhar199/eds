@@ -20,17 +20,12 @@ export default function decorate(block){
     var accordionParentDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-lg-offset-1', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.4s', 'style':'visibility: visible;-webkit-animation-delay: 0.4s; -moz-animation-delay: 0.4s; animation-delay: 0.4s;'}, null);
     var tabAccordionDiv = createAemElement('div',['bs-example', 'bs-example-tabs', 'tab-accordion-bg'],{'data-example-id':'togglable-tabs'}, null);
     var tabContentDiv = createAemElement('div',['tab-content'],null,"myTabContent");
-    var firstdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, null);
-    var secondDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
+
+
     [...container.children].forEach((row,r)=>{
 
-        if(r>=4 && r<=7){
-            var id;
-            if(r==4){
-                id = row.querySelector('h3').textContent.trim();
-                console.log("row id:" + id);
-                firstdiv.id = id;
-            }else{
+        if(r>=5 && r<=7){
+                var registrationPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
                 var panelDiv = document.createElement('div');
                 panelDiv.className = 'panel panel-default';
                 var panelHeading;
@@ -46,12 +41,86 @@ export default function decorate(block){
                         panelDiv.append(panelCollapse);
                     }
                 });
-                secondDiv.append(panelDiv);
-            }
+                registrationPanelDiv.append(panelDiv);
+                if(r==7){
+                    var registrationdiv = createAemElement('div',['tab-pane', 'fade', 'active', 'in'],null, 'registration');
+                    registrationdiv.append(registrationPanelDiv);
+                    tabContentDiv.append(registrationdiv);
+                }
+
+        }
+        else if(r==9){
+            var travelPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion2");
+            var panelDiv = document.createElement('div');
+            panelDiv.className = 'panel panel-default';
+            var panelHeading;
+            var panelCollapse;
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    var panelHeading = createPanelHeading(col);
+                    panelDiv.append(panelHeading);
+                }
+                if(c==1){
+                    var collapseId = 'collapse' + r + c;
+                    var panelCollapse = createPanelCollapse(col,collapseId);
+                    panelDiv.append(panelCollapse);
+                }
+            });
+            travelPanelDiv.append(panelDiv);
+            var traveldiv = createAemElement('div',['tab-pane', 'fade'],null, 'travel');
+            traveldiv.append(travelPanelDiv);
+            tabContentDiv.append(traveldiv);
+        }
+        else if(r>=11 && r<=15){
+            var conferencePanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion3");
+            var panelDiv = document.createElement('div');
+            panelDiv.className = 'panel panel-default';
+            var panelHeading;
+            var panelCollapse;
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    var panelHeading = createPanelHeading(col);
+                    panelDiv.append(panelHeading);
+                }
+                if(c==1){
+                    var collapseId = 'collapse' + r + c;
+                    var panelCollapse = createPanelCollapse(col,collapseId);
+                    panelDiv.append(panelCollapse);
+                }
+            });
+            conferencePanelDiv.append(panelDiv);
+                if(r==15){
+                    var conferencediv = createAemElement('div',['tab-pane', 'fade'],null, 'conference');
+                    conferencediv.append(conferencePanelDiv);
+                    tabContentDiv.append(conferencediv);
+                }
+        }
+        else if(r>=17 && r<=20){
+            var hotelPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion4");
+            var panelDiv = document.createElement('div');
+            panelDiv.className = 'panel panel-default';
+            var panelHeading;
+            var panelCollapse;
+            [...row.children].forEach((col,c)=>{
+                if(c==0){
+                    var panelHeading = createPanelHeading(col);
+                    panelDiv.append(panelHeading);
+                }
+                if(c==1){
+                    var collapseId = 'collapse' + r + c;
+                    var panelCollapse = createPanelCollapse(col,collapseId);
+                    panelDiv.append(panelCollapse);
+                }
+            });
+            hotelPanelDiv.append(panelDiv);
+                if(r==15){
+                    var hoteldiv = createAemElement('div',['tab-pane', 'fade'],null, 'hotel');
+                    hoteldiv.append(hotelPanelDiv);
+                    tabContentDiv.append(hoteldiv);
+                }
         }
     });
-    firstdiv.append(secondDiv);
-    tabContentDiv.append(firstdiv);
+
     tabAccordionDiv.append(tabContentDiv);
     accordionParentDiv.append(tabAccordionDiv);
 
