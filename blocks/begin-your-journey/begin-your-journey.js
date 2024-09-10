@@ -6,7 +6,7 @@ export default function decorate(block){
     block.innerHTML = '';
 
     var h2content = container.querySelector('h2');
-    var pcontent = container.querySelector('p');
+    var pcontent = container.querySelector('h5');
     var h3content = container.querySelector('h3');
     var lists = container.querySelectorAll('ul');
 
@@ -26,8 +26,8 @@ export default function decorate(block){
 
         if(r>=4 && r<=7){
             var id;
-            if(r=4){
-                id = row.textContent.trim();
+            if(r==4){
+                id = row.querySelector('h3').textContent.trim();
                 console.log("row id:" + id);
                 firstdiv.id = id;
             }else{
@@ -37,12 +37,12 @@ export default function decorate(block){
                 var panelCollapse;
                 [...row.children].forEach((col,c)=>{
                     if(c==0){
-                        var panelHeading = createPanelHeading(col[c]);
+                        var panelHeading = createPanelHeading(col);
                         panelDiv.append(panelHeading);
                     }
                     if(c==1){
                         var collapseId = 'collapse' + r + c;
-                        var panelCollapse = createPanelCollapse(col[c],collapseId);
+                        var panelCollapse = createPanelCollapse(col,collapseId);
                         panelDiv.append(panelCollapse);
                     }
                 });
@@ -79,33 +79,7 @@ $("#menu-border-line a").click(function () {
 			scrollTop: $(".tab-accordion-bg").offset().top - 100,
 		}, 700);
 	});
-$(window).scroll(function () {
-    if ($(this).scrollTop() !== 0) {
-      $(".scroll-up").fadeIn(700);
-      //$("#logo").attr("fill", "#007cc3");
-      $(".scrollbg-show").addClass("show-strip");
-      //$(".hamburger").addClass("bg-sapphire-dark");
-    } else {
-      $(".scroll-up").fadeOut(700);
-      //$("#logo").attr("fill", "#fff");
-      $(".scrollbg-show").removeClass("show-strip");
-      //$(".hamburger").removeClass("bg-sapphire-dark");
-    }
-  });
- 
-$(".scroll-up").click(function () {
-    $("body,html").animate({
-      scrollTop: 0
-    }, 700);
-    $(".navbar-brand").focus();
-  });
- 
-$(".scrollto-target").click(function (e) {
-    e.preventDefault();
-    $("html, body").animate({
-      scrollTop: $($(this).attr("href")).offset().top - 75,
-    }, 700);
-  });
+
 
 function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pcontent, h3content, lists){
 
@@ -114,7 +88,8 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
         parentDiv.classList.add(parentDivClass[cls]);
     }
     parentDiv.setAttribute("data-wow-delay","0.2s");
-
+    parentDiv.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
+    
     const blockHead = document.createElement('h2');
     for(let cls in h2Class){
         blockHead.classList.add(h2Class[cls]);
@@ -126,8 +101,8 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
         para.classList.add(pClass[cls]);
     }
     para.textContent = pcontent.textContent.trim();
-    para.setAttribute("data-wow-delay","0.2s");
-    para.setAttribute("style","visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;");
+//    para.setAttribute("data-wow-delay","0.2s");
+
 
     const h3block = document.createElement('h3');
     for(let cls in h3Class){
@@ -137,13 +112,16 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
 
     const firstList = lists[0];
     const Ullist = document.createElement('ul');
+    Ullist.className = 'nav nav-tabs';
+    Ullist.id = 'menu-border-line';
+    Ullist.setAttribute('role','tablist');
     const firstListChildren = Array.from(firstList.children);
         for(let i=0;i<firstListChildren.length;i++){
             if(i==0){
                 firstListChildren[i].classList.add('active');
             }
             var atag= document.createElement('a');
-            atag.setAttribute("href", firstListChildren[i]);
+            atag.setAttribute("href", "#"+firstListChildren[i].textContent);
             atag.setAttribute("data-toggle", "tab");
             atag.textContent = firstListChildren[i].textContent.trim();
             firstListChildren[i].innerHTML = "";
@@ -180,24 +158,27 @@ function createAemElement(tag, classes, attributes, elementId){
 }
 function createPanelHeading(col){
 
+    var testing = col.querySelector('h4');
+    console.log("Heading h4 content"+ testing.textContent.trim());
     var childPanelDiv = document.createElement('div');
     childPanelDiv.className = 'panel-heading';
     childPanelDiv.setAttribute('role','tab');
     var h4Tag = document.createElement('h4');
-    var aTag = createAemElement('a',null,{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'true', 'aria-controls':'collapse1'},null);
-    aTag.textContent = col.textContent.trim();
+    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'true', 'aria-controls':'collapse1'},null);
+    aTag.textContent = testing.textContent.trim();
     h4Tag.append(aTag);
     childPanelDiv.append(h4Tag);
     return childPanelDiv;
 }
 
 function createPanelCollapse(col, id){
-
+    var testing = col.querySelector('h5');
+     console.log("Para p content"+ testing.textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'true'},id);
     var panelBodyDiv = document.createElement('div');
     panelBodyDiv.className = 'panel-body';
     var pTag = document.createElement('p');
-    pTag.textContent = col.textContent.trim();
+    pTag.textContent = testing.textContent.trim();
     panelBodyDiv.append(pTag);
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
