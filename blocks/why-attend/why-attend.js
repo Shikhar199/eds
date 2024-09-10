@@ -59,8 +59,21 @@ export default function decorate(block) {
         owl.owlCarousel({
             items: 4,
             // margin: 10,
+            marginRight: 20,
             loop: true,
             nav: true,
+
+            responsive: {
+                0: {
+                    items: 1 // 1 item on small screens
+                },
+                600: {
+                    items: 2 // 2 items on medium screens
+                },
+                1000: {
+                    items: 4 // 4 items on large screens
+                }
+            }
             // autoplay: true,
             // autoplayTimeout: 3000,     
             // autoplayHoverPause: true 
