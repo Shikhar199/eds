@@ -49,6 +49,26 @@ export default function decorate(block) {
 
   console.log(owlCarouselDiv);
   block.append(owlCarouselDiv);
+
+  $(function() {
+    // Owl Carousel
+    var owl = $(".owl-carousel");
+        owl.owlCarousel({
+            items: 4,
+            // margin: 10,
+            loop: true,
+            nav: true,
+            // autoplay: true,
+            // autoplayTimeout: 3000,     
+            // autoplayHoverPause: true 
+        });
+
+        // owl.on('mouseover', function() {
+        //     owl.trigger('stop.owl.autoplay');
+        //     // Optionally, you can also remove the autoplay settings to ensure it doesn't restart
+        //     owl.owlCarousel('options').autoplay = false;
+        // });
+    });
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   // block.textContent = '';
   // block.append(ul);
