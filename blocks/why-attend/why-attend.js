@@ -8,7 +8,7 @@ export default function decorate(block) {
   block.innerHTML = '';
 //   const ul = document.createElement('ul');
 //   console.log(container);
-  const owlCarouselDiv = createAemElement('div', ['item-slider-carousel', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag']);
+  const owlCarouselDiv = createAemElement('div', ['item-slider-carousel', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag'], null, null);
   console.log(owlCarouselDiv);
   [...container.children].forEach((row) => {
 //     const li = document.createElement('li');
@@ -18,6 +18,11 @@ export default function decorate(block) {
 //       else div.className = 'cards-card-body';
 //     });
 //     ul.append(li);
+      console.log(row);
+      const h3 = row.querySelector('h3');
+      h3.classList.add('item-slider-head', 'text-center');
+
+      const imgWrapper = createAemElement('div', ["item-img-wrapper"], null, null);
   });
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   // block.textContent = '';
