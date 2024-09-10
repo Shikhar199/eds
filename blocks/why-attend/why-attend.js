@@ -58,7 +58,7 @@ export default function decorate(block) {
     var owl = $(".owl-carousel");
         owl.owlCarousel({
             items: 4,
-            margin: 10,
+            margin: 20,
             loop: true,
             nav: true,
 
