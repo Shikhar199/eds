@@ -5,6 +5,7 @@ export default function decorate(block) {
   console.log(block);
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
+    console.log(row);
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
