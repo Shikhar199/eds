@@ -6,6 +6,7 @@ export default function decorate(block) {
   container.innerHTML = block.innerHTML;
   block.innerHTML = '';
   const ul = document.createElement('ul');
+  console.log(container);
   [...container.children].forEach((row) => {
     console.log(row);
     const li = document.createElement('li');
