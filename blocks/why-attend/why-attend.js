@@ -21,6 +21,7 @@ export default function decorate(block) {
       console.log(row);
       const h3 = row.querySelector('h3');
       h3.classList.add('item-slider-head', 'text-center');
+      console.log(h3);
 
       const imgWrapper = createAemElement('div', ["item-img-wrapper"], null, null);
   });
