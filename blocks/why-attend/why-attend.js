@@ -1,4 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createAemElement } from '../../scripts/aem.js';
 
 export default function decorate(block) {
   /* change to ul, li */
@@ -7,8 +8,9 @@ export default function decorate(block) {
   block.innerHTML = '';
 //   const ul = document.createElement('ul');
 //   console.log(container);
+  const owlCarouselDiv = createAemElement('div', ['item-slider-carousel', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag']);
+  console.log(owlCarouselDiv);
   [...container.children].forEach((row) => {
-    console.log(row);
 //     const li = document.createElement('li');
 //     while (row.firstElementChild) li.append(row.firstElementChild);
 //     [...li.children].forEach((div) => {
