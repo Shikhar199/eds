@@ -70,7 +70,7 @@ export default function decorate(block) {
 //   block.append(owlCarouselDiv);
   block.append(section);
 
-  const blockParent = document.querySelector(".why-aatend-container");
+  const blockParent = document.querySelector(".why-attend-container");
   blockParent.parentElement.replaceChild(section, blockParent);
 }
 
