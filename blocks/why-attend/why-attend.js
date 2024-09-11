@@ -5,7 +5,7 @@ export default function decorate(block) {
   /* change to ul, li */
   const section = createAemElement('section', ["unmissable", "bg-light-white", "py-75"], null, "why-attend");
   const article = createAemElement('article', ["container"], null, null); 
-  const rowDiv = createAemElement('div', ['row']);
+  const rowDiv = createAemElement('div', ['row'], null, null);
 //   const headingDiv = createAemElement('div', ['col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.2s', 'style': 'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
 //   const h2 = createAemElement('h2', ['h2-head', 'mb-50'], null, null);
   const owlParentDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12', 'pad0-mob', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
@@ -69,6 +69,14 @@ export default function decorate(block) {
   console.log(owlCarouselDiv);
 //   block.append(owlCarouselDiv);
   block.append(section);
+
+  let parser = new DOMParser();
+  let doc = parser.parseFromString(block, 'text/html');
+  let section1 = doc.querySelector('section');
+  while (section1.previousElementSibling && section1.previousElementSibling.tagName === 'DIV') {
+    section1.previousElementSibling.remove();
+  }
+  console.log(section1);
 
   $(function() {
     // Owl Carousel
