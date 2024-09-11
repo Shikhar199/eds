@@ -72,6 +72,7 @@ export default function decorate(block) {
 
   let parser = new DOMParser();
   let doc = parser.parseFromString(block, 'text/html');
+  console.log(doc);
   let section1 = doc.querySelector('section');
   while (section1.previousElementSibling && section1.previousElementSibling.tagName === 'DIV') {
     section1.previousElementSibling.remove();
