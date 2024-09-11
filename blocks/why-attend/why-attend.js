@@ -19,7 +19,7 @@ export default function decorate(block) {
 
   [...container.children].forEach((row, index) => {
       if(index==0){
-          const h2 = createAemElement('h2', ['h2-head', 'mb-50']);
+          const h2 = createAemElement('h2', ['h2-head', 'mb-50'], null, null);
           h2.textContent = row.querySelector('h2').textContent.trim();
           headingWrapperDiv.append(h2);
       }
