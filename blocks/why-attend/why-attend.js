@@ -73,16 +73,7 @@ export default function decorate(block) {
                     items: 4 // 4 items on large screens
                 }
             }
-            // autoplay: true,
-            // autoplayTimeout: 3000,     
-            // autoplayHoverPause: true 
         });
-
-        // owl.on('mouseover', function() {
-        //     owl.trigger('stop.owl.autoplay');
-        //     // Optionally, you can also remove the autoplay settings to ensure it doesn't restart
-        //     owl.owlCarousel('options').autoplay = false;
-        // });
     });
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   // block.textContent = '';
