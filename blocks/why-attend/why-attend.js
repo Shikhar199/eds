@@ -67,7 +67,7 @@ export default function decorate(block) {
                     items: 1 // 1 item on small screens
                 },
                 600: {
-                    items: 2 // 2 items on medium screens
+                    items: 3 // 2 items on medium screens
                 },
                 1000: {
                     items: 4 // 4 items on large screens
