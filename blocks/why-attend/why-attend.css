@@ -10,3 +10,8 @@
 .why-attend .item-slider-para {
     font-size: 18px;
 }
+
+.why-attend .owl-next {
+    border: none;
+    background-color: #f2f2f2;
+}
