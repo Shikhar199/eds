@@ -18,41 +18,42 @@ export default function decorate(block) {
   console.log(owlCarouselDiv);
 
   [...container.children].forEach((row, index) => {
-
-      const itemDiv = createAemElement('div', ['item'], null, null);
-      const h3 = row.querySelector('h3');
-      const lowercaseh3 = h3.textContent.trim().toLowerCase();
       if(index==0){
           const h2 = createAemElement('h2', ['h2-head', 'mb-50']);
           h2.textContent = row.querySelector('h2').textContent.trim();
           headingWrapperDiv.append(h2);
       }
-      const enclosingTag = index==1 ? createAemElement('span', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null) : createAemElement('a', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null);
+      else{
+            const itemDiv = createAemElement('div', ['item'], null, null);
+            const h3 = row.querySelector('h3');
+            const lowercaseh3 = h3.textContent.trim().toLowerCase();
+            const enclosingTag = index==1 ? createAemElement('span', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null) : createAemElement('a', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null);
 
-      h3.classList.add('item-slider-head', 'text-center');
+            h3.classList.add('item-slider-head', 'text-center');
 
-      const imgWrapperDiv = createAemElement('div', ["item-img-wrapper"], null, null);
+            const imgWrapperDiv = createAemElement('div', ["item-img-wrapper"], null, null);
       
-      const img = document.createElement('img');
-      img.setAttribute('src', row.querySelector('picture').querySelector('img').getAttribute('src'));
-      img.alt = h3.textContent.trim();
-      img.classList.add("img-responsive");
+            const img = document.createElement('img');
+            img.setAttribute('src', row.querySelector('picture').querySelector('img').getAttribute('src'));
+            img.alt = h3.textContent.trim();
+            img.classList.add("img-responsive");
 
-      imgWrapperDiv.append(img);
+            imgWrapperDiv.append(img);
 
-      const contentWrapperDiv = createAemElement('div', ["item-cnt-wrapper", "pb75"], null, null);
-      const pTag = createAemElement('p', ["item-slider-para", "mb-0", "fontweight400"], null, null);
+            const contentWrapperDiv = createAemElement('div', ["item-cnt-wrapper", "pb75"], null, null);
+            const pTag = createAemElement('p', ["item-slider-para", "mb-0", "fontweight400"], null, null);
 
-      pTag.textContent = row.lastElementChild.textContent.trim();
-      contentWrapperDiv.append(pTag);
+            pTag.textContent = row.lastElementChild.textContent.trim();
+            contentWrapperDiv.append(pTag);
 
-      enclosingTag.append(h3);
-      enclosingTag.append(imgWrapperDiv);
-      enclosingTag.append(contentWrapperDiv);
+            enclosingTag.append(h3);
+            enclosingTag.append(imgWrapperDiv);
+            enclosingTag.append(contentWrapperDiv);
 
-      itemDiv.append(enclosingTag)
+            itemDiv.append(enclosingTag)
 
-      owlCarouselDiv.append(itemDiv);
+            owlCarouselDiv.append(itemDiv);
+      }
 
   });
   owlParentDiv.append(owlCarouselDiv);
