@@ -65,6 +65,7 @@ export default function decorate(block) {
   rowDiv.append(owlParentDiv);
   article.append(rowDiv);
   section.append(article);
+  console.log(section);
   console.log(owlCarouselDiv);
 //   block.append(owlCarouselDiv);
   block.append(section);
