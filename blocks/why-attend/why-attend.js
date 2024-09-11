@@ -70,6 +70,11 @@ export default function decorate(block) {
 //   block.append(owlCarouselDiv);
   block.append(section);
 
+  let divs = block.querySelectorAll('div');
+  for(let i=0;i<3;i++){
+      divs[i].remove();
+  }
+
 //   let parser = new DOMParser();
 //   let doc = parser.parseFromString(block, 'text/html');
 //   console.log(doc);
