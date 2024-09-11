@@ -3,6 +3,14 @@ import { createAemElement } from '../../scripts/aem.js';
 
 export default function decorate(block) {
   /* change to ul, li */
+  const section = createAemElement('section', ["unmissable", "bg-light-white", "py-75"], null, "why-attend");
+  const article = createAemElement('article', ["container"], null, null); 
+  const rowDiv = createAemElement('div', ['row']);
+  const headingDiv = createAemElement('div', ['col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.2s', 'style': 'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
+  const h2 = createAemElement('h2', ['h2-head', 'mb-50'], null, null);
+  const owlParentDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12', 'pad0-mob', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
+
+
   const container = document.createElement('div');
   container.innerHTML = block.innerHTML;
   block.innerHTML = '';
@@ -10,6 +18,9 @@ export default function decorate(block) {
 //   console.log(container);
   const owlCarouselDiv = createAemElement('div', ['item-slider-carousel', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag'], null, null);
   console.log(owlCarouselDiv);
+
+  h2.textContent = container.querySelector('h2').textContent.trim();
+
   [...container.children].forEach((row, index) => {
 //     const li = document.createElement('li');
 //     while (row.firstElementChild) li.append(row.firstElementChild);
@@ -49,9 +60,14 @@ export default function decorate(block) {
       owlCarouselDiv.append(itemDiv);
 
   });
-
+  owlParentDiv.append(owlCarouselDiv);
+  rowDiv.append(headingDiv);
+  rowDiv.append(owlParentDiv);
+  article.append(rowDiv);
+  section.append(article);
   console.log(owlCarouselDiv);
-  block.append(owlCarouselDiv);
+//   block.append(owlCarouselDiv);
+  block.append(section);
 
   $(function() {
     // Owl Carousel
