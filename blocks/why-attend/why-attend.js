@@ -70,19 +70,6 @@ export default function decorate(block) {
 //   block.append(owlCarouselDiv);
   block.append(section);
 
-  let divs = block.querySelectorAll('div');
-  for(let i=0;i<3;i++){
-      divs[i].remove();
-  }
-
-//   let parser = new DOMParser();
-//   let doc = parser.parseFromString(block, 'text/html');
-//   console.log(doc);
-//   let section1 = doc.querySelector('section');
-//   while (section1.previousElementSibling && section1.previousElementSibling.tagName === 'DIV') {
-//     section1.previousElementSibling.remove();
-//   }
-//   console.log(section1);
 
   $(function() {
     // Owl Carousel
