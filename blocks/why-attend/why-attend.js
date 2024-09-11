@@ -6,33 +6,28 @@ export default function decorate(block) {
   const section = createAemElement('section', ["unmissable", "bg-light-white", "py-75"], null, "why-attend");
   const article = createAemElement('article', ["container"], null, null); 
   const rowDiv = createAemElement('div', ['row'], null, null);
-//   const headingDiv = createAemElement('div', ['col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], {'data-wow-delay':'0.2s', 'style': 'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
-//   const h2 = createAemElement('h2', ['h2-head', 'mb-50'], null, null);
+  const headingWrapperDiv = createAemElement('div', ['col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12', 'wow', 'fadeInDown', 'animated'], { 'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
   const owlParentDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12', 'pad0-mob', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
 
 
   const container = document.createElement('div');
   container.innerHTML = block.innerHTML;
   block.innerHTML = '';
-//   const ul = document.createElement('ul');
-//   console.log(container);
+
   const owlCarouselDiv = createAemElement('div', ['item-slider-carousel', 'owl-carousel', 'owl-theme', 'owl-loaded', 'owl-drag'], null, null);
   console.log(owlCarouselDiv);
 
-//   h2.textContent = container.querySelector('h2').textContent.trim();
-
   [...container.children].forEach((row, index) => {
-//     const li = document.createElement('li');
-//     while (row.firstElementChild) li.append(row.firstElementChild);
-//     [...li.children].forEach((div) => {
-//       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-//       else div.className = 'cards-card-body';
-//     });
-//     ul.append(li);
+
       const itemDiv = createAemElement('div', ['item'], null, null);
       const h3 = row.querySelector('h3');
       const lowercaseh3 = h3.textContent.trim().toLowerCase();
-      const enclosingTag = index==0 ? createAemElement('span', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null) : createAemElement('a', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null);
+      if(index==0){
+          const h2 = createAemElement('h2', ['h2-head', 'mb-50']);
+          h2.textContent = row.querySelector('h2').textContent.trim();
+          headingWrapperDiv.append(h2);
+      }
+      const enclosingTag = index==1 ? createAemElement('span', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null) : createAemElement('a', ["item-slider-href", "bg-grey", "scrollto-target"], {'href':`#${lowercaseh3}`, 'title':`${h3.textContent.trim()}`}, null);
 
       h3.classList.add('item-slider-head', 'text-center');
 
