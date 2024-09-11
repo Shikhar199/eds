@@ -57,7 +57,7 @@ export default function decorate(block) {
 
   });
   owlParentDiv.append(owlCarouselDiv);
-  rowDiv.append(headingDiv);
+  rowDiv.append(headingWrapperDiv);
   rowDiv.append(owlParentDiv);
   article.append(rowDiv);
   section.append(article);
