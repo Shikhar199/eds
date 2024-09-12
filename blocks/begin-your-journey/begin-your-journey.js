@@ -23,9 +23,11 @@ export default function decorate(block){
 
 
     [...container.children].forEach((row,r)=>{
-
+        var registrationPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
+        var travelPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion2");
+        var conferencePanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion3");
+        var hotelPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion4");
         if(r>=5 && r<=7){
-                var registrationPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion1");
                 var panelDiv = document.createElement('div');
                 panelDiv.className = 'panel panel-default';
                 var panelHeading;
@@ -50,7 +52,7 @@ export default function decorate(block){
 
         }
         else if(r==9){
-            var travelPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion2");
+
             var panelDiv = document.createElement('div');
             panelDiv.className = 'panel panel-default';
             var panelHeading;
@@ -72,7 +74,7 @@ export default function decorate(block){
             tabContentDiv.append(traveldiv);
         }
         else if(r>=11 && r<=15){
-            var conferencePanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion3");
+
             var panelDiv = document.createElement('div');
             panelDiv.className = 'panel panel-default';
             var panelHeading;
@@ -96,7 +98,7 @@ export default function decorate(block){
                 }
         }
         else if(r>=17 && r<=20){
-            var hotelPanelDiv = createAemElement('div',['panel-group', 'accordion-faqs'],{'role':'tablist', 'aria-multiselectable':'true'}, "tab-accordion4");
+
             var panelDiv = document.createElement('div');
             panelDiv.className = 'panel panel-default';
             var panelHeading;
