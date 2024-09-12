@@ -254,3 +254,122 @@ function createPanelCollapse(col, id){
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
 }
+function (s) {
+        "use strict";
+        function n(t, e) {
+            (this.$body = s(document.body)),
+                (this.$scrollElement = s(t).is(document.body) ? s(window) : s(t)),
+                (this.options = s.extend({}, n.DEFAULTS, e)),
+                (this.selector = (this.options.target || "") + " .nav li > a"),
+                (this.offsets = []),
+                (this.targets = []),
+                (this.activeTarget = null),
+                (this.scrollHeight = 0),
+                this.$scrollElement.on("scroll.bs.scrollspy", s.proxy(this.process, this)),
+                this.refresh(),
+                this.process();
+        }
+	}
+	
+	
+	
+	function (a) {
+        "use strict";
+        var r = function (t, e) {
+            (this.$element = a(t)),
+                (this.options = a.extend({}, r.DEFAULTS, e)),
+                (this.$trigger = a('[data-toggle="collapse"][href="#' + t.id + '"],[data-toggle="collapse"][data-target="#' + t.id + '"]')),
+                (this.transitioning = null),
+                this.options.parent ? (this.$parent = this.getParent()) : this.addAriaAndCollapsedClass(this.$element, this.$trigger),
+                this.options.toggle && this.toggle();
+        };
+        function n(t) {
+            var e,
+                i = t.attr("data-target") || ((e = t.attr("href")) && e.replace(/.*(?=#[^\s]+$)/, ""));
+            return a(document).find(i);
+        }
+        function l(o) {
+            return this.each(function () {
+                var t = a(this),
+                    e = t.data("bs.collapse"),
+                    i = a.extend({}, r.DEFAULTS, t.data(), "object" == typeof o && o);
+                !e && i.toggle && /show|hide/.test(o) && (i.toggle = !1), e || t.data("bs.collapse", (e = new r(this, i))), "string" == typeof o && e[o]();
+            });
+        }
+        (r.VERSION = "3.4.1"),
+            (r.TRANSITION_DURATION = 350),
+            (r.DEFAULTS = { toggle: !0 }),
+            (r.prototype.dimension = function () {
+                return this.$element.hasClass("width") ? "width" : "height";
+            }),
+            (r.prototype.show = function () {
+                if (!this.transitioning && !this.$element.hasClass("in")) {
+                    var t,
+                        e = this.$parent && this.$parent.children(".panel").children(".in, .collapsing");
+                    if (!(e && e.length && (t = e.data("bs.collapse")) && t.transitioning)) {
+                        var i = a.Event("show.bs.collapse");
+                        if ((this.$element.trigger(i), !i.isDefaultPrevented())) {
+                            e && e.length && (l.call(e, "hide"), t || e.data("bs.collapse", null));
+                            var o = this.dimension();
+                            this.$element.removeClass("collapse").addClass("collapsing")[o](0).attr("aria-expanded", !0), this.$trigger.removeClass("collapsed").attr("aria-expanded", !0), (this.transitioning = 1);
+                            var n = function () {
+                                this.$element.removeClass("collapsing").addClass("collapse in")[o](""), (this.transitioning = 0), this.$element.trigger("shown.bs.collapse");
+                            };
+                            if (!a.support.transition) return n.call(this);
+                            var s = a.camelCase(["scroll", o].join("-"));
+                            this.$element.one("bsTransitionEnd", a.proxy(n, this)).emulateTransitionEnd(r.TRANSITION_DURATION)[o](this.$element[0][s]);
+                        }
+                    }
+                }
+            }),
+            (r.prototype.hide = function () {
+                if (!this.transitioning && this.$element.hasClass("in")) {
+                    var t = a.Event("hide.bs.collapse");
+                    if ((this.$element.trigger(t), !t.isDefaultPrevented())) {
+                        var e = this.dimension();
+                        this.$element[e](this.$element[e]())[0].offsetHeight,
+                            this.$element.addClass("collapsing").removeClass("collapse in").attr("aria-expanded", !1),
+                            this.$trigger.addClass("collapsed").attr("aria-expanded", !1),
+                            (this.transitioning = 1);
+                        var i = function () {
+                            (this.transitioning = 0), this.$element.removeClass("collapsing").addClass("collapse").trigger("hidden.bs.collapse");
+                        };
+                        if (!a.support.transition) return i.call(this);
+                        this.$element[e](0).one("bsTransitionEnd", a.proxy(i, this)).emulateTransitionEnd(r.TRANSITION_DURATION);
+                    }
+                }
+            }),
+            (r.prototype.toggle = function () {
+                this[this.$element.hasClass("in") ? "hide" : "show"]();
+            }),
+            (r.prototype.getParent = function () {
+                return a(document)
+                    .find(this.options.parent)
+                    .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+                    .each(
+                        a.proxy(function (t, e) {
+                            var i = a(e);
+                            this.addAriaAndCollapsedClass(n(i), i);
+                        }, this)
+                    )
+                    .end();
+            }),
+            (r.prototype.addAriaAndCollapsedClass = function (t, e) {
+                var i = t.hasClass("in");
+                t.attr("aria-expanded", i), e.toggleClass("collapsed", !i).attr("aria-expanded", i);
+            });
+        var t = a.fn.collapse;
+        (a.fn.collapse = l),
+            (a.fn.collapse.Constructor = r),
+            (a.fn.collapse.noConflict = function () {
+                return (a.fn.collapse = t), this;
+            }),
+            a(document).on("click.bs.collapse.data-api", '[data-toggle="collapse"]', function (t) {
+                var e = a(this);
+                e.attr("data-target") || t.preventDefault();
+                var i = n(e),
+                    o = i.data("bs.collapse") ? "toggle" : e.data();
+                l.call(i, o);
+            });
+    }
+	
