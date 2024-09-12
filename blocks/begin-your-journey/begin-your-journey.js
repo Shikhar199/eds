@@ -254,7 +254,7 @@ function createPanelCollapse(col, id){
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
 }
-function (s) {
+(function (s) {
         "use strict";
         function n(t, e) {
             (this.$body = s(document.body)),
@@ -269,7 +269,7 @@ function (s) {
                 this.refresh(),
                 this.process();
         }
-	}
+	})(jQuery),
 	
 	
 	
