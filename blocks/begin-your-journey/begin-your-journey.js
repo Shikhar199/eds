@@ -273,7 +273,7 @@ function (s) {
 	
 	
 	
-	function (a) {
+	(function (a) {
         "use strict";
         var r = function (t, e) {
             (this.$element = a(t)),
@@ -371,5 +371,4 @@ function (s) {
                     o = i.data("bs.collapse") ? "toggle" : e.data();
                 l.call(i, o);
             });
-    }
-	
+    })(jQuery)
