@@ -79,3 +79,24 @@ div {
     -o-transition: opacity 0.15s linear;
     transition: opacity 0.15s linear;
 }
+.begin-your-journey .panel a[data-toggle="collapse"] {
+  position: relative;
+}
+.begin-your-journey .panel a[data-toggle="collapse"]:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  background-image: url("../../icons/plus.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+}
+.begin-your-journey .panel a[aria-expanded="true"]:after {
+  background-image: url("../../icons/minus.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
