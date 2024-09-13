@@ -1169,13 +1169,13 @@ ul.video-list-items {
     background: #efefef;
     width: 100%
 }
-
+/**
 .tab-content {
     height: 100%;
     display: none;
     color: #000
 }
-
+**/
 .tab-drawer-heading {
     display: none
 }
