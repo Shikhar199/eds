@@ -115,7 +115,7 @@ export default function decorate(block){
                 }
             });
             hotelPanelDiv.append(panelDiv);
-                if(r==15){
+                if(r==20){
                     var hoteldiv = createAemElement('div',['tab-pane', 'fade'],null, 'hotel');
                     hoteldiv.append(hotelPanelDiv);
                     tabContentDiv.append(hoteldiv);
