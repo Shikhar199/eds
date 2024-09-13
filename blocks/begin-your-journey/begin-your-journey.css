@@ -7,6 +7,247 @@ div {
     margin-right: -15px;
     margin-left: -15px;
 }
+
+@media only screen and (max-width: 992px) {
+    .h2-head {
+        font-size: 60px;
+    }
+}
+
+.h2-head {
+    font-size: 70px;
+    line-height: 0.9;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
+}
+
+.mb-20, .my-20 {
+    margin-bottom: 20px !important;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.fontweight400 {
+    font-weight: 400 !important;
+}
+p {
+    margin: 0 0 10px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+.faq-head {
+    position: relative;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
+    font-size: 45px;
+    margin: 20px 0 10px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+#menu-border-line.nav-tabs {
+    border-bottom: 0;
+}
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#menu-border-line.nav-tabs > li {
+    float: none;
+    margin-bottom: -5px;
+}
+
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+.nav > li {
+    position: relative;
+    display: block;
+}
+
+#menu-border-line a {
+    font-size: 24px;
+    color: #000;
+    padding: 0 0 5px;
+    margin: 0;
+    text-decoration: none;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
+    border: 0;
+}
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s eas.owl-carousel.sponsor_slider .owl-item > .iteme-in-out;
+    outline: 0;
+    color: #007cc3;
+    font-weight: 400;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+.panel-group {
+    margin-bottom: 20px;
+}
+.accordion-faqs.panel-group .panel {
+    border-radius: 0;
+    border: 0;
+    background-color: #f2f2f2;
+    padding: 15px 45px 15px 15px;
+}
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 4px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-faqs .panel-default > .panel-heading {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+    padding: 0;
+}
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.panel-group .panel-heading {
+    border-bottom: 0;
+}
+.panel-heading {
+    padding: 0;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.accordion-faqs .panel-default > .panel-heading h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.accordion-faqs.panel-group .panel a {
+    display: block;
+    color: #000;
+}
+a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s eas.owl-carousel.sponsor_slider .owl-item > .iteme-in-out;
+    outline: 0;
+    color: #007cc3;
+    font-weight: 400;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+
+.collapse {
+    display: none;
+}
+
+.accordion-faqs .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: 0;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #ddd;
+}
+.panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border-top: 1px solid #ddd;
+}
+.accordion-faqs .panel-body {
+    padding: 0;
+}
+.panel-body {
+    padding: 15px;
+}
+
+.accordion-faqs .panel-body p {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+
+
+
 .col-lg-1,
 .col-lg-10,
 .col-lg-11,
@@ -70,8 +311,32 @@ div {
 }
 
 .tab-content > .tab-pane {
-    display: block;
+    display: none;
 }
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@media (min-width: 768px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+        float: left;
+    }
+}
+
+
 
 .fade {
     opacity: 0;
