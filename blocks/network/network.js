@@ -1,4 +1,5 @@
 export default function decorate(block){
+    
     [...block.children].forEach((row) => {
      
         document.addEventListener('DOMContentLoaded', () => {
@@ -28,6 +29,7 @@ export default function decorate(block){
             
             
           });
+          console.log(parentDiv);
         
     });
    }
