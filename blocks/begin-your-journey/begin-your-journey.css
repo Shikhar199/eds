@@ -225,6 +225,10 @@ a {
     display: none;
 }
 
+.collapse.in {
+    display: block;
+}
+
 .accordion-faqs .panel-default > .panel-heading + .panel-collapse > .panel-body {
     border: 0;
 }
@@ -306,12 +310,12 @@ a {
     opacity: 1;
 }
 
-.tab-content > .active {
-    display: block;
-}
-
 .tab-content > .tab-pane {
     display: none;
+}
+
+.tab-content > .active {
+    display: block;
 }
 
 .fadeInDown {
