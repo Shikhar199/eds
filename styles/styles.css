@@ -4167,7 +4167,7 @@ tbody.collapse.show {
     border-left: 1px solid #ced4da;
     border-radius: 0 .25rem .25rem 0
 }
-
+/**
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -4175,7 +4175,7 @@ tbody.collapse.show {
     margin-bottom: 0;
     list-style: none
 }
-
+**/
 .nav-link {
     display: block;
     padding: .5rem 1rem
