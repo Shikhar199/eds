@@ -172,8 +172,6 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
         para.classList.add(pClass[cls]);
     }
     para.textContent = pcontent.textContent.trim();
-//    para.setAttribute("data-wow-delay","0.2s");
-
 
     const h3block = document.createElement('h3');
     for(let cls in h3Class){
@@ -192,7 +190,8 @@ function createParentDiv(parentDivClass, h2Class, pClass, h3Class, h2content, pc
                 firstListChildren[i].classList.add('active');
             }
             var atag= document.createElement('a');
-            atag.setAttribute("href", "#"+firstListChildren[i].textContent);
+            const myArray = firstListChildren[i].textContent.split(" ")[0].toLowerCase();
+            atag.setAttribute("href", "#"+myArray);
             atag.setAttribute("data-toggle", "tab");
             atag.textContent = firstListChildren[i].textContent.trim();
             firstListChildren[i].innerHTML = "";
@@ -270,9 +269,7 @@ function createPanelCollapse(col, id){
                 this.process();
         }
 	})(jQuery),
-	
-	
-	
+
 	(function (a) {
         "use strict";
         var r = function (t, e) {
