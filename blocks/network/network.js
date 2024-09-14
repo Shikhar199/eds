@@ -27,7 +27,7 @@ const viewMoreLink = col1.querySelector('a.cta-link');
 const col2 = row.querySelector('.col-lg-7');
 
 // Get the image within the second column
-const image = col2.querySelector('img');
+const image = col2.querySelector('pic');
 
 // Log the elements to the console (for testing purposes)
 console.log('Section:', section);
