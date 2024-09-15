@@ -3,51 +3,37 @@ export default function decorate(block){
      [...block.children].forEach((row) => {
 
           document.addEventListener('DOMContentLoaded', () => {
-               // Get the container for network activities
-               const networkWrapper = document.querySelector('.network-wrapper');
+               // Select the network block
+               const networkBlock = document.querySelector('.network.block');
                
-               // Create a new container for left side elements
+               // Create containers for left and right sections
                const leftContainer = document.createElement('div');
                leftContainer.className = 'left-container';
                
-               // Get all child divs inside the network block
-               const networkBlockDivs = document.querySelectorAll('.network.block > div');
-               
-               // Append the first four divs (title, text1, text2, and button) to the left container
-               for (let i = 0; i < networkBlockDivs.length - 1; i++) {
-                 leftContainer.appendChild(networkBlockDivs[i]);
-               }
-               
-               // Create a new container for the picture
-               const pictureContainer = document.createElement('div');
-               pictureContainer.className = 'picture-container';
-               pictureContainer.appendChild(networkBlockDivs[networkBlockDivs.length - 1]);
+               const rightContainer = document.createElement('div');
+               rightContainer.className = 'right-container';
              
-               // Clear existing content and append new layout
+               // Get all child divs
+               const childDivs = Array.from(networkBlock.children);
+             
+               // Move the text and button divs to the left container
+               leftContainer.appendChild(childDivs[0]); // Networking Activities
+               leftContainer.appendChild(childDivs[2]); // Vienna awaits
+               leftContainer.appendChild(childDivs[3]); // Historical text
+               leftContainer.appendChild(childDivs[4]); // Button
+             
+               // Move the picture div to the right container
+               rightContainer.appendChild(childDivs[1]);
+             
+               // Clear the existing content of networkWrapper and append new containers
+               const networkWrapper = document.querySelector('.network-wrapper');
                networkWrapper.innerHTML = '';
                networkWrapper.appendChild(leftContainer);
-               networkWrapper.appendChild(pictureContainer);
+               networkWrapper.appendChild(rightContainer);
              
-               // Apply CSS styles
-               const style = document.createElement('style');
-               style.innerHTML = `
-                 .network-wrapper {
-                   display: flex;
-                   justify-content: space-between;
-                   align-items: flex-start;
-                 }
-                 .left-container {
-                   max-width: 60%;
-                 }
-                 .picture-container {
-                   max-width: 40%;
-                 }
-                 .network block > div {
-                   margin-bottom: 1rem;
-                 }
-               `;
-               document.head.appendChild(style);
+               
              });
+             
              
 
      

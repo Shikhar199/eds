@@ -1,1 +1,26 @@
 
+.network-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Space between left and right containers */
+  }
+  
+  .left-container {
+    flex: 1;
+    max-width: 60%;
+  }
+  
+  .right-container {
+    flex: 1;
+    max-width: 40%;
+  }
+  
+  .network.block > div {
+    margin-bottom: 1rem;
+  }
+  
+  .left-container > div {
+    margin-bottom: 1rem;
+  }
+  
