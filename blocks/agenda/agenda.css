@@ -13500,3 +13500,7 @@ ul.menu-link li {
 .margin7 {
   margin: 7px 0 !important;
 }
+
+.panel-heading{
+  padding: 0px;
+}
