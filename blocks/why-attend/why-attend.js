@@ -95,11 +95,11 @@ $(function() {
     });
 
     // Wait until Owl Carousel is initialized before creating custom nav
-    owl.on('initialized.owl.carousel', function() {
-        createCustomNav(); // Pass the owl instance to the createCustomNav function
-    });
+    // owl.on('initialized.owl.carousel', function() {
+    //     createCustomNav(); // Pass the owl instance to the createCustomNav function
+    // });
 
-    function createCustomNav() {
+    // function createCustomNav() {
         console.log("Creating custom nav");
         $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
@@ -109,13 +109,15 @@ $(function() {
         // Prev button
         $('.owl-prev').click(function() {
             owl.trigger('prev.owl.carousel');
+            $('.owl-nav').removeClass('disabled');
         });
 
         // Next button
         $('.owl-next').click(function() {
             owl.trigger('next.owl.carousel');
+            $('.owl-nav').removeClass('disabled');
         });
-    }
+    // }
 });
 
 
