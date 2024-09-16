@@ -15,7 +15,7 @@ export default function decorate(block){
              
                // Get all child divs
                const childDivs = Array.from(networkBlock.children);
-             
+              console.log(childDivs);
                // Move the text and button divs to the left container
                leftContainer.appendChild(childDivs[0]); // Networking Activities
                leftContainer.appendChild(childDivs[2]); // Vienna awaits
@@ -30,7 +30,7 @@ export default function decorate(block){
                networkWrapper.innerHTML = '';
                networkWrapper.appendChild(leftContainer);
                networkWrapper.appendChild(rightContainer);
-             
+               console.log(networkWrapper);
                
              });
              
