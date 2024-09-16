@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 10px; /* Space between left and right containers */
+    gap: 20px; /* Space between left and right containers */
   }
   
   .left-container {
