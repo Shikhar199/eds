@@ -9,8 +9,8 @@
   .left-container {
     flex: 1;
     max-width: 35%;
-    padding-top: 50px;
-    padding-left: 30px;
+    padding-top: 100px;
+    padding-left: 50px;
     font-family: 'Arial', sans-serif;
     font-weight: 400;
   }
@@ -18,8 +18,8 @@
   .right-container {
     flex: 1;
     width: 30%;
-    padding-top: 50px;
-    
+    padding-top: 100px;
+    height: 20%;
     padding-right: 30px;
   }
   
