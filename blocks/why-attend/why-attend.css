@@ -33,11 +33,16 @@
     background: none;
 }
 
-/* @media (max-width: 767px) {    
-    #why-attend .owl-prev{
-        left: 500px !important;
+@media (max-width: 767px) {    
+    #why-attend .owl-next{
+        top: 60px !important;
+        right: 0px !important;
     }
-} */
+    #why-attend .owl-prev{
+        top: 60px !important;
+        left: 0px !important;
+    }
+}
 
 @media (min-width: 992px) {    
     #why-attend .owl-prev{
