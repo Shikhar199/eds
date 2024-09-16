@@ -258,6 +258,44 @@ function createPanelCollapse(col, id){
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
 }
+
+//// Get all the <li> elements within the ".nav-tabs" container
+//var tabs = document.querySelectorAll('.nav-tabs li');
+//
+//// Add a click event listener to each <li> element
+//tabs.forEach(function(tab) {
+//  tab.addEventListener('click', function() {
+//    // Remove the "active" class from all <li> elements
+//    tabs.forEach(function(tab) {
+//      tab.classList.remove('active');
+//    });
+//    // Add the "active" class to the clicked <li> element
+//    this.classList.add('active');
+//  });
+//});
+//
+//// Get all the <a> elements within the ".nav-tabs" container
+//var tabLinks = document.querySelectorAll('.nav-tabs a');
+//
+//// Add a click event listener to each <a> element
+//tabLinks.forEach(function(tabLink) {
+//  tabLink.addEventListener('click', function(e) {
+//    e.preventDefault();
+//    var targetPaneId = this.getAttribute('href');
+//
+//    // Remove the "active" class from all tab-panes
+//    var tabPanes = document.querySelectorAll('.tab-pane');
+//    tabPanes.forEach(function(tabPane) {
+//      tabPane.classList.remove('active', 'in');
+//    });
+//
+//    // Add the "active" class to the target tab-pane
+//    var targetPane = document.querySelector(targetPaneId);
+//    targetPane.classList.add('active', 'in');
+//  });
+//});
+
+
 (function (s) {
         "use strict";
         function n(t, e) {
