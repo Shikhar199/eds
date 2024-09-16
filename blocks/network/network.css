@@ -26,9 +26,9 @@
   .view-more-btn {
     padding: 10px 20px;
     background-color: white; /* Default button color */
-    color: black;
-    border: none;
-    border-radius: 5px;
+    color: #d4a44d;
+    border: 2px solid #d4a44d;
+    border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
   }
@@ -46,4 +46,4 @@
   .left-container > div {
     margin-bottom: 1rem;
   }
-  
+     
