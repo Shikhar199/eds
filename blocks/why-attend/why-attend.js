@@ -97,17 +97,18 @@ export default function decorate(block) {
 
     function createCustomNav(){
         console.log("Creating custom nav");
-        $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
+        // $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
+        $('.owl-nav').html('');
 
-        // Prev button
-        $('.owl-prev').click(function() {
-            owl.trigger('prev.owl.carousel');
-        });
+        // // Prev button
+        // $('.owl-prev').click(function() {
+        //     owl.trigger('prev.owl.carousel');
+        // });
 
-        // Next button
-        $('.owl-next').click(function() {
-            owl.trigger('next.owl.carousel');
-        });
+        // // Next button
+        // $('.owl-next').click(function() {
+        //     owl.trigger('next.owl.carousel');
+        // });
     }
 
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
