@@ -77,11 +77,8 @@ export default function decorate(block) {
             items: 4,
             margin: 20,
             loop: true,
-            nav: true,
-            navText: [
-                '<div class="owl-prev">prev</div>', 
-                '<div class="owl-next">next</div>'
-            ],
+            nav: false,
+            dots: false,
             responsive: {
                 0: {
                     items: 1 // 1 item on small screens
@@ -95,6 +92,30 @@ export default function decorate(block) {
             }
         });
     });
+
+    // setTimeout(createCustomNav, 4000)
+    // createCustomNav();
+    owl.on('initialized.owl.carousel', function() {
+        createCustomNav();
+    });
+
+    function createCustomNav(){
+        console.log("Creating custom nav");
+        $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
+
+        $('.owl-nav').removeClass('disabled');
+        // Prev button
+        $('.owl-prev').click(function() {
+            owl.trigger('prev.owl.carousel');
+        });
+
+        // Next button
+        $('.owl-next').click(function() {
+            owl.trigger('next.owl.carousel');
+        });
+        
+    }
+
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   // block.textContent = '';
   // block.append(ul);
