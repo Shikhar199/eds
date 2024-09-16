@@ -33,10 +33,11 @@
 }
 
 @media (min-width: 1200px) {
-    .owl-prev{
+    
+    #why-attend .owl-prev{
         left: 890px !important;
     }
-    .owl-next{
+    #why-attend .owl-next{
         right: 30px !important;
     }
   }
