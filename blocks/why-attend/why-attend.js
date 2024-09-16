@@ -72,10 +72,9 @@ export default function decorate(block) {
 
 $(function() {
     // Declare owl variable in the outer scope so it's accessible everywhere
-    var owl;
 
     // Owl Carousel
-    owl = $(".owl-carousel");
+    var owl = $(".owl-carousel");
     owl.owlCarousel({
         items: 4,
         margin: 20,
@@ -97,10 +96,10 @@ $(function() {
 
     // Wait until Owl Carousel is initialized before creating custom nav
     owl.on('initialized.owl.carousel', function() {
-        createCustomNav(owl); // Pass the owl instance to the createCustomNav function
+        createCustomNav(); // Pass the owl instance to the createCustomNav function
     });
 
-    function createCustomNav(owlInstance) {
+    function createCustomNav() {
         console.log("Creating custom nav");
         $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
@@ -109,12 +108,12 @@ $(function() {
 
         // Prev button
         $('.owl-prev').click(function() {
-            owlInstance.trigger('prev.owl.carousel');
+            owl.trigger('prev.owl.carousel');
         });
 
         // Next button
         $('.owl-next').click(function() {
-            owlInstance.trigger('next.owl.carousel');
+            owl.trigger('next.owl.carousel');
         });
     }
 });
