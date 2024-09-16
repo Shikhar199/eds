@@ -465,4 +465,36 @@ function createPanelCollapse(col, id){
             t.preventDefault(), e.call(r(this), "show");
         };
         r(document).on("click.bs.tab.data-api", '[data-toggle="tab"]', i).on("click.bs.tab.data-api", '[data-toggle="pill"]', i);
-    })(jQuery)
+    })(jQuery),
+        (function (n) {
+            "use strict";
+            (n.fn.emulateTransitionEnd = function (t) {
+                var e = !1,
+                    i = this;
+                n(this).one("bsTransitionEnd", function () {
+                    e = !0;
+                });
+                return (
+                    setTimeout(function () {
+                        e || n(i).trigger(n.support.transition.end);
+                    }, t),
+                    this
+                );
+            }),
+                n(function () {
+                    (n.support.transition = (function o() {
+                        var t = document.createElement("bootstrap"),
+                            e = { WebkitTransition: "webkitTransitionEnd", MozTransition: "transitionend", OTransition: "oTransitionEnd otransitionend", transition: "transitionend" };
+                        for (var i in e) if (t.style[i] !== undefined) return { end: e[i] };
+                        return !1;
+                    })()),
+                        n.support.transition &&
+                            (n.event.special.bsTransitionEnd = {
+                                bindType: n.support.transition.end,
+                                delegateType: n.support.transition.end,
+                                handle: function (t) {
+                                    if (n(t.target).is(this)) return t.handleObj.handler.apply(this, arguments);
+                                },
+                            });
+                });
+        })(jQuery)
