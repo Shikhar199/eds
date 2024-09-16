@@ -31,7 +31,7 @@
     border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
-    font-size: 18px; /* Increase font size */
+    font-size: 16px; /* Increase font size */
     text-transform: uppercase;
   }
   
