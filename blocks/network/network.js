@@ -30,7 +30,7 @@ export default function decorate(block){
                const imgElement = pictureDiv.querySelector('img');
 
               // Set the width and height of the image
-              imgElement.style.width = '400px'; // Example width
+              imgElement.style.width = '600px'; // Example width
               imgElement.style.height = '300px'; // Example height
 
               // Append the picture div to the right container
