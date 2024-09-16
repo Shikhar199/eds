@@ -239,7 +239,7 @@ function createPanelHeading(col, id){
     childPanelDiv.setAttribute('role','tab');
     var h4Tag = document.createElement('h4');
     var hrefValue = '#' + id;
-    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':hrefValue, 'aria-expanded':'false', 'aria-controls':id},null);
+    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':hrefValue, 'aria-expanded':'true', 'aria-controls':id},null);
     aTag.textContent = testing.textContent.trim();
     h4Tag.append(aTag);
     childPanelDiv.append(h4Tag);
@@ -258,173 +258,211 @@ function createPanelCollapse(col, id){
     panelCollapseDiv.append(panelBodyDiv);
     return panelCollapseDiv;
 }
-(function (s) {
-        "use strict";
-        function n(t, e) {
-            (this.$body = s(document.body)),
-                (this.$scrollElement = s(t).is(document.body) ? s(window) : s(t)),
-                (this.options = s.extend({}, n.DEFAULTS, e)),
-                (this.selector = (this.options.target || "") + " .nav li > a"),
-                (this.offsets = []),
-                (this.targets = []),
-                (this.activeTarget = null),
-                (this.scrollHeight = 0),
-                this.$scrollElement.on("scroll.bs.scrollspy", s.proxy(this.process, this)),
-                this.refresh(),
-                this.process();
-        }
-	})(jQuery),
 
-	(function (a) {
-        "use strict";
-        var r = function (t, e) {
-            (this.$element = a(t)),
-                (this.options = a.extend({}, r.DEFAULTS, e)),
-                (this.$trigger = a('[data-toggle="collapse"][href="#' + t.id + '"],[data-toggle="collapse"][data-target="#' + t.id + '"]')),
-                (this.transitioning = null),
-                this.options.parent ? (this.$parent = this.getParent()) : this.addAriaAndCollapsedClass(this.$element, this.$trigger),
-                this.options.toggle && this.toggle();
-        };
-        function n(t) {
-            var e,
-                i = t.attr("data-target") || ((e = t.attr("href")) && e.replace(/.*(?=#[^\s]+$)/, ""));
-            return a(document).find(i);
-        }
-        function l(o) {
-            return this.each(function () {
-                var t = a(this),
-                    e = t.data("bs.collapse"),
-                    i = a.extend({}, r.DEFAULTS, t.data(), "object" == typeof o && o);
-                !e && i.toggle && /show|hide/.test(o) && (i.toggle = !1), e || t.data("bs.collapse", (e = new r(this, i))), "string" == typeof o && e[o]();
-            });
-        }
-        (r.VERSION = "3.4.1"),
-            (r.TRANSITION_DURATION = 350),
-            (r.DEFAULTS = { toggle: !0 }),
-            (r.prototype.dimension = function () {
-                return this.$element.hasClass("width") ? "width" : "height";
-            }),
-            (r.prototype.show = function () {
-                if (!this.transitioning && !this.$element.hasClass("in")) {
-                    var t,
-                        e = this.$parent && this.$parent.children(".panel").children(".in, .collapsing");
-                    if (!(e && e.length && (t = e.data("bs.collapse")) && t.transitioning)) {
-                        var i = a.Event("show.bs.collapse");
-                        if ((this.$element.trigger(i), !i.isDefaultPrevented())) {
-                            e && e.length && (l.call(e, "hide"), t || e.data("bs.collapse", null));
-                            var o = this.dimension();
-                            this.$element.removeClass("collapse").addClass("collapsing")[o](0).attr("aria-expanded", !0), this.$trigger.removeClass("collapsed").attr("aria-expanded", !0), (this.transitioning = 1);
-                            var n = function () {
-                                this.$element.removeClass("collapsing").addClass("collapse in")[o](""), (this.transitioning = 0), this.$element.trigger("shown.bs.collapse");
-                            };
-                            if (!a.support.transition) return n.call(this);
-                            var s = a.camelCase(["scroll", o].join("-"));
-                            this.$element.one("bsTransitionEnd", a.proxy(n, this)).emulateTransitionEnd(r.TRANSITION_DURATION)[o](this.$element[0][s]);
-                        }
-                    }
-                }
-            }),
-            (r.prototype.hide = function () {
-                if (!this.transitioning && this.$element.hasClass("in")) {
-                    var t = a.Event("hide.bs.collapse");
-                    if ((this.$element.trigger(t), !t.isDefaultPrevented())) {
-                        var e = this.dimension();
-                        this.$element[e](this.$element[e]())[0].offsetHeight,
-                            this.$element.addClass("collapsing").removeClass("collapse in").attr("aria-expanded", !1),
-                            this.$trigger.addClass("collapsed").attr("aria-expanded", !1),
-                            (this.transitioning = 1);
-                        var i = function () {
-                            (this.transitioning = 0), this.$element.removeClass("collapsing").addClass("collapse").trigger("hidden.bs.collapse");
-                        };
-                        if (!a.support.transition) return i.call(this);
-                        this.$element[e](0).one("bsTransitionEnd", a.proxy(i, this)).emulateTransitionEnd(r.TRANSITION_DURATION);
-                    }
-                }
-            }),
-            (r.prototype.toggle = function () {
-                this[this.$element.hasClass("in") ? "hide" : "show"]();
-            }),
-            (r.prototype.getParent = function () {
-                return a(document)
-                    .find(this.options.parent)
-                    .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
-                    .each(
-                        a.proxy(function (t, e) {
-                            var i = a(e);
-                            this.addAriaAndCollapsedClass(n(i), i);
-                        }, this)
-                    )
-                    .end();
-            }),
-            (r.prototype.addAriaAndCollapsedClass = function (t, e) {
-                var i = t.hasClass("in");
-                t.attr("aria-expanded", i), e.toggleClass("collapsed", !i).attr("aria-expanded", i);
-            });
-        var t = a.fn.collapse;
-        (a.fn.collapse = l),
-            (a.fn.collapse.Constructor = r),
-            (a.fn.collapse.noConflict = function () {
-                return (a.fn.collapse = t), this;
-            }),
-            a(document).on("click.bs.collapse.data-api", '[data-toggle="collapse"]', function (t) {
-                var e = a(this);
-                e.attr("data-target") || t.preventDefault();
-                var i = n(e),
-                    o = i.data("bs.collapse") ? "toggle" : e.data();
-                l.call(i, o);
-            });
-    })(jQuery),
-	(function (r) {
-        "use strict";
-        var a = function (t) {
-            this.element = r(t);
-        };
-        function e(i) {
-            return this.each(function () {
-                var t = r(this),
-                    e = t.data("bs.tab");
-                e || t.data("bs.tab", (e = new a(this))), "string" == typeof i && e[i]();
-            });
-        }
-        (a.VERSION = "3.4.1"),
-            (a.TRANSITION_DURATION = 150),
-            (a.prototype.show = function () {
-                var t = this.element,
-                    e = t.closest("ul:not(.dropdown-menu)"),
-                    i = t.data("target");
-                if ((i || (i = (i = t.attr("href")) && i.replace(/.*(?=#[^\s]*$)/, "")), !t.parent("li").hasClass("active"))) {
-                    var o = e.find(".active:last a"),
-                        n = r.Event("hide.bs.tab", { relatedTarget: t[0] }),
-                        s = r.Event("show.bs.tab", { relatedTarget: o[0] });
-                    if ((o.trigger(n), t.trigger(s), !s.isDefaultPrevented() && !n.isDefaultPrevented())) {
-                        var a = r(document).find(i);
-                        this.activate(t.closest("li"), e),
-                            this.activate(a, a.parent(), function () {
-                                o.trigger({ type: "hidden.bs.tab", relatedTarget: t[0] }), t.trigger({ type: "shown.bs.tab", relatedTarget: o[0] });
-                            });
-                    }
-                }
-            }),
-            (a.prototype.activate = function (t, e, i) {
-                var o = e.find("> .active"),
-                    n = i && r.support.transition && ((o.length && o.hasClass("fade")) || !!e.find("> .fade").length);
-                function s() {
-                    o.removeClass("active").find("> .dropdown-menu > .active").removeClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded", !1),
-                        t.addClass("active").find('[data-toggle="tab"]').attr("aria-expanded", !0),
-                        n ? (t[0].offsetWidth, t.addClass("in")) : t.removeClass("fade"),
-                        t.parent(".dropdown-menu").length && t.closest("li.dropdown").addClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded", !0),
-                        i && i();
-                }
-                o.length && n ? o.one("bsTransitionEnd", s).emulateTransitionEnd(a.TRANSITION_DURATION) : s(), o.removeClass("in");
-            });
-        var t = r.fn.tab;
-        (r.fn.tab = e),
-            (r.fn.tab.Constructor = a),
-            (r.fn.tab.noConflict = function () {
-                return (r.fn.tab = t), this;
-            });
-        var i = function (t) {
-            t.preventDefault(), e.call(r(this), "show");
-        };
-        r(document).on("click.bs.tab.data-api", '[data-toggle="tab"]', i).on("click.bs.tab.data-api", '[data-toggle="pill"]', i);
-    })(jQuery)
+// Get all the <li> elements within the ".nav-tabs" container
+var tabs = document.querySelectorAll('.nav-tabs li');
+
+// Add a click event listener to each <li> element
+tabs.forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    // Remove the "active" class from all <li> elements
+    tabs.forEach(function(tab) {
+      tab.classList.remove('active');
+    });
+    // Add the "active" class to the clicked <li> element
+    this.classList.add('active');
+  });
+});
+
+// Get all the <a> elements within the ".nav-tabs" container
+var tabLinks = document.querySelectorAll('.nav-tabs a');
+
+// Add a click event listener to each <a> element
+tabLinks.forEach(function(tabLink) {
+  tabLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    var targetPaneId = this.getAttribute('href');
+
+    // Remove the "active" class from all tab-panes
+    var tabPanes = document.querySelectorAll('.tab-pane');
+    tabPanes.forEach(function(tabPane) {
+      tabPane.classList.remove('active', 'in');
+    });
+
+    // Add the "active" class to the target tab-pane
+    var targetPane = document.querySelector(targetPaneId);
+    targetPane.classList.add('active', 'in');
+  });
+});
+
+//
+//(function (s) {
+//        "use strict";
+//        function n(t, e) {
+//            (this.$body = s(document.body)),
+//                (this.$scrollElement = s(t).is(document.body) ? s(window) : s(t)),
+//                (this.options = s.extend({}, n.DEFAULTS, e)),
+//                (this.selector = (this.options.target || "") + " .nav li > a"),
+//                (this.offsets = []),
+//                (this.targets = []),
+//                (this.activeTarget = null),
+//                (this.scrollHeight = 0),
+//                this.$scrollElement.on("scroll.bs.scrollspy", s.proxy(this.process, this)),
+//                this.refresh(),
+//                this.process();
+//        }
+//	})(jQuery),
+//
+//	(function (a) {
+//        "use strict";
+//        var r = function (t, e) {
+//            (this.$element = a(t)),
+//                (this.options = a.extend({}, r.DEFAULTS, e)),
+//                (this.$trigger = a('[data-toggle="collapse"][href="#' + t.id + '"],[data-toggle="collapse"][data-target="#' + t.id + '"]')),
+//                (this.transitioning = null),
+//                this.options.parent ? (this.$parent = this.getParent()) : this.addAriaAndCollapsedClass(this.$element, this.$trigger),
+//                this.options.toggle && this.toggle();
+//        };
+//        function n(t) {
+//            var e,
+//                i = t.attr("data-target") || ((e = t.attr("href")) && e.replace(/.*(?=#[^\s]+$)/, ""));
+//            return a(document).find(i);
+//        }
+//        function l(o) {
+//            return this.each(function () {
+//                var t = a(this),
+//                    e = t.data("bs.collapse"),
+//                    i = a.extend({}, r.DEFAULTS, t.data(), "object" == typeof o && o);
+//                !e && i.toggle && /show|hide/.test(o) && (i.toggle = !1), e || t.data("bs.collapse", (e = new r(this, i))), "string" == typeof o && e[o]();
+//            });
+//        }
+//        (r.VERSION = "3.4.1"),
+//            (r.TRANSITION_DURATION = 350),
+//            (r.DEFAULTS = { toggle: !0 }),
+//            (r.prototype.dimension = function () {
+//                return this.$element.hasClass("width") ? "width" : "height";
+//            }),
+//            (r.prototype.show = function () {
+//                if (!this.transitioning && !this.$element.hasClass("in")) {
+//                    var t,
+//                        e = this.$parent && this.$parent.children(".panel").children(".in, .collapsing");
+//                    if (!(e && e.length && (t = e.data("bs.collapse")) && t.transitioning)) {
+//                        var i = a.Event("show.bs.collapse");
+//                        if ((this.$element.trigger(i), !i.isDefaultPrevented())) {
+//                            e && e.length && (l.call(e, "hide"), t || e.data("bs.collapse", null));
+//                            var o = this.dimension();
+//                            this.$element.removeClass("collapse").addClass("collapsing")[o](0).attr("aria-expanded", !0), this.$trigger.removeClass("collapsed").attr("aria-expanded", !0), (this.transitioning = 1);
+//                            var n = function () {
+//                                this.$element.removeClass("collapsing").addClass("collapse in")[o](""), (this.transitioning = 0), this.$element.trigger("shown.bs.collapse");
+//                            };
+//                            if (!a.support.transition) return n.call(this);
+//                            var s = a.camelCase(["scroll", o].join("-"));
+//                            this.$element.one("bsTransitionEnd", a.proxy(n, this)).emulateTransitionEnd(r.TRANSITION_DURATION)[o](this.$element[0][s]);
+//                        }
+//                    }
+//                }
+//            }),
+//            (r.prototype.hide = function () {
+//                if (!this.transitioning && this.$element.hasClass("in")) {
+//                    var t = a.Event("hide.bs.collapse");
+//                    if ((this.$element.trigger(t), !t.isDefaultPrevented())) {
+//                        var e = this.dimension();
+//                        this.$element[e](this.$element[e]())[0].offsetHeight,
+//                            this.$element.addClass("collapsing").removeClass("collapse in").attr("aria-expanded", !1),
+//                            this.$trigger.addClass("collapsed").attr("aria-expanded", !1),
+//                            (this.transitioning = 1);
+//                        var i = function () {
+//                            (this.transitioning = 0), this.$element.removeClass("collapsing").addClass("collapse").trigger("hidden.bs.collapse");
+//                        };
+//                        if (!a.support.transition) return i.call(this);
+//                        this.$element[e](0).one("bsTransitionEnd", a.proxy(i, this)).emulateTransitionEnd(r.TRANSITION_DURATION);
+//                    }
+//                }
+//            }),
+//            (r.prototype.toggle = function () {
+//                this[this.$element.hasClass("in") ? "hide" : "show"]();
+//            }),
+//            (r.prototype.getParent = function () {
+//                return a(document)
+//                    .find(this.options.parent)
+//                    .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+//                    .each(
+//                        a.proxy(function (t, e) {
+//                            var i = a(e);
+//                            this.addAriaAndCollapsedClass(n(i), i);
+//                        }, this)
+//                    )
+//                    .end();
+//            }),
+//            (r.prototype.addAriaAndCollapsedClass = function (t, e) {
+//                var i = t.hasClass("in");
+//                t.attr("aria-expanded", i), e.toggleClass("collapsed", !i).attr("aria-expanded", i);
+//            });
+//        var t = a.fn.collapse;
+//        (a.fn.collapse = l),
+//            (a.fn.collapse.Constructor = r),
+//            (a.fn.collapse.noConflict = function () {
+//                return (a.fn.collapse = t), this;
+//            }),
+//            a(document).on("click.bs.collapse.data-api", '[data-toggle="collapse"]', function (t) {
+//                var e = a(this);
+//                e.attr("data-target") || t.preventDefault();
+//                var i = n(e),
+//                    o = i.data("bs.collapse") ? "toggle" : e.data();
+//                l.call(i, o);
+//            });
+//    })(jQuery),
+//	(function (r) {
+//        "use strict";
+//        var a = function (t) {
+//            this.element = r(t);
+//        };
+//        function e(i) {
+//            return this.each(function () {
+//                var t = r(this),
+//                    e = t.data("bs.tab");
+//                e || t.data("bs.tab", (e = new a(this))), "string" == typeof i && e[i]();
+//            });
+//        }
+//        (a.VERSION = "3.4.1"),
+//            (a.TRANSITION_DURATION = 150),
+//            (a.prototype.show = function () {
+//                var t = this.element,
+//                    e = t.closest("ul:not(.dropdown-menu)"),
+//                    i = t.data("target");
+//                if ((i || (i = (i = t.attr("href")) && i.replace(/.*(?=#[^\s]*$)/, "")), !t.parent("li").hasClass("active"))) {
+//                    var o = e.find(".active:last a"),
+//                        n = r.Event("hide.bs.tab", { relatedTarget: t[0] }),
+//                        s = r.Event("show.bs.tab", { relatedTarget: o[0] });
+//                    if ((o.trigger(n), t.trigger(s), !s.isDefaultPrevented() && !n.isDefaultPrevented())) {
+//                        var a = r(document).find(i);
+//                        this.activate(t.closest("li"), e),
+//                            this.activate(a, a.parent(), function () {
+//                                o.trigger({ type: "hidden.bs.tab", relatedTarget: t[0] }), t.trigger({ type: "shown.bs.tab", relatedTarget: o[0] });
+//                            });
+//                    }
+//                }
+//            }),
+//            (a.prototype.activate = function (t, e, i) {
+//                var o = e.find("> .active"),
+//                    n = i && r.support.transition && ((o.length && o.hasClass("fade")) || !!e.find("> .fade").length);
+//                function s() {
+//                    o.removeClass("active").find("> .dropdown-menu > .active").removeClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded", !1),
+//                        t.addClass("active").find('[data-toggle="tab"]').attr("aria-expanded", !0),
+//                        n ? (t[0].offsetWidth, t.addClass("in")) : t.removeClass("fade"),
+//                        t.parent(".dropdown-menu").length && t.closest("li.dropdown").addClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded", !0),
+//                        i && i();
+//                }
+//                o.length && n ? o.one("bsTransitionEnd", s).emulateTransitionEnd(a.TRANSITION_DURATION) : s(), o.removeClass("in");
+//            });
+//        var t = r.fn.tab;
+//        (r.fn.tab = e),
+//            (r.fn.tab.Constructor = a),
+//            (r.fn.tab.noConflict = function () {
+//                return (r.fn.tab = t), this;
+//            });
+//        var i = function (t) {
+//            t.preventDefault(), e.call(r(this), "show");
+//        };
+//        r(document).on("click.bs.tab.data-api", '[data-toggle="tab"]', i).on("click.bs.tab.data-api", '[data-toggle="pill"]', i);
+//    })(jQuery)
