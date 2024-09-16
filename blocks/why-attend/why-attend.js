@@ -98,8 +98,7 @@ export default function decorate(block) {
 
     function createCustomNav(){
         console.log("Creating custom nav");
-        // $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
-        $('.owl-nav').html('');
+        $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
         // // Prev button
         // $('.owl-prev').click(function() {
