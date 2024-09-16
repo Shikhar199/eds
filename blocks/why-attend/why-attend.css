@@ -25,6 +25,7 @@
 
 #why-attend .owl-prev {
     border: none;
+    background-color: none;
 }
 
 #why-attend .owl-nav [class*=owl-]:hover {
