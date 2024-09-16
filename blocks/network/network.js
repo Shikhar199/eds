@@ -60,7 +60,7 @@ export default function decorate(block){
 
              const leftElements = leftContainer.querySelectorAll('h2'); // Select all divs and h2 inside leftContainer
              leftElements.forEach(element => {
-             element.style.fontSize = '20px'; // Set font size (you can adjust the value)
+             element.style.fontSize = '30px'; // Set font size (you can adjust the value)
              });
                
           //    });
