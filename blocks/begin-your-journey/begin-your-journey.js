@@ -239,7 +239,7 @@ function createPanelHeading(col, id){
     childPanelDiv.setAttribute('role','tab');
     var h4Tag = document.createElement('h4');
     var hrefValue = '#' + id;
-    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':hrefValue, 'aria-expanded':'true', 'aria-controls':id},null);
+    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':hrefValue, 'aria-expanded':'false', 'aria-controls':id},null);
     aTag.textContent = testing.textContent.trim();
     h4Tag.append(aTag);
     childPanelDiv.append(h4Tag);
