@@ -55,7 +55,7 @@ export default function decorate(block){
                // Change font size of text inside left container
              const leftTextElements = leftContainer.querySelectorAll('div, h2'); // Select all divs and h2 inside leftContainer
              leftTextElements.forEach(element => {
-             element.style.fontSize = '20px'; // Set font size (you can adjust the value)
+             element.style.fontSize = '15px'; // Set font size (you can adjust the value)
              });
                
           //    });
