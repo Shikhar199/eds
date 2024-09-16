@@ -33,14 +33,16 @@
     background: none;
 }
 
-@media (min-width: 1200px) {    
-    #why-attend .owl-prev{
-        left: 890px !important;
-    }
-}
+
 
 @media (min-width: 1000px) {    
     #why-attend .owl-prev{
         left: 700px !important;
+    }
+}
+
+@media (min-width: 1200px) {    
+    #why-attend .owl-prev{
+        left: 890px !important;
     }
 }
