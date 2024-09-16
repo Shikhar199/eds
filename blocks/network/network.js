@@ -21,8 +21,23 @@ export default function decorate(block){
                leftContainer.appendChild(childDivs[3]); // Historical text
                leftContainer.appendChild(childDivs[4]); // Button
              
-               // Move the picture div to the right container
-               rightContainer.appendChild(childDivs[1]);
+               // // Move the picture div to the right container
+               // rightContainer.appendChild(childDivs[1]);
+                // Move the picture div to the right container
+                  const pictureDiv = childDivs[1]; // This is the picture div
+
+               // Get the img element inside the picture tag
+               const imgElement = pictureDiv.querySelector('img');
+
+              // Set the width and height of the image
+              imgElement.style.width = '400px'; // Example width
+              imgElement.style.height = '300px'; // Example height
+
+              // Append the picture div to the right container
+              rightContainer.appendChild(pictureDiv);
+
+     
+
              
                // Clear the existing content of networkWrapper and append new containers
                const networkWrapper = document.querySelector('.network-wrapper');
