@@ -53,9 +53,14 @@ export default function decorate(block){
                console.log(networkWrapper);
 
                // Change font size of text inside left container
-             const leftTextElements = leftContainer.querySelectorAll('div, h2'); // Select all divs and h2 inside leftContainer
+             const leftTextElements = leftContainer.querySelectorAll('div'); // Select all divs and h2 inside leftContainer
              leftTextElements.forEach(element => {
              element.style.fontSize = '16px'; // Set font size (you can adjust the value)
+             });
+
+             const leftElements = leftContainer.querySelectorAll('h2'); // Select all divs and h2 inside leftContainer
+             leftElements.forEach(element => {
+             element.style.fontSize = '20px'; // Set font size (you can adjust the value)
              });
                
           //    });
