@@ -32,14 +32,15 @@ export default function decorate(block){
                 panelDiv.className = 'panel panel-default';
                 var panelHeading;
                 var panelCollapse;
+                var id = 'collapse' + r;
                 [...row.children].forEach((col,c)=>{
                     if(c==0){
-                        var panelHeading = createPanelHeading(col);
+                        var panelHeading = createPanelHeading(col, id);
                         panelDiv.append(panelHeading);
                     }
                     if(c==1){
-                        var collapseId = 'collapse' + r + c;
-                        var panelCollapse = createPanelCollapse(col,collapseId);
+//                        var collapseId = 'collapse' + r + c;
+                        var panelCollapse = createPanelCollapse(col,id);
                         panelDiv.append(panelCollapse);
                     }
                 });
@@ -57,14 +58,15 @@ export default function decorate(block){
             panelDiv.className = 'panel panel-default';
             var panelHeading;
             var panelCollapse;
+            var id = 'collapse' + r;
             [...row.children].forEach((col,c)=>{
                 if(c==0){
-                    var panelHeading = createPanelHeading(col);
+                    var panelHeading = createPanelHeading(col, id);
                     panelDiv.append(panelHeading);
                 }
                 if(c==1){
-                    var collapseId = 'collapse' + r + c;
-                    var panelCollapse = createPanelCollapse(col,collapseId);
+//                    var collapseId = 'collapse' + r + c;
+                    var panelCollapse = createPanelCollapse(col,id);
                     panelDiv.append(panelCollapse);
                 }
             });
@@ -79,14 +81,15 @@ export default function decorate(block){
             panelDiv.className = 'panel panel-default';
             var panelHeading;
             var panelCollapse;
+            var id = 'collapse' + r;
             [...row.children].forEach((col,c)=>{
                 if(c==0){
-                    var panelHeading = createPanelHeading(col);
+                    var panelHeading = createPanelHeading(col, id);
                     panelDiv.append(panelHeading);
                 }
                 if(c==1){
-                    var collapseId = 'collapse' + r + c;
-                    var panelCollapse = createPanelCollapse(col,collapseId);
+//                    var collapseId = 'collapse' + r + c;
+                    var panelCollapse = createPanelCollapse(col,id);
                     panelDiv.append(panelCollapse);
                 }
             });
@@ -103,14 +106,15 @@ export default function decorate(block){
             panelDiv.className = 'panel panel-default';
             var panelHeading;
             var panelCollapse;
+            var id = 'collapse' + r;
             [...row.children].forEach((col,c)=>{
                 if(c==0){
-                    var panelHeading = createPanelHeading(col);
+                    var panelHeading = createPanelHeading(col, id);
                     panelDiv.append(panelHeading);
                 }
                 if(c==1){
-                    var collapseId = 'collapse' + r + c;
-                    var panelCollapse = createPanelCollapse(col,collapseId);
+//                    var collapseId = 'collapse' + r + c;
+                    var panelCollapse = createPanelCollapse(col,id);
                     panelDiv.append(panelCollapse);
                 }
             });
@@ -226,7 +230,7 @@ function createAemElement(tag, classes, attributes, elementId){
     return tagElement;
 
 }
-function createPanelHeading(col){
+function createPanelHeading(col, id){
 
     var testing = col.querySelector('h4');
     console.log("Heading h4 content"+ testing.textContent.trim());
@@ -234,7 +238,8 @@ function createPanelHeading(col){
     childPanelDiv.className = 'panel-heading';
     childPanelDiv.setAttribute('role','tab');
     var h4Tag = document.createElement('h4');
-    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':'#collapse1', 'aria-expanded':'false', 'aria-controls':'collapse1'},null);
+    var hrefValue = '#' + id;
+    var aTag = createAemElement('a',['collapsed'],{'data-toggle':'collapse', 'data-parent':'#tab-accordion1', 'href':hrefValue, 'aria-expanded':'true', 'aria-controls':id},null);
     aTag.textContent = testing.textContent.trim();
     h4Tag.append(aTag);
     childPanelDiv.append(h4Tag);
