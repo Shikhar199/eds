@@ -109,14 +109,26 @@ $(function() {
         // Prev button
         $('.owl-prev').click(function() {
             owl.trigger('prev.owl.carousel');
-            $('.owl-nav').removeClass('disabled');
+            // $('.owl-nav').removeClass('disabled');
         });
 
         // Next button
         $('.owl-next').click(function() {
             owl.trigger('next.owl.carousel');
-            $('.owl-nav').removeClass('disabled');
+            // $('.owl-nav').removeClass('disabled');
         });
+
+        function removeDisabledClass() {
+            $('.custom-owl-nav').removeClass('disabled');
+        }
+    
+        // Listen for when the carousel is resized or items are translated
+        owl.on('translated.owl.carousel resized.owl.carousel', function() {
+            removeDisabledClass();
+        });
+    
+        // Initial call to ensure the custom nav is enabled
+        removeDisabledClass();
     // }
 });
 
