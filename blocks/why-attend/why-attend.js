@@ -93,7 +93,8 @@ export default function decorate(block) {
         });
     });
 
-    createCustomNav();
+    setTimeout(createCustomNav, 4000)
+    // createCustomNav();
 
     function createCustomNav(){
         console.log("Creating custom nav");
