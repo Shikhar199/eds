@@ -93,8 +93,11 @@ export default function decorate(block) {
         });
     });
 
-    setTimeout(createCustomNav, 4000)
+    // setTimeout(createCustomNav, 4000)
     // createCustomNav();
+    owl.on('initialized.owl.carousel', function() {
+        createCustomNav();
+    });
 
     function createCustomNav(){
         console.log("Creating custom nav");
