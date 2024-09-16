@@ -70,51 +70,55 @@ export default function decorate(block) {
   blockParent.parentElement.replaceChild(section, blockParent);
 }
 
-  $(function() {
+$(function() {
+    // Declare owl variable in the outer scope so it's accessible everywhere
+    var owl;
+
     // Owl Carousel
-    var owl = $(".owl-carousel");
-        owl.owlCarousel({
-            items: 4,
-            margin: 20,
-            loop: true,
-            nav: false,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1 // 1 item on small screens
-                },
-                600: {
-                    items: 3 // 2 items on medium screens
-                },
-                1000: {
-                    items: 4 // 4 items on large screens
-                }
+    owl = $(".owl-carousel");
+    owl.owlCarousel({
+        items: 4,
+        margin: 20,
+        loop: true,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1 // 1 item on small screens
+            },
+            600: {
+                items: 3 // 3 items on medium screens
+            },
+            1000: {
+                items: 4 // 4 items on large screens
             }
-        });
+        }
     });
 
-    // setTimeout(createCustomNav, 4000)
-    // createCustomNav();
+    // Wait until Owl Carousel is initialized before creating custom nav
     owl.on('initialized.owl.carousel', function() {
-        createCustomNav();
+        createCustomNav(owl); // Pass the owl instance to the createCustomNav function
     });
 
-    function createCustomNav(){
+    function createCustomNav(owlInstance) {
         console.log("Creating custom nav");
         $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
+        // Manually remove 'disabled' class if present
         $('.owl-nav').removeClass('disabled');
+
         // Prev button
         $('.owl-prev').click(function() {
-            owl.trigger('prev.owl.carousel');
+            owlInstance.trigger('prev.owl.carousel');
         });
 
         // Next button
         $('.owl-next').click(function() {
-            owl.trigger('next.owl.carousel');
+            owlInstance.trigger('next.owl.carousel');
         });
-        
     }
+});
+
 
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   // block.textContent = '';
