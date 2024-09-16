@@ -58,8 +58,8 @@ export default function decorate(block){
              element.style.fontSize = '16px'; // Set font size (you can adjust the value)
              });
 
-             const leftElements = leftContainer.querySelectorAll('h2'); // Select all divs and h2 inside leftContainer
-             leftElements.forEach(element => {
+             const leftElement = leftContainer.querySelectorAll('h2'); // Select all divs and h2 inside leftContainer
+             leftElement.forEach(element => {
              element.style.fontSize = '30px'; // Set font size (you can adjust the value)
              });
                
