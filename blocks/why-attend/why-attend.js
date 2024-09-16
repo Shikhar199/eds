@@ -98,7 +98,6 @@ export default function decorate(block) {
 
     function createCustomNav(){
         console.log("Creating custom nav");
-        document.querySelector('.owl-nav').classList.remove('disabled');
         $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
         // Prev button
@@ -110,6 +109,7 @@ export default function decorate(block) {
         $('.owl-next').click(function() {
             owl.trigger('next.owl.carousel');
         });
+        document.querySelector('.owl-nav').classList.remove('disabled');
     }
 
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
