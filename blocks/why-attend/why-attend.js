@@ -119,7 +119,7 @@ $(function() {
         });
 
         function removeDisabledClass() {
-            $('.custom-owl-nav').removeClass('disabled');
+            $('.owl-nav').removeClass('disabled');
         }
     
         // Listen for when the carousel is resized or items are translated
