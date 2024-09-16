@@ -77,7 +77,7 @@ export default function decorate(block) {
             items: 4,
             margin: 20,
             loop: true,
-            // nav: true,
+            nav: true,
             dots: false,
             responsive: {
                 0: {
