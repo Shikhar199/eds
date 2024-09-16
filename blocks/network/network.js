@@ -2,7 +2,7 @@ export default function decorate(block){
     
      [...block.children].forEach((row) => {
                console.log(row);
-          // document.addEventListener('DOMContentLoaded', () => {
+          
                // Select the network block
                const networkBlock = document.querySelector('.network.block');
                
@@ -29,7 +29,7 @@ export default function decorate(block){
 
               // You can also add event listeners or actions to the button if needed
               buttonElement.addEventListener('click', function() {
-              alert('Button clicked!'); // Example action on button click
+              alert('Button clicked!'); 
               });
 
              // Replace the button div with the new <button> element
@@ -49,8 +49,8 @@ export default function decorate(block){
                const imgElement = pictureDiv.querySelector('img');
 
               // Set the width and height of the image
-              imgElement.style.width = '600px'; // Example width
-              imgElement.style.height = '300px'; // Example height
+              imgElement.style.width = '600px'; 
+              imgElement.style.height = '300px'; 
 
               // Append the picture div to the right container
               rightContainer.appendChild(pictureDiv);
@@ -71,9 +71,9 @@ export default function decorate(block){
              element.style.fontSize = '16px'; // Set font size (you can adjust the value)
              });
 
-             const leftElement = leftContainer.querySelectorAll('h2'); // Select all divs and h2 inside leftContainer
+             const leftElement = leftContainer.querySelectorAll('h2'); 
              leftElement.forEach(element => {
-             element.style.fontSize = '30px'; // Set font size (you can adjust the value)
+             element.style.fontSize = '30px'; 
              });
                
           //    });
