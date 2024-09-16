@@ -2,7 +2,7 @@ export default function decorate(block){
     
      [...block.children].forEach((row) => {
                console.log(row);
-          // document.addEventListener('DOMContentLoaded', () => {
+          
                // Select the network block
                const networkBlock = document.querySelector('.network.block');
                
@@ -21,14 +21,27 @@ export default function decorate(block){
                h2Element.textContent = networkingTitleDiv.textContent; // Copy text content
                networkingTitleDiv.replaceWith(h2Element); // Replace the div with the new <h2>
 
+               // Replace the "Button : View more" div with an actual <button> element
+              const buttonDiv = childDivs[4]; // The div that contains the "Button : View more" text
+               const buttonElement = document.createElement('button');
+              buttonElement.textContent = 'View More'; // Set the button's text
+              buttonElement.className = 'view-more-btn'; // Add a class for styling (optional)
+
+              // You can also add event listeners or actions to the button if needed
+              buttonElement.addEventListener('click', function() {
+              alert('Button clicked!'); 
+              });
+
+             // Replace the button div with the new <button> element
+             buttonDiv.replaceWith(buttonElement);
+
                // Move the text and button divs to the left container
                leftContainer.appendChild(h2Element); // Networking Activities
                leftContainer.appendChild(childDivs[2]); // Vienna awaits
                leftContainer.appendChild(childDivs[3]); // Historical text
-               leftContainer.appendChild(childDivs[4]); // Button
+               leftContainer.appendChild(buttonElement); // Button
              
-               // // Move the picture div to the right container
-               // rightContainer.appendChild(childDivs[1]);
+               
                 // Move the picture div to the right container
                   const pictureDiv = childDivs[1]; // This is the picture div
 
@@ -36,8 +49,8 @@ export default function decorate(block){
                const imgElement = pictureDiv.querySelector('img');
 
               // Set the width and height of the image
-              imgElement.style.width = '600px'; // Example width
-              imgElement.style.height = '300px'; // Example height
+              imgElement.style.width = '600px'; 
+              imgElement.style.height = '300px'; 
 
               // Append the picture div to the right container
               rightContainer.appendChild(pictureDiv);
@@ -58,9 +71,9 @@ export default function decorate(block){
              element.style.fontSize = '16px'; // Set font size (you can adjust the value)
              });
 
-             const leftElement = leftContainer.querySelectorAll('h2'); // Select all divs and h2 inside leftContainer
+             const leftElement = leftContainer.querySelectorAll('h2'); 
              leftElement.forEach(element => {
-             element.style.fontSize = '30px'; // Set font size (you can adjust the value)
+             element.style.fontSize = '30px'; 
              });
                
           //    });
