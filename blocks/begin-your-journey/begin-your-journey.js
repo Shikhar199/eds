@@ -249,7 +249,7 @@ function createPanelHeading(col, id){
 function createPanelCollapse(col, id){
     var testing = col.querySelector('h5');
      console.log("Para p content"+ testing.textContent.trim());
-    var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse', 'in'],{'role':'tabpanel', 'aria-expanded':'false'},id);
+    var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse'],{'role':'tabpanel', 'aria-expanded':'false'},id);
     var panelBodyDiv = document.createElement('div');
     panelBodyDiv.className = 'panel-body';
     var pTag = document.createElement('p');
