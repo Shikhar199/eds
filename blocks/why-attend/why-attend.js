@@ -109,13 +109,13 @@ $(function() {
         // Prev button
         $('.owl-prev').click(function() {
             owl.trigger('prev.owl.carousel');
-            // $('.owl-nav').removeClass('disabled');
+            $('.owl-nav').removeClass('disabled');
         });
 
         // Next button
         $('.owl-next').click(function() {
             owl.trigger('next.owl.carousel');
-            // $('.owl-nav').removeClass('disabled');
+            $('.owl-nav').removeClass('disabled');
         });
 
         function removeDisabledClass() {
