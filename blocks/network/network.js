@@ -21,14 +21,27 @@ export default function decorate(block){
                h2Element.textContent = networkingTitleDiv.textContent; // Copy text content
                networkingTitleDiv.replaceWith(h2Element); // Replace the div with the new <h2>
 
+               // Replace the "Button : View more" div with an actual <button> element
+              const buttonDiv = childDivs[4]; // The div that contains the "Button : View more" text
+               const buttonElement = document.createElement('button');
+              buttonElement.textContent = 'View More'; // Set the button's text
+              buttonElement.className = 'view-more-btn'; // Add a class for styling (optional)
+
+              // You can also add event listeners or actions to the button if needed
+              buttonElement.addEventListener('click', function() {
+              alert('Button clicked!'); // Example action on button click
+              });
+
+             // Replace the button div with the new <button> element
+             buttonDiv.replaceWith(buttonElement);
+
                // Move the text and button divs to the left container
                leftContainer.appendChild(h2Element); // Networking Activities
                leftContainer.appendChild(childDivs[2]); // Vienna awaits
                leftContainer.appendChild(childDivs[3]); // Historical text
-               leftContainer.appendChild(childDivs[4]); // Button
+               leftContainer.appendChild(buttonElement); // Button
              
-               // // Move the picture div to the right container
-               // rightContainer.appendChild(childDivs[1]);
+               
                 // Move the picture div to the right container
                   const pictureDiv = childDivs[1]; // This is the picture div
 
