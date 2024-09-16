@@ -2,7 +2,7 @@ export default function decorate(block){
     
      [...block.children].forEach((row) => {
 
-          document.addEventListener('DOMContentLoaded', () => {
+          // document.addEventListener('DOMContentLoaded', () => {
                // Select the network block
                const networkBlock = document.querySelector('.network.block');
                
@@ -32,11 +32,8 @@ export default function decorate(block){
                networkWrapper.appendChild(rightContainer);
                console.log(networkWrapper);
                
-             });
+          //    });
              
-             
-
-     
    
         
      });
