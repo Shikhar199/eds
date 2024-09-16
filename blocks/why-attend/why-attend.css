@@ -19,7 +19,14 @@
 #why-attend .owl-next {
 
 }
+#why-attend .owl-nav {
+    background: none;
+}
 
 #why-attend .owl-prev {
     border: none;
+}
+
+#why-attend .owl-nav [class*=owl-]:hover {
+    background: none;
 }
