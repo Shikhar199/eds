@@ -77,11 +77,7 @@ export default function decorate(block) {
             items: 4,
             margin: 20,
             loop: true,
-            nav: true,
-            navText: [
-                '<div class="owl-prev">prev</div>', 
-                '<div class="owl-next">next</div>'
-            ],
+            // nav: true,
             dots: false,
             responsive: {
                 0: {
