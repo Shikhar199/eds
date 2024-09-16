@@ -3,17 +3,17 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px; /* Space between left and right containers */
+    gap: 2px; /* Space between left and right containers */
   }
   
   .left-container {
     flex: 1;
-    max-width: 60%;
+    max-width: 30%;
   }
   
   .right-container {
     flex: 1;
-    max-width: 40%;
+    max-width: 30%;
   }
   
   .network.block > div {
