@@ -27,8 +27,8 @@
     padding: 10px 20px;
     background-color: white; /* Default button color */
     color: black;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid black;
+    border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
   }
@@ -46,4 +46,4 @@
   .left-container > div {
     margin-bottom: 1rem;
   }
-  
+     
