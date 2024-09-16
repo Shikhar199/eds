@@ -8,12 +8,12 @@
   
   .left-container {
     flex: 1;
-    max-width: 30%;
+    max-width: 35%;
   }
   
   .right-container {
     flex: 1;
-    max-width: 30%;
+    max-width: 50%;
   }
   
   .network.block > div {
