@@ -93,17 +93,23 @@ export default function decorate(block) {
         });
     });
 
-    $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
+    createCustomNav();
 
-    // Prev button
-    $('.owl-prev').click(function() {
-        owl.trigger('prev.owl.carousel');
-    });
+    function createCustomNav(){
+        console.log("Creating custom nav");
+        $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
-    // Next button
-    $('.owl-next').click(function() {
-        owl.trigger('next.owl.carousel');
-    });
+        // Prev button
+        $('.owl-prev').click(function() {
+            owl.trigger('prev.owl.carousel');
+        });
+
+        // Next button
+        $('.owl-next').click(function() {
+            owl.trigger('next.owl.carousel');
+        });
+    }
+
 //   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   // block.textContent = '';
   // block.append(ul);
