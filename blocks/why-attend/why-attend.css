@@ -14,18 +14,18 @@
 #why-attend .owl-next {
     border: none;
     background-color: #f2f2f2;
+    top: -80px !important;
 }
 
-#why-attend .owl-next {
-
-}
 #why-attend .owl-nav {
     background: none;
 }
 
 #why-attend .owl-prev {
     border: none;
-    background-color: none;
+    background-color: #f2f2f2;
+    top: -80px !important;
+    left: 550px !important;
 }
 
 #why-attend .owl-nav [class*=owl-]:hover {
