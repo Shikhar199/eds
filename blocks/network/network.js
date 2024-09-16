@@ -19,6 +19,7 @@ export default function decorate(block){
                const networkingTitleDiv = childDivs[0]; // This is the div containing "Networking Activities"
                const h2Element = document.createElement('h2');
                h2Element.textContent = networkingTitleDiv.textContent; // Copy text content
+               h2Element.className = 'networking-title';// Add a class for styling
                networkingTitleDiv.replaceWith(h2Element); // Replace the div with the new <h2>
 
                // Replace the "Button : View more" div with an actual <button> element

@@ -31,6 +31,8 @@
     border-radius: 0px;
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-size: 16px; /* Increase font size */
+    text-transform: uppercase;
   }
   
   .view-more-btn:hover {
@@ -46,4 +48,10 @@
   .left-container > div {
     margin-bottom: 1rem;
   }
+
+  .networking-title {
+    text-transform: uppercase; /* Make text uppercase */
+    margin-bottom: 20px;
+  }
+  
      
