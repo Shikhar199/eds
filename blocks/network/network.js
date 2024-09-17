@@ -28,9 +28,14 @@ export default function decorate(block){
               buttonElement.textContent = 'View More'; // Set the button's text
               buttonElement.className = 'view-more-btn'; // Add a class for styling (optional)
 
-              // You can also add event listeners or actions to the button if needed
+              // // You can also add event listeners or actions to the button if needed
+              // buttonElement.addEventListener('click', function() {
+              // alert('Button clicked!'); 
+              // });
+
+              // Add a click event listener that redirects to the desired URL
               buttonElement.addEventListener('click', function() {
-              alert('Button clicked!'); 
+              window.location.href = 'https://www.infosys.com/confluence/2023/emea/networking-activities.html'; // Replace with your desired URL
               });
 
              // Replace the button div with the new <button> element
@@ -50,8 +55,8 @@ export default function decorate(block){
                const imgElement = pictureDiv.querySelector('img');
 
               // Set the width and height of the image
-              imgElement.style.width = '600px'; 
-              imgElement.style.height = '300px'; 
+              imgElement.style.width = '800px'; 
+              imgElement.style.height = '500px'; 
 
               // Append the picture div to the right container
               rightContainer.appendChild(pictureDiv);
@@ -69,12 +74,12 @@ export default function decorate(block){
                // Change font size of text inside left container
              const leftTextElements = leftContainer.querySelectorAll('div'); // Select all divs and h2 inside leftContainer
              leftTextElements.forEach(element => {
-             element.style.fontSize = '16px'; // Set font size (you can adjust the value)
+             element.style.fontSize = '20px'; // Set font size (you can adjust the value)
              });
 
              const leftElement = leftContainer.querySelectorAll('h2'); 
              leftElement.forEach(element => {
-             element.style.fontSize = '30px'; 
+             element.style.fontSize = '35px'; 
              });
                
           //    });
