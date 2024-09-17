@@ -55,8 +55,8 @@ export default function decorate(block){
                const imgElement = pictureDiv.querySelector('img');
 
               // Set the width and height of the image
-              imgElement.style.width = '800px'; 
-              imgElement.style.height = '350px'; 
+              imgElement.style.width = '650px'; 
+              imgElement.style.height = '450px'; 
 
               // Append the picture div to the right container
               rightContainer.appendChild(pictureDiv);
