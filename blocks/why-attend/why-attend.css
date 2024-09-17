@@ -57,7 +57,10 @@
 }
 
 @media (min-width: 1200px) {    
-    #why-attend .owl-prev{
+    /* #why-attend .owl-prev{
         left: 890px !important;
+    } */
+    #why-attend .owl-nav{
+        display: none;
     }
 }

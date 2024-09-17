@@ -8,12 +8,6 @@ div {
     margin-left: -15px;
 }
 
-@media only screen and (max-width: 992px) {
-    .h2-head {
-        font-size: 60px;
-    }
-}
-
 .h2-head {
     font-size: 70px;
     line-height: 0.9;
@@ -21,6 +15,17 @@ div {
     text-transform: uppercase;
     font-family: "tungstenw05-medium", "Oswald", sans-serif;
 }
+
+@media only screen and (max-width: 992px) {
+    .h2-head {
+        font-size: 60px;
+    }
+}
+
+  .h2-head {
+    /* text-align: center; */
+    font-size: 50px;
+  }
 
 .mb-20, .my-20 {
     margin-bottom: 20px !important;
@@ -309,6 +314,8 @@ a {
 .fade.in {
     opacity: 1;
 }
+
+
 
 .tab-content > .tab-pane {
     display: none;

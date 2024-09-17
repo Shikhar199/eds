@@ -11818,6 +11818,8 @@ padding-right: 45px;
 .accordion-faqs .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border: 0;
 }
+
+/**
 .accordion-faqs .panel-heading h4 > a:before {
   font-family: FontAwesome;
   content: "\f068";
@@ -11830,6 +11832,7 @@ padding-right: 45px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .accordion-faqs .panel-heading h4 > a.collapsed:before {
   content: "\f067";
   font-size: 20px;
@@ -11844,6 +11847,7 @@ padding-right: 45px;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
+**/
 /* All the Confluences */
 .cta-confluences, .cta-confluences:hover, .cta-confluences:focus {
   position: absolute;
@@ -13499,4 +13503,8 @@ ul.menu-link li {
 }
 .margin7 {
   margin: 7px 0 !important;
+}
+
+#agenda .panel-heading{
+  padding: 0px;
 }

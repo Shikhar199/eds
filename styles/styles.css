@@ -10048,13 +10048,14 @@ a.title-link {
 a.title-link:hover {
     color: #007cc3
 }
-
+/**
 p {
     margin-bottom: 0;
     font-size: 1.8rem;
     line-height: 1.45;
     font-weight: 300
 }
+**/
 
 @media (max-width: 767px) {
     p {
