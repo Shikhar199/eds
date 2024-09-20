@@ -6,6 +6,8 @@ export default function decorate(block) {
     block.innerHTML = '';
 
     [...container.children].forEach((row, index) => {
-        console.log(row);
+        if(index > 1){
+            const itemDiv = createAemElement('div', ['item'], null, null);
+        }
     })
 }
