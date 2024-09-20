@@ -23,6 +23,8 @@ export default function decorate(block) {
             itemDiv.append(anchorTag);
             itemDiv.append(itemImageWraperDiv);
 
+            console.log(itemImageWraperDiv);
+
         } else if(index!==1 && index%2==1){
             var speakerDescription = row.querySelector('div').textContent.trim();
             var itemContentWraperDiv = createAemElement('div', ['item-cnt-wrapper', 'pb75'], null, null);
@@ -37,6 +39,7 @@ export default function decorate(block) {
             itemContentWraperDiv.append(p);
 
             itemDiv.append(itemContentWraperDiv);
+            console.log(itemContentWraperDiv);
         }
 
         console.log(itemDiv);
