@@ -6,7 +6,8 @@ export default function decorate(block) {
     block.innerHTML = '';
     console.log(container);
     for(let i=0; i<container.children.length ;i++){
-        console.log(container[i]);
+        const childDiv = container.children[i];
+        console.log(childDiv);
     }
     // [...container.children].forEach((row, index) => {
     //     var speakerName;
