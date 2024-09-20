@@ -16,7 +16,7 @@ export default function decorate(block) {
             anchorTag.setAttribute('title',speakerName);
 
             var itemImageWraperDiv = createAemElement('div', ['item-img-wrapper'], null, null);
-            const img = document.createAemElement('img', ['img-responsive', 'center-block', 'speaker-position', 'img-height'], {'alt':speakerName}, null);
+            const img = createAemElement('img', ['img-responsive', 'center-block', 'speaker-position', 'img-height'], {'alt':speakerName}, null);
             img.setAttribute('src', row.querySelector('picture').querySelector('img').getAttribute('src'));
             itemImageWraperDiv.append(img);
 
