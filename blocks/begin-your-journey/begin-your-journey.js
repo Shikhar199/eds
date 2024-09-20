@@ -1,6 +1,6 @@
 export default function decorate(block){
-    console.log(block);
-    console.log("Block inner:"+ block.innerHTML);
+    // console.log(block);
+    // console.log("Block inner:"+ block.innerHTML);
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';

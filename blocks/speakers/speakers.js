@@ -7,8 +7,8 @@ export default function decorate(block) {
     console.log(container);
     [...container.children].forEach((row, index) => {
         var speakerName;
-        const itemDiv = createAemElement('div', ['item']);
-        const anchorTag = createAemElement('a', ['item-slider-href', 'bg-light-white'], {"href":"javascript:void(0)", "data-toggle":"modal"});
+        const itemDiv = createAemElement('div', ['item'], null, null);
+        const anchorTag = createAemElement('a', ['item-slider-href', 'bg-light-white'], {"href":"javascript:void(0)", "data-toggle":"modal"}, null, null);
         if(index!==0 && index % 2 == 0){
             speakerName = row.querySelector('h3').textContent.trim(); 
             
