@@ -91,3 +91,65 @@ export default function decorate(block) {
     const blockParent = document.querySelector(".speakers-container");
     blockParent.parentElement.replaceChild(section, blockParent);
 }
+
+$(function() {
+    // Declare owl variable in the outer scope so it's accessible everywhere
+
+    // Owl Carousel
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+        items: 4,
+        margin: 20,
+        loop: true,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1 // 1 item on small screens
+            },
+            600: {
+                items: 3 // 3 items on medium screens
+            },
+            1000: {
+                items: 4 // 4 items on large screens
+            }
+        }
+    });
+
+    // Wait until Owl Carousel is initialized before creating custom nav
+    // owl.on('initialized.owl.carousel', function() {
+    //     createCustomNav(); // Pass the owl instance to the createCustomNav function
+    // });
+
+    // function createCustomNav() {
+        console.log("Creating custom nav");
+        $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
+
+        // Manually remove 'disabled' class if present
+        $('.owl-nav').removeClass('disabled');
+
+        // Prev button
+        $('.owl-prev').click(function() {
+            owl.trigger('prev.owl.carousel');
+            $('.owl-nav').removeClass('disabled');
+        });
+
+        // Next button
+        $('.owl-next').click(function() {
+            owl.trigger('next.owl.carousel');
+            $('.owl-nav').removeClass('disabled');
+        });
+
+        function removeDisabledClass() {
+            $('.owl-nav').removeClass('disabled');
+        }
+    
+        // Listen for when the carousel is resized or items are translated
+        owl.on('translated.owl.carousel resized.owl.carousel', function() {
+            removeDisabledClass();
+        });
+    
+        // Initial call to ensure the custom nav is enabled
+        removeDisabledClass();
+    // }
+});
