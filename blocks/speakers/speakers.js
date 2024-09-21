@@ -85,4 +85,9 @@ export default function decorate(block) {
     section.append(article);
 
     console.log(section);
+
+    block.append(section);
+
+    const blockParent = document.querySelector(".speakers-container");
+    blockParent.parentElement.replaceChild(section, blockParent);
 }
