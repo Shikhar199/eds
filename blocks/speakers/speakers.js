@@ -69,7 +69,7 @@ export default function decorate(block) {
     const btnInfo = container.children[container.children.length-1].querySelectorAll('div');
     const btnText = btnInfo[0].textContent.trim();
     const btnLink = btnInfo[1].textContent.trim();
-    const btnDiv = createAemElement('div', ['text-center']);
+    const btnDiv = createAemElement('div', ['text-center'], null, null);
     const btnAnchor = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'title':btnText, 'href':btnLink}, null);
     btnDiv.append(btnAnchor);
 
