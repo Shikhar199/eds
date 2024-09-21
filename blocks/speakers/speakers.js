@@ -6,6 +6,8 @@ export default function decorate(block) {
     block.innerHTML = '';
     console.log(container);
     const rowDiv = createAemElement('div', ['row'], null, null);
+    const article = createAemElement('article', ['container'], null, null);
+    const section = createAemElement('section', ['speakes-sec', 'py-75'], null, "speakers");
 
     const blockHead = container.children[0].querySelector('h2').textContent.trim();
     const blockDescription = container.children[1].querySelector('div').textContent.trim();
@@ -79,5 +81,8 @@ export default function decorate(block) {
     rowDiv.append(outerDiv);
     rowDiv.append(parentCarouselDiv);
 
-    console.log(rowDiv);
+    article.append(rowDiv);
+    section.append(article);
+
+    console.log(section);
 }
