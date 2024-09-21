@@ -11,6 +11,9 @@ export default function decorate(block) {
         const pictureDiv = container.children[i];
         const descriptionDiv = container.children[i+1];
 
+        const speakerName = pictureDiv.querySelector('h3').textContent.trim();
+        const speakerDescription = descriptionDiv.querySelector('div').textContent.trim();
+
         const itemDiv = createAemElement('div', ['item'], null, null);
 
         const anchorTag = createAemElement('a', ['item-slider-href', 'bg-light-white'], {"href":"javascript:void(0)", "data-toggle":"modal"}, null, null);
@@ -19,7 +22,7 @@ export default function decorate(block) {
 
         var itemImageWraperDiv = createAemElement('div', ['item-img-wrapper'], null, null);
         const img = createAemElement('img', ['img-responsive', 'center-block', 'speaker-position', 'img-height'], {'alt':speakerName}, null);
-        img.setAttribute('src', row.querySelector('picture').querySelector('img').getAttribute('src'));
+        img.setAttribute('src', pictureDiv.querySelector('picture').querySelector('img').getAttribute('src'));
         itemImageWraperDiv.append(img);
 
         itemDiv.append(anchorTag);
