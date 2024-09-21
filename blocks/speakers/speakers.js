@@ -5,8 +5,27 @@ export default function decorate(block) {
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
     console.log(container);
+    const rowDiv = createAemElement('div', ['row'], null, null);
+
+    const blockHead = container.children[0].querySelector('h2').textContent.trim();
+    const blockDescription = container.children[1].querySelector('div').textContent.trim();
+
+    const outerDiv = createAemElement('div', ['col-lg-3', 'col-md-3', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInLeft', 'mb-50-xs', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
+
+    const heading = createAemElement('h2', ['h2-head', 'mb-20'], null, null);
+    heading.textContent = blockHead;
+    const paragraph = createAemElement('p', ['speakers-para', 'fontweight400'], null, null);
+    paragraph.textContent = blockDescription;
+
+    outerDiv.append(heading);
+    outerDiv.append(paragraph);
+
+    console.log(outerDiv);
+
+    const parentCarouselDiv = createAemElement('div', ['col-lg-9', 'col-md-9', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInRight', 'pad0-mob', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
+
     const speakerCarouselDiv = createAemElement('div', ['item-slider-carousel', 'owl-carousel', 'owl-theme', 'mb-50', 'owl-loaded', 'owl-drag'], null, null);
-    for(let i=2; i<container.children.length; i=i+2){
+    for(let i=2; i<container.children.length-1; i=i+2){
         
         const pictureDiv = container.children[i];
         const descriptionDiv = container.children[i+1];
@@ -47,4 +66,18 @@ export default function decorate(block) {
     }
     console.log(speakerCarouselDiv);
 
+    const btnInfo = container.children[container.children.length-1].querySelectorAll('div');
+    const btnText = btnInfo[0].textContent.trim();
+    const btnLink = btnInfo[1].textContent.trim();
+    const btnDiv = createAemElement('div', ['text-center']);
+    const btnAnchor = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'title':btnText, 'href':btnLink}, null);
+    btnDiv.append(btnAnchor);
+
+    parentCarouselDiv.append(speakerCarouselDiv);
+    parentCarouselDiv.append(btnDiv);
+
+    rowDiv.append(outerDiv);
+    rowDiv.append(parentCarouselDiv);
+
+    console.log(rowDiv);
 }
