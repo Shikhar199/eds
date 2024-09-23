@@ -9,7 +9,7 @@ export default function decorate(block) {
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
-    const parentDiv = document.createAemElement('div', ['col-lg-8', 'col-md-8', 'col-md-offset-2', 'col-sm-12', 'col-xs-12', 'text-center', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
+    const parentDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-md-offset-2', 'col-sm-12', 'col-xs-12', 'text-center', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.2s', 'style':'visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;'}, null);
     [...container.children].forEach((row, index) => {
         if(index==0){
             const blockHead = createAemElement('h2', ['overview-head'], null, null);
