@@ -31,7 +31,7 @@ export default function decorate(block) {
   //   block.append(owlCarouselDiv);
     block.append(section);
 
-    const blockParent = document.querySelector(".being-ai-first");
+    const blockParent = document.querySelector(".being-ai-first-container");
     blockParent.parentElement.replaceChild(section, blockParent);
 
 }
