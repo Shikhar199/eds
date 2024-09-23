@@ -103,6 +103,7 @@ $(function() {
         loop: true,
         nav: false,
         dots: false,
+        slideBy: 'page',
         responsive: {
             0: {
                 items: 1 // 1 item on small screens
@@ -110,7 +111,7 @@ $(function() {
             600: {
                 items: 3 // 3 items on medium screens
             },
-            1000: {
+            1200: {
                 items: 4 // 4 items on large screens
             }
         }
