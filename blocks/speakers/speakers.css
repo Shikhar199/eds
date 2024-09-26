@@ -49,19 +49,7 @@
     transform: translateY(-50%) !important;
 }
 
-@media screen and (max-width: 992px) {
-    #speakers .item-slider-carousel .owl-nav {
-        position: static;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    .h2-head {
-        font-size: 60px;
-    }
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     #speakers .item-slider-carousel .owl-nav .owl-prev, #speakers .item-slider-carousel .owl-nav .owl-next {
         position: relative !important;
         top: 0 !important;
@@ -71,7 +59,7 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     #speakers .item-slider-carousel .owl-nav {
         position: static;
         text-align: center;
@@ -81,13 +69,13 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     #speakers .item-slider-carousel .owl-nav .owl-next {
         margin-left: 30px !important;
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     #speakers .item-slider-carousel .owl-nav .owl-prev, #speakers .item-slider-carousel .owl-nav .owl-next {
         position: relative !important;
         top: 0 !important;
@@ -106,5 +94,17 @@
 @media (min-width: 768px) {
     .col-sm-12 {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #speakers .item-slider-carousel .owl-nav {
+        position: static;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .h2-head {
+        font-size: 60px;
     }
 }
