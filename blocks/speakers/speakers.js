@@ -105,17 +105,17 @@ $(function() {
         nav: false,
         dots: false,
         slideBy: 'page',
-        responsive: {
-            0: {
-                items: 1 // 1 item on small screens
-            },
-            600: {
-                items: 3 // 3 items on medium screens
-            },
-            1200: {
-                items: 4 // 4 items on large screens
-            }
-        }
+        // responsive: {
+        //     0: {
+        //         items: 1 // 1 item on small screens
+        //     },
+        //     600: {
+        //         items: 3 // 3 items on medium screens
+        //     },
+        //     1200: {
+        //         items: 4 // 4 items on large screens
+        //     }
+        // }
     });
 
     // Wait until Owl Carousel is initialized before creating custom nav
