@@ -39,6 +39,12 @@
     right: -15px;
 }
 
+@media only screen and (max-width: 992px) {
+    .h2-head {
+        font-size: 60px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     #speakers .item-slider-carousel .owl-nav .owl-prev, #speakers .item-slider-carousel .owl-nav .owl-next {
         position: relative !important;
