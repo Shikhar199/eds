@@ -13,9 +13,28 @@
 
 #speakers .owl-prev {
     border: none;
-    background-color: #f2f2f2;
+    background-color: none;
 }
 #speakers .owl-next {
     border: none;
-    background-color: #f2f2f2;
+    background-color: none;
+}
+
+#speakers .item-slider-carousel .owl-prev::after {
+    right: 50px;
+}
+
+#speakers.speakes-sec .item-slider-carousel .owl-next {
+    right: 20px;
+}
+
+#speakers.speakes-sec .item-slider-carousel .owl-prev, #speakers.speakes-sec .item-slider-carousel .owl-next {
+    top: -30px !important;
+    left: unset !important;
+    right: 90px;
+    width: 50px;
+}
+
+#speakers .item-slider-carousel .owl-next::after {
+    right: -15px;
 }
