@@ -3,3 +3,10 @@
     object-fit: cover;
     object-position: center;
 }
+
+#speakers.speakes-sec .item-slider-carousel .owl-prev, #speakers.speakes-sec .item-slider-carousel .owl-next {
+    top: -30px !important;
+    left: unset !important;
+    right: 90px;
+    width: 50px;
+}
