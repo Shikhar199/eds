@@ -104,7 +104,7 @@
     }
 }
 
-@media (min-width: 767px) and (max-width: 992px) {
+@media (min-width: 767px) and (max-width: 991px) {
     #speakers .speakers-para {
         width: 720px;
         margin-bottom: 10px;
@@ -114,6 +114,13 @@
 @media screen and (max-width: 992px) {
     #speakers .item-slider-carousel .owl-nav {
         position: static;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #speakers .speakers-para {
+        width: 213px;
+        margin-bottom: 10px;
     }
 }
 
