@@ -13,11 +13,11 @@
 
 #speakers .owl-prev {
     border: none;
-    background-color: none;
+    background-color: white;
 }
 #speakers .owl-next {
     border: none;
-    background-color: none;
+    background-color: white;
 }
 
 #speakers .item-slider-carousel .owl-prev::after {
