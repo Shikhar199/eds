@@ -122,6 +122,10 @@
         width: 213px;
         margin-bottom: 10px;
     }
+
+    #speakers .col-md-9 {
+        max-width: 700px;
+    }
 }
 
 @media only screen and (max-width: 992px) {
