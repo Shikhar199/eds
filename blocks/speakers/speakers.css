@@ -50,6 +50,16 @@
 }
 
 @media screen and (max-width: 767px) {
+    #speakers .item-slider-carousel .owl-nav {
+        position: static;
+        text-align: center;
+        margin: 30px 0 0;
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
     #speakers .item-slider-carousel .owl-nav .owl-next {
         margin-left: 30px !important;
     }
@@ -63,4 +73,11 @@
         left: 0 !important;
         bottom: 0 !important;
     }
+}
+
+#speakers.speakes-sec .item-slider-carousel .owl-prev, #speakers.speakes-sec .item-slider-carousel .owl-next {
+    top: -30px !important;
+    left: unset !important;
+    right: 90px;
+    width: 50px;
 }
