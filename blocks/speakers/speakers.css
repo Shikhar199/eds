@@ -104,9 +104,10 @@
     }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 767px) and (max-width: 992px) {
     #speakers .speakers-para {
         width: 720px;
+        margin-bottom: 10px;
     }
 }
 
