@@ -27,7 +27,7 @@
 #speakers.speakes-sec .item-slider-carousel .owl-next {
     right: 20px !important;
 }
-
+/* 
 #speakers.speakes-sec .item-slider-carousel .owl-prev, #speakers.speakes-sec .item-slider-carousel .owl-next {
     top: -30px !important;
     left: unset !important;
@@ -37,4 +37,4 @@
 
 #speakers .item-slider-carousel .owl-next::after {
     right: -15px;
-}
+} */
