@@ -336,7 +336,7 @@ a {
 }
 
 @media (min-width: 768px) {
-    .col-sm-12 {
+    .begin-your-journey-container .col-sm-12 {
         width: 100%;
     }
 }
