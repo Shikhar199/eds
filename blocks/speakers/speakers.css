@@ -104,6 +104,12 @@
     }
 }
 
+@media (min-width: 768px) {
+    #speakers .speakers-para {
+        width: 720px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     #speakers .item-slider-carousel .owl-nav {
         position: static;
