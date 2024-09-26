@@ -73,6 +73,7 @@ export default function decorate(block) {
     const btnLink = btnInfo[1].textContent.trim();
     const btnDiv = createAemElement('div', ['text-center'], null, null);
     const btnAnchor = createAemElement('a', ['cta-link', 'hero-banner-cta'], {'title':btnText, 'href':btnLink}, null);
+    btnAnchor.textContent = btnText;
     btnDiv.append(btnAnchor);
 
     parentCarouselDiv.append(speakerCarouselDiv);
