@@ -97,7 +97,7 @@ $(function() {
     // Declare owl variable in the outer scope so it's accessible everywhere
 
     // Owl Carousel
-    var owl = $(".owl-carousel");
+    var owl = $("#speakers .owl-carousel");
     owl.owlCarousel({
         items: 4,
         margin: 20,
@@ -125,25 +125,25 @@ $(function() {
 
     // function createCustomNav() {
         console.log("Creating custom nav");
-        $('.owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
+        $('#speakers .owl-nav').html('<div class="owl-prev">prev</div><div class="owl-next">next</div>');
 
         // Manually remove 'disabled' class if present
-        $('.owl-nav').removeClass('disabled');
+        $('#speakers .owl-nav').removeClass('disabled');
 
         // Prev button
-        $('.owl-prev').click(function() {
+        $('#speakers .owl-prev').click(function() {
             owl.trigger('prev.owl.carousel');
-            $('.owl-nav').removeClass('disabled');
+            $('#speakers .owl-nav').removeClass('disabled');
         });
 
         // Next button
-        $('.owl-next').click(function() {
+        $('#speakers .owl-next').click(function() {
             owl.trigger('next.owl.carousel');
-            $('.owl-nav').removeClass('disabled');
+            $('#speakers .owl-nav').removeClass('disabled');
         });
 
         function removeDisabledClass() {
-            $('.owl-nav').removeClass('disabled');
+            $('#speakers .owl-nav').removeClass('disabled');
         }
     
         // Listen for when the carousel is resized or items are translated
