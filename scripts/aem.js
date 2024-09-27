@@ -586,16 +586,26 @@ async function loadBlock(block) {
     console.log("CSS Path");
     console.log(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
     console.log("JS Path");
+    var CSSFilePath;
+    var JSFilePath;
     console.log(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
+    if(blockName==="footer"||blockName==="header"){
+       let siteName = window.location.href.includes("confluence") ? "confluence" : "iki";
+       CSSFilePath = `${window.hlx.codeBasePath}/blocks/${siteName}/${blockName}/${blockName}.css`;
+       JSFilePath = `${window.hlx.codeBasePath}/blocks/${siteName}/${blockName}/${blockName}.js`; 
+    } else{
+      CSSFilePath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`;
+      JSFilePath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`;
+    }
     try {
-      const cssLoaded = loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
+      const cssLoaded = loadCSS(CSSFilePath);
       // const cssLoaded = blockName === 'freeflow' ? Promise.resolve() : loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
 
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
             const mod = await import(
-              `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
+              JSFilePath
             );
             if (mod.default) {
               await mod.default(block);
