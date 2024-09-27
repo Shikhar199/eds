@@ -111,22 +111,30 @@
 
 @media (min-width: 767px) and (max-width: 991px) {
     #speakers .speakers-para {
-        width: 100%;
+        width: 720px;
         margin-bottom: 10px;
     }
 
     #speakers .col-md-9{
-        width: 100%;
+        width: 720px;
         margin-left: 100px;
     }
 
+    #speakers .h2-head{
+        width: 720px;
+    }
+
+    #speakers .speakers-para{
+        width: 720px;
+    }
+
     #speakers .col-lg-3{
-        width: 100%;
+        width: 720px;
         margin-left: 100px;
     }
 
     #speakers .owl-carousel, #speakers .owl-stage-outer{
-        width: 100%;
+        width: 720px;
     }
 }
 
