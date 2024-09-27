@@ -116,15 +116,20 @@
     }
 
     #speakers .col-md-9{
-        width: 80%;
+        width: 720px;
         margin-left: 100px;
     }
 
     #speakers .col-lg-3{
-        width: 80%;
+        width: 100%;
         margin-left: 100px;
     }
+
+    #speakers .owl-carousel, #speakers .owl-stage-outer{
+        width: 720px;
+    }
 }
+
 
 @media screen and (max-width: 992px) {
     #speakers .item-slider-carousel .owl-nav {
