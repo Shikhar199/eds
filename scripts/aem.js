@@ -583,9 +583,6 @@ async function loadBlock(block) {
   if (status !== 'loading' && status !== 'loaded') {
     block.dataset.blockStatus = 'loading';
     const { blockName } = block.dataset;
-    console.log("CSS Path");
-    console.log(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
-    console.log("JS Path");
     var CSSFilePath;
     var JSFilePath;
     console.log(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
@@ -597,6 +594,10 @@ async function loadBlock(block) {
       CSSFilePath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`;
       JSFilePath = `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`;
     }
+    console.log("CSS Path");
+    console.log(CSSFilePath);
+    console.log("JS Path");
+    console.log(JSFilePath);
     try {
       const cssLoaded = loadCSS(CSSFilePath);
       // const cssLoaded = blockName === 'freeflow' ? Promise.resolve() : loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`);
