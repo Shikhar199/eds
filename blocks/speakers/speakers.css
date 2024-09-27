@@ -39,6 +39,11 @@
     right: -15px;
 }
 
+#speakers .container{
+    width: 100%;
+    margin-left: 50px;
+}
+
 .owl-prev, .owl-next {
     background-repeat: no-repeat !important;
     width: 31px;
@@ -131,6 +136,7 @@
 @media screen and (min-width: 992px) {
     #speakers .col-lg-3 {
         width: 21%;
+        margin-left: 50px;
     }
 
     #speakers .col-md-9 {
