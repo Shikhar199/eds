@@ -98,6 +98,25 @@
     }
 } */
 
+@media (max-width: 767px) {
+
+    #speakers .col-md-9{
+        width: 100%;
+    }
+
+    #speakers .speakers-para, #speakers .h2-head{
+        width: 736px;
+    }
+
+    #speakers .col-lg-3{
+        width: 736px;
+    }
+
+    #speakers .owl-carousel, #speakers .owl-stage-outer{
+        width: 100%;
+    }
+}
+
 
 
 @media (min-width: 767px) and (max-width: 830px) {
