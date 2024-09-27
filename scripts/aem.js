@@ -587,7 +587,7 @@ async function loadBlock(block) {
     var JSFilePath;
     console.log(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
     if(blockName==="footer"||blockName==="header"){
-       let siteName = window.location.href.includes("confluence") ? "confluence" : "iki";
+       let siteName = window.location.href.includes("iki") ? "iki" : "confluence";
        CSSFilePath = `${window.hlx.codeBasePath}/blocks/${siteName}/${blockName}/${blockName}.css`;
        JSFilePath = `${window.hlx.codeBasePath}/blocks/${siteName}/${blockName}/${blockName}.js`; 
     } else{
