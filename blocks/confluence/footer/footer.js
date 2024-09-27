@@ -804,6 +804,7 @@
 // }
 
 export default function decorate(block) {
+  console.log("Welcome to footer block");
   // Loop through each row within the block
   [...block.children].forEach((row, rowIndex) => {
     // Ensure the row itself gets a class
