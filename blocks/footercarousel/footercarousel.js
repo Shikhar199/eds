@@ -135,4 +135,5 @@ export default function decorate(block) {
   if (specificPicture) {
     specificPicture.href = 'https://www.infosys.com/confluence.html';
   }
+
 }
