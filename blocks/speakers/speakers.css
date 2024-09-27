@@ -41,7 +41,7 @@
 
 #speakers .container{
     width: 100%;
-    margin-left: 50px;
+    margin-left: 0px;
 }
 
 .owl-prev, .owl-next {
@@ -133,7 +133,7 @@
     }
 } */
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 991px) {
     #speakers .col-lg-3 {
         width: 21%;
         margin-left: 50px;
@@ -141,10 +141,15 @@
 
     #speakers .col-md-9 {
         max-width: 71%;
+        margin-left: 45px;
+    }
+
+    #speakers .h2-head{
+        font-size: 50px;
     }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     .h2-head {
         font-size: 60px;
     }
