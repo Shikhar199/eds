@@ -90,24 +90,15 @@
     }
 }
 
-/* @media (min-width: 767px) {
-    .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
-        float: left;
-    }
-} */
 
-@media (min-width: 767px) {
+
+/* @media (min-width: 767px) {
     .col-sm-12 {
         width: 100%;
     }
-}
-
-/* @media (min-width: 767px) {
-    #speakers .col-md-9 {
-        flex: 0 0 75%;
-        max-width: 100%;
-    }
 } */
+
+
 
 @media (min-width: 767px) and (max-width: 830px) {
     #speakers .speakers-para {
