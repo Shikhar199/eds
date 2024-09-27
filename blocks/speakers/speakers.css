@@ -98,7 +98,7 @@
     }
 } */
 
-@media (max-width: 767px) {
+@media (min-width: 600px) and (max-width: 767px) {
 
     #speakers .col-md-9{
         width: 100%;
@@ -114,6 +114,10 @@
 
     #speakers .owl-carousel, #speakers .owl-stage-outer{
         width: 100%;
+    }
+
+    #speakers .owl-item{
+        width: 40%;
     }
 }
 
