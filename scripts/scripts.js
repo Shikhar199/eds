@@ -77,7 +77,8 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  loadJquery();
+  // loadJquery();
+  loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`);
   loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`);
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
