@@ -102,6 +102,8 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  console.log("------------------===========================---------------------");
+  console.log(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   const main = doc.querySelector('main');
   await loadBlocks(main);
   console.log(main);
