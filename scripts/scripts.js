@@ -85,31 +85,6 @@ async function loadEager(doc) {
     console.log(err);
   }
 
-  // }).then(async function(){
-  //   console.log("OWL-CAROUSEL JS LOADED");
-  //   document.documentElement.lang = 'en';
-  //   decorateTemplateAndTheme();
-  //   const main = doc.querySelector('main');
-  //   if (main) {
-  //     decorateMain(main);
-  //     document.body.classList.add('appear');
-  //     await waitForLCP(LCP_BLOCKS);
-  //   }
-
-  //   try {
-  //     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
-  //     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
-  //       loadFonts();
-  //     }
-  //   } catch (e) {
-  //     // do nothing
-  //   }
-  // .then(async function(){
-  //   await loadLazy(document);
-  // }).catch(err=>{
-  //   console.log(err.message);
-  // })
-
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
