@@ -83,6 +83,8 @@ async function loadEager(doc) {
     return loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`,null);
   }).then(function(){
     console.log("OWL-CAROUSEL JS LOADED");
+  }).then(async function(){
+    await loadLazy(document);
   }).catch(err=>{
     console.log(err.message);
   })
@@ -111,8 +113,6 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  console.log("------------------===========================---------------------");
-  console.log(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   const main = doc.querySelector('main');
   await loadBlocks(main);
   console.log(main);
@@ -164,7 +164,7 @@ export function bindSwipeToElement(el) {
 
 async function loadPage() {
   await loadEager(document);
-  await loadLazy(document);
+  // await loadLazy(document);
   loadDelayed();
 }
 
