@@ -78,10 +78,15 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   // loadJquery();
-  let jqueryPromise = loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`);
-  jqueryPromise.then(
-    loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`)
-  );
+  let jqueryPromise = loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
+  jqueryPromise.then( function(){
+    return loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`,null);
+  }).then(function(){
+    console.log("OWL-CAROUSEL JS LOADED");
+  }).catch(err=>{
+    console.log(err.message);
+  })
+
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
