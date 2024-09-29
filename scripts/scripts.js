@@ -12,6 +12,7 @@ import {
   loadBlocks,
   loadCSS,
   loadJquery,
+  loadScript,
   // loadOwlCDN
 } from './aem.js';
 
@@ -77,7 +78,7 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   loadJquery();
-  // loadOwlCDN();
+  loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`);
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
@@ -116,7 +117,7 @@ async function loadLazy(doc) {
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
 
-  // loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
 
   sampleRUM('lazy');
