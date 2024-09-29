@@ -78,8 +78,10 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   // loadJquery();
-  loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`);
-  loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`);
+  let jqueryPromise = await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`);
+  jqueryPromise.then(
+    loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`)
+  );
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
