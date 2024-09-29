@@ -78,7 +78,7 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   // loadJquery();
-  let jqueryPromise = await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`);
+  let jqueryPromise = loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`);
   jqueryPromise.then(
     loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`)
   );
