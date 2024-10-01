@@ -77,5 +77,15 @@ export default function decorate(block){
 
     textDiv.append(descParentDiv);
 
-    console.log(textDiv);
+    const section = document.createElement('section');
+    section.classList.add('color-white');
+    section.id = 'venue';
+
+    const article = document.createElement('article'); 
+    article.classList.add('container');
+
+    section.append(article);
+    article.append(positionRelativeDiv);
+
+    block.append(section);
 }
