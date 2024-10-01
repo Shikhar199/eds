@@ -36,8 +36,6 @@ export default function decorate(block){
         } else if(index==1){
             let descParas = row.querySelectorAll('p');
             let blockDesc = createAemElement('p', [], null, null);
-            console.log(descParas[0].textContent.trim());
-            console.log(descParas[1].textContent.trim());
             blockDesc.textContent = descParas[0].textContent.trim();
             if(descParas[1]){
                 let blockAnchor = descParas[1].querySelector('a');
@@ -46,7 +44,7 @@ export default function decorate(block){
                 blockAnchor.setAttribute('rel','noopener noreferrer');
                 blockDesc.append(blockAnchor);
             }
-            descParentDiv.append(descParas);
+            descParentDiv.append(blockDesc);
 
         } else if(index==2){
             let btnText = row.querySelector('div').textContent.trim();
