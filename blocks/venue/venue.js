@@ -55,7 +55,7 @@ export default function decorate(block){
 
     const directionMapDiv = createAemElement('div', ['direction-map']);
     const directionAnchor = createAemElement('a', ['direction-close'], {'href':'javascript:void(0);', 'title':'Close'}, null);    
-    const closeIcon = createAemElement('i', ['fa fa-times'], {'aria-hidden': 'true'}, null);
+    const closeIcon = createAemElement('i', ['fa', 'fa-times'], {'aria-hidden': 'true'}, null);
     directionAnchor.append(closeIcon);
 
     const iframe = document.createElement('iframe');
