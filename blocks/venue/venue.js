@@ -22,13 +22,14 @@ export default function decorate(block){
         console.log(row);
         if(index==0){
             let h2ParentDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.3s', 'style':'visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;'}, null);
-            const img = document.createElement('img');
+            // const img = document.createElement('img');
+            const img = row.querySelector('picture');
             blockTitle = row.querySelector('h2').textContent.trim();
             blockHead = row.querySelector('h2');
             blockHead.classList.add('h2-head', 'mb-20', 'wow', 'fadeInDown', 'animated');
             blockHead.setAttribute('data-wow-delay','0.2s');
             blockHead.setAttribute('style','visibility: visible;-webkit-animation-delay: 0.2s; -moz-animation-delay: 0.2s; animation-delay: 0.2s;');
-            img.setAttribute('src', row.querySelector('picture').querySelector('img').getAttribute('src'));
+            // img.setAttribute('src', row.querySelector('picture').querySelector('img').getAttribute('src'));
             img.alt = blockTitle.trim();
             img.classList.add("venue-img");
             videoDiv.append(img);
