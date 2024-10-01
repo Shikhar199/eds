@@ -89,5 +89,6 @@ export default function decorate(block){
     section.append(article);
     article.append(positionRelativeDiv);
 
-    block.append(section);
+    console.log(block);
+    // block.append(section);
 }
