@@ -6,6 +6,7 @@ export default function decorate(block){
     const container = document.createElement('div');
     container.innerHTML = block.innerHTML;
     block.innerHTML = '';
+    const lineBreak = document.createElement('br')
     let positionRelativeDiv = createAemElement('div', ['row', 'position-relative'], null, null);
     let videoDiv = createAemElement('div', ['video-size'], null, null);
     let textDiv = createAemElement('div', ['video-txt', 'text-center'], null, null);
@@ -42,10 +43,10 @@ export default function decorate(block){
                 blockAnchor.classList.add('color-white', 'fs-20');
                 blockAnchor.setAttribute('target','_blank');
                 blockAnchor.setAttribute('rel','noopener noreferrer');
+                blockDesc.append(lineBreak);
                 blockDesc.append(blockAnchor);
             }
             descParentDiv.append(blockDesc);
-            descParentDiv.append('<br>');
 
         } else if(index==2){
             let btnText = row.querySelector('div').textContent.trim();
