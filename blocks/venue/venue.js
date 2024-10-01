@@ -66,9 +66,9 @@ export default function decorate(block){
     directionAnchor.append(closeIcon);
 
     const iframe = document.createElement('iframe');
-    // iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.0344014073994!2d16.3833942!3d48.2059533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d077463295b23%3A0xbc6ab3d32c053806!2sAm%20Stadtpark%201%2C%201030%20Wien%2C%20Austria!5e0!3m2!1sen!2sin!4v1694669253657!5m2!1sen!2sin';
+    iframe.src = 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d14001.634111107609!2d77.1830002844143!3d28.677423664804284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1727812951822!5m2!1sen!2sin';
     // iframe.src = '../iframe/iframe.html';
-    iframe.src = `${window.hlx.codeBasePath}/blocks/iframe/iframe.html`;
+    // iframe.src = `${window.hlx.codeBasePath}/blocks/iframe/iframe.html`;
     iframe.width = '600';
     iframe.height = '450';
     iframe.style.border = '0';
