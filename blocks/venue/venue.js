@@ -36,6 +36,7 @@ export default function decorate(block){
         } else if(index==1){
             let descParas = row.querySelectorAll('p');
             let blockDesc = createAemElement('p', [], null, null);
+            console.log(descParas);
             blockDesc.textContent = descParas[0].textContent.trim();
             if(descParas[1]){
                 let blockAnchor = descParas[1].querySelector('a');
