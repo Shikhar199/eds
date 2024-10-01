@@ -50,7 +50,7 @@ export default function decorate(block){
 
         } else if(index==2){
             let btnText = row.querySelector('div').textContent.trim();
-            let directionPara = createAemElement('p', ['direction-txt']);
+            let directionPara = createAemElement('p', ['direction-txt'], null, null);
             let directionAnchor = createAemElement('a', ['1border_switch_effect', 'direction', 'cta-link'], {'href':'javascript:void(0);', 'title':btnText}, null);
             directionAnchor.textContent = btnText;
             directionPara.append(directionAnchor);
@@ -58,7 +58,7 @@ export default function decorate(block){
         }
     })
 
-    const directionMapDiv = createAemElement('div', ['direction-map']);
+    const directionMapDiv = createAemElement('div', ['direction-map'], null, null);
     const directionAnchor = createAemElement('a', ['direction-close'], {'href':'javascript:void(0);', 'title':'Close'}, null);    
     const closeIcon = createAemElement('i', ['fa', 'fa-times'], {'aria-hidden': 'true'}, null);
     directionAnchor.append(closeIcon);
