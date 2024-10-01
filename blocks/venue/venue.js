@@ -15,6 +15,8 @@ export default function decorate(block){
     positionRelativeDiv.append(videoDiv);
     positionRelativeDiv.append(textDiv);
 
+    console.log(positionRelativeDiv);
+
     [...container.children].forEach((row, index) => {
         if(index==0){
             let h2ParentDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12', 'wow', 'fadeInUp', 'animated'], {'data-wow-delay':'0.3s', 'style':'visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;'}, null);
