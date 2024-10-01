@@ -81,6 +81,7 @@ async function loadEager(doc) {
   try{
     await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`,null);
+    await loadScript(`${window.hlx.codeBasePath}/scripts/clientlib-header.js`,null);
   } catch(err){
     console.log(err);
   }
