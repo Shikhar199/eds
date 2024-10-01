@@ -89,7 +89,9 @@ export default function decorate(block){
     section.append(article);
     article.append(positionRelativeDiv);
 
-    block.parentNode.replaceChild(section, block);
+    const blockParent = document.querySelector(".venue-container");
+    blockParent.parentElement.replaceChild(section, blockParent);
+    // block.parentNode.replaceChild(section, block);
     // console.log(block);
     // block.append(section);
 }
