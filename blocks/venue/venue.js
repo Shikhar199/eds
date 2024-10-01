@@ -45,6 +45,7 @@ export default function decorate(block){
                 blockDesc.append(blockAnchor);
             }
             descParentDiv.append(blockDesc);
+            descParentDiv.append('<br>');
 
         } else if(index==2){
             let btnText = row.querySelector('div').textContent.trim();
