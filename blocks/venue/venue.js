@@ -104,7 +104,7 @@ export default function decorate(block){
 }
 
 async function fetchHtml(url) {
-    let html;
+    let container;
     try {
       const response = await fetch(url);
       
@@ -112,17 +112,17 @@ async function fetchHtml(url) {
         throw new Error('Network response was not ok');
       }
   
-      html = await response.text(); // Read the response as text (HTML format)
+      const html = await response.text(); // Read the response as text (HTML format)
       
       // Optionally, you could insert this HTML into your page
-      const container = document.createElement('div');
+      container = document.createElement('div');
       container.innerHTML = html;
       document.body.appendChild(container);  // Or append to any specific container
       
     } catch (error) {
       console.error('There has been a problem with your fetch operation:', error);
     }
-    return html;
+    return container;
 }
   
   
