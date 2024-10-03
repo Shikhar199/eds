@@ -82,7 +82,7 @@ async function loadEager(doc) {
     await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`,null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/clientlib-header.js`,null);
-    await loadCSS(`${window.hlx.codeBasePath}/styles/font-awesome-min.css`);
+    await loadCSS("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
   } catch(err){
     console.log(err);
   }
