@@ -94,13 +94,13 @@ export default function decorate(block){
     // block.parentNode.replaceChild(section, block);
     // console.log(block);
     // block.append(section);
+
+    $(".direction").click(function () {
+        $(".direction-map").fadeIn(700), $(".venue-video").get(0).pause();
+      });
+    
+      $(".direction-close").click(function () {
+        $(".direction-map").fadeOut(700), $(".venue-video").get(0).play();
+      });
+    
 }
-
-$(".direction").click(function () {
-    $(".direction-map").fadeIn(700), $(".venue-video").get(0).pause();
-  });
-
-  $(".direction-close").click(function () {
-    $(".direction-map").fadeOut(700), $(".venue-video").get(0).play();
-  });
-
