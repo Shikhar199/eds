@@ -72,7 +72,7 @@ export default function decorate(block){
     iframe.width = '600';
     iframe.height = '450';
     iframe.style.border = '0';
-    // iframe.allowFullscreen = true;
+    iframe.allowFullscreen = true;
     iframe.loading = 'lazy';
     iframe.referrerPolicy = 'no-referrer-when-downgrade';
 
