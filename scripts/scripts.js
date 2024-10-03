@@ -38,7 +38,7 @@ function buildHeroBlock(main) {
  */
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
-  await loadCss("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+  await loadCss(`${window.hlx.codeBasePath}/styles/font-awesome-min.css`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
