@@ -117,12 +117,13 @@ async function fetchHtml(url) {
       // Optionally, you could insert this HTML into your page
       container = document.createElement('div');
       container.innerHTML = html;
-      document.body.appendChild(container);  // Or append to any specific container
+      console.log(container.innerHTML);
+    //   document.body.appendChild(container);  // Or append to any specific container
       
     } catch (error) {
       console.error('There has been a problem with your fetch operation:', error);
     }
-    return container;
+    return container.innerHTML;
 }
   
   
