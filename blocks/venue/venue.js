@@ -75,6 +75,7 @@ export default function decorate(block){
     iframe.referrerPolicy = 'no-referrer-when-downgrade';
 
     descParentDiv.append(directionMapDiv);
+    directionMapDiv.append(directionAnchor);
     directionMapDiv.append(iframe);
 
     textDiv.append(descParentDiv);
