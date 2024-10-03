@@ -38,7 +38,6 @@ function buildHeroBlock(main) {
  */
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
-  await loadCss(`${window.hlx.codeBasePath}/styles/font-awesome-min.css`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
@@ -83,6 +82,7 @@ async function loadEager(doc) {
     await loadScript(`${window.hlx.codeBasePath}/scripts/jquery.js`, null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/owl-carousel-min.js`,null);
     await loadScript(`${window.hlx.codeBasePath}/scripts/clientlib-header.js`,null);
+    await loadCss(`${window.hlx.codeBasePath}/styles/font-awesome-min.css`);
   } catch(err){
     console.log(err);
   }
