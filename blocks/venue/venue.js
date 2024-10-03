@@ -79,7 +79,7 @@ export default function decorate(block){
     directionMapDiv.append(directionAnchor);
     fetchHtml('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.0344014073994!2d16.3833942!3d48.2059533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d077463295b23%3A0xbc6ab3d32c053806!2sAm%20Stadtpark%201%2C%201030%20Wien%2C%20Austria!5e0!3m2!1sen!2sin!4v1694669253657!5m2!1sen!2sin').then(iframeHtml=>{
         console.log(iframeHtml);
-        directionMapDiv.append(iframe);
+        directionMapDiv.append(iframeHtml);
     }).catch((error)=>{
         console.log(error);
     })
