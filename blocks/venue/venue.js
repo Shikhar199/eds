@@ -77,8 +77,10 @@ export default function decorate(block){
     // iframe.referrerPolicy = 'no-referrer-when-downgrade';
 
     directionMapDiv.append(directionAnchor);
-    addIframe(directionMapDiv);
+    iframeHtml = fetchHtml('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.0344014073994!2d16.3833942!3d48.2059533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d077463295b23%3A0xbc6ab3d32c053806!2sAm%20Stadtpark%201%2C%201030%20Wien%2C%20Austria!5e0!3m2!1sen!2sin!4v1694669253657!5m2!1sen!2sin')
+    // addIframe(directionMapDiv);
     // directionMapDiv.append(iframe);
+    console.log(iframeHtml);
 
     descParentDiv.append(directionMapDiv);
 
@@ -100,6 +102,30 @@ export default function decorate(block){
     // console.log(block);
     // block.append(section);
 }
+
+async function fetchHtml(url) {
+    let html;
+    try {
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      html = await response.text(); // Read the response as text (HTML format)
+      
+      // Optionally, you could insert this HTML into your page
+      const container = document.createElement('div');
+      container.innerHTML = html;
+      document.body.appendChild(container);  // Or append to any specific container
+      
+    } catch (error) {
+      console.error('There has been a problem with your fetch operation:', error);
+    }
+    return html;
+}
+  
+  
 
 function addIframe(directionMapDiv){
     document.addEventListener('DOMContentLoaded', function() {
