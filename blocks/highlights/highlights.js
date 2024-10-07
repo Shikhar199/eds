@@ -1,4 +1,5 @@
 export default function decorate(block) {
+  block.innerHTML = '';
   // Find the existing highlights container
   const section = document.querySelector('.highlights-container');
 
