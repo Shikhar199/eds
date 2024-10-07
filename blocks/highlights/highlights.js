@@ -7,10 +7,10 @@ export default function decorate(block) {
     wrapper.className = 'highlights-wrapper';
   
     // Create the block
-    const block = document.createElement('div');
-    block.className = 'highlights block';
-    block.setAttribute('data-block-name', 'highlights');
-    block.setAttribute('data-block-status', 'loaded');
+    const highlighblock = document.createElement('div');
+    highlighblock.className = 'highlights block';
+    highlighblock.setAttribute('data-block-name', 'highlights');
+    highlighblock.setAttribute('data-block-status', 'loaded');
   
     // Create a container for the images
     const imageContainer = document.createElement('div');
@@ -62,10 +62,10 @@ export default function decorate(block) {
     imageContainer.appendChild(highlight2);
   
     // Append the image container to the block
-    block.appendChild(imageContainer);
+    highlighblock.appendChild(imageContainer);
   
     // Append the block to the wrapper
-    wrapper.appendChild(block);
+    wrapper.appendChild(highlighblock);
   
     // Append the wrapper to the main container
     section.appendChild(wrapper);
