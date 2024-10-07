@@ -7,10 +7,10 @@
     wrapper.className = 'highlights-wrapper';
   
     // Create the block
-    const block = document.createElement('div');
-    block.className = 'highlights block';
-    block.setAttribute('data-block-name', 'highlights');
-    block.setAttribute('data-block-status', 'loaded');
+    const highlightblock = document.createElement('div');
+    highlightblock.className = 'highlights block';
+    highlightblock.setAttribute('data-block-name', 'highlights');
+    highlightblock.setAttribute('data-block-status', 'loaded');
   
     // Create a container for the images
     const imageContainer = document.createElement('div');
@@ -62,10 +62,10 @@
     imageContainer.appendChild(highlight2);
   
     // Append the image container to the block
-    block.appendChild(imageContainer);
+    highlightblock.appendChild(imageContainer);
   
     // Append the block to the wrapper
-    wrapper.appendChild(block);
+    wrapper.appendChild(highlightblock);
   
     // Append the wrapper to the main container
     section.appendChild(wrapper);
