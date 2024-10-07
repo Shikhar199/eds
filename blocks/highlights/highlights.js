@@ -20,6 +20,11 @@
     const imgElements = document.querySelectorAll('.highlights-container img');
     const imagePath1 = imgElements[0].src;
     const imagePath2 = imgElements[1].src;
+    
+    // Create the title element
+  const titleElement = document.createElement('h3');
+  titleElement.id = 'highlights--insights';
+  titleElement.innerHTML = 'HIGHLIGHTS & INSIGHTS';
   
     // Create the first highlight section
     const highlight1 = document.createElement('div');
