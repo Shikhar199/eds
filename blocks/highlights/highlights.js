@@ -9,7 +9,7 @@
     let container = document.createElement('div');
     container = block.innerHTML;
 
-    console.log(container.querySelector(h3).textContent.trim());
+    console.log(container.querySelector('h3').textContent.trim());
   
     // Create the block
     const highlightblock = document.createElement('div');
