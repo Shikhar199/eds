@@ -74,6 +74,6 @@ export default function decorate(block) {
 
   // Append the wrapper to the main container
   section.appendChild(wrapper);
-  // block.innerHTML = '';
+  block.innerHTML = '';   
   block.append(section);
 }
