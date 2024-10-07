@@ -34,7 +34,10 @@
 
   #highlights--insights {
     font-size: 24px; /* Adjust the size as needed */
-    text-align: center; /* Centers the text horizontally */
-    margin: 0 auto; /* Centers the element itself */
+    display: flex;
+    justify-content: center; /* Centers the text horizontally */
+    align-items: center; /* Centers the text vertically */
+    height: 100%; /* Ensure the parent container has a defined height */
+    text-align: center; /* Centers the text within the flex container */
 }
   
