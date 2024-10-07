@@ -5,6 +5,14 @@
     // Create the wrapper
     const wrapper = document.createElement('div');
     wrapper.className = 'highlights-wrapper';
+
+    let container = document.createElement('div');
+    container.innerHTML = block.innerHTML;
+    console.log(container);
+
+    const blockHead = document.createElement('h2');
+    blockHead.classList.add('h2-head', 'pb40');
+    blockHead.textContent = container.querySelector('#highlights--insights').textContent.trim();
   
     // Create the block
     const highlightblock = document.createElement('div');
@@ -67,6 +75,7 @@
     imageContainer.appendChild(highlight2);
   
     // Append the image container to the block
+    highlightblock.appendChild(blockHead);
     highlightblock.appendChild(imageContainer);
   
     // Append the block to the wrapper
@@ -75,7 +84,7 @@
     // Append the wrapper to the main container
     section.appendChild(wrapper);
     block.innerHTML = '';   
-  block.append(section);
+    block.append(section);
   }
   
   
