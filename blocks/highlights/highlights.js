@@ -6,7 +6,7 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'highlights-wrapper';
 
-    const container = document.createElement('div');
+    let container = document.createElement('div');
     container = block.innerHTML;
 
     console.log(container.querySelector(h3).textContent.trim());
