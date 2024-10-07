@@ -69,8 +69,8 @@
   
     // Append the wrapper to the main container
     section.appendChild(wrapper);
-    block.innerHTML = '';   
-  block.append(section);
+    // block.innerHTML = '';   
+    block.append(section);
   }
   
   
