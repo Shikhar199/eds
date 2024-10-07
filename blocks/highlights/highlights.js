@@ -1,12 +1,12 @@
 export default function decorate(block) {
   // Find the existing highlights container
-  //const section = document.querySelector('.highlights-container');
-   const container = document.createElement('div');
-   container.innerHTML = block.innerHTML;
-   block.innerHTML = '';
+  const section = document.querySelector('.highlights-container');
+   //const container = document.createElement('div');
+   //container.innerHTML = block.innerHTML;
+   //block.innerHTML = '';
 
-   const blockHead = container.querySelector("highlights--insights").textContent.trim();
-   console.log(blockHead);
+   //const blockHead = container.querySelector("highlights--insights").textContent.trim();
+   //console.log(blockHead);
 
   // Create the wrapper
   const wrapper = document.createElement('div');
@@ -74,7 +74,7 @@ export default function decorate(block) {
   wrapper.appendChild(highlighblock);
 
   // Append the wrapper to the main container
-  container.appendChild(wrapper);
+  section.appendChild(wrapper);
   block.innerHTML = '';   
-  block.append(container);
+  block.append(section);
 }
