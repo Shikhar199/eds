@@ -11,7 +11,7 @@
     console.log(container);
 
     const blockHead = document.createElement('h2');
-    blockHead.classList.add('h2-head', 'pb40');
+    blockHead.classList.add('h2-head', 'pb40', 'center-text');
     blockHead.textContent = container.querySelector('#highlights--insights').textContent.trim();
   
     // Create the block
