@@ -7,7 +7,8 @@
     wrapper.className = 'highlights-wrapper';
 
     let container = document.createElement('div');
-    container = block.innerHTML;
+    container.innerHTML = block.innerHTML;
+    console.log(container);
 
     console.log(container.querySelector('#highlights--insights').textContent.trim());
   
