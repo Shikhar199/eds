@@ -5,6 +5,11 @@
     // Create the wrapper
     const wrapper = document.createElement('div');
     wrapper.className = 'highlights-wrapper';
+
+    const container = document.createElement('div');
+    container = block.innerHTML;
+
+    console.log(container.querySelector(h3).textContent.trim());
   
     // Create the block
     const highlightblock = document.createElement('div');
@@ -69,7 +74,7 @@
   
     // Append the wrapper to the main container
     section.appendChild(wrapper);
-    // block.innerHTML = '';   
+    block.innerHTML = '';   
     block.append(section);
   }
   
