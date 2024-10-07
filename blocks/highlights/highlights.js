@@ -1,5 +1,4 @@
 export default function decorate(block) {
-  block.innerHTML = '';
   // Find the existing highlights container
   const section = document.querySelector('.highlights-container');
 
@@ -70,5 +69,6 @@ export default function decorate(block) {
 
   // Append the wrapper to the main container
   section.appendChild(wrapper);
+  block.innerHTML = '';
   block.append(section);
 }
