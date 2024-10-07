@@ -2,6 +2,8 @@ export default function decorate(block) {
   // Find the existing highlights container
   const section = document.querySelector('.highlights-container');
 
+  console.log(block);
+
   // Create the wrapper
   const wrapper = document.createElement('div');
   wrapper.className = 'highlights-wrapper';
