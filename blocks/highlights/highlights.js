@@ -10,7 +10,9 @@
     container.innerHTML = block.innerHTML;
     console.log(container);
 
-    console.log(container.querySelector('#highlights--insights').textContent.trim());
+    const blockHead = document.createElement('h2');
+    blockHead.classList.add('h2-head', 'pb40');
+    blockHead.textContent = container.querySelector('#highlights--insights').textContent.trim();
   
     // Create the block
     const highlightblock = document.createElement('div');
@@ -68,6 +70,7 @@
     imageContainer.appendChild(highlight2);
   
     // Append the image container to the block
+    highlightblock.appendChild(blockHead);
     highlightblock.appendChild(imageContainer);
   
     // Append the block to the wrapper
