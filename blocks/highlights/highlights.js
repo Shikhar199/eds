@@ -1,11 +1,11 @@
 export default function decorate(block) {
   // Find the existing highlights container
   const section = document.querySelector('.highlights-container');
-  // const container = document.createElement('div');
-  // container.innerHTML = block.innerHTML;
+  const container = document.createElement('div');
+  container.innerHTML = block.innerHTML;
 
-  // const blockHead = container.querySelector("highlights--insights").textContent.trim();
-  // console.log(blockHead);
+  const blockHead = container.querySelector("highlights--insights").textContent.trim();
+  console.log(blockHead);
 
   // Create the wrapper
   const wrapper = document.createElement('div');
