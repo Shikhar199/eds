@@ -25,8 +25,8 @@ export default function decorate(block){
     const imagePath1 = imgElements[0].src;
     const imagePath2 = imgElements[1].src;
 
-    const url1 = 'https://www.infosys.com/confluence/2023/emea/photo-gallery.html'; // Replace with your desired URL
-    const url2 = 'https://www.infosys.com/confluence/2023/emea/insights.html'; // Replace with your desired URL
+    const url1 = 'https://www.infosys.com/confluence/2023/emea/photo-gallery.html'; 
+    const url2 = 'https://www.infosys.com/confluence/2023/emea/insights.html'; 
     
   
     // Create the first highlight section
@@ -63,31 +63,24 @@ export default function decorate(block){
     img2.src = imagePath2;
     img2.className = 'image';
     picture2.appendChild(img2);
-    // Wrap the second picture in an anchor tag
-  const link2 = document.createElement('a');
-  link2.href = url2;
-  link2.appendChild(picture2);
-
-  const highlight2Text = document.createElement('div');
-  highlight2Text.textContent = 'Insights';
-  highlight2Text.className = 'highlight2-text overlay-text';
-  highlight2.appendChild(link2);
-  highlight2.appendChild(highlight2Text);
+    const link2 = document.createElement('a');
+    link2.href = url2;
+    link2.appendChild(picture2);
+    const highlight2Text = document.createElement('div');
+    highlight2Text.textContent = 'Insights';
+    highlight2Text.className = 'highlight2-text overlay-text';
+    highlight2.appendChild(link2);
+    highlight2.appendChild(highlight2Text);
 
    
-  
-    // Append both highlights to the image container
     imageContainer.appendChild(highlight1);
     imageContainer.appendChild(highlight2);
   
-    // Append the image container to the block
     highlightblock.appendChild(blockHead);
     highlightblock.appendChild(imageContainer);
   
-    // Append the block to the wrapper
     wrapper.appendChild(highlightblock);
   
-    // Append the wrapper to the main container
     section.appendChild(wrapper);
     block.innerHTML = '';   
     block.append(section);
