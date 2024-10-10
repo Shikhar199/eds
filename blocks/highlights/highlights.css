@@ -1,3 +1,8 @@
+.highlights-container {
+    padding-left: 170px; 
+    padding-right: 170px; 
+  }
+
 .image-container {
     display: flex;
     justify-content: space-between;
@@ -7,6 +12,9 @@
     position: relative;
     flex: 1;
     margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .image {
@@ -16,19 +24,33 @@
   
   .overlay-text {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    border-radius: 5px;
+    padding: 20px; 
+    border-radius: 50%;
+    text-align: center;
+    width: 100px; 
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
   }
   
-  .highlight1:hover .highlight1-text {
-    color: red;
-  }
   
-  .highlight2:hover .highlight2-text {
-    color: blue;
+  .highlight1:hover .highlight1-text,
+.highlight2:hover .highlight2-text {
+  color: #d4a44d;
+  background-color: black;
+}
+
+  .center-text {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: "tungstenw05-medium", "Oswald", sans-serif;
   }
   
