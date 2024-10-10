@@ -562,3 +562,8 @@
 //     containerDiv.appendChild(a);
 //     containerDiv.appendChild(div);
 // }
+
+export default function decorate(block){
+    console.log("welcome to header block");
+    console.log(block);
+}
