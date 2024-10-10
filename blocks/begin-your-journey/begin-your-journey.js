@@ -146,7 +146,7 @@ export default function decorate(block){
     article.append(row);
     section.append(article);
     block.append(section);
-    console.log("Block:"+ block);
+    // console.log("Block:"+ block);
 
 }
 $("#menu-border-line a").click(function () {
@@ -233,7 +233,7 @@ function createAemElement(tag, classes, attributes, elementId){
 function createPanelHeading(col, id){
 
     var testing = col.querySelector('h4');
-    console.log("Heading h4 content"+ testing.textContent.trim());
+    // console.log("Heading h4 content"+ testing.textContent.trim());
     var childPanelDiv = document.createElement('div');
     childPanelDiv.className = 'panel-heading';
     childPanelDiv.setAttribute('role','tab');
@@ -248,7 +248,7 @@ function createPanelHeading(col, id){
 
 function createPanelCollapse(col, id){
     var testing = col.querySelector('h5');
-     console.log("Para p content"+ testing.textContent.trim());
+    //  console.log("Para p content"+ testing.textContent.trim());
     var panelCollapseDiv = createAemElement('div',['panel-collapse', 'collapse'],{'role':'tabpanel', 'aria-expanded':'false'},id);
     var panelBodyDiv = document.createElement('div');
     panelBodyDiv.className = 'panel-body';
