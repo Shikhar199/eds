@@ -563,7 +563,16 @@
 //     containerDiv.appendChild(div);
 // }
 
-export default function decorate(block){
+export default async function decorate(block){
     console.log("welcome to header block");
-    console.log(block);
+    const navPath = window.location.pathname;
+    if(navPath && navPath.startsWith('/')){
+        const resp = await fetch(`${navPath}.plain.html`);
+        if(resp.ok){
+            const main = document.createElement('main');
+            main.innerHTML = await resp.text();
+            console.log(main);
+        }
+        
+    }
 }
