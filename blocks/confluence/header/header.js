@@ -584,7 +584,6 @@ export default async function decorate(block){
     const picture = main.querySelector('picture');
     picture.querySelector('img').classList.add('logo', 'img-responsive');
     picture.querySelector('img').setAttribute('alt', document.title);
-    console.log(picture);
     const header = createAemElement('header', ['header'], null, null);
     const article = createAemElement('article', ['container'], null, null);
     const rowDiv = createAemElement('div', ['row'], null, null);
@@ -612,6 +611,8 @@ export default async function decorate(block){
     anchorTag.classList.add('d-block');
     anchorTag.setAttribute('title', 'Go to Confluence Home');
     anchorTag.setAttribute('aria-label', 'Go to Confluence Home');
+    const pictureClone = picture.cloneNode(true); 
+    console.log(pictureClone);
     anchorTag.querySelector('picture').querySelector('img').classList.add('logo', 'logo-inner', 'img-responsive');
     anchorTag.querySelector('picture').querySelector('img').setAttribute('alt', 'EMEA Confluence 2023');
     overlay.appendChild(anchor);
