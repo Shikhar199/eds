@@ -1,7 +1,7 @@
 // // import { getMetadata } from '../../scripts/aem.js';
 // // import { loadFragment } from '../fragment/fragment.js';
 
-import { createAemElement } from "../../../scripts/aem";
+import { createAemElement } from "../../../scripts/aem.js";
 
 // // // media query match that indicates mobile/tablet width
 // // const isDesktop = window.matchMedia('(min-width: 900px)');
