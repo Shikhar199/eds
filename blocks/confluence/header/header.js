@@ -1,6 +1,8 @@
 // // import { getMetadata } from '../../scripts/aem.js';
 // // import { loadFragment } from '../fragment/fragment.js';
 
+import { createAemElement } from "../../../scripts/aem";
+
 // // // media query match that indicates mobile/tablet width
 // // const isDesktop = window.matchMedia('(min-width: 900px)');
 
@@ -567,13 +569,24 @@ export default async function decorate(block){
     console.log("welcome to header block");
     console.log(window.location.pathname + "nav");
     const navPath = window.location.pathname + "nav";
+    let main;
     if(navPath && navPath.startsWith('/')){
         const resp = await fetch(`${navPath}.plain.html`);
         if(resp.ok){
-            const main = document.createElement('main');
+            main = document.createElement('main');
             main.innerHTML = await resp.text();
             console.log(main);
         }
         
     }
+    const imgAnchor = main.querySelector('p a');
+    console.log(imgAnchor.href);
+    const header = createAemElement('header', ['header'], null, null);
+    const article = createAemElement('article', ['container'], null, null);
+    const rowDiv = createAemElement('div', ['row'], null, null);
+    const nav = createAemElement('div', ['navbar', 'navbar-default', 'navbar-fixed-top', 'scrollbg-show', 'show-strip'], null, null);
+    const containerDiv = createAemElement('div', ['container'], null, null);
+    const navbarHeader = createAemElement('div', ['navbar-header'], null, null);
+    const anchor = createAemElement('a', ['d-block', 'navbar-brand'], {'href': '', 'title': document.title}, null);
+
 }
