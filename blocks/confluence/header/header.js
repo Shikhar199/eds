@@ -655,6 +655,15 @@ function createFirstListOuterDiv(unorderedList){
     const outerDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12'], null, null);
     const nav = createAemElement('nav', null, null, null);
     console.log(unorderedList.children.length);
+    for(let i=0; i<unorderedList.children.length; i++){
+        
+        const span = createAemElement('span', null, null, null);
+        span.innerHTML = '&nbsp;';
+        unorderedList[i].appendChild(span);
+        unorderedList[i].classList.add('col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12');
+        unorderedList[i].querySelector('a').classList.add('scrollto-target');
+        console.log(unorderedList[i].querySelector('a').textContent());
+    }
     return "";
 }
 
