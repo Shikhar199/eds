@@ -662,7 +662,7 @@ function createFirstListOuterDiv(unorderedList){
         listItem.appendChild(span);
         listItem.classList.add('col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12');
         listItem.querySelector('a').classList.add('scrollto-target');
-        console.log(listItem.querySelector('a').textContent());
+        console.log(listItem.querySelector('a').textContent.trim());
     }
     return "";
 }
