@@ -565,6 +565,7 @@
 
 export default async function decorate(block){
     console.log("welcome to header block");
+    console.log(window.location.pathname);
     const navPath = window.location.pathname;
     if(navPath && navPath.startsWith('/')){
         const resp = await fetch(`${navPath}.plain.html`);
