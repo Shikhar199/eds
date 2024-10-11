@@ -607,6 +607,7 @@ export default async function decorate(block){
     const outerDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-sm-8', 'col-xs-6'], null, null);
     const overlay = createAemElement('div', ['overlay-mt1', 'mb-20'], null, null);
     const anchorTag = main.querySelector('a');
+    console.log(anchorTag);
     anchorTag.classList.add('d-block');
     anchorTag.setAttribute('title', 'Go to Confluence Home');
     anchorTag.setAttribute('aria-label', 'Go to Confluence Home');
