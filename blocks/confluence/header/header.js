@@ -656,13 +656,13 @@ function createFirstListOuterDiv(unorderedList){
     const nav = createAemElement('nav', null, null, null);
     console.log(unorderedList.children.length);
     for(let i=0; i<unorderedList.children.length; i++){
-        
+        const listItem = unorderedList.children[i];
         const span = createAemElement('span', null, null, null);
         span.innerHTML = '&nbsp;';
-        unorderedList[i].appendChild(span);
-        unorderedList[i].classList.add('col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12');
-        unorderedList[i].querySelector('a').classList.add('scrollto-target');
-        console.log(unorderedList[i].querySelector('a').textContent());
+        listItem.appendChild(span);
+        listItem.classList.add('col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12');
+        listItem.querySelector('a').classList.add('scrollto-target');
+        console.log(listItem.querySelector('a').textContent());
     }
     return "";
 }
