@@ -567,6 +567,7 @@ import { createAemElement } from "../../../scripts/aem.js";
 
 export default async function decorate(block){
     console.log("welcome to header block");
+    document.title = 'EMEA Confluence 2023';
     console.log(window.location.pathname + "nav");
     const navPath = window.location.pathname + "nav";
     let main;
@@ -580,13 +581,78 @@ export default async function decorate(block){
         
     }
     const imgAnchor = main.querySelector('p a');
-    console.log(imgAnchor.href);
+    const picture = main.querySelector('picture');
+    picture.querySelector('img').classList.add('logo', 'img-responsive');
+    picture.querySelector('img').setAttribute(alt, document.title);
     const header = createAemElement('header', ['header'], null, null);
     const article = createAemElement('article', ['container'], null, null);
     const rowDiv = createAemElement('div', ['row'], null, null);
     const nav = createAemElement('div', ['navbar', 'navbar-default', 'navbar-fixed-top', 'scrollbg-show', 'show-strip'], null, null);
     const containerDiv = createAemElement('div', ['container'], null, null);
     const navbarHeader = createAemElement('div', ['navbar-header'], null, null);
-    const anchor = createAemElement('a', ['d-block', 'navbar-brand'], {'href': '', 'title': document.title}, null);
+    const anchor = createAemElement('a', ['d-block', 'navbar-brand'], {'href': imgAnchor.href, 'title': document.title}, null);
+    anchor.appendChild(imgAnchor);
+    navbarHeader.appendChild(anchor);
+    containerDiv.appendChild(navbarHeader);
+    nav.appendChild(containerDiv);
 
+    const hamburgerMenuRightDiv = createAemElement('div', ['hamburger-menu-right'], null, null);
+    const hamburgerDiv = createAemElement('div', ['hamburger'], null, 'trigger-overlay');
+    const overlayDiv = createAemElement('div', ['overlay', 'overlay-slidedown', 'bg-topaz-dark'], null, null);
+    const burgerDiv = createIconBar('div', ['burger'], 3, 2);
+    hamburgerDiv.appendChild(burgerDiv);
+    const btn = createIconBar('button', ['overlay-close'], 3, 1);
+    overlayDiv.appendChild(btn);
+
+    const outerDiv = createAemElement('div', ['col-lg-8', 'col-md-8', 'col-sm-8', 'col-xs-6'], null, null);
+    const overlay = createAemElement('div', ['overlay-mt1', 'mb-20'], null, null);
+    const anchorTag = main.querySelector('a');
+    anchorTag.classList.add('d-block');
+    anchorTag.setAttribute('title', 'Go to Confluence Home');
+    anchorTag.setAttribute('aria-label', 'Go to Confluence Home');
+    anchorTag.querySelector('picture').querySelector('img').classList.add('logo', 'logo-inner', 'img-responsive');
+    anchorTag.querySelector('picture').querySelector('img').setAttribute('alt', 'EMEA Confluence 2023');
+    overlay.appendChild(anchor);
+    outerDiv.appendChild(overlay);
+
+    overlayDiv.appendChild(outerDiv);
+
+    const lists = main.querySelectorAll('ul');
+
+    const firstLiOuterDiv = createFirstListOuterDiv(lists[0]);
+    const secondListOuterDiv = createSecondListOuterDiv(lists[1]);
+}
+
+function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
+    let parent;
+    if(parentElementType==='button'){
+        parent = createAemElement(parentElementType, parentElementClass, {'type': 'button'}, null);
+    } else {
+        parent = createAemElement(parentElementType, parentElementClass, null, null);
+    }
+    if(noOfChildClasses===2){
+        for(let i=0; i<numberOfChildren; i++){
+            const iconBar = createAemElement('div', ['icon-bar', 'icon-bar'+i], null, null);
+            iconBar.innerHTML = '&nbsp;';  
+            parent.appendChild(iconBar);
+        }
+    } else{
+        for(let i=0; i<numberOfChildren; i++){
+            const iconBar = createAemElement('div', ['icon-bar'+i], null, null);
+            iconBar.innerHTML = '&nbsp;';
+            parent.appendChild(iconBar);  
+        }
+    }
+    return parent;
+}
+
+function createFirstListOuterDiv(unorderedList){
+    const outerDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12'], null, null);
+    const nav = createAemElement('nav', null, null, null);
+    console.log(unorderedList.children.length);
+    return "";
+}
+
+function createSecondListOuterDiv(unorderedList){
+    return "";
 }
