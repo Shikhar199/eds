@@ -632,7 +632,7 @@ export default async function decorate(block){
     hamburgerMenuRightDiv.appendChild(overlayDiv);
     console.log(hamburgerMenuRightDiv);
     console.log(nav);
-    rowDiv.appendChild();
+    rowDiv.appendChild(nav);
     rowDiv.appendChild(hamburgerMenuRightDiv);
 }
 
