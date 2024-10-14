@@ -655,11 +655,7 @@ function createIconBar(parentElementType, parentElementClass, numberOfChildren, 
 function createFirstListOuterDiv(unorderedList){
     const outerDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12'], null, null);
     const nav = createAemElement('nav', null, null, null);
-    console.log(unorderedList.children.length);
     unorderedList.classList.add('row', 'close-overlay');
-    console.log(unorderedList);
-    console.log(unorderedList.querySelector('ul'));
-    unorderedList.querySelector('ul').classList.add('row', 'close-overlay');
     for(let i=0; i<unorderedList.children.length; i++){
         const listItem = unorderedList.children[i];
         const span = createAemElement('span', null, null, null);
