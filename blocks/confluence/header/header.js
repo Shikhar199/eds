@@ -629,6 +629,7 @@ export default async function decorate(block){
     overlayDiv.appendChild(firstLiOuterDiv);
     overlayDiv.appendChild(secondListOuterDiv);
     console.log(overlayDiv);
+    console.log(hamburgerDiv);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
