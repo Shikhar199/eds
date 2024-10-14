@@ -587,7 +587,7 @@ export default async function decorate(block){
     const header = createAemElement('header', ['header'], null, null);
     const article = createAemElement('article', ['container'], null, null);
     const rowDiv = createAemElement('div', ['row'], null, null);
-    const nav = createAemElement('div', ['navbar', 'navbar-default', 'navbar-fixed-top', 'scrollbg-show', 'show-strip'], null, null);
+    const nav = createAemElement('nav', ['navbar', 'navbar-default', 'navbar-fixed-top', 'scrollbg-show', 'show-strip'], null, null);
     const containerDiv = createAemElement('div', ['container'], null, null);
     const navbarHeader = createAemElement('div', ['navbar-header'], null, null);
     const anchor = createAemElement('a', ['d-block', 'navbar-brand'], {'href': imgAnchor.href, 'title': document.title}, null);
@@ -632,6 +632,8 @@ export default async function decorate(block){
     hamburgerMenuRightDiv.appendChild(overlayDiv);
     console.log(hamburgerMenuRightDiv);
     console.log(nav);
+    rowDiv.appendChild();
+    rowDiv.appendChild(hamburgerMenuRightDiv);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
