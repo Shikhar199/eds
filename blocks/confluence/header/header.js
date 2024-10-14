@@ -625,6 +625,7 @@ export default async function decorate(block){
     const lists = main.querySelectorAll('ul');
 
     const firstLiOuterDiv = createFirstListOuterDiv(lists[0]);
+    console.log(firstLiOuterDiv);
     const secondListOuterDiv = createSecondListOuterDiv(lists[1]);
 }
 
@@ -655,6 +656,7 @@ function createFirstListOuterDiv(unorderedList){
     const outerDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12'], null, null);
     const nav = createAemElement('nav', null, null, null);
     console.log(unorderedList.children.length);
+    unorderedList.querySelector('ul').classList.add('row', 'close-overlay');
     for(let i=0; i<unorderedList.children.length; i++){
         const listItem = unorderedList.children[i];
         const span = createAemElement('span', null, null, null);
@@ -663,8 +665,11 @@ function createFirstListOuterDiv(unorderedList){
         listItem.classList.add('col-lg-6', 'col-md-6', 'col-sm-6', 'col-xs-12');
         listItem.querySelector('a').classList.add('scrollto-target');
         console.log(listItem.querySelector('a').textContent.trim());
+        let aHref = listItem.querySelector('a').textContent.trim().toLowerCase().replace(' ', '-');
+        listItem.querySelector('a').setAttribute('href', "#"+aHref);
+        listItem.querySelector('a').setAttribute('title', listItem.querySelector('a').textContent.trim());
     }
-    return "";
+    return unorderedList;
 }
 
 function createSecondListOuterDiv(unorderedList){
