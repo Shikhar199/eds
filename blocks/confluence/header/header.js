@@ -585,7 +585,7 @@ export default async function decorate(block){
     const picture = main.querySelector('picture');
     picture.querySelector('img').classList.add('logo', 'img-responsive');
     picture.querySelector('img').setAttribute('alt', document.title);
-    const header = createAemElement('header', ['header'], null, null);
+    // const header = createAemElement('header', ['header'], null, null);
     const article = createAemElement('article', ['container'], null, null);
     const rowDiv = createAemElement('div', ['row'], null, null);
     const nav = createAemElement('nav', ['navbar', 'navbar-default', 'navbar-fixed-top', 'scrollbg-show', 'show-strip'], null, null);
@@ -636,9 +636,18 @@ export default async function decorate(block){
     rowDiv.appendChild(nav);
     rowDiv.appendChild(hamburgerMenuRightDiv);
     article.append(rowDiv);
-    header.append(article);
-    console.log(header);
+    // header.append(article);
+    // console.log(header);
     // block.append(header);
+    const divInsideHeader = document.querySelector('.header-wrapper .header');
+
+    if (divInsideHeader) {
+        divInsideHeader.remove();
+    }
+
+    let header = document.querySelector('.header-wrapper');
+    header.appendChild(article);
+
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
