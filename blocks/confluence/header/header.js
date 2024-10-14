@@ -638,7 +638,7 @@ export default async function decorate(block){
     article.append(rowDiv);
     header.append(article);
     console.log(header);
-    block.append(header);
+    // block.append(header);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
