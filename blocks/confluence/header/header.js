@@ -566,6 +566,7 @@ import { createAemElement } from "../../../scripts/aem.js";
 // }
 
 export default async function decorate(block){
+    block.innerHTML = '';
     console.log("welcome to header block");
     document.title = 'EMEA Confluence 2023';
     console.log(window.location.pathname + "nav");
@@ -637,6 +638,7 @@ export default async function decorate(block){
     article.append(rowDiv);
     header.append(article);
     console.log(header);
+    block.append(header);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
