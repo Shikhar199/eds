@@ -646,6 +646,7 @@ export default async function decorate(block){
     }
 
     let header = document.querySelector('.header-wrapper');
+    header.classList.add('header');
     header.appendChild(article);
 
 }
