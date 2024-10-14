@@ -601,6 +601,7 @@ export default async function decorate(block){
     const overlayDiv = createAemElement('div', ['overlay', 'overlay-slidedown', 'bg-topaz-dark'], null, null);
     const burgerDiv = createIconBar('div', ['burger'], 3, 2);
     hamburgerDiv.appendChild(burgerDiv);
+    hamburgerMenuRightDiv.appendChild(hamburgerDiv);
     const btn = createIconBar('button', ['overlay-close'], 3, 1);
     overlayDiv.appendChild(btn);
 
@@ -629,7 +630,6 @@ export default async function decorate(block){
     overlayDiv.appendChild(firstLiOuterDiv);
     overlayDiv.appendChild(secondListOuterDiv);
     console.log(overlayDiv);
-    console.log(hamburgerDiv);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
