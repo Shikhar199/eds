@@ -634,8 +634,8 @@ export default async function decorate(block){
     console.log(nav);
     rowDiv.appendChild(nav);
     rowDiv.appendChild(hamburgerMenuRightDiv);
-    containerDiv.append(rowDiv);
-    header.append(containerDiv);
+    article.append(rowDiv);
+    header.append(article);
     console.log(header);
 }
 
