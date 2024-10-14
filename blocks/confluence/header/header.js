@@ -591,9 +591,13 @@ export default async function decorate(block){
     const nav = createAemElement('nav', ['navbar', 'navbar-default', 'navbar-fixed-top', 'scrollbg-show', 'show-strip'], null, null);
     const containerDiv = createAemElement('div', ['container'], null, null);
     const navbarHeader = createAemElement('div', ['navbar-header'], null, null);
-    const anchor = createAemElement('a', ['d-block', 'navbar-brand'], {'href': imgAnchor.href, 'title': document.title}, null);
-    anchor.appendChild(imgAnchor);
-    navbarHeader.appendChild(anchor);
+    // const anchor = createAemElement('a', ['d-block', 'navbar-brand'], {'href': imgAnchor.href, 'title': document.title}, null);
+    // anchor.appendChild(imgAnchor);
+    // navbarHeader.appendChild(anchor);
+    imgAnchor.classList.add('d-block', 'navbar-brand');
+    imgAnchor.setAttribute('href', imgAnchor.href);
+    imgAnchor.setAttribute('title', document.title);
+    navbarHeader.appendChild(imgAnchor);
     containerDiv.appendChild(navbarHeader);
     nav.appendChild(containerDiv);
 
