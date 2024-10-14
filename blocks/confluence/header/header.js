@@ -627,6 +627,7 @@ export default async function decorate(block){
     const firstLiOuterDiv = createFirstListOuterDiv(lists[0]);
     console.log(firstLiOuterDiv);
     const secondListOuterDiv = createSecondListOuterDiv(lists[1]);
+    console.log(secondListOuterDiv);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
@@ -668,9 +669,28 @@ function createFirstListOuterDiv(unorderedList){
         listItem.querySelector('a').setAttribute('href', "#"+aHref);
         listItem.querySelector('a').setAttribute('title', listItem.querySelector('a').textContent.trim());
     }
-    return unorderedList;
+    outerDiv.appendChild(nav);
+    nav.appendChild(unorderedList);
+    return outerDiv;
 }
 
 function createSecondListOuterDiv(unorderedList){
-    return "";
+    const outerDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12'], null, null);
+    const rowDiv = createAemElement('div', ['row'], null, null);
+    const menuDiv = createAemElement('div', ['col-lg-12', 'col-md-12', 'col-sm-12', 'col-xs-12', 'menu-link'], null, null);
+    unorderedList.classList.add('close-overlay', 'menu-link');
+    unorderedList.id = 'external_links';
+    for(let i=0; i<unorderedList.children.length; i++){
+        const listItem = unorderedList.children[i];
+        listItem.querySelector('a').classList.add('archives-list-link');
+        if(listItem.querySelector('a').textContent.trim()==='Americas Confluence'){
+            listItem.querySelector('a').setAttribute('title','EMEA Confluence');
+        }else{
+            listItem.querySelector('a').setAttribute('title', listItem.querySelector('a').textContent.trim());
+        }
+    }
+    outerDiv.appendChild(rowDiv);
+    rowDiv.appendChild(menuDiv);
+    menuDiv.appendChild(unorderedList);
+    return outerDiv;
 }
