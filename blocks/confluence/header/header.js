@@ -631,6 +631,7 @@ export default async function decorate(block){
     overlayDiv.appendChild(secondListOuterDiv);
     hamburgerMenuRightDiv.appendChild(overlayDiv);
     console.log(hamburgerMenuRightDiv);
+    console.log(nav);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
