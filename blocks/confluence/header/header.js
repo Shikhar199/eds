@@ -629,7 +629,8 @@ export default async function decorate(block){
     const secondListOuterDiv = createSecondListOuterDiv(lists[1]);
     overlayDiv.appendChild(firstLiOuterDiv);
     overlayDiv.appendChild(secondListOuterDiv);
-    console.log(overlayDiv);
+    hamburgerMenuRightDiv.appendChild(overlayDiv);
+    console.log(hamburgerMenuRightDiv);
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
