@@ -678,7 +678,7 @@ function createIconBar(parentElementType, parentElementClass, numberOfChildren, 
     }
     if(noOfChildClasses===2){
         for(let i=0; i<numberOfChildren; i++){
-            const iconBar = createAemElement('div', ['icon-bar', 'icon-bar'+i+1], null, null);
+            const iconBar = createAemElement('div', ['icon-bar', 'icon-bar'+(i+1)], null, null);
             iconBar.innerHTML = '&nbsp;';  
             parent.appendChild(iconBar);
         }
