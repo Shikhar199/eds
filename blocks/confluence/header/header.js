@@ -655,7 +655,7 @@ export default async function decorate(block){
 
     // const navbar = document.querySelector('nav');
 
-    window.addEventListener('click', () => {
+    window.addEventListener('scroll', () => {
         // Check if the user has scrolled more than 0 pixels from the top
         if (window.scrollY > 0) {
             // Add the class 'show-strip' if scrolled down
