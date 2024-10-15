@@ -43,7 +43,7 @@
     padding-left: 0px;
 }
 
-.hamburger picture{
+.hamburger .logo{
     position: absolute;
     bottom: 20px;
     left: 10px;
