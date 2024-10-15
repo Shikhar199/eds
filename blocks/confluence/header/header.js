@@ -653,6 +653,20 @@ export default async function decorate(block){
     header.classList.add('header');
     header.appendChild(article);
 
+    const navbar = document.querySelector('nav');
+
+    // Listen for the scroll event on the window
+    window.addEventListener('scroll', () => {
+        // Check if the user has scrolled more than 0 pixels from the top
+        if (window.scrollY > 0) {
+            // Add the class 'show-strip' if scrolled down
+            navbar.classList.add('show-strip');
+        } else {
+            // Remove the class 'show-strip' if back at the top
+            navbar.classList.remove('show-strip');
+        }
+    });
+
 }
 
 function createIconBar(parentElementType, parentElementClass, numberOfChildren, noOfChildClasses){
