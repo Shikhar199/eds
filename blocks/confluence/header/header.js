@@ -665,6 +665,7 @@ export default async function decorate(block){
         //     // Remove the class 'show-strip' if back at the top
         //     navbar.classList.remove('show-strip');
         // }
+        console.log("burger menu clicked");
         overlayDiv.classList.toggle('show');
     });
 
