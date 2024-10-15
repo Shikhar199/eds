@@ -656,7 +656,19 @@ export default async function decorate(block){
     const navbar = document.querySelector('nav');
 
     // Listen for the scroll event on the window
-    window.addEventListener('scroll', () => {
+    burgerDiv.addEventListener('click', () => {
+        // Check if the user has scrolled more than 0 pixels from the top
+        // if (window.scrollY > 0) {
+        //     // Add the class 'show-strip' if scrolled down
+        //     navbar.classList.add('show-strip');
+        // } else {
+        //     // Remove the class 'show-strip' if back at the top
+        //     navbar.classList.remove('show-strip');
+        // }
+        overlayDiv.classList.toggle('show');
+    });
+
+    window.addEventListener('click', () => {
         // Check if the user has scrolled more than 0 pixels from the top
         if (window.scrollY > 0) {
             // Add the class 'show-strip' if scrolled down
