@@ -622,6 +622,7 @@ export default async function decorate(block){
     pictureClone.setAttribute('alt', 'EMEA Confluence 2023');
 
     anchorClone.appendChild(pictureClone);
+    console.log(anchorClone);
 
     overlay.appendChild(anchorClone);
     outerDiv.appendChild(overlay);
@@ -653,20 +654,14 @@ export default async function decorate(block){
     header.classList.add('header');
     header.appendChild(article);
 
-    // const navbar = document.querySelector('nav');
-
     window.addEventListener('scroll', () => {
-        // Check if the user has scrolled more than 0 pixels from the top
         if (window.scrollY > 0) {
-            // Add the class 'show-strip' if scrolled down
             nav.classList.add('show-strip');
         } else {
-            // Remove the class 'show-strip' if back at the top
             nav.classList.remove('show-strip');
         }
     });
 
-    // Listen for the scroll event on the window
     burgerDiv.addEventListener('click', () => {
         if(overlayDiv.classList.contains('close')){
             overlayDiv.classList.remove('close');
