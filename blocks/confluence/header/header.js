@@ -621,6 +621,7 @@ export default async function decorate(block){
     pictureClone.classList.add('logo', 'logo-inner', 'img-responsive');
     pictureClone.setAttribute('alt', 'EMEA Confluence 2023');
 
+    anchorClone.innerHTML = '';
     anchorClone.appendChild(pictureClone);
     console.log(anchorClone);
 
