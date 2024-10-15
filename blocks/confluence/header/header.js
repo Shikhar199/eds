@@ -668,6 +668,7 @@ export default async function decorate(block){
             overlayDiv.classList.remove('close');
         }
         overlayDiv.classList.add('open');
+        document.body.classList.add('no-scroll');
     });
 
     btn.addEventListener('click', ()=>{
@@ -675,6 +676,7 @@ export default async function decorate(block){
             overlayDiv.classList.remove('open');
         }
         overlayDiv.classList.add('close');
+        document.body.classList.remove('no-scroll');
     })
 
 }

@@ -48,3 +48,7 @@
     bottom: 20px;
     left: 10px;
 }
+
+.no-scroll{
+    overflow: hidden;
+}
