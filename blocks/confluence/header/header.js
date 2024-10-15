@@ -657,18 +657,20 @@ export default async function decorate(block){
 
     // Listen for the scroll event on the window
     burgerDiv.addEventListener('click', () => {
-        // Check if the user has scrolled more than 0 pixels from the top
-        // if (window.scrollY > 0) {
-        //     // Add the class 'show-strip' if scrolled down
-        //     navbar.classList.add('show-strip');
-        // } else {
-        //     // Remove the class 'show-strip' if back at the top
-        //     navbar.classList.remove('show-strip');
-        // }
-        console.log("burger menu clicked");
-        overlayDiv.classList.toggle('open');
+        if(overlayDiv.classList.contains('close')){
+            overlayDiv.classList.remove('close');
+        }
+        overlayDiv.classList.add('open');
     });
 
+    btn.addEventListener('click', ()=>{
+        if(overlayDiv.classList.contains('open')){
+            overlayDiv.classList.remove('open');
+        }
+        overlayDiv.classList.add('close');
+    })
+
+    
     window.addEventListener('click', () => {
         // Check if the user has scrolled more than 0 pixels from the top
         if (window.scrollY > 0) {
