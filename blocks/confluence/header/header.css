@@ -8,3 +8,11 @@
     width: 100%;
     max-width: none;
 }
+
+.header{
+    top:0px;
+}
+
+.header .container{
+    margin: auto;
+}
