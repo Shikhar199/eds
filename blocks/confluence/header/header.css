@@ -16,3 +16,16 @@
 .header .container{
     margin: auto;
 }
+
+.navbar-header{
+    width: 1170px;
+}
+
+.navbar{
+    height: 70px;
+}
+
+.navbar .container{
+    position: absolute;
+    padding-left: 20px;
+}
