@@ -653,7 +653,18 @@ export default async function decorate(block){
     header.classList.add('header');
     header.appendChild(article);
 
-    const navbar = document.querySelector('nav');
+    // const navbar = document.querySelector('nav');
+
+    window.addEventListener('click', () => {
+        // Check if the user has scrolled more than 0 pixels from the top
+        if (window.scrollY > 0) {
+            // Add the class 'show-strip' if scrolled down
+            nav.classList.add('show-strip');
+        } else {
+            // Remove the class 'show-strip' if back at the top
+            nav.classList.remove('show-strip');
+        }
+    });
 
     // Listen for the scroll event on the window
     burgerDiv.addEventListener('click', () => {
@@ -669,18 +680,6 @@ export default async function decorate(block){
         }
         overlayDiv.classList.add('close');
     })
-
-    
-    window.addEventListener('click', () => {
-        // Check if the user has scrolled more than 0 pixels from the top
-        if (window.scrollY > 0) {
-            // Add the class 'show-strip' if scrolled down
-            navbar.classList.add('show-strip');
-        } else {
-            // Remove the class 'show-strip' if back at the top
-            navbar.classList.remove('show-strip');
-        }
-    });
 
 }
 
