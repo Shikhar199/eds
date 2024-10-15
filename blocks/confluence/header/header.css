@@ -38,3 +38,12 @@
     display: block;
     width: 170px;
 }
+
+.hamburger .overlay a{
+    padding-left: 0px;
+}
+
+.hamburger picture{
+    position: absolute;
+    bottom: 20px;
+}
