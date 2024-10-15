@@ -25,9 +25,15 @@
 
 .navbar{
     height: 70px;
+    padding-bottom: 50px;
 }
 
 .navbar .container{
     position: absolute;
     padding-left: 20px;
+}
+
+.navbar-header picture{
+    display: block;
+    width: 170px;
 }
