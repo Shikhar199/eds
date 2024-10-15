@@ -666,7 +666,7 @@ export default async function decorate(block){
         //     navbar.classList.remove('show-strip');
         // }
         console.log("burger menu clicked");
-        overlayDiv.classList.toggle('show');
+        overlayDiv.classList.toggle('open');
     });
 
     window.addEventListener('click', () => {
