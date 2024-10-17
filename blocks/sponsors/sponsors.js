@@ -42,7 +42,7 @@ export default function decorate(block) {
 
         const categoryElement = container.querySelector(`#${category}`);
         const categoryContent = categoryElement.parentElement.nextElementSibling;
-        
+        console.log(categoryContent);
         if (categoryContent) {
             const clonedContent = categoryContent.cloneNode(true);
             clonedContent.classList.add('category-content');
