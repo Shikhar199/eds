@@ -1,0 +1,56 @@
+.sponsors-wrapper {
+    display: flex;
+}
+
+.left-container, .right-container {
+    flex: 1;
+}
+
+.left-container {
+    padding-right: 20px;
+}
+
+.right-container {
+    padding-left: 20px;
+}
+
+.sponsors.block > div {
+    margin-bottom: 20px;
+}
+
+.h2-head {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.pb40 {
+    padding-bottom: 40px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    display: block;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.category-button:hover {
+    background-color: #005a9e;
+}
