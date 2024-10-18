@@ -1,5 +1,7 @@
 .sponsors-wrapper {
     display: flex;
+     background-color: #f2f2f2; /* Set your desired background color here */
+    margin-top: 30px; 
 }
 
 .left-container, .right-container {
@@ -9,28 +11,31 @@
 }
 
 .left-container {
-    padding-right: 20px;
+    padding-right: 10px;
     align-items: flex-start; /* Align items to the start */
 }
 
 .right-container {
     padding-left: 20px;
+    padding-bottom: 100px;
 }
 
-.sponsors.block > div {
+/* .sponsors.block > div {
     margin-bottom: 20px;
-}
+} */
 
 .h2-head {
-    font-size: 2em;
+    font-size: 3em;
     margin-bottom: 20px;
+   padding-left: 150px; 
+   padding-top: 50px;
 }
 
 .pb40 {
     padding-bottom: 40px;
 }
 
-.category-button {
+/* .category-button {
     display: block;
     padding: 10px;
     font-size: 1.2em;
@@ -46,55 +51,90 @@
 
 .category-button:hover {
     background-color: #005a9e;
-}
+} */
 
 .content-div {
     display: none; /* Hide all content divs initially */
     padding: 20px;
     border: 1px solid #ccc;
-    margin-top: 10px;
+    margin-top: -10px; 
+    border-radius: 20px;
 }
+.content-div.active-diamond {
+    border: 1px solid #ffffff; /* Border for diamond content */
+}
+
+.content-div.active-gold {
+    border: 1px solid #df9926; /* Border for gold content */
+}
+
+.content-div.active-digital {
+    border: 1px solid #0f9ffa; /* Border for digital content, if needed */
+}
+
 
 
 .diamond-button {
-    background-color: #ffffff; /* White color */
+    background-color: #fff; /* White color */
     color: #000; /* Black text */
-    border: 1px solid #000; /* Black border */
+    border: 1px #fff;
     padding: 10px 20px;
-    margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
+    margin: 0px 30px 10px 10px; /* No top margin, increased side and bottom margins */
     cursor: pointer;
-    border-top-left-radius: 15px; /* Curved top left corner */
-    border-top-right-radius: 15px; /* Curved top right corner */
+    border-top-left-radius: 20px; /* Curved top left corner */
+    border-top-right-radius: 20px; /* Curved top right corner */
+    width: 160px; /* Set a specific width */
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* Alternatively, use a percentage */
+    /* width: 100%; */
 }
 
 .gold-button {
-    background-color: #ffd700; /* Gold color */
+    background-color: #df9926; /* Gold color */
     color: #000; /* Black text */
-    border: 1px solid #000; /* Black border */
+    border: 1px solid #df9926; /* Black border */
     padding: 10px 20px;
-    margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
+    margin: 0 30px 10px 10px; /* No top margin, increased side and bottom margins */
     cursor: pointer;
-    border-top-left-radius: 15px; /* Curved top left corner */
-    border-top-right-radius: 15px; /* Curved top right corner */
+    border-top-left-radius: 20px; /* Curved top left corner */
+    border-top-right-radius: 20px; /* Curved top right corner */
+    width: 150px; /* Set a specific width */
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.gold-button.active {
+    color: white; /* Change text color to white */
 }
 
 .digital-button {
-    background-color: #87ceeb; /* Sky blue color */
+    background-color: #0f9ffa; /* Sky blue color */
     color: #000; /* Black text */
-    border: 1px solid #000; /* Black border */
+    border: 1px solid #0f9ffa; /* Black border */
     padding: 10px 20px;
     margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
     cursor: pointer;
-    border-top-left-radius: 15px; /* Curved top left corner */
-    border-top-right-radius: 15px; /* Curved top right corner */
+    border-top-left-radius: 20px; /* Curved top left corner */
+    border-top-right-radius: 20px; /* Curved top right corner */
+    width: 160px; /* Set a specific width */
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.digital-button.active {
+    color: white; /* Change text color to white */
 }
 
 /* Optional: Add hover effects */
-.diamond-button:hover,
+/* .diamond-button:hover,
 .gold-button:hover,
 .digital-button:hover {
     opacity: 0.8;
-}
+} */
 /* .gold-row, .digital-row, .diamond-row {
     display: flex;
     justify-content: center;
@@ -110,7 +150,7 @@
 
 #popup {
     position: fixed;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -118,6 +158,7 @@
     padding: 20px;
     z-index: 1000;
     display: none;
+    width: 55%;
 }
 
 .popup-content {
@@ -131,16 +172,29 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: #543c3d;
     z-index: 999;
     display: none;
 }
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
+    top: 0px;
+    right: 0px;
+    background-color: #543c3d;
+    color: #fff;
     border: none;
-    font-size: 20px;
+    font-size: 50px; 
+    font-weight: 700;
     cursor: pointer;
+    width: 50px;
+    height: 70px;
 }
+
+.content-div img {
+    background-color: white; /* Set background color to white for all images */
+    padding: 20px; /* Add padding to create space around the image */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    border-radius: 20px;
+    margin: 15px;
+}
+

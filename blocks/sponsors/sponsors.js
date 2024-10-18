@@ -49,20 +49,33 @@ export default function decorate(block) {
     console.log('Gold: ' + goldVal);
     console.log('Digital: ' + digitalVal);
 
-    function createButton(text, className, contentId) {
+    function createButton(text, className, contentId, activeClass) {
         const button = document.createElement('button');
         button.textContent = text;
         button.className = className;
         button.addEventListener('click', () => {
-            document.querySelectorAll('.content-div').forEach(div => div.style.display = 'none');
-            document.getElementById(contentId).style.display = 'block';
+            document.querySelectorAll('.content-div').forEach(div => {
+                div.style.display = 'none';
+                div.classList.remove('active-diamond', 'active-gold', 'active-digital'); // Remove all active classes
+            });
+            const contentDiv = document.getElementById(contentId);
+            contentDiv.style.display = 'block';
+            contentDiv.classList.add(activeClass); // Add the specific active class
+    
+            // Remove active class from all buttons
+            document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+    
+            // Add active class to the clicked button
+            button.classList.add('active');
         });
         return button;
     }
+    
 
-    sponsorsBlock.appendChild(createButton(diamondVal, 'diamond-button', 'diamond-content'));
-    sponsorsBlock.appendChild(createButton(goldVal, 'gold-button', 'gold-content'));
-    sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-content'));
+    sponsorsBlock.appendChild(createButton(diamondVal, 'diamond-button', 'diamond-content', 'active-diamond'));
+sponsorsBlock.appendChild(createButton(goldVal, 'gold-button', 'gold-content', 'active-gold'));
+sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-content', 'active-digital'));
+
     // section.appendChild(wrapper);
     console.log(section);
     console.log(block);
