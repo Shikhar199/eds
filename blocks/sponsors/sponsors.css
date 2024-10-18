@@ -4,10 +4,13 @@
 
 .left-container, .right-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .left-container {
     padding-right: 20px;
+    align-items: flex-start; /* Align items to the start */
 }
 
 .right-container {
@@ -27,16 +30,6 @@
     padding-bottom: 40px;
 }
 
-.center-text {
-    text-align: center;
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
 .category-button {
     display: block;
     padding: 10px;
@@ -53,4 +46,51 @@
 
 .category-button:hover {
     background-color: #005a9e;
+}
+
+.content-div {
+    display: none; /* Hide all content divs initially */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.diamond-button {
+    background-color: #ffffff; /* White color */
+    color: #000; /* Black text */
+    border: 1px solid #000; /* Black border */
+    padding: 10px 20px;
+    margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
+    cursor: pointer;
+    border-top-left-radius: 15px; /* Curved top left corner */
+    border-top-right-radius: 15px; /* Curved top right corner */
+}
+
+.gold-button {
+    background-color: #ffd700; /* Gold color */
+    color: #000; /* Black text */
+    border: 1px solid #000; /* Black border */
+    padding: 10px 20px;
+    margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
+    cursor: pointer;
+    border-top-left-radius: 15px; /* Curved top left corner */
+    border-top-right-radius: 15px; /* Curved top right corner */
+}
+
+.digital-button {
+    background-color: #87ceeb; /* Sky blue color */
+    color: #000; /* Black text */
+    border: 1px solid #000; /* Black border */
+    padding: 10px 20px;
+    margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
+    cursor: pointer;
+    border-top-left-radius: 15px; /* Curved top left corner */
+    border-top-right-radius: 15px; /* Curved top right corner */
+}
+
+/* Optional: Add hover effects */
+.diamond-button:hover,
+.gold-button:hover,
+.digital-button:hover {
+    opacity: 0.8;
 }

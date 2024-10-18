@@ -1,80 +1,133 @@
 export default function decorate(block) {
+    const section = document.querySelector('.sponsors-container');
+    if (!section) {
+        console.error('Section .sponsors-container not found');
+        return;
+    }
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'sponsors-wrapper';
+
+    let container = document.createElement('div');
+    container.innerHTML = block.innerHTML;
+    console.log(container);
+    block.innerHTML = '';
+
+    // Create left and right containers
+    const leftContainer = document.createElement('div');
+    leftContainer.className = 'left-container';
+
+    const rightContainer = document.createElement('div');
+    rightContainer.className = 'right-container';
+
+    // Add the sponsors title to the left container
+    const blockHead = document.createElement('h2');
+    blockHead.classList.add('h2-head', 'pb40');
+    const sponsorsTitle = container.querySelector('#sponsors');
+    if (sponsorsTitle) {
+        blockHead.textContent = sponsorsTitle.textContent.trim();
+        leftContainer.appendChild(blockHead);
+    } else {
+        console.error('#sponsors element not found');
+    }
+
+    // Create the sponsors block for the right container
+    const sponsorsBlock = document.createElement('div');
+    sponsorsBlock.className = 'sponsors block';
+    sponsorsBlock.setAttribute('data-block-name', 'sponsors');
+    sponsorsBlock.setAttribute('data-block-status', 'loaded');
+
+    const diamondElement = container.querySelector('#diamond');
+    const goldElement = container.querySelector('#gold');
+    const digitalElement = container.querySelector('#digital');
+
+    const diamondVal = diamondElement.textContent;
+    const goldVal = goldElement.textContent;
+    const digitalVal = digitalElement.textContent;
+
+    console.log('Diamond: ' + diamondVal);
+    console.log('Gold: ' + goldVal);
+    console.log('Digital: ' + digitalVal);
+
+    function createButton(text, className, contentId) {
+        const button = document.createElement('button');
+        button.textContent = text;
+        button.className = className;
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.content-div').forEach(div => div.style.display = 'none');
+            document.getElementById(contentId).style.display = 'block';
+        });
+        return button;
+    }
+
+    sponsorsBlock.appendChild(createButton(diamondVal, 'diamond-button', 'diamond-content'));
+    sponsorsBlock.appendChild(createButton(goldVal, 'gold-button', 'gold-content'));
+    sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-content'));
+    rightContainer.appendChild(sponsorsBlock);
+    wrapper.appendChild(leftContainer);
+    wrapper.appendChild(rightContainer);
+
+    section.appendChild(wrapper);
+    console.log(section);
     console.log(block);
-    // const section = document.querySelector('.sponsors-container');
-  
-    // const wrapper = document.createElement('div');
-    // wrapper.className = 'sponsors-wrapper';
+    // block.appendChild(section);
 
-    // let container = document.createElement('div');
-    // container.innerHTML = block.innerHTML;
-    // console.log(container);
+    // Create content divs
+    const diamondContent = document.createElement('div');
+    diamondContent.id = 'diamond-content';
+    diamondContent.className = 'content-div';
 
-    // // Create left and right containers
-    // const leftContainer = document.createElement('div');
-    // leftContainer.className = 'left-container';
+    [...container.children].forEach((div, index) => {
+        console.log(`Div ${index}:`, div);
+    });
 
-    // const rightContainer = document.createElement('div');
-    // rightContainer.className = 'right-container';
+    // Find the image in the 3rd row, 1st column
+    // [...container.children].forEach((row, r) => {
+    //     console.log(`Processing row ${r}`);
+    //     if (r == 3) {
+    //         console.log('Found the third row');
+    //         // Get the first column of the third row
+    //         const firstColumn = row.querySelector('td:nth-child(1)');
+    //         if (firstColumn) {
+    //             console.log('Found the first column in the third row');
+    //             // Check if the first column contains an image
+    //             const imageElement = firstColumn.querySelector('img');
+    //             if (imageElement) {
+    //                 // Log the image path to the console
+    //                 console.log('Image path:', imageElement.src);
 
-    // // Add the sponsors title to the left container
-    // const blockHead = document.createElement('h2');
-    // blockHead.classList.add('h2-head', 'pb40', 'center-text');
-    // blockHead.textContent = container.querySelector('#sponsors').textContent.trim();
-    // leftContainer.appendChild(blockHead);
+    //                 // Create a new image element and set its source to the found image's source
+    //                 const newImage = document.createElement('img');
+    //                 newImage.src = imageElement.src;
+    //                 newImage.alt = imageElement.alt || 'Diamond Image';
 
-    // // Create the sponsors block for the right container
-    // const sponsorsBlock = document.createElement('div');
-    // sponsorsBlock.className = 'sponsors block';
-    // sponsorsBlock.setAttribute('data-block-name', 'sponsors');
-    // sponsorsBlock.setAttribute('data-block-status', 'loaded');
-
-    // // Create a container for the buttons
-    // const buttonContainer = document.createElement('div');
-    // buttonContainer.className = 'button-container';
-
-    // const categories = ['diamond', 'gold', 'digital'];
-    // categories.forEach(category => {
-    //     const categoryDiv = document.createElement('div');
-    //     const categoryButton = document.createElement('button');
-    //     categoryButton.id = category;
-    //     categoryButton.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-    //     categoryButton.className = 'category-button';
-    //     categoryDiv.appendChild(categoryButton);
-
-    //     const categoryElement = container.querySelector(`#${category}`);
-    //     const categoryContent = categoryElement.parentElement.nextElementSibling;
-    //     console.log(categoryElement);
-    //     console.log(categoryContent);
-    //     if (categoryContent) {
-    //         const clonedContent = categoryContent.cloneNode(true);
-    //         clonedContent.classList.add('category-content');
-    //         clonedContent.style.display = 'none'; // Hide content initially
-    //         categoryDiv.appendChild(clonedContent);
-    //     }
-
-    //     buttonContainer.appendChild(categoryDiv);
-
-    //     // Add event listener to the button
-    //     categoryButton.addEventListener('click', () => {
-    //         // Hide all category contents
-    //         document.querySelectorAll('.category-content').forEach(content => {
-    //             content.style.display = 'none';
-    //         });
-    //         // Show the clicked category content
-    //         const contentToShow = categoryDiv.querySelector('.category-content');
-    //         if (contentToShow) {
-    //             contentToShow.style.display = 'block';
+    //                 // Append the new image to diamondContent
+    //                 diamondContent.appendChild(newImage);
+    //             } else {
+    //                 console.error('No image found in the first column of the third row');
+    //             }
+    //         } else {
+    //             console.error('First column not found in the third row');
     //         }
-    //     });
+    //     }
     // });
 
-    // sponsorsBlock.appendChild(buttonContainer);
-    // rightContainer.appendChild(sponsorsBlock);
-  
-    // wrapper.appendChild(leftContainer);
-    // wrapper.appendChild(rightContainer);
-  
-    // section.appendChild(wrapper);
-    // block.innerHTML = '';   
-    // block.append(section);
+    const goldContent = document.createElement('div');
+    goldContent.id = 'gold-content';
+    goldContent.className = 'content-div';
+    goldContent.textContent = 'Gold Content';
+
+    const digitalContent = document.createElement('div');
+    digitalContent.id = 'digital-content';
+    digitalContent.className = 'content-div';
+    digitalContent.textContent = 'Digital Content';
+
+    // Append content divs to the section
+    section.appendChild(diamondContent);
+    section.appendChild(goldContent);
+    section.appendChild(digitalContent);
+
+    // Initially hide all content divs
+    document.querySelectorAll('.content-div').forEach(div => div.style.display = 'none');
+    block.appendChild(section);
 }
