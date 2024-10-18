@@ -59,6 +59,7 @@
     border: 1px solid #ccc;
     margin-top: -10px; 
     border-radius: 20px;
+    width: 900px;
 }
 .content-div.active-diamond {
     border: 1px solid #ffffff; /* Border for diamond content */
@@ -195,6 +196,6 @@
     padding: 20px; /* Add padding to create space around the image */
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
     border-radius: 20px;
-    margin: 15px;
+    margin: 20px;
 }
 
