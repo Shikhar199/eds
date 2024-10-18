@@ -63,69 +63,122 @@ export default function decorate(block) {
     sponsorsBlock.appendChild(createButton(diamondVal, 'diamond-button', 'diamond-content'));
     sponsorsBlock.appendChild(createButton(goldVal, 'gold-button', 'gold-content'));
     sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-content'));
+    // section.appendChild(wrapper);
+    console.log(section);
+    console.log(block);
+    // block.appendChild(section);
+    // Create a popup element
+// Create a popup element
+const popup = document.createElement('div');
+popup.id = 'popup';
+popup.className = 'popup';
+document.body.appendChild(popup);
+
+// Create an overlay element
+const overlay = document.createElement('div');
+overlay.id = 'popup-overlay';
+document.body.appendChild(overlay);
+
+// Function to show the popup with row data
+function showPopup(rowData) {
+    console.log('Showing popup with data:', rowData); // Debug log
+    popup.innerHTML = ''; // Clear previous content
+
+    // Create and append the close button
+    const closeButton = document.createElement('button');
+    closeButton.className = 'close-button';
+    closeButton.innerHTML = '×'; // HTML entity for '×'
+    closeButton.addEventListener('click', () => {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+    });
+    popup.appendChild(closeButton);
+
+    const content = document.createElement('div');
+    content.className = 'popup-content';
+    content.innerHTML = rowData; // Use innerHTML to preserve HTML structure
+    popup.appendChild(content);
+
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+}
+
+// Close the popup when clicking on the overlay
+overlay.addEventListener('click', () => {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+});
+
+// Function to process rows and add images
+function processRows(container, startRow, endRow, contentDiv, type) {
+    let rowContainer;
+    [...container.children].forEach((row, r) => {
+        if (r >= startRow && r <= endRow) {
+            console.log(`Processing ${type} row ${r}`);
+            const pictureElement = row.querySelector('picture');
+            if (pictureElement) {
+                console.log(`Found a picture element in ${type} row ${r}`);
+                const imageElement = pictureElement.querySelector('img');
+                if (imageElement) {
+                    console.log(`${type} image path:`, imageElement.src);
+                    const newImage = document.createElement('img');
+                    newImage.src = imageElement.src;
+                    newImage.alt = imageElement.alt || `${type} Image`;
+                    newImage.style.cursor = 'pointer'; // Make the cursor a pointer to indicate it's clickable
+
+                    // Add click event listener to the new image
+                    newImage.addEventListener('click', () => {
+                        console.log(`${type} image clicked`); // Debug log
+                        showPopup(row.innerHTML); // Show popup with the entire row's HTML content
+                    });
+
+                    // Create a new row for every 3 images
+                    if (!rowContainer || rowContainer.children.length >= 3) {
+                        rowContainer = document.createElement('div');
+                        rowContainer.className = `${type}-row`;
+                        contentDiv.appendChild(rowContainer);
+                    }
+
+                    // Append the new image to the current row container
+                    rowContainer.appendChild(newImage);
+                } else {
+                    console.error(`No image found within the picture element in ${type} row ${r}`);
+                }
+            } else {
+                console.error(`No picture element found in ${type} row ${r}`);
+            }
+        }
+    });
+}
+
+// Create content divs for diamond, gold, and digital
+const diamondContent = document.createElement('div');
+diamondContent.id = 'diamond-content';
+diamondContent.className = 'content-div';
+
+const goldContent = document.createElement('div');
+goldContent.id = 'gold-content';
+goldContent.className = 'content-div';
+
+const digitalContent = document.createElement('div');
+digitalContent.id = 'digital-content';
+digitalContent.className = 'content-div';
+
+// Process diamond, gold, and digital rows
+processRows(container, 2, 2, diamondContent, 'diamond');
+processRows(container, 3, 8, goldContent, 'gold');
+processRows(container, 9, 23, digitalContent, 'digital');
+
+  
+    // Append content divs to the section
+    sponsorsBlock.appendChild(diamondContent);
+    sponsorsBlock.appendChild(goldContent);
+    sponsorsBlock.appendChild(digitalContent);
     rightContainer.appendChild(sponsorsBlock);
     wrapper.appendChild(leftContainer);
     wrapper.appendChild(rightContainer);
 
     section.appendChild(wrapper);
-    console.log(section);
-    console.log(block);
-    // block.appendChild(section);
-
-    // Create content divs
-    const diamondContent = document.createElement('div');
-    diamondContent.id = 'diamond-content';
-    diamondContent.className = 'content-div';
-
-    [...container.children].forEach((div, index) => {
-        console.log(`Div ${index}:`, div);
-    });
-
-    // Find the image in the 3rd row, 1st column
-    // [...container.children].forEach((row, r) => {
-    //     console.log(`Processing row ${r}`);
-    //     if (r == 3) {
-    //         console.log('Found the third row');
-    //         // Get the first column of the third row
-    //         const firstColumn = row.querySelector('td:nth-child(1)');
-    //         if (firstColumn) {
-    //             console.log('Found the first column in the third row');
-    //             // Check if the first column contains an image
-    //             const imageElement = firstColumn.querySelector('img');
-    //             if (imageElement) {
-    //                 // Log the image path to the console
-    //                 console.log('Image path:', imageElement.src);
-
-    //                 // Create a new image element and set its source to the found image's source
-    //                 const newImage = document.createElement('img');
-    //                 newImage.src = imageElement.src;
-    //                 newImage.alt = imageElement.alt || 'Diamond Image';
-
-    //                 // Append the new image to diamondContent
-    //                 diamondContent.appendChild(newImage);
-    //             } else {
-    //                 console.error('No image found in the first column of the third row');
-    //             }
-    //         } else {
-    //             console.error('First column not found in the third row');
-    //         }
-    //     }
-    // });
-
-    const goldContent = document.createElement('div');
-    goldContent.id = 'gold-content';
-    goldContent.className = 'content-div';
-    goldContent.textContent = 'Gold Content';
-
-    const digitalContent = document.createElement('div');
-    digitalContent.id = 'digital-content';
-    digitalContent.className = 'content-div';
-    digitalContent.textContent = 'Digital Content';
-
-    // Append content divs to the section
-    section.appendChild(diamondContent);
-    section.appendChild(goldContent);
-    section.appendChild(digitalContent);
 
     // Initially hide all content divs
     document.querySelectorAll('.content-div').forEach(div => div.style.display = 'none');
