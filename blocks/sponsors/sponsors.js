@@ -1,10 +1,6 @@
 export default function decorate(block) {
     const section = document.querySelector('.sponsors-container');
-    if (!section) {
-        console.error('Section .sponsors-container not found');
-        return;
-    }
-
+    
     const wrapper = document.createElement('div');
     wrapper.className = 'sponsors-wrapper';
 
@@ -24,12 +20,8 @@ export default function decorate(block) {
     const blockHead = document.createElement('h2');
     blockHead.classList.add('h2-head', 'pb40');
     const sponsorsTitle = container.querySelector('#sponsors');
-    if (sponsorsTitle) {
-        blockHead.textContent = sponsorsTitle.textContent.trim();
-        leftContainer.appendChild(blockHead);
-    } else {
-        console.error('#sponsors element not found');
-    }
+    blockHead.textContent = sponsorsTitle.textContent.trim();
+    leftContainer.appendChild(blockHead);
 
     // Create the sponsors block for the right container
     const sponsorsBlock = document.createElement('div');
@@ -45,10 +37,6 @@ export default function decorate(block) {
     const goldVal = goldElement.textContent;
     const digitalVal = digitalElement.textContent;
 
-    console.log('Diamond: ' + diamondVal);
-    console.log('Gold: ' + goldVal);
-    console.log('Digital: ' + digitalVal);
-
     function createButton(text, className, contentId, activeClass) {
         const button = document.createElement('button');
         button.textContent = text;
@@ -56,11 +44,11 @@ export default function decorate(block) {
         button.addEventListener('click', () => {
             document.querySelectorAll('.content-div').forEach(div => {
                 div.style.display = 'none';
-                div.classList.remove('active-diamond', 'active-gold', 'active-digital'); // Remove all active classes
+                div.classList.remove('active-diamond', 'active-gold', 'active-digital'); 
             });
             const contentDiv = document.getElementById(contentId);
             contentDiv.style.display = 'block';
-            contentDiv.classList.add(activeClass); // Add the specific active class
+            contentDiv.classList.add(activeClass); 
     
             // Remove active class from all buttons
             document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
@@ -73,13 +61,9 @@ export default function decorate(block) {
     
 
     sponsorsBlock.appendChild(createButton(diamondVal, 'diamond-button', 'diamond-content', 'active-diamond'));
-sponsorsBlock.appendChild(createButton(goldVal, 'gold-button', 'gold-content', 'active-gold'));
-sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-content', 'active-digital'));
+    sponsorsBlock.appendChild(createButton(goldVal, 'gold-button', 'gold-content', 'active-gold'));
+    sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-content', 'active-digital'));
 
-    // section.appendChild(wrapper);
-    console.log(section);
-    console.log(block);
-    // block.appendChild(section);
     // Create a popup element
     const popup = document.createElement('div');
     popup.id = 'popup';
@@ -91,15 +75,11 @@ sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-co
     overlay.id = 'popup-overlay';
     document.body.appendChild(overlay);
 
-    // Function to show the popup with row data
     function showPopup(rowData) {
-        console.log('Showing popup with data:', rowData); // Debug log
-        popup.innerHTML = ''; // Clear previous content
-
-        // Create and append the close button
+        popup.innerHTML = ''; 
         const closeButton = document.createElement('button');
         closeButton.className = 'close-button';
-        closeButton.innerHTML = '×'; // HTML entity for '×'
+        closeButton.innerHTML = '×'; 
         closeButton.addEventListener('click', () => {
             popup.style.display = 'none';
             overlay.style.display = 'none';
@@ -108,7 +88,7 @@ sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-co
 
         const content = document.createElement('div');
         content.className = 'popup-content';
-        content.innerHTML = rowData; // Use innerHTML to preserve HTML structure
+        content.innerHTML = rowData; 
         popup.appendChild(content);
 
         popup.style.display = 'block';
@@ -121,37 +101,28 @@ sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-co
         overlay.style.display = 'none';
     });
 
-    // Function to process rows and add images
     function processRows(container, startRow, endRow, contentDiv, type) {
         let rowContainer;
         [...container.children].forEach((row, r) => {
             if (r >= startRow && r <= endRow) {
-                console.log(`Processing ${type} row ${r}`);
                 const pictureElement = row.querySelector('picture');
                 if (pictureElement) {
-                    console.log(`Found a picture element in ${type} row ${r}`);
                     const imageElement = pictureElement.querySelector('img');
                     if (imageElement) {
-                        console.log(`${type} image path:`, imageElement.src);
                         const newImage = document.createElement('img');
                         newImage.src = imageElement.src;
                         newImage.alt = imageElement.alt || `${type} Image`;
-                        newImage.style.cursor = 'pointer'; // Make the cursor a pointer to indicate it's clickable
+                        newImage.style.cursor = 'pointer'; 
 
-                        // Add click event listener to the new image
                         newImage.addEventListener('click', () => {
-                            console.log(`${type} image clicked`); // Debug log
-                            showPopup(row.innerHTML); // Show popup with the entire row's HTML content
+                            showPopup(row.innerHTML); 
                         });
 
-                        // Create a new row for every 3 images
                         if (!rowContainer || rowContainer.children.length >= 3) {
                             rowContainer = document.createElement('div');
                             rowContainer.className = `${type}-row`;
                             contentDiv.appendChild(rowContainer);
                         }
-
-                        // Append the new image to the current row container
                         rowContainer.appendChild(newImage);
                     } else {
                         console.error(`No image found within the picture element in ${type} row ${r}`);
@@ -176,16 +147,17 @@ sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-co
     digitalContent.id = 'digital-content';
     digitalContent.className = 'content-div';
 
-    // Process diamond, gold, and digital rows
     processRows(container, 2, 2, diamondContent, 'diamond');
     processRows(container, 3, 8, goldContent, 'gold');
     processRows(container, 9, 23, digitalContent, 'digital');
 
-    // Append content divs to the section
+    
     sponsorsBlock.appendChild(diamondContent);
     sponsorsBlock.appendChild(goldContent);
     sponsorsBlock.appendChild(digitalContent);
+    
     rightContainer.appendChild(sponsorsBlock);
+    
     wrapper.appendChild(leftContainer);
     wrapper.appendChild(rightContainer);
 

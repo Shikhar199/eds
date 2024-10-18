@@ -1,6 +1,6 @@
 .sponsors-wrapper {
     display: flex;
-     background-color: #f2f2f2; /* Set your desired background color here */
+    background-color: #f2f2f2; 
     margin-top: 30px; 
 }
 
@@ -12,17 +12,13 @@
 
 .left-container {
     padding-right: 10px;
-    align-items: flex-start; /* Align items to the start */
+    align-items: flex-start; 
 }
 
 .right-container {
     padding-left: 20px;
     padding-bottom: 100px;
 }
-
-/* .sponsors.block > div {
-    margin-bottom: 20px;
-} */
 
 .h2-head {
     font-size: 3em;
@@ -35,26 +31,8 @@
     padding-bottom: 40px;
 }
 
-/* .category-button {
-    display: block;
-    padding: 10px;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 1;
-    margin: 0 10px;
-}
-
-.category-button:hover {
-    background-color: #005a9e;
-} */
-
 .content-div {
-    display: none; /* Hide all content divs initially */
+    display: none; 
     padding: 10px;
     border: 1px solid #ccc;
     margin-top: -10px; 
@@ -62,96 +40,73 @@
     width: 900px;
 }
 .content-div.active-diamond {
-    border: 1px solid #ffffff; /* Border for diamond content */
+    border: 1px solid #ffffff; 
 }
 
 .content-div.active-gold {
-    border: 1px solid #df9926; /* Border for gold content */
+    border: 1px solid #df9926; 
 }
 
 .content-div.active-digital {
-    border: 1px solid #0f9ffa; /* Border for digital content, if needed */
+    border: 1px solid #0f9ffa; 
 }
 
-
-
 .diamond-button {
-    background-color: #fff; /* White color */
-    color: #000; /* Black text */
+    background-color: #fff; 
+    color: #000; 
     border: 1px #fff;
     padding: 10px 20px;
-    margin: 0px 30px 10px 10px; /* No top margin, increased side and bottom margins */
+    margin: 0px 30px 10px 10px; 
     cursor: pointer;
-    border-top-left-radius: 20px; /* Curved top left corner */
-    border-top-right-radius: 20px; /* Curved top right corner */
-    width: 160px; /* Set a specific width */
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    width: 160px; 
     font-weight: 400;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* Alternatively, use a percentage */
-    /* width: 100%; */
 }
 
 .gold-button {
-    background-color: #df9926; /* Gold color */
-    color: #000; /* Black text */
-    border: 1px solid #df9926; /* Black border */
+    background-color: #df9926; 
+    color: #000; 
+    border: 1px solid #df9926; 
     padding: 10px 20px;
-    margin: 0 30px 10px 10px; /* No top margin, increased side and bottom margins */
+    margin: 0 30px 10px 10px; 
     cursor: pointer;
-    border-top-left-radius: 20px; /* Curved top left corner */
-    border-top-right-radius: 20px; /* Curved top right corner */
-    width: 150px; /* Set a specific width */
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    width: 150px; 
     font-weight: 400;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .gold-button.active {
-    color: white; /* Change text color to white */
+    color: white; 
 }
 
 .digital-button {
-    background-color: #0f9ffa; /* Sky blue color */
-    color: #000; /* Black text */
-    border: 1px solid #0f9ffa; /* Black border */
+    background-color: #0f9ffa; 
+    color: #000; 
+    border: 1px solid #0f9ffa; 
     padding: 10px 20px;
-    margin: 0 10px 10px 10px; /* No top margin, increased side and bottom margins */
+    margin: 0 10px 10px 10px; 
     cursor: pointer;
-    border-top-left-radius: 20px; /* Curved top left corner */
-    border-top-right-radius: 20px; /* Curved top right corner */
-    width: 160px; /* Set a specific width */
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    width: 160px; 
     font-weight: 400;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .digital-button.active {
-    color: white; /* Change text color to white */
+    color: white; 
 }
-
-/* Optional: Add hover effects */
-/* .diamond-button:hover,
-.gold-button:hover,
-.digital-button:hover {
-    opacity: 0.8;
-} */
-/* .gold-row, .digital-row, .diamond-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.gold-row img, .digital-row img, .diamond-row img, .content-div img {
-    display: inline-block;
-    margin: 5px;
-    max-width: 100px;
-    max-height: 100px;
-} */
 
 #popup {
     position: fixed;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -177,11 +132,12 @@
     z-index: 999;
     display: none;
 }
+
 .close-button {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    background-color: #543c3d;
+    top: -2px; 
+    right: -2px; 
+    background-color: #2f1113;
     color: #fff;
     border: none;
     font-size: 50px; 
@@ -192,9 +148,9 @@
 }
 
 .content-div img {
-    background-color: white; /* Set background color to white for all images */
-    padding: 20px; /* Add padding to create space around the image */
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    background-color: white; 
+    padding: 20px; 
+    box-sizing: border-box; 
     border-radius: 20px;
     margin: 20px;
 }
