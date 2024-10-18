@@ -55,7 +55,7 @@
 
 .content-div {
     display: none; /* Hide all content divs initially */
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #ccc;
     margin-top: -10px; 
     border-radius: 20px;
@@ -195,6 +195,6 @@
     padding: 20px; /* Add padding to create space around the image */
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
     border-radius: 20px;
-    margin: 10px;
+    margin: 15px;
 }
 
