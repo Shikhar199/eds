@@ -195,6 +195,6 @@
     padding: 20px; /* Add padding to create space around the image */
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
     border-radius: 20px;
-    margin: 15px;
+    margin: 10px;
 }
 
