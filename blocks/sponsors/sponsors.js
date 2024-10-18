@@ -166,7 +166,7 @@ sponsorsBlock.appendChild(createButton(digitalVal, 'digital-button', 'digital-co
     // Create content divs for diamond, gold, and digital
     const diamondContent = document.createElement('div');
     diamondContent.id = 'diamond-content';
-    diamondContent.className = 'content-div';
+    diamondContent.className = 'content-div active-diamond';
 
     const goldContent = document.createElement('div');
     goldContent.id = 'gold-content';
