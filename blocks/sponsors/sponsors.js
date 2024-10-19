@@ -149,7 +149,7 @@ export default function decorate(block) {
 
     processRows(container, 2, 2, diamondContent, 'diamond');
     processRows(container, 3, 8, goldContent, 'gold');
-    processRows(container, 9, 23, digitalContent, 'digital');
+    processRows(container, 9, 24, digitalContent, 'digital');
 
     
     sponsorsBlock.appendChild(diamondContent);
