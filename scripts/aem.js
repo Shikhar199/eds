@@ -585,7 +585,7 @@ async function loadBlock(block) {
     const { blockName } = block.dataset;
     var CSSFilePath;
     var JSFilePath;
-    var confluenceSite = "conflience";
+    var confluenceSite = "confluence";
     // console.log(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`);
     // if(blockName==="footer"||blockName==="header"){
     //    let siteName = window.location.href.includes("iki") ? "iki" : "confluence";
