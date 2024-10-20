@@ -1,56 +1,157 @@
 .sponsors-wrapper {
     display: flex;
+    background-color: #f2f2f2; 
+    margin-top: 30px; 
 }
 
 .left-container, .right-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .left-container {
-    padding-right: 20px;
+    padding-right: 10px;
+    align-items: flex-start; 
 }
 
 .right-container {
     padding-left: 20px;
-}
-
-.sponsors.block > div {
-    margin-bottom: 20px;
+    padding-bottom: 100px;
 }
 
 .h2-head {
-    font-size: 2em;
+    font-size: 3em;
     margin-bottom: 20px;
+   padding-left: 150px; 
+   padding-top: 50px;
 }
 
 .pb40 {
     padding-bottom: 40px;
 }
 
-.center-text {
-    text-align: center;
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.category-button {
-    display: block;
+.content-div {
+    display: none; 
     padding: 10px;
-    font-size: 1.2em;
-    text-align: center;
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 1;
-    margin: 0 10px;
+    border: 1px solid #ccc;
+    margin-top: -10px; 
+    border-radius: 20px;
+    width: 900px;
+}
+.content-div.active-diamond {
+    border: 1px solid #ffffff; 
 }
 
-.category-button:hover {
-    background-color: #005a9e;
+.content-div.active-gold {
+    border: 1px solid #df9926; 
 }
+
+.content-div.active-digital {
+    border: 1px solid #0f9ffa; 
+}
+
+.diamond-button {
+    background-color: #fff; 
+    color: #000; 
+    border: 1px #fff;
+    padding: 10px 20px;
+    margin: 0px 30px 10px 10px; 
+    cursor: pointer;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    width: 160px; 
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.gold-button {
+    background-color: #df9926; 
+    color: #000; 
+    border: 1px solid #df9926; 
+    padding: 10px 20px;
+    margin: 0 30px 10px 10px; 
+    cursor: pointer;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    width: 150px; 
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.gold-button.active {
+    color: white; 
+}
+
+.digital-button {
+    background-color: #0f9ffa; 
+    color: #000; 
+    border: 1px solid #0f9ffa; 
+    padding: 10px 20px;
+    margin: 0 10px 10px 10px; 
+    cursor: pointer;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px; 
+    width: 160px; 
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.digital-button.active {
+    color: white; 
+}
+
+#popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    width: 55%;
+}
+
+.popup-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #543c3d;
+    z-index: 999;
+    display: none;
+}
+
+.close-button {
+    position: absolute;
+    top: -2px; 
+    right: -2px; 
+    background-color: #2f1113;
+    color: #fff;
+    border: none;
+    font-size: 50px; 
+    font-weight: 700;
+    cursor: pointer;
+    width: 50px;
+    height: 70px;
+}
+
+.content-div img {
+    background-color: white; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    border-radius: 20px;
+    margin: 20px;
+}
+
