@@ -1,6 +1,6 @@
-import { bindSwipeToElement } from '../../scripts/scripts.js';
-import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
-import { createAemElement } from '../../scripts/aem.js';
+import { bindSwipeToElement } from '../../../scripts/scripts.js';
+import { createOptimizedPicture } from '../../../scripts/lib-franklin.js';
+import { createAemElement } from '../../../scripts/aem.js';
 
 function nextElement(el, selector) {
   if (selector) {
